@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -8,6 +9,7 @@ import {
   Cpu,
   Globe,
   LayoutDashboard,
+  Search,
   SlidersHorizontal,
   View,
 } from 'lucide-react';
@@ -28,6 +30,8 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
+import { CommandDialog } from '@/components/ui/command';
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 
 const socialLinks = [
   'Facebook',
@@ -90,6 +94,16 @@ const navItems = [
   { href: '/custom-view', label: 'Custom View', icon: SlidersHorizontal },
 ];
 
+const searchData = {
+  Stocks: [{ name: 'Apple Inc.', ticker: 'AAPL', logo: 'AAPL' }, { name: 'Tesla, Inc.', ticker: 'TSLA', logo: 'TSLA' }],
+  Funds: [{ name: 'SPDR S&P 500 ETF', ticker: 'SPY', logo: 'SPY' }],
+  Futures: [{ name: 'E-mini S&P 500', ticker: 'ES', logo: 'ES' }],
+  Forex: [{ name: 'Euro/US Dollar', ticker: 'EURUSD', logo: 'FX' }],
+  Crypto: [{ name: 'Bitcoin', ticker: 'BTCUSD', logo: 'BTC' }, { name: 'Ethereum', ticker: 'ETHUSD', logo: 'ETH' }],
+  Bonds: [{ name: 'US 10-Year Treasury', ticker: 'US10Y', logo: 'BND' }],
+  Economic: [{ name: 'US CPI', ticker: 'CPI', logo: 'ECO' }],
+};
+
 function GlobalNav() {
   return (
     <DropdownMenu>
@@ -139,6 +153,58 @@ function GlobalNav() {
     </DropdownMenu>
   );
 }
+
+function SymbolSearch() {
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setOpen((open) => !open);
+      }
+    };
+    document.addEventListener('keydown', down);
+    return () => document.removeEventListener('keydown', down);
+  }, []);
+
+  return (
+    <>
+      <Button
+        variant="outline"
+        className="h-9 w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64"
+        onClick={() => setOpen(true)}
+      >
+        <Search className="mr-2 h-4 w-4" />
+        <span className="hidden lg:inline-flex">Search symbols...</span>
+        <span className="inline-flex lg:hidden">Search...</span>
+        <kbd className="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+          <span className="text-xs">⌘</span>K
+        </kbd>
+      </Button>
+      <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          {Object.entries(searchData).map(([group, items]) => (
+            <CommandGroup key={group} heading={group}>
+              {items.map((item) => (
+                <CommandItem key={item.ticker}>
+                  <div className="mr-2 flex h-4 w-4 items-center justify-center rounded-sm bg-muted text-xs font-bold">
+                    {item.logo.substring(0, 2)}
+                  </div>
+                  <span>{item.name}</span>
+                  <span className="ml-auto text-xs text-muted-foreground">{item.ticker}</span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          ))}
+        </CommandList>
+      </CommandDialog>
+    </>
+  );
+}
+
 
 export function Header({ pageTitle }: { pageTitle: string }) {
   const userAvatar = PlaceHolderImages.find((p) => p.id === 'user-avatar');
@@ -222,6 +288,7 @@ export function Header({ pageTitle }: { pageTitle: string }) {
       </div>
 
       <div className="flex items-center gap-4">
+        <SymbolSearch />
         <GlobalNav />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
