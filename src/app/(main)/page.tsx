@@ -72,7 +72,7 @@ export default function DashboardPage() {
             {/* 20 Individual Boxes */}
             <div className="grid grid-cols-5 gap-4">
                 {boxes.map((_, i) => (
-                    <Card key={i} className="neon-box h-40">
+                    <Card key={i} className="neon-box h-32">
                         <CardContent className="flex items-center justify-center h-full">
                             <p className="text-muted-foreground">Box {i + 1}</p>
                         </CardContent>
