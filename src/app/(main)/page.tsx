@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Activity, Bot, DollarSign, BarChart } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { ChartingClient } from './charting/_components/charting-client';
 
 export default function DashboardPage() {
   return (
@@ -9,7 +8,6 @@ export default function DashboardPage() {
       <div className="flex-1 p-8 pt-6">
         <div className="grid grid-cols-24 gap-2 justify-items-end">
           <div className="col-span-16 space-y-6">
-            <ChartingClient />
             {/* Stat cards below the main content */}
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               <Card className="neon-box">
