@@ -7,7 +7,7 @@ export default function MainLayout({
 }) {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header pageTitle="Quantum CyberVision" />
+      <Header pageTitle="Quantum Charts" />
       <main className="flex-1 flex flex-col">
         {children}
       </main>

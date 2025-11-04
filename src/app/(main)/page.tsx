@@ -1,13 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Activity, Bot, DollarSign, BarChart } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ChartingClient } from './charting/_components/charting-client';
+import MarketsPage from './markets/page';
 
 export default function DashboardPage() {
   return (
     <>
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <Card className={cn("bg-card/80 backdrop-blur-sm transition-all duration-300 neon-box")}>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+           <Card className="bg-card/80 backdrop-blur-sm border-border/20 neon-box">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Total Revenue
@@ -21,7 +23,7 @@ export default function DashboardPage() {
               </p>
             </CardContent>
           </Card>
-          <Card className={cn("bg-card/80 backdrop-blur-sm transition-all duration-300 neon-box")}>
+          <Card className="bg-card/80 backdrop-blur-sm border-border/20 neon-box">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 AI Signals
@@ -35,7 +37,7 @@ export default function DashboardPage() {
               </p>
             </CardContent>
           </Card>
-          <Card className={cn("bg-card/80 backdrop-blur-sm transition-all duration-300 neon-box")}>
+          <Card className="bg-card/80 backdrop-blur-sm border-border/20 neon-box">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Active Now
@@ -49,6 +51,28 @@ export default function DashboardPage() {
               </p>
             </CardContent>
           </Card>
+           <Card className="bg-card/80 backdrop-blur-sm border-border/20 neon-box">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground">
+                Market Volume
+              </CardTitle>
+              <BarChart className="h-4 w-4 text-pink-500" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">$1.2T</div>
+              <p className="text-xs text-muted-foreground">
+                -5.2% from yesterday
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-7 gap-6">
+          <div className="lg:col-span-4">
+             <MarketsPage />
+          </div>
+          <div className="lg:col-span-3">
+             <ChartingClient />
+          </div>
         </div>
       </div>
     </>

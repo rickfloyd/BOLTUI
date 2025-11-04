@@ -223,50 +223,39 @@ export function Header({ pageTitle }: { pageTitle: string }) {
           <svg
             width="32"
             height="32"
-            viewBox="0 0 24 24"
+            viewBox="0 0 100 100"
             className="text-primary animate-soft-pulse"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
-              <linearGradient
-                id="logo-gradient"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop offset="0%" style={{ stopColor: 'hsl(var(--primary))' }} />
-                <stop offset="100%" style={{ stopColor: 'hsl(var(--accent))' }} />
+              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" />
+                <stop offset="100%" stopColor="hsl(var(--accent))" />
               </linearGradient>
             </defs>
             <path
-              d="M12 2L2 7V17L12 22L22 17V7L12 2Z"
-              stroke="url(#logo-gradient)"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
+              d="M10 50 L50 10 L90 50 L50 90 Z"
+              fill="none"
+              stroke="url(#logoGradient)"
+              strokeWidth="5"
             />
             <path
-              d="M2 7L12 12L22 7"
-              stroke="url(#logo-gradient)"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
+              d="M50 10 L50 50 L70 30"
+              fill="none"
+              stroke="hsl(var(--primary))"
+              strokeWidth="5"
             />
             <path
-              d="M12 12V22"
-              stroke="url(#logo-gradient)"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
+              d="M50 90 L50 50 L30 70"
+              fill="none"
+              stroke="hsl(var(--accent))"
+              strokeWidth="5"
             />
-            <circle
-              cx="12"
-              cy="12"
-              r="2"
-              fill="hsl(var(--accent))"
-              className="animate-glow"
-              style={{ animationDuration: '2s' }}
-            />
+            <circle cx="50" cy="50" r="8" fill="hsl(var(--background))" />
+            <circle cx="50" cy="50" r="4" fill="url(#logoGradient)" />
           </svg>
-          <span className="text-xl font-bold font-headline text-foreground tracking-widest neon-text">
-            QUANTUM
+          <span className="text-xl font-bold font-headline text-foreground tracking-widest uppercase">
+            Quantum Charts
           </span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
@@ -281,7 +270,7 @@ export function Header({ pageTitle }: { pageTitle: string }) {
                 className={cn(
                   'flex items-center gap-2 text-sm font-medium transition-colors',
                   isActive
-                    ? 'text-primary'
+                    ? 'text-primary neon-text'
                     : 'text-muted-foreground hover:text-foreground'
                 )}
               >
@@ -299,7 +288,7 @@ export function Header({ pageTitle }: { pageTitle: string }) {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-              <Avatar className="h-10 w-10 border-2 border-accent/50">
+              <Avatar className="h-10 w-10 border-2 border-accent/50 neon-box">
                 {userAvatar && (
                   <AvatarImage
                     src={userAvatar.imageUrl}
