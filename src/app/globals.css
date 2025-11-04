@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 271 86% 53%; /* Electric Purple */
+    --primary: 180 100% 50%; /* Cyan */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -22,7 +22,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 180 100% 50%; /* Cyan */
+    --accent: 327 100% 54%; /* Hot Pink */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -30,22 +30,22 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 261 83% 58%; /* A slightly lighter purple for rings */
+    --ring: 180 100% 50%; /* Cyan */
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 224 71% 4%; /* Near black with a hint of blue */
+    --background: 240 10% 3%; /* True Dark */
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 11%; /* Dark blue-ish card */
+    --card: 224 20% 10%; /* Darker Card */
     --card-foreground: 210 40% 98%;
 
-    --popover: 224 71% 4%;
+    --popover: 240 10% 3%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 271 86% 53%; /* Electric Purple */
+    --primary: 180 100% 50%; /* Cyan */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 217 33% 17%;
@@ -54,7 +54,7 @@
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 180 100% 50%; /* Cyan */
+    --accent: 327 100% 54%; /* Hot Pink */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
@@ -62,7 +62,7 @@
 
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 271 86% 65%;
+    --ring: 180 100% 50%; /* Cyan */
     
     --chart-1: 180 100% 50%; /* Cyan */
     --chart-2: 327 100% 54%; /* Hot Pink */
