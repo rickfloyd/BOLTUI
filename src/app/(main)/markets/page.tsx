@@ -22,11 +22,12 @@ const marketData = [
 ];
 
 const badgeColors = [
-  'bg-[#ff00ff]', // Magenta
-  'bg-[#00ccff]', // Neon Blue
-  'bg-[#ff6600]', // Neon Orange
-  'bg-[#a020f0]', // Electric Purple
-  'bg-[#ff0066]', // Hot Pink
+  'bg-primary',      // Hot Pink/Red Lava
+  'bg-accent',       // Electric Cyan
+  'bg-orange-500',   // Neon Orange
+  'bg-purple-600',   // Electric Purple
+  'bg-pink-500',     // Bright Pink
+  'bg-lime-400',     // Neon Lime
 ];
 
 
