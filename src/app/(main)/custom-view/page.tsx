@@ -1,0 +1,25 @@
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ArrowLeft } from 'lucide-react';
+
+export default function CustomViewPage() {
+  return (
+    <div className="flex-1 p-8 pt-6">
+      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+        <CardHeader className="flex flex-row items-center justify-between">
+          <CardTitle>Custom View</CardTitle>
+          <Button asChild variant="outline">
+            <Link href="/">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Home
+            </Link>
+          </Button>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">This is the custom view page.</p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}

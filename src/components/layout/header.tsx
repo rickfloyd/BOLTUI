@@ -8,6 +8,8 @@ import {
   Cpu,
   Globe,
   LayoutDashboard,
+  SlidersHorizontal,
+  View,
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -84,6 +86,8 @@ const navItems = [
   { href: '/markets', label: 'Markets', icon: CandlestickChart },
   { href: '/charting', label: 'Chart Engine', icon: AreaChart },
   { href: '/ai-analysis', label: 'AI Analysis', icon: Cpu },
+  { href: '/simple-view', label: 'Simple View', icon: View },
+  { href: '/custom-view', label: 'Custom View', icon: SlidersHorizontal },
 ];
 
 function GlobalNav() {
