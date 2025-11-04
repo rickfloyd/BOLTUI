@@ -13,7 +13,8 @@ import {
   SlidersHorizontal,
   View,
   Building2,
-  Bitcoin
+  Bitcoin,
+  Wallet
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -94,6 +95,7 @@ const navItems = [
   { href: '/ai-analysis', label: 'AI Analysis', icon: Cpu },
   { href: '/exchanges', label: 'Exchanges', icon: Building2 },
   { href: '/crypto', label: 'Crypto', icon: Bitcoin },
+  { href: '/forex', label: 'Forex', icon: Wallet },
   { href: '/simple-view', label: 'Simple View', icon: View },
   { href: '/custom-view', label: 'Custom View', icon: SlidersHorizontal },
 ];
