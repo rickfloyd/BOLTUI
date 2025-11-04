@@ -10,8 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Orbitron', 'sans-serif'],
-        headline: ['Orbitron', 'sans-serif'],
+        sans: ['var(--font-orbitron)', 'sans-serif'],
+        body: ['var(--font-orbitron)', 'sans-serif'],
+        headline: ['var(--font-orbitron)', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -89,8 +90,8 @@ export default {
           },
         },
         'soft-pulse': {
-          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
-          '50%': { transform: 'scale(1.05)', opacity: '0.9' },
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.03)' },
         },
         glow: {
           '0%, 100%': {

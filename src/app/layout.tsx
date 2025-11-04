@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   description: 'Next-generation financial and sports intelligence platform',
 };
 
-const orbitron = Orbitron({ subsets: ['latin'] });
+const orbitron = Orbitron({ 
+  subsets: ['latin'],
+  variable: '--font-orbitron',
+});
 
 export default function RootLayout({
   children,
@@ -16,13 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark h-full">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" />
-      </head>
-      <body className={`${orbitron.className} h-full antialiased`}>
+    <html lang="en" className={`${orbitron.variable} dark h-full`}>
+      <body className={`h-full antialiased font-sans`}>
         {children}
         <Toaster />
       </body>
