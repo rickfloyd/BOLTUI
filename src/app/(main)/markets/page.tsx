@@ -37,7 +37,7 @@ export default function MarketsPage() {
               {marketData.map((item) => (
                 <TableRow key={item.pair} className="border-border/20 hover:bg-accent/5">
                   <TableCell className="font-medium text-foreground">{item.pair}</TableCell>
-                  <TableCell><Badge variant={item.type === 'Crypto' ? 'default' : 'secondary'} className={item.type === 'Forex' ? 'bg-primary/50' : item.type === 'Metals' ? 'bg-orange-500/50' : item.type === 'Indices' ? 'bg-accent/50' : item.type === 'Futures' ? 'bg-lime-500/50' : ''}>{item.type}</Badge></TableCell>
+                  <TableCell><Badge variant={item.type === 'Crypto' ? 'default' : 'secondary'} className={item.type === 'Forex' ? 'bg-primary' : item.type === 'Metals' ? 'bg-[#ff6600]' : item.type === 'Indices' ? 'bg-[#ff0066]' : item.type === 'Futures' ? 'bg-[#39ff14]' : ''}>{item.type}</Badge></TableCell>
                   <TableCell className="text-right font-mono">{item.price}</TableCell>
                   <TableCell className={`text-right font-mono flex justify-end items-center gap-2 ${item.trend === 'up' ? 'text-accent' : 'text-pink-500'}`}>
                     {item.change}
