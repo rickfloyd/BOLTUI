@@ -265,7 +265,7 @@ export function Header({ pageTitle }: { pageTitle: string }) {
               style={{ animationDuration: '2s' }}
             />
           </svg>
-          <span className="text-xl font-bold font-headline text-foreground tracking-widest">
+          <span className="text-xl font-bold font-headline text-foreground tracking-widest neon-text">
             QUANTUM
           </span>
         </Link>

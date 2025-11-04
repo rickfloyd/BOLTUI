@@ -1,12 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Activity, Bot, DollarSign, BarChart } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export default function DashboardPage() {
   return (
     <>
       <div className="flex-1 space-y-4 p-8 pt-6">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <Card className="bg-card/80 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.2)]">
+          <Card className={cn("bg-card/80 backdrop-blur-sm transition-all duration-300 neon-box")}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Total Revenue
@@ -20,7 +21,7 @@ export default function DashboardPage() {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-card/80 backdrop-blur-sm border-accent/20 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--accent)/0.2)]">
+          <Card className={cn("bg-card/80 backdrop-blur-sm transition-all duration-300 neon-box")}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 AI Signals
@@ -34,7 +35,7 @@ export default function DashboardPage() {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-card/80 backdrop-blur-sm border-orange-500/20 hover:border-orange-500/50 transition-all duration-300 hover:shadow-[0_0_20px_#FF6600/0.2]">
+          <Card className={cn("bg-card/80 backdrop-blur-sm transition-all duration-300 neon-box")}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Active Now
