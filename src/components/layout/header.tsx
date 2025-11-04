@@ -226,41 +226,12 @@ export function Header({ pageTitle }: { pageTitle: string }) {
     <header className="h-20 flex items-center justify-between px-6 bg-card/30 backdrop-blur-sm border-b border-border/20 sticky top-0 z-10">
       <div className="flex items-center gap-10">
         <Link href="/" className="flex items-center gap-3">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 100 100"
-            className="text-primary"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ filter: 'drop-shadow(0 0 5px hsl(var(--primary)))' }}
-          >
-            <defs>
-              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(var(--primary))" />
-                <stop offset="100%" stopColor="hsl(var(--accent))" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M10 50 L50 10 L90 50 L50 90 Z"
-              fill="none"
-              stroke="url(#logoGradient)"
-              strokeWidth="5"
-            />
-            <path
-              d="M50 10 L50 50 L70 30"
-              fill="none"
-              stroke="hsl(var(--primary))"
-              strokeWidth="5"
-            />
-            <path
-              d="M50 90 L50 50 L30 70"
-              fill="none"
-              stroke="hsl(var(--accent))"
-              strokeWidth="5"
-            />
-            <circle cx="50" cy="50" r="8" fill="hsl(var(--background))" />
-            <circle cx="50" cy="50" r="4" fill="url(#logoGradient)" />
-          </svg>
+          <div className="logo-container">
+            <video id="header-logo" autoPlay loop muted playsInline>
+              <source src="/assets/logo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
           <span className="text-xl font-bold text-foreground tracking-widest uppercase neon-text">
             Quantum Charts
           </span>

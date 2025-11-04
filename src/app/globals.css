@@ -76,7 +76,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: linear-gradient(to bottom, #000000, #1c1c1c, #333333);
+    background-image: linear-gradient(to bottom, #000000, #0a0a0f, #1a1a1a);
     font-family: 'Orbitron', sans-serif;
   }
 }
@@ -122,6 +122,22 @@
       background-color: hsl(var(--accent) / 0.1);
       color: hsl(var(--accent));
       box-shadow: 0 0 10px hsl(var(--accent) / 1), 0 0 15px hsl(var(--accent) / 0.7) inset;
+  }
+
+  /* This styles your new video logo */
+  .logo-container {
+    /* This controls the size */
+    height: 192px; /* This is about 2 inches on a standard screen */
+    width: auto;   /* This keeps the shape correct */
+  }
+
+  #header-logo {
+    /* This makes the video fill the container */
+    height: 100%;
+    width: 100%;
+    
+    /* This optional line can make the colors POP even more */
+    /* filter: brightness(1.1) saturate(1.1); */
   }
 
   @keyframes soft-pulse {
