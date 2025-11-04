@@ -5,7 +5,7 @@ export default function DashboardPage() {
   return (
     <>
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Card className="bg-card/80 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.2)]">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
@@ -31,20 +31,6 @@ export default function DashboardPage() {
               <div className="text-2xl font-bold">+23</div>
               <p className="text-xs text-muted-foreground">
                 +180.1% from last month
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-card/80 backdrop-blur-sm border-pink-500/20 hover:border-pink-500/50 transition-all duration-300 hover:shadow-[0_0_20px_#FF1493/0.2]">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">
-                Sports Events
-              </CardTitle>
-              <BarChart className="h-4 w-4 text-pink-500" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">+12</div>
-              <p className="text-xs text-muted-foreground">
-                +19% from last month
               </p>
             </CardContent>
           </Card>
