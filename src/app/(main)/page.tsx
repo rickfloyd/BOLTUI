@@ -8,7 +8,18 @@ export default function DashboardPage() {
   return (
     <>
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 lg:grid-cols-7 gap-6">
+          {/* Main content pushed to the right */}
+          <div className="lg:col-span-4 lg:col-start-4">
+             <MarketsPage />
+          </div>
+          <div className="lg:col-span-3 lg:col-start-1 lg:row-start-1">
+             <ChartingClient />
+          </div>
+        </div>
+        
+        {/* Stat cards below the main content */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 pt-6">
            <Card className="neon-box">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
@@ -65,14 +76,6 @@ export default function DashboardPage() {
               </p>
             </CardContent>
           </Card>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-7 gap-6">
-          <div className="lg:col-span-4">
-             <MarketsPage />
-          </div>
-          <div className="lg:col-span-3">
-             <ChartingClient />
-          </div>
         </div>
       </div>
     </>
