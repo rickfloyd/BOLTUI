@@ -119,7 +119,7 @@ export default function ForexClient() {
           <CardTitle>The Challenge of Sourcing Forex Data</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground">
+          <p className="text-[#ff6600]">
             The foreign exchange market presents a unique challenge for data aggregation. Unlike equities or futures, which trade on centralized exchanges, the spot Forex market is a decentralized, Over-The-Counter (OTC) market. There is no single tape or central clearinghouse; instead, trading occurs through a global network of large banks (the interbank market) and liquidity providers. This means that there is no single "official" price for a currency pair at any given moment.
           </p>
         </CardContent>

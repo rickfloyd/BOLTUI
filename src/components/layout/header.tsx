@@ -14,7 +14,9 @@ import {
   View,
   Building2,
   Bitcoin,
-  Wallet
+  Wallet,
+  Landmark,
+  FileText
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -96,6 +98,8 @@ const navItems = [
   { href: '/exchanges', label: 'Exchanges', icon: Building2 },
   { href: '/crypto', label: 'Crypto', icon: Bitcoin },
   { href: '/forex', label: 'Forex', icon: Wallet },
+  { href: '/bonds', label: 'Bonds', icon: Landmark },
+  { href: '/indices', label: 'Indices', icon: FileText },
   { href: '/simple-view', label: 'Simple View', icon: View },
   { href: '/custom-view', label: 'Custom View', icon: SlidersHorizontal },
 ];
