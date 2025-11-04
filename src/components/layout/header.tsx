@@ -16,7 +16,8 @@ import {
   Bitcoin,
   Wallet,
   Landmark,
-  FileText
+  FileText,
+  BrainCircuit
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -100,6 +101,7 @@ const navItems = [
   { href: '/forex', label: 'Forex', icon: Wallet },
   { href: '/bonds', label: 'Bonds', icon: Landmark },
   { href: '/indices', label: 'Indices', icon: FileText },
+  { href: '/strategy', label: 'Strategy', icon: BrainCircuit },
   { href: '/simple-view', label: 'Simple View', icon: View },
   { href: '/custom-view', label: 'Custom View', icon: SlidersHorizontal },
 ];
@@ -258,7 +260,7 @@ export function Header({ pageTitle }: { pageTitle: string }) {
             <circle cx="50" cy="50" r="8" fill="hsl(var(--background))" />
             <circle cx="50" cy="50" r="4" fill="url(#logoGradient)" />
           </svg>
-          <span className="text-xl font-bold font-headline text-foreground tracking-widest uppercase">
+          <span className="text-xl font-bold font-headline text-foreground tracking-widest uppercase neon-text">
             Quantum Charts
           </span>
         </Link>
