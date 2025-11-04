@@ -92,7 +92,7 @@ const dexData = {
 export default function CryptoClient() {
   return (
     <div className="space-y-6">
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Centralized Exchanges (CEXs)</CardTitle>
           <CardDescription>A list of major centralized exchanges providing spot and derivative data.</CardDescription>
@@ -108,7 +108,7 @@ export default function CryptoClient() {
         </CardContent>
       </Card>
 
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Decentralized Exchanges (DEXs)</CardTitle>
           <CardDescription>A comprehensive list of supported DEXs, organized by their native blockchain.</CardDescription>

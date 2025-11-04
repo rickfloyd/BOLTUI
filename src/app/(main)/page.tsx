@@ -9,7 +9,7 @@ export default function DashboardPage() {
     <>
       <div className="flex-1 space-y-4 p-8 pt-6">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-           <Card className="bg-card/80 backdrop-blur-sm border-border/20 neon-box">
+           <Card className="neon-box">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Total Revenue
@@ -23,7 +23,7 @@ export default function DashboardPage() {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-card/80 backdrop-blur-sm border-border/20 neon-box">
+          <Card className="neon-box">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 AI Signals
@@ -37,7 +37,7 @@ export default function DashboardPage() {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-card/80 backdrop-blur-sm border-border/20 neon-box">
+          <Card className="neon-box">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Active Now
@@ -51,7 +51,7 @@ export default function DashboardPage() {
               </p>
             </CardContent>
           </Card>
-           <Card className="bg-card/80 backdrop-blur-sm border-border/20 neon-box">
+           <Card className="neon-box">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 Market Volume

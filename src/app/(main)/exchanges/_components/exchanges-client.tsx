@@ -63,7 +63,7 @@ const exchangesData = {
 
 export default function ExchangesClient() {
   return (
-    <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+    <Card className="neon-box">
       <CardHeader>
         <CardTitle>Supported Stock Exchanges</CardTitle>
         <CardDescription>A comprehensive list of major stock exchanges available on the platform.</CardDescription>

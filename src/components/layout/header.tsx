@@ -230,8 +230,9 @@ export function Header({ pageTitle }: { pageTitle: string }) {
             width="32"
             height="32"
             viewBox="0 0 100 100"
-            className="text-primary animate-soft-pulse"
+            className="text-primary"
             xmlns="http://www.w3.org/2000/svg"
+            style={{ filter: 'drop-shadow(0 0 5px hsl(var(--primary)))' }}
           >
             <defs>
               <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -260,7 +261,7 @@ export function Header({ pageTitle }: { pageTitle: string }) {
             <circle cx="50" cy="50" r="8" fill="hsl(var(--background))" />
             <circle cx="50" cy="50" r="4" fill="url(#logoGradient)" />
           </svg>
-          <span className="text-xl font-bold font-headline text-foreground tracking-widest uppercase neon-text">
+          <span className="text-xl font-bold text-foreground tracking-widest uppercase neon-text">
             Quantum Charts
           </span>
         </Link>
@@ -276,7 +277,7 @@ export function Header({ pageTitle }: { pageTitle: string }) {
                 className={cn(
                   'flex items-center gap-2 text-sm font-medium transition-colors',
                   isActive
-                    ? 'text-primary neon-text'
+                    ? 'text-accent neon-text'
                     : 'text-muted-foreground hover:text-foreground'
                 )}
               >

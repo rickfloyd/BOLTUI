@@ -114,7 +114,7 @@ const allPairs = [
 export default function ForexClient() {
   return (
     <div className="space-y-6">
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>The Challenge of Sourcing Forex Data</CardTitle>
         </CardHeader>
@@ -125,7 +125,7 @@ export default function ForexClient() {
         </CardContent>
       </Card>
 
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Direct Data Providers</CardTitle>
           <CardDescription>A list of direct sources for the "Currency" data category.</CardDescription>
@@ -141,7 +141,7 @@ export default function ForexClient() {
         </CardContent>
       </Card>
 
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Classification of Currency Pairs</CardTitle>
           <CardDescription>Pairs are organized into tiers based on liquidity and trading volume.</CardDescription>

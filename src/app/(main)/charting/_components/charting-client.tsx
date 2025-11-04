@@ -22,7 +22,7 @@ const chartConfig = {
 
 export function ChartingClient() {
   return (
-    <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+    <Card className="neon-box">
       <CardHeader>
         <CardTitle className="text-lg font-headline">Asset Price (Mock Data)</CardTitle>
       </CardHeader>

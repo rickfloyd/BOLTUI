@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Loader2, Sparkles, TrendingUp } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const formSchema = z.object({
   ticker: z.string().min(1, 'Ticker is required.').max(10, 'Ticker is too long.'),
@@ -72,7 +73,7 @@ export default function AIAnalysisClient() {
 
   return (
     <div className="space-y-6">
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Generate AI Insights</CardTitle>
           <CardDescription>Enter a stock ticker to generate analysis or suggest trading signals.</CardDescription>
@@ -94,11 +95,11 @@ export default function AIAnalysisClient() {
                 )}
               />
               <div className="flex space-x-4">
-                <Button type="button" onClick={form.handleSubmit(handleAnalysis)} disabled={!!isLoading} className="animate-soft-pulse hover:bg-primary/80">
+                <Button type="button" onClick={form.handleSubmit(handleAnalysis)} disabled={!!isLoading} className="btn-primary">
                   {isLoading === 'analysis' ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
                   Generate Market Analysis
                 </Button>
-                <Button type="button" onClick={form.handleSubmit(handleSignal)} disabled={!!isLoading} variant="outline" className="border-accent text-accent hover:bg-accent/10 hover:text-accent">
+                <Button type="button" onClick={form.handleSubmit(handleSignal)} disabled={!!isLoading} variant="outline" className="btn-accent">
                   {isLoading === 'signal' ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <TrendingUp className="mr-2 h-4 w-4" />}
                   Suggest Trading Signal
                 </Button>
@@ -109,7 +110,7 @@ export default function AIAnalysisClient() {
       </Card>
 
       {error && (
-        <Card className="bg-destructive/20 border-destructive text-destructive-foreground">
+        <Card className="bg-destructive/20 border-destructive text-destructive-foreground neon-box">
           <CardHeader>
             <CardTitle>Error</CardTitle>
           </CardHeader>
@@ -118,7 +119,7 @@ export default function AIAnalysisClient() {
       )}
 
       {analysis && (
-        <Card className="bg-card/80 backdrop-blur-sm border-primary/20 animate-in fade-in">
+        <Card className="neon-box animate-in fade-in">
           <CardHeader>
             <CardTitle className="text-primary flex items-center gap-2"><Sparkles className="h-5 w-5"/> Market Analysis for {form.getValues('ticker')}</CardTitle>
           </CardHeader>
@@ -129,7 +130,7 @@ export default function AIAnalysisClient() {
       )}
 
       {signal && (
-        <Card className="bg-card/80 backdrop-blur-sm border-accent/20 animate-in fade-in">
+        <Card className="neon-box animate-in fade-in">
           <CardHeader>
             <CardTitle className="text-accent flex items-center gap-2"><TrendingUp className="h-5 w-5"/> Trading Signal for {form.getValues('ticker')}</CardTitle>
           </CardHeader>

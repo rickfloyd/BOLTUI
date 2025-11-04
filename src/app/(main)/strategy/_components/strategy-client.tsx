@@ -25,7 +25,7 @@ const strategicThemes = [
 export default function StrategyClient() {
   return (
     <div className="space-y-6">
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Key Strategic Themes</CardTitle>
           <CardDescription>The core pillars that define the platform's market position and value proposition.</CardDescription>
@@ -43,7 +43,7 @@ export default function StrategyClient() {
         </CardContent>
       </Card>
 
-       <Card className="bg-card/80 backdrop-blur-sm border-primary/20 neon-box">
+       <Card className="neon-box border-primary/80">
         <CardHeader>
           <CardTitle className="text-primary">Final Expert Assessment</CardTitle>
         </CardHeader>

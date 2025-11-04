@@ -48,7 +48,7 @@ const otherIndices = [
 export default function IndicesClient() {
   return (
     <div className="space-y-6">
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Role of Indices on the Platform</CardTitle>
         </CardHeader>
@@ -59,7 +59,7 @@ export default function IndicesClient() {
         </CardContent>
       </Card>
       
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Catalog of Major World Indices</CardTitle>
           <CardDescription>A representative sample of the most widely followed indices available.</CardDescription>
@@ -125,7 +125,7 @@ export default function IndicesClient() {
         </CardContent>
       </Card>
       
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Other Index Types</CardTitle>
           <CardDescription>Specialized indices for nuanced market analysis.</CardDescription>

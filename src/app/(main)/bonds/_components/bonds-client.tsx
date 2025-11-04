@@ -50,7 +50,7 @@ const economicIndicators = [
 export default function BondsClient() {
   return (
     <div className="space-y-6">
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Focus on Sovereign Debt and Macro Analysis</CardTitle>
         </CardHeader>
@@ -61,7 +61,7 @@ export default function BondsClient() {
         </CardContent>
       </Card>
 
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Government Bond Yield Data</CardTitle>
           <CardDescription>A list of countries with available bond yield data, organized by region.</CardDescription>
@@ -97,7 +97,7 @@ export default function BondsClient() {
         </CardContent>
       </Card>
       
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader>
           <CardTitle>Economic Data as Chartable Symbols</CardTitle>
           <CardDescription>Key economic indicators are rendered as searchable and chartable symbols, allowing for direct overlay on price charts.</CardDescription>

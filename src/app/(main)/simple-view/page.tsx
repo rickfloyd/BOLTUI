@@ -6,7 +6,7 @@ import { ArrowLeft } from 'lucide-react';
 export default function SimpleViewPage() {
   return (
     <div className="flex-1 p-8 pt-6">
-      <Card className="bg-card/80 backdrop-blur-sm border-border/20">
+      <Card className="neon-box">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle>Simple View</CardTitle>
           <Button asChild variant="outline">

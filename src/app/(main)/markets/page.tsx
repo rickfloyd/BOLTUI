@@ -9,6 +9,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Card } from '@/components/ui/card';
 
 const marketData = [
   { pair: 'EUR/USD', price: '1.0712', change: '+0.12%', trend: 'up', type: 'Forex' },
@@ -21,10 +22,11 @@ const marketData = [
 ];
 
 const badgeColors = [
+  'bg-[#ff00ff]', // Magenta
+  'bg-[#00ccff]', // Neon Blue
+  'bg-[#ff6600]', // Neon Orange
+  'bg-[#a020f0]', // Electric Purple
   'bg-[#ff0066]', // Hot Pink
-  'bg-[#00ffff]', // Neon Blue
-  'bg-[#ff6600]', // Fluorescent Orange
-  'bg-[#ff00ff]', // Purple/Magenta
 ];
 
 
@@ -42,7 +44,7 @@ export default function MarketsPage() {
   return (
     <>
       <div className="flex-1 p-8 pt-6">
-        <div className="bg-card/80 backdrop-blur-sm border border-border/20 rounded-lg">
+        <Card className="neon-box">
           <Table>
             <TableHeader>
               <TableRow className="border-border/30">
@@ -70,7 +72,7 @@ export default function MarketsPage() {
               ))}
             </TableBody>
           </Table>
-        </div>
+        </Card>
       </div>
     </>
   );
