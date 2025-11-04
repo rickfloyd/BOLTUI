@@ -49,18 +49,6 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
         </div>
-        <div className="pt-6">
-            <Card className="bg-card/80 backdrop-blur-sm border-border/20">
-                <CardHeader>
-                    <CardTitle className="text-lg font-headline">Welcome to Quantum CyberVision</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground">
-                        This is your central hub for real-time financial data, AI-powered insights, and global connectivity. Navigate through the modules using the sidebar to explore the full capabilities of the platform. Your dashboard is fully customizable to display the information that matters most to you.
-                    </p>
-                </CardContent>
-            </Card>
-        </div>
       </div>
     </>
   );
