@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 180 100% 50%; /* Cyan */
+    --primary: 180 100% 50%; /* Electric Cyan */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -22,7 +22,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 327 100% 54%; /* Hot Pink */
+    --accent: 300 100% 50%; /* Magenta */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -30,7 +30,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 180 100% 50%; /* Cyan */
+    --ring: 180 100% 50%; /* Electric Cyan */
 
     --radius: 0.5rem;
   }
@@ -45,7 +45,7 @@
     --popover: 240 10% 3%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 180 100% 50%; /* Cyan */
+    --primary: 180 100% 50%; /* Electric Cyan */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 217 33% 17%;
@@ -54,7 +54,7 @@
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 327 100% 54%; /* Hot Pink */
+    --accent: 300 100% 50%; /* Magenta */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
@@ -62,13 +62,13 @@
 
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 180 100% 50%; /* Cyan */
+    --ring: 180 100% 50%; /* Electric Cyan */
     
-    --chart-1: 180 100% 50%; /* Cyan */
-    --chart-2: 327 100% 54%; /* Hot Pink */
-    --chart-3: 271 86% 53%; /* Electric Purple */
-    --chart-4: 24 100% 50%;  /* Orange */
-    --chart-5: 300 100% 50%; /* Magenta */
+    --chart-1: 180 100% 50%; /* Electric Cyan */
+    --chart-2: 300 100% 50%; /* Magenta */
+    --chart-3: 337 100% 50%; /* Hot Pink */
+    --chart-4: 24 100% 50%;  /* Neon Orange */
+    --chart-5: 90 87% 53%; /* Neon Green */
   }
 }
 
