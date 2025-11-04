@@ -3,6 +3,8 @@ import { Activity, Bot, DollarSign, BarChart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export default function DashboardPage() {
+  const boxes = Array.from({ length: 20 });
+
   return (
     <>
       <div className="flex-1 p-8 pt-6">
@@ -67,6 +69,18 @@ export default function DashboardPage() {
                 </CardContent>
               </Card>
             </div>
+
+            {/* 20 Individual Boxes */}
+            <div className="grid grid-cols-5 gap-4">
+                {boxes.map((_, i) => (
+                    <Card key={i} className="neon-box h-32">
+                        <CardContent className="flex items-center justify-center h-full">
+                            <p className="text-muted-foreground">Box {i + 1}</p>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
+
           </div>
         </div>
       </div>
