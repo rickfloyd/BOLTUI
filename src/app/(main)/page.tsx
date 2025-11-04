@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Activity, Bot, DollarSign, BarChart } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 export default function DashboardPage() {
   const boxes = Array.from({ length: 20 });
@@ -9,7 +8,7 @@ export default function DashboardPage() {
     <>
       <div className="flex-1 p-8 pt-6">
         <div className="grid grid-cols-24 gap-2 justify-items-end">
-          <div className="col-span-16 space-y-6">
+          <div className="col-span-24 space-y-6">
             {/* Stat cards below the main content */}
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               <Card className="neon-box">
@@ -73,7 +72,7 @@ export default function DashboardPage() {
             {/* 20 Individual Boxes */}
             <div className="grid grid-cols-5 gap-4">
                 {boxes.map((_, i) => (
-                    <Card key={i} className="neon-box h-32">
+                    <Card key={i} className="neon-box h-40">
                         <CardContent className="flex items-center justify-center h-full">
                             <p className="text-muted-foreground">Box {i + 1}</p>
                         </CardContent>
