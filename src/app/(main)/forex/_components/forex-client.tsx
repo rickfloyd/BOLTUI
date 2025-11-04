@@ -19,13 +19,13 @@ import {
 const dataProviders = ['ActivTrades', 'BlackBull Markets', 'Blueberry', 'OANDA', 'FOREX.com', 'FXCM'];
 
 const majorPairs = [
-  { pair: 'EUR/USD', name: 'Euro / US Dollar' },
-  { pair: 'USD/JPY', name: 'US Dollar / Japanese Yen' },
-  { pair: 'GBP/USD', name: 'British Pound / US Dollar' },
-  { pair: 'USD/CHF', name: 'US Dollar / Swiss Franc' },
-  { pair: 'AUD/USD', name: 'Australian Dollar / US Dollar' },
-  { pair: 'USD/CAD', name: 'US Dollar / Canadian Dollar' },
-  { pair: 'NZD/USD', name: 'New Zealand Dollar / US Dollar' },
+  { pair: 'EUR/USD', name: 'Euro / US Dollar', nickname: 'Fiber' },
+  { pair: 'USD/JPY', name: 'US Dollar / Japanese Yen', nickname: 'Gopher' },
+  { pair: 'GBP/USD', name: 'British Pound / US Dollar', nickname: 'Cable' },
+  { pair: 'USD/CHF', name: 'US Dollar / Swiss Franc', nickname: 'Swissie' },
+  { pair: 'AUD/USD', name: 'Australian Dollar / US Dollar', nickname: 'Aussie' },
+  { pair: 'USD/CAD', name: 'US Dollar / Canadian Dollar', nickname: 'Loonie' },
+  { pair: 'NZD/USD', name: 'New Zealand Dollar / US Dollar', nickname: 'Kiwi' },
 ];
 
 const minorPairs = [
@@ -157,6 +157,7 @@ export default function ForexClient() {
                     <TableRow className="border-border/30">
                       <TableHead className="text-muted-foreground font-bold">Pair</TableHead>
                       <TableHead className="text-muted-foreground font-bold">Name</TableHead>
+                      <TableHead className="text-muted-foreground font-bold">Nickname</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -164,6 +165,7 @@ export default function ForexClient() {
                       <TableRow key={pair.pair} className="border-border/20 hover:bg-accent/5">
                         <TableCell className="font-mono text-foreground">{pair.pair}</TableCell>
                         <TableCell>{pair.name}</TableCell>
+                        <TableCell>{pair.nickname}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
