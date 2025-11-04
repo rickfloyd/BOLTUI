@@ -12,7 +12,8 @@ import {
   Search,
   SlidersHorizontal,
   View,
-  Building2
+  Building2,
+  Bitcoin
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -92,6 +93,7 @@ const navItems = [
   { href: '/charting', label: 'Chart Engine', icon: AreaChart },
   { href: '/ai-analysis', label: 'AI Analysis', icon: Cpu },
   { href: '/exchanges', label: 'Exchanges', icon: Building2 },
+  { href: '/crypto', label: 'Crypto', icon: Bitcoin },
   { href: '/simple-view', label: 'Simple View', icon: View },
   { href: '/custom-view', label: 'Custom View', icon: SlidersHorizontal },
 ];
@@ -329,5 +331,3 @@ export function Header({ pageTitle }: { pageTitle: string }) {
     </header>
   );
 }
-
-    
