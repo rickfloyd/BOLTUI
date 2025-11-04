@@ -1,4 +1,3 @@
-import { Header } from '@/components/layout/header';
 import {
   Table,
   TableBody,
@@ -23,7 +22,6 @@ const marketData = [
 export default function MarketsPage() {
   return (
     <>
-      <Header pageTitle="Markets Dashboard" />
       <div className="flex-1 p-8 pt-6">
         <div className="bg-card/80 backdrop-blur-sm border border-border/20 rounded-lg">
           <Table>

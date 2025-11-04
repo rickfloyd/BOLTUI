@@ -1,4 +1,4 @@
-import { Sidebar } from '@/components/layout/sidebar';
+import { Header } from '@/components/layout/header';
 
 export default function MainLayout({
   children,
@@ -6,8 +6,8 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
+    <div className="flex flex-col min-h-screen">
+      <Header pageTitle="Quantum CyberVision" />
       <main className="flex-1 flex flex-col">
         {children}
       </main>

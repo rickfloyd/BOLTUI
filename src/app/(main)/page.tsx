@@ -1,11 +1,9 @@
-import { Header } from '@/components/layout/header';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Activity, Bot, DollarSign, BarChart } from 'lucide-react';
 
 export default function DashboardPage() {
   return (
     <>
-      <Header pageTitle="Dashboard" />
       <div className="flex-1 space-y-4 p-8 pt-6">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <Card className="bg-card/80 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.2)]">
