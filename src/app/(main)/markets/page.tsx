@@ -10,13 +10,13 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowUpRight, ArrowDownRight } from 'lucide-react';
 
 const marketData = [
-  { pair: 'EUR/USD', price: '1.0712', change: '+0.12%', trend: 'up', type: 'FX' },
+  { pair: 'EUR/USD', price: '1.0712', change: '+0.12%', trend: 'up', type: 'Forex' },
   { pair: 'BTC/USD', price: '67,450.50', change: '-1.56%', trend: 'down', type: 'Crypto' },
   { pair: 'XAU/USD', price: '2,330.75', change: '+0.80%', trend: 'up', type: 'Metals' },
   { pair: 'SPX', price: '5,354.03', change: '+0.25%', trend: 'up', type: 'Indices' },
-  { pair: 'GBP/JPY', price: '197.88', change: '-0.05%', trend: 'down', type: 'FX' },
+  { pair: 'GBP/JPY', price: '197.88', change: '-0.05%', trend: 'down', type: 'Forex' },
   { pair: 'ETH/USD', price: '3,510.20', change: '-2.10%', trend: 'down', type: 'Crypto' },
-  { pair: 'WTI Crude', price: '78.50', change: '+1.50%', trend: 'up', type: 'Commodities' },
+  { pair: 'WTI Crude', price: '78.50', change: '+1.50%', trend: 'up', type: 'Futures' },
 ];
 
 export default function MarketsPage() {
@@ -37,7 +37,7 @@ export default function MarketsPage() {
               {marketData.map((item) => (
                 <TableRow key={item.pair} className="border-border/20 hover:bg-accent/5">
                   <TableCell className="font-medium text-foreground">{item.pair}</TableCell>
-                  <TableCell><Badge variant={item.type === 'Crypto' ? 'default' : 'secondary'} className={item.type === 'FX' ? 'bg-primary/50' : item.type === 'Metals' ? 'bg-orange-500/50' : item.type === 'Indices' ? 'bg-accent/50' : ''}>{item.type}</Badge></TableCell>
+                  <TableCell><Badge variant={item.type === 'Crypto' ? 'default' : 'secondary'} className={item.type === 'Forex' ? 'bg-primary/50' : item.type === 'Metals' ? 'bg-orange-500/50' : item.type === 'Indices' ? 'bg-accent/50' : item.type === 'Futures' ? 'bg-lime-500/50' : ''}>{item.type}</Badge></TableCell>
                   <TableCell className="text-right font-mono">{item.price}</TableCell>
                   <TableCell className={`text-right font-mono flex justify-end items-center gap-2 ${item.trend === 'up' ? 'text-accent' : 'text-pink-500'}`}>
                     {item.change}
