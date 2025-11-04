@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { ArrowUpRight, ArrowDownRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const marketData = [
   { pair: 'EUR/USD', price: '1.0712', change: '+0.12%', trend: 'up', type: 'Forex' },
@@ -19,7 +20,25 @@ const marketData = [
   { pair: 'WTI Crude', price: '78.50', change: '+1.50%', trend: 'up', type: 'Futures' },
 ];
 
+const badgeColors = [
+  'bg-[#ff0066]', // Hot Pink
+  'bg-[#00ffff]', // Neon Blue
+  'bg-[#ff6600]', // Fluorescent Orange
+  'bg-[#ff00ff]', // Purple/Magenta
+];
+
+
 export default function MarketsPage() {
+  // Simple hash function to get a consistent color for a given type
+  const getColorForType = (type: string) => {
+    let hash = 0;
+    for (let i = 0; i < type.length; i++) {
+      hash = type.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const index = Math.abs(hash % badgeColors.length);
+    return badgeColors[index];
+  };
+
   return (
     <>
       <div className="flex-1 p-8 pt-6">
@@ -37,9 +56,13 @@ export default function MarketsPage() {
               {marketData.map((item) => (
                 <TableRow key={item.pair} className="border-border/20 hover:bg-accent/5">
                   <TableCell className="font-medium text-foreground">{item.pair}</TableCell>
-                  <TableCell><Badge variant={item.type === 'Crypto' ? 'default' : 'secondary'} className={item.type === 'Forex' ? 'bg-primary' : item.type === 'Metals' ? 'bg-[#ff6600]' : item.type === 'Indices' ? 'bg-[#ff0066]' : item.type === 'Futures' ? 'bg-[#39ff14]' : ''}>{item.type}</Badge></TableCell>
+                  <TableCell>
+                    <Badge variant="secondary" className={cn('text-black', getColorForType(item.type))}>
+                      {item.type}
+                    </Badge>
+                  </TableCell>
                   <TableCell className="text-right font-mono">{item.price}</TableCell>
-                  <TableCell className={`text-right font-mono flex justify-end items-center gap-2 ${item.trend === 'up' ? 'text-accent' : 'text-pink-500'}`}>
+                  <TableCell className={cn('text-right font-mono flex justify-end items-center gap-2', item.trend === 'up' ? 'text-accent' : 'text-pink-500')}>
                     {item.change}
                     {item.trend === 'up' ? <ArrowUpRight className="h-4 w-4" /> : <ArrowDownRight className="h-4 w-4" />}
                   </TableCell>
