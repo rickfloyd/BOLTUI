@@ -1,6 +1,7 @@
 
 import { Header } from '@/components/layout/header';
 import { MainSidebar } from '@/components/layout/main-sidebar';
+import ClientWrapper from '@/components/ClientWrapper';
 
 export default function Page() {
   const cards = Array.from({ length: 25 }, (_, i) => i + 1);
@@ -34,21 +35,23 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="cards-column">
-                {cards.map((card) => (
-                    <div key={card} className="data-card neon-blue-border">
-                        <div className="card-header">
-                            <span className="card-title">Stock Index {card}</span>
-                        </div>
-                        <div className="card-data">
-                            <span className="price">${(300 + Math.random() * 100).toFixed(2)}</span>
-                            <span className={`change ${Math.random() > 0.5 ? 'positive' : 'negative'}`}>
-                                {(Math.random() * 2 - 1).toFixed(2)}%
-                            </span>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            <ClientWrapper>
+              <div className="cards-column">
+                  {cards.map((card) => (
+                      <div key={card} className="data-card neon-blue-border">
+                          <div className="card-header">
+                              <span className="card-title">Stock Index {card}</span>
+                          </div>
+                          <div className="card-data">
+                              <span className="price">${(300 + Math.random() * 100).toFixed(2)}</span>
+                              <span className={`change ${Math.random() > 0.5 ? 'positive' : 'negative'}`}>
+                                  {(Math.random() * 2 - 1).toFixed(2)}%
+                              </span>
+                          </div>
+                      </div>
+                  ))}
+              </div>
+            </ClientWrapper>
             
             <div className="dxy-card neon-pink-border">
                  <div className="dxy-title">DXY (US Dollar Index)</div>
