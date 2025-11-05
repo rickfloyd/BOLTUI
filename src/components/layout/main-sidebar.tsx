@@ -1,36 +1,65 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link';
 
 export function MainSidebar() {
-  const [isPoliticalOpen, setPoliticalOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState('personalities');
+
+  const toggleMenu = (menuId: string) => {
+    setOpenMenu(openMenu === menuId ? '' : menuId);
+  };
 
   return (
-    <aside className="sidebar-menu">
-      <h2 className="sidebar-title">Main Menu</h2>
-      <nav>
-        <Link href="/markets" className="sidebar-item">Markets</Link>
-        <Link href="/news" className="sidebar-item">News</Link>
-        
-        <div>
-          <button 
-            onClick={() => setPoliticalOpen(!isPoliticalOpen)}
-            className="sidebar-item w-full text-left flex justify-between items-center"
-          >
-            POLITICAL VIEWPOINT
-            <span>{isPoliticalOpen ? '−' : '+'}</span>
-          </button>
-          {isPoliticalOpen && (
-            <div className="sidebar-dropdown">
-              <Link href="#" className="sidebar-item">Democrat</Link>
-              <Link href="#" className="sidebar-item">Republican</Link>
-              <Link href="#" className="sidebar-item">Independent</Link>
-            </div>
-          )}
+    <aside className="left-sidebar">
+      <div className="sidebar-section">
+        <div
+          className="section-title dropdown-toggle neon-cyan"
+          onClick={() => toggleMenu('personalities')}
+        >
+          <span className="dot-indicator"></span> POLITICAL VIEWPOINT
         </div>
+        <div id="personalities-menu" className={`dropdown-menu ${openMenu === 'personalities' ? 'open' : ''}`}>
+          <div className="menu-item">
+            Republican <span className="sub-text">Conservative market analysis</span>
+          </div>
+          <div className="menu-item active-pink">
+            Democrat <span className="sub-text">Progressive economic insights</span>
+          </div>
+          <div className="menu-item">
+            Liberal <span className="sub-text">Social-focused market views</span>
+          </div>
+          <div className="menu-item">
+            Independent <span className="sub-text">Unbiased market perspective</span>
+          </div>
+        </div>
+      </div>
 
-        <Link href="/community" className="sidebar-item">Community</Link>
-      </nav>
+      <div className="sidebar-section">
+        <div className="section-title neon-pink">
+          <span className="dot-indicator"></span> Market Summary
+        </div>
+      </div>
+
+      <div className="sidebar-section platform-section">
+        <div
+          className="section-title dropdown-toggle neon-blue"
+          onClick={() => toggleMenu('platform')}
+        >
+          <span className="dot-indicator"></span> AI-Powered Trading Platform
+        </div>
+        <div id="trading-platform-menu" className={`dropdown-menu platform-menu ${openMenu === 'platform' ? 'open' : ''}`}>
+          <div className="menu-item">AI Price Prediction Engine</div>
+          <div className="menu-item">ML Pattern Recognition</div>
+          <div className="menu-item">Sentiment Analysis AI</div>
+          <div className="menu-item">Smart Risk Management</div>
+          <div className="menu-item">Automated Trading Signals</div>
+          <div className="menu-item">Neural Networks & LSTM</div>
+          <div className="menu-item">Advanced Drawing Tools</div>
+          <div className="menu-item">Real-Time Market Data</div>
+          <div className="menu-item">Portfolio Management</div>
+          <div className="menu-item">Custom Scripting Engine</div>
+          <div className="revolutionary-text">Revolutionary AI Trading Platform!</div>
+        </div>
+      </div>
     </aside>
   );
 }

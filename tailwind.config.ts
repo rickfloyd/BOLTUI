@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
        fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
+        sans: ['Orbitron', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

@@ -1,16 +1,14 @@
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
+import { Orbitron } from 'next/font/google';
 import './globals.css';
-import { Header } from '@/components/layout/header';
-import { MainSidebar } from '@/components/layout/main-sidebar';
 
-const roboto = Roboto({
+const orbitron = Orbitron({
   subsets: ['latin'],
   weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
-  title: 'Market Terminal',
+  title: 'AI Quantum Charts Dashboard',
   description: 'A next-generation market analysis dashboard.',
 };
 
@@ -21,13 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
-        <Header />
-        <main className="dashboard-grid">
-          <MainSidebar />
-          <div className="center-content">{children}</div>
-        </main>
-      </body>
+      <body className={orbitron.className}>{children}</body>
     </html>
   );
 }
