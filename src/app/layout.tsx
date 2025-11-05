@@ -1,6 +1,4 @@
 import type {Metadata} from 'next';
-import './globals.css';
-import { Toaster } from "@/components/ui/toaster";
 import { Roboto } from 'next/font/google';
 import Script from 'next/script';
 
@@ -24,7 +22,6 @@ export default function RootLayout({
     <html lang="en" className={`dark h-full`}>
       <body className={`h-full antialiased`}>
         {children}
-        <Toaster />
         <Script src="https://code.highcharts.com/dashboards/dashboards.js" />
       </body>
     </html>
