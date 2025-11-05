@@ -6,6 +6,14 @@ export default function DashboardPage() {
   const rows = Array.from({ length: 4 });
   const boxesPerRow = 5;
 
+  const happyColors = [
+    'hsl(var(--accent))',      // Cyan
+    'hsl(var(--chart-3))',     // Hot Pink
+    'hsl(var(--chart-4))',     // Neon Orange
+    'hsl(var(--chart-5))',     // Neon Green
+    '#39FF14',                 // Neon Green
+  ];
+
   return (
     <>
       <div className="flex-1 p-8 pt-6">
@@ -75,11 +83,19 @@ export default function DashboardPage() {
             {rows.map((_, rowIndex) => (
               <div key={rowIndex} className="grid grid-cols-5 gap-4">
                 {boxes.slice(rowIndex * boxesPerRow, (rowIndex + 1) * boxesPerRow).map((_, boxIndex) => {
-                  const boxNum = rowIndex * boxesPerRow + boxIndex + 1;
+                  const boxNum = rowIndex * boxesPerRow + boxIndex;
+                  const color = happyColors[boxNum % happyColors.length];
                   return (
-                    <Card key={boxNum} className="neon-box h-40">
+                    <Card 
+                      key={boxNum} 
+                      className="h-40 transition-transform duration-300 ease-in-out hover:scale-105"
+                      style={{
+                        borderColor: color,
+                        boxShadow: `0 0 8px ${color}, 0 0 12px ${color} inset`,
+                      }}
+                    >
                         <CardContent className="flex items-center justify-center h-full">
-                            <p className="text-muted-foreground">Box {boxNum}</p>
+                            <p className="text-muted-foreground">Box {boxNum + 1}</p>
                         </CardContent>
                     </Card>
                   );
