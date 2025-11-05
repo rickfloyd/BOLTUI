@@ -99,7 +99,7 @@ const corporateLinks = [
 
 const navItems = [
   { href: '/', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/markets', label: 'Markets', icon: CandlestickChart },
+  { href: '/markets', label: 'All Markets', icon: CandlestickChart },
   { href: '/charting', label: 'Chart Engine', icon: AreaChart },
   { href: '/ai-analysis', label: 'AI Analysis', icon: Cpu },
   { href: '/compare-prices', label: 'Compare Prices', icon: Scale },
