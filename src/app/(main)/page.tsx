@@ -80,7 +80,7 @@ export default function DashboardPage() {
           </div>
 
           {/* Boxes grouped into rows with vertical spacing */}
-          <div className="flex flex-col space-y-12">
+          <div className="flex flex-col space-y-24">
             {rows.map((row, rowIndex) => (
               <div key={rowIndex} className="grid grid-cols-5 gap-x-4 gap-y-2 w-full">
                 {row.map((_, boxIndex) => {
