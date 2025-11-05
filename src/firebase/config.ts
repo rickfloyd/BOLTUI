@@ -1,11 +1,8 @@
-// NOTE: You MUST replace these placeholders with your actual Firebase project keys
-// You can get this from your Firebase project settings.
 export const firebaseConfig = {
-    apiKey: "YOUR_API_KEY", 
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    databaseURL: "https://YOUR-PROJECT-ID-default-rtdb.firebaseio.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "SENDER_ID",
-    appId: "APP_ID"
+  "projectId": "studio-5247855249-f2913",
+  "appId": "1:95053785979:web:416e0e58d8cf4065adabde",
+  "apiKey": "AIzaSyDYXGlerH2stJeWuOPiulwua3-jLyfOe9Y",
+  "authDomain": "studio-5247855249-f2913.firebaseapp.com",
+  "measurementId": "",
+  "messagingSenderId": "95053785979"
 };

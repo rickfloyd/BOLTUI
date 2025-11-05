@@ -1,0 +1,125 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the Quantum CyberVision platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the user."
+        },
+        "email": {
+          "type": "string",
+          "description": "User's email address.",
+          "format": "email"
+        },
+        "username": {
+          "type": "string",
+          "description": "User's username or display name."
+        },
+        "registrationDate": {
+          "type": "string",
+          "description": "Date and time the user registered.",
+          "format": "date-time"
+        },
+        "profilePicture": {
+          "type": "string",
+          "description": "URL to the user's profile picture.",
+          "format": "uri"
+        },
+        "dashboardConfig": {
+          "type": "string",
+          "description": "Reference to the user's dashboard configuration. (Relationship: User 1:1 DashboardConfig)"
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "username",
+        "registrationDate"
+      ]
+    },
+    "DashboardConfig": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "DashboardConfig",
+      "type": "object",
+      "description": "Stores the user's dashboard configuration, including layout and widget preferences.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the dashboard configuration."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to the User. (Relationship: User 1:1 DashboardConfig)"
+        },
+        "layout": {
+          "type": "string",
+          "description": "The layout configuration for the dashboard (e.g., '3-column')."
+        },
+        "widgets": {
+          "type": "array",
+          "description": "An array of widget identifiers to display on the dashboard.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "layout",
+        "widgets"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user profiles. Path-based ownership for simple security rules.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/dashboardConfig/{configId}",
+        "definition": {
+          "entityName": "DashboardConfig",
+          "schema": {
+            "$ref": "#/backend/entities/DashboardConfig"
+          },
+          "description": "Stores user-specific dashboard configurations.  The `userId` is denormalized in the document.  Path-based ownership enforces user-specific configurations.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            },
+            {
+              "name": "configId",
+              "description": "The unique identifier for the dashboard configuration."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to support the AI Quantum Charts platform, emphasizing secure user data management, customizable dashboards, and efficient real-time data synchronization. Key design decisions are Authorization Independence using path-based ownership, structural segregation for homogeneous security postures, and access modeling with consistent patterns.\n\nAuthorization Independence (CRITICAL): Path-based ownership (`/users/{userId}/dashboardConfig`) avoids hierarchical authorization dependencies, allowing atomic operations and simplifies security rules. The dashboard configuration is directly tied to the user's document.\n\nQAPs (Rules are not Filters): The structure facilitates secure `list` operations.  User-specific data is segregated under `/users/{userId}`, enabling straightforward rules to control access based on the authenticated user ID. The global nature of user data and dashboard configurations allows for easy listing within a user's scope without exposing sensitive information."
+  }
+}
