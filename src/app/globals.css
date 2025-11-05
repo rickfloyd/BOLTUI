@@ -93,6 +93,7 @@ body.animation-page {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    margin-right: auto;
 }
 .header-nav .nav-item {
     color: #a7a7a7;
