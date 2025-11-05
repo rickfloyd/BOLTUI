@@ -23,6 +23,7 @@ import {
   Layers3,
   UserPlus,
   Scale,
+  Shield,
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -114,6 +115,7 @@ const navItems = [
   { href: '/simple-view', label: 'Simple View', icon: View },
   { href: '/custom-view', label: 'Custom View', icon: SlidersHorizontal },
   { href: '/join', label: 'Join', icon: UserPlus },
+  { href: '/policy', label: 'Policy', icon: Shield },
 ];
 
 const searchData = {
