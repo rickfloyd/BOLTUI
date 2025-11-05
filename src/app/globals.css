@@ -443,3 +443,25 @@ body.animation-page {
 .neon-text:hover {
   text-shadow: 0 0 18px rgba(255,45,172,1), 0 0 30px rgba(17,179,255,1);
 }
+
+/* === HEADER PULSE ANIMATION === */
+.header-pulse {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  transition: background 1s linear;
+  animation: colorShift 10s infinite linear;
+}
+
+/* automatic color cycling */
+@keyframes colorShift {
+  0%   { background: #ff00ff; }    /* fluorescent pink  */
+  20%  { background: #00ffff; }    /* neon cyan         */
+  40%  { background: #ff6600; }    /* hot orange        */
+  60%  { background: #9400ff; }    /* neon purple       */
+  80%  { background: #00ff00; }    /* electric green    */
+  100% { background: #ff00ff; }    /* loop back         */
+}
