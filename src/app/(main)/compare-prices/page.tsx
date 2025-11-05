@@ -166,6 +166,13 @@ export default function ComparePricesPage() {
           </div>
         </CardContent>
       </Card>
+      <Card className="neon-box border-destructive/50">
+        <CardContent className="p-6">
+          <p className="text-sm text-destructive text-center">
+            Comparison based on standard monthly prices and features publicly listed by the leading competitor in the online charting industry as of November 2025. Prices and features are subject to change. (BUT OURS WONT)
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }
