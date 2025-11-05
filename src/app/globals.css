@@ -379,7 +379,7 @@ body.animation-page {
 .neon-pink-border { border-color: hsl(var(--neon-pink)); box-shadow: 0 0 10px hsl(var(--neon-pink), .5); }
 .neon-cyan-border { border-color: hsl(var(--neon-cyan)); box-shadow: 0 0 10px hsl(var(--neon-cyan), .5); }
 .neon-blue-border { border-color: hsl(var(--neon-blue)); box-shadow: 0 0 10px hsl(var(--neon-blue), .5); }
-.neon-orange-border { border-color: hsl(var(--orange-neon), .5); }
+.neon-orange-border { border-color: hsl(var(--neon-orange)); box-shadow: 0 0 10px hsl(var(--neon-orange), .5); }
 
 /* === NEON GLOW EFFECTS === */
 

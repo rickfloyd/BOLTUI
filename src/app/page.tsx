@@ -6,17 +6,17 @@ import ClientWrapper from "@/components/ClientWrapper";
 
 export default function Page() {
   const cardData = [
-    { title: 'Forex', description: 'Currency Trading', border: 'neon-blue-border' },
+    { title: 'Forex', description: 'Currency Trading', border: 'neon-pink-border' },
     { title: 'Stocks (Equity Market)', description: 'Company Shares', border: 'neon-orange-border' },
-    { title: 'Commodities', description: 'Physical Goods (Oil, Gold, etc.)', border: 'neon-cyan-border' },
-    { title: 'Bonds (Fixed Income)', description: 'Debt Securities', border: 'neon-blue-border' },
-    { title: 'Cryptocurrency', description: 'Digital Assets', border: 'neon-orange-border' },
-    { title: 'Derivatives', description: 'Contracts based on underlying assets', border: 'neon-cyan-border' },
-    { title: 'Nasdaq 100', description: 'US Tech & Growth Stocks', border: 'neon-blue-border' },
+    { title: 'Commodities', description: 'Physical Goods (Oil, Gold, etc.)', border: 'neon-pink-border' },
+    { title: 'Bonds (Fixed Income)', description: 'Debt Securities', border: 'neon-orange-border' },
+    { title: 'Cryptocurrency', description: 'Digital Assets', border: 'neon-pink-border' },
+    { title: 'Derivatives', description: 'Contracts based on underlying assets', border: 'neon-orange-border' },
+    { title: 'Nasdaq 100', description: 'US Tech & Growth Stocks', border: 'neon-pink-border' },
     { title: 'Dow Jones (US30)', description: '30 Major US Industrial Stocks', border: 'neon-orange-border' },
-    { title: 'Russell 2000', description: 'US Small-Cap Stocks', border: 'neon-cyan-border' },
-    { title: 'DXY (US Dollar Index)', description: 'US Dollar Value vs. Basket of Currencies', border: 'neon-blue-border' },
-    { title: 'S&P 500 (US500)', description: '500 Large US Companies', border: 'neon-orange-border' },
+    { title: 'Russell 2000', description: 'US Small-Cap Stocks', border: 'neon-pink-border' },
+    { title: 'DXY (US Dollar Index)', description: 'US Dollar Value vs. Basket of Currencies', border: 'neon-orange-border' },
+    { title: 'S&P 500 (US500)', description: '500 Large US Companies', border: 'neon-pink-border' },
   ];
 
   const generateRandomData = () => {
