@@ -57,6 +57,134 @@ export default function Page() {
         </div>
       </div>
 
+      <div className="index-cards-row">
+        <div className="data-card neon-pink-border">
+          <div className="card-header">
+            <span className="card-title">Bitcoin (BTC)</span>
+          </div>
+          <div className="card-data">
+            <span className="price">$68,420.10</span>
+            <span className="change positive">+2.5%</span>
+          </div>
+        </div>
+
+        <div className="data-card neon-cyan-border">
+          <div className="card-header">
+            <span className="card-title">Ethereum (ETH)</span>
+          </div>
+          <div className="card-data">
+            <span className="price">$3,550.75</span>
+            <span className="change negative">-1.2%</span>
+          </div>
+        </div>
+
+        <div className="data-card neon-blue-border">
+          <div className="card-header">
+            <span className="card-title">Crude Oil (WTI)</span>
+          </div>
+          <div className="card-data">
+            <span className="price">$78.50</span>
+            <span className="change positive">+0.85%</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="index-cards-row">
+        <div className="data-card neon-orange-border">
+          <div className="card-header">
+            <span className="card-title">Gold (XAU)</span>
+          </div>
+          <div className="card-data">
+            <span className="price">$2,345.60</span>
+            <span className="change positive">+0.55%</span>
+          </div>
+        </div>
+
+        <div className="data-card neon-pink-border">
+          <div className="card-header">
+            <span className="card-title">Silver (XAG)</span>
+          </div>
+          <div className="card-data">
+            <span className="price">$29.80</span>
+            <span className="change negative">-0.15%</span>
+          </div>
+        </div>
+
+        <div className="data-card neon-cyan-border">
+          <div className="card-header">
+            <span className="card-title">NVIDIA (NVDA)</span>
+          </div>
+          <div className="card-data">
+            <span className="price">$125.90</span>
+            <span className="change positive">+3.1%</span>
+          </div>
+        </div>
+      </div>
+      
+      <div className="index-cards-row">
+        <div className="data-card neon-blue-border">
+          <div className="card-header">
+            <span className="card-title">Tesla (TSLA)</span>
+          </div>
+          <div className="card-data">
+            <span className="price">$182.45</span>
+            <span className="change negative">-2.4%</span>
+          </div>
+        </div>
+
+        <div className="data-card neon-orange-border">
+          <div className="card-header">
+            <span className="card-title">EUR/USD</span>
+          </div>
+          <div className="card-data">
+            <span className="price">1.0712</span>
+            <span className="change positive">+0.09%</span>
+          </div>
+        </div>
+
+        <div className="data-card neon-pink-border">
+          <div className="card-header">
+            <span className="card-title">USD/JPY</span>
+          </div>
+          <div className="card-data">
+            <span className="price">157.40</span>
+            <span className="change negative">-0.21%</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="index-cards-row">
+        <div className="data-card neon-cyan-border">
+          <div className="card-header">
+            <span className="card-title">S&P 500</span>
+          </div>
+          <div className="card-data">
+            <span className="price">$5,470.30</span>
+            <span className="change positive">+0.77%</span>
+          </div>
+        </div>
+
+        <div className="data-card neon-blue-border">
+          <div className="card-header">
+            <span className="card-title">Apple (AAPL)</span>
+          </div>
+          <div className="card-data">
+            <span className="price">$214.29</span>
+            <span className="change negative">-0.82%</span>
+          </div>
+        </div>
+
+        <div className="data-card neon-orange-border">
+          <div className="card-header">
+            <span className="card-title">Natural Gas</span>
+          </div>
+          <div className="card-data">
+            <span className="price">$2.91</span>
+            <span className="change positive">+1.5%</span>
+          </div>
+        </div>
+      </div>
+
       <div className="dxy-card neon-pink-border">
         <div className="dxy-title">DXY (US Dollar Index)</div>
         <div className="dxy-data">
