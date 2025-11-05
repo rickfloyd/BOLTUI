@@ -67,18 +67,8 @@ export default function Page() {
                 })}
             </div>
           </ClientWrapper>
-          
-          <div className="dxy-card neon-pink-border">
-            <div className="dxy-title">DXY (US Dollar Index)</div>
-            <div className="dxy-data">
-              <span className="dxy-price">105.42</span>
-              <span className="dxy-change negative">-0.38 (-0.36%)</span>
-            </div>
-          </div>
         </section>
       </main>
     </>
   );
 }
-
-    
