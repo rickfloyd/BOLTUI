@@ -1,6 +1,5 @@
 import { Header } from '@/components/layout/header';
 import { MainSidebar } from '@/components/layout/main-sidebar';
-import { SidebarProvider } from '@/components/ui/sidebar';
 
 export default function MainLayout({
   children,
