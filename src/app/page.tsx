@@ -200,12 +200,57 @@ export default function Page() {
         </button>
       </div>
 
-      <div className="dxy-card neon-pink-border">
-        <div className="dxy-title">DXY (US Dollar Index)</div>
-        <div className="card-description" style={{color: 'white', paddingBottom: '10px'}}>US Dollar Value vs. Basket of Currencies</div>
-        <div className="dxy-data">
-          <span className="dxy-price">105.42</span>
-          <span className="dxy-change negative">-0.38 (-0.36%)</span>
+      <div className="dxy-card-container">
+        <div className="dxy-title">Major Currency Indexes</div>
+        <div className="currency-grid">
+          <div className="currency-card">
+            <div className="card-title">DXY (US Dollar Index)</div>
+            <div className="card-description" style={{minHeight: '50px'}}>Measures the value of the U.S. dollar against a basket of six major world currencies (EUR, JPY, GBP, CAD, SEK, CHF).</div>
+            <div className="dxy-data" style={{marginTop: '10px'}}>
+              <span className="dxy-price" style={{fontSize: '2em'}}>105.42</span>
+              <span className="dxy-change negative" style={{fontSize: '1em'}}>-0.38 (-0.36%)</span>
+            </div>
+          </div>
+          <div className="currency-card">
+            <div className="card-title">EXY (Euro Index)</div>
+            <div className="card-description" style={{minHeight: '50px'}}>Measures the value of the Euro against a basket of major currencies.</div>
+             <div className="dxy-data" style={{marginTop: '10px'}}>
+              <span className="dxy-price" style={{fontSize: '2em'}}>112.30</span>
+              <span className="dxy-change positive" style={{fontSize: '1em'}}>+0.12 (+0.11%)</span>
+            </div>
+          </div>
+          <div className="currency-card">
+            <div className="card-title">JXY (Japanese Yen Index)</div>
+            <div className="card-description" style={{minHeight: '50px'}}>Measures the value of the Japanese Yen against a basket of major currencies.</div>
+             <div className="dxy-data" style={{marginTop: '10px'}}>
+              <span className="dxy-price" style={{fontSize: '2em'}}>85.60</span>
+              <span className="dxy-change negative" style={{fontSize: '1em'}}>-0.25 (-0.29%)</span>
+            </div>
+          </div>
+          <div className="currency-card">
+            <div className="card-title">AXY (Australian Dollar Index)</div>
+            <div className="card-description" style={{minHeight: '50px'}}>Measures the value of the Australian dollar against a basket of major currencies.</div>
+             <div className="dxy-data" style={{marginTop: '10px'}}>
+              <span className="dxy-price" style={{fontSize: '2em'}}>75.10</span>
+              <span className="dxy-change positive" style={{fontSize: '1em'}}>+0.40 (+0.53%)</span>
+            </div>
+          </div>
+          <div className="currency-card">
+            <div className="card-title">BXY (British Pound Index)</div>
+            <div className="card-description" style={{minHeight: '50px'}}>Measures the value of the British Pound against a basket of major currencies.</div>
+             <div className="dxy-data" style={{marginTop: '10px'}}>
+              <span className="dxy-price" style={{fontSize: '2em'}}>125.80</span>
+              <span className="dxy-change negative" style={{fontSize: '1em'}}>-0.15 (-0.12%)</span>
+            </div>
+          </div>
+          <div className="currency-card">
+            <div className="card-title">CXY (Canadian Dollar Index)</div>
+            <div className="card-description" style={{minHeight: '50px'}}>Measures the value of the Canadian Dollar against a basket of major currencies.</div>
+             <div className="dxy-data" style={{marginTop: '10px'}}>
+              <span className="dxy-price" style={{fontSize: '2em'}}>79.20</span>
+              <span className="dxy-change positive" style={{fontSize: '1em'}}>+0.30 (+0.38%)</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
