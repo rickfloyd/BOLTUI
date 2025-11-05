@@ -19,7 +19,8 @@ import {
   FileText,
   BrainCircuit,
   DatabaseZap,
-  Briefcase
+  Briefcase,
+  Layers3
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -105,6 +106,7 @@ const navItems = [
   { href: '/forex', label: 'Forex', icon: Wallet },
   { href: '/bonds', label: 'Bonds', icon: Landmark },
   { href: '/indices', label: 'Indices', icon: FileText },
+  { href: '/metals', label: 'Metals', icon: Layers3 },
   { href: '/strategy', label: 'Strategy', icon: BrainCircuit },
   { href: '/simple-view', label: 'Simple View', icon: View },
   { href: '/custom-view', label: 'Custom View', icon: SlidersHorizontal },

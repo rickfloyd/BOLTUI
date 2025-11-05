@@ -13,7 +13,7 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 180 100% 95%;
 
-    --primary: 337 100% 55%; /* Neon Red-Pink Lava */
+    --primary: 270 89% 55%; /* Electric Purple */
     --primary-foreground: 210 40% 98%;
     
     --secondary: 217.2 32.6% 17.5%;
@@ -22,25 +22,25 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 180 100% 50%; /* Electric Cyan */
+    --accent: 180 100% 50%; /* Cyan */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 337 100% 55%;
+    --border: 270 89% 55%; /* Electric Purple */
     --input: 217.2 32.6% 17.5%;
     --ring: 180 100% 50%;
     
-    --chart-1: 180 100% 50%; /* Electric Cyan */
-    --chart-2: 300 100% 50%; /* Magenta */
+    --chart-1: 180 100% 50%; /* Cyan */
+    --chart-2: 270 89% 55%; /* Electric Purple */
     --chart-3: 337 84% 50%; /* Hot Pink */
     --chart-4: 24 100% 50%;  /* Neon Orange */
     --chart-5: 129 86% 52%; /* Neon Green */
   }
 
   .dark {
-    --background: 0 0% 2%;
+    --background: 247 100% 3%; /* Deep Charcoal from #0A0A0F */
     --foreground: 180 100% 90%;
 
     --card: 224 20% 10%;
@@ -49,7 +49,7 @@
     --popover: 0 0% 2%;
     --popover-foreground: 180 100% 95%;
 
-    --primary: 337 100% 55%; /* Neon Red-Pink Lava */
+    --primary: 270 89% 55%; /* Electric Purple */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -58,13 +58,13 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 180 100% 50%; /* Electric Cyan */
+    --accent: 180 100% 50%; /* Cyan */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 337 100% 55%; /* Neon Red-Pink Lava */
+    --border: 270 89% 55%; /* Electric Purple */
     --input: 217.2 32.6% 17.5%;
     --ring: 180 100% 50%;
   }
@@ -76,7 +76,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: linear-gradient(to bottom, #000000, #0a0a0f, #1a1a1a);
+    background-image: linear-gradient(to bottom, #000000, #0a0a0f);
     font-family: 'Orbitron', sans-serif;
   }
 }
