@@ -37,19 +37,19 @@ export function Header() {
     <header className="header-nav">
       <div className="header-top-layer">
         <nav className="main-nav">
-          <Link href="#" className="nav-item impact-glow">
+          <Link href="#" className="nav-item neon-pink">
             Impact
           </Link>
           <Link href="#" className="nav-item neon-orange">
             Sports Betting
           </Link>
-          <Link href="#" className="nav-item">
+          <Link href="#" className="nav-item neon-green">
             Sports
           </Link>
-          <Link href="#" className="nav-item">
+          <Link href="#" className="nav-item neon-blue">
             World Sports
           </Link>
-          <Link href="#" className="nav-item">
+          <Link href="#" className="nav-item neon-cyan">
             Products
           </Link>
           <Link href="#" className="nav-item active-market">
@@ -64,7 +64,7 @@ export function Header() {
           />
         </div>
         <div className="nav-right">
-          <Link href="#" className="nav-item community-glow">
+          <Link href="#" className="nav-item neon-green">
             Community
           </Link>
           <Link href="#" className="nav-item neon-pink">
@@ -76,9 +76,9 @@ export function Header() {
         </div>
       </div>
       <div className="header-bottom-layer">
-        <HeaderDropdown title="AI-Powered Trading Platform" items={aiPlatformItems} />
-        <HeaderDropdown title="Financial News" items={financialNewsItems} />
-        <HeaderDropdown title="Politics" items={politicalViewpointItems} />
+        <HeaderDropdown title="AI-Powered Trading Platform" items={aiPlatformItems} titleClassName="neon-cyan"/>
+        <HeaderDropdown title="Financial News" items={financialNewsItems} titleClassName="neon-blue" />
+        <HeaderDropdown title="Politics" items={politicalViewpointItems} titleClassName="neon-green"/>
         <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasureItems} titleClassName="neon-pink" />
       </div>
     </header>
