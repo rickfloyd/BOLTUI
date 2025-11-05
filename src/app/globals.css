@@ -11,7 +11,7 @@
     --card-foreground: 180 100% 95%;
 
     --popover: 240 10% 3.9%;
-    --popover-foreground: 180 100% 95%;
+    --popover-foreground: 220 80% 70%;
 
     --primary: 337 84% 50%; /* Hot Pink/Red */
     --primary-foreground: 210 40% 98%;
@@ -23,7 +23,7 @@
     --muted-foreground: 215 20.2% 65.1%;
 
     --accent: 180 100% 50%; /* Cyan */
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 240 10% 3.9%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -56,7 +56,7 @@
     --card-foreground: 180 100% 95%;
 
     --popover: 224 20% 10%;
-    --popover-foreground: 180 100% 95%;
+    --popover-foreground: 220 80% 70%;
 
     --primary: 337 84% 50%; /* Hot Pink/Red */
     --primary-foreground: 210 40% 98%;
@@ -68,7 +68,7 @@
     --muted-foreground: 215 20.2% 65.1%;
 
     --accent: 180 100% 50%; /* Cyan */
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 240 10% 3.9%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
