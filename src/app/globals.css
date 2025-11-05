@@ -304,6 +304,12 @@ nav a:hover, .nav-right a:hover {
     font-weight: bold;
 }
 
+.card-description {
+    font-size: 0.8em;
+    color: var(--color-text-light);
+    margin-top: 2px;
+}
+
 .card-data .price {
     font-size: 2em;
     font-weight: bold;
