@@ -2,8 +2,6 @@
 
 import Link from 'next/link';
 import { HeaderDropdown } from './HeaderDropdown';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Header() {
   const politicalViewpointItems = [
@@ -70,6 +68,9 @@ export function Header() {
       </div>
       <div className="header-bottom-layer">
         <HeaderDropdown title="AI-Powered Trading Platform" items={aiPlatformItems} titleClassName="neon-pink"/>
+        <Link href="#" className="nav-item neon-pink">
+            FIRST 1000 MEMBERS FREE
+        </Link>
         <HeaderDropdown title="Financial News" items={financialNewsItems} titleClassName="neon-orange" />
         <HeaderDropdown title="Politics" items={politicalViewpointItems} titleClassName="neon-blue"/>
         <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasureItems} titleClassName="neon-pink" />
