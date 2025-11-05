@@ -124,12 +124,12 @@
       box-shadow: 0 0 10px hsl(var(--accent) / 1), 0 0 15px hsl(var(--accent) / 0.7) inset;
   }
 
-  #header-logo .logo-q-outer {
+  .logo-q-outer {
     fill: none;
     stroke: hsl(var(--accent));
     stroke-width: 8;
   }
-  #header-logo .logo-q-tail {
+  .logo-q-tail {
     stroke: hsl(var(--accent));
     stroke-width: 8;
     stroke-linecap: round;

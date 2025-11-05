@@ -234,7 +234,6 @@ export function Header({ pageTitle }: { pageTitle: string }) {
         <Link href="/" className="flex items-center gap-3">
         <div className="logo-container h-8 w-8">
             <svg
-              id="header-logo"
               viewBox="0 0 100 100"
               className="h-full w-full"
             >
