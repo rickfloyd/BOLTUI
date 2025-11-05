@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Orbitron } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/header';
 import { MainSidebar } from '@/components/layout/main-sidebar';
 
-const inter = Inter({ subsets: ['latin'] });
+const orbitron = Orbitron({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'AI Quantum Charts Dashboard',
+  title: 'AI Quantum Charts — Pro Market Terminal',
   description: 'A next-generation trading dashboard with AI-powered insights.',
 };
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={orbitron.className}>
         <Header />
         <main className="dashboard-grid">
           <MainSidebar />
