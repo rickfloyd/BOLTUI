@@ -16,7 +16,7 @@ export function MainSidebar() {
           className="section-title dropdown-toggle neon-cyan"
           onClick={() => toggleMenu('personalities-menu')}
         >
-          <span className="dot-indicator"></span> Educational
+          <span className="dot-indicator"></span> POLITICAL VIEWPOINT
         </div>
         <div
           id="personalities-menu"
