@@ -290,6 +290,16 @@ nav a:hover, .nav-right a:hover {
     border-radius: 10px;
     border: 1px solid #333;
     transition: all 0.3s;
+    width: 100%; /* Ensure button takes full width of its container */
+    text-align: left; /* Align text to the left */
+    font-family: inherit; /* Use the body font */
+    color: inherit; /* Use the body text color */
+}
+
+.data-card:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Neon Borders & Glow */
