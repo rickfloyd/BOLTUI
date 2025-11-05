@@ -280,7 +280,7 @@ nav a:hover, .nav-right a:hover {
 .index-cards-row {
     display: flex;
     gap: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
 }
 
 .data-card {
