@@ -1,86 +1,116 @@
 'use client';
 import React from 'react';
-import {
-  SidebarHeader,
-  SidebarContent,
-  SidebarGroup,
-} from '@/components/ui/sidebar';
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/components/ui/collapsible';
 import { cn } from '@/lib/utils';
-import { ChevronsUpDown } from 'lucide-react';
-
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarHeader,
+  useSidebar,
+} from '@/components/ui/sidebar';
 
 const educationalItems = [
-    { name: 'Republican', description: 'Conservative market analysis' },
-    { name: 'Democrat', description: 'Progressive economic insights', active: true },
-    { name: 'Liberal', description: 'Social-focused market views' },
-    { name: 'Independent', description: 'Unbiased market perspective' },
+  { name: 'Republican', description: 'Conservative market analysis' },
+  { name: 'Democrat', description: 'Progressive economic insights', active: true },
+  { name: 'Liberal', description: 'Social-focused market views' },
+  { name: 'Independent', description: 'Unbiased market perspective' },
 ];
 
 const platformItems = [
-    'AI Price Prediction Engine',
-    'ML Pattern Recognition',
-    'Sentiment Analysis AI',
-    'Smart Risk Management',
-    'Automated Trading Signals',
-    'Neural Networks & LSTM',
-    'Advanced Drawing Tools',
-    'Real-Time Market Data',
-    'Portfolio Management',
-    'Custom Scripting Engine',
+  'AI Price Prediction Engine',
+  'ML Pattern Recognition',
+  'Sentiment Analysis AI',
+  'Smart Risk Management',
+  'Automated Trading Signals',
+  'Neural Networks & LSTM',
+  'Advanced Drawing Tools',
+  'Real-Time Market Data',
+  'Portfolio Management',
+  'Custom Scripting Engine',
 ];
-
 
 export function MainSidebar() {
   const [visibleMenu, setVisibleMenu] = React.useState<string | null>(null);
+  const { isMobile } = useSidebar();
 
   const toggleMenu = (menuId: string) => {
     setVisibleMenu(visibleMenu === menuId ? null : menuId);
   };
-
+  
+  // On mobile, the sidebar is an off-canvas sheet, so dropdowns don't make sense.
+  // We'll use Collapsibles instead for mobile.
+  if (isMobile) {
+      return (
+        <Sidebar>
+            <SidebarHeader>
+                {/* Mobile header content if any */}
+            </SidebarHeader>
+            <SidebarContent>
+                 {/* Mobile-friendly content, maybe just links */}
+            </SidebarContent>
+        </Sidebar>
+      )
+  }
 
   return (
-    <>
-      <SidebarHeader></SidebarHeader>
-      <SidebarContent>
-        <div className="left-sidebar">
-            <div className="sidebar-section">
-                <div className="section-title dropdown-toggle neon-cyan" onClick={() => toggleMenu('personalities-menu')}>
-                    <span className="dot-indicator"></span> Educational
-                </div>
-                <div id="personalities-menu" className={cn("dropdown-menu", visibleMenu === 'personalities-menu' && 'visible')}>
-                  {educationalItems.map((item) => (
-                    <div key={item.name} className={cn('menu-item', item.active && 'active-pink')}>
-                      {item.name}
-                      <span className="sub-text">{item.description}</span>
-                    </div>
-                  ))}
-                </div>
-            </div>
-
-            <div className="sidebar-section">
-                <div className="section-title neon-pink">
-                    <span className="dot-indicator"></span> Market Summary
-                </div>
-            </div>
-
-            <div className="sidebar-section platform-section">
-                <div className="section-title dropdown-toggle neon-blue" onClick={() => toggleMenu('trading-platform-menu')}>
-                    <span className="dot-indicator"></span> AI-Powered Trading Platform
-                </div>
-                <div id="trading-platform-menu" className={cn("dropdown-menu platform-menu", visibleMenu === 'trading-platform-menu' && 'visible')}>
-                  {platformItems.map(item => (
-                     <div key={item} className="menu-item">{item}</div>
-                  ))}
-                  <div className="menu-item revolutionary-text">Revolutionary AI Trading Platform!</div>
-                </div>
-            </div>
+    <aside className="left-sidebar">
+      <div className="sidebar-section">
+        <div
+          className="section-title dropdown-toggle neon-cyan"
+          data-target="personalities-menu"
+          onClick={() => toggleMenu('personalities-menu')}
+        >
+          <span className="dot-indicator"></span> Educational
         </div>
-      </SidebarContent>
-    </>
+        <div
+          id="personalities-menu"
+          className={cn(
+            'dropdown-menu',
+            visibleMenu === 'personalities-menu' && 'visible'
+          )}
+        >
+          {educationalItems.map((item) => (
+            <div
+              key={item.name}
+              className={cn('menu-item', item.active && 'active-pink')}
+            >
+              {item.name}
+              <span className="sub-text">{item.description}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="sidebar-section">
+        <div className="section-title neon-pink">
+          <span className="dot-indicator"></span> Market Summary
+        </div>
+      </div>
+
+      <div className="sidebar-section platform-section">
+        <div
+          className="section-title dropdown-toggle neon-blue"
+          data-target="trading-platform-menu"
+          onClick={() => toggleMenu('trading-platform-menu')}
+        >
+          <span className="dot-indicator"></span> AI-Powered Trading Platform
+        </div>
+        <div
+          id="trading-platform-menu"
+          className={cn(
+            'dropdown-menu platform-menu',
+            visibleMenu === 'trading-platform-menu' && 'visible'
+          )}
+        >
+          {platformItems.map((item) => (
+            <div key={item} className="menu-item">
+              {item}
+            </div>
+          ))}
+          <div className="menu-item revolutionary-text">
+            Revolutionary AI Trading Platform!
+          </div>
+        </div>
+      </div>
+    </aside>
   );
 }

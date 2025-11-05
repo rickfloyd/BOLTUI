@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* --- 1. GLOBAL STYLES & NEON VARIABLES --- */
 @layer base {
   :root {
@@ -13,10 +12,10 @@
       --card-foreground: 0 0% 100%;
 
       --popover: 240 10% 3.9%;
-      --popover-foreground: 200 100% 50%; /* --neon-blue */
+      --popover-foreground: 180 100% 50%;
 
-      --primary: 327 100% 50%; /* --neon-pink */
-      --primary-foreground: 0 0% 0%;
+      --primary: 327 82% 53%; /* --neon-pink, adjusted from #FF0099 */
+      --primary-foreground: 0 0% 100%;
 
       --secondary: 217.2 32.6% 17.5%;
       --secondary-foreground: 210 40% 98%;
@@ -24,26 +23,26 @@
       --muted: 217.2 32.6% 17.5%;
       --muted-foreground: 0 0% 60%;
 
-      --accent: 170 100% 44%; /* --neon-cyan */
+      --accent: 170 100% 44%; /* --neon-cyan, #00E4B4 */
       --accent-foreground: 0 0% 0%;
 
       --destructive: 0 62.8% 30.6%;
       --destructive-foreground: 210 40% 98%;
 
-      --border: 327 100% 50%; /* --neon-pink */
-      --input: 200 100% 50%; /* --neon-blue */
+      --border: 327 82% 53%; /* --neon-pink */
+      --input: 197 100% 50%; /* --neon-blue, #00C6FF */
       --ring: 170 100% 44%; /* --neon-cyan */
       
       --chart-1: 170 100% 44%;   /* --neon-cyan */
-      --chart-2: 327 100% 50%;   /* --neon-pink */
-      --chart-3: 327 100% 50%;   /* --neon-pink */
-      --chart-4: 32 100% 50%;    /* --neon-orange */
+      --chart-2: 327 82% 53%;   /* --neon-pink */
+      --chart-3: 327 82% 53%;   /* --neon-pink */
+      --chart-4: 35 100% 50%;    /* --neon-orange, #FF8800 */
       --chart-5: 129 86% 52%;   /* Neon Green */
 
-      --neon-pink: 327 100% 50%;
-      --neon-blue: 200 100% 50%;
+      --neon-pink: 327 82% 53%;
+      --neon-blue: 197 100% 50%;
       --neon-cyan: 170 100% 44%;
-      --neon-orange: 32 100% 50%;
+      --neon-orange: 35 100% 50%;
 
       --shadow-pink: 0 0 8px hsl(var(--neon-pink)), 0 0 1px inset rgba(255, 255, 255, 0.5);
       --shadow-blue: 0 0 8px hsl(var(--neon-blue)), 0 0 1px inset rgba(255, 255, 255, 0.5);
@@ -55,14 +54,14 @@
     --background: 0 0% 0%; /* --color-black */
     --foreground: 0 0% 60%; /* --color-text-light */
 
-    --card: 240 16% 9%; /* --color-dark-bg */
+    --card: 240 16% 5%; /* --color-dark-bg, #0d0d18 */
     --card-foreground: 0 0% 100%;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 200 100% 50%; /* --neon-blue */
+    --popover: 230 24% 9%; /* #1a1a2e */
+    --popover-foreground: 180 100% 50%; /* neon blue for dropdown text */
 
-    --primary: 327 100% 50%; /* --neon-pink */
-    --primary-foreground: 0 0% 0%;
+    --primary: 327 82% 53%; /* --neon-pink */
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -76,8 +75,8 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 327 100% 50%;
-    --input: 200 100% 50%;
+    --border: 327 82% 53%;
+    --input: 197 100% 50%;
     --ring: 170 100% 44%;
   }
 }
@@ -113,16 +112,6 @@
       @apply text-white;
   }
   
-  .neon-text-primary {
-    color: hsl(var(--primary));
-    text-shadow: 0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary));
-  }
-
-  .neon-text-orange {
-      color: hsl(var(--neon-orange));
-      text-shadow: 0 0 5px hsl(var(--neon-orange)), 0 0 10px hsl(var(--neon-orange));
-  }
-
   .impact-glow {
       text-shadow: var(--shadow-cyan);
       color: hsl(var(--neon-cyan));
@@ -150,7 +139,7 @@
   .dashboard-grid {
       @apply grid p-5;
       grid-template-columns: 280px 1fr;
-      gap: 16px;
+      gap: 20px;
   }
 
   /* --- 4. LEFT SIDEBAR STYLES --- */
@@ -217,7 +206,7 @@
       box-shadow: var(--shadow-pink);
   }
 
-  .active-pink .sub-text {
+   .active-pink .sub-text {
       color: hsl(var(--primary-foreground));
   }
 
@@ -235,7 +224,7 @@
 
   .info-banner {
       background-color: #1a1a2e;
-      @apply p-4 rounded-md;
+      @apply p-4 rounded-md mb-6;
       border-top: 2px solid hsl(var(--neon-pink));
       border-bottom: 2px solid hsl(var(--neon-pink));
   }
@@ -255,7 +244,7 @@
   }
 
   .index-cards-row {
-      @apply flex gap-5;
+      @apply flex gap-5 mb-5;
   }
 
   .data-card {
@@ -307,17 +296,5 @@
 
   .dxy-change {
       @apply text-xl font-bold;
-  }
-  
-  .chart-controls {
-    background-color: hsl(var(--card));
-  }
-
-  .tabs-list {
-    @apply bg-card;
-  }
-  
-  .tabs-trigger[data-state=active] {
-     @apply bg-background;
   }
 }

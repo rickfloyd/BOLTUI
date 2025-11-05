@@ -10,10 +10,10 @@ export default function MainLayout({
   return (
     <SidebarProvider>
       <Header />
-      <div className="dashboard-grid">
+      <main className="dashboard-grid">
         <MainSidebar />
         {children}
-      </div>
+      </main>
     </SidebarProvider>
   );
 }
