@@ -68,7 +68,7 @@ const chartTypes = [
 ];
 
 export default function BondsClient() {
-  const [selectedChart, setSelectedChart] = React.useState('Line Chart');
+  const [selectedChart, setSelectedChart] = React.useState('Chart Type');
 
   return (
     <div className="space-y-6">
@@ -169,4 +169,3 @@ export default function BondsClient() {
     </div>
   );
 }
-
