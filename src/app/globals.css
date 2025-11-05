@@ -37,6 +37,15 @@
     --chart-3: 337 84% 50%; /* Hot Pink/Red */
     --chart-4: 24 100% 50%;  /* Neon Orange */
     --chart-5: 129 86% 52%; /* Neon Green */
+
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 180 100% 90%;
+    --sidebar-border: 180 100% 50%;
+    --sidebar-ring: 180 100% 50%;
+    --sidebar-accent: 180 100% 50%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-primary: 337 84% 50%;
+    --sidebar-primary-foreground: 210 40% 98%;
   }
 
   .dark {
@@ -46,7 +55,7 @@
     --card: 224 20% 10%;
     --card-foreground: 180 100% 95%;
 
-    --popover: 0 0% 2%;
+    --popover: 224 20% 10%;
     --popover-foreground: 180 100% 95%;
 
     --primary: 337 84% 50%; /* Hot Pink/Red */
@@ -67,6 +76,15 @@
     --border: 337 84% 50%; /* Hot Pink/Red */
     --input: 217.2 32.6% 17.5%;
     --ring: 180 100% 50%;
+
+    --sidebar-background: 224 20% 10%;
+    --sidebar-foreground: 180 100% 90%;
+    --sidebar-border: 180 100% 50%;
+    --sidebar-ring: 180 100% 50%;
+    --sidebar-accent: 180 100% 50%;
+    --sidebar-accent-foreground: 240 10% 3.9%;
+    --sidebar-primary: 337 84% 50%;
+    --sidebar-primary-foreground: 210 40% 98%;
   }
 }
 
