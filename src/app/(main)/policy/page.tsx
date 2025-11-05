@@ -43,12 +43,34 @@ export default function PolicyPage() {
             </p>
           </div>
 
-          <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-primary">5. The "Impossible to Cancel/Refund" Problem</h3>
-            <p className="font-semibold text-accent">Your 100% Solution: 1-Click Cancellation. No Questions Asked.</p>
-            <p className="text-muted-foreground">
-              <span className="font-bold text-foreground">Your Policy:</span> In your account settings, there will be a clear, simple "Cancel My Subscription" button. One click and you are done. You will never be forced into a "retention loop" or have to argue with a chatbot to stop your payments.
-            </p>
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-primary">5. The "Flexible Billing &amp; Grace Period" Policy</h3>
+            <p className="font-semibold text-accent">This is the automated process that runs for any user whose payment fails.</p>
+            <div className="space-y-3 text-muted-foreground">
+              <p><span className="font-bold text-foreground">Step 1: The Payment Fails</span> — Your payment processor tries to charge the member's card. The payment fails. Crucially: Their account is NOT canceled.</p>
+              <p><span className="font-bold text-foreground">Step 2: The Grace Period &amp; Email Are Triggered</span> — The system immediately and automatically places the user's account into a 7-day "grace period." Their access continues uninterrupted, and it sends them a "No-Hassle" email.</p>
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">Step 3: The "No-Hassle" Email Template</h4>
+                <div className="p-4 border rounded-lg bg-card/50 text-sm">
+                  <p className="font-mono text-xs">From: billing@aiquantumcharts.com</p>
+                  <p className="font-mono text-xs">Subject: An Update on Your aiquantumcharts.com Account</p>
+                  <br />
+                  <p>Hi [Member's Name],</p>
+                  <br />
+                  <p>We're writing to let you know that the payment for your subscription didn't go through.</p>
+                  <p>We understand that not everyone gets paid on the same day, so there's no need to worry.</p>
+                  <br />
+                  <p>Your account is safe, and your access will continue for a 7-day grace period.</p>
+                  <p>You have two simple, no-hassle options:</p>
+                  <br />
+                  <p><span className="font-bold">Want to stay?</span> Just update your payment info, and your subscription will continue normally.</p>
+                  <a href="#" className="inline-block my-2 px-4 py-2 rounded-md btn-primary no-underline text-primary-foreground">Update My Payment Info</a>
+                  <br />
+                  <p><span className="font-bold">Need to cancel?</span> No problem. You can cancel right here, no questions asked.</p>
+                   <a href="#" className="inline-block my-2 px-4 py-2 rounded-md btn-accent no-underline text-accent-foreground">Cancel My Subscription</a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="space-y-2">
