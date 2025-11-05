@@ -53,7 +53,7 @@ export function Header() {
           <Link href="#" className="nav-item neon-pink">
             LOGIN
           </Link>
-          <Link href="#" className="nav-item neon-orange">
+          <Link href="/join" className="nav-item neon-orange">
             JOIN
           </Link>
         </div>
