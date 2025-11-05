@@ -236,7 +236,6 @@ export function Header({ pageTitle }: { pageTitle: string }) {
             <svg
               id="header-logo"
               viewBox="0 0 100 100"
-              xmlns="http://www.w3.org/2000/svg"
               className="h-full w-full"
             >
               <defs>
