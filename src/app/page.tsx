@@ -11,14 +11,13 @@ export default function Page() {
     { title: 'Russell 2000', border: 'neon-cyan-border' },
   ];
 
-  const currencyIndexes = [
-    { name: 'DXY', longName: 'U.S. Dollar', description: 'The official U.S. Dollar Index. It is the most common, measuring the USD against six major world currencies (EUR, JPY, GBP, CAD, SEK, CHF).' },
-    { name: 'EXY', longName: 'Euro', description: 'Measures the value of the Euro.' },
-    { name: 'BXY', longName: 'British Pound', description: 'Measures the value of the British Pound Sterling (GBP).' },
-    { name: 'JXY', longName: 'Japanese Yen', description: 'Measures the value of the Japanese Yen (JPY).' },
-    { name: 'CXY', longName: 'Canadian Dollar', description: 'Measures the value of the Canadian Dollar (CAD).' },
-    { name: 'AXY', longName: 'Australian Dollar', description: 'Measures the value of the Australian Dollar (AUD).' },
-  ];
+  const allCards = Array(25).fill(null).map((_, i) => cardData[i % cardData.length]);
+  
+  // Remove the first Nasdaq card
+  const nasdaqIndex = allCards.findIndex(card => card.title === 'Nasdaq 100');
+  if (nasdaqIndex > -1) {
+    allCards.splice(nasdaqIndex, 1);
+  }
 
   const generateRandomData = () => {
     const price = (Math.random() * 500 + 100).toFixed(2);
@@ -38,8 +37,8 @@ export default function Page() {
         <MainSidebar />
         <section className="center-content">
           <ClientWrapper>
-            <div className="index-cards-row">
-                {cardData.map((cardInfo, index) => {
+            <div className="cards-column">
+                {allCards.map((cardInfo, index) => {
                 const data = generateRandomData();
                 return (
                     <div className={`data-card ${cardInfo.border}`} key={index}>
