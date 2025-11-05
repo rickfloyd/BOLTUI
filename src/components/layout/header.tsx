@@ -232,29 +232,27 @@ export function Header({ pageTitle }: { pageTitle: string }) {
     <header className="h-16 flex items-center justify-between px-6 bg-card/30 backdrop-blur-sm border-b border-border/20 sticky top-0 z-10">
       <div className="flex items-center gap-10">
         <Link href="/" className="flex items-center gap-3">
-        <div className="logo-container h-8 w-8">
-            <svg
-              viewBox="0 0 100 100"
-              className="h-full w-full"
-            >
-              <defs>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="3.5" result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-              <g className="logo-glow" style={{ filter: 'url(#glow)' }}>
-                <path
-                  d="M 50,10 A 40,40 0 1 1 10,50 40,40 0 0 1 50,10 Z M 50,20 A 30,30 0 1 0 80,50 30,30 0 0 0 50,20 Z"
-                  className="logo-q-outer"
-                />
-                <line x1="65" y1="65" x2="85" y2="85" className="logo-q-tail" />
-              </g>
-            </svg>
-          </div>
+          <svg
+            viewBox="0 0 100 100"
+            className="h-8 w-8"
+          >
+            <defs>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3.5" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <g className="logo-glow" style={{ filter: 'url(#glow)' }}>
+              <path
+                d="M 50,10 A 40,40 0 1 1 10,50 40,40 0 0 1 50,10 Z M 50,20 A 30,30 0 1 0 80,50 30,30 0 0 0 50,20 Z"
+                className="logo-q-outer"
+              />
+              <line x1="65" y1="65" x2="85" y2="85" className="logo-q-tail" />
+            </g>
+          </svg>
           <span className="text-xl font-bold text-foreground tracking-widest uppercase neon-text">
             Quantum Charts
           </span>
