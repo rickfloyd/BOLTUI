@@ -1,4 +1,4 @@
-import type {Config} from 'tailwindcss';
+import type { Config } from 'tailwindcss';
 
 export default {
   darkMode: ['class'],
@@ -9,8 +9,8 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Orbitron', 'sans-serif'],
+       fontFamily: {
+        sans: ['Roboto', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -48,48 +48,23 @@ export default {
         ring: 'hsl(var(--ring))',
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        lg: `var(--radius)`,
+        md: `calc(var(--radius) - 2px)`,
+        sm: `calc(var(--radius) - 4px)`,
       },
       keyframes: {
         'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
-        },
-        pulseGlow: {
-          '0%, 100%': {
-            boxShadow:
-              '0 0 10px rgba(17,179,255,.8), 0 0 25px rgba(140,75,255,.6), inset 0 0 10px rgba(25,255,232,.3)',
-          },
-          '50%': {
-            boxShadow:
-              '0 0 16px rgba(255,45,172,1), 0 0 30px rgba(17,179,255,.8), inset 0 0 12px rgba(140,75,255,.4)',
-          },
-        },
-        hueShift: {
-          '0%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-          '100%': { backgroundPosition: '0% 50%' },
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'pulse-glow': 'pulseGlow 2.5s ease-in-out infinite',
-        'hue-shift': 'hueShift 6s linear infinite',
       },
     },
   },

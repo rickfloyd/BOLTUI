@@ -1,37 +1,35 @@
 'use client';
-
+import { useState } from 'react';
 import Link from 'next/link';
 
-const navItems = [
-  { href: '/markets', label: 'Markets Overview' },
-  { href: '/forex', label: 'Forex' },
-  { href: '/crypto', label: 'Crypto' },
-  { href: '/indices', label: 'Indices' },
-  { href: '/futures', label: 'Futures' },
-  { href: '/metals', label: 'Metals' },
-  { href: '/bonds', label: 'Bonds' },
-  { href: '/economy', label: 'Economy' },
-  { href: '/screener', label: 'Screener' },
-  { href: '/news', label: 'News' },
-  { href: '/education', label: 'Education' },
-  { href: '/community', label: 'Community' },
-  { href: '/sports', label: 'Sports' },
-  { href: '/dex', label: 'DEX' },
-];
-
 export function MainSidebar() {
+  const [isPoliticalOpen, setPoliticalOpen] = useState(false);
+
   return (
-    <aside className="border-r border-purple-500/20 pr-4">
-      <nav className="flex flex-col gap-2">
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="px-3 py-2 text-sm text-gray-400 rounded-md hover:bg-purple-900/50 hover:text-cyan-300 transition-colors"
+    <aside className="sidebar-menu">
+      <h2 className="sidebar-title">Main Menu</h2>
+      <nav>
+        <Link href="/markets" className="sidebar-item">Markets</Link>
+        <Link href="/news" className="sidebar-item">News</Link>
+        
+        <div>
+          <button 
+            onClick={() => setPoliticalOpen(!isPoliticalOpen)}
+            className="sidebar-item w-full text-left flex justify-between items-center"
           >
-            {item.label}
-          </Link>
-        ))}
+            POLITICAL VIEWPOINT
+            <span>{isPoliticalOpen ? '−' : '+'}</span>
+          </button>
+          {isPoliticalOpen && (
+            <div className="sidebar-dropdown">
+              <Link href="#" className="sidebar-item">Democrat</Link>
+              <Link href="#" className="sidebar-item">Republican</Link>
+              <Link href="#" className="sidebar-item">Independent</Link>
+            </div>
+          )}
+        </div>
+
+        <Link href="/community" className="sidebar-item">Community</Link>
       </nav>
     </aside>
   );

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -24,7 +25,7 @@
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 0 0% 63.9%;
 
-    --accent: 180 100% 50%;
+    --accent: 180 100% 50%; /* Cyan */
     --accent-foreground: 240 5.9% 10%;
 
     --destructive: 0 62.8% 30.6%;
@@ -39,9 +40,9 @@
 }
 
 body {
-  background: linear-gradient(180deg, #000000 0%, #0A0A0F 100%);
+  background: linear-gradient(180deg, #000000 0%, #1a1a2a 100%);
   color: hsl(var(--foreground));
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .dashboard-grid {
@@ -49,14 +50,213 @@ body {
     grid-template-columns: 220px 1fr;
     gap: 1rem;
     padding: 1rem;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 80px); /* Adjust for header height */
 }
 
 .center-content {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* === HEADER & DROPDOWNS === */
+.header-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0a0a0f;
+    border: 1px solid rgba(255, 45, 172, 0.5);
+    box-shadow: 0 0 15px rgba(255, 45, 172, 0.4);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    z-index: 50;
+    min-width: 180px;
+}
+.header-dropdown-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    color: #a7a7a7;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 0.875rem;
+}
+.header-dropdown-item:hover {
+    background-color: rgba(140, 75, 255, 0.3);
+    color: #e0e0e0;
+}
+
+/* For nested dropdowns */
+.header-dropdown .relative .header-dropdown {
+    left: 100%;
+    top: -0.5rem;
+    margin-left: 0.5rem;
+}
+
+/* === SIDEBAR === */
+.sidebar-menu {
+  padding: 1rem;
+  border-right: 1px solid rgba(140, 75, 255, 0.2);
+  height: 100%;
+}
+.sidebar-title {
+  color: #8c4bff; /* Purple */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.sidebar-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  color: #a7a7a7;
+  transition: background-color 0.2s, color 0.2s;
+}
+.sidebar-item:hover {
+  background-color: rgba(140, 75, 255, 0.3);
+  color: #e0e0e0;
+}
+
+.active-pink {
+    background-color: rgba(255, 45, 172, 0.2);
+    color: #ff2dac;
+    font-weight: bold;
+}
+.sidebar-dropdown {
+  padding-left: 1.5rem;
+}
+
+/* === DATA CARDS === */
+.index-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.index-card {
+  background-color: #101018;
+  border: 1px solid rgba(140, 75, 255, 0.3);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.index-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(140, 75, 255, 0.5);
+}
+
+.index-card.pink-border {
+  border-color: rgba(255, 45, 172, 0.5);
+}
+
+.index-card.pink-border:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 45, 172, 0.5);
+}
+
+.index-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+.index-card .card-description {
+    font-size: 0.8rem;
+    color: #a7a7a7;
+    margin-bottom: 1rem;
+    min-height: 32px; /* Reserve space */
+}
+
+.index-card p {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.index-card .positive {
+  color: #19ffe8; /* Cyan */
+}
+.index-card .negative {
+  color: #ff2dac; /* Pink */
+}
+
+.index-cards-row {
+  display: contents; /* Part of the parent grid */
+}
+
+/* Make grid responsive */
+@media (min-width: 640px) {
+  .index-cards-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .index-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .index-cards-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card-as-button {
+  background-color: #101018;
+  border: 1px solid rgba(140, 75, 255, 0.3);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  color: white; /* Set text color for button */
+}
+
+.card-as-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(140, 75, 255, 0.5);
+}
+
+.currency-index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.currency-index-card {
+    background-color: rgba(10, 10, 15, 0.8);
+    border: 1px solid rgba(140, 75, 255, 0.2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.currency-index-card h4 {
+    color: #11b3ff;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+.currency-index-card p {
+    font-size: 0.8rem;
+    color: #a7a7a7;
+    line-height: 1.4;
 }
 
 /* === NEON GLOW EFFECTS === */
+
 .glow-box {
   border: 1px solid rgba(17, 179, 255, 0.35);
   box-shadow:
@@ -74,6 +274,7 @@ body {
   transform: scale(1.03);
 }
 
+/* optional animated pulsing glow */
 @keyframes pulseGlow {
   0%, 100% {
     box-shadow:
@@ -93,6 +294,7 @@ body {
 }
 
 /* === MULTICOLOR HEADER TEXT === */
+
 .neon-text {
   background: linear-gradient(90deg, #ff2dac, #11b3ff, #8c4bff, #19ffe8, #ff7a1a);
   background-size: 400% 400%;
