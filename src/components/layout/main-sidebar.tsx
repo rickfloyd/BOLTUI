@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const educationalItems = [
   { name: 'Republican', description: 'Conservative market analysis' },
@@ -10,17 +11,28 @@ const educationalItems = [
 ];
 
 const platformItems = [
-  'AI Price Prediction Engine',
-  'ML Pattern Recognition',
-  'Sentiment Analysis AI',
-  'Smart Risk Management',
-  'Automated Trading Signals',
-  'Neural Networks & LSTM',
-  'Advanced Drawing Tools',
-  'Real-Time Market Data',
-  'Portfolio Management',
-  'Custom Scripting Engine',
+  { name: 'AI Price Prediction Engine', href: '/ai-analysis'},
+  { name: 'ML Pattern Recognition', href: '#'},
+  { name: 'Sentiment Analysis AI', href: '#'},
+  { name: 'Smart Risk Management', href: '#'},
+  { name: 'Automated Trading Signals', href: '#'},
+  { name: 'Neural Networks & LSTM', href: '#'},
+  { name: 'Advanced Drawing Tools', href: '/charting'},
+  { name: 'Real-Time Market Data', href: '/data-feeds'},
+  { name: 'Portfolio Management', href: '#'},
+  { name: 'Custom Scripting Engine', href: '#'},
 ];
+
+const marketSummaryItems = [
+    { name: 'Stocks', href: '/exchanges' },
+    { name: 'Crypto', href: '/crypto' },
+    { name: 'Forex', href: '/forex' },
+    { name: 'Indices', href: '/indices' },
+    { name: 'Bonds', href: '/bonds' },
+    { name: 'Metals', href: '/metals' },
+    { name: 'Financial Data', href: '/financial-data' },
+    { name: 'Strategy', href: '/strategy' },
+]
 
 export function MainSidebar() {
   const [visibleMenu, setVisibleMenu] = React.useState<string | null>(null);
@@ -59,8 +71,26 @@ export function MainSidebar() {
       </div>
 
       <div className="sidebar-section">
-        <div className="section-title neon-pink">
+        <div 
+          className="section-title dropdown-toggle neon-pink"
+          data-target="market-summary-menu"
+          onClick={() => toggleMenu('market-summary-menu')}
+        >
           <span className="dot-indicator"></span> Market Summary
+        </div>
+         <div
+          id="market-summary-menu"
+          className={cn(
+            'dropdown-menu',
+            visibleMenu === 'market-summary-menu' && 'visible'
+          )}
+          style={{top: '105px', borderColor: 'var(--neon-pink)', boxShadow: 'var(--shadow-pink)'}}
+        >
+          {marketSummaryItems.map((item) => (
+            <Link href={item.href} key={item.name} legacyBehavior>
+                <a className="menu-item">{item.name}</a>
+            </Link>
+          ))}
         </div>
       </div>
 
@@ -80,9 +110,9 @@ export function MainSidebar() {
           )}
         >
           {platformItems.map((item) => (
-            <div key={item} className="menu-item">
-              {item}
-            </div>
+             <Link href={item.href} key={item.name} legacyBehavior>
+                <a className="menu-item">{item.name}</a>
+            </Link>
           ))}
           <div className="menu-item revolutionary-text">
             Revolutionary AI Trading Platform!

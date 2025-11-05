@@ -272,6 +272,8 @@ nav a:hover, .nav-right a:hover {
 .neon-blue-border { border-color: var(--neon-blue); box-shadow: var(--shadow-blue); }
 .neon-orange-border { border-color: var(--neon-orange); box-shadow: var(--shadow-orange); }
 .neon-cyan-border { border-color: var(--neon-cyan); box-shadow: var(--shadow-cyan); }
+.neon-pink-border { border-color: var(--neon-pink); box-shadow: var(--shadow-pink); }
+
 
 .card-title {
     font-size: 1.1em;

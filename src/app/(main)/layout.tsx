@@ -8,12 +8,12 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <SidebarProvider>
+    <>
       <Header />
       <div className="dashboard-grid">
         <MainSidebar />
         <main>{children}</main>
       </div>
-    </SidebarProvider>
+    </>
   );
 }

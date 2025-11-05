@@ -1,7 +1,9 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { useRealtimeData } from '@/hooks/use-realtime-data';
 
-// Mock data to be replaced by Firebase
+// Mock data to be used if Firebase data is not available
 const mockData = {
     marketData: {
         NASDAQ: { price: 385.39, change: -0.30 },
@@ -19,19 +21,17 @@ const mockData = {
 
 
 export default function Page() {
-    // In a real scenario, you would use the useRealtimeData hook like this:
-    // const { data: marketData, loading, error } = useRealtimeData('marketData');
-    // const { data: educationStats } = useRealtimeData('EducationStats');
-    // For now, we'll use the mock data.
-    const data = mockData;
+    // Use the custom hook to fetch data from Firebase Realtime Database
+    const { data: realtimeData, loading, error } = useRealtimeData('/');
 
+    // Use fetched data if available, otherwise fall back to mock data
+    const data = realtimeData || mockData;
 
-    const nasdaq = data.marketData.NASDAQ;
-    const dow = data.marketData.DOW;
-    const russell = data.marketData.RUSSELL;
-    const dxy = data.marketData.DXY;
-    const educationStats = data.EducationStats;
-
+    const nasdaq = data.marketData?.NASDAQ || mockData.marketData.NASDAQ;
+    const dow = data.marketData?.DOW || mockData.marketData.DOW;
+    const russell = data.marketData?.RUSSELL || mockData.marketData.RUSSELL;
+    const dxy = data.marketData?.DXY || mockData.marketData.DXY;
+    const educationStats = data.EducationStats || mockData.EducationStats;
 
   return (
     <section className="center-content">
@@ -39,19 +39,19 @@ export default function Page() {
         <p>90% of every payment directly funds educational programs for future traders</p>
         <div className="stats-row">
           <div className="stat-box">
-            <div className="stat-number">{educationStats.students.toLocaleString()}</div>
+            <div className="stat-number">{loading ? '...' : educationStats.students.toLocaleString()}</div>
             <div className="stat-label">Students Helped</div>
           </div>
           <div className="stat-box">
-            <div className="stat-number">{educationStats.courses}</div>
+            <div className="stat-number">{loading ? '...' : educationStats.courses}</div>
             <div className="stat-label">Free Courses</div>
           </div>
           <div className="stat-box">
-            <div className="stat-number">{educationStats.scholarships}</div>
+            <div className="stat-number">{loading ? '...' : educationStats.scholarships}</div>
             <div className="stat-label">Scholarships</div>
           </div>
           <div className="stat-box">
-            <div className="stat-number">{educationStats.freeTools}</div>
+            <div className="stat-number">{loading ? '...' : educationStats.freeTools}</div>
             <div className="stat-label">Free Tools</div>
           </div>
         </div>
@@ -63,9 +63,9 @@ export default function Page() {
             <span className="card-title">Nasdaq 100</span>
           </div>
           <div className="card-data">
-            <span className="price">${nasdaq.price.toFixed(2)}</span>
+            <span className="price">{loading ? '...' : `$${nasdaq.price.toFixed(2)}`}</span>
             <span className={cn('change', nasdaq.change > 0 ? 'positive' : 'negative')}>
-              {nasdaq.change > 0 ? '+' : ''}{nasdaq.change.toFixed(2)}%
+              {loading ? '...' : `${nasdaq.change > 0 ? '+' : ''}${nasdaq.change.toFixed(2)}%`}
             </span>
           </div>
         </div>
@@ -75,9 +75,9 @@ export default function Page() {
             <span className="card-title">Dow Jones</span>
           </div>
           <div className="card-data">
-            <span className="price">${dow.price.toFixed(2)}</span>
+            <span className="price">{loading ? '...' : `$${dow.price.toFixed(2)}`}</span>
             <span className={cn('change', dow.change > 0 ? 'positive' : 'negative')}>
-              {dow.change > 0 ? '+' : ''}{dow.change.toFixed(2)}%
+              {loading ? '...' : `${dow.change > 0 ? '+' : ''}${dow.change.toFixed(2)}%`}
             </span>
           </div>
         </div>
@@ -87,9 +87,9 @@ export default function Page() {
             <span className="card-title">Russell 2000</span>
           </div>
           <div className="card-data">
-            <span className="price">${russell.price.toFixed(2)}</span>
+            <span className="price">{loading ? '...' : `$${russell.price.toFixed(2)}`}</span>
             <span className={cn('change', russell.change > 0 ? 'positive' : 'negative')}>
-                {russell.change > 0 ? '+' : ''}{russell.change.toFixed(2)}%
+                {loading ? '...' : `${russell.change > 0 ? '+' : ''}${russell.change.toFixed(2)}%`}
             </span>
           </div>
         </div>
@@ -98,9 +98,9 @@ export default function Page() {
       <div className="dxy-card">
          <div className="dxy-title">DXY (US Dollar Index)</div>
          <div className="dxy-data">
-             <span className="dxy-price">{dxy.price.toFixed(2)}</span>
+             <span className="dxy-price">{loading ? '...' : dxy.price.toFixed(2)}</span>
              <span className={cn('dxy-change', dxy.change > 0 ? 'positive' : 'negative')}>
-                {dxy.change.toFixed(2)} ({dxy.changePercent.toFixed(2)}%)
+                {loading ? '...' : `${dxy.change.toFixed(2)} (${dxy.changePercent.toFixed(2)}%)`}
              </span>
          </div>
       </div>

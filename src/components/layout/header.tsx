@@ -34,7 +34,7 @@ export function Header() {
 
       <nav className="hidden md:flex items-center">
         {navItems.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive = pathname === item.href && item.href === '/markets';
           return (
             <Link
               key={item.label}
@@ -42,7 +42,7 @@ export function Header() {
               className={cn(
                 'nav-item',
                 item.className,
-                isActive && item.label === 'Markets' && 'active-market'
+                isActive && 'active-market'
               )}
             >
               {item.label}
