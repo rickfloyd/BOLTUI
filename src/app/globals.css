@@ -56,7 +56,6 @@ body.animation-page {
     font-size: 5vw; /* Large size, scales with the screen */
     font-weight: bold;
     letter-spacing: 0.1em;
-    text-shadow: 0 0 10px rgba(255, 0, 150, 0.8), 0 0 20px rgba(0, 150, 255, 0.8); /* Neon glow effect */
 }
 
 
@@ -170,7 +169,7 @@ body.animation-page {
     grid-template-columns: 280px 1fr;
     gap: 1.5rem;
     padding: 1.5rem;
-    height: calc(100vh - 80px); /* Adjust based on header height */
+    height: calc(100vh - 145px); /* Adjust based on header height */
 }
 
 /* === LEFT SIDEBAR === */
@@ -178,8 +177,9 @@ body.animation-page {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    border-right: 1px solid hsla(var(--neon-pink), 0.2); /* Changed from purple */
+    border-right: 1px solid hsla(var(--neon-pink), 0.2);
     padding-right: 1.5rem;
+    overflow-y: auto;
 }
 .sidebar-section .section-title {
     font-size: 1.1rem;
@@ -218,7 +218,7 @@ body.animation-page {
     cursor: pointer;
 }
 .dropdown-menu .menu-item:hover {
-    background-color: hsla(var(--neon-pink), 0.2); /* Changed from purple */
+    background-color: hsla(var(--neon-pink), 0.2);
     color: #fff;
 }
 .menu-item .sub-text {
@@ -243,8 +243,8 @@ body.animation-page {
     overflow-y: auto;
 }
 .info-banner {
-    background-color: hsla(var(--neon-pink), 0.1); /* Changed from purple */
-    border: 1px solid hsla(var(--neon-pink), 0.4); /* Changed from purple */
+    background-color: hsla(var(--neon-pink), 0.1);
+    border: 1px solid hsla(var(--neon-pink), 0.4);
     border-radius: var(--radius);
     padding: 1.5rem;
     text-align: center;
@@ -280,9 +280,8 @@ body.animation-page {
 
 .cards-column {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    margin-bottom: 2rem;
 }
 
 .data-card {
@@ -362,11 +361,11 @@ body.animation-page {
 .neon-orange { color: hsl(var(--neon-orange)) !important; }
 .neon-green { color: hsl(var(--neon-green)) !important; }
 
-.neon-pink-border { border-color: hsl(var(--neon-pink)); box-shadow: 0 0 10px hsl(var(--neon-pink), .5); }
-.neon-cyan-border { border-color: hsl(var(--neon-cyan)); box-shadow: 0 0 10px hsl(var(--neon-cyan), .5); }
-.neon-blue-border { border-color: hsl(var(--neon-blue)); box-shadow: 0 0 10px hsl(var(--neon-blue), .5); }
-.neon-orange-border { border-color: hsl(var(--neon-orange)); box-shadow: 0 0 10px hsl(var(--neon-orange), .5); }
-.neon-green-border { border-color: hsl(var(--neon-green)); box-shadow: 0 0 10px hsl(var(--neon-green), .5); }
+.neon-pink-border { border-color: hsl(var(--neon-pink)); }
+.neon-cyan-border { border-color: hsl(var(--neon-cyan)); }
+.neon-blue-border { border-color: hsl(var(--neon-blue)); }
+.neon-orange-border { border-color: hsl(var(--neon-orange)); }
+.neon-green-border { border-color: hsl(var(--neon-green)); }
 
 
 /* === NEON GLOW EFFECTS === */
@@ -421,10 +420,6 @@ body.animation-page {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-.neon-text:hover {
-  text-shadow: none;
 }
 
 /* === HEADER PULSE ANIMATION === */

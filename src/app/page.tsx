@@ -3,6 +3,7 @@
 import { Header } from '@/components/layout/header';
 import { MainSidebar } from '@/components/layout/main-sidebar';
 import ClientWrapper from "@/components/ClientWrapper";
+import React from 'react';
 
 export default function Page() {
   const cardData = [
@@ -17,6 +18,10 @@ export default function Page() {
     { title: 'Russell 2000', description: 'US Small-Cap Stocks', border: 'neon-orange-border' },
     { title: 'DXY (US Dollar Index)', description: 'US Dollar Value vs. Basket of Currencies', border: 'neon-green-border' },
     { title: 'S&P 500 (US500)', description: '500 Large US Companies', border: 'neon-pink-border' },
+    { title: 'VIX', description: 'Market Volatility Index', border: 'neon-orange-border' },
+    { title: 'FTSE 100', description: 'UK 100 Index', border: 'neon-green-border' },
+    { title: 'DAX 30', description: 'Germany 30 Index', border: 'neon-blue-border' },
+    { title: 'Nikkei 225', description: 'Japan 225 Index', border: 'neon-pink-border' },
   ];
 
   const generateRandomData = () => {
@@ -39,19 +44,20 @@ export default function Page() {
           <ClientWrapper>
             <div className="cards-column">
                 {cardData.map((cardInfo, index) => {
-                const data = generateRandomData();
-                return (
-                    <div className={`data-card ${cardInfo.border}`} key={index}>
-                    <div className="card-header">
-                        <span className="card-title">{cardInfo.title}</span>
-                        <p className="card-description">{cardInfo.description}</p>
-                    </div>
-                    <div className="card-data">
-                        <span className="price">{data.price}</span>
-                        <span className={`change ${data.changeClass}`}>{data.change}</span>
-                    </div>
-                    </div>
-                );
+                  // Use React.useMemo to avoid re-calculating on every render inside the loop
+                  const data = React.useMemo(() => generateRandomData(), []);
+                  return (
+                      <div className={`data-card ${cardInfo.border}`} key={index}>
+                      <div className="card-header">
+                          <span className="card-title">{cardInfo.title}</span>
+                          <p className="card-description">{cardInfo.description}</p>
+                      </div>
+                      <div className="card-data">
+                          <span className="price">{data.price}</span>
+                          <span className={`change ${data.changeClass}`}>{data.change}</span>
+                      </div>
+                      </div>
+                  );
                 })}
             </div>
           </ClientWrapper>
