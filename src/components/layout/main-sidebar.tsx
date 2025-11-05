@@ -87,8 +87,8 @@ export function MainSidebar() {
           style={{top: '105px', borderColor: 'var(--neon-pink)', boxShadow: 'var(--shadow-pink)'}}
         >
           {marketSummaryItems.map((item) => (
-            <Link href={item.href} key={item.name} legacyBehavior>
-                <a className="menu-item">{item.name}</a>
+            <Link href={item.href} key={item.name} className="menu-item">
+                {item.name}
             </Link>
           ))}
         </div>
@@ -110,8 +110,8 @@ export function MainSidebar() {
           )}
         >
           {platformItems.map((item) => (
-             <Link href={item.href} key={item.name} legacyBehavior>
-                <a className="menu-item">{item.name}</a>
+             <Link href={item.href} key={item.name} className="menu-item">
+                {item.name}
             </Link>
           ))}
           <div className="menu-item revolutionary-text">
