@@ -96,15 +96,15 @@ export default function Page() {
       </div>
 
       <div className="index-cards-row">
-        <button className="data-card neon-pink-border">
-          <div className="card-header">
-            <span className="card-title">Silver (XAG)</span>
-            <div className="card-description">Physical Goods</div>
-          </div>
-          <div className="card-data">
-            <span className="price">$29.80</span>
-            <span className="change negative">-0.15%</span>
-          </div>
+        <button className="data-card neon-orange-border">
+            <div className="card-header">
+                <span className="card-title">Forex</span>
+                <div className="card-description">Currency Trading</div>
+            </div>
+            <div className="card-data">
+                <span className="price"></span>
+                <span className="change"></span>
+            </div>
         </button>
 
         <button className="data-card neon-cyan-border">
@@ -130,41 +130,6 @@ export default function Page() {
       </div>
       
       <div className="index-cards-row">
-        <button className="data-card neon-orange-border">
-          <div className="card-header">
-            <span className="card-title">EUR/USD</span>
-            <div className="card-description">Currency Trading</div>
-          </div>
-          <div className="card-data">
-            <span className="price">1.0712</span>
-            <span className="change positive">+0.09%</span>
-          </div>
-        </button>
-
-        <button className="data-card neon-pink-border">
-          <div className="card-header">
-            <span className="card-title">USD/JPY</span>
-            <div className="card-description">Currency Trading</div>
-          </div>
-          <div className="card-data">
-            <span className="price">157.40</span>
-            <span className="change negative">-0.21%</span>
-          </div>
-        </button>
-
-        <button className="data-card neon-cyan-border">
-          <div className="card-header">
-            <span className="card-title">S&P 500</span>
-            <div className="card-description">500 Large US Companies</div>
-          </div>
-          <div className="card-data">
-            <span className="price">$5,470.30</span>
-            <span className="change positive">+0.77%</span>
-          </div>
-        </button>
-      </div>
-
-      <div className="index-cards-row">
         <button className="data-card neon-blue-border">
           <div className="card-header">
             <span className="card-title">Apple (AAPL)</span>
@@ -186,6 +151,7 @@ export default function Page() {
             <span className="change positive">+1.5%</span>
           </div>
         </button>
+
         <button className="data-card neon-cyan-border">
           <div className="card-header">
             <span className="card-title">S&P 500</span>
