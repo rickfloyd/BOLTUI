@@ -64,14 +64,8 @@ export default function Page() {
           </div>
         </div>
       </div>
-
-      <div className="index-cards-row">
-        <IndexCard title="Nasdaq 100" price="$385.39" change="-0.30%" changeType="negative" borderColor="neon-blue-border" />
-        <IndexCard title="Dow Jones" price="$368.91" change="+1.38%" changeType="positive" borderColor="neon-orange-border" />
-        <IndexCard title="Russell 2000" price="$200.89" change="-0.68%" changeType="negative" borderColor="neon-cyan-border" />
-      </div>
-
-       <Tabs defaultValue="stocks" className="w-full">
+      
+      <Tabs defaultValue="stocks" className="w-full">
         <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="stocks">Stocks</TabsTrigger>
           <TabsTrigger value="spreads">Spreads</TabsTrigger>
@@ -80,6 +74,12 @@ export default function Page() {
           <TabsTrigger value="futures">Futures</TabsTrigger>
         </TabsList>
       </Tabs>
+
+      <div className="index-cards-row">
+        <IndexCard title="Nasdaq 100" price="$385.39" change="-0.30%" changeType="negative" borderColor="neon-blue-border" />
+        <IndexCard title="Dow Jones" price="$368.91" change="+1.38%" changeType="positive" borderColor="neon-orange-border" />
+        <IndexCard title="Russell 2000" price="$200.89" change="-0.68%" changeType="negative" borderColor="neon-cyan-border" />
+      </div>
       
       <div className="dxy-card">
         <div className="dxy-title">DXY (US Dollar Index)</div>
