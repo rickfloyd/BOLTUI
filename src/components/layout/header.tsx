@@ -98,7 +98,7 @@ const corporateLinks = [
 ];
 
 const navItems = [
-  { href: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { href: '/', label: 'Main', icon: LayoutDashboard },
   { href: '/markets', label: 'All Markets', icon: CandlestickChart },
   { href: '/charting', label: 'Chart Engine', icon: AreaChart },
   { href: '/ai-analysis', label: 'AI Analysis', icon: Cpu },
