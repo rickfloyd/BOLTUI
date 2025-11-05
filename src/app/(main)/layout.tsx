@@ -9,8 +9,8 @@ export default function MainLayout({
 }) {
   return (
     <SidebarProvider>
-      <Header />
       <div className="dashboard-grid">
+        <Header />
         <MainSidebar />
         {children}
       </div>
