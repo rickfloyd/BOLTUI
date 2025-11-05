@@ -88,12 +88,6 @@ export function Header() {
         />
       </div>
       <div className="nav-right">
-        <Link href="#" className="nav-item">
-          Stocks
-        </Link>
-        <Link href="#" className="nav-item">
-          Commodities
-        </Link>
         <div className="nav-item-wrapper">
           <a
             href="#"
