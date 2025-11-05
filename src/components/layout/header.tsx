@@ -43,21 +43,21 @@ export function Header() {
           <Link href="#" className="nav-item neon-orange">
             Sports Betting
           </Link>
-          <Link href="#" className="nav-item neon-green">
+          <Link href="#" className="nav-item neon-blue">
             Sports
           </Link>
-          <Link href="#" className="nav-item neon-blue">
+          <Link href="#" className="nav-item neon-pink">
             World Sports
           </Link>
-          <Link href="#" className="nav-item neon-cyan">
+          <Link href="#" className="nav-item neon-orange">
             Products
           </Link>
-          <Link href="#" className="nav-item active-market">
+          <Link href="#" className="nav-item neon-blue active-market">
             Markets
           </Link>
         </nav>
         <div className="nav-right">
-          <Link href="#" className="nav-item neon-green">
+          <Link href="#" className="nav-item neon-pink">
             Community
           </Link>
           <Link href="#" className="nav-item neon-pink">
@@ -69,9 +69,9 @@ export function Header() {
         </div>
       </div>
       <div className="header-bottom-layer">
-        <HeaderDropdown title="AI-Powered Trading Platform" items={aiPlatformItems} titleClassName="neon-cyan"/>
-        <HeaderDropdown title="Financial News" items={financialNewsItems} titleClassName="neon-blue" />
-        <HeaderDropdown title="Politics" items={politicalViewpointItems} titleClassName="neon-green"/>
+        <HeaderDropdown title="AI-Powered Trading Platform" items={aiPlatformItems} titleClassName="neon-pink"/>
+        <HeaderDropdown title="Financial News" items={financialNewsItems} titleClassName="neon-orange" />
+        <HeaderDropdown title="Politics" items={politicalViewpointItems} titleClassName="neon-blue"/>
         <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasureItems} titleClassName="neon-pink" />
       </div>
     </header>
