@@ -4,45 +4,43 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-
-const navItems = [
-  { href: '#', label: 'Impact', className: 'impact-glow' },
-  { href: '#', label: 'Sports Betting' },
-  { href: '#', label: 'Sports' },
-  { href: '#', label: 'World Sports' },
-  { href: '#', label: 'Products' },
-  { href: '/markets', label: 'Markets' },
-  { href: '#', label: 'More' },
-];
-
-const rightNavItems = [
-    { href: '/exchanges', label: 'Stocks' },
-    { href: '#', label: 'Commodities' },
-    { href: '#', label: 'Community', className: 'community-glow' }
-]
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
 
 export function Header() {
   const pathname = usePathname();
 
+  const navItems = [
+    { href: '/markets', label: 'Markets' },
+    { href: '/exchanges', label: 'Exchanges' },
+    { href: '/compare-prices', label: 'Pricing' },
+    { href: '/policy', label: 'Policy' },
+  ];
+  
+  const rightNavItems = [
+      { href: '/join', label: 'Join' },
+      { href: '/custom-view', label: 'Custom' },
+      { href: '/simple-view', label: 'Simple' },
+  ]
+
   return (
-    <header className="header-nav">
-      <div className="flex items-center">
-        <Link href="/" className="logo">
+    <header className="flex items-center justify-between p-4 border-b">
+      <div className="flex items-center gap-4">
+        <Link href="/" className="text-xl font-bold text-primary neon-text">
           AI QUANTUM CHARTS
         </Link>
       </div>
 
-      <nav className="hidden md:flex items-center">
+      <nav className="hidden md:flex items-center gap-4">
         {navItems.map((item) => {
-          const isActive = pathname === item.href && item.href === '/markets';
+          const isActive = pathname === item.href;
           return (
             <Link
               key={item.label}
               href={item.href}
               className={cn(
-                'nav-item',
-                item.className,
-                isActive && 'active-market'
+                'text-sm font-medium transition-colors hover:text-primary',
+                isActive ? 'text-primary' : 'text-muted-foreground'
               )}
             >
               {item.label}
@@ -52,20 +50,19 @@ export function Header() {
       </nav>
 
       <div className="flex items-center gap-4">
-        <div className="search-box relative hidden md:block">
-            <input type="text" placeholder="Search markets..." className="search-input" />
+        <div className="relative hidden md:block">
+            <Input type="search" placeholder="Search..." className="h-9 w-[250px]" />
         </div>
-        <div className="nav-right hidden md:flex items-center">
+        <div className="hidden md:flex items-center gap-2">
             {rightNavItems.map((item) => (
-                 <Link
-                    key={item.label}
-                    href={item.href}
-                    className={cn('nav-item', item.className)}
-                >
-                    {item.label}
-                </Link>
+                 <Button asChild variant="ghost" key={item.label}>
+                    <Link href={item.href}>
+                        {item.label}
+                    </Link>
+                 </Button>
             ))}
         </div>
+        <Button>Login</Button>
       </div>
     </header>
   );
