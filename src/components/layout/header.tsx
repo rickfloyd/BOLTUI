@@ -26,6 +26,12 @@ export function Header() {
     { name: 'Automated Trading Signals', subtext: 'Real-time buy/sell alerts' },
     { name: 'Neural Networks & LSTM', subtext: 'Deep learning for market prediction' },
   ];
+  const guiltyPleasureItems = [
+    { name: 'Celebrity Gossip', subtext: 'Latest news from Hollywood' },
+    { name: 'Reality TV Buzz', subtext: 'What\'s happening on your favorite shows' },
+    { name: 'Viral Memes', subtext: 'The funniest content on the web' },
+    { name: 'Binge-Worthy Shows', subtext: 'Recommendations for your next marathon' },
+  ];
   const logoImage = PlaceHolderImages.find(p => p.id === 'logo');
   return (
     <header className="header-nav">
@@ -73,6 +79,7 @@ export function Header() {
         <HeaderDropdown title="AI-Powered Trading Platform" items={aiPlatformItems} />
         <HeaderDropdown title="Financial News" items={financialNewsItems} />
         <HeaderDropdown title="Politics" items={politicalViewpointItems} />
+        <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasureItems} titleClassName="neon-pink" />
       </div>
     </header>
   );

@@ -10,9 +10,10 @@ type DropdownItem = {
 type HeaderDropdownProps = {
   title: string;
   items: DropdownItem[];
+  titleClassName?: string;
 };
 
-export function HeaderDropdown({ title, items }: HeaderDropdownProps) {
+export function HeaderDropdown({ title, items, titleClassName }: HeaderDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,7 +22,7 @@ export function HeaderDropdown({ title, items }: HeaderDropdownProps) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <a href="#" className="nav-item neon-cyan">
+      <a href="#" className={`nav-item ${titleClassName || 'neon-cyan'}`}>
         {title}
       </a>
       {isOpen && (
