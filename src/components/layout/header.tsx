@@ -35,7 +35,7 @@ export function Header() {
         <Link href="#" className="nav-item impact-glow">
           Impact
         </Link>
-        <Link href="#" className="nav-item">
+        <Link href="#" className="nav-item neon-orange">
           Sports Betting
         </Link>
         <Link href="#" className="nav-item">
