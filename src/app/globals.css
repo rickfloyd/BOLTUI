@@ -208,6 +208,14 @@ body {
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
+
+.cards-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Approximates "2 inches down" */
+    margin-bottom: 2rem;
+}
+
 .data-card {
     background-color: #0A0A0F;
     border: 1px solid;

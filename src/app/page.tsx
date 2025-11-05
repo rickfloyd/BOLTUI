@@ -3,6 +3,8 @@ import { Header } from '@/components/layout/header';
 import { MainSidebar } from '@/components/layout/main-sidebar';
 
 export default function Page() {
+  const cards = Array.from({ length: 25 }, (_, i) => i + 1);
+
   return (
     <>
       <Header />
@@ -32,36 +34,20 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="index-cards-row">
-                <div className="data-card neon-blue-border">
-                    <div className="card-header">
-                        <span className="card-title">Nasdaq 100</span>
+            <div className="cards-column">
+                {cards.map((card) => (
+                    <div key={card} className="data-card neon-blue-border">
+                        <div className="card-header">
+                            <span className="card-title">Stock Index {card}</span>
+                        </div>
+                        <div className="card-data">
+                            <span className="price">${(300 + Math.random() * 100).toFixed(2)}</span>
+                            <span className={`change ${Math.random() > 0.5 ? 'positive' : 'negative'}`}>
+                                {(Math.random() * 2 - 1).toFixed(2)}%
+                            </span>
+                        </div>
                     </div>
-                    <div className="card-data">
-                        <span className="price">$385.39</span>
-                        <span className="change negative">-0.30%</span>
-                    </div>
-                </div>
-                
-                <div className="data-card neon-orange-border">
-                    <div className="card-header">
-                        <span className="card-title">Dow Jones</span>
-                    </div>
-                    <div className="card-data">
-                        <span className="price">$368.91</span>
-                        <span className="change positive">+1.38%</span>
-                    </div>
-                </div>
-
-                <div className="data-card neon-cyan-border">
-                    <div className="card-header">
-                        <span className="card-title">Russell 2000</span>
-                    </div>
-                    <div className="card-data">
-                        <span className="price">$200.89</span>
-                        <span className="change negative">-0.68%</span>
-                    </div>
-                </div>
+                ))}
             </div>
             
             <div className="dxy-card neon-pink-border">
