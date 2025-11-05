@@ -29,7 +29,7 @@ export function Header() {
 
   return (
     <header className="header-nav">
-      <div className="flex items-center gap-2">
+      <div className="flex items-center">
         <SidebarTrigger className="md:hidden"/>
         <Link href="/" className="logo">
           AI QUANTUM CHARTS
@@ -57,7 +57,7 @@ export function Header() {
 
       <div className="flex items-center gap-4">
         <div className="search-box relative hidden md:block">
-            <Input type="text" placeholder="Search markets..." className="search-input" />
+            <input type="text" placeholder="Search markets..." className="search-input" />
         </div>
         <div className="nav-right hidden md:flex items-center">
             {rightNavItems.map((item) => (

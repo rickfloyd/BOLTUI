@@ -33,7 +33,12 @@ export function MainSidebar() {
   const { isMobile } = useSidebar();
 
   const toggleMenu = (menuId: string) => {
-    setVisibleMenu(visibleMenu === menuId ? null : menuId);
+    // Close other menus
+    if (visibleMenu && visibleMenu !== menuId) {
+        setVisibleMenu(menuId);
+    } else {
+        setVisibleMenu(visibleMenu === menuId ? null : menuId);
+    }
   };
   
   // On mobile, the sidebar is an off-canvas sheet, so dropdowns don't make sense.

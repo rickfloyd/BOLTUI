@@ -13,20 +13,20 @@ function IndexCard({
   change,
   changeType,
   borderColorClass,
-  icon,
+  icon: Icon
 }: {
   title: string;
   price: string;
   change: string;
   changeType: 'positive' | 'negative';
   borderColorClass: string;
-  icon: React.ReactNode;
+  icon: React.ElementType;
 }) {
   return (
     <div className={`data-card ${borderColorClass}`}>
       <div className="card-header flex justify-between items-center">
         <span className="card-title">{title}</span>
-        {icon}
+        <Icon className="h-5 w-5 text-muted-foreground" />
       </div>
       <div className="card-data">
         <span className="price">{price}</span>
@@ -38,28 +38,45 @@ function IndexCard({
 
 export default function Page() {
   return (
-    <section className="center-content space-y-4">
+    <section className="center-content">
       <div className="info-banner">
-        <p>90% of every payment directly funds educational programs for future traders</p>
+        <div className="flex justify-between items-center">
+            <p>90% of every payment directly funds educational programs for future traders</p>
+            <div className="text-sm cursor-pointer text-muted-foreground hover:text-white">
+                Where Your Payment Goes ▼
+            </div>
+        </div>
         <div className="stats-row">
-          <div className="stat-box">
-            <div className="stat-number">12,911</div>
-            <div className="stat-label">Students Helped</div>
-          </div>
-          <div className="stat-box">
-            <div className="stat-number">156</div>
-            <div className="stat-label">Free Courses</div>
-          </div>
-          <div className="stat-box">
-            <div className="stat-number">348</div>
-            <div className="stat-label">Scholarships</div>
-          </div>
-          <div className="stat-box">
-            <div className="stat-number">28</div>
-            <div className="stat-label">Free Tools</div>
-          </div>
+            <div className="stat-box">
+                <div className="stat-number">12,911</div>
+                <div className="stat-label">Students Helped</div>
+            </div>
+            <div className="stat-box">
+                <div className="stat-number">156</div>
+                <div className="stat-label">Free Courses</div>
+            </div>
+            <div className="stat-box">
+                <div className="stat-number">348</div>
+                <div className="stat-label">Scholarships</div>
+            </div>
+            <div className="stat-box">
+                <div className="stat-number">28</div>
+                <div className="stat-label">Free Tools</div>
+            </div>
         </div>
       </div>
+      
+      <Tabs defaultValue="stocks" className="w-full">
+        <TabsList className="grid w-full grid-cols-7">
+          <TabsTrigger value="stocks">Stocks</TabsTrigger>
+          <TabsTrigger value="spreads">Spreads</TabsTrigger>
+          <TabsTrigger value="crypto">Crypto</TabsTrigger>
+          <TabsTrigger value="forex">Forex</TabsTrigger>
+          <TabsTrigger value="futures">Futures</TabsTrigger>
+          <TabsTrigger value="economy">Economy</TabsTrigger>
+          <TabsTrigger value="options">Options</TabsTrigger>
+        </TabsList>
+      </Tabs>
 
       <div className="index-cards-row">
         <IndexCard
@@ -68,7 +85,7 @@ export default function Page() {
           change="-0.30%"
           changeType="negative"
           borderColorClass="neon-blue-border"
-          icon={<BarChart2 className="h-5 w-5 text-neon-blue" />}
+          icon={BarChart2}
         />
         <IndexCard
           title="Dow Jones"
@@ -76,7 +93,7 @@ export default function Page() {
           change="+1.38%"
           changeType="positive"
           borderColorClass="neon-orange-border"
-          icon={<BarChart2 className="h-5 w-5 text-neon-orange" />}
+          icon={BarChart2}
         />
         <IndexCard
           title="Russell 2000"
@@ -84,17 +101,18 @@ export default function Page() {
           change="-0.68%"
           changeType="negative"
           borderColorClass="neon-cyan-border"
-          icon={<BarChart2 className="h-5 w-5 text-neon-cyan" />}
+          icon={BarChart2}
         />
       </div>
-
-      <div className="dxy-card">
-        <div className="dxy-title">DXY (US Dollar Index)</div>
-        <div className="dxy-data">
-          <span className="dxy-price">105.42</span>
-          <span className="dxy-change negative">-0.38 (-0.36%)</span>
-        </div>
+      
+      <div className="dxy-card neon-pink-border">
+            <div className="dxy-title">DXY (US Dollar Index)</div>
+            <div className="dxy-data">
+                <span className="dxy-price">105.42</span>
+                <span className="dxy-change negative">-0.38 (-0.36%)</span>
+            </div>
       </div>
+
     </section>
   );
 }
