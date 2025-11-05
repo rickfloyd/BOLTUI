@@ -11,7 +11,7 @@
     --background-end-rgb: 10, 10, 15;
     --foreground-rgb: 225, 225, 235;
 
-    --primary-glow: 271 83% 51%;
+    --primary-glow: 330, 100%, 55%; /* Changed from purple to pink */
     --accent-glow: 180 100% 50%; /* Cyan */
 
     --neon-pink: 330, 100%, 55%;
@@ -36,15 +36,15 @@ body {
     display: flex;
     align-items: center;
     padding: 1rem 2rem;
-    border-bottom: 1px solid rgba(160, 32, 240, 0.3);
+    border-bottom: 1px solid hsla(var(--neon-pink), 0.3); /* Changed from purple */
     background-color: rgba(10, 10, 15, 0.5);
     backdrop-filter: blur(5px);
 }
 .header-nav .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #A020F0;
-    text-shadow: 0 0 8px #A020F0;
+    color: hsl(var(--neon-pink)); /* Changed from purple */
+    text-shadow: 0 0 8px hsl(var(--neon-pink)); /* Changed from purple */
 }
 .header-nav nav {
     display: flex;
@@ -67,8 +67,8 @@ body {
     text-shadow: 0 0 8px #00FFFF;
 }
 .header-nav .impact-glow {
-    color: #A020F0;
-    text-shadow: 0 0 8px #A020F0;
+    color: hsl(var(--neon-pink)); /* Changed from purple */
+    text-shadow: 0 0 8px hsl(var(--neon-pink)); /* Changed from purple */
 }
 .header-nav .community-glow {
     color: #00FFFF;
@@ -76,7 +76,7 @@ body {
 }
 .header-nav .search-input {
     background-color: rgba(20, 20, 30, 0.8);
-    border: 1px solid rgba(160, 32, 240, 0.5);
+    border: 1px solid hsla(var(--neon-pink), 0.5); /* Changed from purple */
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: var(--radius);
@@ -102,7 +102,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    border-right: 1px solid rgba(160, 32, 240, 0.2);
+    border-right: 1px solid hsla(var(--neon-pink), 0.2); /* Changed from purple */
     padding-right: 1.5rem;
 }
 .sidebar-section .section-title {
@@ -142,7 +142,7 @@ body {
     cursor: pointer;
 }
 .dropdown-menu .menu-item:hover {
-    background-color: rgba(160, 32, 240, 0.2);
+    background-color: hsla(var(--neon-pink), 0.2); /* Changed from purple */
     color: #fff;
 }
 .menu-item .sub-text {
@@ -160,8 +160,8 @@ body {
 }
 .revolutionary-text {
     font-weight: 700;
-    color: #A020F0;
-    text-shadow: 0 0 8px #A020F0;
+    color: hsl(var(--neon-pink)); /* Changed from purple */
+    text-shadow: 0 0 8px hsl(var(--neon-pink)); /* Changed from purple */
     text-align: center;
     margin-top: 1rem;
 }
@@ -174,8 +174,8 @@ body {
     overflow-y: auto;
 }
 .info-banner {
-    background-color: rgba(160, 32, 240, 0.1);
-    border: 1px solid rgba(160, 32, 240, 0.4);
+    background-color: hsla(var(--neon-pink), 0.1); /* Changed from purple */
+    border: 1px solid hsla(var(--neon-pink), 0.4); /* Changed from purple */
     border-radius: var(--radius);
     padding: 1.5rem;
     text-align: center;
@@ -206,17 +206,29 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 .data-card {
     background-color: #0A0A0F;
     border: 1px solid;
     border-radius: var(--radius);
     padding: 1rem;
+    text-align: left;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+.data-card:hover {
+  transform: translateY(-5px);
 }
 .card-header .card-title {
     font-size: 1rem;
     font-weight: 600;
     color: #e0e0e0;
+}
+.card-header .card-description {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 0.25rem;
 }
 .card-data {
     display: flex;
@@ -240,24 +252,31 @@ body {
     border: 1px solid;
     border-radius: var(--radius);
     padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
-.dxy-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #e0e0e0;
+
+.dxy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
 }
-.dxy-data .dxy-price {
-    font-size: 2rem;
-    font-weight: 700;
+.currency-card {
+    background-color: rgba(20, 20, 30, 0.5);
+    border: 1px solid rgba(255, 45, 172, 0.3);
+    border-radius: var(--radius);
+    padding: 1rem;
 }
-.dxy-data .dxy-change {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-left: 1rem;
+.currency-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff2dac;
 }
+.currency-card .card-description {
+  font-size: 0.8rem;
+  color: #bbb;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
 
 /* NEON BORDERS & TEXT */
 .neon-pink { color: hsl(var(--neon-pink)); text-shadow: 0 0 8px hsl(var(--neon-pink)); }
@@ -268,4 +287,65 @@ body {
 .neon-pink-border { border-color: hsl(var(--neon-pink)); box-shadow: 0 0 10px hsl(var(--neon-pink), .5); }
 .neon-cyan-border { border-color: hsl(var(--neon-cyan)); box-shadow: 0 0 10px hsl(var(--neon-cyan), .5); }
 .neon-blue-border { border-color: hsl(var(--neon-blue)); box-shadow: 0 0 10px hsl(var(--neon-blue), .5); }
-.neon-orange-border { border-color: hsl(var(--neon-orange)); box-shadow: 0 0 10px hsl(var(--neon-orange), .5); }
+.neon-orange-border { border-color: hsl(var(--neon-orange)); box-shadow: 0 0 10px hsl(var(--orange-neon), .5); }
+
+/* === NEON GLOW EFFECTS === */
+
+.glow-box {
+  border: 1px solid rgba(17, 179, 255, 0.35);
+  box-shadow:
+    0 0 10px rgba(17, 179, 255, 0.7),
+    0 0 20px rgba(140, 75, 255, 0.6),
+    inset 0 0 8px rgba(25, 255, 232, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.glow-box:hover {
+  box-shadow:
+    0 0 18px rgba(255, 45, 172, 1),
+    0 0 36px rgba(17, 179, 255, 0.9),
+    inset 0 0 10px rgba(140, 75, 255, 0.3);
+  transform: scale(1.03);
+}
+
+/* optional animated pulsing glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 10px rgba(17,179,255,.8),
+      0 0 25px rgba(140,75,255,.6),
+      inset 0 0 10px rgba(25,255,232,.3);
+  }
+  50% {
+    box-shadow:
+      0 0 16px rgba(255,45,172,1),
+      0 0 30px rgba(17,179,255,.8),
+      inset 0 0 12px rgba(140,75,255,.4);
+  }
+}
+.glow-animate {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* === MULTICOLOR HEADER TEXT === */
+
+.neon-text {
+  background: linear-gradient(90deg, #ff2dac, #11b3ff, #8c4bff, #19ffe8, #ff7a1a);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hueShift 6s linear infinite;
+  text-shadow: 0 0 10px rgba(17,179,255,0.8), 0 0 20px rgba(255,45,172,0.5);
+}
+
+@keyframes hueShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.neon-text:hover {
+  text-shadow: 0 0 18px rgba(255,45,172,1), 0 0 30px rgba(17,179,255,1);
+}
+
+    
