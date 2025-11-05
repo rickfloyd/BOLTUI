@@ -17,6 +17,8 @@ const navItems = [
 
 const rightNavItems = [
     { href: '/exchanges', label: 'Stocks' },
+    { href: '#', label: 'Commodities' },
+    { href: '#', label: 'Community', className: 'community-glow' }
 ]
 
 export function Header() {

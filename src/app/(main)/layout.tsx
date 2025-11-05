@@ -1,4 +1,6 @@
 import { Header } from '@/components/layout/header';
+import { MainSidebar } from '@/components/layout/main-sidebar';
+import { SidebarProvider } from '@/components/ui/sidebar';
 
 export default function MainLayout({
   children,
@@ -6,9 +8,12 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <SidebarProvider>
       <Header />
-      <main>{children}</main>
-    </>
+      <div className="dashboard-grid">
+        <MainSidebar />
+        <main>{children}</main>
+      </div>
+    </SidebarProvider>
   );
 }

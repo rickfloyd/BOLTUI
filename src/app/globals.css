@@ -155,7 +155,7 @@ nav a:hover, .nav-right a:hover {
 
 /* Adjust position for the second dropdown */
 .platform-menu {
-    top: 250px; 
+    top: 155px; /* Adjusted from 250px to fit better */
     border: 2px solid var(--neon-blue);
     box-shadow: 0 0 20px rgba(0, 204, 255, 0.8);
     width: 340px;
@@ -178,6 +178,11 @@ nav a:hover, .nav-right a:hover {
 .menu-item:hover {
     background-color: rgba(255, 0, 153, 0.1);
     color: var(--neon-pink);
+}
+
+.platform-menu .menu-item:hover {
+    background-color: rgba(0, 204, 255, 0.1);
+    color: var(--neon-blue);
 }
 
 .sub-text {

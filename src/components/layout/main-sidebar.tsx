@@ -1,12 +1,6 @@
 'use client';
 import React from 'react';
 import { cn } from '@/lib/utils';
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarHeader,
-  useSidebar,
-} from '@/components/ui/sidebar';
 
 const educationalItems = [
   { name: 'Republican', description: 'Conservative market analysis' },
@@ -30,32 +24,11 @@ const platformItems = [
 
 export function MainSidebar() {
   const [visibleMenu, setVisibleMenu] = React.useState<string | null>(null);
-  const { isMobile } = useSidebar();
 
   const toggleMenu = (menuId: string) => {
-    // Close other menus
-    if (visibleMenu && visibleMenu !== menuId) {
-        setVisibleMenu(menuId);
-    } else {
-        setVisibleMenu(visibleMenu === menuId ? null : menuId);
-    }
+    setVisibleMenu(visibleMenu === menuId ? null : menuId);
   };
   
-  // On mobile, the sidebar is an off-canvas sheet, so dropdowns don't make sense.
-  // We'll use Collapsibles instead for mobile.
-  if (isMobile) {
-      return (
-        <Sidebar>
-            <SidebarHeader>
-                {/* Mobile header content if any */}
-            </SidebarHeader>
-            <SidebarContent>
-                 {/* Mobile-friendly content, maybe just links */}
-            </SidebarContent>
-        </Sidebar>
-      )
-  }
-
   return (
     <aside className="left-sidebar">
       <div className="sidebar-section">
