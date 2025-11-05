@@ -42,7 +42,7 @@ const IndexCard = ({ title, price, change, changeType, borderColor }: { title: s
 
 export default function Page() {
   return (
-    <section className="center-content p-4 md:p-6 space-y-6">
+    <section className="center-content p-4 md:p-6 space-y-4">
       <div className="info-banner">
         <p className="text-center mb-4">90% of every payment directly funds educational programs for future traders</p>
         <div className="stats-row">

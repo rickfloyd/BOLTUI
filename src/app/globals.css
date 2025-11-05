@@ -148,9 +148,9 @@
 
   /* --- 3. DASHBOARD GRID LAYOUT --- */
   .dashboard-grid {
-      @apply grid gap-5;
+      @apply grid p-5;
       grid-template-columns: 280px 1fr;
-      grid-template-rows: auto 1fr;
+      gap: 16px;
   }
 
   /* --- 4. LEFT SIDEBAR STYLES --- */
@@ -235,7 +235,7 @@
 
   .info-banner {
       background-color: #1a1a2e;
-      @apply p-4 rounded-md mb-6;
+      @apply p-4 rounded-md;
       border-top: 2px solid hsl(var(--neon-pink));
       border-bottom: 2px solid hsl(var(--neon-pink));
   }
@@ -255,7 +255,7 @@
   }
 
   .index-cards-row {
-      @apply flex gap-5 mb-5;
+      @apply flex gap-5;
   }
 
   .data-card {
