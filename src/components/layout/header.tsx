@@ -5,9 +5,14 @@ import Link from 'next/link';
 
 export function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeSubDropdown, setActiveSubDropdown] = useState<string | null>(null);
 
   const toggleDropdown = (menuId: string) => {
     setActiveDropdown(activeDropdown === menuId ? null : menuId);
+  };
+
+  const toggleSubDropdown = (menuId: string) => {
+    setActiveSubDropdown(activeSubDropdown === menuId ? null : menuId);
   };
 
   return (
@@ -61,7 +66,13 @@ export function Header() {
           >
             <div className="menu-item">US Stocks</div>
             <div className="menu-item">International</div>
-            <div className="menu-item">Crypto</div>
+            <div className="menu-item-submenu-container">
+              <a href="#" className="menu-item" onClick={() => toggleSubDropdown('crypto-menu')}>Crypto</a>
+               <div id="crypto-menu" className={`header-submenu ${activeSubDropdown === 'crypto-menu' ? 'visible' : ''}`}>
+                 <div className="menu-item">Bitcoin</div>
+                 <div className="menu-item">Ethereum</div>
+              </div>
+            </div>
             <div className="menu-item">Forex</div>
           </div>
         </div>
