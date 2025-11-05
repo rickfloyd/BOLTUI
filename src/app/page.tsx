@@ -1,7 +1,5 @@
 'use client';
 
-import { BarChart, Bitcoin, CandlestickChart, Info } from 'lucide-react';
-
 export default function Page() {
   return (
     <section className="center-content">
