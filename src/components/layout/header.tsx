@@ -21,16 +21,6 @@ export function Header() {
   const logoImage = PlaceHolderImages.find(p => p.id === 'logo');
   return (
     <header className="header-nav">
-      {logoImage && (
-        <Image
-          src={logoImage.imageUrl}
-          alt={logoImage.description}
-          width={200}
-          height={40}
-          className="logo-image"
-          data-ai-hint={logoImage.imageHint}
-        />
-      )}
       <nav>
         <Link href="#" className="nav-item impact-glow">
           Impact
