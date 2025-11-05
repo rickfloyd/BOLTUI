@@ -33,9 +33,6 @@ export function MainSidebar() {
           ))}
         </div>
       </div>
-      <div className="revolutionary-text">
-        A REVOLUTIONARY WAY TO TRADE
-      </div>
     </aside>
   );
 }
