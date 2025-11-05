@@ -8,7 +8,7 @@
 @layer base {
   :root {
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 10, 10, 15;
+    --background-end-rgb: 54, 69, 79;
     --foreground-rgb: 225, 225, 235;
 
     --primary-glow: 330, 100%, 55%; /* Changed from purple to pink */
