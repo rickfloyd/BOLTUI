@@ -3,8 +3,6 @@ import { Activity, Bot, DollarSign, BarChart } from 'lucide-react';
 
 export default function DashboardPage() {
   const boxes = Array.from({ length: 20 });
-  const rows = Array.from({ length: 4 });
-  const boxesPerRow = 5;
 
   const happyColors = [
     'hsl(var(--accent))',      // Cyan
@@ -78,32 +76,26 @@ export default function DashboardPage() {
             </Card>
           </div>
 
-          {/* 20 Individual Boxes grouped into rows */}
-          <div className="flex flex-col space-y-12">
-            {rows.map((_, rowIndex) => (
-              <div key={rowIndex} className="grid grid-cols-5 gap-4">
-                {boxes.slice(rowIndex * boxesPerRow, (rowIndex + 1) * boxesPerRow).map((_, boxIndex) => {
-                  const boxNum = rowIndex * boxesPerRow + boxIndex;
-                  const color = happyColors[boxNum % happyColors.length];
-                  return (
-                    <Card 
-                      key={boxNum} 
-                      className="h-40 transition-transform duration-300 ease-in-out hover:scale-105"
-                      style={{
-                        borderColor: color,
-                        boxShadow: `0 0 8px ${color}, 0 0 12px ${color} inset`,
-                      }}
-                    >
-                        <CardContent className="flex items-center justify-center h-full">
-                            <p className="text-muted-foreground">Box {boxNum + 1}</p>
-                        </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-            ))}
+          {/* 20 Individual Boxes in a single grid */}
+          <div className="grid grid-cols-5 gap-x-4 gap-y-2 w-full px-4">
+            {boxes.map((_, boxIndex) => {
+              const color = happyColors[boxIndex % happyColors.length];
+              return (
+                <Card 
+                  key={boxIndex} 
+                  className="h-40 transition-transform duration-300 ease-in-out hover:scale-105"
+                  style={{
+                    borderColor: color,
+                    boxShadow: `0 0 8px ${color}, 0 0 12px ${color} inset`,
+                  }}
+                >
+                    <CardContent className="flex items-center justify-center h-full">
+                        <p className="text-muted-foreground">Box {boxIndex + 1}</p>
+                    </CardContent>
+                </Card>
+              );
+            })}
           </div>
-
         </div>
       </div>
     </>
