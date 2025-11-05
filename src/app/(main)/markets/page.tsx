@@ -65,7 +65,7 @@ export default function MarketsPage() {
                     </Badge>
                   </TableCell>
                   <TableCell className="text-right font-mono">{item.price}</TableCell>
-                  <TableCell className={cn('text-right font-mono flex justify-end items-center gap-2', item.trend === 'up' ? 'text-accent' : 'text-pink-500')}>
+                  <TableCell className={cn('text-right font-mono flex justify-end items-center gap-2', item.trend === 'up' ? 'text-accent' : 'text-chart-3')}>
                     {item.change}
                     {item.trend === 'up' ? <ArrowUpRight className="h-4 w-4" /> : <ArrowDownRight className="h-4 w-4" />}
                   </TableCell>

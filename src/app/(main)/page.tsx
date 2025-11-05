@@ -7,7 +7,7 @@ export default function DashboardPage() {
 
   const happyColors = [
     'hsl(var(--accent))',      // Cyan
-    'hsl(var(--chart-3))',     // Hot Pink
+    'hsl(var(--chart-3))',     // Hot Pink/Red
     'hsl(var(--chart-4))',     // Neon Orange
     'hsl(var(--chart-5))',     // Neon Green
     '#39FF14',                 // Neon Green
@@ -68,7 +68,7 @@ export default function DashboardPage() {
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   Market Volume
                 </CardTitle>
-                <BarChart className="h-4 w-4 text-pink-500" />
+                <BarChart className="h-4 w-4 text-chart-3" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">$1.2T</div>
