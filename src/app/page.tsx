@@ -37,22 +37,10 @@ export default function Page() {
       <main className="dashboard-grid">
         <MainSidebar />
         <section className="center-content">
-          <div className="dxy-card neon-pink-border">
-            <div className="dxy-grid">
-              {currencyIndexes.map((index) => (
-                <div className="currency-card" key={index.name}>
-                  <div className="card-title">{index.name} {index.longName}</div>
-                  <p className="card-description">{index.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
           <ClientWrapper>
-            <div className="cards-column">
-                {Array.from({ length: 25 }).map((_, index) => {
+            <div className="index-cards-row">
+                {cardData.map((cardInfo, index) => {
                 const data = generateRandomData();
-                const cardInfo = cardData[index % cardData.length];
                 return (
                     <div className={`data-card ${cardInfo.border}`} key={index}>
                     <div className="card-header">
