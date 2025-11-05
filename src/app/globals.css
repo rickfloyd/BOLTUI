@@ -78,6 +78,11 @@ body.animation-page {
     padding: 1rem 0;
     justify-content: space-between;
 }
+.header-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-right: auto;
+}
 .header-bottom-layer {
     justify-content: center;
     gap: 1.5rem;
@@ -465,3 +470,5 @@ body.animation-page {
   80%  { background: #00ff00; }    /* electric green    */
   100% { background: #ff00ff; }    /* loop back         */
 }
+
+    

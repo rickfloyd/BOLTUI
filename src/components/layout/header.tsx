@@ -32,10 +32,10 @@ export function Header() {
     { name: 'Viral Memes', subtext: 'The funniest content on the web' },
     { name: 'Binge-Worthy Shows', subtext: 'Recommendations for your next marathon' },
   ];
-  const logoImage = PlaceHolderImages.find(p => p.id === 'logo');
   return (
     <header className="header-nav">
       <div className="header-top-layer">
+        <div className="header-title neon-text">AI Quantum Charts</div>
         <nav className="main-nav">
           <Link href="#" className="nav-item neon-pink">
             Impact
@@ -56,13 +56,6 @@ export function Header() {
             Markets
           </Link>
         </nav>
-        <div className="search-box">
-          <input
-            type="text"
-            placeholder="Search markets..."
-            className="search-input"
-          />
-        </div>
         <div className="nav-right">
           <Link href="#" className="nav-item neon-green">
             Community
@@ -84,3 +77,5 @@ export function Header() {
     </header>
   );
 }
+
+    
