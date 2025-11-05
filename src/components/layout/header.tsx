@@ -12,6 +12,12 @@ export function Header() {
     { name: 'Liberal', subtext: 'Social-focused market views' },
     { name: 'Independent', subtext: 'Unbiased market perspective' },
   ];
+  const financialNewsItems = [
+    { name: 'Market Overview', subtext: 'Top stories and analysis' },
+    { name: 'Economic Indicators', subtext: 'Latest data releases' },
+    { name: 'Corporate Earnings', subtext: 'Company performance reports' },
+    { name: 'Global Markets', subtext: 'International news and trends' },
+  ];
   const logoImage = PlaceHolderImages.find(p => p.id === 'logo');
   return (
     <header className="header-nav">
@@ -44,6 +50,7 @@ export function Header() {
         <Link href="#" className="nav-item active-market">
           Markets
         </Link>
+        <HeaderDropdown title="Financial News" items={financialNewsItems} />
         <HeaderDropdown title="Politics" items={politicalViewpointItems} />
         <Link href="#" className="nav-item">
           More

@@ -10,12 +10,6 @@ export function MainSidebar() {
 
   return (
     <aside className="left-sidebar">
-      <div className="sidebar-section">
-        <div className="section-title neon-pink">
-          <span className="dot-indicator"></span> Financial News
-        </div>
-      </div>
-
       <div className="sidebar-section platform-section">
         <div
           className="section-title dropdown-toggle neon-blue"
