@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -26,7 +26,7 @@
 body {
   background: linear-gradient(180deg, rgb(var(--background-start-rgb)) 0%, rgb(var(--background-end-rgb)) 100%);
   color: rgb(var(--foreground-rgb));
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   min-height: 100vh;
   margin: 0;
 }
@@ -118,7 +118,7 @@ body.animation-page {
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: var(--radius);
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 .header-nav .nav-right {
     display: flex;

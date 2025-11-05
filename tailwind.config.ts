@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
        fontFamily: {
-        sans: ['Orbitron', 'sans-serif'],
+        sans: ['Open Sans', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
