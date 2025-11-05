@@ -31,6 +31,34 @@ body {
   margin: 0;
 }
 
+body.animation-page {
+    /* Set the background to black and remove scrollbars */
+    background: #000000;
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#animation-container {
+    /* Make the 3D container take up the whole screen */
+    width: 100vw;
+    height: 100vh;
+}
+
+#title-overlay {
+    /* Position the text on top of the animation */
+    position: absolute;
+    top: 5%; /* Adjust vertical position */
+    left: 50%;
+    transform: translateX(-50%); /* Center the text horizontally */
+    color: #FFFFFF; /* White text color */
+    font-size: 5vw; /* Large size, scales with the screen */
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px rgba(255, 0, 150, 0.8), 0 0 20px rgba(0, 150, 255, 0.8); /* Neon glow effect */
+}
+
+
 /* === HEADER === */
 .header-nav {
     display: flex;
@@ -406,4 +434,5 @@ body {
     
 
     
+
 
