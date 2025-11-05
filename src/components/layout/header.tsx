@@ -49,9 +49,6 @@ export function Header() {
           <Link href="#" className="nav-item active-market">
             Markets
           </Link>
-          <Link href="#" className="nav-item">
-            More
-          </Link>
         </nav>
         <div className="search-box">
           <input
