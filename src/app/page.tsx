@@ -10,7 +10,7 @@ export default function Page() {
     { title: 'Stocks (Equity Market)', description: 'Company Shares', border: 'neon-green-border' },
     { title: 'Commodities', description: 'Physical Goods (Oil, Gold, etc.)', border: 'neon-pink-border' },
     { title: 'Bonds (Fixed Income)', description: 'Debt Securities', border: 'neon-blue-border' },
-    { title: 'Cryptocurrency', description: 'Digital Assets', border: 'neon-pink-border' },
+    { title: 'Cryptocurrency', description: 'Digital Assets', border: 'neon-orange-border' },
     { title: 'Derivatives', description: 'Contracts based on underlying assets', border: 'neon-blue-border' },
     { title: 'Nasdaq 100', description: 'US Tech & Growth Stocks', border: 'neon-pink-border' },
     { title: 'Dow Jones (US30)', description: '30 Major US Industrial Stocks', border: 'neon-blue-border' },
