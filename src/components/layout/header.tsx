@@ -22,6 +22,7 @@ import {
   Briefcase,
   Layers3,
   UserPlus,
+  Scale,
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -100,6 +101,7 @@ const navItems = [
   { href: '/markets', label: 'Markets', icon: CandlestickChart },
   { href: '/charting', label: 'Chart Engine', icon: AreaChart },
   { href: '/ai-analysis', label: 'AI Analysis', icon: Cpu },
+  { href: '/compare-prices', label: 'Compare Prices', icon: Scale },
   { href: '/data-feeds', label: 'Data Feeds', icon: DatabaseZap },
   { href: '/financial-data', label: 'Financial Data', icon: Briefcase },
   { href: '/exchanges', label: 'Exchanges', icon: Building2 },
