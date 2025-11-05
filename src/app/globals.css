@@ -8,7 +8,7 @@
 @layer base {
   :root {
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 54, 69, 79;
+    --background-end-rgb: 25, 30, 35;
     --foreground-rgb: 225, 225, 235;
 
     --primary-glow: 330, 100%, 55%; /* Changed from purple to pink */
@@ -287,7 +287,7 @@ body {
 .neon-pink-border { border-color: hsl(var(--neon-pink)); box-shadow: 0 0 10px hsl(var(--neon-pink), .5); }
 .neon-cyan-border { border-color: hsl(var(--neon-cyan)); box-shadow: 0 0 10px hsl(var(--neon-cyan), .5); }
 .neon-blue-border { border-color: hsl(var(--neon-blue)); box-shadow: 0 0 10px hsl(var(--neon-blue), .5); }
-.neon-orange-border { border-color: hsl(var(--neon-orange)); box-shadow: 0 0 10px hsl(var(--orange-neon), .5); }
+.neon-orange-border { border-color: hsl(var(--orange-neon), .5); }
 
 /* === NEON GLOW EFFECTS === */
 
