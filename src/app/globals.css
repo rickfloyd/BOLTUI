@@ -67,7 +67,6 @@ body.animation-page {
     padding: 0 2rem;
     border-bottom: 1px solid hsla(var(--neon-pink), 0.3);
     background-color: rgba(10, 10, 15, 0.5);
-    backdrop-filter: blur(5px);
 }
 .header-top-layer, .header-bottom-layer {
     display: flex;
@@ -150,7 +149,6 @@ body.animation-page {
     gap: 0.5rem;
     z-index: 10;
     min-width: 280px;
-    backdrop-filter: blur(10px);
 }
 
 .header-dropdown-menu .menu-item {
