@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Activity, Bot, DollarSign, BarChart } from 'lucide-react';
 
@@ -11,6 +12,8 @@ export default function DashboardPage() {
     'hsl(var(--chart-5))',     // Neon Green
     '#39FF14',                 // Neon Green
   ];
+
+  const rows = Array.from({ length: 4 }, (_, i) => boxes.slice(i * 5, i * 5 + 5));
 
   return (
     <>
@@ -76,25 +79,30 @@ export default function DashboardPage() {
             </Card>
           </div>
 
-          {/* 20 Individual Boxes in a single grid */}
-          <div className="grid grid-cols-5 gap-x-4 gap-y-2 w-full">
-            {boxes.map((_, boxIndex) => {
-              const color = happyColors[boxIndex % happyColors.length];
-              return (
-                <Card 
-                  key={boxIndex} 
-                  className="h-32 transition-transform duration-300 ease-in-out hover:scale-105"
-                  style={{
-                    borderColor: color,
-                    boxShadow: `0 0 8px ${color}, 0 0 12px ${color} inset`,
-                  }}
-                >
-                    <CardContent className="flex items-center justify-center h-full">
-                        <p className="text-muted-foreground">Box {boxIndex + 1}</p>
-                    </CardContent>
-                </Card>
-              );
-            })}
+          {/* Boxes grouped into rows with vertical spacing */}
+          <div className="flex flex-col space-y-12">
+            {rows.map((row, rowIndex) => (
+              <div key={rowIndex} className="grid grid-cols-5 gap-x-4 gap-y-2 w-full">
+                {row.map((_, boxIndex) => {
+                  const overallIndex = rowIndex * 5 + boxIndex;
+                  const color = happyColors[overallIndex % happyColors.length];
+                  return (
+                    <Card
+                      key={overallIndex}
+                      className="h-32 transition-transform duration-300 ease-in-out hover:scale-105"
+                      style={{
+                        borderColor: color,
+                        boxShadow: `0 0 8px ${color}, 0 0 12px ${color} inset`,
+                      }}
+                    >
+                      <CardContent className="flex items-center justify-center h-full">
+                        <p className="text-muted-foreground">Box {overallIndex + 1}</p>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            ))}
           </div>
         </div>
       </div>
