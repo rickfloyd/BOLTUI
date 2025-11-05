@@ -5,7 +5,7 @@ import { ArrowLeft } from 'lucide-react';
 
 export default function CustomViewPage() {
   return (
-    <div className="flex-1 p-8 pt-6">
+    <div className="flex-1 p-4 md:p-8">
       <Card className="neon-box">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle>Custom View</CardTitle>

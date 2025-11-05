@@ -14,8 +14,8 @@ export default function DashboardPage() {
 
   return (
     <>
-      <div className="flex-1 p-8 pt-6">
-        <div className="space-y-6">
+      <div className="flex-1">
+        <div className="space-y-4 p-4 md:p-8">
           {/* Stat cards below the main content */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Card className="neon-box">
@@ -77,13 +77,13 @@ export default function DashboardPage() {
           </div>
 
           {/* 20 Individual Boxes in a single grid */}
-          <div className="grid grid-cols-5 gap-x-4 gap-y-2 w-full px-4">
+          <div className="grid grid-cols-5 gap-x-4 gap-y-2 w-full">
             {boxes.map((_, boxIndex) => {
               const color = happyColors[boxIndex % happyColors.length];
               return (
                 <Card 
                   key={boxIndex} 
-                  className="h-40 transition-transform duration-300 ease-in-out hover:scale-105"
+                  className="h-32 transition-transform duration-300 ease-in-out hover:scale-105"
                   style={{
                     borderColor: color,
                     boxShadow: `0 0 8px ${color}, 0 0 12px ${color} inset`,
