@@ -3,6 +3,8 @@ import { Activity, Bot, DollarSign, BarChart } from 'lucide-react';
 
 export default function DashboardPage() {
   const boxes = Array.from({ length: 20 });
+  const rows = Array.from({ length: 4 });
+  const boxesPerRow = 5;
 
   return (
     <>
@@ -68,15 +70,22 @@ export default function DashboardPage() {
             </Card>
           </div>
 
-          {/* 20 Individual Boxes */}
-          <div className="grid grid-cols-5 gap-4">
-              {boxes.map((_, i) => (
-                  <Card key={i} className="neon-box h-40">
-                      <CardContent className="flex items-center justify-center h-full">
-                          <p className="text-muted-foreground">Box {i + 1}</p>
-                      </CardContent>
-                  </Card>
-              ))}
+          {/* 20 Individual Boxes grouped into rows */}
+          <div className="flex flex-col space-y-12">
+            {rows.map((_, rowIndex) => (
+              <div key={rowIndex} className="grid grid-cols-5 gap-4">
+                {boxes.slice(rowIndex * boxesPerRow, (rowIndex + 1) * boxesPerRow).map((_, boxIndex) => {
+                  const boxNum = rowIndex * boxesPerRow + boxIndex + 1;
+                  return (
+                    <Card key={boxNum} className="neon-box h-40">
+                        <CardContent className="flex items-center justify-center h-full">
+                            <p className="text-muted-foreground">Box {boxNum}</p>
+                        </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            ))}
           </div>
 
         </div>
