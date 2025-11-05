@@ -1,28 +1,29 @@
-import type {Metadata} from 'next';
-import { Roboto } from 'next/font/google';
-import Script from 'next/script';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { Header } from '@/components/layout/header';
+import { MainSidebar } from '@/components/layout/main-sidebar';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Quantum CyberVision',
-  description: 'Next-generation financial and sports intelligence platform',
+  title: 'AI Quantum Charts Dashboard',
+  description: 'A next-generation trading dashboard with AI-powered insights.',
 };
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  variable: '--font-roboto',
-  weight: ['400', '500', '700']
-});
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className={`dark h-full`}>
-      <body className={`h-full antialiased`}>
-        {children}
-        <Script src="https://code.highcharts.com/dashboards/dashboards.js" />
+    <html lang="en">
+      <body className={inter.className}>
+        <Header />
+        <main className="dashboard-grid">
+          <MainSidebar />
+          {children}
+        </main>
       </body>
     </html>
   );
