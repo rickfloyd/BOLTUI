@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 export function MainSidebar() {
-  const [openMenu, setOpenMenu] = useState('personalities');
+  const [openMenu, setOpenMenu] = useState('platform');
 
   const toggleMenu = (menuId: string) => {
     setOpenMenu(openMenu === menuId ? '' : menuId);
@@ -10,29 +10,6 @@ export function MainSidebar() {
 
   return (
     <aside className="left-sidebar">
-      <div className="sidebar-section">
-        <div
-          className="section-title dropdown-toggle neon-cyan"
-          onClick={() => toggleMenu('personalities')}
-        >
-          <span className="dot-indicator"></span> POLITICAL VIEWPOINT
-        </div>
-        <div id="personalities-menu" className={`dropdown-menu ${openMenu === 'personalities' ? 'open' : ''}`}>
-          <div className="menu-item">
-            Republican <span className="sub-text">Conservative market analysis</span>
-          </div>
-          <div className="menu-item active-pink">
-            Democrat <span className="sub-text">Progressive economic insights</span>
-          </div>
-          <div className="menu-item">
-            Liberal <span className="sub-text">Social-focused market views</span>
-          </div>
-          <div className="menu-item">
-            Independent <span className="sub-text">Unbiased market perspective</span>
-          </div>
-        </div>
-      </div>
-
       <div className="sidebar-section">
         <div className="section-title neon-pink">
           <span className="dot-indicator"></span> Market Summary
