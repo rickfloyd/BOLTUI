@@ -406,3 +406,41 @@ nav a:hover, .nav-right a:hover {
     border: 1px solid var(--neon-blue);
     box-shadow: var(--shadow-blue);
 }
+
+/* === NEON GLOW EFFECTS === */
+
+.glow-box {
+  border: 1px solid rgba(17, 179, 255, 0.35);
+  box-shadow:
+    0 0 10px rgba(17, 179, 255, 0.7),
+    0 0 20px rgba(140, 75, 255, 0.6),
+    inset 0 0 8px rgba(25, 255, 232, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.glow-box:hover {
+  box-shadow:
+    0 0 18px rgba(255, 45, 172, 1),
+    0 0 36px rgba(17, 179, 255, 0.9),
+    inset 0 0 10px rgba(140, 75, 255, 0.3);
+  transform: scale(1.03);
+}
+
+/* optional animated pulsing glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 10px rgba(17,179,255,.8),
+      0 0 25px rgba(140,75,255,.6),
+      inset 0 0 10px rgba(25,255,232,.3);
+  }
+  50% {
+    box-shadow:
+      0 0 16px rgba(255,45,172,1),
+      0 0 30px rgba(17,179,255,.8),
+      inset 0 0 12px rgba(140,75,255,.4);
+  }
+}
+.glow-animate {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
