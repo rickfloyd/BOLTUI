@@ -1,11 +1,13 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Settings, Maximize, BarChart2, CandlestickChart, Sliders, StopCircle } from 'lucide-react';
 import Link from "next/link";
+import { useRealtimeData } from '@/hooks/use-realtime-data';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const markets = [
     { name: "The Foreign Exchange (Forex) Market", href: "/forex" },
@@ -22,7 +24,7 @@ const markets = [
 ];
 
 
-const IndexCard = ({ title, price, change, changeType, borderColor }: { title: string; price: string; change: string; changeType: 'positive' | 'negative', borderColor: string }) => {
+const IndexCard = ({ title, price, change, changeType, borderColor, isLoading }: { title: string; price: string; change: string; changeType: 'positive' | 'negative' | 'neutral', borderColor: string, isLoading: boolean }) => {
   return (
     <div className={`data-card ${borderColor} p-4 rounded-lg flex-1`}>
       <div className="card-header flex justify-between items-center">
@@ -30,38 +32,52 @@ const IndexCard = ({ title, price, change, changeType, borderColor }: { title: s
         <Settings className="h-4 w-4 text-muted-foreground" />
       </div>
       <div className="card-data mt-2">
-        <span className="price text-2xl font-bold">{price}</span>
-        <span className={`change ${changeType === 'positive' ? 'positive' : 'negative'} block text-sm`}>
-          {change}
-        </span>
+        {isLoading ? (
+          <>
+            <Skeleton className="h-8 w-24 mb-2" />
+            <Skeleton className="h-6 w-16" />
+          </>
+        ) : (
+          <>
+            <span className="price text-2xl font-bold">{price}</span>
+            <span className={`change ${changeType} block text-sm`}>
+              {change}
+            </span>
+          </>
+        )}
       </div>
     </div>
   );
 };
 
+const StatBox = ({ label, value, isLoading }: { label: string, value: string | number, isLoading: boolean }) => (
+    <div className="stat-box">
+        <div className="stat-number">
+          {isLoading ? <Skeleton className="h-7 w-20 mx-auto"/> : value.toLocaleString() }
+        </div>
+        <div className="stat-label">{label}</div>
+    </div>
+);
+
 
 export default function Page() {
+  const { data, loading } = useRealtimeData('dashboardData');
+
+  const nasdaq = data?.marketData?.NASDAQ;
+  const dow = data?.marketData?.DOW;
+  const russell = data?.marketData?.RUSSELL;
+  const dxy = data?.marketData?.DXY;
+  const stats = data?.educationStats;
+
   return (
     <section className="center-content p-4 md:p-6 space-y-4">
       <div className="info-banner">
         <p className="text-center mb-4">90% of every payment directly funds educational programs for future traders</p>
         <div className="stats-row">
-          <div className="stat-box">
-            <div className="stat-number">12,911</div>
-            <div className="stat-label">Students Helped</div>
-          </div>
-          <div className="stat-box">
-            <div className="stat-number">156</div>
-            <div className="stat-label">Free Courses</div>
-          </div>
-          <div className="stat-box">
-            <div className="stat-number">348</div>
-            <div className="stat-label">Scholarships</div>
-          </div>
-          <div className="stat-box">
-            <div className="stat-number">28</div>
-            <div className="stat-label">Free Tools</div>
-          </div>
+            <StatBox label="Students Helped" value={stats?.students ?? '...'} isLoading={loading} />
+            <StatBox label="Free Courses" value={stats?.courses ?? '...'} isLoading={loading} />
+            <StatBox label="Scholarships" value={stats?.scholarships ?? '...'} isLoading={loading} />
+            <StatBox label="Free Tools" value={stats?.freeTools ?? '...'} isLoading={loading} />
         </div>
       </div>
       
@@ -76,17 +92,42 @@ export default function Page() {
       </Tabs>
 
       <div className="index-cards-row">
-        <IndexCard title="Nasdaq 100" price="$385.39" change="-0.30%" changeType="negative" borderColor="neon-blue-border" />
-        <IndexCard title="Dow Jones" price="$368.91" change="+1.38%" changeType="positive" borderColor="neon-orange-border" />
-        <IndexCard title="Russell 2000" price="$200.89" change="-0.68%" changeType="negative" borderColor="neon-cyan-border" />
+        <IndexCard 
+          title="Nasdaq 100" 
+          price={`$${nasdaq?.price?.toFixed(2) ?? '0.00'}`} 
+          change={`${nasdaq?.change > 0 ? '+' : ''}${nasdaq?.change?.toFixed(2) ?? '0.00'}%`}
+          changeType={!nasdaq ? 'neutral' : nasdaq.change > 0 ? 'positive' : 'negative'}
+          borderColor="neon-blue-border" 
+          isLoading={loading}
+        />
+        <IndexCard 
+          title="Dow Jones" 
+          price={`$${dow?.price?.toFixed(2) ?? '0.00'}`}
+          change={`${dow?.change > 0 ? '+' : ''}${dow?.change?.toFixed(2) ?? '0.00'}%`}
+          changeType={!dow ? 'neutral' : dow.change > 0 ? 'positive' : 'negative'}
+          borderColor="neon-orange-border"
+          isLoading={loading}
+        />
+        <IndexCard 
+          title="Russell 2000" 
+          price={`$${russell?.price?.toFixed(2) ?? '0.00'}`}
+          change={`${russell?.change > 0 ? '+' : ''}${russell?.change?.toFixed(2) ?? '0.00'}%`}
+          changeType={!russell ? 'neutral' : russell.change > 0 ? 'positive' : 'negative'}
+          borderColor="neon-cyan-border"
+          isLoading={loading}
+        />
       </div>
       
       <div className="dxy-card">
         <div className="dxy-title">DXY (US Dollar Index)</div>
-        <div className="dxy-data">
-          <span className="dxy-price">105.42</span>
-          <span className="dxy-change negative">-0.38 (-0.36%)</span>
-        </div>
+        {loading ? <Skeleton className="h-12 w-48"/> : (
+          <div className="dxy-data">
+            <span className="dxy-price">{dxy?.price?.toFixed(2) ?? '0.00'}</span>
+            <span className={`dxy-change ${!dxy ? 'neutral' : dxy.change > 0 ? 'positive' : 'negative'}`}>
+              {dxy?.change?.toFixed(2) ?? '0.00'} ({dxy?.changePercent?.toFixed(2) ?? '0.00'}%)
+            </span>
+          </div>
+        )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
