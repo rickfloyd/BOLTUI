@@ -4,10 +4,6 @@ import {
   SidebarHeader,
   SidebarContent,
   SidebarGroup,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuItem,
-  SidebarMenuButton,
 } from '@/components/ui/sidebar';
 import {
   Collapsible,
@@ -40,70 +36,50 @@ const platformItems = [
 
 
 export function MainSidebar() {
-  const [openSection, setOpenSection] = React.useState('educational');
+  const [visibleMenu, setVisibleMenu] = React.useState<string | null>(null);
+
+  const toggleMenu = (menuId: string) => {
+    setVisibleMenu(visibleMenu === menuId ? null : menuId);
+  };
+
 
   return (
     <>
       <SidebarHeader></SidebarHeader>
       <SidebarContent>
-        <SidebarGroup>
-          <Collapsible open={openSection === 'educational'} onOpenChange={(isOpen) => setOpenSection(isOpen ? 'educational' : '')}>
-            <CollapsibleTrigger className="w-full">
-              <div className="section-title flex items-center justify-between p-2 rounded-md hover:bg-muted">
-                <div className="flex items-center gap-2 neon-cyan">
-                  <span className="dot-indicator"></span>
-                  <span className="font-semibold">Educational</span>
+        <div className="left-sidebar">
+            <div className="sidebar-section">
+                <div className="section-title dropdown-toggle neon-cyan" onClick={() => toggleMenu('personalities-menu')}>
+                    <span className="dot-indicator"></span> Educational
                 </div>
-                <ChevronsUpDown className="h-4 w-4 text-muted-foreground" />
-              </div>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              <div className="p-2 space-y-1">
-                {educationalItems.map((item) => (
-                  <div
-                    key={item.name}
-                    className={cn(
-                      'menu-item p-2 rounded-md text-sm',
-                      item.active ? 'active-pink' : 'hover:bg-muted'
-                    )}
-                  >
-                    {item.name}
-                    <span className="sub-text block text-xs text-muted-foreground">{item.description}</span>
-                  </div>
-                ))}
-              </div>
-            </CollapsibleContent>
-          </Collapsible>
-          
-          <div className="section-title flex items-center gap-2 p-2 mt-4 neon-pink">
-             <span className="dot-indicator"></span>
-             <span className="font-semibold">Market Summary</span>
-          </div>
-
-          <Collapsible open={openSection === 'platform'} onOpenChange={(isOpen) => setOpenSection(isOpen ? 'platform' : '')} className="mt-4">
-            <CollapsibleTrigger className="w-full">
-               <div className="section-title flex items-center justify-between p-2 rounded-md hover:bg-muted">
-                 <div className="flex items-center gap-2 neon-blue">
-                   <span className="dot-indicator"></span>
-                   <span className="font-semibold">AI-Powered Trading Platform</span>
-                 </div>
-                 <ChevronsUpDown className="h-4 w-4 text-muted-foreground" />
-               </div>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              <div className="p-2 space-y-1">
-                {platformItems.map((item) => (
-                    <div key={item} className="menu-item p-2 rounded-md text-sm hover:bg-muted">
-                      {item}
+                <div id="personalities-menu" className={cn("dropdown-menu", visibleMenu === 'personalities-menu' && 'visible')}>
+                  {educationalItems.map((item) => (
+                    <div key={item.name} className={cn('menu-item', item.active && 'active-pink')}>
+                      {item.name}
+                      <span className="sub-text">{item.description}</span>
                     </div>
-                ))}
-                 <div className="menu-item p-2 rounded-md text-sm revolutionary-text text-accent font-bold">
-                    Revolutionary AI Trading Platform!
+                  ))}
                 </div>
-              </div>
-            </CollapsibleContent>
-          </Collapsible>
-        </SidebarGroup>
+            </div>
+
+            <div className="sidebar-section">
+                <div className="section-title neon-pink">
+                    <span className="dot-indicator"></span> Market Summary
+                </div>
+            </div>
+
+            <div className="sidebar-section platform-section">
+                <div className="section-title dropdown-toggle neon-blue" onClick={() => toggleMenu('trading-platform-menu')}>
+                    <span className="dot-indicator"></span> AI-Powered Trading Platform
+                </div>
+                <div id="trading-platform-menu" className={cn("dropdown-menu platform-menu", visibleMenu === 'trading-platform-menu' && 'visible')}>
+                  {platformItems.map(item => (
+                     <div key={item} className="menu-item">{item}</div>
+                  ))}
+                  <div className="menu-item revolutionary-text">Revolutionary AI Trading Platform!</div>
+                </div>
+            </div>
+        </div>
       </SidebarContent>
     </>
   );

@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${roboto.variable} dark h-full`}>
-      <body className={`h-full antialiased font-sans`}>
+    <html lang="en" className={`dark h-full`}>
+      <body className={`h-full antialiased`}>
         {children}
         <Toaster />
         <Script src="https://code.highcharts.com/dashboards/dashboards.js" />

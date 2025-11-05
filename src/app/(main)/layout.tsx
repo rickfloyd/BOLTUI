@@ -10,13 +10,9 @@ export default function MainLayout({
   return (
     <SidebarProvider>
       <Header />
-      <div className="flex">
-        <Sidebar>
-          <MainSidebar />
-        </Sidebar>
-        <SidebarInset>
-          <main className="flex-1 flex flex-col">{children}</main>
-        </SidebarInset>
+      <div className="dashboard-grid">
+        <MainSidebar />
+        {children}
       </div>
     </SidebarProvider>
   );

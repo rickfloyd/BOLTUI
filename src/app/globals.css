@@ -2,240 +2,313 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* --- 1. GLOBAL STYLES & NEON VARIABLES --- */
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 180 100% 90%;
+      --background: 0 0% 0%; /* --color-black */
+      --foreground: 0 0% 60%; /* --color-text-light */
 
-    --card: 224 20% 10%;
-    --card-foreground: 180 100% 95%;
+      --card: 15 11% 9%; /* --color-dark-bg */
+      --card-foreground: 0 0% 100%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 180 100% 50%;
+      --popover: 240 10% 3.9%;
+      --popover-foreground: 200 100% 50%; /* --neon-blue */
 
-    --primary: 337 84% 50%; /* Hot Pink/Red */
-    --primary-foreground: 210 40% 98%;
-    
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+      --primary: 327 100% 50%; /* --neon-pink */
+      --primary-foreground: 0 0% 0%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
 
-    --accent: 180 100% 50%; /* Cyan */
-    --accent-foreground: 240 10% 3.9%;
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 0 0% 60%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+      --accent: 170 100% 44%; /* --neon-cyan */
+      --accent-foreground: 0 0% 0%;
 
-    --border: 337 84% 50%; /* Hot Pink/Red */
-    --input: 217.2 32.6% 17.5%;
-    --ring: 180 100% 50%;
-    
-    --chart-1: 180 100% 50%; /* Cyan */
-    --chart-2: 337 84% 50%; /* Hot Pink/Red */
-    --chart-3: 337 84% 50%; /* Hot Pink/Red */
-    --chart-4: 24 100% 50%;  /* Neon Orange */
-    --chart-5: 129 86% 52%; /* Neon Green */
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
 
-    --sidebar-background: 240 10% 3.9%;
-    --sidebar-foreground: 180 100% 90%;
-    --sidebar-border: 180 100% 50%;
-    --sidebar-ring: 180 100% 50%;
-    --sidebar-accent: 180 100% 50%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-primary: 337 84% 50%;
-    --sidebar-primary-foreground: 210 40% 98%;
+      --border: 327 100% 50%; /* --neon-pink */
+      --input: 200 100% 50%; /* --neon-blue */
+      --ring: 170 100% 44%; /* --neon-cyan */
+      
+      --chart-1: 170 100% 44%;   /* --neon-cyan */
+      --chart-2: 327 100% 50%;   /* --neon-pink */
+      --chart-3: 327 100% 50%;   /* --neon-pink */
+      --chart-4: 32 100% 50%;    /* --neon-orange */
+      --chart-5: 129 86% 52%;   /* Neon Green */
+
+      --neon-pink: 327 100% 50%;
+      --neon-blue: 200 100% 50%;
+      --neon-cyan: 170 100% 44%;
+      --neon-orange: 32 100% 50%;
+
+      --shadow-pink: 0 0 8px hsl(var(--neon-pink)), 0 0 1px inset rgba(255, 255, 255, 0.5);
+      --shadow-blue: 0 0 8px hsl(var(--neon-blue)), 0 0 1px inset rgba(255, 255, 255, 0.5);
+      --shadow-cyan: 0 0 8px hsl(var(--neon-cyan)), 0 0 1px inset rgba(255, 255, 255, 0.5);
+      --shadow-orange: 0 0 8px hsl(var(--neon-orange)), 0 0 1px inset rgba(255, 255, 255, 0.5);
   }
 
   .dark {
-    --background: 247 100% 3%; /* Deep Charcoal from #0A0A0F */
-    --foreground: 180 100% 90%;
+    --background: 0 0% 0%; /* --color-black */
+    --foreground: 0 0% 60%; /* --color-text-light */
 
-    --card: 224 20% 10%;
-    --card-foreground: 180 100% 95%;
+    --card: 240 16% 9%; /* --color-dark-bg */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 224 20% 10%;
-    --popover-foreground: 180 100% 50%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 200 100% 50%; /* --neon-blue */
 
-    --primary: 337 84% 50%; /* Hot Pink/Red */
-    --primary-foreground: 210 40% 98%;
+    --primary: 327 100% 50%; /* --neon-pink */
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 180 100% 50%; /* Cyan */
-    --accent-foreground: 240 10% 3.9%;
+    --accent: 170 100% 44%; /* --neon-cyan */
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 337 84% 50%; /* Hot Pink/Red */
-    --input: 217.2 32.6% 17.5%;
-    --ring: 180 100% 50%;
-
-    --sidebar-background: 224 20% 10%;
-    --sidebar-foreground: 180 100% 90%;
-    --sidebar-border: 180 100% 50%;
-    --sidebar-ring: 180 100% 50%;
-    --sidebar-accent: 180 100% 50%;
-    --sidebar-accent-foreground: 240 10% 3.9%;
-    --sidebar-primary: 337 84% 50%;
-    --sidebar-primary-foreground: 210 40% 98%;
+    --border: 327 100% 50%;
+    --input: 200 100% 50%;
+    --ring: 170 100% 44%;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
   body {
     @apply bg-background text-foreground;
-    background-image: linear-gradient(to bottom, #000000, #0a0a0f);
-    font-family: var(--font-roboto), sans-serif;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
   }
 }
 
 @layer components {
-  .neon-text {
-    text-shadow: 0 0 5px hsl(var(--accent)), 0 0 10px hsl(var(--accent));
-  }
-  .neon-text-primary {
-    text-shadow: 0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary));
-  }
-  .neon-text-orange {
-    text-shadow: 0 0 5px hsl(var(--chart-4)), 0 0 10px hsl(var(--chart-4));
-  }
-  .neon-box {
-    border-width: 1px;
-    border-color: hsl(var(--primary) / 0.5);
-    box-shadow: 0 0 8px hsl(var(--primary) / 0.5), 0 0 12px hsl(var(--primary) / 0.3) inset;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .neon-box:hover {
-    border-color: hsl(var(--primary));
-    transform: scale(1.02);
-    box-shadow: 0 0 15px hsl(var(--primary) / 0.8), 0 0 25px hsl(var(--primary) / 0.5) inset;
+  /* --- 2. HEADER/NAV STYLES --- */
+  .header-nav {
+      @apply flex justify-between items-center px-5 py-2.5 bg-card;
+      border-bottom: 2px solid hsl(var(--neon-pink));
+      box-shadow: 0 0 10px hsla(var(--neon-pink), 0.6);
   }
 
-  .neon-cyan-border {
-    border: 1px solid hsl(var(--accent));
-    box-shadow: 0 0 8px hsl(var(--accent) / 0.6);
-  }
-  .neon-pink-border {
-     border: 1px solid hsl(var(--primary));
-     box-shadow: 0 0 8px hsl(var(--primary) / 0.6);
-  }
-  .neon-orange-border {
-     border: 1px solid hsl(var(--chart-4));
-     box-shadow: 0 0 8px hsl(var(--chart-4) / 0.6);
-  }
-  .neon-blue-border {
-      border: 1px solid hsl(215 100% 50%);
-      box-shadow: 0 0 8px hsl(215 100% 50% / 0.6);
-  }
-  
-
-  .card {
-    @apply bg-card/60 backdrop-blur-sm;
+  .logo {
+      @apply text-white text-2xl font-bold mr-8;
+      text-shadow: 0 0 5px hsl(var(--neon-cyan)), 0 0 10px hsl(var(--neon-blue));
   }
 
-  .btn-primary {
-    @apply animate-soft-pulse;
-    background-color: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    border: 1px solid hsl(var(--primary));
-    box-shadow: 0 0 5px hsl(var(--primary) / 0.8), 0 0 10px hsl(var(--primary) / 0.5) inset;
+  .nav-item {
+      @apply text-muted-foreground no-underline text-sm transition-colors px-4 py-2.5;
   }
-  .btn-primary:hover {
-     background-color: hsl(var(--primary) / 0.9);
-     box-shadow: 0 0 10px hsl(var(--primary) / 1), 0 0 15px hsl(var(--primary) / 0.7) inset;
-  }
-
-  .btn-accent {
-      border-color: hsl(var(--accent));
-      color: hsl(var(--accent));
-      box-shadow: 0 0 5px hsl(var(--accent) / 0.8), 0 0 10px hsl(var(--accent) / 0.5) inset;
-  }
-   .btn-accent:hover {
-      background-color: hsl(var(--accent) / 0.1);
-      color: hsl(var(--accent));
-      box-shadow: 0 0 10px hsl(var(--accent) / 1), 0 0 15px hsl(var(--accent) / 0.7) inset;
-  }
-
-  .logo-q-outer {
-    fill: none;
-    stroke: hsl(var(--accent));
-    stroke-width: 8;
-  }
-  .logo-q-tail {
-    stroke: hsl(var(--accent));
-    stroke-width: 8;
-    stroke-linecap: round;
-  }
-  .logo-glow {
-    animation: soft-pulse 3s ease-in-out infinite;
-    fill: hsl(var(--accent));
-    stroke: hsl(var(--accent));
-  }
-  
-  .bg-cyber {
-    background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
-    box-shadow: 0 0 12px #00ffff, 0 0 24px #ff00ff inset;
+  .nav-item:hover, .nav-right a:hover {
+      @apply text-white;
   }
 
   .impact-glow {
-    color: hsl(var(--chart-5));
-    text-shadow: 0 0 8px hsl(var(--chart-5));
+      text-shadow: var(--shadow-cyan);
+      color: hsl(var(--neon-cyan));
   }
+
   .community-glow {
-    color: hsl(var(--primary));
-    text-shadow: 0 0 8px hsl(var(--primary));
+      text-shadow: var(--shadow-pink);
+      color: hsl(var(--neon-pink));
   }
+
   .active-market {
-    background-color: hsl(var(--accent) / 0.1);
-    color: hsl(var(--accent));
-    border-radius: 9999px;
-    padding-left: 1rem;
-    padding-right: 1rem;
+      color: hsl(var(--neon-pink)) !important;
+      @apply font-bold;
+      border-bottom: 2px solid hsl(var(--neon-pink));
   }
-  
+
+  .search-input {
+      @apply bg-transparent text-white rounded py-1 px-2.5 w-48;
+      border: 1px solid hsl(var(--neon-blue));
+      box-shadow: var(--shadow-blue);
+      outline: none;
+  }
+
+  /* --- 3. DASHBOARD GRID LAYOUT --- */
+  .dashboard-grid {
+      @apply grid p-5 gap-5;
+      grid-template-columns: 280px 1fr; 
+      background-color: hsl(var(--background)); 
+  }
+
+  /* --- 4. LEFT SIDEBAR STYLES --- */
+  .left-sidebar {
+      @apply pt-2.5;
+  }
+
+  .sidebar-section {
+      @apply mb-5 bg-card p-0 px-4 rounded-md relative;
+  }
+
+  .section-title {
+      @apply text-lg font-bold py-4 cursor-pointer transition-colors select-none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .neon-cyan { color: hsl(var(--neon-cyan)); text-shadow: var(--shadow-cyan); }
+  .neon-pink { color: hsl(var(--neon-pink)); text-shadow: var(--shadow-pink); }
+  .neon-blue { color: hsl(var(--neon-blue)); text-shadow: var(--shadow-blue); }
+
   .dot-indicator {
-    @apply h-2 w-2 rounded-full;
-    background-color: currentColor;
-    box-shadow: 0 0 5px currentColor;
+      @apply h-2 w-2 rounded-full inline-block mr-2;
+      background-color: currentColor;
+      box-shadow: 0 0 5px currentColor;
   }
 
-  .neon-cyan {
-    color: hsl(var(--accent));
-    text-shadow: 0 0 5px hsl(var(--accent));
+  .dropdown-menu {
+      @apply absolute w-[300px] z-50 p-1.5 rounded-md hidden;
+      left: 285px; 
+      top: 50px;
+      background-color: #1a1a2e;
+      border: 2px solid hsl(var(--neon-pink));
+      box-shadow: 0 0 20px hsla(var(--neon-pink), 0.8);
   }
 
-  .neon-pink {
-    color: hsl(var(--primary));
-    text-shadow: 0 0 5px hsl(var(--primary));
+  .platform-menu {
+      top: 130px; 
+      border: 2px solid hsl(var(--neon-blue));
+      box-shadow: 0 0 20px hsla(var(--neon-blue), 0.8);
+      width: 340px;
   }
-  
-  .neon-blue {
-    color: hsl(215 100% 60%);
-    text-shadow: 0 0 5px hsl(215 100% 60%);
+
+  .dropdown-menu.visible {
+      @apply block;
   }
-  
+
+  .menu-item {
+      @apply p-2 px-3 rounded-sm cursor-pointer transition-colors leading-normal text-sm text-white;
+  }
+
+  .menu-item:hover {
+      background-color: hsla(var(--neon-pink), 0.1);
+      color: hsl(var(--neon-pink));
+  }
+
+  .sub-text {
+      @apply block text-xs text-muted-foreground mt-0.5;
+  }
+
   .active-pink {
-    background-color: hsl(var(--primary) / 0.2);
-    color: hsl(var(--primary));
-    border-left: 2px solid hsl(var(--primary));
+      background-color: hsl(var(--neon-pink));
+      color: hsl(var(--primary-foreground)) !important;
+      @apply font-bold;
+      box-shadow: var(--shadow-pink);
   }
 
-  @keyframes soft-pulse {
-    '0%, 100%' {
-      transform: scale(1);
-    }
-    '50%' {
-      transform: scale(1.03);
-    }
+  .active-pink .sub-text {
+      color: hsl(var(--primary-foreground));
+  }
+
+  .revolutionary-text {
+      color: hsl(var(--neon-blue));
+      @apply text-center pt-2.5 mt-1.5 font-bold;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+      text-shadow: var(--shadow-blue);
+  }
+
+  /* --- 5. CENTER CONTENT & CARD STYLES --- */
+  .center-content {
+      @apply p-2.5;
+  }
+
+  .info-banner {
+      background-color: #1a1a2e;
+      @apply p-4 rounded-md mb-6;
+      border-top: 2px solid hsl(var(--neon-pink));
+      border-bottom: 2px solid hsl(var(--neon-pink));
+  }
+
+  .stats-row {
+      @apply flex justify-around pt-2.5 text-center;
+  }
+
+  .stat-number {
+      @apply text-2xl font-bold;
+      color: hsl(var(--neon-cyan));
+      text-shadow: var(--shadow-cyan);
+  }
+
+  .stat-label {
+      @apply text-xs text-muted-foreground;
+  }
+
+  .index-cards-row {
+      @apply flex gap-5 mb-5;
+  }
+
+  .data-card {
+      @apply flex-1 p-4 rounded-lg transition-all;
+      background-color: hsl(var(--card));
+      border: 1px solid #333;
+  }
+
+  .neon-blue-border { border-color: hsl(var(--neon-blue)); box-shadow: var(--shadow-blue); }
+  .neon-orange-border { border-color: hsl(var(--neon-orange)); box-shadow: var(--shadow-orange); }
+  .neon-cyan-border { border-color: hsl(var(--neon-cyan)); box-shadow: var(--shadow-cyan); }
+  .neon-pink-border { border-color: hsl(var(--neon-pink)); box-shadow: var(--shadow-pink); }
+
+  .card-title {
+      @apply text-lg text-white font-bold;
+  }
+
+  .card-data .price {
+      @apply text-3xl font-bold block mt-2.5;
+  }
+
+  .card-data .change {
+      @apply text-base font-bold;
+  }
+
+  .positive { color: #00FF00; }
+  .negative { color: hsl(var(--neon-pink)); }
+
+  .dxy-card {
+      background-color: hsl(var(--card));
+      @apply p-5 rounded-lg;
+      border: 2px solid hsl(var(--neon-pink));
+      box-shadow: var(--shadow-pink);
+  }
+
+  .dxy-title {
+      @apply text-xl font-bold mb-2.5;
+      color: hsl(var(--neon-pink));
+      text-shadow: 0 0 5px hsl(var(--neon-pink));
+  }
+
+  .dxy-data {
+      @apply flex items-baseline gap-5;
+  }
+
+  .dxy-price {
+      @apply text-5xl text-white font-light;
+  }
+
+  .dxy-change {
+      @apply text-xl font-bold;
+  }
+  
+  .chart-controls {
+    background-color: hsl(var(--card));
+  }
+
+  .tabs-list {
+    @apply bg-card;
+  }
+  
+  .tabs-trigger[data-state=active] {
+     @apply bg-background;
   }
 }
