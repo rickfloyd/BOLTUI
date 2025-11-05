@@ -12,7 +12,7 @@ export function MainSidebar() {
     <aside className="left-sidebar">
       <div className="sidebar-section">
         <div className="section-title neon-pink">
-          <span className="dot-indicator"></span> Market Summary
+          <span className="dot-indicator"></span> Financial News
         </div>
       </div>
 
