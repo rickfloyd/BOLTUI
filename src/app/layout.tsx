@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { Roboto } from 'next/font/google';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Quantum CyberVision',
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`h-full antialiased font-sans`}>
         {children}
         <Toaster />
+        <Script src="https://code.highcharts.com/dashboards/dashboards.js" />
       </body>
     </html>
   );
