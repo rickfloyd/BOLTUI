@@ -28,6 +28,11 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    /* CORRECTION: 
+       This property will allow scrollbars to appear 
+       if the content overflows the screen size.
+    */
+    overflow: auto; 
 }
 
 /* --- 2. HEADER/NAV STYLES --- */
