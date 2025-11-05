@@ -3,10 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search } from 'lucide-react';
-import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { SidebarTrigger } from '../ui/sidebar';
 
 const navItems = [
   { href: '#', label: 'Impact', className: 'impact-glow' },
@@ -20,8 +17,6 @@ const navItems = [
 
 const rightNavItems = [
     { href: '/exchanges', label: 'Stocks' },
-    { href: '/markets', label: 'Commodities' },
-    { href: '#', label: 'Community', className: 'community-glow' },
 ]
 
 export function Header() {
@@ -30,7 +25,6 @@ export function Header() {
   return (
     <header className="header-nav">
       <div className="flex items-center">
-        <SidebarTrigger className="md:hidden"/>
         <Link href="/" className="logo">
           AI QUANTUM CHARTS
         </Link>

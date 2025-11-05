@@ -2,106 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --- 1. GLOBAL STYLES & NEON VARIABLES --- */
 @layer base {
   :root {
-      --color-dark-bg: #0d0d18;
-      --color-black: #000000;
-      --color-text-light: #999999;
-      --color-text-white: #FFFFFF;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 170 100% 44%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 210 40% 98%;
+    --radius: 0.5rem;
 
-      /* Custom Neon Colors */
-      --neon-pink: #FF0099;
-      --neon-blue: #00C6FF;
-      --neon-cyan: #00E4B4;
-      --neon-orange: #FF8800;
-      
-      /* Neon Glow Shadows (Outer Glow + Subtle Inner Glow) */
-      --shadow-pink: 0 0 8px var(--neon-pink), 0 0 1px inset rgba(255, 255, 255, 0.5);
-      --shadow-blue: 0 0 8px var(--neon-blue), 0 0 1px inset rgba(255, 255, 255, 0.5);
-      --shadow-cyan: 0 0 8px var(--neon-cyan), 0 0 1px inset rgba(255, 255, 255, 0.5);
-      --shadow-orange: 0 0 8px var(--neon-orange), 0 0 1px inset rgba(255, 255, 255, 0.5);
-
-      --background: 0 0% 0%; /* --color-black */
-      --foreground: 240 5% 65%; /* --color-text-light */
-
-      --card: 228 29% 7%; /* --color-dark-bg */
-      --card-foreground: 0 0% 100%;
-
-      --popover: 228 29% 13%; /* #1a1a2e */
-      --popover-foreground: 180 100% 50%;
-
-      --primary: 327 100% 50%; /* --neon-pink */
-      --primary-foreground: 0 0% 0%;
-
-      --secondary: 217.2 32.6% 17.5%;
-      --secondary-foreground: 210 40% 98%;
-
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 240 5% 65%;
-
-      --accent: 170 100% 44%; /* --neon-cyan */
-      --accent-foreground: 0 0% 0%;
-
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 210 40% 98%;
-
-      --border: 197 100% 50%; /* --neon-blue for default borders */
-      --input: 197 100% 50%;
-      --ring: 170 100% 44%;
-      
-      --chart-1: 170 100% 44%;
-      --chart-2: 327 100% 50%;
-      --chart-3: 35 100% 50%;
-      --chart-4: 280 100% 60%;
-      --chart-5: 60 100% 50%;
-  }
-
-  .dark {
-      --background: 0 0% 0%;
-      --foreground: 240 5% 65%;
-      --card: 228 29% 7%;
-      --card-foreground: 0 0% 100%;
-      --popover: 228 29% 13%;
-      --popover-foreground: 180 100% 50%;
-      --primary: 327 100% 50%;
-      --primary-foreground: 0 0% 0%;
-      --secondary: 217.2 32.6% 17.5%;
-      --secondary-foreground: 210 40% 98%;
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 240 5% 65%;
-      --accent: 170 100% 44%;
-      --accent-foreground: 0 0% 0%;
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 210 40% 98%;
-      --border: 197 100% 50%;
-      --input: 197 100% 50%;
-      --ring: 170 100% 44%;
+    /* Custom Variables */
+    --color-dark-bg: #0d0d18;
+    --color-black: #000000;
+    --color-text-light: #999999;
+    --color-text-white: #FFFFFF;
+    --neon-pink: #FF0099;
+    --neon-blue: #00C6FF;
+    --neon-cyan: #00E4B4;
+    --shadow-cyan: 0 0 8px var(--neon-cyan), 0 0 1px inset rgba(255, 255, 255, 0.5);
+    --shadow-blue: 0 0 8px var(--neon-blue), 0 0 1px inset rgba(255, 255, 255, 0.5);
   }
 }
 
 @layer base {
   * {
     @apply border-border;
-    box-sizing: border-box;
   }
   body {
+    @apply bg-background text-foreground;
     background-color: var(--color-black);
-    color: var(--color-text-light);
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
   }
 }
 
 @layer components {
-  /* --- 2. HEADER/NAV STYLES --- */
   .header-nav {
-      @apply flex justify-between items-center px-5 py-2.5;
-      background-color: var(--color-dark-bg);
-      border-bottom: 2px solid var(--neon-pink);
-      box-shadow: 0 0 10px rgba(255, 0, 153, 0.6);
+    @apply flex justify-between items-center px-5 py-2.5;
+    background-color: var(--color-dark-bg);
+    border-bottom: 2px solid var(--neon-pink);
   }
 
   .logo {
@@ -115,202 +66,17 @@
   .nav-item:hover, .nav-right a:hover {
       @apply text-white;
   }
-  
+
   .impact-glow {
       text-shadow: var(--shadow-cyan);
       color: var(--neon-cyan);
   }
-
-  .community-glow {
-      text-shadow: var(--shadow-pink);
-      color: var(--neon-pink);
-  }
-
-  .active-market {
-      color: var(--neon-pink) !important;
-      @apply font-bold;
-      border-bottom: 2px solid var(--neon-pink);
-  }
-
+  
   .search-input {
       background-color: transparent;
       border: 1px solid var(--neon-blue);
       @apply py-1 px-2.5 text-white rounded w-48;
       box-shadow: var(--shadow-blue);
       outline: none;
-  }
-
-  /* --- 3. DASHBOARD GRID LAYOUT --- */
-  .dashboard-grid {
-      @apply grid p-5 gap-5;
-      grid-template-columns: 280px 1fr;
-      background-color: var(--color-black);
-  }
-
-  /* --- 4. LEFT SIDEBAR STYLES --- */
-  .left-sidebar {
-      @apply pt-2.5;
-  }
-
-  .sidebar-section {
-      @apply mb-5 px-4 rounded-md relative;
-      background-color: var(--color-dark-bg);
-  }
-
-  .section-title {
-      @apply text-lg font-bold py-4 cursor-pointer transition-colors select-none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .neon-cyan { color: var(--neon-cyan); text-shadow: var(--shadow-cyan); }
-  .neon-pink { color: var(--neon-pink); text-shadow: var(--shadow-pink); }
-  .neon-blue { color: var(--neon-blue); text-shadow: var(--shadow-blue); }
-
-  .dot-indicator {
-      @apply h-2 w-2 rounded-full inline-block mr-2;
-      background-color: currentColor;
-      box-shadow: 0 0 5px currentColor;
-  }
-
-  .dropdown-menu {
-      @apply absolute w-[300px] z-50 p-1.5 rounded-md hidden;
-      left: 285px; 
-      top: 50px;
-      background-color: #1a1a2e;
-      border: 2px solid var(--neon-pink);
-      box-shadow: 0 0 20px rgba(255, 0, 153, 0.8);
-  }
-
-  .platform-menu {
-      top: 130px; 
-      border: 2px solid var(--neon-blue);
-      box-shadow: 0 0 20px rgba(0, 204, 255, 0.8);
-      width: 340px;
-  }
-
-  .dropdown-menu.visible {
-      @apply block;
-  }
-
-  .menu-item {
-      @apply p-2 px-3 rounded-sm cursor-pointer transition-colors leading-normal text-sm text-white;
-  }
-
-  .menu-item:hover {
-      background-color: rgba(255, 0, 153, 0.1);
-      color: var(--neon-pink);
-  }
-
-  .sub-text {
-      @apply block text-xs mt-0.5;
-      color: var(--color-text-light);
-  }
-
-  .active-pink {
-      background-color: var(--neon-pink);
-      color: var(--color-black) !important;
-      @apply font-bold;
-      box-shadow: var(--shadow-pink);
-  }
-
-   .active-pink .sub-text {
-      color: var(--color-black);
-  }
-
-  .revolutionary-text {
-      color: var(--neon-blue);
-      @apply text-center pt-2.5 mt-1.5 font-bold;
-      border-top: 1px dashed rgba(255, 255, 255, 0.1);
-      text-shadow: var(--shadow-blue);
-  }
-
-  /* --- 5. CENTER CONTENT & CARD STYLES --- */
-  .center-content {
-      @apply p-2.5;
-  }
-
-  .info-banner {
-      background-color: #1a1a2e;
-      @apply p-4 rounded-md mb-6;
-      border-top: 2px solid var(--neon-pink);
-      border-bottom: 2px solid var(--neon-pink);
-  }
-
-  .stats-row {
-      @apply flex justify-around pt-2.5 text-center;
-  }
-  
-  .stat-box {
-    @apply flex-1;
-  }
-
-  .stat-number {
-      @apply text-2xl font-bold;
-      color: var(--neon-cyan);
-      text-shadow: var(--shadow-cyan);
-  }
-
-  .stat-label {
-      @apply text-xs;
-      color: var(--color-text-light);
-  }
-
-  .index-cards-row {
-      @apply flex gap-5 mb-5;
-  }
-
-  .data-card {
-      @apply flex-1 p-4 rounded-lg transition-all;
-      background-color: var(--color-dark-bg);
-      border: 1px solid #333;
-  }
-
-  .neon-blue-border { border-color: var(--neon-blue); box-shadow: var(--shadow-blue); }
-  .neon-orange-border { border-color: var(--neon-orange); box-shadow: var(--shadow-orange); }
-  .neon-cyan-border { border-color: var(--neon-cyan); box-shadow: var(--shadow-cyan); }
-  .neon-pink-border { border-color: var(--neon-pink); box-shadow: var(--shadow-pink); }
-
-  .card-title {
-      @apply text-lg text-white font-bold;
-  }
-
-  .card-data .price {
-      @apply text-3xl font-bold block mt-2.5;
-  }
-
-  .card-data .change {
-      @apply text-base font-bold;
-  }
-
-  .positive { color: #00FF00; }
-  .negative { color: var(--neon-pink); }
-
-  .dxy-card {
-      background-color: var(--color-dark-bg);
-      @apply p-5 rounded-lg;
-      border: 2px solid var(--neon-pink);
-      box-shadow: var(--shadow-pink);
-  }
-
-  .dxy-title {
-      @apply text-xl font-bold mb-2.5;
-      color: var(--neon-pink);
-      text-shadow: 0 0 5px var(--neon-pink);
-  }
-
-  .dxy-data {
-      @apply flex items-baseline gap-5;
-  }
-
-  .dxy-price {
-      @apply text-5xl text-white font-light;
-  }
-
-  .dxy-change {
-      @apply text-xl font-bold;
-  }
-  
-  .card-header {
-      @apply p-0;
   }
 }
