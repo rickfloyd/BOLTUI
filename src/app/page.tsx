@@ -85,12 +85,12 @@ export default function Page() {
 
         <button className="data-card neon-orange-border">
           <div className="card-header">
-            <span className="card-title">Gold (XAU)</span>
-            <div className="card-description">Physical Goods</div>
+            <span className="card-title">Metals</span>
+            <div className="card-description">Gold, Silver, & Platinum</div>
           </div>
           <div className="card-data">
-            <span className="price">$2,345.60</span>
-            <span className="change positive">+0.55%</span>
+            <span className="price">$2,350.00</span>
+            <span className="change positive">+1.2%</span>
           </div>
         </button>
       </div>
