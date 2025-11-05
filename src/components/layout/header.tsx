@@ -18,6 +18,14 @@ export function Header() {
     { name: 'Corporate Earnings', subtext: 'Company performance reports' },
     { name: 'Global Markets', subtext: 'International news and trends' },
   ];
+  const aiPlatformItems = [
+    { name: 'AI Price Prediction Engine', subtext: 'Forecasting with machine learning' },
+    { name: 'ML Pattern Recognition', subtext: 'Identify historical patterns' },
+    { name: 'Sentiment Analysis AI', subtext: 'Gauge market mood from news & social' },
+    { name: 'Smart Risk Management', subtext: 'AI-driven risk assessment' },
+    { name: 'Automated Trading Signals', subtext: 'Real-time buy/sell alerts' },
+    { name: 'Neural Networks & LSTM', subtext: 'Deep learning for market prediction' },
+  ];
   const logoImage = PlaceHolderImages.find(p => p.id === 'logo');
   return (
     <header className="header-nav">
@@ -28,6 +36,7 @@ export function Header() {
         <Link href="#" className="nav-item neon-orange">
           Sports Betting
         </Link>
+        <HeaderDropdown title="AI-Powered Trading Platform" items={aiPlatformItems} />
         <Link href="#" className="nav-item">
           Sports
         </Link>
