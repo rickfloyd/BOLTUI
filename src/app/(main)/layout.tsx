@@ -1,4 +1,6 @@
 import { Header } from '@/components/layout/header';
+import { SidebarProvider, Sidebar, SidebarInset } from '@/components/ui/sidebar';
+import { MainSidebar } from '@/components/layout/main-sidebar';
 
 export default function MainLayout({
   children,
@@ -6,11 +8,16 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header pageTitle="Ai QUANTUM CHARTS" />
-      <main className="flex-1 flex flex-col">
-        {children}
-      </main>
-    </div>
+    <SidebarProvider>
+      <Header />
+      <div className="flex">
+        <Sidebar>
+          <MainSidebar />
+        </Sidebar>
+        <SidebarInset>
+          <main className="flex-1 flex flex-col">{children}</main>
+        </SidebarInset>
+      </div>
+    </SidebarProvider>
   );
 }
