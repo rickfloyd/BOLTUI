@@ -7,7 +7,7 @@ import ClientWrapper from "@/components/ClientWrapper";
 export default function Page() {
   const cardData = [
     { title: 'Forex', description: 'Currency Trading', border: 'neon-pink-border' },
-    { title: 'Stocks (Equity Market)', description: 'Company Shares', border: 'neon-blue-border' },
+    { title: 'Stocks (Equity Market)', description: 'Company Shares', border: 'neon-green-border' },
     { title: 'Commodities', description: 'Physical Goods (Oil, Gold, etc.)', border: 'neon-pink-border' },
     { title: 'Bonds (Fixed Income)', description: 'Debt Securities', border: 'neon-blue-border' },
     { title: 'Cryptocurrency', description: 'Digital Assets', border: 'neon-pink-border' },

@@ -18,6 +18,7 @@
     --neon-cyan: 180, 100%, 50%;
     --neon-blue: 210, 100%, 55%;
     --neon-orange: 30, 100%, 55%;
+    --neon-green: 120, 100%, 50%;
     
     --radius: 0.5rem;
   }
@@ -375,11 +376,14 @@ body.animation-page {
 .neon-cyan { color: hsl(var(--neon-cyan)); text-shadow: 0 0 8px hsl(var(--neon-cyan)); }
 .neon-blue { color: hsl(var(--neon-blue)); text-shadow: 0 0 8px hsl(var(--neon-blue)); }
 .neon-orange { color: hsl(var(--neon-orange)); text-shadow: 0 0 8px hsl(var(--neon-orange)); }
+.neon-green { color: hsl(var(--neon-green)); text-shadow: 0 0 8px hsl(var(--neon-green)); }
 
 .neon-pink-border { border-color: hsl(var(--neon-pink)); box-shadow: 0 0 10px hsl(var(--neon-pink), .5); }
 .neon-cyan-border { border-color: hsl(var(--neon-cyan)); box-shadow: 0 0 10px hsl(var(--neon-cyan), .5); }
 .neon-blue-border { border-color: hsl(var(--neon-blue)); box-shadow: 0 0 10px hsl(var(--neon-blue), .5); }
 .neon-orange-border { border-color: hsl(var(--neon-orange)); box-shadow: 0 0 10px hsl(var(--neon-orange), .5); }
+.neon-green-border { border-color: hsl(var(--neon-green)); box-shadow: 0 0 10px hsl(var(--neon-green), .5); }
+
 
 /* === NEON GLOW EFFECTS === */
 
