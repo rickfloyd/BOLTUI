@@ -11,6 +11,15 @@ export default function Page() {
     { title: 'Russell 2000', border: 'neon-cyan-border' },
   ];
 
+  const currencyIndexes = [
+    { name: 'DXY', longName: 'U.S. Dollar', description: 'The official U.S. Dollar Index. It is the most common, measuring the USD against six major world currencies (EUR, JPY, GBP, CAD, SEK, CHF).' },
+    { name: 'EXY', longName: 'Euro', description: 'Measures the value of the Euro.' },
+    { name: 'BXY', longName: 'British Pound', description: 'Measures the value of the British Pound Sterling (GBP).' },
+    { name: 'JXY', longName: 'Japanese Yen', description: 'Measures the value of the Japanese Yen (JPY).' },
+    { name: 'CXY', longName: 'Canadian Dollar', description: 'Measures the value of the Canadian Dollar (CAD).' },
+    { name: 'AXY', longName: 'Australian Dollar', description: 'Measures the value of the Australian Dollar (AUD).' },
+  ];
+
   const generateRandomData = () => {
     const price = (Math.random() * 500 + 100).toFixed(2);
     const change = (Math.random() * 5 - 2.5).toFixed(2);
@@ -28,28 +37,14 @@ export default function Page() {
       <main className="dashboard-grid">
         <MainSidebar />
         <section className="center-content">
-          <div className="info-banner">
-            <p>
-              90% of every payment directly funds educational programs for
-              future traders
-            </p>
-            <div className="stats-row">
-              <div className="stat-box">
-                <div className="stat-number">12,911</div>
-                <div className="stat-label">Students Helped</div>
-              </div>
-              <div className="stat-box">
-                <div className="stat-number">156</div>
-                <div className="stat-label">Free Courses</div>
-              </div>
-              <div className="stat-box">
-                <div className="stat-number">348</div>
-                <div className="stat-label">Scholarships</div>
-              </div>
-              <div className="stat-box">
-                <div className="stat-number">28</div>
-                <div className="stat-label">Free Tools</div>
-              </div>
+          <div className="dxy-card neon-pink-border">
+            <div className="dxy-grid">
+              {currencyIndexes.map((index) => (
+                <div className="currency-card" key={index.name}>
+                  <div className="card-title">{index.name} {index.longName}</div>
+                  <p className="card-description">{index.description}</p>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -85,3 +80,5 @@ export default function Page() {
     </>
   );
 }
+
+    
