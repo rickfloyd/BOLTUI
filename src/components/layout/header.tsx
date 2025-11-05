@@ -29,49 +29,53 @@ export function Header() {
   const logoImage = PlaceHolderImages.find(p => p.id === 'logo');
   return (
     <header className="header-nav">
-      <nav>
-        <Link href="#" className="nav-item impact-glow">
-          Impact
-        </Link>
-        <Link href="#" className="nav-item neon-orange">
-          Sports Betting
-        </Link>
+      <div className="header-top-layer">
+        <nav className="main-nav">
+          <Link href="#" className="nav-item impact-glow">
+            Impact
+          </Link>
+          <Link href="#" className="nav-item neon-orange">
+            Sports Betting
+          </Link>
+          <Link href="#" className="nav-item">
+            Sports
+          </Link>
+          <Link href="#" className="nav-item">
+            World Sports
+          </Link>
+          <Link href="#" className="nav-item">
+            Products
+          </Link>
+          <Link href="#" className="nav-item active-market">
+            Markets
+          </Link>
+          <Link href="#" className="nav-item">
+            More
+          </Link>
+        </nav>
+        <div className="search-box">
+          <input
+            type="text"
+            placeholder="Search markets..."
+            className="search-input"
+          />
+        </div>
+        <div className="nav-right">
+          <Link href="#" className="nav-item community-glow">
+            Community
+          </Link>
+          <Link href="#" className="nav-item">
+            LOGIN
+          </Link>
+          <Link href="#" className="nav-item">
+            JOIN
+          </Link>
+        </div>
+      </div>
+      <div className="header-bottom-layer">
         <HeaderDropdown title="AI-Powered Trading Platform" items={aiPlatformItems} />
-        <Link href="#" className="nav-item">
-          Sports
-        </Link>
-        <Link href="#" className="nav-item">
-          World Sports
-        </Link>
-        <Link href="#" className="nav-item">
-          Products
-        </Link>
-        <Link href="#" className="nav-item active-market">
-          Markets
-        </Link>
         <HeaderDropdown title="Financial News" items={financialNewsItems} />
         <HeaderDropdown title="Politics" items={politicalViewpointItems} />
-        <Link href="#" className="nav-item">
-          More
-        </Link>
-      </nav>
-      <div className="search-box">
-        <input
-          type="text"
-          placeholder="Search markets..."
-          className="search-input"
-        />
-      </div>
-      <div className="nav-right">
-        <Link href="#" className="nav-item community-glow">
-          Community
-        </Link>
-        <Link href="#" className="nav-item">
-          LOGIN
-        </Link>
-        <Link href="#" className="nav-item">
-          JOIN
-        </Link>
       </div>
     </header>
   );

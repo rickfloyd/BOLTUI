@@ -62,20 +62,30 @@ body.animation-page {
 /* === HEADER === */
 .header-nav {
     display: flex;
-    align-items: center;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid hsla(var(--neon-pink), 0.3); /* Changed from purple */
+    flex-direction: column;
+    padding: 0 2rem;
+    border-bottom: 1px solid hsla(var(--neon-pink), 0.3);
     background-color: rgba(10, 10, 15, 0.5);
     backdrop-filter: blur(5px);
 }
-.header-nav .logo-image {
-    margin-right: 2rem; /* Add some space between logo and nav */
-    filter: brightness(1.2) contrast(1.1);
-}
-.header-nav nav {
+.header-top-layer, .header-bottom-layer {
     display: flex;
     align-items: center;
-    margin: 0 auto;
+    width: 100%;
+}
+.header-top-layer {
+    padding: 1rem 0;
+    justify-content: space-between;
+}
+.header-bottom-layer {
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid hsla(var(--neon-cyan), 0.2);
+}
+.header-nav .main-nav {
+    display: flex;
+    align-items: center;
     gap: 1.5rem;
 }
 .header-nav .nav-item {
@@ -113,7 +123,6 @@ body.animation-page {
 .header-nav .nav-right {
     display: flex;
     gap: 1.5rem;
-    margin-left: 2rem;
     align-items: center;
 }
 
