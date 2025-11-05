@@ -415,7 +415,6 @@ body.animation-page {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: hueShift 6s linear infinite;
-  text-shadow: 0 0 10px rgba(17,179,255,0.8), 0 0 20px rgba(255,45,172,0.5);
 }
 
 @keyframes hueShift {
