@@ -444,3 +444,24 @@ nav a:hover, .nav-right a:hover {
 .glow-animate {
   animation: pulseGlow 2.5s ease-in-out infinite;
 }
+
+/* === MULTICOLOR HEADER TEXT === */
+
+.neon-text {
+  background: linear-gradient(90deg, #ff2dac, #11b3ff, #8c4bff, #19ffe8, #ff7a1a);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hueShift 6s linear infinite;
+  text-shadow: 0 0 10px rgba(17,179,255,0.8), 0 0 20px rgba(255,45,172,0.5);
+}
+
+@keyframes hueShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.neon-text:hover {
+  text-shadow: 0 0 18px rgba(255,45,172,1), 0 0 30px rgba(17,179,255,1);
+}
