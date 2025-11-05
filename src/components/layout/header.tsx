@@ -227,7 +227,7 @@ export function Header({ pageTitle }: { pageTitle: string }) {
   const pathname = usePathname();
 
   return (
-    <header className="h-20 flex items-center justify-between px-6 bg-card/30 backdrop-blur-sm border-b border-border/20 sticky top-0 z-10">
+    <header className="h-16 flex items-center justify-between px-6 bg-card/30 backdrop-blur-sm border-b border-border/20 sticky top-0 z-10">
       <div className="flex items-center gap-10">
         <Link href="/" className="flex items-center gap-3">
           <div className="logo-container">
