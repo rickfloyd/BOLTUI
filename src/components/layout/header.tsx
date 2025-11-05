@@ -259,8 +259,10 @@ export function Header({ pageTitle }: { pageTitle: string }) {
               <line x1="65" y1="65" x2="85" y2="85" className="logo-q-tail" />
             </g>
           </svg>
-          <span className="text-xl font-bold text-foreground tracking-widest uppercase neon-text">
-            Ai QUANTUM CHARTS
+          <span className="text-xl font-bold tracking-widest uppercase">
+            <span className="text-primary neon-text-primary">Ai</span>{' '}
+            <span className="text-accent neon-text">QUANTUM</span>{' '}
+            <span className="text-chart-4 neon-text-orange">CHARTS</span>
           </span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
