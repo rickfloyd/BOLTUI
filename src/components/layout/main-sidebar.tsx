@@ -27,7 +27,7 @@ export function MainSidebar() {
           <div className="menu-item">
             Republican <span className="sub-text">Conservative market analysis</span>
           </div>
-          <div className="menu-item active-pink">
+          <div className="menu-item">
             Democrat <span className="sub-text">Progressive economic insights</span>
           </div>
           <div className="menu-item">
