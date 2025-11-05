@@ -1,3 +1,4 @@
+
 'use client';
 
 import {
@@ -15,6 +16,17 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+import { AreaChart } from 'lucide-react';
+import React from 'react';
 
 const bondData = {
   Americas: [
@@ -47,7 +59,17 @@ const economicIndicators = [
   { symbol: 'M2', description: 'Money Supply data for various economies' },
 ];
 
+const chartTypes = [
+  "Line Chart", "Bar Chart (OHLC)", "Candlestick Chart (Japanese Candlesticks)",
+  "Area Chart", "Heikin Ashi", "Renko", "Point & Figure (P&F)", "Kagi",
+  "Line Break", "Range Bars", "Tick Chart", "Volume Chart", "Hollow Candles",
+  "Scatter Plot", "Pie Chart", "Histogram", "Waterfall Chart", "Heatmap",
+  "Bubble Chart", "Radar Chart (Spider Chart)", "Treemap", "Box Plot (Box & Whisker)"
+];
+
 export default function BondsClient() {
+  const [selectedChart, setSelectedChart] = React.useState('Line Chart');
+
   return (
     <div className="space-y-6">
       <Card className="neon-box">
@@ -63,8 +85,29 @@ export default function BondsClient() {
 
       <Card className="neon-box">
         <CardHeader>
-          <CardTitle>Government Bond Yield Data</CardTitle>
-          <CardDescription>A list of countries with available bond yield data, organized by region.</CardDescription>
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle>Government Bond Yield Data</CardTitle>
+              <CardDescription>A list of countries with available bond yield data, organized by region.</CardDescription>
+            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="flex items-center gap-2 btn-accent">
+                  <AreaChart className="h-4 w-4" />
+                  <span>{selectedChart}</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-64 max-h-96 overflow-y-auto">
+                <DropdownMenuLabel>Chart Type</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                {chartTypes.map((chart) => (
+                  <DropdownMenuItem key={chart} onSelect={() => setSelectedChart(chart)}>
+                    {chart}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </CardHeader>
         <CardContent>
           <Accordion type="single" collapsible defaultValue="Americas" className="w-full">
@@ -82,7 +125,7 @@ export default function BondsClient() {
                       </TableHeader>
                       <TableBody>
                         {bonds.map((bond) => (
-                          <TableRow key={bond.country} className="border-border/20 hover:bg-accent/5">
+                          <TableRow key={bond.country} className="border-border/20 hover:bg-accent/5 cursor-pointer" onClick={() => alert(`Chart for ${bond.country}`)}>
                             <TableCell className="font-medium">{bond.country}</TableCell>
                             <TableCell className="text-right font-mono text-muted-foreground">{bond.maturities}</TableCell>
                           </TableRow>
@@ -113,7 +156,7 @@ export default function BondsClient() {
                 </TableHeader>
                 <TableBody>
                   {economicIndicators.map((indicator) => (
-                    <TableRow key={indicator.symbol} className="border-border/20 hover:bg-accent/5">
+                    <TableRow key={indicator.symbol} className="border-border/20 hover:bg-accent/5 cursor-pointer" onClick={() => alert(`Chart for ${indicator.symbol}`)}>
                       <TableCell className="font-mono text-accent">{indicator.symbol}</TableCell>
                       <TableCell>{indicator.description}</TableCell>
                     </TableRow>
@@ -126,3 +169,4 @@ export default function BondsClient() {
     </div>
   );
 }
+
