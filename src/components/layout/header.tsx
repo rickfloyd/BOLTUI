@@ -88,6 +88,8 @@ export function Header() {
         />
       </div>
       <div className="nav-right">
+        <a href="#" className="nav-item">LOGIN</a>
+        <a href="#" className="nav-item">JOIN</a>
         <div className="nav-item-wrapper">
           <a
             href="#"
