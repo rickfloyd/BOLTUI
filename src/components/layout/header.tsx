@@ -61,7 +61,7 @@ export function Header() {
           <Link href="#" className="nav-item community-glow">
             Community
           </Link>
-          <Link href="#" className="nav-item">
+          <Link href="#" className="nav-item neon-pink">
             LOGIN
           </Link>
           <Link href="#" className="nav-item neon-orange">
