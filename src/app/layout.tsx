@@ -1,16 +1,17 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import { Orbitron } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'Quantum CyberVision',
   description: 'Next-generation financial and sports intelligence platform',
 };
 
-const orbitron = Orbitron({ 
+const roboto = Roboto({
   subsets: ['latin'],
-  variable: '--font-orbitron',
+  variable: '--font-roboto',
+  weight: ['400', '500', '700']
 });
 
 export default function RootLayout({
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${orbitron.variable} dark h-full`}>
+    <html lang="en" className={`${roboto.variable} dark h-full`}>
       <body className={`h-full antialiased font-sans`}>
         {children}
         <Toaster />

@@ -10,9 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-orbitron)', 'sans-serif'],
-        body: ['var(--font-orbitron)', 'sans-serif'],
-        headline: ['var(--font-orbitron)', 'sans-serif'],
+        sans: ['var(--font-roboto)', 'sans-serif'],
+        body: ['var(--font-roboto)', 'sans-serif'],
+        headline: ['var(--font-roboto)', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
