@@ -12,7 +12,7 @@ export default function Page() {
   if (!mounted) return null; // ✅ prevents SSR/client mismatch
 
   return (
-    <div className="flex flex-col items-center w-full p-4 space-y-24">
+    <div className="flex flex-col items-center w-full p-4 space-y-12">
       {Array.from({ length: 20 }).map((_, i) => (
         <div
           key={i}
