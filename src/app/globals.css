@@ -139,10 +139,10 @@ body {
 /* === DASHBOARD GRID === */
 .dashboard-grid {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 1.5rem;
-    height: calc(100vh - 145px); /* Adjust based on header height */
+    height: calc(100vh - 81px); /* Adjust based on header height */
 }
 
 /* === LEFT SIDEBAR === */

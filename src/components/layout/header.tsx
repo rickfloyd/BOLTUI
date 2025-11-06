@@ -1,6 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { HeaderDropdown } from './HeaderDropdown';
+
+const aiPlatformItems = [
+    { name: 'AI Price Prediction Engine', subtext: 'Forecasting with machine learning' },
+    { name: 'ML Pattern Recognition', subtext: 'Identify historical patterns' },
+    { name: 'Sentiment Analysis AI', subtext: 'Gauge market mood from news & social' },
+    { name: 'Smart Risk Management', subtext: 'AI-driven risk assessment' },
+    { name: 'Automated Trading Signals', subtext: 'Real-time buy/sell alerts' },
+    { name: 'Neural Networks & LSTM', subtext: 'Deep learning for market prediction' },
+];
+
 
 export function Header() {
   return (
@@ -8,9 +19,7 @@ export function Header() {
       <div className="header-top-layer">
         <div className="header-title neon-text">AI Quantum Charts</div>
         <nav className="main-nav">
-          <Link href="#" className="nav-item neon-pink">
-            Personalities
-          </Link>
+          <HeaderDropdown title="Personalities" items={aiPlatformItems} titleClassName="neon-pink" />
           <Link href="#" className="nav-item neon-cyan">
             Impact
           </Link>

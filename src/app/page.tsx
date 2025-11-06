@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Header } from '@/components/layout/header';
-import { MainSidebar } from '@/components/layout/main-sidebar';
 import { TrendingUp, TrendingDown, DollarSign, BarChart, Zap, Globe } from 'lucide-react';
 
 const stats = [
@@ -44,7 +43,6 @@ export default function Page() {
     <>
       <Header />
       <main className="dashboard-grid">
-        <MainSidebar />
         <section className="center-content">
           <div className="info-banner">
             <h3 className="info-banner-title">
@@ -61,7 +59,7 @@ export default function Page() {
             </div>
           </div>
           
-          <h2 className="content-title">Market Summary &gt;</h2>
+          <h2 className="content-title">Market Summary ></h2>
           
           <div className="index-cards-row">
             {marketSummary.map((item) => (
