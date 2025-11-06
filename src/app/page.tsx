@@ -3,6 +3,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
 import { TrendingUp, TrendingDown, BarChart } from 'lucide-react';
 
@@ -50,6 +51,12 @@ const currencyIndexes = [
 ];
 
 export default function Page() {
+  const router = useRouter();
+
+  const handleRowClick = (index: string) => {
+    router.push(`/charts/${index}`);
+  };
+
   return (
     <>
       <Header />
@@ -70,7 +77,7 @@ export default function Page() {
             </div>
           </div>
 
-          <h2 className="content-title">Market Summary ></h2>
+          <h2 className="content-title">Market Summary &gt;</h2>
 
           <div className="index-cards-row">
             {marketSummary.map(item => (
@@ -115,16 +122,14 @@ export default function Page() {
                 </thead>
                 <tbody>
                   {currencyIndexes.map(c => (
-                    <Link
-                      href={`/charts/${c.index}`}
+                    <tr
                       key={c.index}
-                      className="contents"
+                      onClick={() => handleRowClick(c.index)}
+                      className="cursor-pointer hover:bg-white/5"
                     >
-                      <tr className="cursor-pointer hover:bg-white/5">
-                        <td>{c.index}</td>
-                        <td>{c.currency}</td>
-                      </tr>
-                    </Link>
+                      <td>{c.index}</td>
+                      <td>{c.currency}</td>
+                    </tr>
                   ))}
                 </tbody>
               </table>
