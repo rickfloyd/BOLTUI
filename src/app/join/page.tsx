@@ -23,12 +23,22 @@ import {
 import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: 'Username must be at least 2 characters.',
+  firstName: z.string().min(2, {
+    message: 'First name must be at least 2 characters.',
+  }),
+  lastName: z.string().min(2, {
+    message: 'Last name must be at least 2 characters.',
   }),
   email: z.string().email({
     message: 'Please enter a valid email address.',
   }),
+  phoneNumber: z.string().min(10, {
+    message: 'Please enter a valid phone number.',
+  }),
+  address: z.string().min(5, {
+    message: 'Please enter a valid address.',
+  }),
+  companyName: z.string().optional(),
   password: z.string().min(6, {
     message: 'Password must be at least 6 characters.',
   }),
@@ -40,8 +50,12 @@ export default function JoinPage() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: '',
+      firstName: '',
+      lastName: '',
       email: '',
+      phoneNumber: '',
+      address: '',
+      companyName: '',
       password: '',
     },
   });
@@ -56,31 +70,50 @@ export default function JoinPage() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-transparent">
-      <Card className="w-full max-w-md bg-gray-900/50 border-purple-500/30 text-white">
+      <Card className="w-full max-w-lg bg-gray-900/50 border-purple-500/30 text-white">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center text-purple-400">Join Quantum CyberVision</CardTitle>
           <CardDescription className="text-center text-gray-400">Create your account to access the future of trading.</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="username"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Username</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="Your unique username"
-                        {...field}
-                        className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <FormField
+                  control={form.control}
+                  name="firstName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>First Name</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="John"
+                          {...field}
+                          className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="lastName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Last Name</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Doe"
+                          {...field}
+                          className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
               <FormField
                 control={form.control}
                 name="email"
@@ -91,6 +124,57 @@ export default function JoinPage() {
                       <Input
                         type="email"
                         placeholder="your.email@example.com"
+                        {...field}
+                        className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="phoneNumber"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Phone Number</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="(123) 456-7890"
+                        {...field}
+                        className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="address"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Home or Business Address</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="123 Main St, Anytown, USA"
+                        {...field}
+                        className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="companyName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Company Name (Optional)</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Your Company Inc."
                         {...field}
                         className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
                       />
