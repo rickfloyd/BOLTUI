@@ -1,4 +1,16 @@
+# 🔒 Firebase security ignore list
 .git
 .gitignore
 firebase-debug.log
+.env
+.env.local
+.env.production
+.env.development
 node_modules
+.vscode
+*.log
+*.bak
+*.zip
+*.rar
+*.7z
+*.tar
