@@ -78,6 +78,9 @@ export default function Page() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
+          <h1 className="text-3xl font-bold neon-text text-center">
+            CRYPTO CLASSES
+          </h1>
           <div className="view-switcher">
             <Link href="/" className="view-button active neon-cyan">
               HYPER
