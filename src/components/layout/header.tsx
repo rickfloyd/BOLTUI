@@ -138,21 +138,10 @@ const sportsBettingItems: DropdownItem[] = [
 ];
 
 function DesktopHeader() {
-  const logo = PlaceHolderImages.find(p => p.id === 'logo');
   return (
     <>
       <div className="header-top-layer">
         <div className="flex items-center gap-4">
-            {logo && (
-              <Image
-                src={logo.imageUrl}
-                alt={logo.description}
-                width={40}
-                height={40}
-                className="rounded-full"
-                data-ai-hint={logo.imageHint}
-              />
-            )}
             <div className="header-title neon-text">AI Quantum Charts</div>
         </div>
         <div className="nav-right">
@@ -200,22 +189,11 @@ function DesktopHeader() {
 function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
-  const logo = PlaceHolderImages.find(p => p.id === 'logo');
 
   return (
     <>
       <div className="header-top-layer">
         <div className="flex items-center gap-4">
-             {logo && (
-              <Image
-                src={logo.imageUrl}
-                alt={logo.description}
-                width={40}
-                height={40}
-                className="rounded-full"
-                data-ai-hint={logo.imageHint}
-              />
-            )}
             <div className="header-title neon-text">AI Quantum Charts</div>
         </div>
         <button onClick={toggleMenu} className="mobile-menu-button">
@@ -251,23 +229,12 @@ function MobileHeader() {
 
 export function Header() {
   const isMobile = useIsMobile();
-  const logo = PlaceHolderImages.find(p => p.id === 'logo');
 
   return (
     <header className="header-nav">
       {isMobile === undefined ? (
         <div className="header-top-layer">
             <div className="flex items-center gap-4">
-                {logo && (
-                <Image
-                    src={logo.imageUrl}
-                    alt={logo.description}
-                    width={40}
-                    height={40}
-                    className="rounded-full"
-                    data-ai-hint={logo.imageHint}
-                />
-                )}
                 <div className="header-title neon-text">AI Quantum Charts</div>
             </div>
         </div>
