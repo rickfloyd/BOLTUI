@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { IBM_Plex_Sans, Cinzel } from 'next/font/google';
+import { IBM_Plex_Sans, Orbitron } from 'next/font/google';
 import './globals.css';
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -8,10 +8,10 @@ const ibmPlexSans = IBM_Plex_Sans({
   variable: '--font-ibm-plex-sans',
 });
 
-const cinzel = Cinzel({
+const orbitron = Orbitron({
   subsets: ['latin'],
   weight: ['400', '700'],
-  variable: '--font-cinzel',
+  variable: '--font-orbitron',
 });
 
 export const metadata: Metadata = {
@@ -26,7 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexSans.variable} ${cinzel.variable} font-sans`}>
+      <body
+        className={`${ibmPlexSans.variable} ${orbitron.variable} font-sans`}
+      >
         {children}
       </body>
     </html>
