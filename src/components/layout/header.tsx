@@ -17,6 +17,11 @@ const sportsItems = [
     { name: 'World Sports', subtext: 'International sports coverage' },
 ];
 
+const tradersProfileItems = [
+  { name: 'Personal Account', subtext: 'Manage your personal trading profile' },
+  { name: 'Business Account', subtext: 'Manage your business trading profile' },
+  { name: 'VIP', subtext: 'Access exclusive VIP features' },
+];
 
 export function Header() {
   return (
@@ -44,6 +49,7 @@ export function Header() {
             Stocks
           </Link>
           <HeaderDropdown title="Community Features" items={communityFeaturesItems} titleClassName="neon-blue" />
+          <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-pink" />
           <Link href="#" className="nav-item neon-orange">
             Guilty Pleasures
           </Link>
