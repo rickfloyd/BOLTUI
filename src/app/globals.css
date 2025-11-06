@@ -140,6 +140,21 @@ body {
     text-transform: none;
 }
 
+.header-dropdown-menu .dropdown-separator {
+    height: 1px;
+    background-color: hsla(var(--neon-cyan), 0.2);
+    margin: 0.5rem 0;
+}
+
+.header-dropdown-menu .dropdown-header {
+    font-size: 0.75rem;
+    color: hsl(var(--neon-pink));
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem 0;
+}
+
+
 
 /* === MOBILE HEADER === */
 .mobile-menu-button {
