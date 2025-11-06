@@ -110,6 +110,22 @@ const politicalViewsItems: DropdownItem[] = [
   { name: 'ProPublica', type: 'link', href: 'https://www.propublica.org' },
   { name: 'The Guardian', type: 'link', href: 'https://www.theguardian.com/us' },
   { name: 'The American Prospect', type: 'link', href: 'https://prospect.org' },
+  { isSeparator: true },
+  { name: 'Independent', type: 'header' },
+  { name: 'The Associated Press (AP)', type: 'link', href: 'https://apnews.com' },
+  { name: 'Reuters', type: 'link', href: 'https://www.reuters.com' },
+  { name: 'ABC News', type: 'link', href: 'https://abcnews.go.com' },
+  { name: 'NBC News', type: 'link', href: 'https://www.nbcnews.com' },
+  { name: 'CBS News', type: 'link', href: 'https://www.cbsnews.com' },
+  { name: 'BBC News', type: 'link', href: 'https://www.bbc.com/news' },
+  { name: 'The Hill', type: 'link', href: 'https://thehill.com' },
+  { name: 'The Wall Street Journal', type: 'link', href: 'https://www.wsj.com' },
+  { name: 'Forbes', type: 'link', href: 'https://www.forbes.com' },
+  { name: 'ProPublica', type: 'link', href: 'https://www.propublica.org' },
+  { name: 'PBS (Public Broadcasting Service)', type: 'link', href: 'https://www.pbs.org' },
+  { name: 'FiveThirtyEight', type: 'link', href: 'https://fivethirtyeight.com' },
+  { name: 'Politico', type: 'link', href: 'https://www.politico.com' },
+  { name: 'USA Today', type: 'link', href: 'https://www.usatoday.com' },
 ];
 
 
