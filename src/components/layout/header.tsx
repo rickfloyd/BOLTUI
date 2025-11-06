@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -30,7 +29,7 @@ const tradersProfileItems: DropdownItem[] = [
 ];
 
 const guiltyPleasuresItems: DropdownItem[] = [
-  { name: 'Bluetooth Connect', subtext: 'Connect your audio device', type: 'item' },
+  { name: 'Bluetooth Connect', subtext: 'Connect your audio device', type: 'link', href: '/bluetooth-connect' },
   { isSeparator: true },
   { name: 'Apple Music', subtext: 'Listen on Apple Music', type: 'item' },
   { name: 'Spotify', subtext: 'Listen on Spotify', type: 'item' },
