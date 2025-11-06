@@ -1,10 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { HeaderDropdown, type DropdownItem } from './HeaderDropdown';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const communityFeaturesItems: DropdownItem[] = [
     { name: 'AI Price Prediction Engine', subtext: 'Forecasting with machine learning' },
@@ -58,10 +60,23 @@ const guiltyPleasuresItems: DropdownItem[] = [
 
 
 function DesktopHeader() {
+  const logo = PlaceHolderImages.find(p => p.id === 'logo');
   return (
     <>
       <div className="header-top-layer">
-        <div className="header-title neon-text">AI Quantum Charts</div>
+        <div className="flex items-center gap-4">
+            {logo && (
+              <Image
+                src={logo.imageUrl}
+                alt={logo.description}
+                width={40}
+                height={40}
+                className="rounded-full"
+                data-ai-hint={logo.imageHint}
+              />
+            )}
+            <div className="header-title neon-text">AI Quantum Charts</div>
+        </div>
         <div className="nav-right">
            <Link href="/compare-prices" className="nav-item neon-pink">
             Compare Prices
@@ -108,11 +123,24 @@ function DesktopHeader() {
 function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+  const logo = PlaceHolderImages.find(p => p.id === 'logo');
 
   return (
     <>
       <div className="header-top-layer">
-        <div className="header-title neon-text">AI Quantum Charts</div>
+        <div className="flex items-center gap-4">
+             {logo && (
+              <Image
+                src={logo.imageUrl}
+                alt={logo.description}
+                width={40}
+                height={40}
+                className="rounded-full"
+                data-ai-hint={logo.imageHint}
+              />
+            )}
+            <div className="header-title neon-text">AI Quantum Charts</div>
+        </div>
         <button onClick={toggleMenu} className="mobile-menu-button">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -143,12 +171,25 @@ function MobileHeader() {
 
 export function Header() {
   const isMobile = useIsMobile();
+  const logo = PlaceHolderImages.find(p => p.id === 'logo');
 
   return (
     <header className="header-nav">
       {isMobile === undefined ? (
         <div className="header-top-layer">
-          <div className="header-title neon-text">AI Quantum Charts</div>
+            <div className="flex items-center gap-4">
+                {logo && (
+                <Image
+                    src={logo.imageUrl}
+                    alt={logo.description}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                    data-ai-hint={logo.imageHint}
+                />
+                )}
+                <div className="header-title neon-text">AI Quantum Charts</div>
+            </div>
         </div>
       ) : isMobile ? (
         <MobileHeader />
