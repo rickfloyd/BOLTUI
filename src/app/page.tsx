@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -138,31 +137,6 @@ export default function Page() {
             <Link href="/" className="view-button active neon-cyan">Charts</Link>
             <Link href="/simple-view" className="view-button neon-pink">Simple View</Link>
             <Link href="/custom-view" className="view-button neon-orange">Custom View</Link>
-          </div>
-
-          <h2 className="content-title">Market Summary &gt; QUICK GLANCE</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {marketSummary.map(item => (
-              <div className={`data-card ${item.glowClass}`} key={item.title}>
-                <div className="card-header">
-                  <div className="card-icon">{item.icon}</div>
-                  <div className="card-title-group">
-                    <span className="card-title">{item.title}</span>
-                  </div>
-                </div>
-                <div className="card-data">
-                  <span className="price font-numeric">{item.price}</span>
-                  <span
-                    className={`change font-numeric ${
-                      item.isPositive ? 'positive' : 'negative'
-                    }`}
-                  >
-                    {item.change}
-                  </span>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
       </main>
