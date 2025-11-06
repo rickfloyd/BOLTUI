@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Suspense, useState } from 'react';
@@ -51,8 +52,7 @@ const chartTypes = [
     "Box Plot (Box & Whisker)",
 ]
 
-function ChartPageContent({ params }: { params: { index: string } }) {
-  const { index } = params;
+function ChartPageContent({ index }: { index: string }) {
   const details = currencyIndexDetails[index.toUpperCase()] || { name: 'Unknown Index', description: 'No description available.' };
   const [chartType, setChartType] = useState('Line Chart');
 
@@ -103,9 +103,10 @@ function ChartPageContent({ params }: { params: { index: string } }) {
 
 
 export default function ChartPage({ params }: { params: { index: string } }) {
+    const { index } = params;
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <ChartPageContent params={params} />
+            <ChartPageContent index={index} />
         </Suspense>
     )
 }
