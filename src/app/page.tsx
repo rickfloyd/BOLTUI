@@ -5,32 +5,40 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
-import { TrendingUp, TrendingDown, BarChart } from 'lucide-react';
+import { TrendingUp, TrendingDown, BarChart, DollarSign } from 'lucide-react';
 
 const marketSummary = [
   {
     title: 'Nasdaq 100',
-    price: '$385.01',
-    change: '-0.88%',
-    isPositive: false,
+    price: '19,659.80',
+    change: '+0.5%',
+    isPositive: true,
     glowClass: 'cyan-glow',
     icon: <TrendingUp size={24} className="text-cyan-400" />,
   },
   {
-    title: 'Dow Jones',
-    price: '$368.91',
-    change: '+1.23%',
-    isPositive: true,
+    title: 'Bitcoin (BTC)',
+    price: '61,744.50',
+    change: '-2.1%',
+    isPositive: false,
     glowClass: 'orange-glow',
-    icon: <BarChart size={24} className="text-orange-400" />,
+    icon: <TrendingDown size={24} className="text-orange-400" />,
   },
   {
-    title: 'Russell 2000',
-    price: '$197.32',
-    change: '-0.27%',
-    isPositive: false,
+    title: 'AUS200',
+    price: '7,789.60',
+    change: '+0.3%',
+    isPositive: true,
     glowClass: 'blue-glow',
-    icon: <TrendingDown size={24} className="text-blue-400" />,
+    icon: <BarChart size={24} className="text-blue-400" />,
+  },
+  {
+    title: 'US Dollar (DXY)',
+    price: '105.42',
+    change: '-0.36%',
+    isPositive: false,
+    glowClass: 'pink-glow',
+    icon: <DollarSign size={24} className="text-pink-400" />,
   },
 ];
 
@@ -63,7 +71,7 @@ export default function Page() {
 
           <h2 className="content-title">Market Summary &gt;</h2>
 
-          <div className="index-cards-row">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {marketSummary.map(item => (
               <div className={`data-card ${item.glowClass}`} key={item.title}>
                 <div className="card-header">
@@ -86,15 +94,7 @@ export default function Page() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="dxy-card">
-              <div className="dxy-header">
-                <h3 className="dxy-title">DXY (US Dollar Index)</h3>
-                <span className={`change negative font-numeric`}>-0.38 (-0.36%)</span>
-              </div>
-              <p className="dxy-value font-numeric">105.42</p>
-            </div>
-
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
             <div className="info-table-card">
               <h3 className="content-title">Major Currency Indexes</h3>
               <table className="info-table">
