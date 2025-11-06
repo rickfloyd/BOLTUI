@@ -25,6 +25,8 @@ const tradersProfileItems: DropdownItem[] = [
   { name: 'Personal Account', subtext: 'Manage your personal trading profile' },
   { name: 'Business Account', subtext: 'Manage your business trading profile' },
   { name: 'VIP', subtext: 'Access exclusive VIP features' },
+  { isSeparator: true },
+  { name: 'GPS Food Finder', subtext: 'Find restaurants near you', type: 'link', href: '/gps-finder' },
 ];
 
 const guiltyPleasuresItems: DropdownItem[] = [
@@ -35,7 +37,7 @@ const guiltyPleasuresItems: DropdownItem[] = [
   { name: 'YouTube Music', subtext: 'Listen on YouTube Music', type: 'item' },
   { isSeparator: true },
   { name: 'Top 35 Food Apps', subtext: 'Find food apps in your GPS region', type: 'item' },
-  { name: 'Top Restaurants', subtext: 'Find restaurants in your area', type: 'item' },
+  { name: 'Top Restaurants', subtext: 'Find restaurants in your area', type: 'link', href: '/gps-finder' },
   { name: 'Uber Eats', subtext: 'Order food delivery', type: 'item' },
   { name: 'DoorDash', subtext: 'Order food delivery', type: 'item' },
   { isSeparator: true },
