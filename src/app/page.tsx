@@ -14,7 +14,7 @@ export default function Page() {
       <main className="dashboard-grid">
         <section className="center-content">
           <div className="view-switcher">
-            <Link href="/" className="view-button active neon-cyan">CHARTS</Link>
+            <Link href="/" className="view-button active neon-cyan">HYPER</Link>
             <Link href="/simple-view" className="view-button neon-pink">SIMPLE VIEW</Link>
             <Link href="/custom-view" className="view-button neon-orange">CUSTOM VIEW</Link>
           </div>
