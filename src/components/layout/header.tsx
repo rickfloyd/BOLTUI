@@ -76,6 +76,23 @@ const politicalViewsItems: DropdownItem[] = [
   { name: 'PJ Media', type: 'link', href: 'https://pjmedia.com' },
   { name: 'Townhall', type: 'link', href: 'https://townhall.com' },
   { name: 'The Blaze', type: 'link', href: 'https://www.theblaze.com' },
+  { isSeparator: true },
+  { name: 'Democrat', type: 'header' },
+  { name: 'CNN', type: 'link', href: 'https://www.cnn.com' },
+  { name: 'The New York Times', type: 'link', href: 'https://www.nytimes.com' },
+  { name: 'MSNBC', type: 'link', href: 'https://www.msnbc.com' },
+  { name: 'The Washington Post', type: 'link', href: 'https://www.washingtonpost.com' },
+  { name: 'National Public Radio (NPR)', type: 'link', href: 'https://www.npr.org' },
+  { name: 'PBS (Public Broadcasting Service)', type: 'link', href: 'https://www.pbs.org' },
+  { name: 'ABC News', type: 'link', href: 'https://abcnews.go.com' },
+  { name: 'NBC News', type: 'link', href: 'https://www.nbcnews.com' },
+  { name: 'CBS News', type: 'link', href: 'https://www.cbsnews.com' },
+  { name: 'BBC News', type: 'link', href: 'https://www.bbc.com/news' },
+  { name: 'The Associated Press (AP)', type: 'link', href: 'https://apnews.com' },
+  { name: 'The Atlantic', type: 'link', href: 'https://www.theatlantic.com' },
+  { name: 'HuffPost', type: 'link', href: 'https://www.huffpost.com' },
+  { name: 'Vox', type: 'link', href: 'https://www.vox.com' },
+  { name: 'The Wall Street Journal', type: 'link', href: 'https://www.wsj.com' },
 ];
 
 
@@ -217,5 +234,7 @@ export function Header() {
     </header>
   );
 }
+
+    
 
     
