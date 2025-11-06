@@ -142,8 +142,8 @@ function DesktopHeader() {
     <>
       <div className="header-top-layer">
         <div className="flex items-center gap-4">
-            <div className="header-title neon-text leading-tight">
-                AI Quantum<br />Charts
+            <div className="header-title leading-tight">
+                <span className='neon-text'>AI Quantum</span><br /><span className='text-white'>Charts</span>
             </div>
         </div>
         <div className="nav-right">
@@ -196,8 +196,8 @@ function MobileHeader() {
     <>
       <div className="header-top-layer">
         <div className="flex items-center gap-4">
-            <div className="header-title neon-text leading-tight">
-                AI Quantum<br />Charts
+            <div className="header-title leading-tight">
+                <span className='neon-text'>AI Quantum</span><br /><span className='text-white'>Charts</span>
             </div>
         </div>
         <button onClick={toggleMenu} className="mobile-menu-button">
@@ -239,8 +239,8 @@ export function Header() {
       {isMobile === undefined ? (
         <div className="header-top-layer">
             <div className="flex items-center gap-4">
-                 <div className="header-title neon-text leading-tight">
-                    AI Quantum<br />Charts
+                 <div className="header-title leading-tight">
+                    <span className='neon-text'>AI Quantum</span><br /><span className='text-white'>Charts</span>
                 </div>
             </div>
         </div>
