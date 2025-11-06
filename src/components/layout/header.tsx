@@ -45,6 +45,9 @@ export function Header() {
           <Link href="#" className="nav-item neon-green">
             Products
           </Link>
+          <Link href="#" className="nav-item neon-cyan">
+            Political Views
+          </Link>
         </nav>
       </div>
     </header>
