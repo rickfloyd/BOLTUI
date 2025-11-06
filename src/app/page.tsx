@@ -149,7 +149,7 @@ export default function Page() {
             <Link href="/custom-view" className="view-button neon-orange">Custom View</Link>
           </div>
 
-          <h2 className="content-title">Market Summary &gt;</h2>
+          <h2 className="content-title">Market Summary &gt; QUICK GLANCE</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {marketSummary.map(item => (
