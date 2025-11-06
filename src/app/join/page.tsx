@@ -12,7 +12,7 @@ export default function JoinPage() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-black text-center text-white">
       {/* Glow background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-black to-cyan-900 opacity-70 blur-3xl animate-pulse" />
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-900 via-black to-cyan-900 opacity-70 blur-3xl animate-pulse" />
 
       {/* Content */}
       <div className="relative z-10 p-10 rounded-2xl shadow-[0_0_40px_rgba(255,0,255,0.4)] backdrop-blur-md border border-cyan-400/40">
