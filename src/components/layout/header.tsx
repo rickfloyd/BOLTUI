@@ -59,8 +59,7 @@ const guiltyPleasuresItems: DropdownItem[] = [
   { name: 'Shuffle', type: 'link', href: '#' },
 ];
 
-const politicalViewsItems: DropdownItem[] = [
-  { name: 'Republican', type: 'header' },
+const republicanItems: DropdownItem[] = [
   { name: 'Fox News', type: 'link', href: 'https://www.foxnews.com' },
   { name: 'The Daily Wire', type: 'link', href: 'https://www.dailywire.com' },
   { name: 'Newsmax', type: 'link', href: 'https://www.newsmax.com' },
@@ -76,8 +75,9 @@ const politicalViewsItems: DropdownItem[] = [
   { name: 'PJ Media', type: 'link', href: 'https://pjmedia.com' },
   { name: 'Townhall', type: 'link', href: 'https://townhall.com' },
   { name: 'The Blaze', type: 'link', href: 'https://www.theblaze.com' },
-  { isSeparator: true },
-  { name: 'Democrat', type: 'header' },
+];
+
+const democratItems: DropdownItem[] = [
   { name: 'CNN', type: 'link', href: 'https://www.cnn.com' },
   { name: 'The New York Times', type: 'link', href: 'https://www.nytimes.com' },
   { name: 'MSNBC', type: 'link', href: 'https://www.msnbc.com' },
@@ -93,8 +93,9 @@ const politicalViewsItems: DropdownItem[] = [
   { name: 'HuffPost', type: 'link', href: 'https://www.huffpost.com' },
   { name: 'Vox', type: 'link', href: 'https://www.vox.com' },
   { name: 'The Wall Street Journal', type: 'link', href: 'https://www.wsj.com' },
-  { isSeparator: true },
-  { name: 'Liberal', type: 'header' },
+];
+
+const liberalItems: DropdownItem[] = [
   { name: 'NPR (National Public Radio)', type: 'link', href: 'https://www.npr.org' },
   { name: 'PBS (Public Broadcasting Service)', type: 'link', href: 'https://www.pbs.org' },
   { name: 'The New York Times', type: 'link', href: 'https://www.nytimes.com' },
@@ -110,8 +111,9 @@ const politicalViewsItems: DropdownItem[] = [
   { name: 'ProPublica', type: 'link', href: 'https://www.propublica.org' },
   { name: 'The Guardian', type: 'link', href: 'https://www.theguardian.com/us' },
   { name: 'The American Prospect', type: 'link', href: 'https://prospect.org' },
-  { isSeparator: true },
-  { name: 'Independent', type: 'header' },
+];
+
+const independentItems: DropdownItem[] = [
   { name: 'The Associated Press (AP)', type: 'link', href: 'https://apnews.com' },
   { name: 'Reuters', type: 'link', href: 'https://www.reuters.com' },
   { name: 'ABC News', type: 'link', href: 'https://abcnews.go.com' },
@@ -181,7 +183,10 @@ function DesktopHeader() {
             Sports Betting
           </Link>
           <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
-          <HeaderDropdown title="Political Views" items={politicalViewsItems} titleClassName="neon-cyan" />
+          <HeaderDropdown title="Republican" items={republicanItems} titleClassName="neon-cyan" />
+          <HeaderDropdown title="Democrat" items={democratItems} titleClassName="neon-cyan" />
+          <HeaderDropdown title="Liberal" items={liberalItems} titleClassName="neon-cyan" />
+          <HeaderDropdown title="Independent" items={independentItems} titleClassName="neon-cyan" />
         </nav>
       </div>
     </>
@@ -224,7 +229,10 @@ function MobileHeader() {
             <Link href="#" className="nav-item neon-green">Products</Link>
             <Link href="#" className="nav-item neon-orange">Sports Betting</Link>
             <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
-            <HeaderDropdown title="Political Views" items={politicalViewsItems} titleClassName="neon-cyan" />
+            <HeaderDropdown title="Republican" items={republicanItems} titleClassName="neon-cyan" />
+            <HeaderDropdown title="Democrat" items={democratItems} titleClassName="neon-cyan" />
+            <HeaderDropdown title="Liberal" items={liberalItems} titleClassName="neon-cyan" />
+            <HeaderDropdown title="Independent" items={independentItems} titleClassName="neon-cyan" />
             <div className="mobile-menu-separator" />
             <Link href="/compare-prices" className="nav-item neon-pink">Compare Prices</Link>
             <Link href="/policies" className="nav-item neon-pink">Policies</Link>
