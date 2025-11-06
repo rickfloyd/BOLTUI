@@ -112,7 +112,7 @@ export default function Page() {
                       className="cursor-pointer hover:bg-white/5"
                     >
                       <td><span className={c.colorClass}>{c.index}</span></td>
-                      <td>{c.currency}</td>
+                      <td><span className={c.colorClass}>{c.currency}</span></td>
                     </tr>
                   ))}
                 </tbody>
