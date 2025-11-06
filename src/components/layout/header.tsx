@@ -23,6 +23,13 @@ export function Header() {
     <header className="header-nav">
       <div className="header-top-layer">
         <div className="header-title neon-text">AI Quantum Charts</div>
+        <div className="nav-right">
+          <Link href="/join" className="nav-item neon-pink">
+            Join
+          </Link>
+        </div>
+      </div>
+      <div className="header-bottom-layer">
         <nav className="main-nav">
           <HeaderDropdown title="Personalities" items={aiPlatformItems} titleClassName="neon-pink" />
           <Link href="#" className="nav-item neon-cyan">
@@ -34,9 +41,6 @@ export function Header() {
           <Link href="#" className="nav-item neon-blue">
             Community
           </Link>
-          <Link href="/join" className="nav-item neon-pink">
-            Join
-          </Link>
           <Link href="#" className="nav-item neon-orange">
             Sports Betting
           </Link>
@@ -45,8 +49,6 @@ export function Header() {
             Products
           </Link>
         </nav>
-        <div className="nav-right">
-        </div>
       </div>
     </header>
   );

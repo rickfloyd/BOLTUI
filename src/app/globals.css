@@ -142,6 +142,7 @@ body {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 1.5rem;
+    height: calc(100vh - 138px);
 }
 
 /* === LEFT SIDEBAR === */
