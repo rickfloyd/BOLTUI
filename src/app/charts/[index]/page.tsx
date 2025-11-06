@@ -101,8 +101,13 @@ function ChartPageContent({ index }: { index: string }) {
   );
 }
 
+interface ChartPageProps {
+  params: {
+    index: string;
+  };
+}
 
-export default function ChartPage({ params }: { params: { index: string } }) {
+export default function ChartPage({ params }: ChartPageProps) {
     const { index } = params;
     return (
         <Suspense fallback={<div>Loading...</div>}>

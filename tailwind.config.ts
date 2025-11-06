@@ -11,7 +11,6 @@ export default {
     extend: {
        fontFamily: {
         sans: ['var(--font-ibm-plex-sans)', 'sans-serif'],
-        numeric: ['var(--font-orbitron)', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
