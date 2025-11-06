@@ -63,7 +63,7 @@ function DesktopHeader() {
       <div className="header-top-layer">
         <div className="header-title neon-text">AI Quantum Charts</div>
         <div className="nav-right">
-           <Link href="#" className="nav-item neon-pink">
+           <Link href="/compare-prices" className="nav-item neon-pink">
             Compare Prices
           </Link>
            <Link href="/policies" className="nav-item neon-pink">
@@ -130,7 +130,7 @@ function MobileHeader() {
             <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
             <Link href="#" className="nav-item neon-cyan">Political Views</Link>
             <div className="mobile-menu-separator" />
-            <Link href="#" className="nav-item neon-pink">Compare Prices</Link>
+            <Link href="/compare-prices" className="nav-item neon-pink">Compare Prices</Link>
             <Link href="/policies" className="nav-item neon-pink">Policies</Link>
             <Link href="/join" className="nav-item neon-pink">Join</Link>
           </nav>
