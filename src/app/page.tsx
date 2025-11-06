@@ -1,29 +1,12 @@
-
 'use client';
 
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
-import { TrendingUp, BarChart, DollarSign, Mountain, Activity } from 'lucide-react';
-
-const currencyIndexes = [
-  { index: 'DXY', name: 'CRYPTO', value: '105.42', change: '+0.15%', changeType: 'positive', colorClass: 'glow-cyan', icon: <DollarSign /> },
-  { index: 'BTC', name: 'Bitcoin USD', value: '67,834.11', change: '-1.20%', changeType: 'negative', colorClass: 'glow-orange', icon: <TrendingUp /> },
-  { index: 'ETH', name: 'Ethereum USD', value: '3,512.90', change: '-0.85%', changeType: 'negative', colorClass: 'glow-blue', icon: <TrendingUp /> },
-  { index: 'XAU', name: 'Gold Spot', value: '2,320.50', change: '+0.40%', changeType: 'positive', colorClass: 'glow-gold', icon: <Mountain />},
-  { index: 'SPX', name: 'S&P 500', value: '5,478.60', change: '+0.25%', changeType: 'positive', colorClass: 'glow-teal', icon: <BarChart /> },
-  { index: 'IXIC', name: 'NASDAQ Composite', value: '17,689.30', change: '-0.10%', changeType: 'negative', colorClass: 'glow-pink', icon: <Activity /> },
-];
 
 export default function Page() {
   const router = useRouter();
-
-  const handleRowClick = (index: string) => {
-    if (index === 'DXY' || index === 'EXY' || index === 'BXY' || index === 'JXY' || index === 'CXY' || index === 'AXY') {
-      router.push(`/charts/${index}`);
-    }
-  };
 
   return (
     <>
@@ -36,22 +19,22 @@ export default function Page() {
             <Link href="/custom-view" className="view-button neon-orange">CUSTOM VIEW</Link>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {currencyIndexes.map(item => (
-                <div key={item.index} className={`data-card ${item.colorClass} cursor-pointer`} onClick={() => handleRowClick(item.index)}>
-                    <div className="card-header">
-                        <div className="card-icon">{item.icon}</div>
-                        <div className="card-title-group">
-                            <div className="card-title">{item.name}</div>
-                        </div>
-                    </div>
-                    <div className="card-data">
-                        <div className="price">{item.value}</div>
-                        <div className={`change ${item.changeType}`}>{item.change}</div>
-                    </div>
-                </div>
-            ))}
+          <div className="flex flex-col gap-4 mt-8">
+            {/* Two full-width frames */}
+            <div className="frame h-24"></div>
+            <div className="frame h-24"></div>
+
+            {/* Two pairs of half-width frames */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="frame h-32"></div>
+              <div className="frame h-32"></div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="frame h-32"></div>
+              <div className="frame h-32"></div>
+            </div>
           </div>
+
         </section>
       </main>
     </>

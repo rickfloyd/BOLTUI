@@ -306,129 +306,11 @@ h1, h2, h3, .title {
     text-shadow: 0 0 8px hsl(var(--neon-pink));
 }
 
-.index-cards-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.data-card {
-    background: linear-gradient(180deg, #101020, #0b0f1a);
-    border: 1px solid transparent;
-    border-radius: 16px;
-    padding: 1.5rem;
-    transition: all 0.4s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
-}
-
-.data-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 25px var(--card-glow-color);
-}
-
-.data-card::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border: 2px solid var(--card-glow-color);
-    border-radius: 18px;
-    animation: pulse-glow 2s infinite alternate;
-    opacity: 0.8;
-}
-
-@keyframes pulse-glow {
-    from { 
-        opacity: 0.7;
-        box-shadow: 0 0 10px -5px var(--card-glow-color), inset 0 0 10px -5px var(--card-glow-color);
-    }
-    to { 
-        opacity: 1; 
-        box-shadow: 0 0 20px 0px var(--card-glow-color), inset 0 0 20px 0px var(--card-glow-color);
-    }
-}
-
-.data-card.glow-cyan { --card-glow-color: hsl(var(--neon-cyan)); }
-.data-card.glow-orange { --card-glow-color: hsl(var(--neon-orange)); }
-.data-card.glow-blue { --card-glow-color: hsl(var(--neon-blue)); }
-.data-card.glow-gold { --card-glow-color: hsl(51, 100%, 50%); }
-.data-card.glow-pink { --card-glow-color: hsl(var(--neon-pink)); }
-.data-card.glow-teal { --card-glow-color: hsl(160, 100%, 40%); }
-
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-.card-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255,255,255,0.1);
-    color: var(--card-glow-color);
-    box-shadow: 0 0 10px var(--card-glow-color);
-}
-.card-title-group .card-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #e0e0e0;
-}
-.card-data {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-top: 0.5rem;
-}
-.card-data .price {
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: #fff;
-}
-.card-data .change {
-    font-size: 1rem;
-    font-weight: 600;
-}
-.change.positive { color: #00ffc3; text-shadow: 0 0 5px #00ffc3; }
-.change.negative { color: #ff2dac; text-shadow: 0 0 5px #ff2dac; }
-
-.dxy-card {
-    background: linear-gradient(180deg, #101020, #0b0f1a);
-    border: 1px solid;
-    border-radius: 16px;
-    padding: 1.5rem;
-    border-color: hsl(var(--neon-pink));
-    box-shadow: 0 0 12px hsla(var(--neon-pink), 0.5);
-}
-
-.dxy-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-
-.dxy-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.dxy-value {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #fff;
-}
-
-.dxy-change {
-    font-size: 1rem;
-    font-weight: 600;
+.frame {
+  background-color: rgba(10, 10, 15, 0.5);
+  border: 1px solid hsla(var(--accent-glow), 0.3);
+  border-radius: var(--radius);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.15), inset 0 0 8px rgba(0, 255, 255, 0.1);
 }
 
 .info-table-card {
@@ -568,5 +450,3 @@ body.animation-page {
 .glow-text {
   animation: glowPulse 3s ease-in-out infinite;
 }
-
-    
