@@ -415,3 +415,10 @@ body.animation-page {
   80%  { background: #00ff00; }
   100% { background: #ff00ff; }
 }
+
+.recharts-responsive-container {
+    border-radius: var(--radius);
+    background-color: rgba(10, 10, 15, 0.5);
+    border: 1px solid hsla(var(--neon-cyan), 0.3);
+    padding: 1rem;
+}

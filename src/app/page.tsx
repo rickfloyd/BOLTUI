@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Header } from '@/components/layout/header';
 import { TrendingUp, TrendingDown, BarChart } from 'lucide-react';
 
@@ -39,12 +40,12 @@ const marketSummary = [
 ];
 
 const currencyIndexes = [
-    { index: 'DXY', currency: 'U.S. Dollar' },
-    { index: 'EXY', currency: 'Euro' },
-    { index: 'BXY', currency: 'British Pound' },
-    { index: 'JXY', currency: 'Japanese Yen' },
-    { index: 'CXY', currency: 'Canadian Dollar' },
-    { index: 'AXY', currency: 'Australian Dollar' },
+  { index: 'DXY', currency: 'U.S. Dollar' },
+  { index: 'EXY', currency: 'Euro' },
+  { index: 'BXY', currency: 'British Pound' },
+  { index: 'JXY', currency: 'Japanese Yen' },
+  { index: 'CXY', currency: 'Canadian Dollar' },
+  { index: 'AXY', currency: 'Australian Dollar' },
 ];
 
 export default function Page() {
@@ -93,32 +94,40 @@ export default function Page() {
             ))}
           </div>
 
-          <div className="dxy-card">
-            <div className="dxy-header">
-              <h3 className="dxy-title">DXY (US Dollar Index)</h3>
-              <span className={`change negative`}>-0.38 (-0.36%)</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="dxy-card">
+              <div className="dxy-header">
+                <h3 className="dxy-title">DXY (US Dollar Index)</h3>
+                <span className={`change negative`}>-0.38 (-0.36%)</span>
+              </div>
+              <p className="dxy-value">105.42</p>
             </div>
-            <p className="dxy-value">105.42</p>
-          </div>
 
-          <div className="info-table-card">
-             <h3 className="content-title">Major Currency Indexes</h3>
-             <table className="info-table">
+            <div className="info-table-card">
+              <h3 className="content-title">Major Currency Indexes</h3>
+              <table className="info-table">
                 <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Currency Tracked</th>
-                    </tr>
+                  <tr>
+                    <th>Index</th>
+                    <th>Currency Tracked</th>
+                  </tr>
                 </thead>
                 <tbody>
-                    {currencyIndexes.map((c) => (
-                        <tr key={c.index}>
-                            <td>{c.index}</td>
-                            <td>{c.currency}</td>
-                        </tr>
-                    ))}
+                  {currencyIndexes.map(c => (
+                    <Link
+                      href={`/charts/${c.index}`}
+                      key={c.index}
+                      className="contents"
+                    >
+                      <tr className="cursor-pointer hover:bg-white/5">
+                        <td>{c.index}</td>
+                        <td>{c.currency}</td>
+                      </tr>
+                    </Link>
+                  ))}
                 </tbody>
-             </table>
+              </table>
+            </div>
           </div>
         </section>
       </main>
