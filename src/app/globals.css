@@ -18,7 +18,9 @@
     --neon-blue: 210, 100%, 55%;
     --neon-orange: 30, 100%, 55%;
     --neon-green: 120, 100%, 50%;
-    
+    --neon-gold: 45, 100%, 50%;
+    --neon-teal: 160, 100%, 45%;
+
     --radius: 0.5rem;
 
     /* ShadCN Theme */
@@ -306,12 +308,43 @@ h1, h2, h3, .title {
     text-shadow: 0 0 8px hsl(var(--neon-pink));
 }
 
-.frame {
+.data-card {
   background-color: rgba(10, 10, 15, 0.5);
   border: 1px solid hsla(var(--accent-glow), 0.3);
   border-radius: var(--radius);
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.15), inset 0 0 8px rgba(0, 255, 255, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  animation: pulse-border 3s infinite;
 }
+
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--glow-color), inset 0 0 8px var(--glow-color-inset);
+    border-color: var(--glow-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--glow-color), inset 0 0 12px var(--glow-color-inset);
+    border-color: var(--glow-color);
+  }
+}
+
+.glow-cyan { --glow-color: hsl(var(--neon-cyan)); --glow-color-inset: hsla(var(--neon-cyan), 0.5); }
+.glow-orange { --glow-color: hsl(var(--neon-orange)); --glow-color-inset: hsla(var(--neon-orange), 0.5); }
+.glow-blue { --glow-color: hsl(var(--neon-blue)); --glow-color-inset: hsla(var(--neon-blue), 0.5); }
+.glow-gold { --glow-color: hsl(var(--neon-gold)); --glow-color-inset: hsla(var(--neon-gold), 0.5); }
+.glow-pink { --glow-color: hsl(var(--neon-pink)); --glow-color-inset: hsla(var(--neon-pink), 0.5); }
+.glow-teal { --glow-color: hsl(var(--neon-teal)); --glow-color-inset: hsla(var(--neon-teal), 0.5); }
+
+
+.data-card .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 0 0 4px currentColor;
+}
+
 
 .info-table-card {
     background: linear-gradient(180deg, #101020, #0b0f1a);
