@@ -39,12 +39,12 @@ const marketSummary = [
 ];
 
 const currencyIndexes = [
-    { index: 'DXY', currency: 'U.S. Dollar', description: 'The official U.S. Dollar Index. It is the most common, measuring the USD against six major world currencies (EUR, JPY, GBP, CAD, SEK, CHF).' },
-    { index: 'EXY', currency: 'Euro', description: 'Measures the value of the Euro.' },
-    { index: 'BXY', currency: 'British Pound', description: 'Measures the value of the British Pound Sterling (GBP).' },
-    { index: 'JXY', currency: 'Japanese Yen', description: 'Measures the value of the Japanese Yen (JPY).' },
-    { index: 'CXY', currency: 'Canadian Dollar', description: 'Measures the value of the Canadian Dollar (CAD).' },
-    { index: 'AXY', currency: 'Australian Dollar', description: 'Measures the value of the Australian Dollar (AUD).' },
+    { index: 'DXY', currency: 'U.S. Dollar' },
+    { index: 'EXY', currency: 'Euro' },
+    { index: 'BXY', currency: 'British Pound' },
+    { index: 'JXY', currency: 'Japanese Yen' },
+    { index: 'CXY', currency: 'Canadian Dollar' },
+    { index: 'AXY', currency: 'Australian Dollar' },
 ];
 
 export default function Page() {
@@ -108,7 +108,6 @@ export default function Page() {
                     <tr>
                         <th>Index</th>
                         <th>Currency Tracked</th>
-                        <th>Full Name / Description</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -116,7 +115,6 @@ export default function Page() {
                         <tr key={c.index}>
                             <td>{c.index}</td>
                             <td>{c.currency}</td>
-                            <td>{c.description}</td>
                         </tr>
                     ))}
                 </tbody>
