@@ -70,7 +70,7 @@ export default function BluetoothConnectPage() {
         const characteristic = await service.getCharacteristic('battery_level');
         const value = await characteristic.readValue();
         const batteryLevel = value.getUint8(0);
-        statusHTML += `<br />🔋 Battery: ${batteryLevel}%`;
+        statusHTML += `<br />🔋 Battery: <span class="font-numeric">${batteryLevel}%</span>`;
         setOutput(statusHTML);
       } catch {
         statusHTML += '<br />🔋 Battery info not available.';

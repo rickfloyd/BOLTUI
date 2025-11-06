@@ -73,9 +73,9 @@ export default function Page() {
                   </div>
                 </div>
                 <div className="card-data">
-                  <span className="price">{item.price}</span>
+                  <span className="price font-numeric">{item.price}</span>
                   <span
-                    className={`change ${
+                    className={`change font-numeric ${
                       item.isPositive ? 'positive' : 'negative'
                     }`}
                   >
@@ -90,9 +90,9 @@ export default function Page() {
             <div className="dxy-card">
               <div className="dxy-header">
                 <h3 className="dxy-title">DXY (US Dollar Index)</h3>
-                <span className={`change negative`}>-0.38 (-0.36%)</span>
+                <span className={`change negative font-numeric`}>-0.38 (-0.36%)</span>
               </div>
-              <p className="dxy-value">105.42</p>
+              <p className="dxy-value font-numeric">105.42</p>
             </div>
 
             <div className="info-table-card">

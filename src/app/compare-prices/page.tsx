@@ -10,7 +10,7 @@ export default function ComparePricesPage() {
   return (
     <>
     <Header />
-    <div className="bg-gray-900 font-sans text-white">
+    <div className="bg-gray-900 text-white">
 
     <div className="container mx-auto max-w-7xl p-6 lg:p-12">
 
@@ -28,7 +28,7 @@ export default function ComparePricesPage() {
             <h2 className="text-3xl font-bold text-center mb-3 text-gray-900">🔥 The Founder's FREE Offer</h2>
             <p className="text-center text-lg text-gray-100 font-medium mb-6">For our first 1,000 members. Get our <strong>Premium</strong> plan <strong>FREE FOR LIFE</strong>.</p>
             <div className="text-center">
-                <span className="text-5xl font-extrabold text-white">$0.00</span>
+                <span className="text-5xl font-extrabold text-white font-numeric">$0.00</span>
                 <span className="text-xl text-gray-200 font-medium">/ month</span>
             </div>
             <a href="#subscribe-founder" className="block w-full text-center bg-white text-gray-900 font-bold text-lg py-4 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300 mt-8">
@@ -46,9 +46,9 @@ export default function ComparePricesPage() {
                 </div>
                 <p className="text-gray-400 mb-6">Our free plan gives you double the power of their first *paid* plan.</p>
                 <ul className="space-y-3 text-gray-300 mb-8 flex-grow">
-                    <li className="flex items-center"><CheckIcon /> <strong>10</strong> Indicators per chart</li>
-                    <li className="flex items-center"><CheckIcon /> <strong>4</strong> Charts in one layout</li>
-                    <li className="flex items-center"><CheckIcon /> <strong>40</strong> Server-side alerts</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">10</strong> Indicators per chart</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">4</strong> Charts in one layout</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">40</strong> Server-side alerts</li>
                 </ul>
                 <a href="#subscribe-free" className="block w-full text-center bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-600 transition duration-300">
                     Sign Up For Free
@@ -59,14 +59,14 @@ export default function ComparePricesPage() {
                 <span className="absolute top-0 -translate-y-1/2 bg-gradient-to-r from-cyan-500 via-pink-500 to-fuchsia-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
                 <h3 className="text-2xl font-bold text-fuchsia-400 mb-4">Plus Plan</h3>
                 <div className="mb-6">
-                    <span className="text-5xl font-extrabold">$14.98</span>
+                    <span className="text-5xl font-extrabold font-numeric">$14.98</span>
                     <span className="text-xl text-gray-400">/ mo</span>
                 </div>
                  <p className="text-gray-400 mb-6">Half their price, double their features.</p>
                 <ul className="space-y-3 text-gray-300 mb-8 flex-grow">
-                    <li className="flex items-center"><CheckIcon /> <strong>20</strong> Indicators per chart</li>
-                    <li className="flex items-center"><CheckIcon /> <strong>8</strong> Charts in one layout</li>
-                    <li className="flex items-center"><CheckIcon /> <strong>200</strong> Server-side alerts</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">20</strong> Indicators per chart</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">8</strong> Charts in one layout</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">200</strong> Server-side alerts</li>
                 </ul>
                 <a href="#subscribe-plus" className="block w-full text-center bg-fuchsia-400 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-fuchsia-300 transition duration-300">
                     Get Started
@@ -76,14 +76,14 @@ export default function ComparePricesPage() {
             <div className="bg-gray-800 p-8 rounded-xl shadow-lg border-2 border-gray-700 flex flex-col">
                 <h3 className="text-2xl font-bold text-fuchsia-400 mb-4">Premium Plan</h3>
                 <div className="mb-6">
-                    <span className="text-5xl font-extrabold">$29.98</span>
+                    <span className="text-5xl font-extrabold font-numeric">$29.98</span>
                     <span className="text-xl text-gray-400">/ mo</span>
                 </div>
                  <p className="text-gray-400 mb-6">Half their price, double their features.</p>
                 <ul className="space-y-3 text-gray-300 mb-8 flex-grow">
-                    <li className="flex items-center"><CheckIcon /> <strong>50</strong> Indicators per chart</li>
-                    <li className="flex items-center"><CheckIcon /> <strong>16</strong> Charts in one layout</li>
-                    <li className="flex items-center"><CheckIcon /> <strong>800</strong> Server-side alerts</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">50</strong> Indicators per chart</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">16</strong> Charts in one layout</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">800</strong> Server-side alerts</li>
                 </ul>
                 <a href="#subscribe-premium" className="block w-full text-center bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-600 transition duration-300">
                     Get Started
@@ -93,14 +93,14 @@ export default function ComparePricesPage() {
             <div className="bg-gray-800 p-8 rounded-xl shadow-lg border-2 border-gray-700 flex flex-col">
                 <h3 className="text-2xl font-bold text-fuchsia-400 mb-4">Ultimate Plan</h3>
                 <div className="mb-6">
-                    <span className="text-5xl font-extrabold">$119.98</span>
+                    <span className="text-5xl font-extrabold font-numeric">$119.98</span>
                     <span className="text-xl text-gray-400">/ mo</span>
                 </div>
                  <p className="text-gray-400 mb-6">Half their price, double their features.</p>
                 <ul className="space-y-3 text-gray-300 mb-8 flex-grow">
-                    <li className="flex items-center"><CheckIcon /> <strong>100</strong> Indicators per chart</li>
-                    <li className="flex items-center"><CheckIcon /> <strong>32</strong> Charts in one layout</li>
-                    <li className="flex items-center"><CheckIcon /> <strong>2,000</strong> Server-side alerts</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">100</strong> Indicators per chart</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">32</strong> Charts in one layout</li>
+                    <li className="flex items-center"><CheckIcon /> <strong className="font-numeric">2,000</strong> Server-side alerts</li>
                 </ul>
                 <a href="#subscribe-ultimate" className="block w-full text-center bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-600 transition duration-300">
                     Get Started
@@ -130,24 +130,24 @@ export default function ComparePricesPage() {
                             <br/>vs.<br/>
                             <span className="text-gray-400">Their ESSENTIAL</span>
                         </td>
-                        <td className="py-4 px-6 text-sm font-medium row-span-3 align-top">
+                        <td className="py-4 px-6 text-sm font-medium row-span-3 align-top font-numeric">
                             <span className="font-bold text-fuchsia-400">FREE</span>
                             <br/>vs.<br/>
                             <span className="text-gray-400">$14.95</span>
                         </td>
                         <td className="py-4 px-6 text-sm text-gray-300">Indicators per Chart</td>
-                        <td className="py-4 px-6 text-sm text-gray-400">5</td>
-                        <td className="py-4 px-6 text-sm font-bold text-green-400">10</td>
+                        <td className="py-4 px-6 text-sm text-gray-400 font-numeric">5</td>
+                        <td className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">10</td>
                     </tr>
                     <tr className="bg-gray-900/50">
                         <td colSpan={1} className="py-4 px-6 text-sm text-gray-300">Charts in one Layout</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400">2</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400">4</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400 font-numeric">2</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">4</td>
                     </tr>
                     <tr className="bg-gray-900/50">
                         <td colSpan={1} className="py-4 px-6 text-sm text-gray-300">Server-Side Alerts</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400">20</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400">40</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400 font-numeric">20</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">40</td>
                     </tr>
 
                     <tr className="bg-gray-800/50">
@@ -156,24 +156,24 @@ export default function ComparePricesPage() {
                             <br/>vs.<br/>
                             <span className="text-gray-400">Their PLUS</span>
                         </td>
-                        <td className="py-4 px-6 text-sm font-medium row-span-3 align-top">
+                        <td className="py-4 px-6 text-sm font-medium row-span-3 align-top font-numeric">
                             <span className="font-bold text-fuchsia-400">$14.98</span>
                             <br/>vs.<br/>
                             <span className="text-gray-400">$29.95</span>
                         </td>
                         <td className="py-4 px-6 text-sm text-gray-300">Indicators per Chart</td>
-                        <td className="py-4 px-6 text-sm text-gray-400">10</td>
-                        <td className="py-4 px-6 text-sm font-bold text-green-400">20</td>
+                        <td className="py-4 px-6 text-sm text-gray-400 font-numeric">10</td>
+                        <td className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">20</td>
                     </tr>
                     <tr className="bg-gray-800/50">
                         <td colSpan={1} className="py-4 px-6 text-sm text-gray-300">Charts in one Layout</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400">4</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400">8</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400 font-numeric">4</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">8</td>
                     </tr>
                     <tr className="bg-gray-800/50">
                         <td colSpan={1} className="py-4 px-6 text-sm text-gray-300">Server-Side Alerts</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400">100</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400">200</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400 font-numeric">100</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">200</td>
                     </tr>
 
                     <tr className="bg-gray-900/50">
@@ -182,24 +182,24 @@ export default function ComparePricesPage() {
                             <br/>vs.<br/>
                             <span className="text-gray-400">Their PREMIUM</span>
                         </td>
-                        <td className="py-4 px-6 text-sm font-medium row-span-3 align-top">
+                        <td className="py-4 px-6 text-sm font-medium row-span-3 align-top font-numeric">
                             <span className="font-bold text-fuchsia-400">$29.98</span>
                             <br/>vs.<br/>
                             <span className="text-gray-400">$59.95</span>
                         </td>
                         <td className="py-4 px-6 text-sm text-gray-300">Indicators per Chart</td>
-                        <td className="py-4 px-6 text-sm text-gray-400">25</td>
-                        <td className="py-4 px-6 text-sm font-bold text-green-400">50</td>
+                        <td className="py-4 px-6 text-sm text-gray-400 font-numeric">25</td>
+                        <td className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">50</td>
                     </tr>
                     <tr className="bg-gray-900/50">
                         <td colSpan={1} className="py-4 px-6 text-sm text-gray-300">Charts in one Layout</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400">8</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400">16</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400 font-numeric">8</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">16</td>
                     </tr>
                     <tr className="bg-gray-900/50">
                         <td colSpan={1} className="py-4 px-6 text-sm text-gray-300">Server-Side Alerts</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400">400</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400">800</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400 font-numeric">400</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">800</td>
                     </tr>
 
                     <tr className="bg-gray-800/50">
@@ -208,24 +208,24 @@ export default function ComparePricesPage() {
                             <br/>vs.<br/>
                             <span className="text-gray-400">Their ULTIMATE</span>
                         </td>
-                        <td className="py-4 px-6 text-sm font-medium row-span-3 align-top">
+                        <td className="py-4 px-6 text-sm font-medium row-span-3 align-top font-numeric">
                             <span className="font-bold text-fuchsia-400">$119.98</span>
                             <br/>vs.<br/>
                             <span className="text-gray-400">$239.95</span>
                         </td>
                         <td className="py-4 px-6 text-sm text-gray-300">Indicators per Chart</td>
-                        <td className="py-4 px-6 text-sm text-gray-400">50</td>
-                        <td className="py-4 px-6 text-sm font-bold text-green-400">100</td>
+                        <td className="py-4 px-6 text-sm text-gray-400 font-numeric">50</td>
+                        <td className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">100</td>
                     </tr>
                     <tr className="bg-gray-800/50">
                         <td colSpan={1} className="py-4 px-6 text-sm text-gray-300">Charts in one Layout</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400">16</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400">32</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400 font-numeric">16</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">32</td>
                     </tr>
                     <tr className="bg-gray-800/50">
                         <td colSpan={1} className="py-4 px-6 text-sm text-gray-300">Server-Side Alerts</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400">1,000</td>
-                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400">2,000</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm text-gray-400 font-numeric">1,000</td>
+                        <td colSpan={1} className="py-4 px-6 text-sm font-bold text-green-400 font-numeric">2,000</td>
                     </tr>
 
                 </tbody>

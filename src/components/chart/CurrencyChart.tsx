@@ -49,7 +49,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
     return (
       <div className="p-2 bg-gray-800/80 border border-cyan-500 rounded-md">
         <p className="label text-white">{`${label}`}</p>
-        <p className="intro text-cyan-400">{`Price : ${payload[0].value}`}</p>
+        <p className="intro text-cyan-400 font-numeric">{`Price : ${payload[0].value}`}</p>
       </div>
     );
   }
@@ -130,8 +130,8 @@ const CurrencyChart = ({ index, chartType }: { index: string, chartType: string 
         }}
       >
         <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.1)" />
-        <XAxis dataKey="time" stroke="#888" />
-        <YAxis stroke="#888" domain={['dataMin - 5', 'dataMax + 5']} />
+        <XAxis dataKey="time" stroke="#888" tick={{fontFamily: 'var(--font-cinzel)'}} />
+        <YAxis stroke="#888" domain={['dataMin - 5', 'dataMax + 5']} tick={{fontFamily: 'var(--font-cinzel)'}} />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
         {renderChart().props.children}
