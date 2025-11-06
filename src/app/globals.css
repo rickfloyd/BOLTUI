@@ -1,8 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 
 @tailwind base;
 @tailwind components;
@@ -10,11 +8,12 @@
 
 @layer base {
   :root {
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 10, 10, 15;
-    --foreground-rgb: 225, 225, 235;
+    --background-start-rgb: 4, 4, 10;
+    --background-end-rgb: 11, 15, 26;
+    --foreground-rgb: 248, 250, 255;
 
-    --primary-glow: 180, 100%, 50%; /* Cyan */
+    /* Theme colors from prompt */
+    --primary-glow: 276, 88%, 56%; /* Electric Purple */
     --accent-glow: 180, 100%, 50%; /* Cyan */
 
     --neon-pink: 330, 100%, 55%;
@@ -25,19 +24,20 @@
     
     --radius: 0.5rem;
 
-    --background: 240 10% 3.9%;
+    /* ShadCN Theme */
+    --background: 224 20% 6%; /* deep charcoal from #0A0A0F */
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 224 20% 6%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 224 20% 6%;
     --popover-foreground: 0 0% 98%;
-    --primary: 180 100% 50%;
+    --primary: 276 88% 56%; /* Electric Purple */
     --primary-foreground: 0 0% 98%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 180 100% 50%;
+    --accent: 180 100% 50%; /* Cyan */
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -48,11 +48,17 @@
 }
 
 body {
-  background: linear-gradient(180deg, rgb(var(--background-start-rgb)) 0%, rgb(var(--background-end-rgb)) 100%);
+  background: linear-gradient(180deg, #000000 0%, #0A0A0F 100%);
   color: rgb(var(--foreground-rgb));
   font-family: 'Orbitron', sans-serif;
   min-height: 100vh;
   margin: 0;
+  filter: brightness(1.2) contrast(1.1) saturate(1.15);
+}
+
+h1, h2, h3, .title {
+  text-shadow: 0 0 12px hsl(var(--accent-glow)), 0 0 20px hsl(var(--neon-pink));
+  letter-spacing: 1px;
 }
 
 /* === HEADER === */
@@ -61,7 +67,8 @@ body {
     flex-direction: column;
     padding: 0 2rem;
     border-bottom: 1px solid hsla(var(--primary-glow), 0.3);
-    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(90deg, #0f0f20, #1a002a);
+    box-shadow: 0 0 18px hsl(var(--neon-pink)), 0 0 25px hsl(var(--neon-blue));
 }
 .header-top-layer, .header-middle-layer, .header-bottom-layer {
     display: flex;
@@ -261,9 +268,10 @@ body {
 .info-banner {
     background-color: hsla(var(--accent-glow), 0.1);
     border: 1px solid hsla(var(--accent-glow), 0.4);
-    border-radius: var(--radius);
+    border-radius: 16px;
     padding: 1.5rem;
     text-shadow: 0 0 8px hsla(var(--accent-glow), 0.7);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
 }
 .info-banner-title {
     font-size: 1.1rem;
@@ -310,13 +318,14 @@ body {
 }
 
 .data-card {
-    background-color: #0A0A0F;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: var(--radius);
+    background: linear-gradient(180deg, #101020, #0b0f1a);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
     padding: 1.5rem;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
 }
 
 .data-card:hover {
@@ -384,9 +393,9 @@ body {
 .change.negative { color: #ff2dac; text-shadow: 0 0 5px #ff2dac; }
 
 .dxy-card {
-    background-color: #0A0A0F;
+    background: linear-gradient(180deg, #101020, #0b0f1a);
     border: 1px solid;
-    border-radius: var(--radius);
+    border-radius: 16px;
     padding: 1.5rem;
     border-color: hsl(var(--primary-glow));
     box-shadow: 0 0 12px hsla(var(--primary-glow), 0.5);
@@ -416,9 +425,9 @@ body {
 }
 
 .info-table-card {
-    background-color: #0A0A0F;
+    background: linear-gradient(180deg, #101020, #0b0f1a);
     border: 1px solid;
-    border-radius: var(--radius);
+    border-radius: 16px;
     padding: 1.5rem;
     border-color: hsl(var(--primary-glow));
     box-shadow: 0 0 12px hsla(var(--primary-glow), 0.5);
@@ -544,4 +553,12 @@ body.animation-page {
     .index-cards-row {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 10px hsl(var(--neon-blue)), 0 0 25px hsl(var(--neon-pink)); }
+  50% { text-shadow: 0 0 20px hsl(var(--neon-blue)), 0 0 40px hsl(var(--neon-pink)); }
+}
+.glow-text {
+  animation: glowPulse 3s ease-in-out infinite;
 }

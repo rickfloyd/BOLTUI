@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Open_Sans } from 'next/font/google';
+import { Orbitron } from 'next/font/google';
 import './globals.css';
 
-const openSans = Open_Sans({
+const orbitron = Orbitron({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={openSans.className}>
+      <body className={orbitron.className}>
         {children}
       </body>
     </html>
