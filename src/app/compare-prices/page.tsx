@@ -234,7 +234,7 @@ export default function ComparePricesPage() {
 
         <div className="text-center mt-10 px-4">
             <p className="text-sm text-gray-400">
-                "Comparison based on standard monthly prices and features publicly listed by the leading competitor in the online charting industry as of November 2025. Prices and features are subject to change."
+                "Comparison based on standard monthly prices and features publicly listed by the leading competitor in the online charting industry as of November 2023. Prices and features are subject to change."
                 <strong className="text-red-500">(BUT OURS WONT)</strong>
             </p>
         </div>
