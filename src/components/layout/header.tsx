@@ -24,7 +24,7 @@ const sportsItems: DropdownItem[] = [
 ];
 
 const tradersProfileItems: DropdownItem[] = [
-  { name: 'Personal Account', subtext: 'Manage your personal trading profile' },
+  { name: 'Personal Account', subtext: 'Manage your personal trading profile', type: 'link', href: '/profile' },
   { name: 'Business Account', subtext: 'Manage your business trading profile' },
   { name: 'VIP', subtext: 'Access exclusive VIP features' },
   { isSeparator: true },
