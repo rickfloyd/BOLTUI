@@ -10,11 +10,16 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  BarChart,
+  Bar,
+  AreaChart,
+  Area,
 } from 'recharts';
 
 interface ChartData {
   time: string;
   price: number;
+  ohlc?: [number, number, number, number]; // Optional Open-High-Low-Close for relevant charts
 }
 
 const generateRandomData = (index: string): ChartData[] => {
@@ -24,11 +29,16 @@ const generateRandomData = (index: string): ChartData[] => {
 
   for (let i = 60; i >= 0; i--) {
     const time = new Date(now.getTime() - i * 60000); // 1 minute intervals
-    price += (Math.random() - 0.5) * 2;
+    const open = price;
+    const close = price + (Math.random() - 0.5) * 2;
+    const high = Math.max(open, close) + Math.random();
+    const low = Math.min(open, close) - Math.random();
+    price = close;
     price = Math.max(price, 80); // Ensure price doesn't go too low
     data.push({
       time: time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       price: parseFloat(price.toFixed(2)),
+      ohlc: [open, high, low, close]
     });
   }
   return data;
@@ -47,7 +57,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-const CurrencyChart = ({ index }: { index: string }) => {
+const CurrencyChart = ({ index, chartType }: { index: string, chartType: string }) => {
   const [data, setData] = useState<ChartData[]>([]);
 
   useEffect(() => {
@@ -68,10 +78,50 @@ const CurrencyChart = ({ index }: { index: string }) => {
     return () => clearInterval(interval);
   }, [index]);
 
+  const renderChart = () => {
+    switch(chartType) {
+        case 'Bar Chart (OHLC)':
+            return (
+                <BarChart data={data}>
+                    <Bar dataKey="price" fill="hsl(var(--neon-cyan))" />
+                </BarChart>
+            );
+        case 'Area Chart':
+            return (
+                <AreaChart data={data}>
+                     <defs>
+                        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="hsl(var(--neon-cyan))" stopOpacity={0.8}/>
+                        <stop offset="95%" stopColor="hsl(var(--neon-cyan))" stopOpacity={0}/>
+                        </linearGradient>
+                    </defs>
+                    <Area type="monotone" dataKey="price" stroke="hsl(var(--neon-cyan))" fillOpacity={1} fill="url(#colorUv)" />
+                </AreaChart>
+            )
+        case 'Line Chart':
+        default:
+            return (
+                 <LineChart data={data}>
+                    <Line
+                        type="monotone"
+                        dataKey="price"
+                        stroke="hsl(var(--neon-cyan))"
+                        strokeWidth={2}
+                        activeDot={{ r: 8, fill: 'hsl(var(--primary-glow))' }}
+                        dot={false}
+                    />
+                </LineChart>
+            )
+    }
+  }
+  
+  const ChartComponent = renderChart().type;
+  const chartProps = renderChart().props;
+
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart
-        data={data}
+      <ChartComponent
+        {...chartProps}
         margin={{
           top: 5,
           right: 30,
@@ -84,15 +134,8 @@ const CurrencyChart = ({ index }: { index: string }) => {
         <YAxis stroke="#888" domain={['dataMin - 5', 'dataMax + 5']} />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
-        <Line
-          type="monotone"
-          dataKey="price"
-          stroke="hsl(var(--neon-cyan))"
-          strokeWidth={2}
-          activeDot={{ r: 8, fill: 'hsl(var(--primary-glow))' }}
-          dot={false}
-        />
-      </LineChart>
+        {renderChart().props.children}
+      </ChartComponent>
     </ResponsiveContainer>
   );
 };

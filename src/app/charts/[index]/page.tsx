@@ -1,12 +1,21 @@
-
 'use client';
 
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import Link from 'next/link';
 import { Header } from '@/components/layout/header';
 import CurrencyChart from '@/components/chart/CurrencyChart';
 import { ArrowLeft } from 'lucide-react';
 import ClientWrapper from '@/components/ClientWrapper';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { Button } from "@/components/ui/button"
 
 const currencyIndexDetails: { [key: string]: { name: string; description: string } } = {
   DXY: { name: 'U.S. Dollar Index', description: 'Measures the value of the U.S. Dollar against a basket of foreign currencies.' },
@@ -17,9 +26,35 @@ const currencyIndexDetails: { [key: string]: { name: string; description: string
   AXY: { name: 'Australian Dollar Index', description: 'Measures the value of the Australian Dollar against other major currencies.' },
 };
 
+const chartTypes = [
+    "Line Chart",
+    "Bar Chart (OHLC)",
+    "Candlestick Chart (Japanese Candlesticks)",
+    "Area Chart",
+    "Heikin Ashi",
+    "Renko",
+    "Point & Figure (P&F)",
+    "Kagi",
+    "Line Break",
+    "Range Bars",
+    "Tick Chart",
+    "Volume Chart",
+    "Hollow Candles",
+    "Scatter Plot",
+    "Pie Chart",
+    "Histogram",
+    "Waterfall Chart",
+    "Heatmap",
+    "Bubble Chart",
+    "Radar Chart (Spider Chart)",
+    "Treemap",
+    "Box Plot (Box & Whisker)",
+]
+
 function ChartPageContent({ params }: { params: { index: string } }) {
   const { index } = params;
   const details = currencyIndexDetails[index.toUpperCase()] || { name: 'Unknown Index', description: 'No description available.' };
+  const [chartType, setChartType] = useState('Line Chart');
 
   return (
     <>
@@ -35,10 +70,29 @@ function ChartPageContent({ params }: { params: { index: string } }) {
             <h1 className="text-3xl font-bold neon-text">{details.name} ({index.toUpperCase()})</h1>
             <p className="text-lg mt-2 text-gray-300">{details.description}</p>
           </div>
+          
+          <div className="flex justify-start">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="text-white border-cyan-400">Chart Style: {chartType}</Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-black text-white border-cyan-400">
+                <DropdownMenuLabel>Select Chart Style</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuRadioGroup value={chartType} onValueChange={setChartType}>
+                  {chartTypes.map(type => (
+                     <DropdownMenuRadioItem key={type} value={type} disabled={!['Line Chart', 'Bar Chart (OHLC)', 'Area Chart'].includes(type)}>
+                        {type}
+                     </DropdownMenuRadioItem>
+                  ))}
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
 
           <div className="w-full h-[500px]">
             <ClientWrapper>
-              <CurrencyChart index={index} />
+              <CurrencyChart index={index} chartType={chartType} />
             </ClientWrapper>
           </div>
         </div>
