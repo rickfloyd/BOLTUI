@@ -74,7 +74,7 @@ const politicalViewsItems: DropdownItem[] = [
   { name: 'RedState', type: 'link', href: 'https://redstate.com' },
   { name: 'The Washington Times', type: 'link', href: 'https://www.washingtontimes.com' },
   { name: 'PJ Media', type: 'link', href: 'https://pjmedia.com' },
-  { name: 'Townhall', type: 'link', href: 'https://townhall.com' },
+  { name: 'Townhall', typeTA: 'link', href: 'https://townhall.com' },
   { name: 'The Blaze', type: 'link', href: 'https://www.theblaze.com' },
   { isSeparator: true },
   { name: 'Democrat', type: 'header' },
@@ -93,6 +93,23 @@ const politicalViewsItems: DropdownItem[] = [
   { name: 'HuffPost', type: 'link', href: 'https://www.huffpost.com' },
   { name: 'Vox', type: 'link', href: 'https://www.vox.com' },
   { name: 'The Wall Street Journal', type: 'link', href: 'https://www.wsj.com' },
+  { isSeparator: true },
+  { name: 'Liberal', type: 'header' },
+  { name: 'NPR (National Public Radio)', type: 'link', href: 'https://www.npr.org' },
+  { name: 'PBS (Public Broadcasting Service)', type: 'link', href: 'https://www.pbs.org' },
+  { name: 'The New York Times', type: 'link', href: 'https://www.nytimes.com' },
+  { name: 'The Washington Post', type: 'link', href: 'https://www.washingtonpost.com' },
+  { name: 'MSNBC', type: 'link', href: 'https://www.msnbc.com' },
+  { name: 'The Atlantic', type: 'link', href: 'https://www.theatlantic.com' },
+  { name: 'HuffPost', type: 'link', href: 'https://www.huffpost.com' },
+  { name: 'Vox', type: 'link', href: 'https://www.vox.com' },
+  { name: 'Mother Jones', type: 'link', href: 'https://www.motherjones.com' },
+  { name: 'The Nation', type: 'link', href: 'https://www.thenation.com' },
+  { name: 'Daily Kos', type: 'link', href: 'https://www.dailykos.com' },
+  { name: 'The New Republic', type: 'link', href: 'https://newrepublic.com' },
+  { name: 'ProPublica', type: 'link', href: 'https://www.propublica.org' },
+  { name: 'The Guardian', type: 'link', href: 'https://www.theguardian.com/us' },
+  { name: 'The American Prospect', type: 'link', href: 'https://prospect.org' },
 ];
 
 
@@ -234,6 +251,8 @@ export function Header() {
     </header>
   );
 }
+
+    
 
     
 
