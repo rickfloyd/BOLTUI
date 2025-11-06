@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -58,6 +59,25 @@ const guiltyPleasuresItems: DropdownItem[] = [
   { name: 'Shuffle', type: 'link', href: '#' },
 ];
 
+const politicalViewsItems: DropdownItem[] = [
+  { name: 'Republican', type: 'header' },
+  { name: 'Fox News', type: 'link', href: 'https://www.foxnews.com' },
+  { name: 'The Daily Wire', type: 'link', href: 'https://www.dailywire.com' },
+  { name: 'Newsmax', type: 'link', href: 'https://www.newsmax.com' },
+  { name: 'Breitbart News', type: 'link', href: 'https://www.breitbart.com' },
+  { name: 'The Wall Street Journal', type: 'link', href: 'https://www.wsj.com' },
+  { name: 'The Joe Rogan Experience', type: 'link', href: 'https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk' },
+  { name: 'The New York Post', type: 'link', href: 'https://nypost.com' },
+  { name: 'The Dispatch', type: 'link', href: 'https://thedispatch.com' },
+  { name: 'Forbes', type: 'link', href: 'https://www.forbes.com' },
+  { name: 'Fox Business', type: 'link', href: 'https://www.foxbusiness.com' },
+  { name: 'RedState', type: 'link', href: 'https://redstate.com' },
+  { name: 'The Washington Times', type: 'link', href: 'https://www.washingtontimes.com' },
+  { name: 'PJ Media', type: 'link', href: 'https://pjmedia.com' },
+  { name: 'Townhall', type: 'link', href: 'https://townhall.com' },
+  { name: 'The Blaze', type: 'link', href: 'https://www.theblaze.com' },
+];
+
 
 function DesktopHeader() {
   const logo = PlaceHolderImages.find(p => p.id === 'logo');
@@ -111,9 +131,7 @@ function DesktopHeader() {
             Sports Betting
           </Link>
           <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
-          <Link href="#" className="nav-item neon-cyan">
-            Political Views
-          </Link>
+          <HeaderDropdown title="Political Views" items={politicalViewsItems} titleClassName="neon-cyan" />
         </nav>
       </div>
     </>
@@ -156,7 +174,7 @@ function MobileHeader() {
             <Link href="#" className="nav-item neon-green">Products</Link>
             <Link href="#" className="nav-item neon-orange">Sports Betting</Link>
             <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
-            <Link href="#" className="nav-item neon-cyan">Political Views</Link>
+            <HeaderDropdown title="Political Views" items={politicalViewsItems} titleClassName="neon-cyan" />
             <div className="mobile-menu-separator" />
             <Link href="/compare-prices" className="nav-item neon-pink">Compare Prices</Link>
             <Link href="/policies" className="nav-item neon-pink">Policies</Link>
@@ -199,3 +217,5 @@ export function Header() {
     </header>
   );
 }
+
+    
