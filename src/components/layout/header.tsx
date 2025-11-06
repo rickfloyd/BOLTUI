@@ -2,6 +2,9 @@
 
 import Link from 'next/link';
 import { HeaderDropdown } from './HeaderDropdown';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
 
 const communityFeaturesItems = [
     { name: 'AI Price Prediction Engine', subtext: 'Forecasting with machine learning' },
@@ -23,9 +26,9 @@ const tradersProfileItems = [
   { name: 'VIP', subtext: 'Access exclusive VIP features' },
 ];
 
-export function Header() {
+function DesktopHeader() {
   return (
-    <header className="header-nav">
+    <>
       <div className="header-top-layer">
         <div className="header-title neon-text">AI Quantum Charts</div>
         <div className="nav-right">
@@ -69,6 +72,60 @@ export function Header() {
           </Link>
         </nav>
       </div>
+    </>
+  )
+}
+
+function MobileHeader() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <>
+      <div className="header-top-layer">
+        <div className="header-title neon-text">AI Quantum Charts</div>
+        <button onClick={toggleMenu} className="mobile-menu-button">
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+      {isOpen && (
+        <div className="mobile-menu">
+          <nav className="mobile-nav-links">
+            <Link href="#" className="nav-item neon-cyan">Impact</Link>
+            <Link href="#" className="nav-item neon-orange">Stocks</Link>
+            <HeaderDropdown title="Community Features" items={communityFeaturesItems} titleClassName="neon-blue" />
+            <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-pink" />
+            <Link href="#" className="nav-item neon-orange">Guilty Pleasures</Link>
+            <Link href="#" className="nav-item neon-green">Products</Link>
+            <Link href="#" className="nav-item neon-orange">Sports Betting</Link>
+            <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
+            <Link href="#" className="nav-item neon-cyan">Political Views</Link>
+            <div className="mobile-menu-separator" />
+            <Link href="#" className="nav-item neon-pink">Compare Prices</Link>
+            <Link href="#" className="nav-item neon-pink">Policies</Link>
+            <Link href="/join" className="nav-item neon-pink">Join</Link>
+          </nav>
+        </div>
+      )}
+    </>
+  );
+}
+
+
+export function Header() {
+  const isMobile = useIsMobile();
+
+  return (
+    <header className="header-nav">
+      {isMobile === undefined ? (
+        <div className="header-top-layer">
+          <div className="header-title neon-text">AI Quantum Charts</div>
+        </div>
+      ) : isMobile ? (
+        <MobileHeader />
+      ) : (
+        <DesktopHeader />
+      )}
     </header>
   );
 }
