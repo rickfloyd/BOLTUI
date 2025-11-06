@@ -56,9 +56,9 @@ export default function Page() {
       <main className="dashboard-grid">
         <section className="center-content">
           <div className="view-switcher">
-            <button className="view-button neon-cyan">Charts</button>
-            <button className="view-button neon-pink">Simple View</button>
-            <button className="view-button neon-orange">Custom View</button>
+            <Link href="/" className="view-button active neon-cyan">Charts</Link>
+            <Link href="/simple-view" className="view-button neon-pink">Simple View</Link>
+            <Link href="/custom-view" className="view-button neon-orange">Custom View</Link>
           </div>
 
           <h2 className="content-title">Market Summary &gt;</h2>
