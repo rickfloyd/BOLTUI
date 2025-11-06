@@ -316,6 +316,7 @@ h1, h2, h3, .title {
   text-align: center;
   transition: all 0.3s ease;
   animation: pulse-border 3s infinite;
+  cursor: pointer;
 }
 
 @keyframes pulse-border {
@@ -338,9 +339,8 @@ h1, h2, h3, .title {
 
 
 .data-card .card-title {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
   color: #fff;
   text-shadow: 0 0 4px currentColor;
 }
@@ -418,10 +418,16 @@ h1, h2, h3, .title {
 }
 
 
+.frame {
+  border: 1px solid;
+  border-radius: var(--radius);
+  animation: pulse-border 3s infinite;
+}
+
 body.animation-page {
-    background: #000000;
-    margin: 0;
-    font-family: Arial, sans-serif;
+  background: #000000;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 #animation-container {
@@ -470,9 +476,6 @@ body.animation-page {
 @media (min-width: 768px) {
     .stats-row {
         grid-template-columns: repeat(4, 1fr);
-    }
-    .index-cards-row {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 

@@ -70,7 +70,7 @@ export default function Page() {
   const router = useRouter();
 
   const handleCardClick = (index: string) => {
-    router.push(`/charts/${index.toLowerCase()}`);
+    router.push(`/charts/${index.toLowerCase().replace(/ /g, '-')}`);
   };
 
   return (
@@ -84,6 +84,9 @@ export default function Page() {
           <div className="view-switcher">
             <Link href="/" className="view-button active neon-cyan">
               HYPER
+            </Link>
+             <Link href="/main" className="view-button neon-cyan">
+              MAIN
             </Link>
             <Link href="/simple-view" className="view-button neon-pink">
               SIMPLE VIEW
