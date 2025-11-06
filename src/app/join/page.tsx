@@ -20,8 +20,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { createUser } from '@/firebase/auth/create-user';
-import { useAuth } from '@/firebase';
 import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
@@ -37,7 +35,6 @@ const formSchema = z.object({
 });
 
 export default function JoinPage() {
-  const auth = useAuth();
   const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -50,14 +47,11 @@ export default function JoinPage() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      await createUser(auth, values.email, values.password, values.username);
-      // Redirect to a dashboard or home page after successful registration
-      router.push('/');
-    } catch (error) {
-      console.error('Registration failed:', error);
-      // You can show an error message to the user here
-    }
+    // NOTE: Firebase logic has been removed.
+    console.log('Form submitted with values:', values);
+    // Redirect to a dashboard or home page after successful registration
+    alert('Registration form submitted! (No backend connected)');
+    router.push('/');
   }
 
   return (

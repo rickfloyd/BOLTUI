@@ -12,6 +12,11 @@ const aiPlatformItems = [
     { name: 'Neural Networks & LSTM', subtext: 'Deep learning for market prediction' },
 ];
 
+const sportsItems = [
+    { name: 'Markets', subtext: 'Global financial markets', active: true },
+    { name: 'World Sports', subtext: 'International sports coverage' },
+];
+
 
 export function Header() {
   return (
@@ -26,17 +31,9 @@ export function Header() {
           <Link href="#" className="nav-item neon-orange">
             Sports Betting
           </Link>
-          <Link href="#" className="nav-item neon-blue">
-            Sports
-          </Link>
-          <Link href="#" className="nav-item neon-pink">
-            World Sports
-          </Link>
+          <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
           <Link href="#" className="nav-item neon-green">
             Products
-          </Link>
-          <Link href="#" className="nav-item neon-cyan active-market">
-            Markets
           </Link>
         </nav>
         <div className="nav-right">
