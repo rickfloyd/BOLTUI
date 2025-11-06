@@ -62,9 +62,8 @@ h1, h2, h3, .title {
     display: flex;
     flex-direction: column;
     padding: 0 2rem;
-    border-bottom: 1px solid hsla(var(--neon-pink), 0.3);
-    background: linear-gradient(90deg, hsl(330, 100%, 55%), hsl(350, 100%, 50%));
-    box-shadow: 0 0 18px hsl(var(--neon-pink)), 0 0 25px hsl(var(--neon-blue));
+    border-bottom: 1px solid hsla(var(--accent-glow), 0.2);
+    background-color: #0A0A0F;
 }
 .header-top-layer, .header-middle-layer, .header-bottom-layer {
     display: flex;
@@ -102,9 +101,9 @@ h1, h2, h3, .title {
     font-weight: 600;
     white-space: nowrap;
     padding: 0.5rem 1rem;
-    border: 1px solid transparent;
+    border: 1px solid black;
     border-radius: var(--radius);
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(10,10,15, 0.8);
     transition: all 0.3s ease;
     text-shadow: 0 0 5px currentColor;
 }
@@ -134,7 +133,7 @@ h1, h2, h3, .title {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(10, 10, 15, 0.9);
+    background-color: #04040a;
     border: 1px solid hsla(var(--neon-pink), 0.3);
     border-radius: var(--radius);
     padding: 1rem;
