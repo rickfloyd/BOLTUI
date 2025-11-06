@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 export type DropdownItem = {
-  name: string;
+  name?: string;
   subtext?: string;
   active?: boolean;
   type?: 'item' | 'header' | 'link';

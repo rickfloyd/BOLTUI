@@ -63,6 +63,10 @@ export default function BluetoothConnectPage() {
       statusHTML += `<br /><span style="color:#ff007f;">Attempting to access device info...</span>`;
       setOutput(statusHTML);
       
+      if (!device.gatt) {
+        setOutput('GATT server not found on this device.');
+        return;
+      }
       const server = await device.gatt.connect();
 
       try {

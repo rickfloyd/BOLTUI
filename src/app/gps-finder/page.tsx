@@ -11,27 +11,22 @@ type Restaurant = {
   rating: number;
 };
 
-type GeolocationError = {
-  code: number;
-  message: string;
-};
-
 export default function GpsFinderPage() {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [location, setLocation] = useState<{ lat: number, lon: number } | null>(null);
 
-  const handleLocationError = (error: GeolocationError) => {
+  const handleLocationError = (error: GeolocationPositionError) => {
     setLoading(false);
     switch (error.code) {
-      case error.PERMISSION_DENIED:
+      case 1: // GeolocationPositionError.PERMISSION_DENIED
         setError("Location access denied. Please enable location permissions in your browser.");
         break;
-      case error.POSITION_UNAVAILABLE:
+      case 2: // GeolocationPositionError.POSITION_UNAVAILABLE
         setError("Location information is unavailable.");
         break;
-      case error.TIMEOUT:
+      case 3: // GeolocationPositionError.TIMEOUT
         setError("The location request timed out.");
         break;
       default:
