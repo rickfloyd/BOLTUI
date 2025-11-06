@@ -74,7 +74,7 @@ const politicalViewsItems: DropdownItem[] = [
   { name: 'RedState', type: 'link', href: 'https://redstate.com' },
   { name: 'The Washington Times', type: 'link', href: 'https://www.washingtontimes.com' },
   { name: 'PJ Media', type: 'link', href: 'https://pjmedia.com' },
-  { name: 'Townhall', typeTA: 'link', href: 'https://townhall.com' },
+  { name: 'Townhall', type: 'link', href: 'https://townhall.com' },
   { name: 'The Blaze', type: 'link', href: 'https://www.theblaze.com' },
   { isSeparator: true },
   { name: 'Democrat', type: 'header' },
@@ -267,9 +267,3 @@ export function Header() {
     </header>
   );
 }
-
-    
-
-    
-
-    
