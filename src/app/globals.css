@@ -52,7 +52,6 @@ body {
 .header-title {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-right: auto;
 }
 .header-middle-layer {
     justify-content: flex-start;
@@ -70,7 +69,6 @@ body {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    margin-right: 2rem;
 }
 .header-nav .nav-item {
     text-transform: uppercase;
