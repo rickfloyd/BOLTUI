@@ -24,6 +24,9 @@ export function Header() {
       <div className="header-top-layer">
         <div className="header-title neon-text">AI Quantum Charts</div>
         <div className="nav-right">
+           <Link href="#" className="nav-item neon-pink">
+            Compare Prices
+          </Link>
            <Link href="/join" className="nav-item neon-pink">
             Join
           </Link>
