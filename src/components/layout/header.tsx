@@ -130,6 +130,13 @@ const independentItems: DropdownItem[] = [
   { name: 'USA Today', type: 'link', href: 'https://www.usatoday.com' },
 ];
 
+const sportsBettingItems: DropdownItem[] = [
+  { name: 'North American Major Sports', subtext: 'NFL, NCAAF, NBA, WNBA, NCAAB, MLB, NHL, Soccer', type: 'link', href: '#' },
+  { name: 'Combat Sports', subtext: 'Boxing, MMA, UFC', type: 'link', href: '#' },
+  { name: 'Racing', subtext: 'NASCAR, Formula 1, Horse Racing', type: 'link', href: '#' },
+  { name: 'Golf & Tennis', subtext: 'PGA, LPGA, Grand Slam tournaments', type: 'link', href: '#' },
+  { name: 'Other Sports', subtext: 'Badminton, Cricket, Cycling, Darts, Handball, Lacrosse, Rugby, & more', type: 'link', href: '#' },
+];
 
 function DesktopHeader() {
   const logo = PlaceHolderImages.find(p => p.id === 'logo');
@@ -179,9 +186,7 @@ function DesktopHeader() {
       </div>
       <div className="header-bottom-layer">
         <nav className="main-nav">
-          <Link href="#" className="nav-item neon-orange">
-            Sports Betting
-          </Link>
+          <HeaderDropdown title="Sports Betting" items={sportsBettingItems} titleClassName="neon-orange" />
           <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
           <HeaderDropdown title="Republican" items={republicanItems} titleClassName="neon-cyan" />
           <HeaderDropdown title="Democrat" items={democratItems} titleClassName="neon-cyan" />
@@ -227,7 +232,7 @@ function MobileHeader() {
             <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-pink" />
             <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-orange" />
             <Link href="#" className="nav-item neon-green">Products</Link>
-            <Link href="#" className="nav-item neon-orange">Sports Betting</Link>
+            <HeaderDropdown title="Sports Betting" items={sportsBettingItems} titleClassName="neon-orange" />
             <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
             <HeaderDropdown title="Republican" items={republicanItems} titleClassName="neon-cyan" />
             <HeaderDropdown title="Democrat" items={democratItems} titleClassName="neon-cyan" />
@@ -275,3 +280,5 @@ export function Header() {
     </header>
   );
 }
+
+    
