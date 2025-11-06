@@ -4,15 +4,15 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
-import { TrendingUp, TrendingDown, BarChart, DollarSign, Landmark, Building, Briefcase, Activity, Waves, Mountain } from 'lucide-react';
+import { TrendingUp, BarChart, DollarSign, Mountain, Activity } from 'lucide-react';
 
 const currencyIndexes = [
-  { index: 'DXY', name: 'US Dollar Index', value: '105.42', change: '+0.15%', changeType: 'positive', colorClass: 'neon-green-border', icon: <DollarSign /> },
-  { index: 'BTC', name: 'Bitcoin USD', value: '67,834.11', change: '-1.20%', changeType: 'negative', colorClass: 'neon-orange-border', icon: <TrendingUp /> },
-  { index: 'ETH', name: 'Ethereum USD', value: '3,512.90', change: '-0.85%', changeType: 'negative', colorClass: 'neon-blue-border', icon: <TrendingUp /> },
-  { index: 'XAU', name: 'Gold Spot', value: '2,320.50', change: '+0.40%', changeType: 'positive', colorClass: 'neon-orange-border', icon: <Mountain />},
-  { index: 'SPX', name: 'S&P 500', value: '5,478.60', change: '+0.25%', changeType: 'positive', colorClass: 'neon-cyan-border', icon: <BarChart /> },
-  { index: 'IXIC', name: 'NASDAQ Composite', value: '17,689.30', change: '-0.10%', changeType: 'negative', colorClass: 'neon-pink-border', icon: <Activity /> },
+  { index: 'DXY', name: 'US Dollar Index', value: '105.42', change: '+0.15%', changeType: 'positive', colorClass: 'glow-cyan', icon: <DollarSign /> },
+  { index: 'BTC', name: 'Bitcoin USD', value: '67,834.11', change: '-1.20%', changeType: 'negative', colorClass: 'glow-orange', icon: <TrendingUp /> },
+  { index: 'ETH', name: 'Ethereum USD', value: '3,512.90', change: '-0.85%', changeType: 'negative', colorClass: 'glow-blue', icon: <TrendingUp /> },
+  { index: 'XAU', name: 'Gold Spot', value: '2,320.50', change: '+0.40%', changeType: 'positive', colorClass: 'glow-gold', icon: <Mountain />},
+  { index: 'SPX', name: 'S&P 500', value: '5,478.60', change: '+0.25%', changeType: 'positive', colorClass: 'glow-teal', icon: <BarChart /> },
+  { index: 'IXIC', name: 'NASDAQ Composite', value: '17,689.30', change: '-0.10%', changeType: 'negative', colorClass: 'glow-pink', icon: <Activity /> },
 ];
 
 export default function Page() {

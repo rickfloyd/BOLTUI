@@ -314,40 +314,50 @@ h1, h2, h3, .title {
 
 .data-card {
     background: linear-gradient(180deg, #101020, #0b0f1a);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid transparent;
     border-radius: 16px;
     padding: 1.5rem;
     transition: all 0.4s ease-in-out;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
 
 .data-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 15px var(--card-glow-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 25px var(--card-glow-color);
 }
 
 .data-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--card-glow-color);
-    box-shadow: 0 0 8px var(--card-glow-color);
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid var(--card-glow-color);
+    border-radius: 18px;
     animation: pulse-glow 2s infinite alternate;
+    opacity: 0.8;
 }
 
 @keyframes pulse-glow {
-    from { opacity: 0.7; }
-    to { opacity: 1; }
+    from { 
+        opacity: 0.7;
+        box-shadow: 0 0 10px -5px var(--card-glow-color), inset 0 0 10px -5px var(--card-glow-color);
+    }
+    to { 
+        opacity: 1; 
+        box-shadow: 0 0 20px 0px var(--card-glow-color), inset 0 0 20px 0px var(--card-glow-color);
+    }
 }
 
-.data-card.cyan-glow { --card-glow-color: hsl(var(--accent-glow)); }
-.data-card.orange-glow { --card-glow-color: hsl(var(--neon-orange)); }
-.data-card.blue-glow { --card-glow-color: hsl(var(--neon-blue)); }
+.data-card.glow-cyan { --card-glow-color: hsl(var(--neon-cyan)); }
+.data-card.glow-orange { --card-glow-color: hsl(var(--neon-orange)); }
+.data-card.glow-blue { --card-glow-color: hsl(var(--neon-blue)); }
+.data-card.glow-gold { --card-glow-color: hsl(51, 100%, 50%); }
+.data-card.glow-pink { --card-glow-color: hsl(var(--neon-pink)); }
+.data-card.glow-teal { --card-glow-color: hsl(160, 100%, 40%); }
 
 .card-header {
     display: flex;
@@ -363,6 +373,8 @@ h1, h2, h3, .title {
     align-items: center;
     justify-content: center;
     background-color: rgba(255,255,255,0.1);
+    color: var(--card-glow-color);
+    box-shadow: 0 0 10px var(--card-glow-color);
 }
 .card-title-group .card-title {
     font-size: 1.1rem;
