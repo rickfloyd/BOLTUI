@@ -45,26 +45,46 @@ const GlobeAnimation = () => {
                                  vec2(12.9898,78.233)))*
                 43758.5453123);
         }
+        
+        // 2D Noise
+        float noise (in vec2 st) {
+            vec2 i = floor(st);
+            vec2 f = fract(st);
+
+            // Four corners in 2D of a tile
+            float a = random(i);
+            float b = random(i + vec2(1.0, 0.0));
+            float c = random(i + vec2(0.0, 1.0));
+            float d = random(i + vec2(1.0, 1.0));
+
+            vec2 u = f * f * (3.0 - 2.0 * f);
+
+            return mix(a, b, u.x) +
+                    (c - a)* u.y * (1.0 - u.x) +
+                    (d - b) * u.x * u.y;
+        }
+
 
         void main() {
-            vec2 st = vUv * 3.0; // Scale the UV coordinates
+            vec2 st = vUv * 3.0; // Scale UV
+            st.x += u_time * 0.05; // Horizontal movement
 
-            // Animate with time
-            st += u_time * 0.1;
+            // Use noise to create organic patterns
+            float n = noise(st * 1.5 + u_time * 0.1);
 
-            // Create color patterns with sine waves
-            float r = 0.5 + 0.5 * sin(st.x * 2.0 + u_time);
-            float g = 0.5 + 0.5 * sin(st.y * 2.0 + u_time * 0.8 + 1.0);
-            float b = 0.5 + 0.5 * cos(st.x * 1.5 + st.y * 1.5 + u_time * 1.2);
-
-            // Mix colors - hot pink, orange, neon blue
+            // Define the three colors
             vec3 color1 = vec3(1.0, 0.078, 0.576); // Hot Pink
-            vec3 color2 = vec3(1.0, 0.647, 0.0);   // Fluorescent Orange
-            vec3 color3 = vec3(0.0, 1.0, 1.0);     // Neon Blue/Cyan
+            vec3 color2 = vec3(1.0, 0.4, 0.0);   // Fluorescent Orange (adjusted for more vibrancy)
+            vec3 color3 = vec3(0.0, 0.8, 1.0);     // Neon Blue/Cyan (adjusted)
+            
+            // Create a smoothly varying factor for mixing
+            float mixFactor1 = 0.5 + 0.5 * sin(st.y * 2.0 + u_time * 0.3 + n * 2.0);
+            float mixFactor2 = 0.5 + 0.5 * cos(st.x * 2.0 - u_time * 0.2 + n * 2.0);
 
-            vec3 finalColor = mix(color1, color2, r);
-            finalColor = mix(finalColor, color3, g);
-            finalColor = mix(finalColor, vec3(b), 0.5);
+            // Mix the colors in a fluid way
+            vec3 finalColor = mix(color1, color2, mixFactor1);
+            finalColor = mix(finalColor, color3, mixFactor2);
+            finalColor *= (0.8 + n * 0.2); // Add some subtle brightness variations
 
             gl_FragColor = vec4(finalColor, 1.0);
         }
