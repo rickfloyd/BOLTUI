@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
        fontFamily: {
-        sans: ['Open Sans', 'sans-serif'],
+        sans: ['"IBM Plex Sans"', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

@@ -1,7 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -50,7 +47,6 @@
 body {
   background: linear-gradient(180deg, #000000 0%, #0A0A0F 100%);
   color: rgb(var(--foreground-rgb));
-  font-family: 'Inter', sans-serif;
   min-height: 100vh;
   margin: 0;
   filter: brightness(1.2) contrast(1.1) saturate(1.15);

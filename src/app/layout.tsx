@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Orbitron } from 'next/font/google';
+import { IBM_Plex_Sans } from 'next/font/google';
 import './globals.css';
 
-const orbitron = Orbitron({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={orbitron.className}>
+      <body className={ibmPlexSans.className}>
         {children}
       </body>
     </html>
