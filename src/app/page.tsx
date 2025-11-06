@@ -75,6 +75,9 @@ export default function Page() {
                 </div>
               ))}
             </div>
+            <p className="mt-6 text-gray-300 text-center text-lg">
+              Once our company goals are achieved, a percentage of every paying customer’s monthly subscription will be directed into a private scholarship fund. This fund will provide grants to high school students who aspire to attend business and finance specialty schools. It’s our way of investing in the next generation of innovators — and that’s what makes us different.
+            </p>
           </div>
 
           <h2 className="content-title">Market Summary &gt;</h2>
