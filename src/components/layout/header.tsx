@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { HeaderDropdown } from './HeaderDropdown';
 
-const aiPlatformItems = [
+const communityFeaturesItems = [
     { name: 'AI Price Prediction Engine', subtext: 'Forecasting with machine learning' },
     { name: 'ML Pattern Recognition', subtext: 'Identify historical patterns' },
     { name: 'Sentiment Analysis AI', subtext: 'Gauge market mood from news & social' },
@@ -24,22 +24,19 @@ export function Header() {
       <div className="header-top-layer">
         <div className="header-title neon-text">AI Quantum Charts</div>
         <div className="nav-right">
-          <Link href="/join" className="nav-item neon-pink">
-            Join
-          </Link>
         </div>
       </div>
       <div className="header-bottom-layer">
         <nav className="main-nav">
-          <HeaderDropdown title="Personalities" items={aiPlatformItems} titleClassName="neon-pink" />
           <Link href="#" className="nav-item neon-cyan">
             Impact
           </Link>
            <Link href="#" className="nav-item neon-orange">
             Stocks
           </Link>
-          <Link href="#" className="nav-item neon-blue">
-            Community
+          <HeaderDropdown title="Community" items={communityFeaturesItems} titleClassName="neon-blue" />
+          <Link href="/join" className="nav-item neon-pink">
+            Join
           </Link>
           <Link href="#" className="nav-item neon-orange">
             Sports Betting
