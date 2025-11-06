@@ -39,6 +39,9 @@ export function Header() {
             Join
           </Link>
           <Link href="#" className="nav-item neon-orange">
+            Guilty Pleasures
+          </Link>
+          <Link href="#" className="nav-item neon-orange">
             Sports Betting
           </Link>
           <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
