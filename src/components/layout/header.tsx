@@ -28,6 +28,15 @@ export function Header() {
           <Link href="#" className="nav-item neon-cyan">
             Impact
           </Link>
+           <Link href="#" className="nav-item neon-orange">
+            Stocks
+          </Link>
+          <Link href="#" className="nav-item neon-blue">
+            Community
+          </Link>
+          <Link href="/join" className="nav-item neon-pink">
+            Join
+          </Link>
           <Link href="#" className="nav-item neon-orange">
             Sports Betting
           </Link>
@@ -37,15 +46,6 @@ export function Header() {
           </Link>
         </nav>
         <div className="nav-right">
-          <Link href="#" className="nav-item neon-orange">
-            Stocks
-          </Link>
-          <Link href="#" className="nav-item neon-blue">
-            Community
-          </Link>
-          <Link href="/join" className="nav-item neon-pink">
-            Join
-          </Link>
         </div>
       </div>
     </header>
