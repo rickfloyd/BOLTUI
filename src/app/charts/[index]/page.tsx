@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Suspense } from 'react';
@@ -5,6 +6,7 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/header';
 import CurrencyChart from '@/components/chart/CurrencyChart';
 import { ArrowLeft } from 'lucide-react';
+import ClientWrapper from '@/components/ClientWrapper';
 
 const currencyIndexDetails: { [key: string]: { name: string; description: string } } = {
   DXY: { name: 'U.S. Dollar Index', description: 'Measures the value of the U.S. Dollar against a basket of foreign currencies.' },
@@ -35,7 +37,9 @@ function ChartPageContent({ params }: { params: { index: string } }) {
           </div>
 
           <div className="w-full h-[500px]">
-            <CurrencyChart index={index} />
+            <ClientWrapper>
+              <CurrencyChart index={index} />
+            </ClientWrapper>
           </div>
         </div>
       </main>
