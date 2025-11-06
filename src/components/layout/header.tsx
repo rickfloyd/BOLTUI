@@ -15,6 +15,8 @@ const communityFeaturesItems: DropdownItem[] = [
     { name: 'Smart Risk Management', subtext: 'AI-driven risk assessment' },
     { name: 'Automated Trading Signals', subtext: 'Real-time buy/sell alerts' },
     { name: 'Neural Networks & LSTM', subtext: 'Deep learning for market prediction' },
+    { isSeparator: true },
+    { name: 'Binance Schema', subtext: 'View the Binance API Schema', type: 'link', href: '/binance-schema' },
 ];
 
 const sportsItems: DropdownItem[] = [
