@@ -42,12 +42,12 @@ const marketSummary = [
 ];
 
 const currencyIndexes = [
-  { index: 'DXY', currency: 'U.S. Dollar' },
-  { index: 'EXY', currency: 'Euro' },
-  { index: 'BXY', currency: 'British Pound' },
-  { index: 'JXY', currency: 'Japanese Yen' },
-  { index: 'CXY', currency: 'Canadian Dollar' },
-  { index: 'AXY', currency: 'Australian Dollar' },
+  { index: 'DXY', currency: 'U.S. Dollar', colorClass: 'neon-green' },
+  { index: 'EXY', currency: 'Euro', colorClass: 'neon-blue' },
+  { index: 'BXY', currency: 'British Pound', colorClass: 'neon-pink' },
+  { index: 'JXY', currency: 'Japanese Yen', colorClass: 'neon-orange' },
+  { index: 'CXY', currency: 'Canadian Dollar', colorClass: 'neon-cyan' },
+  { index: 'AXY', currency: 'Australian Dollar', colorClass: 'neon-pink' },
 ];
 
 export default function Page() {
@@ -127,7 +127,7 @@ export default function Page() {
                       onClick={() => handleRowClick(c.index)}
                       className="cursor-pointer hover:bg-white/5"
                     >
-                      <td>{c.index}</td>
+                      <td><span className={c.colorClass}>{c.index}</span></td>
                       <td>{c.currency}</td>
                     </tr>
                   ))}
