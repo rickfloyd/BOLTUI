@@ -39,12 +39,20 @@ const guiltyPleasuresItems: DropdownItem[] = [
   { name: 'Uber Eats', subtext: 'Order food delivery', type: 'item' },
   { name: 'DoorDash', subtext: 'Order food delivery', type: 'item' },
   { isSeparator: true },
-  { name: 'Top 25 Social Media Sites', subtext: 'Connect with friends and family', type: 'header' },
+  { name: 'International Social Networks', type: 'header' },
   { name: 'Facebook', type: 'link', href: 'https://facebook.com' },
   { name: 'Twitter / X', type: 'link', href: 'https://x.com' },
   { name: 'Instagram', type: 'link', href: 'https://instagram.com' },
   { name: 'TikTok', type: 'link', href: 'https://tiktok.com' },
   { name: 'LinkedIn', type: 'link', href: 'https://linkedin.com' },
+  { name: 'Reddit', type: 'link', href: 'https://reddit.com' },
+  { name: 'Pinterest', type: 'link', href: 'https://pinterest.com' },
+  { name: 'Snapchat', type: 'link', href: 'https://snapchat.com' },
+  { name: 'Telegram', type: 'link', href: 'https://telegram.org' },
+  { name: 'WhatsApp', type: 'link', href: 'https://whatsapp.com' },
+  { name: 'WeChat', type: 'link', href: 'https://wechat.com' },
+  { name: 'Discord', type: 'link', href: 'https://discord.com' },
+  { name: 'Shuffle', type: 'link', href: '#' },
 ];
 
 
