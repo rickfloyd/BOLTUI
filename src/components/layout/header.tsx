@@ -27,6 +27,9 @@ export function Header() {
            <Link href="#" className="nav-item neon-pink">
             Compare Prices
           </Link>
+           <Link href="#" className="nav-item neon-pink">
+            Policies
+          </Link>
            <Link href="/join" className="nav-item neon-pink">
             Join
           </Link>
