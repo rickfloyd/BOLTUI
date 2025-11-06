@@ -148,70 +148,6 @@ body {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 1.5rem;
-    height: calc(100vh - 138px);
-}
-
-/* === LEFT SIDEBAR === */
-.left-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    border-right: 1px solid hsla(var(--neon-cyan), 0.2);
-    padding-right: 1.5rem;
-    overflow-y: auto;
-}
-.sidebar-section .section-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-.dot-indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin-right: 0.75rem;
-    background-color: currentColor;
-    box-shadow: 0 0 6px currentColor;
-}
-.dropdown-menu {
-    padding-left: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-}
-.dropdown-menu.open {
-    max-height: 500px; /* Adjust as needed */
-}
-.dropdown-menu .menu-item {
-    color: #a7a7a7;
-    font-size: 0.9rem;
-    padding: 0.5rem;
-    border-radius: var(--radius);
-    transition: background-color 0.2s, color 0.2s;
-    cursor: pointer;
-}
-.dropdown-menu .menu-item:hover {
-    background-color: hsla(var(--neon-pink), 0.2);
-    color: #fff;
-}
-.menu-item .sub-text {
-    font-size: 0.75rem;
-    color: #888;
-    display: block;
-}
-.active-pink {
-    background-color: rgba(255, 45, 172, 0.2);
-    color: #ff2dac !important;
-    font-weight: bold;
-}
-.platform-menu .menu-item {
-    font-size: 0.85rem;
 }
 
 /* === CENTER CONTENT === */
@@ -362,6 +298,50 @@ body {
 .dxy-change {
     font-size: 1rem;
     font-weight: 600;
+}
+
+.info-table-card {
+    background-color: #0A0A0F;
+    border: 1px solid;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border-color: hsl(var(--neon-pink));
+    box-shadow: 0 0 12px hsla(var(--neon-pink), 0.5);
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table th, .info-table td {
+    padding: 1rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid hsla(var(--neon-pink), 0.2);
+    font-size: 0.9rem;
+}
+
+.info-table th {
+    color: hsl(var(--neon-pink));
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.info-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.info-table td:nth-child(1) {
+    font-weight: 700;
+    color: #fff;
+}
+.info-table td:nth-child(2) {
+    color: #c0c0c0;
+}
+.info-table td:nth-child(3) {
+    color: #a7a7a7;
+    font-size: 0.85rem;
 }
 
 

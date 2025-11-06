@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Header } from '@/components/layout/header';
-import { TrendingUp, TrendingDown, DollarSign, BarChart, Zap, Globe } from 'lucide-react';
+import { TrendingUp, TrendingDown, BarChart } from 'lucide-react';
 
 const stats = [
   { label: 'Students Helped', value: '12,911' },
@@ -12,30 +12,39 @@ const stats = [
 ];
 
 const marketSummary = [
-  { 
-    title: 'Nasdaq 100', 
-    price: '$385.01', 
-    change: '-0.88%', 
+  {
+    title: 'Nasdaq 100',
+    price: '$385.01',
+    change: '-0.88%',
     isPositive: false,
     glowClass: 'cyan-glow',
-    icon: <TrendingUp size={24} className="text-cyan-400" />
+    icon: <TrendingUp size={24} className="text-cyan-400" />,
   },
-  { 
-    title: 'Dow Jones', 
-    price: '$368.91', 
-    change: '+1.23%', 
+  {
+    title: 'Dow Jones',
+    price: '$368.91',
+    change: '+1.23%',
     isPositive: true,
     glowClass: 'orange-glow',
-    icon: <BarChart size={24} className="text-orange-400" />
+    icon: <BarChart size={24} className="text-orange-400" />,
   },
-  { 
-    title: 'Russell 2000', 
-    price: '$197.32', 
-    change: '-0.27%', 
+  {
+    title: 'Russell 2000',
+    price: '$197.32',
+    change: '-0.27%',
     isPositive: false,
     glowClass: 'blue-glow',
-    icon: <TrendingDown size={24} className="text-blue-400" />
+    icon: <TrendingDown size={24} className="text-blue-400" />,
   },
+];
+
+const currencyIndexes = [
+    { index: 'DXY', currency: 'U.S. Dollar', description: 'The official U.S. Dollar Index. It is the most common, measuring the USD against six major world currencies (EUR, JPY, GBP, CAD, SEK, CHF).' },
+    { index: 'EXY', currency: 'Euro', description: 'Measures the value of the Euro.' },
+    { index: 'BXY', currency: 'British Pound', description: 'Measures the value of the British Pound Sterling (GBP).' },
+    { index: 'JXY', currency: 'Japanese Yen', description: 'Measures the value of the Japanese Yen (JPY).' },
+    { index: 'CXY', currency: 'Canadian Dollar', description: 'Measures the value of the Canadian Dollar (CAD).' },
+    { index: 'AXY', currency: 'Australian Dollar', description: 'Measures the value of the Australian Dollar (AUD).' },
 ];
 
 export default function Page() {
@@ -46,11 +55,11 @@ export default function Page() {
         <section className="center-content">
           <div className="info-banner">
             <h3 className="info-banner-title">
-                <span className="dot-indicator"></span>
-                Educational Impact Transparency
+              <span className="dot-indicator"></span>
+              Educational Impact Transparency
             </h3>
             <div className="stats-row">
-              {stats.map((stat) => (
+              {stats.map(stat => (
                 <div key={stat.label} className="stat-box">
                   <p className="stat-number">{stat.value}</p>
                   <p className="stat-label">{stat.label}</p>
@@ -58,36 +67,61 @@ export default function Page() {
               ))}
             </div>
           </div>
-          
+
           <h2 className="content-title">Market Summary ></h2>
-          
+
           <div className="index-cards-row">
-            {marketSummary.map((item) => (
-                <div className={`data-card ${item.glowClass}`} key={item.title}>
-                    <div className="card-header">
-                        <div className="card-icon">
-                            {item.icon}
-                        </div>
-                        <div className="card-title-group">
-                            <span className="card-title">{item.title}</span>
-                        </div>
-                    </div>
-                    <div className="card-data">
-                        <span className="price">{item.price}</span>
-                        <span className={`change ${item.isPositive ? 'positive' : 'negative'}`}>{item.change}</span>
-                    </div>
+            {marketSummary.map(item => (
+              <div className={`data-card ${item.glowClass}`} key={item.title}>
+                <div className="card-header">
+                  <div className="card-icon">{item.icon}</div>
+                  <div className="card-title-group">
+                    <span className="card-title">{item.title}</span>
+                  </div>
                 </div>
+                <div className="card-data">
+                  <span className="price">{item.price}</span>
+                  <span
+                    className={`change ${
+                      item.isPositive ? 'positive' : 'negative'
+                    }`}
+                  >
+                    {item.change}
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
 
           <div className="dxy-card">
-             <div className="dxy-header">
-                <h3 className="dxy-title">DXY (US Dollar Index)</h3>
-                <span className={`change negative`}>-0.38 (-0.36%)</span>
-             </div>
-             <p className="dxy-value">105.42</p>
+            <div className="dxy-header">
+              <h3 className="dxy-title">DXY (US Dollar Index)</h3>
+              <span className={`change negative`}>-0.38 (-0.36%)</span>
+            </div>
+            <p className="dxy-value">105.42</p>
           </div>
 
+          <div className="info-table-card">
+             <h3 className="content-title">Major Currency Indexes</h3>
+             <table className="info-table">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Currency Tracked</th>
+                        <th>Full Name / Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {currencyIndexes.map((c) => (
+                        <tr key={c.index}>
+                            <td>{c.index}</td>
+                            <td>{c.currency}</td>
+                            <td>{c.description}</td>
+                        </tr>
+                    ))}
+                </tbody>
+             </table>
+          </div>
         </section>
       </main>
     </>
