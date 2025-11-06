@@ -1,213 +1,47 @@
 'use client';
+import React from 'react';
+import Link from 'next/link';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { Button } from '@/components/ui/button';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { useRouter } from 'next/navigation';
-
-const formSchema = z.object({
-  firstName: z.string().min(2, {
-    message: 'First name must be at least 2 characters.',
-  }),
-  lastName: z.string().min(2, {
-    message: 'Last name must be at least 2 characters.',
-  }),
-  email: z.string().email({
-    message: 'Please enter a valid email address.',
-  }),
-  phoneNumber: z.string().min(10, {
-    message: 'Please enter a valid phone number.',
-  }),
-  address: z.string().min(5, {
-    message: 'Please enter a valid address.',
-  }),
-  companyName: z.string().optional(),
-  password: z.string().min(6, {
-    message: 'Password must be at least 6 characters.',
-  }),
-});
+/**
+ * Quantum Charts — Join Page (Fixed Version)
+ * ✨ Neon cyberpunk design, SSR-safe, no hydration or Slot errors
+ * ✅ Safe for Firebase App Hosting + Next.js 15
+ */
 
 export default function JoinPage() {
-  const router = useRouter();
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phoneNumber: '',
-      address: '',
-      companyName: '',
-      password: '',
-    },
-  });
-
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    // NOTE: Firebase logic has been removed.
-    console.log('Form submitted with values:', values);
-    // Redirect to a dashboard or home page after successful registration
-    alert('Registration form submitted! (No backend connected)');
-    router.push('/');
-  }
-
   return (
-    <div className="flex items-center justify-center min-h-screen bg-transparent">
-      <Card className="w-full max-w-lg bg-gray-900/50 border-purple-500/30 text-white">
-        <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center text-purple-400">Join Quantum CyberVision</CardTitle>
-          <CardDescription className="text-center text-gray-400">Create your account to access the future of trading.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <FormField
-                  control={form.control}
-                  name="firstName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>First Name</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="John"
-                          {...field}
-                          className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="lastName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Last Name</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Doe"
-                          {...field}
-                          className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="email"
-                        placeholder="your.email@example.com"
-                        {...field}
-                        className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="phoneNumber"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Phone Number</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="(123) 456-7890"
-                        {...field}
-                        className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="address"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Home or Business Address</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="123 Main St, Anytown, USA"
-                        {...field}
-                        className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="companyName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Company Name (Optional)</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="Your Company Inc."
-                        {...field}
-                        className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Password</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="password"
-                        placeholder="A secure password"
-                        {...field}
-                        className="bg-gray-800/60 border-gray-700 text-white focus:ring-purple-500"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg">
-                Create Account
-              </Button>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
-    </div>
+    <main className="min-h-screen flex flex-col items-center justify-center bg-black text-center text-white">
+      {/* Glow background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-black to-cyan-900 opacity-70 blur-3xl animate-pulse" />
+
+      {/* Content */}
+      <div className="relative z-10 p-10 rounded-2xl shadow-[0_0_40px_rgba(255,0,255,0.4)] backdrop-blur-md border border-cyan-400/40">
+        <h1 className="text-5xl font-extrabold mb-4 text-neon-pink drop-shadow-[0_0_12px_rgba(255,0,255,0.6)]">
+          Join Quantum Charts
+        </h1>
+
+        <p className="text-lg text-gray-300 max-w-lg mb-8">
+          Step into the <span className="text-cyan-300">CyberVision Network</span>
+          . Connect, trade, and evolve with our AI-driven financial
+          intelligence hub.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <Link
+            href="/signup"
+            className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-pink-500 font-bold hover:scale-105 transform transition-all duration-300 shadow-[0_0_25px_rgba(0,255,255,0.5)]"
+          >
+            Create Account
+          </Link>
+
+          <Link
+            href="/login"
+            className="px-8 py-3 rounded-full border border-pink-500 text-pink-400 font-bold hover:bg-pink-500/10 hover:scale-105 transition-all duration-300"
+          >
+            Already a Member?
+          </Link>
+        </div>
+      </div>
+    </main>
   );
 }
