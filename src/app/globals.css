@@ -187,6 +187,32 @@ body {
     flex-direction: column;
     gap: 1.5rem;
 }
+
+.view-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+}
+
+.view-button {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.view-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: currentColor;
+}
+
 .info-banner {
     background-color: hsla(var(--neon-cyan), 0.1);
     border: 1px solid hsla(var(--neon-cyan), 0.4);

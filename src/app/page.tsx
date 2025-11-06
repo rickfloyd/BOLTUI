@@ -7,13 +7,6 @@ import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
 import { TrendingUp, TrendingDown, BarChart } from 'lucide-react';
 
-const stats = [
-  { label: 'Students Helped', value: '12,911' },
-  { label: 'Free Courses', value: '156' },
-  { label: 'Countries', value: '348' },
-  { label: 'Free Tools', value: '28' },
-];
-
 const marketSummary = [
   {
     title: 'Nasdaq 100',
@@ -62,19 +55,10 @@ export default function Page() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <div className="info-banner">
-            <h3 className="info-banner-title">
-              <span className="dot-indicator"></span>
-              Educational Impact Transparency
-            </h3>
-            <div className="stats-row">
-              {stats.map(stat => (
-                <div key={stat.label} className="stat-box">
-                  <p className="stat-number">{stat.value}</p>
-                  <p className="stat-label">{stat.label}</p>
-                </div>
-              ))}
-            </div>
+          <div className="view-switcher">
+            <button className="view-button neon-cyan">Charts</button>
+            <button className="view-button neon-pink">Simple View</button>
+            <button className="view-button neon-orange">Custom View</button>
           </div>
 
           <h2 className="content-title">Market Summary &gt;</h2>
