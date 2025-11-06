@@ -24,9 +24,12 @@ export function Header() {
       <div className="header-top-layer">
         <div className="header-title neon-text">AI Quantum Charts</div>
         <div className="nav-right">
+           <Link href="/join" className="nav-item neon-pink">
+            Join
+          </Link>
         </div>
       </div>
-      <div className="header-bottom-layer">
+      <div className="header-middle-layer">
         <nav className="main-nav">
           <Link href="#" className="nav-item neon-cyan">
             Impact
@@ -34,20 +37,21 @@ export function Header() {
            <Link href="#" className="nav-item neon-orange">
             Stocks
           </Link>
-          <HeaderDropdown title="Community" items={communityFeaturesItems} titleClassName="neon-blue" />
-          <Link href="/join" className="nav-item neon-pink">
-            Join
-          </Link>
+          <HeaderDropdown title="Community Features" items={communityFeaturesItems} titleClassName="neon-blue" />
           <Link href="#" className="nav-item neon-orange">
             Guilty Pleasures
           </Link>
+          <Link href="#" className="nav-item neon-green">
+            Products
+          </Link>
+        </nav>
+      </div>
+      <div className="header-bottom-layer">
+        <nav className="main-nav">
           <Link href="#" className="nav-item neon-orange">
             Sports Betting
           </Link>
           <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
-          <Link href="#" className="nav-item neon-green">
-            Products
-          </Link>
           <Link href="#" className="nav-item neon-cyan">
             Political Views
           </Link>
