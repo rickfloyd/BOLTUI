@@ -142,7 +142,6 @@ body {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 1.5rem;
-    height: calc(100vh - 81px); /* Adjust based on header height */
 }
 
 /* === LEFT SIDEBAR === */
@@ -213,7 +212,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    overflow-y: auto;
 }
 .info-banner {
     background-color: hsla(var(--neon-cyan), 0.1);
