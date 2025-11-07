@@ -139,6 +139,11 @@ const sportsBettingItems: DropdownItem[] = [
   { name: 'Other Sports', subtext: 'Badminton, Cricket, Cycling, Darts, Handball, Lacrosse, Rugby, & more', type: 'link', href: '#' },
 ];
 
+const opinionsItems: DropdownItem[] = [
+  { name: 'Placeholder Opinion', subtext: 'This is a placeholder item', type: 'link', href: '#' },
+];
+
+
 function DesktopHeader() {
   return (
     <>
@@ -187,6 +192,7 @@ function DesktopHeader() {
           <HeaderDropdown title="Democrat" items={democratItems} titleClassName="neon-cyan" />
           <HeaderDropdown title="Liberal" items={liberalItems} titleClassName="neon-cyan" />
           <HeaderDropdown title="Independent" items={independentItems} titleClassName="neon-cyan" />
+          <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
         </nav>
       </div>
     </>
@@ -227,6 +233,7 @@ function MobileHeader() {
             <HeaderDropdown title="Democrat" items={democratItems} titleClassName="neon-cyan" />
             <HeaderDropdown title="Liberal" items={liberalItems} titleClassName="neon-cyan" />
             <HeaderDropdown title="Independent" items={independentItems} titleClassName="neon-cyan" />
+            <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
             <div className="mobile-menu-separator" />
             <Link href="/compare-prices" className="nav-item neon-pink">Compare Prices</Link>
             <Link href="/policies" className="nav-item neon-pink">Policies</Link>
