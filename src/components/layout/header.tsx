@@ -150,6 +150,9 @@ function DesktopHeader() {
         </div>
         <div className="nav-right">
            <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
+           <Link href="/impact" className="nav-item neon-cyan">
+            Impact
+          </Link>
            <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
            <Link href="/compare-prices" className="nav-item neon-pink">
             Compare Prices
@@ -164,11 +167,11 @@ function DesktopHeader() {
       </div>
       <div className="header-middle-layer">
         <nav className="main-nav">
-          <Link href="/impact" className="nav-item neon-cyan">
-            Impact
-          </Link>
-           <Link href="#" className="nav-item neon-orange">
+          <Link href="#" className="nav-item neon-orange">
             Stocks
+          </Link>
+          <Link href="#" className="nav-item neon-cyan">
+            Crypto
           </Link>
           <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
           <Link href="#" className="nav-item neon-green">
@@ -210,9 +213,12 @@ function MobileHeader() {
         <div className="mobile-menu">
           <nav className="mobile-nav-links">
             <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
+             <Link href="/impact" className="nav-item neon-cyan">Impact</Link>
             <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
-            <Link href="/impact" className="nav-item neon-cyan">Impact</Link>
             <Link href="#" className="nav-item neon-orange">Stocks</Link>
+             <Link href="#" className="nav-item neon-cyan">
+                Crypto
+              </Link>
             <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
             <Link href="#" className="nav-item neon-green">Products</Link>
             <HeaderDropdown title="Sports Betting" items={sportsBettingItems} titleClassName="neon-orange" />
