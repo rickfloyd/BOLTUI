@@ -168,9 +168,9 @@ function DesktopHeader() {
            <Link href="#" className="nav-item neon-orange">
             Stocks
           </Link>
+          <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
           <HeaderDropdown title="Community Features" items={communityFeaturesItems} titleClassName="neon-blue" />
-          <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-pink" />
-          <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-orange" />
+          <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
           <Link href="#" className="nav-item neon-green">
             Products
           </Link>
@@ -211,9 +211,9 @@ function MobileHeader() {
           <nav className="mobile-nav-links">
             <Link href="/impact" className="nav-item neon-cyan">Impact</Link>
             <Link href="#" className="nav-item neon-orange">Stocks</Link>
+            <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
             <HeaderDropdown title="Community Features" items={communityFeaturesItems} titleClassName="neon-blue" />
-            <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-pink" />
-            <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-orange" />
+            <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
             <Link href="#" className="nav-item neon-green">Products</Link>
             <HeaderDropdown title="Sports Betting" items={sportsBettingItems} titleClassName="neon-orange" />
             <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
