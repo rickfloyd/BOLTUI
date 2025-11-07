@@ -98,13 +98,13 @@ export default function Page() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-8">
             {tokenCategories.map((item, index) => (
-              <div
+              <button
                 key={index}
                 className={`data-card ${item.color}`}
                 onClick={() => handleCardClick(item.name)}
               >
                 <h3 className="card-title text-sm">{item.name}</h3>
-              </div>
+              </button>
             ))}
           </div>
         </section>
