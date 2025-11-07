@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -140,7 +141,10 @@ const sportsBettingItems: DropdownItem[] = [
 ];
 
 const opinionsItems: DropdownItem[] = [
-  { name: 'Placeholder Opinion', subtext: 'This is a placeholder item', type: 'link', href: '#' },
+  { name: 'Republican', subtext: 'News and opinion from a conservative perspective', type: 'link', href: '#' },
+  { name: 'Democrat', subtext: 'News and opinion from a Democratic perspective', type: 'link', href: '#' },
+  { name: 'Liberal', subtext: 'News and opinion from a liberal perspective', type: 'link', href: '#' },
+  { name: 'Independent', subtext: 'News and opinion from an independent perspective', type: 'link', href: '#' },
 ];
 
 
@@ -188,10 +192,6 @@ function DesktopHeader() {
         <nav className="main-nav">
           <HeaderDropdown title="Sports Betting" items={sportsBettingItems} titleClassName="neon-orange" />
           <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
-          <HeaderDropdown title="Republican" items={republicanItems} titleClassName="neon-cyan" />
-          <HeaderDropdown title="Democrat" items={democratItems} titleClassName="neon-cyan" />
-          <HeaderDropdown title="Liberal" items={liberalItems} titleClassName="neon-cyan" />
-          <HeaderDropdown title="Independent" items={independentItems} titleClassName="neon-cyan" />
           <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
         </nav>
       </div>
@@ -229,10 +229,6 @@ function MobileHeader() {
             <Link href="#" className="nav-item neon-green">Products</Link>
             <HeaderDropdown title="Sports Betting" items={sportsBettingItems} titleClassName="neon-orange" />
             <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
-            <HeaderDropdown title="Republican" items={republicanItems} titleClassName="neon-cyan" />
-            <HeaderDropdown title="Democrat" items={democratItems} titleClassName="neon-cyan" />
-            <HeaderDropdown title="Liberal" items={liberalItems} titleClassName="neon-cyan" />
-            <HeaderDropdown title="Independent" items={independentItems} titleClassName="neon-cyan" />
             <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
             <div className="mobile-menu-separator" />
             <Link href="/compare-prices" className="nav-item neon-pink">Compare Prices</Link>
