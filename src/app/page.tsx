@@ -63,14 +63,18 @@ const tokenCategories = [
   { name: 'Forked Chains / Legacy Assets', color: 'glow-pink' },
   { name: 'Testnet or DevNet Tokens', color: 'glow-teal' },
   { name: 'Wrapped Bridge Derivatives', color: 'glow-cyan' },
-  { name: '“Shitcoins” / Unverified Community Tokens', color: 'glow-orange' },
+  { name: 'Shitcoins', color: 'glow-orange' },
 ];
 
 export default function Page() {
   const router = useRouter();
 
   const handleCardClick = (index: string) => {
-    router.push(`/charts/${index.toLowerCase().replace(/ /g, '-')}`);
+    if (index.toLowerCase() === 'shitcoins') {
+      router.push('/shitcoins');
+    } else {
+      router.push(`/charts/${index.toLowerCase().replace(/ /g, '-')}`);
+    }
   };
 
   return (
