@@ -176,6 +176,9 @@ function DesktopHeader() {
       </div>
       <div className="header-middle-layer">
         <nav className="main-nav">
+          <Link href="/" className="nav-item neon-cyan">
+            Home
+          </Link>
           <Link href="#" className="nav-item neon-orange">
             Stocks
           </Link>
@@ -218,6 +221,7 @@ function MobileHeader() {
       {isOpen && (
         <div className="mobile-menu">
           <nav className="mobile-nav-links">
+            <Link href="/" className="nav-item neon-cyan">Home</Link>
             <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
              <Link href="/impact" className="nav-item neon-cyan">Impact</Link>
             <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
