@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-const communityFeaturesItems: DropdownItem[] = [
+const communityItems: DropdownItem[] = [
     { name: 'AI Price Prediction Engine', subtext: 'Forecasting with machine learning' },
     { name: 'ML Pattern Recognition', subtext: 'Identify historical patterns' },
     { name: 'Sentiment Analysis AI', subtext: 'Gauge market mood from news & social' },
@@ -149,6 +149,8 @@ function DesktopHeader() {
             </div>
         </div>
         <div className="nav-right">
+           <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
+           <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
            <Link href="/compare-prices" className="nav-item neon-pink">
             Compare Prices
           </Link>
@@ -168,8 +170,6 @@ function DesktopHeader() {
            <Link href="#" className="nav-item neon-orange">
             Stocks
           </Link>
-          <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
-          <HeaderDropdown title="Community Features" items={communityFeaturesItems} titleClassName="neon-blue" />
           <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
           <Link href="#" className="nav-item neon-green">
             Products
@@ -209,10 +209,10 @@ function MobileHeader() {
       {isOpen && (
         <div className="mobile-menu">
           <nav className="mobile-nav-links">
+            <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
+            <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
             <Link href="/impact" className="nav-item neon-cyan">Impact</Link>
             <Link href="#" className="nav-item neon-orange">Stocks</Link>
-            <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
-            <HeaderDropdown title="Community Features" items={communityFeaturesItems} titleClassName="neon-blue" />
             <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
             <Link href="#" className="nav-item neon-green">Products</Link>
             <HeaderDropdown title="Sports Betting" items={sportsBettingItems} titleClassName="neon-orange" />
