@@ -36,6 +36,7 @@ const tokenCategories = [
   { name: 'FREE MINERS', description: 'Information on free mining opportunities.', color: 'glow-teal', className: 'font-cinzel', route: '/free-miners' },
   { name: 'Shitcoins', description: 'Highly speculative and volatile tokens.', color: 'glow-orange', route: '/shitcoins' },
   { name: 'Coin Validator', description: 'Verify on-chain data and metadata.', color: 'glow-multi-color', route: '/coin-validator' },
+  { name: 'Crypto Features', description: 'Advanced crypto analysis tools.', color: 'glow-gold-blue', route: '/crypto-features' },
   { name: 'CANDL', description: 'Bright orange and pink fluid card.', color: 'glow-orange-pink', route: '#', className: 'text-black' },
 ];
 
