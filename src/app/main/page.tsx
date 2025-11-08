@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const tokenCategories = [
   { name: 'Layer-1 Blockchains', description: 'Base networks like BTC, ETH, SOL.', color: 'glow-cyan', route: '/layer-1' },
@@ -78,6 +79,44 @@ export default function MainPage() {
               </button>
             ))}
           </div>
+          
+          <div className="mt-12">
+            <Card className="info-table-card">
+                <CardHeader>
+                    <CardTitle className="text-2xl neon-text">🐹 Featured Token: Hamster (HAM)</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                             <table className="info-table w-full">
+                                <tbody>
+                                    <tr><td className="neon-cyan">Symbol</td><td className="text-gray-300">HAM</td></tr>
+                                    <tr><td className="neon-cyan">Chain</td><td className="text-gray-300">Binance Smart Chain (BEP-20)</td></tr>
+                                    <tr><td className="neon-cyan">Contract Address</td><td className="text-gray-300 font-mono text-xs">0x50e932f39fbbac3ff4c1c89d3e3f4e3f3f3f3f3f</td></tr>
+                                    <tr><td className="neon-cyan">CoinGecko Listing</td><td><a href="https://www.coingecko.com/en/coins/hamster" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">✅ View on CoinGecko</a></td></tr>
+                                    <tr><td className="neon-cyan">CoinMarketCap</td><td><a href="https://coinmarketcap.com/currencies/hamster/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">✅ View on CMC</a></td></tr>
+                                    <tr><td className="neon-cyan">Telegram Presence</td><td className="text-gray-300">Community-run groups, but *not a Telegram-native token*</td></tr>
+                                    <tr><td className="neon-cyan">Use Case</td><td className="text-gray-300">Meme token with community-driven goals and speculative trading</td></tr>
+                                    <tr><td className="neon-cyan">Market Cap</td><td className="text-gray-300">~$660K</td></tr>
+                                    <tr><td className="neon-cyan">Circulating Supply</td><td className="text-gray-300">~2.38 quadrillion HAM</td></tr>
+                                    <tr><td className="neon-cyan">Max Supply</td><td className="text-gray-300">10 quadrillion HAM</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <h4 className="text-xl font-bold neon-pink mb-4">🔍 Key Notes</h4>
+                            <ul className="list-disc list-inside space-y-2 text-gray-300">
+                                <li>Hamster is a **meme token**, not a DAO governance token.</li>
+                                <li>It is **not integrated with Telegram MiniApps** like TONxDAO or Notcoin.</li>
+                                <li>It has **no verified DAO structure** or on-chain governance.</li>
+                                <li>It is **listed and tradable** on several centralized and decentralized exchanges.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+          </div>
+
         </section>
       </main>
     </>
