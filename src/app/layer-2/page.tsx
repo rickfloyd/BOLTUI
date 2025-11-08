@@ -1,65 +1,46 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Header } from '@/components/layout/header';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
-interface Coin {
-    id: string;
-    symbol: string;
-    name: string;
-    image: string;
-    current_price: number;
-    market_cap: number;
-    market_cap_rank: number;
+interface Layer2Coin {
+  name: string;
+  symbol: string;
+  category: string; // e.g., Optimistic Rollup, ZK-Rollup
+  mainnet: string; // The L1 it scales
 }
+
+const layer2Coins: Layer2Coin[] = [
+  { name: 'Arbitrum', symbol: 'ARB', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
+  { name: 'Optimism', symbol: 'OP', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
+  { name: 'Polygon', symbol: 'MATIC', category: 'Sidechain / PoS', mainnet: 'Ethereum' },
+  { name: 'Starknet', symbol: 'STRK', category: 'ZK-Rollup (Validity)', mainnet: 'Ethereum' },
+  { name: 'zkSync', symbol: 'ZK', category: 'ZK-Rollup', mainnet: 'Ethereum' },
+  { name: 'Mantle', symbol: 'MNT', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
+  { name: 'Immutable X', symbol: 'IMX', category: 'ZK-Rollup (Gaming)', mainnet: 'Ethereum' },
+  { name: 'dYdX', symbol: 'DYDX', category: 'App-Chain (Cosmos SDK)', mainnet: 'Ethereum' },
+  { name: 'Loopring', symbol: 'LRC', category: 'ZK-Rollup (DEX)', mainnet: 'Ethereum' },
+  { name: 'Metis', symbol: 'METIS', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
+  { name: 'Base', symbol: 'BASE', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
+  { name: 'Linea', symbol: 'N/A', category: 'ZK-Rollup', mainnet: 'Ethereum' },
+  { name: 'Manta Pacific', symbol: 'MANTA', category: 'ZK-Rollup', mainnet: 'Ethereum' },
+  { name: 'Scroll', symbol: 'N/A', category: 'ZK-Rollup', mainnet: 'Ethereum' },
+  { name: 'Boba Network', symbol: 'BOBA', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
+];
+
 
 export default function Layer2Page() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [coins, setCoins] = useState<Coin[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchCoins = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch('/api/coingecko/coins');
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.error || 'Failed to fetch coins.');
-        }
-        const data = await response.json();
-        setCoins(data);
-        setError(null);
-      } catch (err: any) {
-        setError(err.message);
-        setCoins([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCoins();
-  }, []);
-
-  const filteredCoins = coins.filter(
+  const filteredCoins = layer2Coins.filter(
     (coin) =>
       coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
   );
   
-  const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
-  }
-  
-   const formatMarketCap = (value: number) => {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', compactDisplay: 'long' }).format(value);
-  }
-
-
   return (
     <>
       <Header />
@@ -69,14 +50,14 @@ export default function Layer2Page() {
             <ArrowLeft size={16} />
             Back to Crypto Classes
           </Link>
-          <h1 className="text-3xl font-bold neon-text text-center mt-8">🔥 Top 50 Cryptocurrencies by Market Cap</h1>
-          <p className="text-lg text-gray-300 text-center">
-            A live, curated list of the top 50 coins from CoinGecko.
+          <h1 className="text-3xl font-bold neon-text text-center mt-8">Layer-2 Scaling Solutions</h1>
+          <p className="text-lg text-gray-300 text-center max-w-2xl mx-auto">
+            These are protocols built on top of Layer-1 blockchains (like Ethereum) to provide faster transactions and lower fees. Below is a curated list of major L2 projects.
           </p>
           <div className="w-full mt-4">
             <Input
               type="text"
-              placeholder="Search coins..."
+              placeholder="Search L2 solutions..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white"
@@ -84,41 +65,26 @@ export default function Layer2Page() {
           </div>
           <div className="w-full overflow-x-auto mt-8">
             <div className="info-table-card">
-              {loading && <p className="text-center text-lg text-gray-300 py-8">Loading top coins...</p>}
-              {error && <p className="text-center text-lg text-red-400 py-8">{error}</p>}
-              {!loading && !error && (
-                <table className="info-table w-full">
-                  <thead>
-                    <tr>
-                      <th>Rank</th>
-                      <th>Coin</th>
-                      <th>Symbol</th>
-                      <th>Price</th>
-                      <th>Market Cap</th>
-                      <th>View on CoinGecko</th>
+              <table className="info-table w-full">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Symbol</th>
+                    <th>Category</th>
+                    <th>Scales</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredCoins.map((coin) => (
+                    <tr key={coin.symbol} className="hover:bg-white/5">
+                      <td className="neon-cyan">{coin.name}</td>
+                      <td className="neon-pink">{coin.symbol}</td>
+                      <td className="neon-blue">{coin.category}</td>
+                      <td className="neon-gold">{coin.mainnet}</td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {filteredCoins.map((coin) => (
-                      <tr key={coin.id} className="hover:bg-white/5">
-                        <td className="neon-orange">{coin.market_cap_rank}</td>
-                        <td className="neon-cyan flex items-center gap-2">
-                           <img src={coin.image} alt={`${coin.name} logo`} className="w-6 h-6 rounded-full" />
-                          {coin.name}
-                        </td>
-                        <td className="neon-pink">{coin.symbol.toUpperCase()}</td>
-                        <td className="neon-blue font-numeric">{formatCurrency(coin.current_price)}</td>
-                        <td className="neon-gold font-numeric">{formatMarketCap(coin.market_cap)}</td>
-                        <td>
-                          <Link href={`https://www.coingecko.com/en/coins/${coin.id}`} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
-                            View More
-                          </Link>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              )}
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
