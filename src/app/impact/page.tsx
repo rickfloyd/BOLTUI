@@ -165,29 +165,29 @@ export default function ImpactPage() {
                     </thead>
                     <tbody className="bg-black/30 divide-y divide-gray-700">
                       <tr>
-                        <td className="px-6 py-4">Booth & branding</td>
-                        <td className="px-6 py-4">$20K</td>
-                        <td className="px-6 py-4">Includes setup, displays</td>
+                        <td className="px-6 py-4 text-green-400">Booth & branding</td>
+                        <td className="px-6 py-4 text-yellow-400">$20K</td>
+                        <td className="px-6 py-4 text-purple-400">Includes setup, displays</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4">Travel (4–6 staff)</td>
-                        <td className="px-6 py-4">$12K</td>
-                        <td className="px-6 py-4">Airfare, lodging, meals</td>
+                        <td className="px-6 py-4 text-green-400">Travel (4–6 staff)</td>
+                        <td className="px-6 py-4 text-yellow-400">$12K</td>
+                        <td className="px-6 py-4 text-purple-400">Airfare, lodging, meals</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4">Compliance officer travel</td>
-                        <td className="px-6 py-4">$5K</td>
-                        <td className="px-6 py-4">To monitor data/promo compliance</td>
+                        <td className="px-6 py-4 text-green-400">Compliance officer travel</td>
+                        <td className="px-6 py-4 text-yellow-400">$5K</td>
+                        <td className="px-6 py-4 text-purple-400">To monitor data/promo compliance</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4">Swag & printed materials</td>
-                        <td className="px-6 py-4">$5K</td>
-                        <td className="px-6 py-4">Shirts, flyers, QR cards</td>
+                        <td className="px-6 py-4 text-green-400">Swag & printed materials</td>
+                        <td className="px-6 py-4 text-yellow-400">$5K</td>
+                        <td className="px-6 py-4 text-purple-400">Shirts, flyers, QR cards</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4">Networking / sponsorship</td>
-                        <td className="px-6 py-4">$8K</td>
-                        <td className="px-6 py-4">VIP dinners, press booths</td>
+                        <td className="px-6 py-4 text-green-400">Networking / sponsorship</td>
+                        <td className="px-6 py-4 text-yellow-400">$8K</td>
+                        <td className="px-6 py-4 text-purple-400">VIP dinners, press booths</td>
                       </tr>
                       <tr className="font-bold bg-gray-800/50">
                         <td className="px-6 py-4">➡️ Per convention total:</td>
