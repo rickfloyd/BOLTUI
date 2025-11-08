@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
@@ -13,7 +13,7 @@ const tokenCategories = [
   { name: 'Stablecoins', description: 'Fiat-pegged assets (USDT, USDC, DAI).', color: 'glow-gold', route: '/stablecoins' },
   { name: 'Wrapped Assets', description: 'Tokens backed by others (WBTC, WETH).', color: 'glow-pink', route: '/wrapped-assets' },
   { name: 'Exchange Tokens', description: 'Power trading platforms (BNB, OKB, HT).', color: 'glow-teal', route: '/exchange-tokens' },
-  { name: 'Governance Tokens', description: 'DAO voting rights (COMP, MKR, AAVE).', color: 'glow-cyan' },
+  { name: 'Governance Tokens', description: 'DAO voting rights (COMP, MKR, AAVE).', color: 'glow-cyan', route: '/dao-tokens' },
   { name: 'Utility Tokens', description: 'Access or pay for services (BAT, CHZ).', color: 'glow-orange', route: '/utility-tokens' },
   { name: 'Privacy Coins', description: 'Hide sender and receiver data (XMR, ZEC).', color: 'glow-blue', route: '/privacy-coins' },
   { name: 'Interoperability Tokens', description: 'Link different blockchains (DOT, ATOM).', color: 'glow-gold', route: '/interoperability' },
@@ -39,8 +39,64 @@ const tokenCategories = [
   { name: 'CANDL', description: 'Bright orange and pink fluid card.', color: 'glow-orange-pink', route: '#', className: 'text-black' },
 ];
 
+const potentialFeaturedTokens = [
+    { id: 'chainlink', symbol: 'LINK', name: 'Chainlink' },
+    { id: 'the-graph', symbol: 'GRT', name: 'The Graph' },
+    { id: 'render-token', symbol: 'RNDR', name: 'Render Token' },
+    { id: 'bittensor', symbol: 'TAO', name: 'Bittensor' },
+    { id: 'kaspa', symbol: 'KAS', name: 'Kaspa'},
+    { id: 'hamster', symbol: 'HAM', name: 'Hamster'},
+    { id: 'pepe', symbol: 'PEPE', name: 'Pepe'}
+];
+
+const formatCurrency = (value: number | null | undefined) => {
+    if (value === null || value === undefined) return 'N/A';
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
+}
+
+const formatLargeNumber = (value: number | null | undefined) => {
+    if (value === null || value === undefined) return 'N/A';
+    return new Intl.NumberFormat('en-US', { notation: 'compact', compactDisplay: 'long' }).format(value);
+};
+
 export default function MainPage() {
   const router = useRouter();
+  const [featuredToken, setFeaturedToken] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchFeaturedToken = async () => {
+      try {
+        setLoading(true);
+        const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 48));
+        const tokenInfo = potentialFeaturedTokens[dayIndex % potentialFeaturedTokens.length];
+
+        const response = await fetch(`/api/coingecko/coins`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch token list from API.');
+        }
+        const allCoins = await response.json();
+        
+        const tokenData = allCoins.find((coin: any) => coin.id === tokenInfo.id);
+
+        if(tokenData) {
+            setFeaturedToken(tokenData);
+        } else {
+             // Fallback to Hamster if the selected token isn't in the top 50
+            const hamsterData = allCoins.find((coin: any) => coin.id === 'hamster');
+            setFeaturedToken(hamsterData);
+        }
+
+      } catch (error) {
+        console.error("Failed to fetch featured token:", error);
+        setFeaturedToken(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFeaturedToken();
+  }, []);
 
   const handleCardClick = (item: typeof tokenCategories[0]) => {
     if (item.route) {
@@ -84,36 +140,42 @@ export default function MainPage() {
           <div className="mt-12">
             <Card className="info-table-card">
                 <CardHeader>
-                    <CardTitle className="text-2xl neon-text">🐹 Featured Token: Hamster (HAM)</CardTitle>
+                    <CardTitle className="text-2xl neon-text">
+                        {loading ? 'Loading Featured Token...' : `Featured Token: ${featuredToken?.name || 'N/A'} (${featuredToken?.symbol?.toUpperCase() || 'N/A'})`}
+                    </CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                             <table className="info-table w-full">
-                                <tbody>
-                                    <tr><td className="neon-cyan">Symbol</td><td className="text-gray-300">HAM</td></tr>
-                                    <tr><td className="neon-cyan">Chain</td><td className="text-gray-300">Binance Smart Chain (BEP-20)</td></tr>
-                                    <tr><td className="neon-cyan">Contract Address</td><td className="text-gray-300 font-mono text-xs">0x50e932f39fbbac3ff4c1c89d3e3f4e3f3f3f3f3f</td></tr>
-                                    <tr><td className="neon-cyan">CoinGecko Listing</td><td><a href="https://www.coingecko.com/en/coins/hamster" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">✅ View on CoinGecko</a></td></tr>
-                                    <tr><td className="neon-cyan">CoinMarketCap</td><td><a href="https://coinmarketcap.com/currencies/hamster/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">✅ View on CMC</a></td></tr>
-                                    <tr><td className="neon-cyan">Telegram Presence</td><td className="text-gray-300">Community-run groups, but *not a Telegram-native token*</td></tr>
-                                    <tr><td className="neon-cyan">Use Case</td><td className="text-gray-300">Meme token with community-driven goals and speculative trading</td></tr>
-                                    <tr><td className="neon-cyan">Market Cap</td><td className="text-gray-300">~$660K</td></tr>
-                                    <tr><td className="neon-cyan">Circulating Supply</td><td className="text-gray-300">~2.38 quadrillion HAM</td></tr>
-                                    <tr><td className="neon-cyan">Max Supply</td><td className="text-gray-300">10 quadrillion HAM</td></tr>
-                                </tbody>
-                            </table>
+                    {loading ? (
+                        <div className="text-center text-gray-400">Fetching latest data...</div>
+                    ) : featuredToken ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <table className="info-table w-full">
+                                    <tbody>
+                                        <tr><td className="neon-cyan">Symbol</td><td className="text-gray-300">{featuredToken.symbol.toUpperCase()}</td></tr>
+                                        <tr><td className="neon-cyan">Price</td><td className="text-gray-300 font-numeric">{formatCurrency(featuredToken.current_price)}</td></tr>
+                                        <tr><td className="neon-cyan">Market Cap</td><td className="text-gray-300 font-numeric">{formatCurrency(featuredToken.market_cap)}</td></tr>
+                                        <tr><td className="neon-cyan">Market Cap Rank</td><td className="text-gray-300 font-numeric">#{featuredToken.market_cap_rank}</td></tr>
+                                        <tr><td className="neon-cyan">Circulating Supply</td><td className="text-gray-300 font-numeric">{formatLargeNumber(featuredToken.circulating_supply)}</td></tr>
+                                        <tr><td className="neon-cyan">Max Supply</td><td className="text-gray-300 font-numeric">{formatLargeNumber(featuredToken.max_supply) || 'N/A'}</td></tr>
+                                        <tr><td className="neon-cyan">CoinGecko</td><td><a href={`https://www.coingecko.com/en/coins/${featuredToken.id}`} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">✅ View on CoinGecko</a></td></tr>
+                                        <tr><td className="neon-cyan">CoinMarketCap</td><td><a href={`https://coinmarketcap.com/currencies/${featuredToken.id}/`} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">✅ View on CMC</a></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>
+                                <h4 className="text-xl font-bold neon-pink mb-4">🔍 Key Notes</h4>
+                                <ul className="list-disc list-inside space-y-2 text-gray-300">
+                                    <li>This token is selected from a curated list and rotates every 48 hours.</li>
+                                    <li>Market data is live from the CoinGecko API.</li>
+                                    <li>Always do your own research (DYOR) before making any investment decisions.</li>
+                                    <li>This is not financial advice.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div>
-                            <h4 className="text-xl font-bold neon-pink mb-4">🔍 Key Notes</h4>
-                            <ul className="list-disc list-inside space-y-2 text-gray-300">
-                                <li>Hamster is a **meme token**, not a DAO governance token.</li>
-                                <li>It is **not integrated with Telegram MiniApps** like TONxDAO or Notcoin.</li>
-                                <li>It has **no verified DAO structure** or on-chain governance.</li>
-                                <li>It is **listed and tradable** on several centralized and decentralized exchanges.</li>
-                            </ul>
-                        </div>
-                    </div>
+                    ) : (
+                         <div className="text-center text-red-400">Could not load featured token data.</div>
+                    )}
                 </CardContent>
             </Card>
           </div>
