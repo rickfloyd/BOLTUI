@@ -15,7 +15,7 @@ const tokenCategories = [
   { name: 'Governance Tokens', description: 'DAO voting rights (COMP, MKR, AAVE).', color: 'glow-cyan' },
   { name: 'Utility Tokens', description: 'Access or pay for services (BAT, CHZ).', color: 'glow-orange', route: '/utility-tokens' },
   { name: 'Privacy Coins', description: 'Hide sender and receiver data (XMR, ZEC).', color: 'glow-blue' },
-  { name: 'Interoperability Tokens', description: 'Link different blockchains (DOT, ATOM).', color: 'glow-gold' },
+  { name: 'Interoperability Tokens', description: 'Link different blockchains (DOT, ATOM).', color: 'glow-gold', route: '/interoperability' },
   { name: 'DeFi Protocol Tokens', description: 'Drive DeFi platforms (CRV, SNX, AAVE).', color: 'glow-pink' },
   { name: 'Lending & Borrowing Tokens', description: 'Enable crypto loans (COMP, AAVE).', color: 'glow-teal' },
   { name: 'Yield-Farming Tokens', description: 'Earn rewards via liquidity (CAKE, FXS).', color: 'glow-cyan' },
