@@ -593,14 +593,17 @@ body.animation-page {
 }
 
 @keyframes glowPulse {
-  0%, 100% { text-shadow: 0 0 10px hsl(var(--neon-blue)), 0 0 25px hsl(var(--neon-pink)); }
-  50% { text-shadow: 0 0 20px hsl(var(--neon-blue)), 0 0 40px hsl(var(--neon-pink)); }
+  0%, 100% { text-shadow: 0 0 20px hsl(var(--neon-gold)), 0 0 40px hsl(var(--neon-blue)); }
+  50% { text-shadow: 0 0 35px hsl(var(--neon-gold)), 0 0 60px hsl(var(--neon-blue)); }
 }
 .glow-text {
   animation: glowPulse 3s ease-in-out infinite;
-  color: hsl(var(--neon-green)) !important;
+  color: hsl(var(--neon-gold)) !important;
 }
 
     
+
+    
+
 
     
