@@ -11,7 +11,7 @@ export default function PoliciesPage() {
           <div className="relative z-10 p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(255,0,255,0.4)] backdrop-blur-md border border-cyan-400/40">
             <div className="text-center mb-12">
               <ShieldCheck className="mx-auto h-16 w-16 text-cyan-300 drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]" />
-              <h1 className="text-4xl md:text-5xl font-extrabold mt-6 text-pink-400 drop-shadow-[0_0_12px_rgba(255,0,255,0.6)]">
+              <h1 className="text-4xl md:text-5xl font-extrabold mt-6 text-white drop-shadow-[0_0_12px_rgba(255,0,255,0.6)]">
                 Our Customer Trust & Policies
               </h1>
               <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
@@ -22,7 +22,7 @@ export default function PoliciesPage() {
             <div className="space-y-10">
               {/* Pricing & Billing Policies */}
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-cyan-300 border-b-2 border-cyan-500/30 pb-3">1. Pricing &amp; Billing Policies</h2>
+                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3">1. Pricing &amp; Billing Policies</h2>
                 <ul className="space-y-6 text-gray-300 text-lg">
                   <li>
                     <strong className="text-white block text-xl font-semibold">The "Price Lock" Guarantee</strong>
@@ -49,7 +49,7 @@ export default function PoliciesPage() {
 
               {/* Service & Feature Policies */}
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-cyan-300 border-b-2 border-cyan-500/30 pb-3">2. Service &amp; Feature Policies</h2>
+                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3">2. Service &amp; Feature Policies</h2>
                 <ul className="space-y-6 text-gray-300 text-lg">
                   <li>
                     <strong className="text-white block text-xl font-semibold">The "Feature-Lock" Guarantee</strong>
