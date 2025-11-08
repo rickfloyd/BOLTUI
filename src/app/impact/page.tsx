@@ -11,7 +11,7 @@ export default function ImpactPage() {
           <div className="relative z-10 p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(255,0,255,0.4)] backdrop-blur-md border border-pink-400/40">
             <div className="text-center mb-12">
               <HeartHandshake className="mx-auto h-16 w-16 text-pink-400 drop-shadow-[0_0_8px_rgba(255,0,255,0.6)]" />
-              <h1 className="text-4xl md:text-5xl font-extrabold mt-6 text-blue-800" style={{ textShadow: 'none', filter: 'drop-shadow(0 0 12px rgba(255, 105, 180, 0.8))' }}>
+              <h1 className="text-4xl md:text-5xl font-extrabold mt-6 text-pink-400 drop-shadow-[0_0_12px_rgba(255,105,180,0.8)]">
                 AI Quantum Charts — Where Your Subscription Goes
               </h1>
               <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
@@ -33,7 +33,7 @@ export default function ImpactPage() {
 
               {/* How Each $1 Is Used */}
               <section>
-                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3">💰 How Each <span className="text-green-400">$1</span> Is Used</h2>
+                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3"><span className="text-hot-cyan">How Each </span><span className="text-green-400">$1</span> <span className="text-hot-cyan">Is Used</span></h2>
                 <div className="overflow-x-auto">
                   <table className="min-w-full divide-y divide-gray-700">
                     <thead className="bg-gray-800/50">
@@ -44,13 +44,13 @@ export default function ImpactPage() {
                       </tr>
                     </thead>
                     <tbody className="bg-black/30 divide-y divide-gray-700">
-                      <tr><td className="px-6 py-4">🧠 Grants & Community Funding</td><td className="px-6 py-4"><span className="neon-gold">20 %</span></td><td className="px-6 py-4">Directly supports the annual $2.5 M grant pool</td></tr>
-                      <tr><td className="px-6 py-4">💻 Development & Engineering</td><td className="px-6 py-4"><span className="neon-gold">30 %</span></td><td className="px-6 py-4">Front-end + back-end dev team salaries and AI research</td></tr>
-                      <tr><td className="px-6 py-4">☁️ Cloud Hosting & Data Feeds</td><td className="px-6 py-4"><span className="neon-gold">10 %</span></td><td className="px-6 py-4">Servers, CDN, API licenses (Finnhub, TwelveData, Polygon)</td></tr>
-                      <tr><td className="px-6 py-4">📣 Marketing & Conventions</td><td className="px-6 py-4"><span className="neon-gold">15 %</span></td><td className="px-6 py-4">Social media teams, event booths, trader education tours</td></tr>
-                      <tr><td className="px-6 py-4">⚖️ Legal & Compliance</td><td className="px-6 py-4"><span className="neon-gold">15 %</span></td><td className="px-6 py-4">SEC / CFTC / FTC attorneys, GDPR audits, insurance coverage</td></tr>
-                      <tr><td className="px-6 py-4">🧾 Administration & Support</td><td className="px-6 py-4"><span className="neon-gold">5 %</span></td><td className="px-6 py-4">Payroll, finance, customer service</td></tr>
-                      <tr><td className="px-6 py-4">💡 Innovation Reserve</td><td className="px-6 py-4"><span className="neon-gold">5 %</span></td><td className="px-6 py-4">New feature R&D, education initiatives, emergency funds</td></tr>
+                      <tr><td className="px-6 py-4"><span className="multi-color-text">🧠 Grants & Community Funding</span></td><td className="px-6 py-4"><span className="neon-gold">20 %</span></td><td className="px-6 py-4 text-hot-cyan">Directly supports the annual $2.5 M grant pool</td></tr>
+                      <tr><td className="px-6 py-4"><span className="multi-color-text">💻 Development & Engineering</span></td><td className="px-6 py-4"><span className="neon-gold">30 %</span></td><td className="px-6 py-4 text-hot-cyan">Front-end + back-end dev team salaries and AI research</td></tr>
+                      <tr><td className="px-6 py-4"><span className="multi-color-text">☁️ Cloud Hosting & Data Feeds</span></td><td className="px-6 py-4"><span className="neon-gold">10 %</span></td><td className="px-6 py-4 text-hot-cyan">Servers, CDN, API licenses (Finnhub, TwelveData, Polygon)</td></tr>
+                      <tr><td className="px-6 py-4"><span className="multi-color-text">📣 Marketing & Conventions</span></td><td className="px-6 py-4"><span className="neon-gold">15 %</span></td><td className="px-6 py-4 text-hot-cyan">Social media teams, event booths, trader education tours</td></tr>
+                      <tr><td className="px-6 py-4"><span className="multi-color-text">⚖️ Legal & Compliance</span></td><td className="px-6 py-4"><span className="neon-gold">15 %</span></td><td className="px-6 py-4 text-hot-cyan">SEC / CFTC / FTC attorneys, GDPR audits, insurance coverage</td></tr>
+                      <tr><td className="px-6 py-4"><span className="multi-color-text">🧾 Administration & Support</span></td><td className="px-6 py-4"><span className="neon-gold">5 %</span></td><td className="px-6 py-4 text-hot-cyan">Payroll, finance, customer service</td></tr>
+                      <tr><td className="px-6 py-4"><span className="multi-color-text">💡 Innovation Reserve</span></td><td className="px-6 py-4"><span className="neon-gold">5 %</span></td><td className="px-6 py-4 text-hot-cyan">New feature R&D, education initiatives, emergency funds</td></tr>
                       <tr className="font-bold bg-gray-800/50"><td className="px-6 py-4">Total:</td><td className="px-6 py-4"><span className="neon-gold">100 %</span></td><td className="px-6 py-4"></td></tr>
                     </tbody>
                   </table>
