@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -19,7 +20,7 @@ const tokenCategories = [
   { name: 'DeFi Protocol Tokens', description: 'Drive DeFi platforms (CRV, SNX, AAVE).', color: 'glow-pink', route: '/defi-protocols' },
   { name: 'Lending & Borrowing Tokens', description: 'Enable crypto loans (COMP, AAVE).', color: 'glow-teal' },
   { name: 'Yield-Farming Tokens', description: 'Earn rewards via liquidity (CAKE, FXS).', color: 'glow-cyan' },
-  { name: 'Synthetic Asset Tokens', description: 'Mirror real-world prices (SXP, SNX).', color: 'glow-orange' },
+  { name: 'Synthetic Asset Tokens', description: 'Mirror real-world prices (SXP, SNX).', color: 'glow-orange', route: '/synthetic-assets' },
   { name: 'Oracle Tokens', description: 'Deliver price and data feeds (LINK, BAND).', color: 'glow-blue' },
   { name: 'Gaming Tokens', description: 'Power play-to-earn games (AXS, GALA).', color: 'glow-gold' },
   { name: 'Metaverse Tokens', description: 'Virtual worlds & assets (MANA, SAND).', color: 'glow-pink' },
