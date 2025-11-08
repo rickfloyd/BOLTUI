@@ -1,77 +1,74 @@
-
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from '@/components/layout/header';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 interface Coin {
-  name: string;
+  id: string;
   symbol: string;
+  name: string;
+  image: string;
+  current_price: number;
+  market_cap: number;
+  market_cap_rank: number;
 }
 
-const proofOfWorkCoins: Coin[] = [
-    { name: 'Bitcoin', symbol: 'BTC' },
-    { name: 'Dogecoin', symbol: 'DOGE' },
-    { name: 'Bitcoin Cash', symbol: 'BCH' },
-    { name: 'Litecoin', symbol: 'LTC' },
-    { name: 'Zcash', symbol: 'ZEC' },
-    { name: 'Monero', symbol: 'XMR' },
-    { name: 'Ethereum Classic', symbol: 'ETC' },
-    { name: 'Dash', symbol: 'DASH' },
-    { name: 'Kaspa', symbol: 'KAS' },
-    { name: 'Decred', symbol: 'DCR' },
-    { name: 'Beldex', symbol: 'BDX' },
-    { name: 'Conflux', symbol: 'CFX' },
-    { name: 'Horizen', symbol: 'ZEN' },
-    { name: 'DigiByte', symbol: 'DGB' },
-    { name: 'Ravencoin', symbol: 'RVN' },
-    { name: 'Nervos Network', symbol: 'CKB' },
-    { name: 'Siacoin', symbol: 'SC' },
-    { name: 'EthereumPoW', symbol: 'ETHW' },
-    { name: 'Ergo', symbol: 'ERG' },
-    { name: 'Flux', symbol: 'FLUX' },
-    { name: 'Syscoin', symbol: 'SYS' },
-    { name: 'Firo', symbol: 'FIRO' },
-    { name: 'Quantum Resistant Ledger', symbol: 'QRL' },
-    { name: 'Groestlcoin', symbol: 'GRS' },
-    { name: 'Quai Network', symbol: 'QUAI' },
-    { name: 'Hathor', symbol: 'HTR' },
-    { name: 'Beam', symbol: 'BEAM' },
-    { name: 'Namecoin', symbol: 'NMC' },
-    { name: 'Counterparty', symbol: 'XCP' },
-    { name: 'MonaCoin', symbol: 'MONA' },
-    { name: 'Komodo', symbol: 'KMD' },
-    { name: 'Bitcoin Diamond', symbol: 'BCD' },
-    { name: 'Vertcoin', symbol: 'VTC' },
-    { name: 'BitcoinZ', symbol: 'BTCZ' },
-    { name: 'Bytecoin', symbol: 'BCN' },
-    { name: 'Aeternity', symbol: 'AE' },
-    { name: 'Bytom', symbol: 'BTM' },
-    { name: 'DigitalNote', symbol: 'XDN' },
-    { name: 'ZClassic', symbol: 'ZCL' },
-    { name: 'Litecoin Cash', symbol: 'LCC' },
-    { name: 'Primecoin', symbol: 'XPM' },
-    { name: 'Feathercoin', symbol: 'FTC' },
-    { name: 'AEON', symbol: 'AEON' },
-    { name: 'Bismuth', symbol: 'BIS' },
-    { name: 'MyriadCoin', symbol: 'XMY' },
-    { name: 'PotCoin', symbol: 'POT' },
-    { name: 'Anoncoin', symbol: 'ANC' },
-    { name: 'NewYorkCoin', symbol: 'NYC' },
-    { name: 'QuarkCoin', symbol: 'QRK' },
+const proofOfWorkSymbols: string[] = [
+    'btc', 'doge', 'bch', 'ltc', 'zec', 'xmr', 'etc', 'dash', 'kas', 'dcr', 
+    'bdx', 'cfx', 'zen', 'dgb', 'rvn', 'ckb', 'sc', 'ethw', 'erg', 'flux',
+    'sys', 'firo', 'qrl', 'grs', 'quai', 'htr', 'beam', 'nmc', 'xcp', 'mona',
+    'kmd', 'bcd', 'vtc', 'btcz', 'bcn', 'ae', 'btm', 'xdn', 'zcl', 'lcc',
+    'xpm', 'ftc', 'aeon', 'bis', 'xmy', 'pot', 'anc', 'nyc', 'qrk'
 ];
 
 export default function ProofOfWorkPage() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [coins, setCoins] = useState<Coin[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const filteredCoins = proofOfWorkCoins.filter(
+  useEffect(() => {
+    const fetchCoins = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/api/coingecko/coins'); 
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to fetch Proof of Work coins.');
+        }
+        const data: Coin[] = await response.json();
+        
+        const powCoins = data.filter(coin => proofOfWorkSymbols.includes(coin.symbol.toLowerCase()));
+        
+        setCoins(powCoins);
+        setError(null);
+      } catch (err: any) {
+        setError(err.message);
+        setCoins([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCoins();
+  }, []);
+
+  const filteredCoins = coins.filter(
     (coin) =>
       coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
+  }
+  
+   const formatMarketCap = (value: number) => {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', compactDisplay: 'long' }).format(value);
+  }
 
   return (
     <>
@@ -84,7 +81,7 @@ export default function ProofOfWorkPage() {
           </Link>
           <h1 className="text-3xl font-bold neon-text text-center mt-8">Proof of Work (PoW) Coins</h1>
           <p className="text-lg text-gray-300 text-center">
-            A list of cryptocurrencies that use the Proof of Work consensus mechanism.
+            A list of cryptocurrencies that use the Proof of Work consensus mechanism, with live data from the top 50 coins by market cap.
           </p>
           <div className="w-full mt-4">
             <Input
@@ -97,24 +94,41 @@ export default function ProofOfWorkPage() {
           </div>
           <div className="w-full overflow-x-auto mt-8">
             <div className="info-table-card">
-              <table className="info-table w-full">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Platform</th>
-                    <th>Symbol</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredCoins.map((coin, index) => (
-                    <tr key={coin.symbol} className="hover:bg-white/5">
-                      <td className="neon-orange">{index + 1}</td>
-                      <td className="neon-cyan">{coin.name}</td>
-                      <td className="neon-pink">{coin.symbol.toUpperCase()}</td>
+              {loading && <p className="text-center text-lg text-gray-300 py-8">Loading PoW coins...</p>}
+              {error && <p className="text-center text-lg text-red-400 py-8">{error}</p>}
+              {!loading && !error && (
+                <table className="info-table w-full">
+                  <thead>
+                    <tr>
+                      <th>Rank</th>
+                      <th>Coin</th>
+                      <th>Symbol</th>
+                      <th>Price</th>
+                      <th>Market Cap</th>
+                      <th>View on CoinGecko</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {filteredCoins.map((coin) => (
+                      <tr key={coin.id} className="hover:bg-white/5">
+                        <td className="neon-orange">{coin.market_cap_rank}</td>
+                        <td className="neon-cyan flex items-center gap-2">
+                           <img src={coin.image} alt={`${coin.name} logo`} className="w-6 h-6 rounded-full" />
+                          {coin.name}
+                        </td>
+                        <td className="neon-pink">{coin.symbol.toUpperCase()}</td>
+                        <td className="neon-blue font-numeric">{formatCurrency(coin.current_price)}</td>
+                        <td className="neon-gold font-numeric">{formatMarketCap(coin.market_cap)}</td>
+                        <td>
+                          <Link href={`https://www.coingecko.com/en/coins/${coin.id}`} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
+                            View More
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
             </div>
           </div>
         </section>
