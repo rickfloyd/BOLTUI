@@ -133,7 +133,7 @@ const independentItems: DropdownItem[] = [
   { name: 'USA Today', type: 'link', href: 'https://www.usatoday.com' },
 ];
 
-const sportsBettingItems: DropdownItem[] = [
+const lasVegasStatsItems: DropdownItem[] = [
   { name: 'North American Major Sports', subtext: 'NFL, NCAAF, NBA, WNBA, NCAAB, MLB, NHL, Soccer', type: 'link', href: '#' },
   { name: 'Combat Sports', subtext: 'Boxing, MMA, UFC', type: 'link', href: '#' },
   { name: 'Racing', subtext: 'NASCAR, Formula 1, Horse Racing', type: 'link', href: '#' },
@@ -195,7 +195,7 @@ function DesktopHeader() {
       </div>
       <div className="header-bottom-layer">
         <nav className="main-nav">
-          <HeaderDropdown title="Sports Betting" items={sportsBettingItems} titleClassName="neon-orange" />
+          <HeaderDropdown title={<>Las Vegas<br/>Stats</>} items={lasVegasStatsItems} titleClassName="neon-gold glow-text" />
           <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
           <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
         </nav>
@@ -233,7 +233,7 @@ function MobileHeader() {
               </Link>
             <HeaderDropdown title={<>Guilty<br />Pleasures</>} items={guiltyPleasuresItems} titleClassName="neon-pink" />
             <HeaderDropdown title="FX Matrix Analyzer" items={fxMatrixItems} titleClassName="neon-green" />
-            <HeaderDropdown title="Sports Betting" items={sportsBettingItems} titleClassName="neon-orange" />
+            <HeaderDropdown title={<>Las Vegas<br/>Stats</>} items={lasVegasStatsItems} titleClassName="neon-gold glow-text" />
             <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
             <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
             <div className="mobile-menu-separator" />
@@ -269,3 +269,5 @@ export function Header() {
     </header>
   );
 }
+
+    

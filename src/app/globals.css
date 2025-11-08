@@ -488,6 +488,7 @@ h1, h2, h3, .title {
 .neon-blue { color: hsl(var(--neon-blue)); }
 .neon-orange { color: hsl(var(--neon-orange)); }
 .neon-green { color: hsl(var(--neon-green)); }
+.neon-gold { color: hsl(var(--neon-gold)); }
 .neon-purple { color: hsl(var(--neon-pink)); }
 
 
@@ -576,6 +577,9 @@ body.animation-page {
 }
 .glow-text {
   animation: glowPulse 3s ease-in-out infinite;
+  color: hsl(var(--neon-green)) !important;
 }
+
+    
 
     
