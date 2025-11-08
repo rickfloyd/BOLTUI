@@ -43,6 +43,8 @@ export default function MainPage() {
       router.push('/shitcoins');
     } else if (routeName === 'layer-1-blockchains') {
       router.push('/layer-1');
+    } else if (routeName === 'proof-of-stake') {
+      router.push('/proof-of-stake');
     }
      else {
       router.push(`/charts/${routeName}`);
