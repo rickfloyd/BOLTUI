@@ -23,7 +23,7 @@ const tokenCategories = [
   { name: 'Synthetic Asset Tokens', description: 'Mirror real-world prices (SXP, SNX).', color: 'glow-orange', route: '/synthetic-assets' },
   { name: 'Oracle Tokens', description: 'Deliver price and data feeds (LINK, BAND).', color: 'glow-blue', route: '/oracles' },
   { name: 'Gaming Tokens', description: 'Power play-to-earn games (AXS, GALA).', color: 'glow-gold', route: '/gaming' },
-  { name: 'Metaverse Tokens', description: 'Virtual worlds & assets (MANA, SAND).', color: 'glow-pink' },
+  { name: 'Metaverse Tokens', description: 'Virtual worlds & assets (MANA, SAND).', color: 'glow-pink', route: '/metaverse' },
   { name: 'NFT Ecosystem Tokens', description: 'NFT markets & tools (APE, RARI).', color: 'glow-teal' },
   { name: 'Meme Coins', description: 'Hype-based community tokens (DOGE, SHIB, PEPE).', color: 'glow-cyan', route: '/shitcoins' },
   { name: 'Community / Social Tokens', description: 'Represent online groups or influencers.', color: 'glow-orange' },
