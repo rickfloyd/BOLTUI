@@ -189,12 +189,12 @@ function DesktopHeader() {
           <Link href="#" className="nav-item neon-blue">
             FUTURES AND COMMODITIES
           </Link>
-          <HeaderDropdown title={<>Guilty<br />Pleasures</>} items={guiltyPleasuresItems} titleClassName="neon-pink" />
-          <HeaderDropdown title="FX Matrix Analyzer" items={fxMatrixItems} titleClassName="neon-green" />
         </nav>
       </div>
       <div className="header-bottom-layer">
         <nav className="main-nav">
+          <HeaderDropdown title={<>Guilty<br />Pleasures</>} items={guiltyPleasuresItems} titleClassName="neon-pink" />
+          <HeaderDropdown title="FX Matrix Analyzer" items={fxMatrixItems} titleClassName="neon-green" />
           <HeaderDropdown title={<>Las Vegas<br/>Stats</>} items={lasVegasStatsItems} titleClassName="neon-gold glow-text" />
           <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
           <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
