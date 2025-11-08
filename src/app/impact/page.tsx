@@ -8,7 +8,7 @@ export default function ImpactPage() {
       <Header />
       <main className="min-h-screen bg-black text-white">
         <div className="container mx-auto px-4 py-12 md:py-20">
-          <div className="relative z-10 p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(0,255,255,0.4)] backdrop-blur-md border border-pink-400/40">
+          <div className="relative z-10 p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(255,0,255,0.4)] backdrop-blur-md border border-pink-400/40">
             <div className="text-center mb-12">
               <HeartHandshake className="mx-auto h-16 w-16 text-pink-400 drop-shadow-[0_0_8px_rgba(255,0,255,0.6)]" />
               <h1 className="text-4xl md:text-5xl font-extrabold mt-6 text-blue-800" style={{ textShadow: 'none', filter: 'drop-shadow(0 0 12px rgba(255, 105, 180, 0.8))' }}>
@@ -59,18 +59,18 @@ export default function ImpactPage() {
 
               {/* Annual Operating Model */}
               <section>
-                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3">📊 Annual Operating Model (Approx.)</h2>
+                <h2 className="text-3xl font-bold mb-6 text-pink-400 border-b-2 border-cyan-500/30 pb-3">📊 Annual Operating Model (Approx.)</h2>
                 <div className="overflow-x-auto">
                    <table className="min-w-full divide-y divide-gray-700">
                         <thead className="bg-gray-800/50"><tr><th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Cost Center</th><th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Annual Budget (USD)</th><th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Notes</th></tr></thead>
                         <tbody className="bg-black/30 divide-y divide-gray-700">
-                            <tr><td className="px-6 py-4">Grants Fund (100 × $25 K)</td><td className="px-6 py-4"><span className="neon-gold">$2,500,000</span></td><td className="px-6 py-4">Reinvested directly into community grants</td></tr>
-                            <tr><td className="px-6 py-4">Engineering Team (12–15 staff)</td><td className="px-6 py-4"><span className="neon-gold">$1.8 M</span></td><td className="px-6 py-4">Continuous front-end / back-end innovation</td></tr>
-                            <tr><td className="px-6 py-4">Infrastructure & Data Feeds</td><td className="px-6 py-4"><span className="neon-gold">$150 K</span></td><td className="px-6 py-4">Cloud hosting + market data providers</td></tr>
-                            <tr><td className="px-6 py-4">Legal / Compliance / Auditing</td><td className="px-6 py-4"><span className="neon-gold">$700 K</span></td><td className="px-6 py-4">SEC / CFTC / FTC / GDPR compliance</td></tr>
-                            <tr><td className="px-6 py-4">Marketing & Conventions</td><td className="px-6 py-4"><span className="neon-gold">$400 K</span></td><td className="px-6 py-4">Global events + weekly social outreach</td></tr>
-                            <tr><td className="px-6 py-4">Admin & Insurance</td><td className="px-6 py-4"><span className="neon-gold">$150 K</span></td><td className="px-6 py-4">HR, payroll, cyber liability coverage</td></tr>
-                            <tr className="font-bold bg-gray-800/50"><td className="px-6 py-4 text-blue-400">Total Annual Operating Budget:</td><td className="px-6 py-4"><span className="neon-gold">≈ $5.7 Million</span></td><td className="px-6 py-4"></td></tr>
+                            <tr><td className="px-6 py-4 text-blue-400">Grants Fund (100 × $25 K)</td><td className="px-6 py-4"><span className="neon-gold">$2,500,000</span></td><td className="px-6 py-4 text-green-400">Reinvested directly into community grants</td></tr>
+                            <tr><td className="px-6 py-4 text-blue-400">Engineering Team (12–15 staff)</td><td className="px-6 py-4"><span className="neon-gold">$1.8 M</span></td><td className="px-6 py-4 text-green-400">Continuous front-end / back-end innovation</td></tr>
+                            <tr><td className="px-6 py-4 text-blue-400">Infrastructure & Data Feeds</td><td className="px-6 py-4"><span className="neon-gold">$150 K</span></td><td className="px-6 py-4 text-green-400">Cloud hosting + market data providers</td></tr>
+                            <tr><td className="px-6 py-4 text-blue-400">Legal / Compliance / Auditing</td><td className="px-6 py-4"><span className="neon-gold">$700 K</span></td><td className="px-6 py-4 text-green-400">SEC / CFTC / FTC / GDPR compliance</td></tr>
+                            <tr><td className="px-6 py-4 text-blue-400">Marketing & Conventions</td><td className="px-6 py-4"><span className="neon-gold">$400 K</span></td><td className="px-6 py-4 text-green-400">Global events + weekly social outreach</td></tr>
+                            <tr><td className="px-6 py-4 text-blue-400">Admin & Insurance</td><td className="px-6 py-4"><span className="neon-gold">$150 K</span></td><td className="px-6 py-4 text-green-400">HR, payroll, cyber liability coverage</td></tr>
+                            <tr className="font-bold bg-gray-800/50"><td className="px-6 py-4 text-blue-400">Total Annual Operating Budget:</td><td className="px-6 py-4"><span className="neon-gold">≈ $5.7 Million</span></td><td className="px-6 py-4 text-green-400"></td></tr>
                         </tbody>
                    </table>
                 </div>
