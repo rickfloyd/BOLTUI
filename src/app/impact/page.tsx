@@ -190,12 +190,12 @@ export default function ImpactPage() {
                         <td className="px-6 py-4 text-purple-400">VIP dinners, press booths</td>
                       </tr>
                       <tr className="font-bold bg-gray-800/50">
-                        <td className="px-6 py-4">➡️ Per convention total:</td>
-                        <td className="px-6 py-4" colSpan={2}>~$50K</td>
+                        <td className="px-6 py-4 text-green-400">➡️ Per convention total:</td>
+                        <td className="px-6 py-4 text-green-400" colSpan={2}>~$50K</td>
                       </tr>
                     </tbody>
                   </table>
-                  <p className="text-center mt-4">6–8 conventions/year: $300K–$400K annual marketing + outreach budget.</p>
+                  <p className="text-center mt-4 text-red-500">6–8 conventions/year: $300K–$400K annual marketing + outreach budget.</p>
                 </div>
               </section>
             </div>
