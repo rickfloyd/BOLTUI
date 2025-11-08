@@ -27,17 +27,18 @@ export default function UsCompliancePage() {
               <section>
                 <h2 className="text-3xl font-bold mb-4 text-cyan-300">1. Core Concept</h2>
                 <p>Each engine becomes a plug-in with a Boolean flag in the user’s profile document. When a user loads any chart, the backend checks their preferences and activates only the approved engines.</p>
-                <pre className="bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto">
-                  <code>
-{`"userEngines": {
-  "marketBridge": true,
-  "automationConnector": false,
-  "patternLab": true,
-  "aiAnalyzer": false,
-  "riskVisualizer": true
-}`}
-                  </code>
-                </pre>
+                {aiEngineImage && (
+                  <div className="relative my-6 flex justify-center items-center">
+                    <Image
+                      src={aiEngineImage.imageUrl}
+                      alt={aiEngineImage.description}
+                      width={150}
+                      height={150}
+                      data-ai-hint={aiEngineImage.imageHint}
+                      className="opacity-70"
+                    />
+                  </div>
+                )}
               </section>
 
               <section>
