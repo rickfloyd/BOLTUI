@@ -19,6 +19,7 @@ const layer2Coins: Layer2Coin[] = [
   { name: 'Polygon', symbol: 'MATIC', category: 'Sidechain / PoS', mainnet: 'Ethereum' },
   { name: 'Starknet', symbol: 'STRK', category: 'ZK-Rollup (Validity)', mainnet: 'Ethereum' },
   { name: 'zkSync', symbol: 'ZK', category: 'ZK-Rollup', mainnet: 'Ethereum' },
+  { name: 'Stacks', symbol: 'STX', category: 'Bitcoin L2', mainnet: 'Bitcoin' },
   { name: 'Mantle', symbol: 'MNT', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
   { name: 'Immutable X', symbol: 'IMX', category: 'ZK-Rollup (Gaming)', mainnet: 'Ethereum' },
   { name: 'dYdX', symbol: 'DYDX', category: 'App-Chain (Cosmos SDK)', mainnet: 'Ethereum' },
@@ -51,8 +52,8 @@ export default function Layer2Page() {
             Back to Crypto Classes
           </Link>
           <h1 className="text-3xl font-bold neon-text text-center mt-8">Layer-2 Scaling Solutions</h1>
-          <p className="text-lg text-gray-300 text-center max-w-2xl mx-auto">
-            These are protocols built on top of Layer-1 blockchains (like Ethereum) to provide faster transactions and lower fees. Below is a curated list of major L2 projects.
+          <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
+            Layer-2s are protocols built on top of Layer-1 blockchains (like Ethereum or Bitcoin) to provide faster transactions and lower fees. While the vast majority of L2s are in the Ethereum ecosystem, other chains have them too. This list covers the most prominent L2 projects.
           </p>
           <div className="w-full mt-4">
             <Input
