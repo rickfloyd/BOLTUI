@@ -11,7 +11,7 @@ export default function ImpactPage() {
           <div className="relative z-10 p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(0,255,255,0.4)] backdrop-blur-md border border-pink-400/40">
             <div className="text-center mb-12">
               <HeartHandshake className="mx-auto h-16 w-16 text-pink-400 drop-shadow-[0_0_8px_rgba(255,0,255,0.6)]" />
-              <h1 className="text-4xl md:text-5xl font-extrabold mt-6 text-blue-800 drop-shadow-[0_0_12px_rgba(255,105,180,0.8)]">
+              <h1 className="text-4xl md:text-5xl font-extrabold mt-6 text-blue-800" style={{ textShadow: 'none', filter: 'drop-shadow(0 0 12px rgba(255, 105, 180, 0.8))' }}>
                 AI Quantum Charts — Where Your Subscription Goes
               </h1>
               <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
@@ -86,7 +86,118 @@ export default function ImpactPage() {
                     <li>No hidden fees, no upsells, no dark billing</li>
                 </ul>
               </section>
+              <section>
+                <h2 className="text-3xl font-bold mb-4 text-cyan-300">Regulatory & Legal Layer (U.S. + International)</h2>
+                <p>You’ll need specialized attorneys and compliance partners who understand SEC, CFTC, FTC, GDPR, FINRA, and international frameworks (EU, Canada, Australia, etc.).</p>
+                <div className="overflow-x-auto mt-4">
+                  <table className="min-w-full divide-y divide-gray-700">
+                    <thead className="bg-gray-800/50">
+                      <tr>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Role / Service</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Type</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Annual Cost Range</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Responsibility</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-black/30 divide-y divide-gray-700">
+                      <tr>
+                        <td className="px-6 py-4">SEC/CFTC Compliance Attorney</td>
+                        <td className="px-6 py-4">External counsel (retainer)</td>
+                        <td className="px-6 py-4">$120K–$200K</td>
+                        <td className="px-6 py-4">Ensures platform avoids broker-dealer or exchange classification; reviews disclosures</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4">FTC / Consumer Protection Lawyer</td>
+                        <td className="px-6 py-4">External counsel</td>
+                        <td className="px-6 py-4">$60K–$100K</td>
+                        <td className="px-6 py-4">Verifies marketing, ads, and grant programs are compliant</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4">Data Privacy / GDPR Specialist</td>
+                        <td className="px-6 py-4">Consultant or retained</td>
+                        <td className="px-6 py-4">$50K–$90K</td>
+                        <td className="px-6 py-4">Handles EU/UK/Canada data protection (GDPR, PIPEDA, etc.)</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4">General Corporate Counsel</td>
+                        <td className="px-6 py-4">Part-time or full-time</td>
+                        <td className="px-6 py-4">$100K–$180K</td>
+                        <td className="px-6 py-4">Contracts, IP, trademarks, NDAs, employment law</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4">Auditor / Forensic Accountant</td>
+                        <td className="px-6 py-4">Contract basis</td>
+                        <td className="px-6 py-4">$50K–$120K</td>
+                        <td className="px-6 py-4">Annual audits, transparency verification, investor assurance</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4">Compliance Officer (internal)</td>
+                        <td className="px-6 py-4">Staff position</td>
+                        <td className="px-6 py-4">$90K–$140K</td>
+                        <td className="px-6 py-4">Maintains compliance logs, risk assessments, and KYC/AML policy enforcement</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4">Insurance (Cyber + E&O + Liability)</td>
+                        <td className="px-6 py-4">Annual premium</td>
+                        <td className="px-6 py-4">$30K–$60K</td>
+                        <td className="px-6 py-4">Protects against data breaches, user claims, or system errors</td>
+                      </tr>
+                      <tr className="font-bold bg-gray-800/50">
+                        <td className="px-6 py-4" colSpan={2}>✅ Total Legal + Compliance Annual Cost:</td>
+                        <td className="px-6 py-4" colSpan={2}>≈ $500K – $900K</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
 
+              <section>
+                <h2 className="text-3xl font-bold mb-4 text-cyan-300">Convention Costs (with Compliance Oversight)</h2>
+                <p>For large industry events (e.g., Money 20/20, Fintech Nexus, Trading Expo, Token2049):</p>
+                <div className="overflow-x-auto mt-4">
+                  <table className="min-w-full divide-y divide-gray-700">
+                    <thead className="bg-gray-800/50">
+                      <tr>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Expense</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Average</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-black/30 divide-y divide-gray-700">
+                      <tr>
+                        <td className="px-6 py-4">Booth & branding</td>
+                        <td className="px-6 py-4">$20K</td>
+                        <td className="px-6 py-4">Includes setup, displays</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4">Travel (4–6 staff)</td>
+                        <td className="px-6 py-4">$12K</td>
+                        <td className="px-6 py-4">Airfare, lodging, meals</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4">Compliance officer travel</td>
+                        <td className="px-6 py-4">$5K</td>
+                        <td className="px-6 py-4">To monitor data/promo compliance</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4">Swag & printed materials</td>
+                        <td className="px-6 py-4">$5K</td>
+                        <td className="px-6 py-4">Shirts, flyers, QR cards</td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4">Networking / sponsorship</td>
+                        <td className="px-6 py-4">$8K</td>
+                        <td className="px-6 py-4">VIP dinners, press booths</td>
+                      </tr>
+                      <tr className="font-bold bg-gray-800/50">
+                        <td className="px-6 py-4">➡️ Per convention total:</td>
+                        <td className="px-6 py-4" colSpan={2}>~$50K</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p className="text-center mt-4">6–8 conventions/year: $300K–$400K annual marketing + outreach budget.</p>
+                </div>
+              </section>
             </div>
           </div>
         </div>
