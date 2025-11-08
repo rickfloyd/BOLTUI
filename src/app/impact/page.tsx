@@ -11,7 +11,7 @@ export default function ImpactPage() {
           <div className="relative z-10 p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(255,0,255,0.4)] backdrop-blur-md border border-pink-400/40">
             <div className="text-center mb-12">
               <HeartHandshake className="mx-auto h-16 w-16 text-pink-400 drop-shadow-[0_0_8px_rgba(255,0,255,0.6)]" />
-              <h1 className="text-4xl md:text-5xl font-extrabold mt-6 text-pink-400 drop-shadow-[0_0_12px_rgba(255,105,180,0.8)]">
+              <h1 className="text-4xl md:text-5xl font-extrabold mt-6 text-white drop-shadow-[0_0_12px_rgba(255,105,180,0.8)]">
                 AI Quantum Charts — Where Your Subscription Goes
               </h1>
               <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
@@ -25,8 +25,7 @@ export default function ImpactPage() {
               <section>
                 <h2 className="text-3xl font-bold mb-4 text-center text-white border-b-2 border-cyan-500/30 pb-3">🎁 Community Grant Program — 2.5 Million USD Fund</h2>
                 <p className="text-lg text-center max-w-4xl mx-auto text-neon-orange-lava">
-                    We dedicate the first $2,500,000 each year to 100 grants of $25,000 each to educators, disabled developers, and innovation teams building ethical AI tools.
-                    Every paid subscription helps grow this fund.
+                    We dedicate the first $2,500,000 each year to 100 grants of $25,000 each to educators, disabled developers, and innovation teams building ethical AI tools. Every paid subscription helps grow this fund.
                 </p>
                 <p className="text-lg text-center max-w-4xl mx-auto text-pink-400 mt-2">(WE NEED TO GET TO THAT LEVEL FIRST)</p>
               </section>
