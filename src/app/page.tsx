@@ -18,9 +18,6 @@ export default function Page() {
             <Link href="/hyper" className="view-button neon-cyan">
               Hyper
             </Link>
-             <Link href="/main" className="view-button neon-cyan">
-              Main
-            </Link>
             <Link href="/simple-view" className="view-button neon-pink">
               Simple View
             </Link>
