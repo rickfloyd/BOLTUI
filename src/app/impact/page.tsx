@@ -64,13 +64,13 @@ export default function ImpactPage() {
                    <table className="min-w-full divide-y divide-gray-700">
                         <thead className="bg-gray-800/50"><tr><th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Cost Center</th><th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Annual Budget (USD)</th><th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Notes</th></tr></thead>
                         <tbody className="bg-black/30 divide-y divide-gray-700">
-                            <tr><td className="px-6 py-4">Grants Fund (100 × $25 K)</td><td className="px-6 py-4">$2,500,000</td><td className="px-6 py-4">Reinvested directly into community grants</td></tr>
-                            <tr><td className="px-6 py-4">Engineering Team (12–15 staff)</td><td className="px-6 py-4">$1.8 M</td><td className="px-6 py-4">Continuous front-end / back-end innovation</td></tr>
-                            <tr><td className="px-6 py-4">Infrastructure & Data Feeds</td><td className="px-6 py-4">$150 K</td><td className="px-6 py-4">Cloud hosting + market data providers</td></tr>
-                            <tr><td className="px-6 py-4">Legal / Compliance / Auditing</td><td className="px-6 py-4">$700 K</td><td className="px-6 py-4">SEC / CFTC / FTC / GDPR compliance</td></tr>
-                            <tr><td className="px-6 py-4">Marketing & Conventions</td><td className="px-6 py-4">$400 K</td><td className="px-6 py-4">Global events + weekly social outreach</td></tr>
-                            <tr><td className="px-6 py-4">Admin & Insurance</td><td className="px-6 py-4">$150 K</td><td className="px-6 py-4">HR, payroll, cyber liability coverage</td></tr>
-                            <tr className="font-bold bg-gray-800/50"><td className="px-6 py-4">Total Annual Operating Budget:</td><td className="px-6 py-4">≈ $5.7 Million</td><td className="px-6 py-4"></td></tr>
+                            <tr><td className="px-6 py-4">Grants Fund (100 × $25 K)</td><td className="px-6 py-4"><span className="neon-gold">$2,500,000</span></td><td className="px-6 py-4">Reinvested directly into community grants</td></tr>
+                            <tr><td className="px-6 py-4">Engineering Team (12–15 staff)</td><td className="px-6 py-4"><span className="neon-gold">$1.8 M</span></td><td className="px-6 py-4">Continuous front-end / back-end innovation</td></tr>
+                            <tr><td className="px-6 py-4">Infrastructure & Data Feeds</td><td className="px-6 py-4"><span className="neon-gold">$150 K</span></td><td className="px-6 py-4">Cloud hosting + market data providers</td></tr>
+                            <tr><td className="px-6 py-4">Legal / Compliance / Auditing</td><td className="px-6 py-4"><span className="neon-gold">$700 K</span></td><td className="px-6 py-4">SEC / CFTC / FTC / GDPR compliance</td></tr>
+                            <tr><td className="px-6 py-4">Marketing & Conventions</td><td className="px-6 py-4"><span className="neon-gold">$400 K</span></td><td className="px-6 py-4">Global events + weekly social outreach</td></tr>
+                            <tr><td className="px-6 py-4">Admin & Insurance</td><td className="px-6 py-4"><span className="neon-gold">$150 K</span></td><td className="px-6 py-4">HR, payroll, cyber liability coverage</td></tr>
+                            <tr className="font-bold bg-gray-800/50"><td className="px-6 py-4">Total Annual Operating Budget:</td><td className="px-6 py-4"><span className="neon-gold">≈ $5.7 Million</span></td><td className="px-6 py-4"></td></tr>
                         </tbody>
                    </table>
                 </div>
@@ -103,48 +103,48 @@ export default function ImpactPage() {
                       <tr>
                         <td className="px-6 py-4">SEC/CFTC Compliance Attorney</td>
                         <td className="px-6 py-4">External counsel (retainer)</td>
-                        <td className="px-6 py-4">$120K–$200K</td>
+                        <td className="px-6 py-4 text-green-400">$120K–$200K</td>
                         <td className="px-6 py-4">Ensures platform avoids broker-dealer or exchange classification; reviews disclosures</td>
                       </tr>
                       <tr>
                         <td className="px-6 py-4">FTC / Consumer Protection Lawyer</td>
                         <td className="px-6 py-4">External counsel</td>
-                        <td className="px-6 py-4">$60K–$100K</td>
+                        <td className="px-6 py-4 text-green-400">$60K–$100K</td>
                         <td className="px-6 py-4">Verifies marketing, ads, and grant programs are compliant</td>
                       </tr>
                       <tr>
                         <td className="px-6 py-4">Data Privacy / GDPR Specialist</td>
                         <td className="px-6 py-4">Consultant or retained</td>
-                        <td className="px-6 py-4">$50K–$90K</td>
+                        <td className="px-6 py-4 text-green-400">$50K–$90K</td>
                         <td className="px-6 py-4">Handles EU/UK/Canada data protection (GDPR, PIPEDA, etc.)</td>
                       </tr>
                       <tr>
                         <td className="px-6 py-4">General Corporate Counsel</td>
                         <td className="px-6 py-4">Part-time or full-time</td>
-                        <td className="px-6 py-4">$100K–$180K</td>
+                        <td className="px-6 py-4 text-green-400">$100K–$180K</td>
                         <td className="px-6 py-4">Contracts, IP, trademarks, NDAs, employment law</td>
                       </tr>
                       <tr>
                         <td className="px-6 py-4">Auditor / Forensic Accountant</td>
                         <td className="px-6 py-4">Contract basis</td>
-                        <td className="px-6 py-4">$50K–$120K</td>
+                        <td className="px-6 py-4 text-green-400">$50K–$120K</td>
                         <td className="px-6 py-4">Annual audits, transparency verification, investor assurance</td>
                       </tr>
                       <tr>
                         <td className="px-6 py-4">Compliance Officer (internal)</td>
                         <td className="px-6 py-4">Staff position</td>
-                        <td className="px-6 py-4">$90K–$140K</td>
+                        <td className="px-6 py-4 text-green-400">$90K–$140K</td>
                         <td className="px-6 py-4">Maintains compliance logs, risk assessments, and KYC/AML policy enforcement</td>
                       </tr>
                       <tr>
                         <td className="px-6 py-4">Insurance (Cyber + E&O + Liability)</td>
                         <td className="px-6 py-4">Annual premium</td>
-                        <td className="px-6 py-4">$30K–$60K</td>
+                        <td className="px-6 py-4 text-green-400">$30K–$60K</td>
                         <td className="px-6 py-4">Protects against data breaches, user claims, or system errors</td>
                       </tr>
                       <tr className="font-bold bg-gray-800/50">
                         <td className="px-6 py-4" colSpan={2}>✅ Total Legal + Compliance Annual Cost:</td>
-                        <td className="px-6 py-4" colSpan={2}>≈ $500K – $900K</td>
+                        <td className="px-6 py-4 text-green-400" colSpan={2}>≈ $500K – $900K</td>
                       </tr>
                     </tbody>
                   </table>
