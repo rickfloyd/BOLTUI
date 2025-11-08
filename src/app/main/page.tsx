@@ -128,7 +128,7 @@ export default function MainPage() {
             {tokenCategories.map((item, index) => (
               <button
                 key={index}
-                className={`data-card ${item.color} ${item.className || ''} flex flex-col justify-start text-left`}
+                className={`data-card ${item.color} ${item.className || 'font-cinzel'} flex flex-col justify-start text-left`}
                 onClick={() => handleCardClick(item)}
               >
                 <h3 className="card-title text-sm font-bold">{item.name}</h3>
