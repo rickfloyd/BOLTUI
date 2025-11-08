@@ -178,13 +178,10 @@ function DesktopHeader() {
           <Link href="/" className="nav-item neon-green">
             Home
           </Link>
-          <Link href="/main" className="nav-item neon-green">
-            Main
-          </Link>
           <Link href="#" className="nav-item neon-orange">
             Stocks
           </Link>
-          <Link href="#" className="nav-item neon-cyan">
+          <Link href="/main" className="nav-item neon-cyan">
             Crypto
           </Link>
           <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
@@ -224,12 +221,11 @@ function MobileHeader() {
         <div className="mobile-menu">
           <nav className="mobile-nav-links">
             <Link href="/" className="nav-item neon-green">Home</Link>
-            <Link href="/main" className="nav-item neon-green">Main</Link>
             <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
              <Link href="/impact" className="nav-item neon-cyan">Impact</Link>
             <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
             <Link href="#" className="nav-item neon-orange">Stocks</Link>
-             <Link href="#" className="nav-item neon-cyan">
+             <Link href="/main" className="nav-item neon-cyan">
                 Crypto
               </Link>
             <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
