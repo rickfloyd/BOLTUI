@@ -17,12 +17,11 @@ interface Coin {
 }
 
 const proofOfWorkSymbols: string[] = [
-    'btc', 'doge', 'bch', 'ltc', 'zec', 'xmr', 'etc', 'dash', 'kas', 'dcr', 
-    'bdx', 'cfx', 'zen', 'dgb', 'rvn', 'ckb', 'sc', 'ethw', 'erg', 'flux',
-    'sys', 'firo', 'qrl', 'grs', 'quai', 'htr', 'beam', 'nmc', 'xcp', 'mona',
-    'kmd', 'bcd', 'vtc', 'btcz', 'bcn', 'ae', 'btm', 'xdn', 'zcl', 'lcc',
-    'xpm', 'ftc', 'aeon', 'bis', 'xmy', 'pot', 'anc', 'nyc', 'qrk'
+    "btc", "doge", "ltc", "bch", "xmr", "zec", "etc", "dash", "kas", "dcr", 
+    "bdx", "cfx", "bsv", "dgb", "rvn", "ckb", "xvg", "qrl", "erg", "flux", 
+    "ethw", "zen", "sc", "sys", "firo", "nmc", "grs", "vtc", "beam", "bcn"
 ];
+
 
 export default function ProofOfWorkPage() {
   const [searchTerm, setSearchTerm] = useState('');
