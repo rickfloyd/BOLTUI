@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -17,6 +18,7 @@ const communityItems: DropdownItem[] = [
     { name: 'Neural Networks & LSTM', subtext: 'Deep learning for market prediction' },
     { isSeparator: true },
     { name: 'Binance Schema', subtext: 'View the Binance API Schema', type: 'link', href: '/binance-schema' },
+    { name: 'Data Providers', subtext: 'View API data providers', type: 'link', href: '/data-providers' },
 ];
 
 const sportsItems: DropdownItem[] = [
