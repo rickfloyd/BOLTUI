@@ -37,11 +37,15 @@ const tokenCategories = [
 export default function MainPage() {
   const router = useRouter();
 
-  const handleCardClick = (index: string) => {
-    if (index.toLowerCase() === 'shitcoins' || index.toLowerCase() === 'meme coins') {
+  const handleCardClick = (name: string) => {
+    const routeName = name.toLowerCase().replace(/ /g, '-');
+    if (routeName === 'shitcoins' || routeName === 'meme-coins') {
       router.push('/shitcoins');
-    } else {
-      router.push(`/charts/${index.toLowerCase().replace(/ /g, '-')}`);
+    } else if (routeName === 'layer-1-blockchains') {
+      router.push('/layer-1');
+    }
+     else {
+      router.push(`/charts/${routeName}`);
     }
   };
 
@@ -54,9 +58,6 @@ export default function MainPage() {
             CRYPTO CLASSES
           </h1>
           <div className="view-switcher">
-            <Link href="/main" className="view-button neon-cyan">
-              HYPER
-            </Link>
             <Link href="/simple-view" className="view-button neon-pink">
               SIMPLE VIEW
             </Link>
