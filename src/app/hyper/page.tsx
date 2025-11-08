@@ -50,47 +50,32 @@ export default function HyperPage() {
     setData([]);
     setDataSource(null);
 
-    const providers = [
-        { name: 'Finnhub', apiUrl: '/api/finnhub', symbol: 'BINANCE:BTCUSDT', interval: '60' },
-        { name: 'TwelveData', apiUrl: '/api/twelvedata', symbol: 'BTC/USD', interval: '1h' },
-        { name: 'Polygon', apiUrl: '/api/polygon', symbol: 'X:BTCUSD', interval: 'hour' },
-    ];
-
-    const fetchFromProvider = (provider: typeof providers[0]) => {
-      const url = `${provider.apiUrl}?symbol=${provider.symbol}&interval=${provider.interval}`;
-      return fetch(url)
-        .then(res => {
-          if (!res.ok) throw new Error(`Provider ${provider.name} failed`);
-          return res.json();
-        })
-        .then(apiData => {
-            if(apiData.error) throw new Error(apiData.error);
-            // Use the bridge's normalization logic to format data
-            const normalizer = (d: any, p: string) => {
-                if (p === 'Finnhub') return d.t ? d.t.map((ts: number, i: number) => ({ time: new Date(ts * 1000).toISOString(), close: d.c[i] })) : [];
-                if (p === 'TwelveData') return d.values ? d.values.map((v: any) => ({ time: v.datetime, close: parseFloat(v.close) })).reverse() : [];
-                if (p === 'Polygon') return d.results ? d.results.map((r: any) => ({ time: new Date(r.t).toISOString(), close: r.c })) : [];
-                return [];
-            }
-            const formattedData = normalizer(apiData, provider.name).map((v: any) => ({
-                time: new Date(v.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                price: v.close
-            }));
-
-            if(formattedData.length === 0) throw new Error(`No data from ${provider.name}`);
-
-          return { data: formattedData, source: provider.name };
-        });
-    };
-
     try {
-        const firstSuccess = await Promise.race(providers.map(fetchFromProvider));
-        setData(firstSuccess.data);
-        setDataSource(firstSuccess.source);
+      const url = `/api/bridge?symbol=${encodeURIComponent(selectedSymbol)}&interval=${encodeURIComponent(selectedInterval)}`;
+      const response = await fetch(url);
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch data from the bridge API.');
+      }
+      
+      const result: ProviderResult = await response.json();
+
+      if (!result.data || result.data.length === 0) {
+        throw new Error('No data returned from any provider.');
+      }
+      
+      const formattedData = result.data.map((v: any) => ({
+        time: new Date(v.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        price: v.close,
+      }));
+
+      setData(formattedData);
+      setDataSource(result.source);
     } catch (e: any) {
-        setError(`All data providers failed. Last error: ${e.message}`);
+      setError(`Data fetch failed: ${e.message}`);
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
   };
   
