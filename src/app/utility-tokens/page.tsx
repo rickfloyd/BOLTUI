@@ -21,14 +21,14 @@ export default function UtilityTokensPage() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <h1 className="text-3xl font-bold neon-text text-center mt-8">Utility Tokens Encyclopedia</h1>
+          <h1 className="text-3xl font-bold neon-text text-center mt-8">Infrastructure & Data Tokens</h1>
           <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
-            Utility tokens grant users access to a product or service within a specific ecosystem. Below is a curated list of 100 prominent utility tokens.
+            A curated list of tokens that power blockchain infrastructure, data indexing, oracles, and developer tooling.
           </p>
           <div className="w-full mt-4">
             <Input
               type="text"
-              placeholder="Search utility tokens..."
+              placeholder="Search tokens..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white"
@@ -39,21 +39,23 @@ export default function UtilityTokensPage() {
               <table className="info-table w-full">
                 <thead>
                   <tr>
-                    <th>#</th>
                     <th>Name</th>
                     <th>Symbol</th>
-                    <th>Website</th>
+                    <th>Chain</th>
+                    <th>Contract Address</th>
+                    <th>API Endpoint</th>
                   </tr>
                 </thead>
                 <tbody>
                   {filteredTokens.map((token, index) => (
                     <tr key={`${token.symbol}-${index}`} className="hover:bg-white/5">
-                      <td className="neon-orange">{index + 1}</td>
                       <td className="neon-cyan">{token.name}</td>
                       <td className="neon-pink">{token.symbol.toUpperCase()}</td>
+                      <td className="text-gray-300">{token.chain}</td>
+                      <td className="text-gray-400 font-mono text-xs">{token.contractAddress}</td>
                       <td>
-                        <Link href={token.website} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline flex items-center gap-1">
-                          Visit <ExternalLink size={14} />
+                        <Link href={`https://api.coingecko.com/api/v3/coins/${token.apiId}`} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline flex items-center gap-1">
+                          API <ExternalLink size={14} />
                         </Link>
                       </td>
                     </tr>
