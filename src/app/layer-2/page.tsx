@@ -9,38 +9,133 @@ import { ArrowLeft } from 'lucide-react';
 interface Layer2Coin {
   name: string;
   symbol: string;
-  category: string; // e.g., Optimistic Rollup, ZK-Rollup
-  mainnet: string; // The L1 it scales
 }
 
-const layer2Coins: Layer2Coin[] = [
-  { name: 'Arbitrum', symbol: 'ARB', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
-  { name: 'Optimism', symbol: 'OP', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
-  { name: 'Polygon', symbol: 'MATIC', category: 'Sidechain / PoS', mainnet: 'Ethereum' },
-  { name: 'Starknet', symbol: 'STRK', category: 'ZK-Rollup (Validity)', mainnet: 'Ethereum' },
-  { name: 'zkSync', symbol: 'ZK', category: 'ZK-Rollup', mainnet: 'Ethereum' },
-  { name: 'Stacks', symbol: 'STX', category: 'Bitcoin L2', mainnet: 'Bitcoin' },
-  { name: 'Mantle', symbol: 'MNT', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
-  { name: 'Immutable X', symbol: 'IMX', category: 'ZK-Rollup (Gaming)', mainnet: 'Ethereum' },
-  { name: 'dYdX', symbol: 'DYDX', category: 'App-Chain (Cosmos SDK)', mainnet: 'Ethereum' },
-  { name: 'Loopring', symbol: 'LRC', category: 'ZK-Rollup (DEX)', mainnet: 'Ethereum' },
-  { name: 'Metis', symbol: 'METIS', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
-  { name: 'Base', symbol: 'BASE', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
-  { name: 'Linea', symbol: 'N/A', category: 'ZK-Rollup', mainnet: 'Ethereum' },
-  { name: 'Manta Pacific', symbol: 'MANTA', category: 'ZK-Rollup', mainnet: 'Ethereum' },
-  { name: 'Scroll', symbol: 'N/A', category: 'ZK-Rollup', mainnet: 'Ethereum' },
-  { name: 'Boba Network', symbol: 'BOBA', category: 'Optimistic Rollup', mainnet: 'Ethereum' },
+interface Layer2Category {
+  title: string;
+  color: string;
+  coins: Layer2Coin[];
+}
+
+const layer2Data: Layer2Category[] = [
+  {
+    title: 'Bitcoin-Based Layer 2s',
+    color: 'neon-orange',
+    coins: [
+      { name: 'Stacks', symbol: 'STX' },
+      { name: 'Lightning Network', symbol: 'No native coin (BTC used)' },
+      { name: 'Liquid Network', symbol: 'L-BTC' },
+      { name: 'RSK', symbol: 'RBTC' },
+      { name: 'Bitlayer', symbol: 'BTR' },
+      { name: 'Omni Layer', symbol: 'USDT (Bitcoin version)' },
+      { name: 'Rootstock Infrastructure Framework', symbol: 'RIF' },
+      { name: 'Counterparty', symbol: 'XCP' },
+      { name: 'RGB Protocol', symbol: 'No native coin' },
+      { name: 'Sovryn', symbol: 'SOV' },
+    ],
+  },
+  {
+    title: 'Solana-Based Layer 2s',
+    color: 'neon-cyan',
+    coins: [
+      { name: 'Neon EVM', symbol: 'NEON' },
+      { name: 'Eclipse', symbol: 'No native coin yet' },
+      { name: 'Nitro', symbol: 'No native coin yet' },
+      { name: 'Solayer', symbol: 'TBA' },
+      { name: 'Triton', symbol: 'TBA' },
+    ],
+  },
+  {
+    title: 'Cosmos-Based Layer 2s',
+    color: 'neon-blue',
+    coins: [
+      { name: 'Celestia', symbol: 'TIA' },
+      { name: 'Dymension', symbol: 'DYM' },
+      { name: 'Saga', symbol: 'SAGA' },
+      { name: 'Rollkit', symbol: 'No native coin' },
+      { name: 'Archway', symbol: 'ARCH' },
+    ],
+  },
+  {
+    title: 'Polkadot-Based Layer 2s',
+    color: 'neon-pink',
+    coins: [
+        { name: 'Moonbeam', symbol: 'GLMR' },
+        { name: 'Astar', symbol: 'ASTR' },
+        { name: 'Phala Network', symbol: 'PHA' },
+        { name: 'Parallel Finance', symbol: 'PARA' },
+        { name: 'Acala', symbol: 'ACA' },
+    ],
+  },
+  {
+    title: 'Avalanche-Based Layer 2s',
+    color: 'neon-red',
+    coins: [
+        { name: 'Shrapnel', symbol: 'SHRAP' },
+        { name: 'Dexalot', symbol: 'ALOT' },
+        { name: 'Subnet-based L2s', symbol: 'Various tokens' },
+        { name: 'Beam', symbol: 'BEAM' },
+        { name: 'Landslide', symbol: 'LSD' },
+    ],
+  },
+  {
+    title: 'Cardano-Based Layer 2s',
+    color: 'neon-blue',
+    coins: [
+        { name: 'Hydra', symbol: 'No native coin' },
+        { name: 'Milkomeda C1', symbol: 'MilkADA' },
+        { name: 'Orbis', symbol: 'TBA' },
+        { name: 'Midnight', symbol: 'DUST' },
+        { name: 'Paima Engine', symbol: 'No native coin' },
+    ],
+  },
+    {
+    title: 'XRP Ledger-Based Layer 2s',
+    color: 'neon-cyan',
+    coins: [
+        { name: 'Evernode', symbol: 'EVR' },
+        { name: 'Hooks', symbol: 'No native coin' },
+        { name: 'Xahau', symbol: 'XAH' },
+        { name: 'XRPL EVM', symbol: 'TBA' },
+        { name: 'Coreum', symbol: 'CORE' },
+    ],
+  },
+  {
+    title: 'Algorand-Based Layer 2s',
+    color: 'neon-teal',
+    coins: [
+        { name: 'Folks Finance', symbol: 'FOLKS' },
+        { name: 'AlgoFi', symbol: 'ALGO (used natively)' },
+        { name: 'Tinyman', symbol: 'TINY' },
+        { name: 'Pact', symbol: 'PACT' },
+        { name: 'HumbleSwap', symbol: 'HMBL' },
+    ],
+  },
+  {
+    title: 'Other Layer 1s with L2s',
+    color: 'neon-gold',
+    coins: [
+        { name: 'Fuel Network (Modular L2)', symbol: 'FUEL' },
+        { name: 'Brevis', symbol: 'TBA' },
+        { name: 'Rome Protocol', symbol: 'TBA' },
+        { name: 'Hana Network', symbol: 'HANA' },
+        { name: 'Cysic', symbol: 'CYS' },
+    ],
+  },
 ];
 
 
 export default function Layer2Page() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredCoins = layer2Coins.filter(
-    (coin) =>
-      coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredData = layer2Data.map(category => {
+    const filteredCoins = category.coins.filter(
+        coin =>
+            coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    return { ...category, coins: filteredCoins };
+  }).filter(category => category.coins.length > 0);
   
   return (
     <>
@@ -51,42 +146,41 @@ export default function Layer2Page() {
             <ArrowLeft size={16} />
             Back to Crypto Classes
           </Link>
-          <h1 className="text-3xl font-bold neon-text text-center mt-8">Layer-2 Scaling Solutions</h1>
+          <h1 className="text-3xl font-bold neon-text text-center mt-8">Layer-2 Scaling Solutions Encyclopedia</h1>
           <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
-            Layer-2s are protocols built on top of Layer-1 blockchains (like Ethereum or Bitcoin) to provide faster transactions and lower fees. While the vast majority of L2s are in the Ethereum ecosystem, other chains have them too. This list covers the most prominent L2 projects.
+            A comprehensive, curated list of Layer-2 solutions across various blockchain ecosystems. Layer-2s are protocols built on top of base-layer blockchains (like Bitcoin or Ethereum) to provide faster transactions and lower fees.
           </p>
           <div className="w-full mt-4">
             <Input
               type="text"
-              placeholder="Search L2 solutions..."
+              placeholder="Search all L2 solutions..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white"
             />
           </div>
-          <div className="w-full overflow-x-auto mt-8">
-            <div className="info-table-card">
-              <table className="info-table w-full">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Symbol</th>
-                    <th>Category</th>
-                    <th>Scales</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredCoins.map((coin) => (
-                    <tr key={coin.name} className="hover:bg-white/5">
-                      <td className="neon-cyan">{coin.name}</td>
-                      <td className="neon-pink">{coin.symbol}</td>
-                      <td className="neon-blue">{coin.category}</td>
-                      <td className="neon-gold">{coin.mainnet}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+          <div className="w-full space-y-12 mt-8">
+            {filteredData.map(category => (
+                <div key={category.title} className="info-table-card">
+                    <h2 className={`text-2xl font-bold mb-4 ${category.color}`}>{category.title}</h2>
+                    <table className="info-table w-full">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Symbol / Token</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {category.coins.map((coin) => (
+                            <tr key={coin.name} className="hover:bg-white/5">
+                            <td className={`font-bold`}>{coin.name}</td>
+                            <td className='text-gray-300'>{coin.symbol}</td>
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                </div>
+            ))}
           </div>
         </section>
       </main>
