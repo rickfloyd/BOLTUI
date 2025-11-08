@@ -1,0 +1,95 @@
+1:"$Sreact.fragment"
+2:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"default"]
+3:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"default"]
+4:I[77855,["/_next/static/chunks/2af5d5865e0554ce.js","/_next/static/chunks/51a6179494871fa9.js"],"Toaster"]
+b:I[68027,[],"default"]
+:HL["/_next/static/chunks/d78c325526336bd7.css","style"]
+:HL["/_next/static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/cc014fcb166cf364-s.p.e32417d2.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css","style"]
+5:T77b,
+        .binance-schema-body {
+          background-color: #000;
+          color: #e5e5e5;
+          font-family: 'Courier New', monospace;
+          padding: 30px;
+        }
+
+        .binance-schema-body h1, .binance-schema-body h2, .binance-schema-body h3 {
+          text-shadow: 0 0 15px #00e5ff;
+          color: #00e5ff;
+        }
+
+        .binance-schema-body h1 {
+          font-size: 2.4rem;
+          text-align: center;
+          margin-bottom: 40px;
+        }
+
+        .binance-schema-body section {
+          border: 1px solid rgba(255,255,255,0.1);
+          border-left: 5px solid #ff0077;
+          background: rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 25px rgba(255, 0, 120, 0.2);
+          margin-bottom: 40px;
+          padding: 25px;
+          border-radius: 12px;
+        }
+
+        .binance-schema-body .endpoint {
+          color: #00e5ff;
+          font-weight: bold;
+        }
+
+        .binance-schema-body .category {
+          color: #ff5500;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+
+        .binance-schema-body code, .binance-schema-body pre {
+          background: rgba(20, 20, 20, 0.9);
+          color: #00ffcc;
+          border-radius: 8px;
+          padding: 10px;
+          display: block;
+          overflow-x: auto;
+          border: 1px solid #222;
+          box-shadow: 0 0 12px rgba(0,255,204,0.15);
+        }
+
+        .binance-schema-body a {
+          color: #00e5ff;
+          text-decoration: none;
+        }
+        .binance-schema-body a:hover {
+          color: #ff0077;
+        }
+
+        .binance-schema-body .glow {
+          animation: flicker 2s infinite;
+        }
+
+        @keyframes flicker {
+          0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+            text-shadow: 0 0 8px #00e5ff, 0 0 15px #00e5ff, 0 0 30px #00e5ff;
+          }
+          20%, 24%, 55% {
+            text-shadow: none;
+          }
+        }
+      0:{"P":null,"b":"I4FEFc1gKLv38C4sOSWoo","c":["","binance-schema"],"q":"","i":false,"f":[[["",{"children":["binance-schema",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/d78c325526336bd7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/2af5d5865e0554ce.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/51a6179494871fa9.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"stylesheet","href":"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"}]}],["$","body",null,{"className":"ibm_plex_sans_95c0f32e-module__y9P6Ea__variable cinzel_1d341ded-module__wqg8Oa__variable font-sans font-bold","children":[["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L4",null,{}]]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[[["$","style",null,{"children":"$5"}],"$L6","$L7"],["$L8"],"$L9"]}],{},null,false,false]},null,false,false]},null,false,false],"$La",false]],"m":"$undefined","G":["$b",[]],"s":false,"S":true}
+c:I[45872,["/_next/static/chunks/2af5d5865e0554ce.js","/_next/static/chunks/51a6179494871fa9.js","/_next/static/chunks/83bfa553819560ab.js"],"Header"]
+d:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"OutletBoundary"]
+e:"$Sreact.suspense"
+10:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"ViewportBoundary"]
+12:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"MetadataBoundary"]
+6:["$","$Lc",null,{}]
+7:["$","div",null,{"className":"binance-schema-body","children":[["$","h1",null,{"className":"glow","children":"⚡ Binance API Schema — AI Quantum Charts"}],["$","section",null,{"children":[["$","h2",null,{"children":"🛡️ Compliance"}],["$","p",null,{"children":"Binance Product Terms of Use:"}],["$","ul",null,{"children":[["$","li",null,{"children":["$","a",null,{"href":"https://www.binance.com/en/terms","target":"_blank","rel":"noopener noreferrer","children":"English Version"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://www.binance.com/zh-CN/terms","target":"_blank","rel":"noopener noreferrer","children":"Chinese Version"}]}]]}]]}],["$","section",null,{"children":[["$","h2",null,{"children":"🔗 FIX API (Institutional Access)"}],["$","p",null,{"className":"category","children":"Endpoints"}],["$","ul",null,{"children":[["$","li",null,{"children":[["$","span",null,{"className":"endpoint","children":"Order Entry:"}]," tcp+tls://fix-oe.binance.com:9000"]}],["$","li",null,{"children":[["$","span",null,{"className":"endpoint","children":"Drop Copy:"}]," tcp+tls://fix-dc.binance.com:9000"]}],["$","li",null,{"children":[["$","span",null,{"className":"endpoint","children":"Market Data:"}]," tcp+tls://fix-md.binance.com:9000"]}]]}],["$","p",null,{"children":["Encryption: ",["$","b",null,{"children":"TLS + Ed25519 keys"}]]}],["$","p",null,{"children":"Permitted Keys: FIX_API, FIX_API_READ_ONLY"}],["$","pre",null,{"children":"{\n  \"RateLimit\": \"10,000 per 10s (Order Entry)\",\n  \"Connections\": \"10 max per account\",\n  \"Mode\": \"UNORDERED or SEQUENTIAL\"\n}"}]]}],["$","section",null,{"children":[["$","h2",null,{"children":"🌐 WebSocket Streams"}],["$","p",null,{"className":"category","children":"Public Streams"}],["$","ul",null,{"children":[["$","li",null,{"children":[["$","span",null,{"className":"endpoint","children":"Ticker:"}]," wss://stream.binance.com/ws/<symbol>@ticker"]}],["$","li",null,{"children":[["$","span",null,{"className":"endpoint","children":"Candlesticks:"}]," wss://stream.binance.com/ws/<symbol>@kline_1m"]}],["$","li",null,{"children":[["$","span",null,{"className":"endpoint","children":"Trades:"}]," wss://stream.binance.com/ws/<symbol>@aggTrade"]}]]}],["$","p",null,{"className":"category","children":"Private Streams"}],["$","ul",null,{"children":[["$","li",null,{"children":[["$","span",null,{"className":"endpoint","children":"User Data:"}]," wss://stream.binance.com/ws/<listenKey>"]}],["$","li",null,{"children":"Events: executionReport, balanceUpdate, outboundAccountPosition"}]]}]]}],["$","section",null,{"children":[["$","h2",null,{"children":"🧩 REST Endpoints"}],["$","pre",null,{"children":"{\n  \"base_url\": \"https://api.binance.com\",\n  \"endpoints\": {\n    \"exchange_info\": \"/api/v3/exchangeInfo\",\n    \"order\": \"/api/v3/order\",\n    \"account\": \"/api/v3/account\",\n    \"user_stream\": \"/api/v3/userDataStream\"\n  }\n}"}]]}],["$","section",null,{"children":[["$","h2",null,{"children":"⚙️ Filters"}],["$","pre",null,{"children":"{\n  \"PRICE_FILTER\": {\"minPrice\":\"0.00000100\",\"maxPrice\":\"100000.00000000\"},\n  \"LOT_SIZE\": {\"minQty\":\"0.00100000\",\"maxQty\":\"100000.00000000\"},\n  \"PERCENT_PRICE\": {\"multiplierUp\":\"1.3\",\"multiplierDown\":\"0.7\"},\n  \"MIN_NOTIONAL\": {\"minNotional\":\"10.0\"}\n}"}]]}],["$","section",null,{"children":[["$","h2",null,{"children":"🔠 Enums & Order Status"}],["$","pre",null,{"children":"{\n  \"OrderStatus\": [\"NEW\",\"FILLED\",\"CANCELED\",\"EXPIRED\"],\n  \"OrderType\": [\"LIMIT\",\"MARKET\",\"STOP_LOSS_LIMIT\",\"TAKE_PROFIT_LIMIT\"],\n  \"Permissions\": [\"SPOT\",\"MARGIN\",\"LEVERAGED\"]\n}"}]]}],["$","section",null,{"children":[["$","h2",null,{"children":"🚨 Error Codes"}],["$","pre",null,{"children":"{\n  \"-1007\": \"Timeout waiting for backend response\",\n  \"-2010\": \"Invalid order or filter violation\",\n  \"-2011\": \"Order canceled\",\n  \"-1021\": \"Timestamp outside recvWindow\",\n  \"-1116\": \"Invalid order type\",\n  \"-1121\": \"Invalid symbol\"\n}"}]]}],["$","section",null,{"children":[["$","h2",null,{"children":"⚡ Example Integration"}],["$","pre",null,{"children":"import schema from \"./config/binance-api-schema.json\";\nconsole.log(schema.fix_api.order_entry_endpoint);"}]]}],["$","footer",null,{"style":{"textAlign":"center","color":"#00e5ff","marginTop":"40px"},"children":"Quantum Charts © 2025 — All rights reserved."}]]}]
+8:["$","script","script-0",{"src":"/_next/static/chunks/83bfa553819560ab.js","async":true,"nonce":"$undefined"}]
+9:["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]
+a:["$","$1","h",{"children":[null,["$","$L10",null,{"children":"$@11"}],["$","div",null,{"hidden":true,"children":["$","$L12",null,{"children":["$","$e",null,{"name":"Next.Metadata","children":"$@13"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+14:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"IconMark"]
+13:[["$","title","0",{"children":"Quantum CyberVision Dashboard"}],["$","meta","1",{"name":"description","content":"A next-generation market analysis dashboard."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.7ed73651.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L14","3",{}]]
+f:null

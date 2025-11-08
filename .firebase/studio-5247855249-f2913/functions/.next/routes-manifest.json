@@ -1,0 +1,359 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/charts/[index]",
+      "regex": "^/charts/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPindex": "nxtPindex"
+      },
+      "namedRegex": "^/charts/(?<nxtPindex>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/animation",
+      "regex": "^/animation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/animation(?:/)?$"
+    },
+    {
+      "page": "/api/abuseipdb",
+      "regex": "^/api/abuseipdb(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/abuseipdb(?:/)?$"
+    },
+    {
+      "page": "/api/bridge",
+      "regex": "^/api/bridge(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/bridge(?:/)?$"
+    },
+    {
+      "page": "/api/coingecko/coins",
+      "regex": "^/api/coingecko/coins(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/coingecko/coins(?:/)?$"
+    },
+    {
+      "page": "/api/finnhub",
+      "regex": "^/api/finnhub(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/finnhub(?:/)?$"
+    },
+    {
+      "page": "/api/marketstack",
+      "regex": "^/api/marketstack(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/marketstack(?:/)?$"
+    },
+    {
+      "page": "/api/places",
+      "regex": "^/api/places(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/places(?:/)?$"
+    },
+    {
+      "page": "/api/polygon",
+      "regex": "^/api/polygon(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/polygon(?:/)?$"
+    },
+    {
+      "page": "/api/twelvedata",
+      "regex": "^/api/twelvedata(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/twelvedata(?:/)?$"
+    },
+    {
+      "page": "/binance-schema",
+      "regex": "^/binance\\-schema(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/binance\\-schema(?:/)?$"
+    },
+    {
+      "page": "/bluetooth-connect",
+      "regex": "^/bluetooth\\-connect(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/bluetooth\\-connect(?:/)?$"
+    },
+    {
+      "page": "/coin-validator",
+      "regex": "^/coin\\-validator(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/coin\\-validator(?:/)?$"
+    },
+    {
+      "page": "/compare-prices",
+      "regex": "^/compare\\-prices(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/compare\\-prices(?:/)?$"
+    },
+    {
+      "page": "/crypto-features",
+      "regex": "^/crypto\\-features(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/crypto\\-features(?:/)?$"
+    },
+    {
+      "page": "/custom-view",
+      "regex": "^/custom\\-view(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/custom\\-view(?:/)?$"
+    },
+    {
+      "page": "/dao-tokens",
+      "regex": "^/dao\\-tokens(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dao\\-tokens(?:/)?$"
+    },
+    {
+      "page": "/data-providers",
+      "regex": "^/data\\-providers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/data\\-providers(?:/)?$"
+    },
+    {
+      "page": "/defi-protocols",
+      "regex": "^/defi\\-protocols(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/defi\\-protocols(?:/)?$"
+    },
+    {
+      "page": "/exchange-tokens",
+      "regex": "^/exchange\\-tokens(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/exchange\\-tokens(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/free-miners",
+      "regex": "^/free\\-miners(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/free\\-miners(?:/)?$"
+    },
+    {
+      "page": "/gaming",
+      "regex": "^/gaming(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gaming(?:/)?$"
+    },
+    {
+      "page": "/gps-finder",
+      "regex": "^/gps\\-finder(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gps\\-finder(?:/)?$"
+    },
+    {
+      "page": "/header-pulse",
+      "regex": "^/header\\-pulse(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/header\\-pulse(?:/)?$"
+    },
+    {
+      "page": "/hyper",
+      "regex": "^/hyper(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hyper(?:/)?$"
+    },
+    {
+      "page": "/impact",
+      "regex": "^/impact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/impact(?:/)?$"
+    },
+    {
+      "page": "/interoperability",
+      "regex": "^/interoperability(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/interoperability(?:/)?$"
+    },
+    {
+      "page": "/join",
+      "regex": "^/join(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/join(?:/)?$"
+    },
+    {
+      "page": "/layer-1",
+      "regex": "^/layer\\-1(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/layer\\-1(?:/)?$"
+    },
+    {
+      "page": "/layer-2",
+      "regex": "^/layer\\-2(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/layer\\-2(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/main",
+      "regex": "^/main(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/main(?:/)?$"
+    },
+    {
+      "page": "/metaverse",
+      "regex": "^/metaverse(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/metaverse(?:/)?$"
+    },
+    {
+      "page": "/oracles",
+      "regex": "^/oracles(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/oracles(?:/)?$"
+    },
+    {
+      "page": "/policies",
+      "regex": "^/policies(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/policies(?:/)?$"
+    },
+    {
+      "page": "/privacy-coins",
+      "regex": "^/privacy\\-coins(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy\\-coins(?:/)?$"
+    },
+    {
+      "page": "/proof-of-stake",
+      "regex": "^/proof\\-of\\-stake(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/proof\\-of\\-stake(?:/)?$"
+    },
+    {
+      "page": "/proof-of-work",
+      "regex": "^/proof\\-of\\-work(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/proof\\-of\\-work(?:/)?$"
+    },
+    {
+      "page": "/shitcoins",
+      "regex": "^/shitcoins(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/shitcoins(?:/)?$"
+    },
+    {
+      "page": "/signup",
+      "regex": "^/signup(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/signup(?:/)?$"
+    },
+    {
+      "page": "/simple-view",
+      "regex": "^/simple\\-view(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/simple\\-view(?:/)?$"
+    },
+    {
+      "page": "/smart-contract-platforms",
+      "regex": "^/smart\\-contract\\-platforms(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/smart\\-contract\\-platforms(?:/)?$"
+    },
+    {
+      "page": "/social-tokens",
+      "regex": "^/social\\-tokens(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/social\\-tokens(?:/)?$"
+    },
+    {
+      "page": "/stablecoins",
+      "regex": "^/stablecoins(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/stablecoins(?:/)?$"
+    },
+    {
+      "page": "/synthetic-assets",
+      "regex": "^/synthetic\\-assets(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/synthetic\\-assets(?:/)?$"
+    },
+    {
+      "page": "/us-compliance",
+      "regex": "^/us\\-compliance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/us\\-compliance(?:/)?$"
+    },
+    {
+      "page": "/utility-tokens",
+      "regex": "^/utility\\-tokens(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/utility\\-tokens(?:/)?$"
+    },
+    {
+      "page": "/wrapped-assets",
+      "regex": "^/wrapped\\-assets(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/wrapped\\-assets(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

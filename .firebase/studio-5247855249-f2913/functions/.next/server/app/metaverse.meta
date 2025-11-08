@@ -1,0 +1,14 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/metaverse/layout,_N_T_/metaverse/page,_N_T_/metaverse"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/metaverse/__PAGE__",
+    "/metaverse",
+    "/_index"
+  ]
+}

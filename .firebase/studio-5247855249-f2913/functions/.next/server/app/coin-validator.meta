@@ -1,0 +1,14 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/coin-validator/layout,_N_T_/coin-validator/page,_N_T_/coin-validator"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/coin-validator/__PAGE__",
+    "/coin-validator",
+    "/_index"
+  ]
+}

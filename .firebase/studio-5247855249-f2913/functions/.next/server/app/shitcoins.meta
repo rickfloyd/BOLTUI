@@ -1,0 +1,14 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/shitcoins/layout,_N_T_/shitcoins/page,_N_T_/shitcoins"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/shitcoins/__PAGE__",
+    "/shitcoins",
+    "/_index"
+  ]
+}

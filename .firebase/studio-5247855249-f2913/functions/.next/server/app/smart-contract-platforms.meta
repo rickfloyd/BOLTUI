@@ -1,0 +1,14 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/smart-contract-platforms/layout,_N_T_/smart-contract-platforms/page,_N_T_/smart-contract-platforms"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/smart-contract-platforms/__PAGE__",
+    "/smart-contract-platforms",
+    "/_index"
+  ]
+}

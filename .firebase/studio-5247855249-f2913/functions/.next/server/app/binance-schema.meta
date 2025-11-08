@@ -1,0 +1,14 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/binance-schema/layout,_N_T_/binance-schema/page,_N_T_/binance-schema"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/binance-schema/__PAGE__",
+    "/binance-schema",
+    "/_index"
+  ]
+}

@@ -16,7 +16,7 @@ export default function Page() {
             </Link>
             <div className="text-center">
               <h1 className="text-3xl font-bold neon-text">
-                Welcome to AI Quantum Charts
+                Welcome to Quantum CyberVision
               </h1>
               <p className="text-lg text-gray-300">Your next-generation market analysis dashboard.</p>
             </div>

@@ -1,0 +1,3 @@
+module.exports=[8255,a=>{"use strict";var b=a.i(87924),c=a.i(72131);let d=()=>{let a=(0,c.useRef)(null);return(0,c.useEffect)(()=>{},[]),(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)("div",{id:"animation-container",ref:a}),(0,b.jsx)("div",{id:"title-overlay",children:"AI QUANTUM CHARTS"})]})};function e(){return(0,c.useEffect)(()=>(document.body.classList.add("animation-page"),()=>{document.body.classList.remove("animation-page")}),[]),(0,b.jsx)(d,{})}a.s(["default",()=>e],8255)}];
+
+//# sourceMappingURL=src_app_animation_page_tsx_482af545._.js.map

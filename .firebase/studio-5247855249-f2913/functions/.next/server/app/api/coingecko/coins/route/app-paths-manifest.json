@@ -1,0 +1,3 @@
+{
+  "/api/coingecko/coins/route": "app/api/coingecko/coins/route.js"
+}

@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -49,8 +50,8 @@ const CurrencyChart = ({ index, chartType, initialData }: { index: string, chart
       }
       const formatted: ChartData[] = apiData.data.map((v: any) => ({
         time: new Date(v.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        price: v.close,
-        ohlc: [v.open, v.high, v.low, v.close]
+        price: Number(v.close),
+        ohlc: [Number(v.open), Number(v.high), Number(v.low), Number(v.close)] as [number, number, number, number],
       }));
       setData(formatted);
       setDataSource(apiData.source);
@@ -60,8 +61,8 @@ const CurrencyChart = ({ index, chartType, initialData }: { index: string, chart
     if (initialData) {
         const formatted = initialData.map((v: any) => ({
             time: new Date(v.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-            price: v.close,
-            ohlc: [v.open, v.high, v.low, v.close]
+            price: Number(v.close),
+            ohlc: [Number(v.open), Number(v.high), Number(v.low), Number(v.close)] as [number, number, number, number]
         }));
         setData(formatted);
         return;

@@ -16,7 +16,7 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  title: 'AI Quantum Charts Dashboard',
+  title: 'Quantum CyberVision Dashboard',
   description: 'A next-generation market analysis dashboard.',
 };
 

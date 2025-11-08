@@ -5,13 +5,15 @@ import { Header } from '@/components/layout/header';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
+import { Slider } from '@/components/ui/slider';
 
 export default function BluetoothConnectPage() {
   const [output, setOutput] = useState<string>('Connection status will appear here.');
   const [isConnected, setIsConnected] = useState(false);
   const [isAutoPairEnabled, setIsAutoPairEnabled] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [volume, setVolume] = useState(50);
+
 
   useEffect(() => {
     // Initialize audio element
@@ -124,11 +126,14 @@ export default function BluetoothConnectPage() {
     }
   };
 
-  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVolumeChange = (value: number[]) => {
+    const newVolume = value[0];
+    setVolume(newVolume);
     if (audioRef.current) {
-      audioRef.current.volume = parseFloat(e.target.value);
+      audioRef.current.volume = newVolume / 100;
     }
   };
+
 
   return (
     <>
@@ -166,9 +171,16 @@ export default function BluetoothConnectPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button onClick={handlePlayPause}>▶️ Play / Pause</Button>
                 <Button onClick={handleNext}>⏭ Next</Button>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 w-48">
                   <Label htmlFor="volume">Volume:</Label>
-                  <Input id="volume" type="range" min="0" max="1" step="0.05" defaultValue="0.5" onChange={handleVolumeChange} className="w-48" />
+                  <Slider
+                    id="volume"
+                    defaultValue={[volume]}
+                    max={100}
+                    step={1}
+                    onValueChange={handleVolumeChange}
+                    className="w-full"
+                  />
                 </div>
               </div>
             </div>

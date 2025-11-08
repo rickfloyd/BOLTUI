@@ -1,0 +1,175 @@
+{
+  "app": {
+    "[project]/src/app/_not-found/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/animation/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/binance-schema/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/bluetooth-connect/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/charts/[index]/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/coin-validator/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/compare-prices/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/crypto-features/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/custom-view/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/dao-tokens/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/data-providers/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/defi-protocols/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/exchange-tokens/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/free-miners/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/gaming/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/gps-finder/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/header-pulse/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/hyper/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/impact/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/interoperability/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/join/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/layer-1/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/layer-2/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/login/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/main/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/metaverse/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/oracles/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/policies/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/privacy-coins/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/proof-of-stake/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/proof-of-work/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/shitcoins/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/signup/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/simple-view/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/smart-contract-platforms/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/social-tokens/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/stablecoins/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/synthetic-assets/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/us-compliance/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/utility-tokens/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ],
+    "[project]/src/app/wrapped-assets/page": [
+      "static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2",
+      "static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

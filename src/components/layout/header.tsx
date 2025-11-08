@@ -59,7 +59,6 @@ const guiltyPleasuresItems: DropdownItem[] = [
   { name: 'WhatsApp', type: 'link', href: 'https://whatsapp.com' },
   { name: 'WeChat', type: 'link', href: 'https://wechat.com' },
   { name: 'Discord', type: 'link', href: 'https://discord.com' },
-  { name: 'Shuffle', type: 'link', href: '#' },
 ];
 
 const republicanItems: DropdownItem[] = [
@@ -158,7 +157,7 @@ function DesktopHeader() {
       <div className="header-top-layer">
         <div className="flex items-center gap-4">
             <div className="header-title leading-tight">
-                <span className='neon-text'>AI Quantum</span><br /><span className='text-white'>Charts</span>
+                <span className='neon-text'>Quantum</span><br /><span className='text-white'>CyberVision</span>
             </div>
         </div>
         <div className="nav-right">
@@ -240,7 +239,7 @@ function MobileHeader() {
       <div className="header-top-layer">
         <div className="flex items-center gap-4">
             <div className="header-title leading-tight">
-                <span className='neon-text'>AI Quantum</span><br /><span className='text-white'>Charts</span>
+                <span className='neon-text'>Quantum</span><br /><span className='text-white'>CyberVision</span>
             </div>
         </div>
         <button onClick={toggleMenu} className="mobile-menu-button">
@@ -310,7 +309,7 @@ export function Header() {
         <div className="header-top-layer">
             <div className="flex items-center gap-4">
                  <div className="header-title leading-tight">
-                    <span className='neon-text'>AI Quantum</span><br /><span className='text-white'>Charts</span>
+                    <span className='neon-text'>Quantum</span><br /><span className='text-white'>CyberVision</span>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ export default function PoliciesPage() {
                 Our Customer Trust & Policies
               </h1>
               <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
-                Welcome to aiquantumcharts.com. Our entire business is built on a single idea: <strong>trust</strong>. We believe you deserve powerful tools, fair prices, and honest policies. We are not "The Other Guys." Here is our simple, unbreakable commitment to you.
+                Welcome to quantumcybervision.com. Our entire business is built on a single idea: <strong>trust</strong>. We believe you deserve powerful tools, fair prices, and honest policies. We are not "The Other Guys." Here is our simple, unbreakable commitment to you.
               </p>
             </div>
 
@@ -69,7 +69,7 @@ export default function PoliciesPage() {
                   </li>
                   <li>
                     <strong className="text-white block text-xl font-semibold">Proactive Security &amp; Fraud Protection</strong>
-                    We will <strong>never</strong> ask for your password, private keys, or cryptocurrency. All official communication will always come from an <code>@aiquantumcharts.com</code> email address. Any "free premium" offers you see on social media are scams.
+                    We will <strong>never</strong> ask for your password, private keys, or cryptocurrency. All official communication will always come from an <code>@quantumcybervision.com</code> email address. Any "free premium" offers you see on social media are scams.
                   </li>
                 </ul>
               </div>
