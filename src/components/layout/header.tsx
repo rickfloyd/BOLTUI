@@ -201,6 +201,9 @@ function DesktopHeader() {
           <HeaderDropdown title={<><div>Las Vegas</div><div>Stats</div></>} items={lasVegasStatsItems} titleClassName="neon-gold glow-text" />
           <HeaderDropdown title={<><div>World</div><div>Sports</div></>} items={sportsItems} titleClassName="neon-blue" />
           <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
+           <Link href="#" className="nav-item neon-green">
+            GLOBAL ECONOMIC AND MACRO DATA SOURCES
+          </Link>
         </nav>
       </div>
       <div className="header-fourth-layer">
@@ -264,6 +267,9 @@ function MobileHeader() {
             <HeaderDropdown title={<><div>Las Vegas</div><div>Stats</div></>} items={lasVegasStatsItems} titleClassName="neon-gold glow-text" />
             <HeaderDropdown title={<><div>World</div><div>Sports</div></>} items={sportsItems} titleClassName="neon-blue" />
             <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
+            <Link href="#" className="nav-item neon-green">
+              GLOBAL ECONOMIC AND MACRO DATA SOURCES
+            </Link>
             <div className="mobile-menu-separator" />
              <Link href="#" className="nav-item neon-purple">
                 Over-the-Counter (OTC)
@@ -314,3 +320,4 @@ export function Header() {
     
 
     
+
