@@ -564,6 +564,27 @@ body.animation-page {
     padding: 1rem;
 }
 
+.info-frame {
+  padding: 0.5rem 1rem;
+  border: 2px solid;
+  border-radius: var(--radius);
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.info-frame.compliant {
+  color: hsl(var(--neon-orange));
+  border-color: hsl(var(--neon-orange));
+  box-shadow: 0 0 8px hsl(var(--neon-orange));
+}
+
+.info-frame.policies {
+  color: hsl(var(--neon-pink));
+  border-color: hsl(var(--neon-pink));
+  box-shadow: 0 0 8px hsl(var(--neon-pink));
+}
+
 
 @media (min-width: 768px) {
     .stats-row {

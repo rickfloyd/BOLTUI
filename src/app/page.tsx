@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -10,10 +11,20 @@ export default function Page() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <h1 className="text-3xl font-bold neon-text text-center">
-            Welcome to AI Quantum Charts
-          </h1>
-          <p className="text-lg text-gray-300 text-center">Your next-generation market analysis dashboard.</p>
+          <div className="flex justify-between items-center w-full">
+            <div className="info-frame compliant">
+              U.S. Compliant
+            </div>
+            <div className="text-center">
+              <h1 className="text-3xl font-bold neon-text">
+                Welcome to AI Quantum Charts
+              </h1>
+              <p className="text-lg text-gray-300">Your next-generation market analysis dashboard.</p>
+            </div>
+            <Link href="/policies" className="info-frame policies">
+              Policies
+            </Link>
+          </div>
            <div className="view-switcher">
             <Link href="/hyper" className="view-button neon-cyan">
               Hyper
