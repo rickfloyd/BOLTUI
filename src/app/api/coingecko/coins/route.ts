@@ -8,7 +8,7 @@ export async function GET() {
     return NextResponse.json({ error: 'API key is not configured. Please set COINGECKO_API_KEY in your environment variables.' }, { status: 500 });
   }
 
-  const url = 'https://api.coingecko.com/api/v3/search/trending';
+  const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false';
 
   try {
     const apiResponse = await fetch(url, {
@@ -29,6 +29,6 @@ export async function GET() {
     return NextResponse.json(data);
   } catch (error) {
     console.error('Failed to fetch from CoinGecko API:', error);
-    return NextResponse.json({ error: 'Failed to fetch trending coins data.' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to fetch coins data.' }, { status: 500 });
   }
 }
