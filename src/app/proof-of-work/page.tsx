@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/header';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { powCoinsAth, PoWAthData } from '@/data/pow-coins-ath';
 
 interface Coin {
   id: string;
@@ -16,16 +17,24 @@ interface Coin {
   market_cap_rank: number;
 }
 
+interface DisplayCoin extends Coin {
+    ath_price_2025?: string;
+    ath_date_2025?: string;
+}
+
 const proofOfWorkSymbols: string[] = [
     "btc", "doge", "ltc", "bch", "xmr", "zec", "etc", "dash", "kas", "dcr", 
     "bdx", "cfx", "bsv", "dgb", "rvn", "ckb", "xvg", "qrl", "erg", "flux", 
     "ethw", "zen", "sc", "sys", "firo", "nmc", "grs", "vtc", "beam", "bcn"
 ];
 
+const athDataMap: Map<string, PoWAthData> = new Map(
+  powCoinsAth.map(coin => [coin.symbol.toLowerCase(), coin])
+);
 
 export default function ProofOfWorkPage() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [coins, setCoins] = useState<Coin[]>([]);
+  const [coins, setCoins] = useState<DisplayCoin[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -42,7 +51,16 @@ export default function ProofOfWorkPage() {
         
         const powCoins = data.filter(coin => proofOfWorkSymbols.includes(coin.symbol.toLowerCase()));
         
-        setCoins(powCoins);
+        const mergedCoins: DisplayCoin[] = powCoins.map(coin => {
+            const ath = athDataMap.get(coin.symbol.toLowerCase());
+            return {
+                ...coin,
+                ath_price_2025: ath?.ath_price_2025,
+                ath_date_2025: ath?.ath_date_2025,
+            };
+        });
+
+        setCoins(mergedCoins);
         setError(null);
       } catch (err: any) {
         setError(err.message);
@@ -78,8 +96,8 @@ export default function ProofOfWorkPage() {
       <main className="dashboard-grid">
         <section className="center-content">
           <h1 className="text-3xl font-bold neon-text text-center mt-8">Proof of Work (PoW) Coins</h1>
-          <p className="text-lg text-gray-300 text-center">
-            A list of cryptocurrencies that use the Proof of Work consensus mechanism, with live data from the top 50 coins by market cap.
+          <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
+            These blockchains use mining instead of staking to validate transactions. This list represents top PoW coins by market cap, with live market data and reported 2025 All-Time Highs.
           </p>
           <div className="w-full mt-4">
             <Input
@@ -103,6 +121,8 @@ export default function ProofOfWorkPage() {
                       <th>Symbol</th>
                       <th>Price</th>
                       <th>Market Cap</th>
+                      <th>2025 ATH Price</th>
+                      <th>ATH Date</th>
                       <th>View on CoinGecko</th>
                     </tr>
                   </thead>
@@ -117,6 +137,8 @@ export default function ProofOfWorkPage() {
                         <td className="neon-pink">{coin.symbol.toUpperCase()}</td>
                         <td className="neon-blue font-numeric">{formatCurrency(coin.current_price)}</td>
                         <td className="neon-gold font-numeric">{formatMarketCap(coin.market_cap)}</td>
+                        <td className="text-gray-300 font-numeric">{coin.ath_price_2025 || 'N/A'}</td>
+                        <td className="text-gray-400">{coin.ath_date_2025 || 'N/A'}</td>
                         <td>
                           <Link href={`https://www.coingecko.com/en/coins/${coin.id}`} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
                             View More
