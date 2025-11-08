@@ -41,6 +41,16 @@ export default function JoinPage() {
             Already a Member?
           </Link>
         </div>
+
+        <div className="mt-8">
+          <Link
+            href="/"
+            className="text-cyan-400 hover:underline"
+          >
+            &larr; Back to Home
+          </Link>
+        </div>
+
       </div>
     </main>
   );
