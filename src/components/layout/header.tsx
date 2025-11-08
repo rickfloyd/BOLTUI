@@ -148,6 +148,9 @@ const opinionsItems: DropdownItem[] = [
   { name: 'Independent', subtext: 'News and opinion from an independent perspective', type: 'link', href: '#' },
 ];
 
+const fxMatrixItems: DropdownItem[] = [
+    { name: 'AI Volatility Forecast', subtext: 'Predict market volatility with AI' },
+];
 
 function DesktopHeader() {
   return (
@@ -187,9 +190,7 @@ function DesktopHeader() {
             Crypto
           </Link>
           <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
-          <Link href="#" className="nav-item neon-green">
-            Products
-          </Link>
+          <HeaderDropdown title="FX Matrix Analyzer" items={fxMatrixItems} titleClassName="neon-green" />
         </nav>
       </div>
       <div className="header-bottom-layer">
@@ -231,7 +232,7 @@ function MobileHeader() {
                 Crypto
               </Link>
             <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
-            <Link href="#" className="nav-item neon-green">Products</Link>
+            <HeaderDropdown title="FX Matrix Analyzer" items={fxMatrixItems} titleClassName="neon-green" />
             <HeaderDropdown title="Sports Betting" items={sportsBettingItems} titleClassName="neon-orange" />
             <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
             <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
