@@ -33,7 +33,7 @@ export default function ImpactPage() {
 
               {/* How Each $1 Is Used */}
               <section>
-                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3">💰 How Each $1 Is Used</h2>
+                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3">💰 How Each <span className="text-green-400">$1</span> Is Used</h2>
                 <div className="overflow-x-auto">
                   <table className="min-w-full divide-y divide-gray-700">
                     <thead className="bg-gray-800/50">
