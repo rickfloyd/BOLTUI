@@ -31,7 +31,7 @@ const tokenCategories = [
   { name: 'Cross-Chain Bridge Tokens', description: 'Move assets between chains (MULTI, ANY).', color: 'glow-pink' },
   { name: 'Infrastructure / Data Tokens', description: 'Power AI, cloud, and analytics (RNDR, FIL, OCEAN).', color: 'glow-teal' },
   { name: 'Proof of Stake', description: 'Validators lock up tokens to secure the network.', color: 'glow-green' },
-  { name: 'Proof of Work', description: 'Miners compete to solve puzzles to validate transactions.', color: 'glow-blue' },
+  { name: 'Proof of Work', description: 'Miners compete to solve puzzles to validate transactions.', color: 'glow-multi-color' },
   { name: 'Shitcoins', description: 'Highly speculative and volatile tokens.', color: 'glow-orange' },
 ];
 

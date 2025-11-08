@@ -355,6 +355,35 @@ h1, h2, h3, .title {
 .glow-pink { --glow-color: hsl(var(--neon-pink)); --glow-color-inset: hsla(var(--neon-pink), 0.5); }
 .glow-teal { --glow-color: hsl(var(--neon-teal)); --glow-color-inset: hsla(var(--neon-teal), 0.5); }
 
+.glow-multi-color {
+  border: 1px solid transparent;
+  position: relative;
+  background-clip: padding-box; /* Important: prevents bg from showing under border */
+  z-index: 1;
+}
+
+.glow-multi-color::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -1px; /* Match the border-width */
+  border-radius: inherit; /* Inherit the border-radius of the parent */
+  background: linear-gradient(to right, hsl(var(--neon-pink)), hsl(var(--neon-blue)));
+  animation: pulse-multi-color-shadow 3s infinite;
+}
+
+@keyframes pulse-multi-color-shadow {
+  0%, 100% {
+    box-shadow: 0 0 10px hsl(var(--neon-pink)), 0 0 10px hsl(var(--neon-blue)),
+                inset 0 0 8px hsla(var(--neon-pink), 0.5), inset 0 0 8px hsla(var(--neon-blue), 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--neon-pink)), 0 0 20px hsl(var(--neon-blue)),
+                inset 0 0 12px hsla(var(--neon-pink), 0.5), inset 0 0 12px hsla(var(--neon-blue), 0.5);
+  }
+}
+
 
 .data-card .card-title {
   font-size: 0.8rem;
