@@ -27,18 +27,8 @@ export default function UsCompliancePage() {
               <section>
                 <h2 className="text-3xl font-bold mb-4 text-cyan-300">1. Core Concept</h2>
                 <p>Each engine becomes a plug-in with a Boolean flag in the user’s profile document. When a user loads any chart, the backend checks their preferences and activates only the approved engines.</p>
-                <div className="relative mt-4 h-64 flex items-center justify-center">
-                    {aiEngineImage && (
-                        <Image 
-                            src={aiEngineImage.imageUrl} 
-                            alt={aiEngineImage.description}
-                            data-ai-hint={aiEngineImage.imageHint}
-                            fill
-                            className="object-contain z-10 opacity-80"
-                        />
-                    )}
-                    <pre className="absolute inset-0 bg-transparent p-4 rounded-lg border-none overflow-hidden">
-                    <code className="text-transparent">
+                <pre className="bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto">
+                  <code>
 {`"userEngines": {
   "marketBridge": true,
   "automationConnector": false,
@@ -48,7 +38,6 @@ export default function UsCompliancePage() {
 }`}
                   </code>
                 </pre>
-                </div>
               </section>
 
               <section>
