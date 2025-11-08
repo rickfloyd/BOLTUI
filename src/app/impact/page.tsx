@@ -70,7 +70,7 @@ export default function ImpactPage() {
                             <tr><td className="px-6 py-4">Legal / Compliance / Auditing</td><td className="px-6 py-4"><span className="neon-gold">$700 K</span></td><td className="px-6 py-4">SEC / CFTC / FTC / GDPR compliance</td></tr>
                             <tr><td className="px-6 py-4">Marketing & Conventions</td><td className="px-6 py-4"><span className="neon-gold">$400 K</span></td><td className="px-6 py-4">Global events + weekly social outreach</td></tr>
                             <tr><td className="px-6 py-4">Admin & Insurance</td><td className="px-6 py-4"><span className="neon-gold">$150 K</span></td><td className="px-6 py-4">HR, payroll, cyber liability coverage</td></tr>
-                            <tr className="font-bold bg-gray-800/50"><td className="px-6 py-4">Total Annual Operating Budget:</td><td className="px-6 py-4"><span className="neon-gold">≈ $5.7 Million</span></td><td className="px-6 py-4"></td></tr>
+                            <tr className="font-bold bg-gray-800/50"><td className="px-6 py-4 text-blue-400">Total Annual Operating Budget:</td><td className="px-6 py-4"><span className="neon-gold">≈ $5.7 Million</span></td><td className="px-6 py-4"></td></tr>
                         </tbody>
                    </table>
                 </div>
