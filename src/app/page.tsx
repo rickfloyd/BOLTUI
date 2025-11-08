@@ -24,6 +24,9 @@ export default function Page() {
             <Link href="/custom-view" className="view-button neon-orange">
               Custom View
             </Link>
+            <Link href="/policies" className="view-button neon-blue">
+              Policies
+            </Link>
           </div>
         </section>
       </main>
