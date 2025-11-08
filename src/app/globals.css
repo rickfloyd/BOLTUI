@@ -256,6 +256,14 @@ h1, h2, h3, .title {
     text-shadow: 0 0 5px currentColor;
 }
 
+.view-button.view-button-hyper {
+    color: hsl(var(--neon-pink));
+    text-shadow: 0 0 8px hsl(var(--neon-teal)), 0 0 15px hsl(var(--neon-teal));
+    border-color: hsl(var(--neon-teal));
+    box-shadow: 0 0 10px hsl(var(--neon-teal)), inset 0 0 5px hsl(var(--neon-teal));
+}
+
+
 .view-button:hover, .view-button.active {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: currentColor;

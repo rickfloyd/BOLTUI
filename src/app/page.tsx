@@ -31,10 +31,7 @@ export default function Page() {
           </div>
            <div className="view-switcher">
             <Link href="/hyper" className="view-button view-button-hyper">
-              Hyper
-            </Link>
-            <Link href="/" className="view-button neon-cyan">
-              View
+              HYPER VIEW
             </Link>
             <Link href="/impact" className="view-button neon-cyan">
               Impact
