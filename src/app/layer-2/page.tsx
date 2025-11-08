@@ -76,7 +76,7 @@ export default function Layer2Page() {
                 </thead>
                 <tbody>
                   {filteredCoins.map((coin) => (
-                    <tr key={coin.symbol} className="hover:bg-white/5">
+                    <tr key={coin.name} className="hover:bg-white/5">
                       <td className="neon-cyan">{coin.name}</td>
                       <td className="neon-pink">{coin.symbol}</td>
                       <td className="neon-blue">{coin.category}</td>
