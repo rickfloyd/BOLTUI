@@ -29,7 +29,12 @@ export async function GET(request: Request) {
       console.error('Finnhub API Error:', errorText);
       return NextResponse.json({ error: `Finnhub API error: ${apiResponse.statusText}` }, { status: apiResponse.status });
     }
-    const data = await apiResponse.json();
+    const responseText = await apiResponse.text();
+    if (!responseText) {
+        return NextResponse.json({ error: 'Finnhub returned an empty response.' }, { status: 500 });
+    }
+    const data = JSON.parse(responseText);
+    
     if (data.s !== 'ok') {
         return NextResponse.json({ error: 'Finnhub returned no data for the symbol.' }, { status: 404 });
     }
