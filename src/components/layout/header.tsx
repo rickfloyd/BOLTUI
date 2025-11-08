@@ -170,9 +170,6 @@ function DesktopHeader() {
            <Link href="/compare-prices" className="nav-item neon-pink text-center leading-tight">
             Compare<br />Prices
           </Link>
-           <Link href="/policies" className="nav-item neon-pink">
-            Policies
-          </Link>
            <Link href="/join" className="nav-item neon-pink">
             Join
           </Link>
@@ -238,7 +235,6 @@ function MobileHeader() {
             <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
             <div className="mobile-menu-separator" />
             <Link href="/compare-prices" className="nav-item neon-pink text-center leading-tight">Compare<br />Prices</Link>
-            <Link href="/policies" className="nav-item neon-pink">Policies</Link>
             <Link href="/join" className="nav-item neon-pink">Join</Link>
           </nav>
         </div>
@@ -269,5 +265,3 @@ export function Header() {
     </header>
   );
 }
-
-    
