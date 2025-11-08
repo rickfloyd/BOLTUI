@@ -40,7 +40,7 @@ export default function UsCompliancePage() {
                 <h2 className="text-3xl font-bold mb-4 text-cyan-300">2. Firebase / Firestore Structure</h2>
                 <p>User preferences are stored in a dedicated `activeEngines` object within their user document.</p>
                 <p className="mt-2"><strong>Collection:</strong> users</p>
-                <p><strong>Document:</strong> {uid}</p>
+                <p><strong>Document:</strong> {'{uid}'}</p>
                 <pre className="bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto">
                   <code>
 {`{
@@ -54,7 +54,7 @@ export default function UsCompliancePage() {
 }`}
                   </code>
                 </pre>
-                <p className="mt-4">This makes it easy to query and toggle engine states:</p>
+                <p className="mt-4">This makes it easy to query and toggle:</p>
                 <pre className="bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto">
                   <code>
 {`// Read preferences
