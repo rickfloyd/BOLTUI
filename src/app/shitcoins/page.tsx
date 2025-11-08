@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -42,6 +43,9 @@ export default function ShitcoinsPage() {
     };
 
     fetchCoins();
+    const intervalId = setInterval(fetchCoins, 60000); // Refresh every 60 seconds
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, []);
 
   const filteredCoins = coins.filter(
@@ -79,7 +83,7 @@ export default function ShitcoinsPage() {
           </div>
           <div className="w-full overflow-x-auto mt-8">
             <div className="info-table-card">
-              {loading && <p className="text-center text-lg text-gray-300 py-8">Loading top coins...</p>}
+              {loading && coins.length === 0 && <p className="text-center text-lg text-gray-300 py-8">Loading top coins...</p>}
               {error && <p className="text-center text-lg text-red-400 py-8">{error}</p>}
               {!loading && !error && (
                 <table className="info-table w-full">
