@@ -20,9 +20,14 @@ export default function Page() {
               </h1>
               <p className="text-lg text-gray-300">Your next-generation market analysis dashboard.</p>
             </div>
-            <Link href="/policies" className="info-frame policies">
-              Policies
-            </Link>
+            <div className="flex gap-4">
+              <Link href="/policies" className="info-frame policies">
+                Policies
+              </Link>
+              <Link href="/compare-prices" className="info-frame policies">
+                Compare Prices
+              </Link>
+            </div>
           </div>
            <div className="view-switcher">
             <Link href="/hyper" className="view-button neon-cyan">
