@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -60,6 +59,13 @@ export default function OraclesPage() {
               )}
             </div>
           </div>
+           <div className="mt-8 text-gray-400 text-sm max-w-4xl mx-auto">
+                <h3 className="font-bold text-lg text-white mb-2">Notes on the Oracle Ecosystem:</h3>
+                <ul className="list-disc list-inside space-y-2">
+                    <li>The oracle ecosystem includes three categories: <strong>(A) native oracle tokens</strong> (Chainlink, Pyth, Band, API3, Tellor, DIA, Switchboard), <strong>(B) data-aggregation and middleware projects</strong> that provide oracle-like services (RedStone, Supra, RedStone Streams, Umbrella, Witnet), and <strong>(C) on-chain systems or protocols</strong> that embed oracle functionality or use oracle tokens for staking and validation (iExec, Phala, Kylin, Razor).</li>
+                    <li>Several projects have multiple tokens, ecosystem variants, or no single canonical token (some oracle services are protocols without a utility token). Coin tickers and token names can change, new oracle projects appear, and some legacy or specialized oracle tokens are region- or chain-specific.</li>
+                </ul>
+            </div>
         </section>
       </main>
       <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
