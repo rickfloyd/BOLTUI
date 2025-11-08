@@ -20,14 +20,14 @@ export default function MetaverseProjectsPage() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <h1 className="text-3xl font-bold neon-text text-center mt-8">Metaverse Projects</h1>
+          <h1 className="text-3xl font-bold neon-text text-center mt-8">Metaverse & NFT Projects</h1>
           <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
             A curated list of projects building the metaverse, from virtual worlds and gaming platforms to the underlying infrastructure and tools.
           </p>
           <div className="w-full mt-4">
             <Input
               type="text"
-              placeholder="Search metaverse projects..."
+              placeholder="Search metaverse & NFT projects..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white"
@@ -58,7 +58,7 @@ export default function MetaverseProjectsPage() {
                 </tbody>
               </table>
               {filteredProjects.length === 0 && (
-                <p className="text-center text-gray-400 py-8">No metaverse projects found matching your search.</p>
+                <p className="text-center text-gray-400 py-8">No projects found matching your search.</p>
               )}
             </div>
           </div>
