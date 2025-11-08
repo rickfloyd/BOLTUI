@@ -16,40 +16,27 @@ import {
   Area,
 } from 'recharts';
 
+interface TimeSeriesValue {
+  datetime: string;
+  open: string;
+  high: string;
+  low: string;
+  close: string;
+  volume: string;
+}
+
 interface ChartData {
   time: string;
   price: number;
-  ohlc?: [number, number, number, number]; // Optional Open-High-Low-Close for relevant charts
+  ohlc?: [number, number, number, number];
 }
-
-const generateRandomData = (index: string): ChartData[] => {
-  const data: ChartData[] = [];
-  const now = new Date();
-  let price = 100 + Math.random() * 20; // Starting price
-
-  for (let i = 60; i >= 0; i--) {
-    const time = new Date(now.getTime() - i * 60000); // 1 minute intervals
-    const open = price;
-    const close = price + (Math.random() - 0.5) * 2;
-    const high = Math.max(open, close) + Math.random();
-    const low = Math.min(open, close) - Math.random();
-    price = close;
-    price = Math.max(price, 80); // Ensure price doesn't go too low
-    data.push({
-      time: time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      price: parseFloat(price.toFixed(2)),
-      ohlc: [open, high, low, close]
-    });
-  }
-  return data;
-};
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
       <div className="p-2 bg-gray-800/80 border border-cyan-500 rounded-md">
         <p className="label text-white">{`${label}`}</p>
-        <p className="intro text-cyan-400 font-numeric">{`Price : ${payload[0].value}`}</p>
+        <p className="intro text-cyan-400 font-numeric">{`Price : ${payload[0].value.toFixed(4)}`}</p>
       </div>
     );
   }
@@ -59,24 +46,58 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 const CurrencyChart = ({ index, chartType }: { index: string, chartType: string }) => {
   const [data, setData] = useState<ChartData[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    setData(generateRandomData(index));
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const symbol = `${index}/USD`;
+        const response = await fetch(`/api/twelvedata?symbol=${symbol}&interval=1min`);
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to fetch chart data.');
+        }
+        const apiData = await response.json();
 
-    const interval = setInterval(() => {
-      setData(prevData => {
-        const newDataPoint = generateRandomData(index)[59]; // Get a new point
-        const newDataSet = [...prevData.slice(1), newDataPoint];
-        // Ensure time labels are updated correctly
-        return newDataSet.map((point, i) => ({
-            ...point,
-            time: new Date(new Date().getTime() - (60-i) * 60000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-        }))
-      });
-    }, 5000); // Update every 5 seconds
+        if (!apiData.values) {
+          throw new Error('No time series data available for this symbol.');
+        }
+
+        const formattedData: ChartData[] = apiData.values.map((v: TimeSeriesValue) => ({
+          time: new Date(v.datetime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          price: parseFloat(v.close),
+          ohlc: [parseFloat(v.open), parseFloat(v.high), parseFloat(v.low), parseFloat(v.close)]
+        })).reverse(); // API returns newest first, so we reverse it
+
+        setData(formattedData);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+
+    const interval = setInterval(fetchData, 60000); // Refresh every minute
 
     return () => clearInterval(interval);
   }, [index]);
+
+  if (loading) {
+    return <div className="flex items-center justify-center h-full text-cyan-400">Loading chart data...</div>;
+  }
+
+  if (error) {
+    return <div className="flex items-center justify-center h-full text-red-400">{error}</div>;
+  }
+  
+  if (data.length === 0) {
+     return <div className="flex items-center justify-center h-full text-gray-400">No data available for this chart.</div>;
+  }
 
   const renderChart = () => {
     switch(chartType) {
@@ -131,7 +152,12 @@ const CurrencyChart = ({ index, chartType }: { index: string, chartType: string 
       >
         <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.1)" />
         <XAxis dataKey="time" stroke="#888" tick={{fontFamily: 'var(--font-cinzel)'}} />
-        <YAxis stroke="#888" domain={['dataMin - 5', 'dataMax + 5']} tick={{fontFamily: 'var(--font-cinzel)'}} />
+        <YAxis 
+            stroke="#888" 
+            domain={['dataMin - 1', 'dataMax + 1']} 
+            tick={{fontFamily: 'var(--font-cinzel)'}}
+            tickFormatter={(value) => typeof value === 'number' ? value.toFixed(4) : value}
+        />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
         {renderChart().props.children}
