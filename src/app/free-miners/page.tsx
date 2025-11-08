@@ -1,6 +1,6 @@
 
 import { Header } from '@/components/layout/header';
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, Globe } from 'lucide-react';
 import Link from 'next/link';
 
 export default function FreeMinersPage() {
@@ -120,6 +120,43 @@ export default function FreeMinersPage() {
                             </ul>
                         </section>
 
+                         {/* Illegal Mining Section */}
+                        <section className="p-6 rounded-lg bg-black/50 border-2 border-red-500/50 shadow-[0_0_20px_rgba(255,80,80,0.3)]">
+                            <div className="flex items-start gap-4">
+                                <Globe className="h-8 w-8 text-red-400 flex-shrink-0 mt-1" />
+                                <div>
+                                    <h2 className="text-2xl font-bold text-red-400 mb-3">Countries Where Crypto Mining Is Illegal (2025)</h2>
+                                    <p className="text-gray-300 mb-4">As of November 2025, cryptocurrency mining is fully illegal in at least six countries, with partial or regional bans in several others. These restrictions are driven by energy concerns, financial risks, and regulatory control.</p>
+                                </div>
+                            </div>
+                            
+                            <h3 className="text-xl font-bold text-red-300 mt-4 mb-2">🌍 Countries Where Crypto Mining Is Fully Illegal</h3>
+                            <ul className="list-disc list-inside space-y-3 text-gray-300 pl-4">
+                                <li><strong>China</strong> – Banned all crypto mining in 2021 due to energy waste and financial instability. Underground mining still persists.</li>
+                                <li><strong>Algeria</strong> – Outlawed all crypto activity including mining since 2017 to protect the national currency.</li>
+                                <li><strong>Bangladesh</strong> – Criminalized mining and trading under anti-money laundering laws. Violators face imprisonment.</li>
+                                <li><strong>Nepal</strong> – Mining is illegal under the Foreign Exchange Act. Authorities conduct raids on mining farms.</li>
+                                <li><strong>Egypt</strong> – Banned since 2018. Religious edicts and economic concerns drive enforcement.</li>
+                                <li><strong>Afghanistan</strong> – The Taliban reinstated a mining ban in 2022, shutting down exchanges and arresting operators.</li>
+                            </ul>
+
+                            <h3 className="text-xl font-bold text-red-300 mt-6 mb-2">⚡ Countries With Regional or Temporary Mining Bans</h3>
+                            <ul className="list-disc list-inside space-y-3 text-gray-300 pl-4">
+                                <li><strong>Russia</strong> – Banned mining in 10 regions in 2025 due to energy shortages and grid instability.</li>
+                                <li><strong>Norway</strong> – Plans to ban new proof-of-work mining data centers in 2025 for environmental reasons.</li>
+                            </ul>
+
+                            <div className="mt-6 p-4 rounded-md bg-red-900/30 border border-red-500/50">
+                                <h4 className="font-bold text-red-300">🛑 Important Notes</h4>
+                                <ul className="list-disc list-inside space-y-2 text-red-200/90 mt-2">
+                                    <li>Mining legality can change rapidly, and enforcement varies by region.</li>
+                                    <li>Underground mining often continues despite bans, especially in countries like China and Bangladesh.</li>
+                                    <li>Always check local laws before engaging in mining activities.</li>
+                                </ul>
+                            </div>
+                        </section>
+
+
                         {/* Disclaimer */}
                         <div className="relative p-6 rounded-lg border-2 border-yellow-500/80 bg-yellow-900/30 shadow-[0_0_20px_rgba(255,223,0,0.3)] mt-12">
                             <div className="flex items-start gap-4">
@@ -139,4 +176,4 @@ export default function FreeMinersPage() {
     );
 }
 
-    
+  
