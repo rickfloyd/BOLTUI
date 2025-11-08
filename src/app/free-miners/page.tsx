@@ -1,20 +1,77 @@
+'use client';
 
+import { useState } from 'react';
 import { Header } from '@/components/layout/header';
 import { AlertTriangle, Globe } from 'lucide-react';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Label } from '@/components/ui/label';
 
 export default function FreeMinersPage() {
+    const [selectedCountry, setSelectedCountry] = useState('US');
+    const [result, setResult] = useState('');
+
+    const checkMiningStatus = () => {
+        const banned = ["CN", "EG", "AF", "BD", "NP", "DZ"];
+        const regionallyBanned = ["RU", "NO"];
+        let resultText = "";
+
+        if (banned.includes(selectedCountry)) {
+            resultText = "❌ Mining is fully illegal in your country.";
+        } else if (regionallyBanned.includes(selectedCountry)) {
+            resultText = "⚠️ Mining is restricted in some regions of your country.";
+        } else {
+            resultText = "✅ Mining is generally legal in your country. Still, check local regulations.";
+        }
+        setResult(resultText);
+    };
+
     return (
         <>
             <Header />
             <main className="container mx-auto px-4 py-12">
                 <div className="center-content max-w-4xl mx-auto">
                     
-                    <h1 className="text-3xl md:text-4xl font-bold neon-text text-center mb-10">
-                        🧱 Step-by-Step Miner Selection Guide for Home Computers (Windows &amp; macOS)
+                    <h1 className="text-3xl md:text-4xl font-bold neon-text text-center mb-6">
+                        🧱 Step-by-Step Miner Selection Guide
                     </h1>
+
+                    <section className="p-6 rounded-lg bg-black/50 border-2 border-cyan-500/50 shadow-[0_0_20px_rgba(0,255,255,0.3)] w-full">
+                        <h2 className="text-2xl font-bold text-cyan-300 mb-4 text-center">Check Mining Legality</h2>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <div className='flex flex-col gap-2'>
+                                <Label htmlFor="country-select" className="text-gray-300">Select your country:</Label>
+                                <Select onValueChange={setSelectedCountry} defaultValue={selectedCountry}>
+                                    <SelectTrigger id="country-select" className="w-[280px] bg-gray-800 border-cyan-400 text-white">
+                                        <SelectValue placeholder="Select a country" />
+                                    </SelectTrigger>
+                                    <SelectContent className="bg-black text-white border-cyan-400">
+                                        <SelectItem value="US">United States</SelectItem>
+                                        <SelectItem value="CN">China</SelectItem>
+                                        <SelectItem value="EG">Egypt</SelectItem>
+                                        <SelectItem value="RU">Russia</SelectItem>
+                                        <SelectItem value="IN">India</SelectItem>
+                                        <SelectItem value="AF">Afghanistan</SelectItem>
+                                        <SelectItem value="DZ">Algeria</SelectItem>
+                                        <SelectItem value="BD">Bangladesh</SelectItem>
+                                        <SelectItem value="NP">Nepal</SelectItem>
+                                        <SelectItem value="NO">Norway</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                            <Button onClick={checkMiningStatus} className="self-end h-10">Check</Button>
+                        </div>
+                        {result && (
+                            <div className="mt-4 p-4 rounded-md text-center text-lg font-bold bg-black/50 border border-pink-400/50">
+                                <p className={result.startsWith('❌') ? 'text-red-400' : result.startsWith('⚠️') ? 'text-yellow-400' : 'text-green-400'}>
+                                    {result}
+                                </p>
+                            </div>
+                        )}
+                    </section>
                     
-                    <div className="space-y-12">
+                    <div className="space-y-12 mt-12">
 
                         {/* Step 1 */}
                         <section className="p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg">
@@ -175,5 +232,3 @@ export default function FreeMinersPage() {
         </>
     );
 }
-
-  
