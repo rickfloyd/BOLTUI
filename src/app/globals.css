@@ -69,7 +69,7 @@ h1, h2, h3, .title {
     border-bottom: 1px solid hsla(var(--accent-glow), 0.2);
     background-color: #0A0A0F;
 }
-.header-top-layer, .header-middle-layer, .header-bottom-layer {
+.header-top-layer, .header-middle-layer, .header-bottom-layer, .header-fourth-layer {
     display: flex;
     align-items: center;
     width: 100%;
@@ -89,6 +89,12 @@ h1, h2, h3, .title {
     border-top: 1px solid hsla(var(--accent-glow), 0.2);
 }
 .header-bottom-layer {
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid hsla(var(--accent-glow), 0.2);
+}
+.header-fourth-layer {
     justify-content: flex-start;
     gap: 1.5rem;
     padding: 0.75rem 0;
@@ -259,10 +265,10 @@ h1, h2, h3, .title {
 }
 
 .view-button.view-button-hyper {
-    color: hsl(var(--neon-pink));
-    text-shadow: 0 0 8px hsl(var(--neon-pink)), 0 0 15px hsl(var(--neon-pink));
-    border-color: hsl(var(--neon-pink));
-    box-shadow: 0 0 10px hsl(var(--neon-pink)), inset 0 0 5px hsl(var(--neon-pink));
+  color: hsl(var(--neon-pink));
+  text-shadow: 0 0 8px hsl(var(--neon-pink)), 0 0 15px hsl(var(--neon-pink));
+  border-color: hsl(var(--neon-pink));
+  box-shadow: 0 0 10px hsl(var(--neon-pink)), inset 0 0 5px hsl(var(--neon-pink));
 }
 
 
@@ -617,5 +623,6 @@ body.animation-page {
 
 
     
+
 
 

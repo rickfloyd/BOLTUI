@@ -203,6 +203,13 @@ function DesktopHeader() {
           <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
         </nav>
       </div>
+      <div className="header-fourth-layer">
+        <nav className="main-nav">
+          <Link href="#" className="nav-item neon-purple">
+            Over-the-Counter (OTC)
+          </Link>
+        </nav>
+      </div>
     </>
   )
 }
@@ -248,6 +255,10 @@ function MobileHeader() {
             <HeaderDropdown title={<><div>Las Vegas</div><div>Stats</div></>} items={lasVegasStatsItems} titleClassName="neon-gold glow-text" />
             <HeaderDropdown title={<><div>World</div><div>Sports</div></>} items={sportsItems} titleClassName="neon-blue" />
             <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
+            <div className="mobile-menu-separator" />
+             <Link href="#" className="nav-item neon-purple">
+                Over-the-Counter (OTC)
+              </Link>
             <div className="mobile-menu-separator" />
             <Link href="/compare-prices" className="nav-item neon-pink text-center leading-tight">Compare<br />Prices</Link>
             <Link href="/join" className="nav-item neon-pink">Join</Link>
