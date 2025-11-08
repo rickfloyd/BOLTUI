@@ -30,14 +30,14 @@ export default function Page() {
             </div>
           </div>
            <div className="view-switcher">
-            <Link href="/hyper" className="view-button view-button-hyper">
-              HYPER VIEW
-            </Link>
             <Link href="/impact" className="view-button neon-cyan">
               Impact
             </Link>
             <Link href="/simple-view" className="view-button neon-pink">
               Simple View
+            </Link>
+            <Link href="/hyper" className="view-button view-button-hyper">
+              HYPER VIEW
             </Link>
             <Link href="/custom-view" className="view-button neon-orange">
               Custom View
