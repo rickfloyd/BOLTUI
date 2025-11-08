@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -11,7 +12,7 @@ const tokenCategories = [
   { name: 'Smart-Contract Platforms', description: 'Support on-chain apps (ETH, AVAX, ADA).', color: 'glow-blue', route: '/smart-contract-platforms' },
   { name: 'Stablecoins', description: 'Fiat-pegged assets (USDT, USDC, DAI).', color: 'glow-gold', route: '/stablecoins' },
   { name: 'Wrapped Assets', description: 'Tokens backed by others (WBTC, WETH).', color: 'glow-pink', route: '/wrapped-assets' },
-  { name: 'Exchange Tokens', description: 'Power trading platforms (BNB, OKB, HT).', color: 'glow-teal' },
+  { name: 'Exchange Tokens', description: 'Power trading platforms (BNB, OKB, HT).', color: 'glow-teal', route: '/exchange-tokens' },
   { name: 'Governance Tokens', description: 'DAO voting rights (COMP, MKR, AAVE).', color: 'glow-cyan' },
   { name: 'Utility Tokens', description: 'Access or pay for services (BAT, CHZ).', color: 'glow-orange' },
   { name: 'Privacy Coins', description: 'Hide sender and receiver data (XMR, ZEC).', color: 'glow-blue' },
@@ -82,3 +83,5 @@ export default function MainPage() {
     </>
   );
 }
+
+    
