@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Suspense, useState } from 'react';
@@ -16,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { Input } from '@/components/ui/input';
 
 const CurrencyChart = dynamic(() => import('@/components/chart/CurrencyChart'), { ssr: false });
 
@@ -56,6 +56,7 @@ const chartTypes = [
 export default function ChartPageClient({ index }: { index: string }) {
   const details = currencyIndexDetails[index.toUpperCase()] || { name: 'Unknown Index', description: 'No description available.' };
   const [chartType, setChartType] = useState('Line Chart');
+  const [searchTerm, setSearchTerm] = useState('');
 
   return (
     <>
@@ -71,8 +72,8 @@ export default function ChartPageClient({ index }: { index: string }) {
             <h1 className="text-3xl font-bold neon-text">{details.name} ({index.toUpperCase()})</h1>
             <p className="text-lg mt-2 text-gray-300">{details.description}</p>
           </div>
-          
-          <div className="flex justify-start">
+
+          <div className="flex justify-between items-center w-full">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="text-white border-cyan-400">Chart Style: {chartType}</Button>
@@ -89,6 +90,15 @@ export default function ChartPageClient({ index }: { index: string }) {
                 </DropdownMenuRadioGroup>
               </DropdownMenuContent>
             </DropdownMenu>
+            <div className="w-1/3">
+                 <Input
+                    type="text"
+                    placeholder="Search in chart..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="p-2 rounded-md bg-gray-800 border-cyan-400 text-white"
+                />
+            </div>
           </div>
 
           <div className="w-full h-[500px]">

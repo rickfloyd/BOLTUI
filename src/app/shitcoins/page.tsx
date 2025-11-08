@@ -1,5 +1,8 @@
+'use client';
 
+import { useState } from 'react';
 import { Header } from '@/components/layout/header';
+import { Input } from '@/components/ui/input';
 
 const shitcoins = [
   { coin: 'Brett', symbol: 'BRETT' },
@@ -75,7 +78,7 @@ const shitcoins = [
   { coin: 'Meow Token', symbol: 'MEOW' },
   { coin: 'Kitty Inu', symbol: 'KITTYINU' },
   { coin: 'Kiki Inu', symbol: 'KIKIINU' },
-  { coin: 'Dogzilla', symbol: 'DOGZILLA' },
+  { coin: 'Dogzilla', symbol 'DOGZILLA' },
   { coin: 'Wojak Token', symbol: 'WOJAK' },
   { coin: 'Lolli Token', symbol: 'LOLLI' },
   { coin: 'Chuwa Inu', symbol: 'CHUWA' },
@@ -105,6 +108,14 @@ const shitcoins = [
 ];
 
 export default function ShitcoinsPage() {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredCoins = shitcoins.filter(
+    (coin) =>
+      coin.coin.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <Header />
@@ -114,6 +125,15 @@ export default function ShitcoinsPage() {
           <p className="text-lg text-gray-300 text-center">
             A list of high-risk, speculative meme coins and unverified tokens. Invest with caution.
           </p>
+          <div className="w-full mt-4">
+            <Input
+              type="text"
+              placeholder="Search coins..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white"
+            />
+          </div>
           <div className="w-full overflow-x-auto mt-8">
             <div className="info-table-card">
               <table className="info-table w-full">
@@ -125,7 +145,7 @@ export default function ShitcoinsPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {shitcoins.map((coin, index) => (
+                  {filteredCoins.map((coin, index) => (
                     <tr key={index} className="hover:bg-white/5">
                       <td className="neon-orange">{index + 1}</td>
                       <td className="neon-cyan">{coin.coin}</td>
@@ -141,5 +161,3 @@ export default function ShitcoinsPage() {
     </>
   );
 }
-
-    
