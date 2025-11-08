@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
        fontFamily: {
-        sans: ['var(--font-ibm-plex-sans)', 'sans-serif'],
-        cinzel: ['var(--font-cinzel)', 'serif'],
+        sans: ['var(--font-cinzel)', 'sans-serif'],
+        'ibm-plex-sans': ['var(--font-ibm-plex-sans)', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
