@@ -178,8 +178,8 @@ function DesktopHeader() {
           <Link href="/" className="nav-item neon-green">
             Home
           </Link>
-          <Link href="/hyper" className="nav-item neon-cyan">
-            Hyper
+          <Link href="/main" className="nav-item neon-green">
+            Main
           </Link>
           <Link href="#" className="nav-item neon-orange">
             Stocks
@@ -224,7 +224,7 @@ function MobileHeader() {
         <div className="mobile-menu">
           <nav className="mobile-nav-links">
             <Link href="/" className="nav-item neon-green">Home</Link>
-            <Link href="/hyper" className="nav-item neon-cyan">Hyper</Link>
+            <Link href="/main" className="nav-item neon-green">Main</Link>
             <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
              <Link href="/impact" className="nav-item neon-cyan">Impact</Link>
             <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
