@@ -101,49 +101,49 @@ export default function ImpactPage() {
                     </thead>
                     <tbody className="bg-black/30 divide-y divide-gray-700">
                       <tr>
-                        <td className="px-6 py-4">SEC/CFTC Compliance Attorney</td>
+                        <td className="px-6 py-4 text-red-500">SEC/CFTC Compliance Attorney</td>
                         <td className="px-6 py-4">External counsel (retainer)</td>
                         <td className="px-6 py-4 text-green-400">$120K–$200K</td>
-                        <td className="px-6 py-4">Ensures platform avoids broker-dealer or exchange classification; reviews disclosures</td>
+                        <td className="px-6 py-4 text-blue-400">Ensures platform avoids broker-dealer or exchange classification; reviews disclosures</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4">FTC / Consumer Protection Lawyer</td>
+                        <td className="px-6 py-4 text-red-500">FTC / Consumer Protection Lawyer</td>
                         <td className="px-6 py-4">External counsel</td>
                         <td className="px-6 py-4 text-green-400">$60K–$100K</td>
-                        <td className="px-6 py-4">Verifies marketing, ads, and grant programs are compliant</td>
+                        <td className="px-6 py-4 text-blue-400">Verifies marketing, ads, and grant programs are compliant</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4">Data Privacy / GDPR Specialist</td>
+                        <td className="px-6 py-4 text-red-500">Data Privacy / GDPR Specialist</td>
                         <td className="px-6 py-4">Consultant or retained</td>
                         <td className="px-6 py-4 text-green-400">$50K–$90K</td>
-                        <td className="px-6 py-4">Handles EU/UK/Canada data protection (GDPR, PIPEDA, etc.)</td>
+                        <td className="px-6 py-4 text-blue-400">Handles EU/UK/Canada data protection (GDPR, PIPEDA, etc.)</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4">General Corporate Counsel</td>
+                        <td className="px-6 py-4 text-red-500">General Corporate Counsel</td>
                         <td className="px-6 py-4">Part-time or full-time</td>
                         <td className="px-6 py-4 text-green-400">$100K–$180K</td>
-                        <td className="px-6 py-4">Contracts, IP, trademarks, NDAs, employment law</td>
+                        <td className="px-6 py-4 text-blue-400">Contracts, IP, trademarks, NDAs, employment law</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4">Auditor / Forensic Accountant</td>
+                        <td className="px-6 py-4 text-red-500">Auditor / Forensic Accountant</td>
                         <td className="px-6 py-4">Contract basis</td>
                         <td className="px-6 py-4 text-green-400">$50K–$120K</td>
-                        <td className="px-6 py-4">Annual audits, transparency verification, investor assurance</td>
+                        <td className="px-6 py-4 text-blue-400">Annual audits, transparency verification, investor assurance</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4">Compliance Officer (internal)</td>
+                        <td className="px-6 py-4 text-red-500">Compliance Officer (internal)</td>
                         <td className="px-6 py-4">Staff position</td>
                         <td className="px-6 py-4 text-green-400">$90K–$140K</td>
-                        <td className="px-6 py-4">Maintains compliance logs, risk assessments, and KYC/AML policy enforcement</td>
+                        <td className="px-6 py-4 text-blue-400">Maintains compliance logs, risk assessments, and KYC/AML policy enforcement</td>
                       </tr>
                       <tr>
-                        <td className="px-6 py-4">Insurance (Cyber + E&O + Liability)</td>
+                        <td className="px-6 py-4 text-red-500">Insurance (Cyber + E&O + Liability)</td>
                         <td className="px-6 py-4">Annual premium</td>
                         <td className="px-6 py-4 text-green-400">$30K–$60K</td>
-                        <td className="px-6 py-4">Protects against data breaches, user claims, or system errors</td>
+                        <td className="px-6 py-4 text-blue-400">Protects against data breaches, user claims, or system errors</td>
                       </tr>
                       <tr className="font-bold bg-gray-800/50">
-                        <td className="px-6 py-4" colSpan={2}>✅ Total Legal + Compliance Annual Cost:</td>
+                        <td className="px-6 py-4 text-red-500" colSpan={2}>✅ Total Legal + Compliance Annual Cost:</td>
                         <td className="px-6 py-4 text-green-400" colSpan={2}>≈ $500K – $900K</td>
                       </tr>
                     </tbody>
