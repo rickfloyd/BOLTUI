@@ -33,7 +33,7 @@ const tokenCategories = [
   { name: 'Infrastructure / Data Tokens', description: 'Power AI, cloud, and analytics (RNDR, FIL, OCEAN).', color: 'glow-teal' },
   { name: 'Proof of Stake', description: 'Validators lock up tokens to secure the network.', color: 'glow-cyan', className: 'font-cinzel' },
   { name: 'Proof of Work', description: '', color: 'glow-multi-color', className: 'font-cinzel' },
-  { name: 'FREE MINERS', description: 'Information on free mining opportunities.', color: 'glow-green', className: 'font-cinzel' },
+  { name: 'FREE MINERS', description: 'Information on free mining opportunities.', color: 'glow-gold-blue', className: 'font-cinzel' },
   { name: 'Shitcoins', description: 'Highly speculative and volatile tokens.', color: 'glow-orange' },
 ];
 
