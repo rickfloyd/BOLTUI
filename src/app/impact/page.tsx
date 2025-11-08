@@ -121,6 +121,34 @@ export default function ImpactPage() {
                     </table>
                 </div>
               </section>
+              
+              {/* Legal & Compliance */}
+              <section>
+                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3">5. Regulatory & Legal Layer (U.S. + International)</h2>
+                <p className="mb-6">You’ll need specialized attorneys and compliance partners who understand SEC, CFTC, FTC, GDPR, FINRA, and international frameworks (EU, Canada, Australia, etc.).</p>
+                <div className="overflow-x-auto mb-6">
+                    <table className="min-w-full divide-y divide-gray-700">
+                        <thead className="bg-gray-800/50">
+                            <tr>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Role / Service</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Type</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Annual Cost Range</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Responsibility</th>
+                            </tr>
+                        </thead>
+                        <tbody className="bg-black/30 divide-y divide-gray-700">
+                            <tr><td className="px-6 py-4">SEC/CFTC Compliance Attorney</td><td className="px-6 py-4">External counsel (retainer)</td><td className="px-6 py-4">$120K–$200K</td><td className="px-6 py-4">Ensures platform avoids broker-dealer or exchange classification; reviews disclosures</td></tr>
+                            <tr><td className="px-6 py-4">FTC / Consumer Protection Lawyer</td><td className="px-6 py-4">External counsel</td><td className="px-6 py-4">$60K–$100K</td><td className="px-6 py-4">Verifies marketing, ads, and grant programs are compliant</td></tr>
+                            <tr><td className="px-6 py-4">Data Privacy / GDPR Specialist</td><td className="px-6 py-4">Consultant or retained</td><td className="px-6 py-4">$50K–$90K</td><td className="px-6 py-4">Handles EU/UK/Canada data protection (GDPR, PIPEDA, etc.)</td></tr>
+                            <tr><td className="px-6 py-4">General Corporate Counsel</td><td className="px-6 py-4">Part-time or full-time</td><td className="px-6 py-4">$100K–$180K</td><td className="px-6 py-4">Contracts, IP, trademarks, NDAs, employment law</td></tr>
+                            <tr><td className="px-6 py-4">Auditor / Forensic Accountant</td><td className="px-6 py-4">Contract basis</td><td className="px-6 py-4">$50K–$120K</td><td className="px-6 py-4">Annual audits, transparency verification, investor assurance</td></tr>
+                            <tr><td className="px-6 py-4">Compliance Officer (internal)</td><td className="px-6 py-4">Staff position</td><td className="px-6 py-4">$90K–$140K</td><td className="px-6 py-4">Maintains compliance logs, risk assessments, and KYC/AML policy enforcement</td></tr>
+                            <tr><td className="px-6 py-4">Insurance (Cyber + E&O + Liability)</td><td className="px-6 py-4">Annual premium</td><td className="px-6 py-4">$30K–$60K</td><td className="px-6 py-4">Protects against data breaches, user claims, or system errors</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p className="text-lg">✅ Total Legal + Compliance Annual Cost: <strong className="text-white">≈ $500K – $900K</strong></p>
+              </section>
 
             </div>
           </div>
