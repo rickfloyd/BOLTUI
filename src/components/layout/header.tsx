@@ -211,6 +211,9 @@ function DesktopHeader() {
           <Link href="#" className="nav-item neon-gold">
             INDEX PROVIDERS
           </Link>
+          <Link href="#" className="nav-item neon-red">
+            Mutual Funds and ETFs Data
+          </Link>
         </nav>
       </div>
     </>
@@ -264,6 +267,9 @@ function MobileHeader() {
               </Link>
             <Link href="#" className="nav-item neon-gold">
                 INDEX PROVIDERS
+            </Link>
+            <Link href="#" className="nav-item neon-red">
+              Mutual Funds and ETFs Data
             </Link>
             <div className="mobile-menu-separator" />
             <Link href="/compare-prices" className="nav-item neon-pink text-center leading-tight">Compare<br />Prices</Link>

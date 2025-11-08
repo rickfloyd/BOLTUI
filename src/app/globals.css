@@ -21,6 +21,7 @@
     --neon-gold: 45, 100%, 50%;
     --neon-teal: 160, 100%, 45%;
     --neon-purple: 270, 100%, 60%;
+    --neon-red: 0, 100%, 50%;
 
 
     --radius: 0.5rem;
@@ -506,6 +507,7 @@ h1, h2, h3, .title {
 .neon-green { color: hsl(var(--neon-green)); }
 .neon-gold { color: hsl(var(--neon-gold)); }
 .neon-purple { color: hsl(var(--neon-purple)); }
+.neon-red { color: hsl(var(--neon-red)); }
 
 
 .neon-pink-border { border-color: hsl(var(--neon-pink)); }
@@ -623,6 +625,7 @@ body.animation-page {
 
 
     
+
 
 
 
