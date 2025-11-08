@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: flex-start; /* Align to top */
     min-height: 100vh;
+    overflow-x: scroll !important; /* Force horizontal scrollbar */
 }
 
 .container {
