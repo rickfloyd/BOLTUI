@@ -189,7 +189,7 @@ function DesktopHeader() {
           <Link href="/main" className="nav-item neon-cyan">
             Crypto
           </Link>
-          <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
+          <HeaderDropdown title={<>Guilty<br />Pleasures</>} items={guiltyPleasuresItems} titleClassName="neon-pink" />
           <HeaderDropdown title="FX Matrix Analyzer" items={fxMatrixItems} titleClassName="neon-green" />
         </nav>
       </div>
@@ -231,7 +231,7 @@ function MobileHeader() {
              <Link href="/main" className="nav-item neon-cyan">
                 Crypto
               </Link>
-            <HeaderDropdown title="Guilty Pleasures" items={guiltyPleasuresItems} titleClassName="neon-pink" />
+            <HeaderDropdown title={<>Guilty<br />Pleasures</>} items={guiltyPleasuresItems} titleClassName="neon-pink" />
             <HeaderDropdown title="FX Matrix Analyzer" items={fxMatrixItems} titleClassName="neon-green" />
             <HeaderDropdown title="Sports Betting" items={sportsBettingItems} titleClassName="neon-orange" />
             <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
