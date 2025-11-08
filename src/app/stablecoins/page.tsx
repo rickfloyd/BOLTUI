@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -127,10 +126,6 @@ export default function StablecoinsPage() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <Link href="/main" className="flex items-center gap-2 nav-item neon-cyan w-fit">
-            <ArrowLeft size={16} />
-            Back to Crypto Classes
-          </Link>
           <h1 className="text-3xl font-bold neon-text text-center mt-8">Top 100 Stablecoins</h1>
           <p className="text-lg text-gray-300 text-center">
             A comprehensive list of stablecoins, which are cryptocurrencies designed to minimize price volatility.
@@ -168,6 +163,10 @@ export default function StablecoinsPage() {
           </div>
         </section>
       </main>
+      <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+        <ArrowLeft size={16} />
+        Back
+      </Link>
     </>
   );
 }

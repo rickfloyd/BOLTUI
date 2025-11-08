@@ -78,10 +78,6 @@ export default function Layer1Page() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <Link href="/main" className="flex items-center gap-2 nav-item neon-cyan w-fit">
-            <ArrowLeft size={16} />
-            Back to Crypto Classes
-          </Link>
           <h1 className="text-3xl font-bold neon-text text-center mt-8">Layer 1 Blockchains and Their Coins (2025)</h1>
           <p className="text-lg text-gray-300 text-center">
             A curated list of Layer 1 blockchain platforms and their native coins.
@@ -119,6 +115,10 @@ export default function Layer1Page() {
           </div>
         </section>
       </main>
+      <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+        <ArrowLeft size={16} />
+        Back
+      </Link>
     </>
   );
 }

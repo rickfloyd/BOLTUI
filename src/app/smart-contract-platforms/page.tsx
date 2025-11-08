@@ -78,10 +78,6 @@ export default function SmartContractPlatformsPage() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <Link href="/main" className="flex items-center gap-2 nav-item neon-cyan w-fit">
-            <ArrowLeft size={16} />
-            Back to Crypto Classes
-          </Link>
           <h1 className="text-3xl font-bold neon-text text-center mt-8">Smart-Contract Platforms</h1>
           <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
             A comprehensive list of platforms that enable the creation and execution of smart contracts, driving decentralized applications (dApps). This includes Layer-1 blockchains, parachains, sidechains, and rollup networks.
@@ -119,6 +115,10 @@ export default function SmartContractPlatformsPage() {
           </div>
         </section>
       </main>
+      <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+        <ArrowLeft size={16} />
+        Back
+      </Link>
     </>
   );
 }

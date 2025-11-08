@@ -63,11 +63,6 @@ export default function ChartPageClient({ index }: { index: string }) {
       <Header />
       <main className="dashboard-grid">
         <div className="center-content">
-          <Link href="/" className="flex items-center gap-2 nav-item neon-cyan w-fit">
-            <ArrowLeft size={16} />
-            Back to Dashboard
-          </Link>
-
           <div className="info-banner">
             <h1 className="text-3xl font-bold neon-text">{details.name} ({index.toUpperCase()})</h1>
             <p className="text-lg mt-2 text-gray-300">{details.description}</p>
@@ -106,6 +101,10 @@ export default function ChartPageClient({ index }: { index: string }) {
           </div>
         </div>
       </main>
+      <Link href="/profile" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+        <ArrowLeft size={16} />
+        Back
+      </Link>
     </>
   );
 }

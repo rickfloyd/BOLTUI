@@ -142,10 +142,6 @@ export default function Layer2Page() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <Link href="/main" className="flex items-center gap-2 nav-item neon-cyan w-fit">
-            <ArrowLeft size={16} />
-            Back to Crypto Classes
-          </Link>
           <h1 className="text-3xl font-bold neon-text text-center mt-8">Layer-2 Scaling Solutions Encyclopedia</h1>
           <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
             A comprehensive, curated list of Layer-2 solutions across various blockchain ecosystems. Layer-2s are protocols built on top of base-layer blockchains (like Bitcoin or Ethereum) to provide faster transactions and lower fees.
@@ -184,6 +180,10 @@ export default function Layer2Page() {
           </div>
         </section>
       </main>
+      <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+        <ArrowLeft size={16} />
+        Back
+      </Link>
     </>
   );
 }

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Header } from '@/components/layout/header';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 interface Coin {
     id: string;
@@ -121,6 +122,10 @@ export default function ShitcoinsPage() {
           </div>
         </section>
       </main>
+      <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+        <ArrowLeft size={16} />
+        Back
+      </Link>
     </>
   );
 }

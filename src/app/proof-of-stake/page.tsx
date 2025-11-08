@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -71,10 +70,6 @@ export default function ProofOfStakePage() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-           <Link href="/main" className="flex items-center gap-2 nav-item neon-cyan w-fit">
-            <ArrowLeft size={16} />
-            Back to Crypto Classes
-          </Link>
           <h1 className="text-3xl font-bold neon-text text-center mt-8">Proof of Stake (PoS) Coins</h1>
           <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
             These blockchains use staking instead of mining to validate transactions, making them more energy-efficient and scalable. This list represents top coins by market cap, many of which use a Proof of Stake consensus mechanism.
@@ -129,6 +124,10 @@ export default function ProofOfStakePage() {
           </div>
         </section>
       </main>
+      <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+        <ArrowLeft size={16} />
+        Back
+      </Link>
     </>
   );
 }

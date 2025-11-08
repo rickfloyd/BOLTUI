@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -79,10 +78,6 @@ export default function ProofOfWorkPage() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <Link href="/main" className="flex items-center gap-2 nav-item neon-cyan w-fit">
-            <ArrowLeft size={16} />
-            Back to Crypto Classes
-          </Link>
           <h1 className="text-3xl font-bold neon-text text-center mt-8">Proof of Work (PoW) Coins</h1>
           <p className="text-lg text-gray-300 text-center">
             A list of cryptocurrencies that use the Proof of Work consensus mechanism, with live data from the top 50 coins by market cap.
@@ -137,6 +132,10 @@ export default function ProofOfWorkPage() {
           </div>
         </section>
       </main>
+      <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+        <ArrowLeft size={16} />
+        Back
+      </Link>
     </>
   );
 }
