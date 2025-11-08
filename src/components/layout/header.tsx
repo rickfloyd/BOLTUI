@@ -199,7 +199,7 @@ function DesktopHeader() {
           <HeaderDropdown title={<>Guilty<br />Pleasures</>} items={guiltyPleasuresItems} titleClassName="neon-pink" />
           <HeaderDropdown title="FX Matrix Analyzer" items={fxMatrixItems} titleClassName="neon-green" />
           <HeaderDropdown title={<><div>Las Vegas</div><div>Stats</div></>} items={lasVegasStatsItems} titleClassName="neon-gold glow-text" />
-          <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
+          <HeaderDropdown title={<><div>World</div><div>Sports</div></>} items={sportsItems} titleClassName="neon-blue" />
           <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
         </nav>
       </div>
@@ -246,7 +246,7 @@ function MobileHeader() {
             <HeaderDropdown title={<>Guilty<br />Pleasures</>} items={guiltyPleasuresItems} titleClassName="neon-pink" />
             <HeaderDropdown title="FX Matrix Analyzer" items={fxMatrixItems} titleClassName="neon-green" />
             <HeaderDropdown title={<><div>Las Vegas</div><div>Stats</div></>} items={lasVegasStatsItems} titleClassName="neon-gold glow-text" />
-            <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
+            <HeaderDropdown title={<><div>World</div><div>Sports</div></>} items={sportsItems} titleClassName="neon-blue" />
             <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
             <div className="mobile-menu-separator" />
             <Link href="/compare-prices" className="nav-item neon-pink text-center leading-tight">Compare<br />Prices</Link>
