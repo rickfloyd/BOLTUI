@@ -192,6 +192,9 @@ function DesktopHeader() {
           <Link href="#" className="nav-item neon-purple">
             Options
           </Link>
+          <Link href="#" className="nav-item neon-teal">
+            BOND AND FIXED INCOME
+          </Link>
         </nav>
       </div>
       <div className="header-bottom-layer">
@@ -240,6 +243,10 @@ function MobileHeader() {
             <Link href="#" className="nav-item neon-purple">
                 Options
             </Link>
+            <Link href="#" className="nav-item neon-teal">
+              BOND AND FIXED INCOME
+            </Link>
+            <div className="mobile-menu-separator" />
             <HeaderDropdown title={<>Guilty<br />Pleasures</>} items={guiltyPleasuresItems} titleClassName="neon-pink" />
             <HeaderDropdown title="FX Matrix Analyzer" items={fxMatrixItems} titleClassName="neon-green" />
             <HeaderDropdown title={<><div>Las Vegas</div><div>Stats</div></>} items={lasVegasStatsItems} titleClassName="neon-gold glow-text" />
@@ -277,5 +284,6 @@ export function Header() {
     </header>
   );
 }
+    
 
     
