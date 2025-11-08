@@ -12,6 +12,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "diagnose": "node scripts/diagnose-firebase.js",
+    "analyze": "node scripts/analyzer.js",
     "postinstall": "patch-package"
   },
   "engines": {

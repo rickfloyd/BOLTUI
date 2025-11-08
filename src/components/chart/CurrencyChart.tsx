@@ -16,15 +16,6 @@ import {
   Area,
 } from 'recharts';
 
-interface TimeSeriesValue {
-  datetime: string;
-  open: string;
-  high: string;
-  low: string;
-  close: string;
-  volume: string;
-}
-
 interface ChartData {
   time: string;
   price: number;
@@ -48,33 +39,37 @@ const CurrencyChart = ({ index, chartType }: { index: string, chartType: string 
   const [data, setData] = useState<ChartData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [dataSource, setDataSource] = useState<string | null>(null);
+
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       setError(null);
       try {
-        const symbol = `${index}/USD`;
-        const response = await fetch(`/api/twelvedata?symbol=${symbol}&interval=1min`);
+        // The bridge API now takes the generic index and finds the best symbol
+        const response = await fetch(`/api/bridge?symbol=${index}&interval=1h`);
         if (!response.ok) {
           const errorData = await response.json();
-          throw new Error(errorData.error || 'Failed to fetch chart data.');
+          throw new Error(errorData.error || 'Failed to fetch chart data from bridge.');
         }
         const apiData = await response.json();
 
-        if (!apiData.values) {
-          throw new Error('No time series data available for this symbol.');
+        if (!apiData.data || apiData.data.length === 0) {
+          throw new Error('No time series data available for this symbol from any provider.');
         }
 
-        const formattedData: ChartData[] = apiData.values.map((v: TimeSeriesValue) => ({
-          time: new Date(v.datetime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-          price: parseFloat(v.close),
-          ohlc: [parseFloat(v.open), parseFloat(v.high), parseFloat(v.low), parseFloat(v.close)]
-        })).reverse(); // API returns newest first, so we reverse it
+        const formattedData: ChartData[] = apiData.data.map((v: any) => ({
+          time: new Date(v.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          price: v.close,
+          ohlc: [v.open, v.high, v.low, v.close]
+        }));
 
         setData(formattedData);
+        setDataSource(apiData.source);
       } catch (err: any) {
         setError(err.message);
+        setData([]);
       } finally {
         setLoading(false);
       }
@@ -82,7 +77,7 @@ const CurrencyChart = ({ index, chartType }: { index: string, chartType: string 
 
     fetchData();
 
-    const interval = setInterval(fetchData, 60000); // Refresh every minute
+    const interval = setInterval(fetchData, 60000 * 5); // Refresh every 5 minutes
 
     return () => clearInterval(interval);
   }, [index]);
@@ -92,7 +87,7 @@ const CurrencyChart = ({ index, chartType }: { index: string, chartType: string 
   }
 
   if (error) {
-    return <div className="flex items-center justify-center h-full text-red-400">{error}</div>;
+    return <div className="flex items-center justify-center h-full text-red-400 p-4 text-center">{error}</div>;
   }
   
   if (data.length === 0) {
@@ -140,6 +135,7 @@ const CurrencyChart = ({ index, chartType }: { index: string, chartType: string 
   const chartProps = renderChart().props;
 
   return (
+    <>
     <ResponsiveContainer width="100%" height="100%">
       <ChartComponent
         {...chartProps}
@@ -147,14 +143,14 @@ const CurrencyChart = ({ index, chartType }: { index: string, chartType: string 
           top: 5,
           right: 30,
           left: 20,
-          bottom: 5,
+          bottom: 20, // Increased bottom margin for label
         }}
       >
         <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.1)" />
         <XAxis dataKey="time" stroke="#888" tick={{fontFamily: 'var(--font-cinzel)'}} />
         <YAxis 
             stroke="#888" 
-            domain={['dataMin - 1', 'dataMax + 1']} 
+            domain={['dataMin - 0.005', 'dataMax + 0.005']} 
             tick={{fontFamily: 'var(--font-cinzel)'}}
             tickFormatter={(value) => typeof value === 'number' ? value.toFixed(4) : value}
         />
@@ -163,6 +159,8 @@ const CurrencyChart = ({ index, chartType }: { index: string, chartType: string 
         {renderChart().props.children}
       </ChartComponent>
     </ResponsiveContainer>
+     {dataSource && <p className="text-xs text-center text-gray-500 mt-1">Data provided by {dataSource}</p>}
+    </>
   );
 };
 
