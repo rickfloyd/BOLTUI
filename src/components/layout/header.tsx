@@ -208,6 +208,9 @@ function DesktopHeader() {
           <Link href="#" className="nav-item neon-purple">
             Over-the-Counter (OTC)
           </Link>
+          <Link href="#" className="nav-item neon-gold">
+            INDEX PROVIDERS
+          </Link>
         </nav>
       </div>
     </>
@@ -259,6 +262,9 @@ function MobileHeader() {
              <Link href="#" className="nav-item neon-purple">
                 Over-the-Counter (OTC)
               </Link>
+            <Link href="#" className="nav-item neon-gold">
+                INDEX PROVIDERS
+            </Link>
             <div className="mobile-menu-separator" />
             <Link href="/compare-prices" className="nav-item neon-pink text-center leading-tight">Compare<br />Prices</Link>
             <Link href="/join" className="nav-item neon-pink">Join</Link>
