@@ -38,6 +38,18 @@ const normalizePolygon = (data: any) => {
     }));
 };
 
+const normalizeMarketStack = (data: any) => {
+    if (!data.data) return [];
+    return data.data.map((d: any) => ({
+        time: d.date,
+        open: d.open,
+        high: d.high,
+        low: d.low,
+        close: d.close,
+        volume: d.volume,
+    })).reverse(); // Often EOD data is newest first
+}
+
 
 // Fetcher function for a specific API
 const fetchDataFromApi = async (apiUrl: string, normalizer: (data: any) => any[], providerName: string, symbol: string, interval: string) => {
@@ -69,6 +81,7 @@ export async function GET(request: Request) {
   const interval = searchParams.get('interval') || '1h';
 
   const providers = [
+    { name: 'MarketStack', apiUrl: '/api/marketstack', normalizer: normalizeMarketStack, symbol: 'BTCUSD', interval: '1hour' },
     { name: 'Finnhub', apiUrl: '/api/finnhub', normalizer: normalizeFinnhub, symbol: 'BINANCE:BTCUSDT', interval: '60' },
     { name: 'TwelveData', apiUrl: '/api/twelvedata', normalizer: normalizeTwelveData, symbol: 'BTC/USD', interval: '1h' },
     { name: 'Polygon', apiUrl: '/api/polygon', normalizer: normalizePolygon, symbol: 'X:BTCUSD', interval: 'hour' },
@@ -88,6 +101,11 @@ export async function GET(request: Request) {
         if(interval === '1min') providerInterval = 'minute';
         else if(interval === '1h') providerInterval = 'hour';
         else providerInterval = 'day';
+    } else if (provider.name === 'MarketStack') {
+        providerSymbol = 'BTCUSD';
+        if (interval === '1min') providerInterval = '1min';
+        else if (interval === '1h') providerInterval = '1hour';
+        else providerInterval = '24hour';
     }
 
     const data = await fetchDataFromApi(provider.apiUrl, provider.normalizer, provider.name, providerSymbol, providerInterval);
