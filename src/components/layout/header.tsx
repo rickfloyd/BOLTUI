@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -179,6 +178,9 @@ function DesktopHeader() {
           <Link href="/" className="nav-item neon-green">
             Home
           </Link>
+          <Link href="/hyper" className="nav-item neon-cyan">
+            Hyper
+          </Link>
           <Link href="#" className="nav-item neon-orange">
             Stocks
           </Link>
@@ -222,6 +224,7 @@ function MobileHeader() {
         <div className="mobile-menu">
           <nav className="mobile-nav-links">
             <Link href="/" className="nav-item neon-green">Home</Link>
+            <Link href="/hyper" className="nav-item neon-cyan">Hyper</Link>
             <HeaderDropdown title="Traders Profile" items={tradersProfileItems} titleClassName="neon-orange" />
              <Link href="/impact" className="nav-item neon-cyan">Impact</Link>
             <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
