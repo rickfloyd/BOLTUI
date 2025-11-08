@@ -28,6 +28,7 @@ export default function ImpactPage() {
                     We dedicate the first $2,500,000 each year to 100 grants of $25,000 each to educators, disabled developers, and innovation teams building ethical AI tools.
                     Every paid subscription helps grow this fund.
                 </p>
+                <p className="text-lg text-center max-w-4xl mx-auto text-pink-400 mt-2">(WE NEED TO GET TO THAT LEVEL FIRST)</p>
               </section>
 
               {/* How Each $1 Is Used */}
