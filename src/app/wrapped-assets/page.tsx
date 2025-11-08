@@ -14,84 +14,118 @@ interface WrappedAsset {
   contractPlaceholder: string;
 }
 
-interface AssetCategory {
-  title: string;
-  color: string;
-  assets: WrappedAsset[];
-}
-
-const wrappedAssetsData: AssetCategory[] = [
-  {
-    title: 'Bitcoin-Backed',
-    color: 'neon-orange',
-    assets: [
-      { name: 'Wrapped Bitcoin', symbol: 'WBTC', hostChain: 'Ethereum', contractPlaceholder: '0x2260...' },
-      { name: 'renBTC', symbol: 'renBTC', hostChain: 'Ethereum', contractPlaceholder: '0xEB4C...' },
-      { name: 'Huobi BTC', symbol: 'HBTC', hostChain: 'Ethereum', contractPlaceholder: '0x0316...' },
-      { name: 'Bitcoin BEP2', symbol: 'BTCB', hostChain: 'BNB Chain', contractPlaceholder: 'N/A (BEP2)' },
-      { name: 'tBTC v2', symbol: 'tBTC', hostChain: 'Ethereum', contractPlaceholder: '0x1808...' },
-      { name: 'Interlay BTC', symbol: 'iBTC', hostChain: 'Polkadot', contractPlaceholder: 'Parachain Asset' },
-      { name: 'pTokens BTC', symbol: 'pBTC', hostChain: 'Ethereum', contractPlaceholder: '0x5228...' },
-      { name: 'BoringDAO BTC', symbol: 'oBTC', hostChain: 'Ethereum', contractPlaceholder: '0x8064...' },
-      { name: 'Anyswap BTC', symbol: 'anyBTC', hostChain: 'Fantom', contractPlaceholder: '0x536e...' },
-    ],
-  },
-  {
-    title: 'Ether-Backed & Staked Ether',
-    color: 'neon-blue',
-    assets: [
-      { name: 'Wrapped Ether', symbol: 'WETH', hostChain: 'Various L2s', contractPlaceholder: 'e.g., 0x7ceB... (Polygon)' },
-      { name: 'Lido Staked Ether', symbol: 'stETH', hostChain: 'Ethereum', contractPlaceholder: '0xae7a...' },
-      { name: 'Rocket Pool Ether', symbol: 'rETH', hostChain: 'Ethereum', contractPlaceholder: '0xae78...' },
-      { name: 'Coinbase Wrapped Staked ETH', symbol: 'cbETH', hostChain: 'Ethereum', contractPlaceholder: '0xBe98...' },
-      { name: 'Binance-Pegged ETH', symbol: 'ETH', hostChain: 'BNB Chain', contractPlaceholder: '0x2170...' },
-      { name: 'Frax Ether', symbol: 'frxETH', hostChain: 'Ethereum', contractPlaceholder: '0x5E84...' },
-      { name: 'Swell Ether', symbol: 'swETH', hostChain: 'Ethereum', contractPlaceholder: '0xf951...' },
-      { name: 'Mantle Staked Ether', symbol: 'mETH', hostChain: 'Mantle', contractPlaceholder: '0xcDA8...' },
-    ],
-  },
-  {
-    title: 'Cross-Chain Asset Bridges',
-    color: 'neon-cyan',
-    assets: [
-      { name: 'Portal Wrapped SOL (from Solana)', symbol: 'Wormhole SOL', hostChain: 'Ethereum', contractPlaceholder: '0x2Aa... ' },
-      { name: 'Portal Wrapped AVAX (from Avalanche)', symbol: 'Wormhole AVAX', hostChain: 'Ethereum', contractPlaceholder: '0x85f1...' },
-      { name: 'Polygon PoS-Pegged MATIC', symbol: 'MATIC', hostChain: 'Ethereum', contractPlaceholder: '0x7D1A...' },
-      { name: 'LayerZero-Bridged USDC', symbol: 'lzUSDC', hostChain: 'Avalanche', contractPlaceholder: '0xB97E...' },
-      { name: 'Celer-Bridged BUSD', symbol: 'ceBUSD', hostChain: 'Polygon', contractPlaceholder: '0x9C9e...' },
-      { name: 'Anyswap-Bridged FTM', symbol: 'anyFTM', hostChain: 'Ethereum', contractPlaceholder: '0xfa1a...' },
-      { name: 'Hop Protocol ETH', symbol: 'hETH', hostChain: 'Arbitrum/Optimism', contractPlaceholder: 'Varies' },
-      { name: 'Across Protocol ETH', symbol: 'acETH', hostChain: 'Arbitrum/Optimism', contractPlaceholder: 'Varies' },
-    ],
-  },
-  {
-    title: 'Other Wrapped Assets',
-    color: 'neon-pink',
-    assets: [
-      { name: 'Wrapped Filecoin', symbol: 'WFIL', hostChain: 'Ethereum', contractPlaceholder: '0x6e1A...' },
-      { name: 'Wrapped LUNA (Wormhole)', symbol: 'LUNC', hostChain: 'Ethereum', contractPlaceholder: '0x156a...' },
-      { name: 'Wrapped FTM (Multichain)', symbol: 'WFTM', hostChain: 'Fantom', contractPlaceholder: 'Native to Fantom' },
-      { name: 'Wrapped BNB', symbol: 'WBNB', hostChain: 'BNB Chain', contractPlaceholder: 'Native to BNB Chain' },
-      { name: 'Wrapped AVAX', symbol: 'WAVAX', hostChain: 'Avalanche', contractPlaceholder: 'Native to Avalanche' },
-      { name: 'Wrapped NEAR', symbol: 'wNEAR', hostChain: 'Aurora', contractPlaceholder: '0xC42C...' },
-      { name: 'Klima Staked Carbon', symbol: 'sKLIMA', hostChain: 'Polygon', contractPlaceholder: '0xb0C2...' },
-      { name: 'Toucan Protocol Carbon', symbol: 'BCT', hostChain: 'Polygon', contractPlaceholder: '0x2F80...' },
-    ],
-  },
+const wrappedAssets: WrappedAsset[] = [
+    { name: 'Wrapped Bitcoin', symbol: 'wBTC', hostChain: 'Ethereum', contractPlaceholder: '0xWBTC_CONTRACT' },
+    { name: 'Ren Bitcoin', symbol: 'renBTC', hostChain: 'Ethereum', contractPlaceholder: '0xRENBTC_CONTRACT' },
+    { name: 'tBTC', symbol: 'tBTC', hostChain: 'Ethereum', contractPlaceholder: '0xTBTC_CONTRACT' },
+    { name: 'sBTC (Synthetix)', symbol: 'sBTC', hostChain: 'Ethereum', contractPlaceholder: '0xSBTC_CONTRACT' },
+    { name: 'pBTC (pNetwork)', symbol: 'pBTC', hostChain: 'Ethereum', contractPlaceholder: '0xPBTC_CONTRACT' },
+    { name: 'Wrapped Ethereum', symbol: 'wETH', hostChain: 'Binance Smart Chain', contractPlaceholder: '0xWETH_BSC' },
+    { name: 'Wrapped Solana', symbol: 'wSOL', hostChain: 'Ethereum', contractPlaceholder: '0xWSOL_CONTRACT' },
+    { name: 'Wrapped Avalanche', symbol: 'wAVAX', hostChain: 'Ethereum', contractPlaceholder: '0xWAVAX_CONTRACT' },
+    { name: 'Wrapped TerraUSD Classic (WBTC-like)', symbol: 'wUSTC', hostChain: 'Ethereum', contractPlaceholder: '0xWUSTC_CONTRACT' },
+    { name: 'Wrapped USDC', symbol: 'wUSDC', hostChain: 'Solana', contractPlaceholder: 'SOL_USDC_CONTRACT' },
+    { name: 'Wrapped USDT', symbol: 'wUSDT', hostChain: 'Avalanche', contractPlaceholder: 'AVAX_USDT_CONTRACT' },
+    { name: 'Wrapped Litecoin', symbol: 'wLTC', hostChain: 'Ethereum', contractPlaceholder: '0xWLTC_CONTRACT' },
+    { name: 'Wrapped Dogecoin', symbol: 'wDOGE', hostChain: 'Ethereum', contractPlaceholder: '0xWDOGE_CONTRACT' },
+    { name: 'Wrapped XRP', symbol: 'wXRP', hostChain: 'Ethereum', contractPlaceholder: '0xWXRP_CONTRACT' },
+    { name: 'Wrapped ADA', symbol: 'wADA', hostChain: 'Ethereum', contractPlaceholder: '0xWADA_CONTRACT' },
+    { name: 'Wrapped DOT', symbol: 'wDOT', hostChain: 'Ethereum', contractPlaceholder: '0xWDOT_CONTRACT' },
+    { name: 'Wrapped BCH', symbol: 'wBCH', hostChain: 'Ethereum', contractPlaceholder: '0xWBCH_CONTRACT' },
+    { name: 'Wrapped BNB', symbol: 'wBNB', hostChain: 'Ethereum', contractPlaceholder: '0xWBNB_CONTRACT' },
+    { name: 'Wrapped XLM', symbol: 'wXLM', hostChain: 'Ethereum', contractPlaceholder: '0xWXLM_CONTRACT' },
+    { name: 'Wrapped MATIC', symbol: 'wMATIC', hostChain: 'Binance Smart Chain', contractPlaceholder: '0xWMATIC_BSC' },
+    { name: 'Wrapped AAVE', symbol: 'wAAVE', hostChain: 'Ethereum', contractPlaceholder: '0xWAAVE_CONTRACT' },
+    { name: 'Wrapped LINK', symbol: 'wLINK', hostChain: 'Ethereum', contractPlaceholder: '0xWLINK_CONTRACT' },
+    { name: 'Wrapped UNI', symbol: 'wUNI', hostChain: 'Ethereum', contractPlaceholder: '0xWUNI_CONTRACT' },
+    { name: 'Wrapped SUSHI', symbol: 'wSUSHI', hostChain: 'Ethereum', contractPlaceholder: '0xWSUSHI_CONTRACT' },
+    { name: 'Wrapped COMP', symbol: 'wCOMP', hostChain: 'Ethereum', contractPlaceholder: '0xWCOMP_CONTRACT' },
+    { name: 'Wrapped MKR', symbol: 'wMKR', hostChain: 'Ethereum', contractPlaceholder: '0xWMKR_CONTRACT' },
+    { name: 'Wrapped REN (cross-chain)', symbol: 'wREN', hostChain: 'Solana', contractPlaceholder: 'SOL_WREN_CONTRACT' },
+    { name: 'Wrapped ZEC', symbol: 'wZEC', hostChain: 'Ethereum', contractPlaceholder: '0xWZEC_CONTRACT' },
+    { name: 'Wrapped XMR', symbol: 'wXMR', hostChain: 'Ethereum', contractPlaceholder: '0xWXMR_CONTRACT' },
+    { name: 'Wrapped EOS', symbol: 'wEOS', hostChain: 'Ethereum', contractPlaceholder: '0xWEOS_CONTRACT' },
+    { name: 'Wrapped NEO', symbol: 'wNEO', hostChain: 'Ethereum', contractPlaceholder: '0xWNEO_CONTRACT' },
+    { name: 'Wrapped FIL', symbol: 'wFIL', hostChain: 'Ethereum', contractPlaceholder: '0xWFIL_CONTRACT' },
+    { name: 'Wrapped ICP', symbol: 'wICP', hostChain: 'Ethereum', contractPlaceholder: '0xWICP_CONTRACT' },
+    { name: 'Wrapped SUI', symbol: 'wSUI', hostChain: 'Ethereum', contractPlaceholder: '0xWSUI_CONTRACT' },
+    { name: 'Wrapped APTOS', symbol: 'wAPT', hostChain: 'Ethereum', contractPlaceholder: '0xWAPT_CONTRACT' },
+    { name: 'Wrapped LUNA Classic', symbol: 'wLUNC', hostChain: 'Ethereum', contractPlaceholder: '0xWLUNC_CONTRACT' },
+    { name: 'Wrapped EGLD', symbol: 'wEGLD', hostChain: 'Ethereum', contractPlaceholder: '0xWEGLD_CONTRACT' },
+    { name: 'Wrapped TRX', symbol: 'wTRX', hostChain: 'Ethereum', contractPlaceholder: '0xWTRX_CONTRACT' },
+    { name: 'Wrapped XTZ', symbol: 'wXTZ', hostChain: 'Ethereum', contractPlaceholder: '0xWXTZ_CONTRACT' },
+    { name: 'Wrapped CELO', symbol: 'wCELO', hostChain: 'Ethereum', contractPlaceholder: '0xWCELO_CONTRACT' },
+    { name: 'Wrapped SOL (Ren)', symbol: 'renSOL', hostChain: 'Ethereum', contractPlaceholder: '0xRENSOL_CONTRACT' },
+    { name: 'Wrapped KSM', symbol: 'wKSM', hostChain: 'Ethereum', contractPlaceholder: '0xWKSM_CONTRACT' },
+    { name: 'Wrapped KLAY', symbol: 'wKLAY', hostChain: 'Ethereum', contractPlaceholder: '0xWKLAY_CONTRACT' },
+    { name: 'Wrapped ONE', symbol: 'wONE', hostChain: 'Ethereum', contractPlaceholder: '0xWONE_CONTRACT' },
+    { name: 'Wrapped HBAR', symbol: 'wHBAR', hostChain: 'Ethereum', contractPlaceholder: '0xWHBAR_CONTRACT' },
+    { name: 'Wrapped VET', symbol: 'wVET', hostChain: 'Ethereum', contractPlaceholder: '0xWVET_CONTRACT' },
+    { name: 'Wrapped BTT', symbol: 'wBTT', hostChain: 'Ethereum', contractPlaceholder: '0xWBTT_CONTRACT' },
+    { name: 'Wrapped RVN', symbol: 'wRVN', hostChain: 'Ethereum', contractPlaceholder: '0xWRVN_CONTRACT' },
+    { name: 'Wrapped NANO', symbol: 'wNANO', hostChain: 'Ethereum', contractPlaceholder: '0xWNANO_CONTRACT' },
+    { name: 'Wrapped ZIL', symbol: 'wZIL', hostChain: 'Ethereum', contractPlaceholder: '0xWZIL_CONTRACT' },
+    { name: 'Wrapped QTUM', symbol: 'wQTUM', hostChain: 'Ethereum', contractPlaceholder: '0xWQTUM_CONTRACT' },
+    { name: 'Wrapped IOTA', symbol: 'wIOTA', hostChain: 'Ethereum', contractPlaceholder: '0xWIOTA_CONTRACT' },
+    { name: 'Wrapped HNT', symbol: 'wHNT', hostChain: 'Ethereum', contractPlaceholder: '0xWHNT_CONTRACT' },
+    { name: 'Wrapped CHZ', symbol: 'wCHZ', hostChain: 'Ethereum', contractPlaceholder: '0xWCHZ_CONTRACT' },
+    { name: 'Wrapped RUNE', symbol: 'wRUNE', hostChain: 'Ethereum', contractPlaceholder: '0xWRUNE_CONTRACT' },
+    { name: 'Wrapped GRT', symbol: 'wGRT', hostChain: 'Ethereum', contractPlaceholder: '0xWGRT_CONTRACT' },
+    { name: 'Wrapped OCEAN', symbol: 'wOCEAN', hostChain: 'Ethereum', contractPlaceholder: '0xWOCEAN_CONTRACT' },
+    { name: 'Wrapped XEM', symbol: 'wXEM', hostChain: 'Ethereum', contractPlaceholder: '0xWXEM_CONTRACT' },
+    { name: 'Wrapped BAT', symbol: 'wBAT', hostChain: 'Ethereum', contractPlaceholder: '0xWBAT_CONTRACT' },
+    { name: 'Wrapped NMR', symbol: 'wNMR', hostChain: 'Ethereum', contractPlaceholder: '0xWNMR_CONTRACT' },
+    { name: 'Wrapped BNT', symbol: 'wBNT', hostChain: 'Ethereum', contractPlaceholder: '0xWBNT_CONTRACT' },
+    { name: 'Wrapped CEL', symbol: 'wCEL', hostChain: 'Ethereum', contractPlaceholder: '0xWCEL_CONTRACT' },
+    { name: 'Wrapped RENZ', symbol: 'wRENZ', hostChain: 'Polygon', contractPlaceholder: 'POLY_WRENZ_CONTRACT' },
+    { name: 'Wrapped mBTC', symbol: 'mBTC', hostChain: 'Multi-chain', contractPlaceholder: 'MULTI_MBTC_CONTRACT' },
+    { name: 'Wrapped sETH', symbol: 'sETH', hostChain: 'Synthetic (Synthetix)', contractPlaceholder: '0xSETH_CONTRACT' },
+    { name: 'Wrapped yUSD', symbol: 'wyUSD', hostChain: 'Ethereum', contractPlaceholder: '0xWYUSD_CONTRACT' },
+    { name: 'Wrapped rETH', symbol: 'rETH', hostChain: 'Ethereum', contractPlaceholder: '0xRETH_CONTRACT' },
+    { name: 'Wrapped beETH', symbol: 'beETH', hostChain: 'BSC', contractPlaceholder: '0xBEETH_BSC' },
+    { name: 'Wrapped stETH', symbol: 'stETH', hostChain: 'Ethereum', contractPlaceholder: '0xSTETH_CONTRACT' },
+    { name: 'Wrapped cvxCRV', symbol: 'wCVX', hostChain: 'Ethereum', contractPlaceholder: '0xWCVX_CONTRACT' },
+    { name: 'Wrapped dYdX-bridge token', symbol: 'wDYDX', hostChain: 'Ethereum', contractPlaceholder: '0xWDYDX_CONTRACT' },
+    { name: 'Wrapped BAL', symbol: 'wBAL', hostChain: 'Ethereum', contractPlaceholder: '0xWBAL_CONTRACT' },
+    { name: 'Wrapped 1INCH', symbol: 'w1INCH', hostChain: 'Ethereum', contractPlaceholder: '0xW1INCH_CONTRACT' },
+    { name: 'Wrapped UMA', symbol: 'wUMA', hostChain: 'Ethereum', contractPlaceholder: '0xWUMA_CONTRACT' },
+    { name: 'Wrapped SXP', symbol: 'wSXP', hostChain: 'Ethereum', contractPlaceholder: '0xWSXP_CONTRACT' },
+    { name: 'Wrapped NEXO', symbol: 'wNEXO', hostChain: 'Ethereum', contractPlaceholder: '0xWNEXO_CONTRACT' },
+    { name: 'Wrapped HUSD', symbol: 'wHUSD', hostChain: 'Ethereum', contractPlaceholder: '0xWHUSD_CONTRACT' },
+    { name: 'Wrapped USDP (Pax)', symbol: 'wUSDP', hostChain: 'Ethereum', contractPlaceholder: '0xWUSDP_CONTRACT' },
+    { name: 'Wrapped EURS', symbol: 'wEURS', hostChain: 'Ethereum', contractPlaceholder: '0xWEURS_CONTRACT' },
+    { name: 'Wrapped PAXG', symbol: 'wPAXG', hostChain: 'Ethereum', contractPlaceholder: '0xWPAXG_CONTRACT' },
+    { name: 'Wrapped GOLD (tokenized)', symbol: 'wGOLD', hostChain: 'Ethereum', contractPlaceholder: '0xWGOLD_CONTRACT' },
+    { name: 'Wrapped SILVER', symbol: 'wSILV', hostChain: 'Ethereum', contractPlaceholder: '0xWSILV_CONTRACT' },
+    { name: 'Wrapped YFI', symbol: 'wYFI', hostChain: 'Ethereum', contractPlaceholder: '0xWYFI_CONTRACT' },
+    { name: 'Wrapped SFI', symbol: 'wSFI', hostChain: 'Ethereum', contractPlaceholder: '0xWSFI_CONTRACT' },
+    { name: 'Wrapped DGB', symbol: 'wDGB', hostChain: 'Ethereum', contractPlaceholder: '0xWDGB_CONTRACT' },
+    { name: 'Wrapped XVS', symbol: 'wXVS', hostChain: 'Binance Smart Chain', contractPlaceholder: '0xWXVS_BSC' },
+    { name: 'Wrapped ZRX', symbol: 'wZRX', hostChain: 'Ethereum', contractPlaceholder: '0xWZRX_CONTRACT' },
+    { name: 'Wrapped ANT', symbol: 'wANT', hostChain: 'Ethereum', contractPlaceholder: '0xWANT_CONTRACT' },
+    { name: 'Wrapped OXT', symbol: 'wOXT', hostChain: 'Ethereum', contractPlaceholder: '0xWOXT_CONTRACT' },
+    { name: 'Wrapped TORN', symbol: 'wTORN', hostChain: 'Ethereum', contractPlaceholder: '0xWTORN_CONTRACT' },
+    { name: 'Wrapped FTM', symbol: 'wFTM', hostChain: 'Ethereum', contractPlaceholder: '0xWFTM_CONTRACT' },
+    { name: 'Wrapped AION', symbol: 'wAION', hostChain: 'Ethereum', contractPlaceholder: '0xWAION_CONTRACT' },
+    { name: 'Wrapped LRC', symbol: 'wLRC', hostChain: 'Ethereum', contractPlaceholder: '0xWLRC_CONTRACT' },
+    { name: 'Wrapped RENBTC (on Solana)', symbol: 'solRenBTC', hostChain: 'Solana', contractPlaceholder: 'SOL_RENBTC_CONTRACT' },
+    { name: 'Wrapped BTC (on Polygon)', symbol: 'pBTC', hostChain: 'Polygon', contractPlaceholder: 'POLY_PBTC_CONTRACT' },
+    { name: 'Wrapped ETH (on Avalanche)', symbol: 'aWETH', hostChain: 'Avalanche', contractPlaceholder: 'AVAX_AWETH_CONTRACT' },
+    { name: 'Wrapped USDN', symbol: 'wUSDN', hostChain: 'Ethereum', contractPlaceholder: '0xWUSDN_CONTRACT' },
+    { name: 'Wrapped sUSDT', symbol: 'wsUSDT', hostChain: 'Multi-chain', contractPlaceholder: 'MULTI_WSUSDT_CONTRACT' },
+    { name: 'Wrapped FRACTAL-Asset', symbol: 'wFRACT', hostChain: 'Ethereum', contractPlaceholder: '0xWFRACT_CONTRACT' },
+    { name: 'Wrapped Basket Token', symbol: 'wBASKET', hostChain: 'Multi-chain', contractPlaceholder: 'MULTI_WBASKET_CONTRACT' },
 ];
 
 export default function WrappedAssetsPage() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredData = wrappedAssetsData.map(category => {
-    const filteredAssets = category.assets.filter(
-        asset =>
-            asset.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            asset.symbol.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            asset.hostChain.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    return { ...category, assets: filteredAssets };
-  }).filter(category => category.assets.length > 0);
+  const filteredAssets = wrappedAssets.filter(
+    (asset) =>
+      asset.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      asset.symbol.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      asset.hostChain.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   
   return (
     <>
@@ -112,13 +146,13 @@ export default function WrappedAssetsPage() {
             />
           </div>
           <div className="w-full space-y-12 mt-8">
-            {filteredData.map(category => (
-                <div key={category.title} className="info-table-card">
-                    <h2 className={`text-2xl font-bold mb-4 ${category.color}`}>{category.title}</h2>
+                <div className="info-table-card">
+                    <h2 className={`text-2xl font-bold mb-4 neon-cyan`}>Top 100 Wrapped Assets</h2>
                     <div className="overflow-x-auto">
                         <table className="info-table w-full">
                             <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Name</th>
                                 <th>Symbol</th>
                                 <th>Host Chain</th>
@@ -126,8 +160,9 @@ export default function WrappedAssetsPage() {
                             </tr>
                             </thead>
                             <tbody>
-                            {category.assets.map((asset) => (
-                                <tr key={asset.name} className="hover:bg-white/5">
+                            {filteredAssets.map((asset, index) => (
+                                <tr key={`${asset.name}-${index}`} className="hover:bg-white/5">
+                                <td className='neon-orange'>{index + 1}</td>
                                 <td className='font-bold'>{asset.name}</td>
                                 <td className='text-gray-300'>{asset.symbol}</td>
                                 <td className='text-gray-300'>{asset.hostChain}</td>
@@ -138,8 +173,7 @@ export default function WrappedAssetsPage() {
                         </table>
                     </div>
                 </div>
-            ))}
-            {filteredData.length === 0 && (
+            {filteredAssets.length === 0 && (
               <p className="text-center text-gray-400 mt-8">No wrapped assets found matching your search.</p>
             )}
           </div>
