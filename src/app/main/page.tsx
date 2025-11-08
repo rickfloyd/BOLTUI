@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -26,7 +25,7 @@ const tokenCategories = [
   { name: 'Metaverse Tokens', description: 'Virtual worlds & assets (MANA, SAND).', color: 'glow-pink', route: '/metaverse' },
   { name: 'NFT Ecosystem Tokens', description: 'NFT markets & tools (APE, RARI).', color: 'glow-teal', route: '/metaverse' },
   { name: 'Meme Coins', description: 'Hype-based community tokens (DOGE, SHIB, PEPE).', color: 'glow-cyan', route: '/shitcoins' },
-  { name: 'Community / Social Tokens', description: 'Represent online groups or influencers.', color: 'glow-orange' },
+  { name: 'Community / Social Tokens', description: 'Represent online groups or influencers.', color: 'glow-orange', route: '/social-tokens' },
   { name: 'Fan Tokens', description: 'Represent sports or entertainment fandoms (CHZ, PSG).', color: 'glow-blue' },
   { name: 'DAO Tokens', description: 'Enable decentralized governance (UNI, MKR).', color: 'glow-gold' },
   { name: 'Cross-Chain Bridge Tokens', description: 'Move assets between chains (MULTI, ANY).', color: 'glow-pink' },
