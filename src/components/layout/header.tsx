@@ -192,7 +192,7 @@ function DesktopHeader() {
           <Link href="#" className="nav-item neon-purple">
             Options
           </Link>
-          <Link href="#" className="nav-item neon-teal">
+          <Link href="#" className="nav-item neon-green">
             BOND AND FIXED INCOME
           </Link>
         </nav>
@@ -243,7 +243,7 @@ function MobileHeader() {
             <Link href="#" className="nav-item neon-purple">
                 Options
             </Link>
-            <Link href="#" className="nav-item neon-teal">
+            <Link href="#" className="nav-item neon-green">
               BOND AND FIXED INCOME
             </Link>
             <div className="mobile-menu-separator" />
