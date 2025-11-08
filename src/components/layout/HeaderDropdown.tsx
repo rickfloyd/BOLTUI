@@ -13,7 +13,7 @@ export type DropdownItem = {
 };
 
 type HeaderDropdownProps = {
-  title: string;
+  title: React.ReactNode;
   items: DropdownItem[];
   titleClassName?: string;
 };
@@ -50,7 +50,7 @@ export function HeaderDropdown({ title, items, titleClassName }: HeaderDropdownP
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <a href="#" className={`nav-item ${titleClassName || 'neon-cyan'}`}>
+      <a href="#" className={`nav-item leading-tight text-center ${titleClassName || 'neon-cyan'}`}>
         {title}
       </a>
       {isOpen && (
