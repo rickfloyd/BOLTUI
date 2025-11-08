@@ -163,9 +163,6 @@ function DesktopHeader() {
         </div>
         <div className="nav-right">
            <HeaderDropdown title={<>Trader<br />Profile</>} items={tradersProfileItems} titleClassName="neon-orange" />
-           <Link href="/impact" className="nav-item neon-cyan">
-            Impact
-          </Link>
            <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
            <Link href="/compare-prices" className="nav-item neon-pink text-center leading-tight">
             Compare<br />Prices
@@ -231,7 +228,6 @@ function MobileHeader() {
           <nav className="mobile-nav-links">
             <Link href="/" className="nav-item neon-green">Home</Link>
             <HeaderDropdown title={<>Trader<br />Profile</>} items={tradersProfileItems} titleClassName="neon-orange" />
-             <Link href="/impact" className="nav-item neon-cyan">Impact</Link>
             <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
             <Link href="#" className="nav-item neon-orange">Stocks</Link>
              <Link href="/main" className="nav-item neon-cyan">
