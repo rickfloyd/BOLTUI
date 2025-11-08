@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -7,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
 
 const tokenCategories = [
-  { name: 'Layer-1 Blockchains', description: 'Base networks like BTC, ETH, SOL.', color: 'glow-cyan' },
+  { name: 'Layer-1 Blockchains', description: 'Base networks like BTC, ETH, SOL.', color: 'glow-cyan', route: '/layer-1' },
   { name: 'Layer-2 Scaling Solutions', description: 'Faster, cheaper add-on layers (ARB, OP, MATIC).', color: 'glow-orange' },
   { name: 'Smart-Contract Platforms', description: 'Support on-chain apps (ETH, AVAX, ADA).', color: 'glow-blue' },
   { name: 'Stablecoins', description: 'Fiat-pegged assets (USDT, USDC, DAI).', color: 'glow-gold' },
@@ -25,33 +24,26 @@ const tokenCategories = [
   { name: 'Gaming Tokens', description: 'Power play-to-earn games (AXS, GALA).', color: 'glow-gold' },
   { name: 'Metaverse Tokens', description: 'Virtual worlds & assets (MANA, SAND).', color: 'glow-pink' },
   { name: 'NFT Ecosystem Tokens', description: 'NFT markets & tools (APE, RARI).', color: 'glow-teal' },
-  { name: 'Meme Coins', description: 'Hype-based community tokens (DOGE, SHIB, PEPE).', color: 'glow-cyan' },
+  { name: 'Meme Coins', description: 'Hype-based community tokens (DOGE, SHIB, PEPE).', color: 'glow-cyan', route: '/shitcoins' },
   { name: 'Community / Social Tokens', description: 'Represent online groups or influencers.', color: 'glow-orange' },
   { name: 'Fan Tokens', description: 'Represent sports or entertainment fandoms (CHZ, PSG).', color: 'glow-blue' },
   { name: 'DAO Tokens', description: 'Enable decentralized governance (UNI, MKR).', color: 'glow-gold' },
   { name: 'Cross-Chain Bridge Tokens', description: 'Move assets between chains (MULTI, ANY).', color: 'glow-pink' },
   { name: 'Infrastructure / Data Tokens', description: 'Power AI, cloud, and analytics (RNDR, FIL, OCEAN).', color: 'glow-teal' },
-  { name: 'Proof of Stake', description: 'Validators lock up tokens to secure the network.', color: 'glow-cyan', className: 'font-cinzel' },
-  { name: 'Proof of Work', description: '', color: 'glow-multi-color', className: 'font-cinzel' },
-  { name: 'FREE MINERS', description: 'Information on free mining opportunities.', color: 'glow-gold-blue', className: 'font-cinzel' },
-  { name: 'Shitcoins', description: 'Highly speculative and volatile tokens.', color: 'glow-orange' },
+  { name: 'Proof of Stake', description: 'Validators lock up tokens to secure the network.', color: 'glow-cyan', className: 'font-cinzel', route: '/proof-of-stake' },
+  { name: 'Proof of Work', description: '', color: 'glow-multi-color', className: 'font-cinzel', route: '/proof-of-work' },
+  { name: 'FREE MINERS', description: 'Information on free mining opportunities.', color: 'glow-gold-blue', className: 'font-cinzel', route: '/free-miners' },
+  { name: 'Shitcoins', description: 'Highly speculative and volatile tokens.', color: 'glow-orange', route: '/shitcoins' },
 ];
 
 export default function MainPage() {
   const router = useRouter();
 
-  const handleCardClick = (name: string) => {
-    const routeName = name.toLowerCase().replace(/ /g, '-');
-    if (routeName === 'shitcoins' || routeName === 'meme-coins') {
-      router.push('/shitcoins');
-    } else if (routeName === 'layer-1-blockchains') {
-      router.push('/layer-1');
-    } else if (routeName === 'proof-of-stake') {
-      router.push('/proof-of-stake');
-    } else if (routeName === 'proof-of-work') {
-      router.push('/proof-of-work');
-    }
-     else {
+  const handleCardClick = (item: typeof tokenCategories[0]) => {
+    if (item.route) {
+      router.push(item.route);
+    } else {
+      const routeName = item.name.toLowerCase().replace(/ /g, '-');
       router.push(`/charts/${routeName}`);
     }
   };
@@ -78,10 +70,10 @@ export default function MainPage() {
               <button
                 key={index}
                 className={`data-card ${item.color} ${item.className || ''} flex flex-col justify-start text-left`}
-                onClick={() => handleCardClick(item.name)}
+                onClick={() => handleCardClick(item)}
               >
                 <h3 className="card-title text-sm font-bold">{item.name}</h3>
-                <p className="text-xs text-gray-400 mt-2">{item.description}</p>
+                {item.description && <p className="text-xs text-gray-400 mt-2">{item.description}</p>}
               </button>
             ))}
           </div>
