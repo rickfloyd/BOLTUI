@@ -12,9 +12,9 @@ export default function Page() {
       <main className="dashboard-grid">
         <section className="center-content">
           <div className="flex justify-between items-center w-full">
-            <div className="info-frame compliant">
+            <Link href="/us-compliance" className="info-frame compliant">
               U.S. Compliant
-            </div>
+            </Link>
             <div className="text-center">
               <h1 className="text-3xl font-bold neon-text">
                 Welcome to AI Quantum Charts
