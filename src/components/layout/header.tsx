@@ -167,8 +167,8 @@ function DesktopHeader() {
             Impact
           </Link>
            <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
-           <Link href="/compare-prices" className="nav-item neon-pink">
-            Compare Prices
+           <Link href="/compare-prices" className="nav-item neon-pink text-center leading-tight">
+            Compare<br />Prices
           </Link>
            <Link href="/policies" className="nav-item neon-pink">
             Policies
@@ -237,7 +237,7 @@ function MobileHeader() {
             <HeaderDropdown title="Sports" items={sportsItems} titleClassName="neon-blue" />
             <HeaderDropdown title="Opinions" items={opinionsItems} titleClassName="neon-pink" />
             <div className="mobile-menu-separator" />
-            <Link href="/compare-prices" className="nav-item neon-pink">Compare Prices</Link>
+            <Link href="/compare-prices" className="nav-item neon-pink text-center leading-tight">Compare<br />Prices</Link>
             <Link href="/policies" className="nav-item neon-pink">Policies</Link>
             <Link href="/join" className="nav-item neon-pink">Join</Link>
           </nav>
