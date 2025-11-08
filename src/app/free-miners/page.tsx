@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from '@/components/layout/header';
 import { AlertTriangle, Globe } from 'lucide-react';
 import Link from 'next/link';
@@ -8,28 +8,72 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 
+const disclaimers: { [key: string]: string } = {
+  en: "AiQuantumCharts holds zero responsibility if you choose to break any laws. We do not agree with your personal choices and would never go against any country’s legal code.",
+  es: "AiQuantumCharts no se hace responsable si decides infringir alguna ley...",
+  fr: "AiQuantumCharts décline toute responsabilité si vous choisissez de violer la loi...",
+  de: "AiQuantumCharts übernimmt keine Verantwortung, wenn Sie gegen Gesetze verstoßen...",
+  ru: "AiQuantumCharts не несет ответственности за нарушение вами закона...",
+  zh: "如果您选择违法，AiQuantumCharts概不负责...",
+  ja: "AiQuantumChartsは、法律違反を選択した場合の責任を一切負いません...",
+  hi: "यदि आप कानून तोड़ने का निर्णय लेते हैं तो AiQuantumCharts कोई ज़िम्मेदारी नहीं लेता...",
+  pt: "A AiQuantumCharts não se responsabiliza se você optar por violar leis...",
+  ar: "لا تتحمل AiQuantumCharts أي مسؤولية إذا اخترت انتهاك القوانين..."
+};
+
+const legalLinks: { [key: string]: string } = {
+  US: "https://www.analyticsinsight.net/cryptocurrency-analytics-insight/crypto-regulations-in-2025-whats-changing",
+  CN: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+  RU: "https://crystalintelligence.com/crypto-regulations/pwc-global-crypto-regulation-trends-for-2025/",
+  EG: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+  BD: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+  NP: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+  DZ: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+  AF: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+  NO: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+  SG: "https://crystalintelligence.com/crypto-regulations/pwc-global-crypto-regulation-trends-for-2025/",
+  AE: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/"
+};
+
 export default function FreeMinersPage() {
     const [selectedCountry, setSelectedCountry] = useState('US');
-    const [result, setResult] = useState('');
+    const [isPopupVisible, setIsPopupVisible] = useState(false);
+    const [disclaimerText, setDisclaimerText] = useState(disclaimers['en']);
+    const [learnMoreLink, setLearnMoreLink] = useState(legalLinks['US']);
+    
+    useEffect(() => {
+        updateDisclaimer(selectedCountry);
+    }, [selectedCountry]);
 
-    const checkMiningStatus = () => {
-        const banned = ["CN", "EG", "AF", "BD", "NP", "DZ"];
-        const regionallyBanned = ["RU", "NO"];
-        let resultText = "";
-
-        if (banned.includes(selectedCountry)) {
-            resultText = "❌ Mining is fully illegal in your country.";
-        } else if (regionallyBanned.includes(selectedCountry)) {
-            resultText = "⚠️ Mining is restricted in some regions of your country.";
-        } else {
-            resultText = "✅ Mining is generally legal in your country. Still, check local regulations.";
-        }
-        setResult(resultText);
+    const updateDisclaimer = (country: string) => {
+        setSelectedCountry(country);
+        const lang = navigator.language.slice(0, 2);
+        setDisclaimerText(disclaimers[lang] || disclaimers['en']);
+        setLearnMoreLink(legalLinks[country] || '#');
     };
 
     return (
         <>
             <Header />
+
+            {isPopupVisible && (
+                <div style={{
+                    position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', 
+                    width: '80%', maxWidth: '600px', background: '#1a1a2e', color: '#e0e0e0', border: '2px solid hsl(var(--neon-pink))', 
+                    padding: '2rem', zIndex: 1000, borderRadius: '1rem', boxShadow: '0 0 30px hsl(var(--neon-pink))'
+                }}>
+                    <h3 className="text-2xl font-bold neon-pink mb-4">⚠️ Legal Disclaimer</h3>
+                    <p>{disclaimerText}</p>
+                    <a href={learnMoreLink} target="_blank" rel="noopener noreferrer" 
+                        className="block mt-4 text-cyan-400 hover:underline">
+                        🌍 Learn More About Mining Laws
+                    </a>
+                    <Button onClick={() => setIsPopupVisible(false)} className="mt-6 w-full">
+                        I Understand
+                    </Button>
+                </div>
+            )}
+
             <main className="container mx-auto px-4 py-12">
                 <div className="center-content max-w-4xl mx-auto">
                     
@@ -41,34 +85,28 @@ export default function FreeMinersPage() {
                         <h2 className="text-2xl font-bold text-cyan-300 mb-4 text-center">Check Mining Legality</h2>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <div className='flex flex-col gap-2'>
-                                <Label htmlFor="country-select" className="text-gray-300">Select your country:</Label>
-                                <Select onValueChange={setSelectedCountry} defaultValue={selectedCountry}>
+                                <Label htmlFor="country-select" className="text-gray-300">🌐 Select Your Country:</Label>
+                                <Select onValueChange={updateDisclaimer} defaultValue={selectedCountry}>
                                     <SelectTrigger id="country-select" className="w-[280px] bg-gray-800 border-cyan-400 text-white">
                                         <SelectValue placeholder="Select a country" />
                                     </SelectTrigger>
                                     <SelectContent className="bg-black text-white border-cyan-400">
                                         <SelectItem value="US">United States</SelectItem>
                                         <SelectItem value="CN">China</SelectItem>
-                                        <SelectItem value="EG">Egypt</SelectItem>
                                         <SelectItem value="RU">Russia</SelectItem>
-                                        <SelectItem value="IN">India</SelectItem>
-                                        <SelectItem value="AF">Afghanistan</SelectItem>
-                                        <SelectItem value="DZ">Algeria</SelectItem>
+                                        <SelectItem value="EG">Egypt</SelectItem>
                                         <SelectItem value="BD">Bangladesh</SelectItem>
                                         <SelectItem value="NP">Nepal</SelectItem>
+                                        <SelectItem value="DZ">Algeria</SelectItem>
+                                        <SelectItem value="AF">Afghanistan</SelectItem>
                                         <SelectItem value="NO">Norway</SelectItem>
+                                        <SelectItem value="SG">Singapore</SelectItem>
+                                        <SelectItem value="AE">United Arab Emirates</SelectItem>
                                     </SelectContent>
                                 </Select>
                             </div>
-                            <Button onClick={checkMiningStatus} className="self-end h-10">Check</Button>
+                            <Button onClick={() => setIsPopupVisible(true)} className="self-end h-10">Show Disclaimer</Button>
                         </div>
-                        {result && (
-                            <div className="mt-4 p-4 rounded-md text-center text-lg font-bold bg-black/50 border border-pink-400/50">
-                                <p className={result.startsWith('❌') ? 'text-red-400' : result.startsWith('⚠️') ? 'text-yellow-400' : 'text-green-400'}>
-                                    {result}
-                                </p>
-                            </div>
-                        )}
                     </section>
                     
                     <div className="space-y-12 mt-12">
@@ -231,4 +269,3 @@ export default function FreeMinersPage() {
             </main>
         </>
     );
-}
