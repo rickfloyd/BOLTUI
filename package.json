@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "diagnose": "node scripts/diagnose-firebase.js",
     "analyze": "node scripts/analyzer.js",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "validate-providers": "node tools/validateProviders.js"
   },
   "engines": {
     "node": "20"
