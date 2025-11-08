@@ -27,7 +27,7 @@
     --background: 224 20% 6%; /* deep charcoal from #0A0A0F */
     --foreground: 0 0% 98%;
     --card: 224 20% 6%;
-    --card-foreground: 0 0% 98%;
+    --card-foreground: 330 100% 55%;
     --popover: 224 20% 6%;
     --popover-foreground: 0 0% 98%;
     --primary: 180 100% 50%; /* Cyan */
@@ -555,3 +555,5 @@ body.animation-page {
 .glow-text {
   animation: glowPulse 3s ease-in-out infinite;
 }
+
+    
