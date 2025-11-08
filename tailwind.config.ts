@@ -11,6 +11,7 @@ export default {
     extend: {
        fontFamily: {
         sans: ['var(--font-ibm-plex-sans)', 'sans-serif'],
+        cinzel: ['var(--font-cinzel)', 'serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

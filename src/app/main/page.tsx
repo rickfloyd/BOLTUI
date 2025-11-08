@@ -31,9 +31,9 @@ const tokenCategories = [
   { name: 'DAO Tokens', description: 'Enable decentralized governance (UNI, MKR).', color: 'glow-gold' },
   { name: 'Cross-Chain Bridge Tokens', description: 'Move assets between chains (MULTI, ANY).', color: 'glow-pink' },
   { name: 'Infrastructure / Data Tokens', description: 'Power AI, cloud, and analytics (RNDR, FIL, OCEAN).', color: 'glow-teal' },
-  { name: 'Proof of Stake', description: 'Validators lock up tokens to secure the network.', color: 'glow-cyan' },
-  { name: 'Proof of Work', description: '', color: 'glow-multi-color' },
-  { name: 'FREE MINERS', description: 'Information on free mining opportunities.', color: 'glow-green' },
+  { name: 'Proof of Stake', description: 'Validators lock up tokens to secure the network.', color: 'glow-cyan', className: 'font-cinzel' },
+  { name: 'Proof of Work', description: '', color: 'glow-multi-color', className: 'font-cinzel' },
+  { name: 'FREE MINERS', description: 'Information on free mining opportunities.', color: 'glow-green', className: 'font-cinzel' },
   { name: 'Shitcoins', description: 'Highly speculative and volatile tokens.', color: 'glow-orange' },
 ];
 
@@ -77,7 +77,7 @@ export default function MainPage() {
             {tokenCategories.map((item, index) => (
               <button
                 key={index}
-                className={`data-card ${item.color} flex flex-col justify-start text-left`}
+                className={`data-card ${item.color} ${item.className || ''} flex flex-col justify-start text-left`}
                 onClick={() => handleCardClick(item.name)}
               >
                 <h3 className="card-title text-sm font-bold">{item.name}</h3>
