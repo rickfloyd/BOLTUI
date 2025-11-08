@@ -70,7 +70,7 @@ h1, h2, h3, .title {
     border-bottom: 1px solid hsla(var(--accent-glow), 0.2);
     background-color: #0A0A0F;
 }
-.header-top-layer, .header-middle-layer, .header-bottom-layer, .header-fourth-layer {
+.header-top-layer, .header-middle-layer, .header-bottom-layer, .header-fourth-layer, .header-fifth-layer {
     display: flex;
     align-items: center;
     width: 100%;
@@ -96,6 +96,12 @@ h1, h2, h3, .title {
     border-top: 1px solid hsla(var(--accent-glow), 0.2);
 }
 .header-fourth-layer {
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid hsla(var(--accent-glow), 0.2);
+}
+.header-fifth-layer {
     justify-content: flex-start;
     gap: 1.5rem;
     padding: 0.75rem 0;
@@ -625,6 +631,7 @@ body.animation-page {
 
 
     
+
 
 
 

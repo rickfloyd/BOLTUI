@@ -222,6 +222,11 @@ function DesktopHeader() {
           </Link>
         </nav>
       </div>
+      <div className="header-fifth-layer">
+        <nav className="main-nav">
+          {/* New row for bottom header links */}
+        </nav>
+      </div>
     </>
   )
 }
@@ -284,6 +289,8 @@ function MobileHeader() {
               ALTERNATIVE DATA MARKETS
             </Link>
             <div className="mobile-menu-separator" />
+            {/* New fifth layer for mobile */}
+            <div className="mobile-menu-separator" />
             <Link href="/compare-prices" className="nav-item neon-pink text-center leading-tight">Compare<br />Prices</Link>
             <Link href="/join" className="nav-item neon-pink">Join</Link>
           </nav>
@@ -320,4 +327,3 @@ export function Header() {
     
 
     
-
