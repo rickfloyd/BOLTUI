@@ -78,8 +78,8 @@ export default function ImpactPage() {
 
               {/* Transparency Promise */}
               <section>
-                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3">🌍 Transparency Promise</h2>
-                <ul className="list-disc list-inside space-y-4 text-lg">
+                <h2 className="text-3xl font-bold mb-6 text-pink-400 border-b-2 border-cyan-500/30 pb-3">🌍 Transparency Promise</h2>
+                <ul className="list-disc list-inside space-y-4 text-lg text-purple-400">
                     <li>Public quarterly “Where Your Money Goes” ledger</li>
                     <li>Independent audit posted annually</li>
                     <li>Grant recipients listed by project and impact</li>
