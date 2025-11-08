@@ -162,7 +162,7 @@ function DesktopHeader() {
             </div>
         </div>
         <div className="nav-right">
-           <HeaderDropdown title={<>Traders<br />Profile</>} items={tradersProfileItems} titleClassName="neon-orange" />
+           <HeaderDropdown title={<>Trader<br />Profile</>} items={tradersProfileItems} titleClassName="neon-orange" />
            <Link href="/impact" className="nav-item neon-cyan">
             Impact
           </Link>
@@ -224,7 +224,7 @@ function MobileHeader() {
         <div className="mobile-menu">
           <nav className="mobile-nav-links">
             <Link href="/" className="nav-item neon-green">Home</Link>
-            <HeaderDropdown title={<>Traders<br />Profile</>} items={tradersProfileItems} titleClassName="neon-orange" />
+            <HeaderDropdown title={<>Trader<br />Profile</>} items={tradersProfileItems} titleClassName="neon-orange" />
              <Link href="/impact" className="nav-item neon-cyan">Impact</Link>
             <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
             <Link href="#" className="nav-item neon-orange">Stocks</Link>
@@ -269,3 +269,5 @@ export function Header() {
     </header>
   );
 }
+
+    
