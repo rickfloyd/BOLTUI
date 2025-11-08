@@ -34,6 +34,7 @@ const tokenCategories = [
   { name: 'Proof of Work', description: 'Miners use computational power to solve puzzles and secure the network.', color: 'glow-pink', className: 'font-cinzel', route: '/proof-of-work' },
   { name: 'FREE MINERS', description: 'Information on free mining opportunities.', color: 'glow-teal', className: 'font-cinzel', route: '/free-miners' },
   { name: 'Shitcoins', description: 'Highly speculative and volatile tokens.', color: 'glow-orange', route: '/shitcoins' },
+  { name: 'CANDL', description: 'Bright orange and pink fluid card.', color: 'glow-orange-pink', route: '#', className: 'text-black' },
 ];
 
 export default function MainPage() {
