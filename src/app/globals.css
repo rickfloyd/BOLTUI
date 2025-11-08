@@ -625,12 +625,23 @@ body.animation-page {
   color: hsl(var(--neon-gold)) !important;
 }
 
+.text-hot-cyan {
+    color: #00FFF7;
+}
+
+.multi-color-text {
+    background: linear-gradient(to right, #00CFFF, #FF007F, #A300FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+    
+.text-neon-orange-lava {
+  color: #FF5E00;
+}
     
 
     
 
-
-    
 
 
 

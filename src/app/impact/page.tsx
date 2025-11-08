@@ -24,7 +24,7 @@ export default function ImpactPage() {
               {/* Community Grant Program */}
               <section>
                 <h2 className="text-3xl font-bold mb-4 text-center text-white border-b-2 border-cyan-500/30 pb-3">🎁 Community Grant Program — 2.5 Million USD Fund</h2>
-                <p className="text-lg text-center max-w-4xl mx-auto">
+                <p className="text-lg text-center max-w-4xl mx-auto text-neon-orange-lava">
                     We dedicate the first $2,500,000 each year to 100 grants of $25,000 each to educators, disabled developers, and innovation teams building ethical AI tools.
                     Every paid subscription helps grow this fund.
                 </p>
@@ -33,7 +33,7 @@ export default function ImpactPage() {
 
               {/* How Each $1 Is Used */}
               <section>
-                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3"><span className="text-hot-cyan">How Each </span><span className="text-green-400">$1</span> <span className="text-hot-cyan">Is Used</span></h2>
+                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3"><span className="text-hot-cyan">How Each</span> <span className="text-green-400">$1</span> <span className="text-hot-cyan">Is Used</span></h2>
                 <div className="overflow-x-auto">
                   <table className="min-w-full divide-y divide-gray-700">
                     <thead className="bg-gray-800/50">
