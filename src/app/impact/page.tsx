@@ -150,6 +150,31 @@ export default function ImpactPage() {
                 <p className="text-lg">✅ Total Legal + Compliance Annual Cost: <strong className="text-white">≈ $500K – $900K</strong></p>
               </section>
 
+              <section>
+                <h2 className="text-3xl font-bold mb-6 text-white border-b-2 border-cyan-500/30 pb-3">Convention Costs (with Compliance Oversight)</h2>
+                <p className="mb-4">For large industry events (e.g., Money 20/20, Fintech Nexus, Trading Expo, Token2049):</p>
+                <div className="overflow-x-auto mb-6">
+                    <table className="min-w-full divide-y divide-gray-700">
+                        <thead className="bg-gray-800/50">
+                            <tr>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Expense</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Average</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-cyan-300 uppercase tracking-wider">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody className="bg-black/30 divide-y divide-gray-700">
+                            <tr><td className="px-6 py-4">Booth & branding</td><td className="px-6 py-4">$20K</td><td className="px-6 py-4">Includes setup, displays</td></tr>
+                            <tr><td className="px-6 py-4">Travel (4–6 staff)</td><td className="px-6 py-4">$12K</td><td className="px-6 py-4">Airfare, lodging, meals</td></tr>
+                            <tr><td className="px-6 py-4">Compliance officer travel</td><td className="px-6 py-4">$5K</td><td className="px-6 py-4">To monitor data/promo compliance</td></tr>
+                            <tr><td className="px-6 py-4">Swag & printed materials</td><td className="px-6 py-4">$5K</td><td className="px-6 py-4">Shirts, flyers, QR cards</td></tr>
+                            <tr><td className="px-6 py-4">Networking / sponsorship</td><td className="px-6 py-4">$8K</td><td className="px-6 py-4">VIP dinners, press booths</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p className="text-lg">➡️ Per convention total: <strong className="text-white">~$50K</strong></p>
+                <p className="mt-2 text-gray-400">6–8 conventions/year: $300K–$400K annual marketing + outreach budget.</p>
+              </section>
+
             </div>
           </div>
         </div>
