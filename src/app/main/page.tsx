@@ -19,7 +19,7 @@ const tokenCategories = [
   { name: 'Interoperability Tokens', description: 'Link different blockchains (DOT, ATOM).', color: 'glow-gold', route: '/interoperability' },
   { name: 'DeFi Protocol Tokens', description: 'Drive DeFi platforms (CRV, SNX, AAVE).', color: 'glow-pink', route: '/defi-protocols' },
   { name: 'Lending & Borrowing Tokens', description: 'Enable crypto loans (COMP, AAVE).', color: 'glow-teal' },
-  { name: 'Yield-Farming Tokens', description: 'Earn rewards via liquidity (CAKE, FXS).', color: 'glow-cyan' },
+  { name: 'Yield-Farming Tokens', description: 'Earn rewards via liquidity (CAKE, FXS).', color: 'glow-cyan', route: '/yield-farming' },
   { name: 'Synthetic Asset Tokens', description: 'Mirror real-world prices (SXP, SNX).', color: 'glow-orange', route: '/synthetic-assets' },
   { name: 'Oracle Tokens', description: 'Deliver price and data feeds (LINK, BAND).', color: 'glow-blue', route: '/oracles' },
   { name: 'Gaming Tokens', description: 'Power play-to-earn games (AXS, GALA).', color: 'glow-gold', route: '/gaming' },
@@ -35,6 +35,7 @@ const tokenCategories = [
   { name: 'Proof of Work', description: 'Miners use computational power to solve puzzles and secure the network.', color: 'glow-pink', className: 'font-cinzel', route: '/proof-of-work' },
   { name: 'FREE MINERS', description: 'Information on free mining opportunities.', color: 'glow-teal', className: 'font-cinzel', route: '/free-miners' },
   { name: 'Shitcoins', description: 'Highly speculative and volatile tokens.', color: 'glow-orange', route: '/shitcoins' },
+  { name: 'Coin Validator', description: 'Verify on-chain data and metadata.', color: 'glow-multi-color', route: '/coin-validator' },
   { name: 'CANDL', description: 'Bright orange and pink fluid card.', color: 'glow-orange-pink', route: '#', className: 'text-black' },
 ];
 
