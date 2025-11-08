@@ -259,10 +259,10 @@ h1, h2, h3, .title {
 }
 
 .view-button.view-button-hyper {
-    color: hsl(var(--neon-purple));
-    text-shadow: 0 0 8px hsl(var(--neon-purple)), 0 0 15px hsl(var(--neon-purple));
-    border-color: hsl(var(--neon-purple));
-    box-shadow: 0 0 10px hsl(var(--neon-purple)), inset 0 0 5px hsl(var(--neon-purple));
+    color: hsl(var(--neon-pink));
+    text-shadow: 0 0 8px hsl(var(--neon-pink)), 0 0 15px hsl(var(--neon-pink));
+    border-color: hsl(var(--neon-pink));
+    box-shadow: 0 0 10px hsl(var(--neon-pink)), inset 0 0 5px hsl(var(--neon-pink));
 }
 
 
@@ -617,4 +617,5 @@ body.animation-page {
 
 
     
+
 
