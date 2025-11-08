@@ -11,33 +11,19 @@ import { Terminal } from 'lucide-react';
 
 const CurrencyChart = dynamic(() => import('@/components/chart/CurrencyChart'), { ssr: false });
 
-type ChartData = {
-  time: string;
-  price: number;
-};
-
-type ProviderResult = {
-  data: ChartData[];
-  source: string;
-};
-
 const symbols = [
   { value: 'BTC/USD', label: 'Bitcoin (BTC/USD)' },
   { value: 'ETH/USD', label: 'Ethereum (ETH/USD)' },
-  { value: 'SOL/USD', label: 'Solana (SOL/USD)' },
-  { value: 'DXY', label: 'US Dollar Index (DXY)' },
-  { value: 'EXY', label: 'Euro Index (EXY)' },
 ];
 
 const intervals = [
   { value: '1min', label: '1 Minute' },
-  { value: '5min', label: '5 Minutes' },
   { value: '1h', label: '1 Hour' },
   { value: '1day', label: '1 Day' },
 ];
 
 export default function HyperPage() {
-  const [data, setData] = useState<ChartData[]>([]);
+  const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [dataSource, setDataSource] = useState<string | null>(null);
@@ -59,18 +45,13 @@ export default function HyperPage() {
         throw new Error(errorData.error || 'Failed to fetch data from the bridge API.');
       }
       
-      const result: ProviderResult = await response.json();
+      const result = await response.json();
 
       if (!result.data || result.data.length === 0) {
         throw new Error('No data returned from any provider.');
       }
       
-      const formattedData = result.data.map((v: any) => ({
-        time: new Date(v.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        price: v.close,
-      }));
-
-      setData(formattedData);
+      setData(result.data);
       setDataSource(result.source);
     } catch (e: any) {
       setError(`Data fetch failed: ${e.message}`);
@@ -117,13 +98,13 @@ export default function HyperPage() {
                             <AlertDescription>{error}</AlertDescription>
                         </Alert>
                     )}
-                    {!error && data.length > 0 && (
+                    {!error && !loading && (
                         <>
-                         <CurrencyChart index={selectedSymbol} chartType='Line Chart' />
+                         <CurrencyChart index={selectedSymbol} chartType='Line Chart' initialData={data} />
                          {dataSource && <p className="text-xs text-center text-gray-500 mt-2">Data served from: {dataSource}</p>}
                         </>
                     )}
-                     {!error && loading && (
+                     {loading && (
                         <div className="flex items-center justify-center h-full text-cyan-400 text-lg">Racing data providers...</div>
                     )}
                 </div>

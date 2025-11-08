@@ -24,10 +24,12 @@ interface ChartData {
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
+    const price = payload[0].value;
+    if (typeof price !== 'number') return null;
     return (
       <div className="p-2 bg-gray-800/80 border border-cyan-500 rounded-md">
         <p className="label text-white">{`${label}`}</p>
-        <p className="intro text-cyan-400 font-numeric">{`Price : ${payload[0].value.toFixed(4)}`}</p>
+        <p className="intro text-cyan-400 font-numeric">{`Price : ${price.toFixed(4)}`}</p>
       </div>
     );
   }
@@ -35,38 +37,47 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-const CurrencyChart = ({ index, chartType }: { index: string, chartType: string }) => {
+const CurrencyChart = ({ index, chartType, initialData }: { index: string, chartType: string, initialData?: any[] }) => {
   const [data, setData] = useState<ChartData[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!initialData);
   const [error, setError] = useState<string | null>(null);
   const [dataSource, setDataSource] = useState<string | null>(null);
 
+  const formatData = (apiData: any) => {
+      if (!apiData || !apiData.data || apiData.data.length === 0) {
+        throw new Error('No time series data available for this symbol from any provider.');
+      }
+      const formatted: ChartData[] = apiData.data.map((v: any) => ({
+        time: new Date(v.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        price: v.close,
+        ohlc: [v.open, v.high, v.low, v.close]
+      }));
+      setData(formatted);
+      setDataSource(apiData.source);
+  }
 
   useEffect(() => {
+    if (initialData) {
+        const formatted = initialData.map((v: any) => ({
+            time: new Date(v.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+            price: v.close,
+            ohlc: [v.open, v.high, v.low, v.close]
+        }));
+        setData(formatted);
+        return;
+    }
+
     const fetchData = async () => {
       setLoading(true);
       setError(null);
       try {
-        // The bridge API now takes the generic index and finds the best symbol
         const response = await fetch(`/api/bridge?symbol=${index}&interval=1h`);
         if (!response.ok) {
           const errorData = await response.json();
           throw new Error(errorData.error || 'Failed to fetch chart data from bridge.');
         }
         const apiData = await response.json();
-
-        if (!apiData.data || apiData.data.length === 0) {
-          throw new Error('No time series data available for this symbol from any provider.');
-        }
-
-        const formattedData: ChartData[] = apiData.data.map((v: any) => ({
-          time: new Date(v.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-          price: v.close,
-          ohlc: [v.open, v.high, v.low, v.close]
-        }));
-
-        setData(formattedData);
-        setDataSource(apiData.source);
+        formatData(apiData);
       } catch (err: any) {
         setError(err.message);
         setData([]);
@@ -76,11 +87,9 @@ const CurrencyChart = ({ index, chartType }: { index: string, chartType: string 
     };
 
     fetchData();
-
-    const interval = setInterval(fetchData, 60000 * 5); // Refresh every 5 minutes
-
-    return () => clearInterval(interval);
-  }, [index]);
+    const intervalId = setInterval(fetchData, 60000 * 5); // Refresh every 5 minutes
+    return () => clearInterval(intervalId);
+  }, [index, initialData]);
 
   if (loading) {
     return <div className="flex items-center justify-center h-full text-cyan-400">Loading chart data...</div>;
