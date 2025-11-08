@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -29,7 +30,7 @@ const tokenCategories = [
   { name: 'Community / Social Tokens', description: 'Represent online groups or influencers.', color: 'glow-orange', route: '/social-tokens' },
   { name: 'Fan Tokens', description: 'Represent sports or entertainment fandoms (CHZ, PSG).', color: 'glow-blue' },
   { name: 'DAO Tokens', description: 'Enable decentralized governance (UNI, MKR).', color: 'glow-gold', route: '/dao-tokens' },
-  { name: 'Cross-Chain Bridge Tokens', description: 'Move assets between chains (MULTI, ANY).', color: 'glow-pink' },
+  { name: 'Cross-Chain Bridge Tokens', description: 'Move assets between chains (MULTI, ANY).', color: 'glow-pink', route: '/interoperability' },
   { name: 'Infrastructure / Data Tokens', description: 'Power AI, cloud, and analytics (RNDR, FIL, OCEAN).', color: 'glow-teal' },
   { name: 'Proof of Stake', description: 'Validators lock up tokens to secure the network.', color: 'glow-cyan', className: 'font-cinzel', route: '/proof-of-stake' },
   { name: 'Proof of Work', description: 'Miners use computational power to solve puzzles and secure the network.', color: 'glow-pink', className: 'font-cinzel', route: '/proof-of-work' },
