@@ -506,7 +506,10 @@ h1, h2, h3, .title {
 
 
 /* NEON BORDERS & TEXT */
-.neon-pink { color: hsl(var(--neon-pink)); }
+.neon-pink {
+  color: hsl(var(--neon-pink));
+  text-shadow: 0 0 8px hsla(var(--neon-blue), 0.7), 0 0 15px hsla(var(--neon-blue), 0.5);
+}
 .neon-cyan { color: hsl(var(--accent-glow)); }
 .neon-blue { color: hsl(var(--neon-blue)); }
 .neon-orange { color: hsl(var(--neon-orange)); }
@@ -641,6 +644,7 @@ body.animation-page {
     
 
     
+
 
 
 
