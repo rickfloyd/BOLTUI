@@ -14,7 +14,7 @@ export default function LoginPage() {
 
       <div className="relative z-10 p-10 rounded-2xl shadow-[0_0_40px_rgba(0,255,255,0.4)] backdrop-blur-md border border-pink-400/40">
         <h1 className="text-5xl font-extrabold mb-6 text-cyan-300 drop-shadow-[0_0_12px_rgba(0,255,255,0.6)]">
-          Welcome Back
+          Member Login
         </h1>
 
         <form className="flex flex-col gap-4 w-80 mx-auto text-left">
@@ -37,9 +37,8 @@ export default function LoginPage() {
         </form>
 
         <p className="mt-6 text-gray-400">
-          Don’t have an account?{" "}
-          <Link href="/signup" className="text-pink-400 hover:underline">
-            Join Now
+          <Link href="/join" className="text-cyan-400 hover:underline">
+            Back to Join Page
           </Link>
         </p>
       </div>
