@@ -22,6 +22,7 @@
     --neon-teal: 160, 100%, 45%;
     --neon-purple: 270, 100%, 60%;
     --neon-red: 0, 100%, 50%;
+    --wcag-purple: 265, 100%, 68%;
 
 
     --radius: 0.5rem;
@@ -271,11 +272,19 @@ h1, h2, h3, .title {
     text-shadow: 0 0 5px currentColor;
 }
 
-.view-button.view-button-hyper {
+.view-button-hyper {
   color: hsl(var(--neon-pink));
   text-shadow: 0 0 8px hsl(var(--neon-pink)), 0 0 15px hsl(var(--neon-pink));
   border-color: hsl(var(--neon-pink));
   box-shadow: 0 0 10px hsl(var(--neon-pink)), inset 0 0 5px hsl(var(--neon-pink));
+}
+
+.view-button-wcag {
+  background-color: hsl(var(--wcag-purple));
+  color: white;
+  text-shadow: 0 0 3px #fff, 0 0 6px #fff;
+  border-color: hsl(var(--wcag-purple));
+  box-shadow: 0 0 10px hsl(var(--wcag-purple)), inset 0 0 5px hsl(var(--wcag-purple));
 }
 
 

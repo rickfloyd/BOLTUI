@@ -36,6 +36,9 @@ export default function Page() {
             <Link href="/simple-view" className="view-button neon-pink">
               Simple View
             </Link>
+            <Link href="/wcag" className="view-button view-button-wcag">
+              WCAG–W3C
+            </Link>
             <Link href="/hyper" className="view-button view-button-hyper">
               HYPER VIEW
             </Link>

@@ -47,6 +47,9 @@ export default function SimpleViewPage() {
           <div className="view-switcher">
             <Link href="/" className="view-button neon-cyan">Charts</Link>
             <Link href="/simple-view" className="view-button active neon-pink">Simple View</Link>
+            <Link href="/wcag" className="view-button view-button-wcag">
+              WCAG–W3C
+            </Link>
             <Link href="/custom-view" className="view-button neon-orange">Custom View</Link>
           </div>
 
