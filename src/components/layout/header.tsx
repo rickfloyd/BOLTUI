@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -151,6 +150,10 @@ const fxMatrixItems: DropdownItem[] = [
     { name: 'AI Volatility Forecast', subtext: 'Predict market volatility with AI' },
 ];
 
+const watchlistItems: DropdownItem[] = [
+    { name: 'My Watchlist', subtext: 'View and manage your watchlist', type: 'link', href: '/watchlist' },
+];
+
 function DesktopHeader() {
   return (
     <>
@@ -219,6 +222,7 @@ function DesktopHeader() {
           <Link href="#" className="nav-item neon-blue">
             ALTERNATIVE DATA MARKETS
           </Link>
+          <HeaderDropdown title="Watchlist" items={watchlistItems} titleClassName="neon-green" />
         </nav>
       </div>
       <div className="header-fifth-layer">
@@ -287,6 +291,7 @@ function MobileHeader() {
             <Link href="#" className="nav-item neon-blue">
               ALTERNATIVE DATA MARKETS
             </Link>
+            <HeaderDropdown title="Watchlist" items={watchlistItems} titleClassName="neon-green" />
             <div className="mobile-menu-separator" />
             {/* New fifth layer for mobile */}
             <div className="mobile-menu-separator" />
