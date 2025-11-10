@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -5,8 +6,10 @@ import { Header } from '@/components/layout/header';
 import Image from 'next/image';
 import { watchlistItems as initialWatchlistItems, WatchlistItemData } from '@/data/watchlist-items';
 import { Switch } from '@/components/ui/switch';
-import { ArrowUp, ArrowDown } from 'lucide-react';
+import { ArrowLeft, ArrowUp, ArrowDown } from 'lucide-react';
 import Link from 'next/link';
+import { MultiApiDocumentation } from '@/components/layout/MultiApiDocumentation';
+
 
 interface LiveWatchlistItem extends WatchlistItemData {
   isLoading: boolean;
@@ -33,7 +36,7 @@ const WatchlistCard = ({ item }: { item: LiveWatchlistItem }) => {
     <div className="watchlist-card" data-symbol={item.symbol}>
       <div className="card-header">
         {item.imageUrl ? (
-          <img src={item.imageUrl} alt={`${item.name} Logo`} className="asset-logo" />
+          <img src={item.imageUrl} alt={`${item.name} Logo`} className={`asset-logo ${item.symbol === 'TSLA' ? 'tesla-logo' : ''} ${item.symbol === 'AAPL' ? 'apple-logo' : ''}`} />
         ) : (
           <i className="fas fa-chart-area asset-logo-icon"></i>
         )}
@@ -92,7 +95,7 @@ export default function WatchlistPage() {
             const coinData = allCoins.find((c: any) => c.id === coinId);
 
             if (coinData) {
-                 return { current_price: coinData.current_price, price_change_percentage_24h: coinData.price_change_percentage_24h };
+                 return { current_price: coinData.current_price, price_change_percentage_24h: coinData.price_change_percentage_24h_in_currency };
             }
             return { current_price: null, price_change_percentage_24h: null };
         } catch (error) {
@@ -134,8 +137,14 @@ export default function WatchlistPage() {
     }, []);
 
     return (
-        <>
+        <div className="watchlist-body">
             <div className="container">
+                 <div className="w-full mb-4">
+                    <Link href="/main" className="text-cyan-400 hover:text-cyan-200 flex items-center gap-2">
+                        <ArrowLeft size={16} />
+                        Back to Main
+                    </Link>
+                </div>
                 <header className="top-bar">
                     <div className="logo">
                         <i className="fas fa-chart-line"></i> AI Quantum Charts
@@ -171,7 +180,9 @@ export default function WatchlistPage() {
 
                 <footer className="bottom-nav">
                 </footer>
+
+                 <MultiApiDocumentation />
             </div>
-        </>
+        </div>
     );
 }
