@@ -1,146 +1,88 @@
 /**
- * @fileoverview Firestore Security Rules for Quantum CyberVision Platform
+ * @file Firestore Security Rules for AIQuantumCharts
+ * @description This ruleset enforces a security model that prioritizes public readability for Forex and Crypto data,
+ *   authenticated write access for these datasets, and strict user-ownership for dashboard configurations.
  *
- * Core Philosophy:
- * This ruleset enforces a strict user-ownership model for user-specific data
- * (profiles, dashboard configurations) and allows public read access to market data.
- * Administrative privileges are managed via a separate `/roles_admin/{userId}` collection.
+ * @dataStructure
+ *   /forex-data/{pairId}: Publicly readable Forex data, writeable by authenticated users.
+ *   /crypto-data/{pairId}: Publicly readable Crypto data, writeable by authenticated users.
+ *   /humanitarian-impact: Publicly readable and writeable (for prototyping).
+ *   /users/{userId}/dashboardConfig: User-specific dashboard configurations, accessible only by the owner.
  *
- * Data Structure:
- * - /users/{userId}: User profile information, accessible only to the user and admins.
- * - /users/{userId}/dashboardConfig/{dashboardConfigId}: Dashboard configurations, accessible only to the owning user.
- * - /market_data/{marketDataId}: Publicly accessible market data.
- * - /ai_signals/{aiSignalId}: AI-generated trading signals; access potentially restricted to premium users (TODO).
- * - /roles_admin/{userId}: Indicates admin status; existence of document grants privileges.
- *
- * Key Security Decisions:
- * - User listing is implicitly disallowed by the absence of a top-level `/users` collection.
- * - Market data is public.
- * - Admin privileges are determined by the existence of a document in the `/roles_admin/{userId}` collection.
- *
- * Denormalization for Authorization:
- * - The `userId` is present in the path for `/users/{userId}` and `/users/{userId}/dashboardConfig/{dashboardConfigId}`,
- *   avoiding the need to read the document to determine ownership.
- *
- * Structural Segregation:
- * - User-specific data is stored under `/users/{userId}` to enforce ownership.
+ * @keySecurityDecisions
+ *   - Forex and Crypto data are publicly readable to facilitate open access to trading information.
+ *   - User listing is implicitly disallowed.
+ *   - Default security posture for ambiguous relationships is strict owner-only access.
+ *   - The humanitarian-impact collection is left open for read/write access to support rapid prototyping. This should be restricted in production.
  */
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
     /**
-     * @description Checks if the request is authenticated.
+     * @description Allows public read access to Forex data and write access to authenticated users.
+     * @path /forex-data/{pairId}
+     * @allow (get, list): Any user can read Forex data.
+     * @allow (create, update, delete): Only authenticated users can modify Forex data.
+     * @deny (create, update, delete): Unauthenticated users cannot modify Forex data.
+     * @principle Allows public read and authenticated write access.
      */
+    match /forex-data/{pairId} {
+      allow get, list: if true;
+      allow create, update, delete: if isSignedIn();
+    }
+
+    /**
+     * @description Allows public read access to Crypto data and write access to authenticated users.
+     * @path /crypto-data/{pairId}
+     * @allow (get, list): Any user can read Crypto data.
+     * @allow (create, update, delete): Only authenticated users can modify Crypto data.
+     * @deny (create, update, delete): Unauthenticated users cannot modify Crypto data.
+     * @principle Allows public read and authenticated write access.
+     */
+    match /crypto-data/{pairId} {
+      allow get, list: if true;
+      allow create, update, delete: if isSignedIn();
+    }
+
+    /**
+     * @description Allows public read and write access to humanitarian impact data (for prototyping).
+     * @path /humanitarian-impact
+     * @allow (get, list, create, update, delete): Any user can read and write humanitarian impact data.
+     * @principle Allows public read and write access.
+     */
+    match /humanitarian-impact {
+      allow get, list, create, update, delete: if true;
+    }
+
+        /**
+     * @description Enforces user-specific access to dashboard configurations.
+     * @path /users/{userId}/dashboardConfig
+     * @allow (get): Allows the owner to read their dashboard configuration.
+     * @allow (list): Allows the owner to list their dashboard configurations.
+     * @allow (create): Allows the owner to create their dashboard configuration.
+     * @allow (update): Allows the owner to update their dashboard configuration.
+     * @allow (delete): Allows the owner to delete their dashboard configuration.
+     * @deny (get, list, create, update, delete): Denies access to any other user.
+     * @principle Enforces document ownership for all operations.
+     */
+    match /users/{userId}/dashboardConfig {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId);
+        allow update: if isExistingOwner(userId);
+        allow delete: if isExistingOwner(userId);
+    }
+
     function isSignedIn() {
       return request.auth != null;
     }
 
-    /**
-     * @description Checks if the authenticated user ID matches the provided user ID.
-     */
     function isOwner(userId) {
-      return isSignedIn() && request.auth.uid == userId;
+      return request.auth.uid == userId;
     }
 
-    /**
-     * @description Checks if the authenticated user ID matches the owner of the existing document.
-     */
     function isExistingOwner(userId) {
         return isOwner(userId) && resource != null;
-    }
-
-    /**
-     * @description Checks if the user has admin privileges by verifying the existence of a document in the roles_admin collection.
-     */
-    function isAdmin() {
-      return exists(/databases/$(database)/documents/roles_admin/$(request.auth.uid));
-    }
-
-    /**
-     * @description Rules for /users/{userId} collection.
-     * @path /users/{userId}
-     * @allow (create) User with ID 'user123' can create their profile.
-     *    request.auth.uid: 'user123', request.resource.data.id: 'user123'
-     * @allow (get, update, delete) User with ID 'user123' can read, update, and delete their profile.
-     *    request.auth.uid: 'user123', userId: 'user123'
-     * @allow (list) Denied. Users cannot list other user profiles.
-     * @deny (create) User with ID 'user123' cannot create profile with a mismatched ID.
-     *    request.auth.uid: 'user123', request.resource.data.id: 'user456'
-     * @deny (get, update, delete) User with ID 'user123' cannot read, update or delete someone else's profile.
-     *    request.auth.uid: 'user123', userId: 'user456'
-     * @principle Enforces document ownership for writes and restricts reads to owner and admins.
-     */
-    match /users/{userId} {
-      allow get: if isOwner(userId) || isAdmin();
-      allow list: if false;
-      allow create: if isOwner(userId) && request.resource.data.id == userId;
-      allow update: if isExistingOwner(userId) && request.resource.data.id == resource.data.id || isAdmin();
-      allow delete: if isExistingOwner(userId) || isAdmin();
-    }
-
-    /**
-     * @description Rules for /users/{userId}/dashboardConfig/{dashboardConfigId} collection.
-     * @path /users/{userId}/dashboardConfig/{dashboardConfigId}
-     * @allow (create) User with ID 'user123' can create their dashboard config.
-     *    request.auth.uid: 'user123', userId: 'user123', request.resource.data.userId: 'user123'
-     * @allow (get, update, delete) User with ID 'user123' can read, update, and delete their dashboard config.
-     *    request.auth.uid: 'user123', userId: 'user123'
-     * @allow (list) User with ID 'user123' can list their dashboard configs.
-     *    request.auth.uid: 'user123', userId: 'user123'
-     * @deny (create) User with ID 'user123' cannot create dashboard config under someone else's user ID.
-     *    request.auth.uid: 'user123', userId: 'user456', request.resource.data.userId: 'user456'
-     * @deny (get, update, delete) User with ID 'user123' cannot read, update, or delete someone else's dashboard config.
-     *    request.auth.uid: 'user123', userId: 'user456'
-     * @principle Enforces path-based ownership to secure dashboard configurations.
-     */
-    match /users/{userId}/dashboardConfig/{dashboardConfigId} {
-      allow get: if isOwner(userId);
-      allow list: if isOwner(userId);
-      allow create: if isOwner(userId) && request.resource.data.userId == userId;
-      allow update: if isExistingOwner(userId) && request.resource.data.userId == userId;
-      allow delete: if isExistingOwner(userId);
-    }
-
-    /**
-     * @description Rules for /market_data/{marketDataId} collection.
-     * @path /market_data/{marketDataId}
-     * @allow (get, list) Any user (signed in or not) can read market data.
-     * @deny (create, update, delete) No one can create, update, or delete market data through the client.
-     * @principle Allows public read access to market data.
-     */
-    match /market_data/{marketDataId} {
-      allow get, list: if true;
-      allow create, update, delete: if false;
-    }
-
-    /**
-     * @description Rules for /ai_signals/{aiSignalId} collection.
-     * @path /ai_signals/{aiSignalId}
-     * @allow (get, list) Any user (signed in or not) can read AI signals.
-     * @deny (create, update, delete) No one can create, update, or delete AI signals through the client.
-     * @principle Allows public read access to AI signals.
-     */
-    match /ai_signals/{aiSignalId} {
-      allow get, list: if true;
-      allow create, update, delete: if false;
-    }
-
-    /**
-     * @description Rules for /roles_admin/{userId} collection.
-     * @path /roles_admin/{userId}
-     * @allow (get) Any authenticated user can check for admin privileges.
-     * @allow (create, update, delete) Only admins can manage admin roles.
-     * @allow (list) Denied.  Listing of admin roles is prohibited.
-     * @deny (create) Non-admins cannot grant themselves admin privileges.
-     * @deny (delete) Non-admins cannot revoke admin privileges.
-     */
-    match /roles_admin/{userId} {
-        allow get: if isSignedIn(); // Allows any logged in user to verify if an admin account exists for their UID (but cannot get data on other admins).
-        allow list: if false;
-        allow create: if isAdmin();
-        allow update: if isAdmin();
-        allow delete: if isAdmin();
     }
   }
 }
