@@ -786,3 +786,25 @@ input:checked + .slider:before {
     text-transform: uppercase;
     font-size: 0.8rem;
 }
+
+.info-frame {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+.info-frame.compliant {
+    color: hsl(var(--neon-gold));
+    border-color: hsl(var(--neon-gold));
+    text-shadow: 0 0 8px hsl(var(--neon-gold));
+}
+.info-frame.policies {
+    color: hsl(var(--neon-pink));
+    border-color: hsl(var(--neon-pink));
+    text-shadow: 0 0 8px hsl(var(--neon-pink));
+}
+.info-frame:hover {
+    box-shadow: 0 0 12px currentColor;
+}
