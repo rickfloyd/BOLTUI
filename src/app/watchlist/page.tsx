@@ -27,8 +27,8 @@ const WatchlistCard = ({ item }: { item: LiveWatchlistItem }) => {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 6, maximumFractionDigits: 6 }).format(price);
   };
 
-  const formatPercentage = (percentage: number | null) => {
-    if (percentage === null) return 'N/A';
+  const formatPercentage = (percentage: number | null | undefined) => {
+    if (percentage === null || percentage === undefined) return 'N/A';
     return `${percentage.toFixed(2)}%`;
   }
 
@@ -95,7 +95,7 @@ export default function WatchlistPage() {
             const coinData = allCoins.find((c: any) => c.id === coinId);
 
             if (coinData) {
-                 return { current_price: coinData.current_price, price_change_percentage_24h: coinData.price_change_percentage_24h_in_currency };
+                 return { current_price: coinData.current_price, price_change_percentage_24h: coinData.price_change_percentage_24h };
             }
             return { current_price: null, price_change_percentage_24h: null };
         } catch (error) {
