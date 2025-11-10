@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -172,6 +173,7 @@ function DesktopHeader() {
            <Link href="/join" className="nav-item neon-pink">
             Join
           </Link>
+          <HeaderDropdown title="Watchlist" items={watchlistItems} titleClassName="neon-green" />
         </div>
       </div>
       <div className="header-middle-layer">
@@ -222,7 +224,6 @@ function DesktopHeader() {
           <Link href="#" className="nav-item neon-blue">
             ALTERNATIVE DATA MARKETS
           </Link>
-          <HeaderDropdown title="Watchlist" items={watchlistItems} titleClassName="neon-green" />
         </nav>
       </div>
       <div className="header-fifth-layer">
