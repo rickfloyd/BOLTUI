@@ -166,6 +166,9 @@ function DesktopHeader() {
         </div>
         <div className="nav-right">
            <HeaderDropdown title={<>Trader<br />Profile</>} items={tradersProfileItems} titleClassName="neon-orange" />
+           <Link href="#" className="nav-item neon-purple text-center leading-tight">
+              ASK<br />QUBIT
+            </Link>
            <Link href="/forex" className="nav-item neon-cyan text-center leading-tight">
               Forex
             </Link>
@@ -190,8 +193,8 @@ function DesktopHeader() {
           <Link href="/main" className="nav-item neon-cyan">
             Crypto
           </Link>
-          <Link href="#" className="nav-item neon-blue">
-            FUTURES AND COMMODITIES
+          <Link href="/news" className="nav-item neon-blue">
+            News
           </Link>
           <Link href="#" className="nav-item neon-purple">
             Options
@@ -259,14 +262,15 @@ function MobileHeader() {
           <nav className="mobile-nav-links">
             <Link href="/" className="nav-item neon-green">Home</Link>
             <HeaderDropdown title={<>Trader<br />Profile</>} items={tradersProfileItems} titleClassName="neon-orange" />
+            <Link href="#" className="nav-item neon-purple">ASK QUBIT</Link>
             <Link href="/forex" className="nav-item neon-cyan">Forex</Link>
             <HeaderDropdown title="Community" items={communityItems} titleClassName="neon-blue" />
             <Link href="#" className="nav-item neon-orange">Stocks</Link>
              <Link href="/main" className="nav-item neon-cyan">
                 Crypto
               </Link>
-            <Link href="#" className="nav-item neon-blue">
-              FUTURES AND COMMODITIES
+            <Link href="/news" className="nav-item neon-blue">
+              News
             </Link>
             <Link href="#" className="nav-item neon-purple">
                 Options
@@ -336,3 +340,4 @@ export function Header() {
     
 
     
+
