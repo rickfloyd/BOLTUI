@@ -136,7 +136,7 @@ export default function ForexPage() {
                   <CardTitle className="text-2xl text-center neon-text">{item.pair}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center space-y-2">
-                  <p className="text-3xl font-bold font-numeric text-white flex items-center justify-center gap-2">
+                  <p className="text-3xl font-bold font-numeric text-gray-200 flex items-center justify-center gap-2">
                     {item.rate}
                     {item.change === 'up' && <ArrowUp className="w-6 h-6 text-green-400" />}
                     {item.change === 'down' && <ArrowDown className="w-6 h-6 text-red-400" />}
