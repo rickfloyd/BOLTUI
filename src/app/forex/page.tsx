@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -122,10 +121,7 @@ export default function ForexPage() {
       <main className="dashboard-grid">
         <section className="center-content">
           <h1 className="text-3xl font-bold neon-text text-center mt-8">🌌 QUANTUM CYBERVISION INSTANT FOREX 🌌</h1>
-          <p className="text-lg text-gray-300 text-center">
-            TOP 10 MOST IMPORTANT FOREX PAIRS - LIGHTNING FAST
-          </p>
-
+          
           {loading && data.length === 0 && <p className="text-center text-cyan-400 mt-4">Loading Forex data...</p>}
           {error && <p className="text-center text-red-500 mt-4">{error}</p>}
           
