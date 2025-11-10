@@ -11,6 +11,12 @@
       "description": "A neon graphic of an AI engine.",
       "imageUrl": "https://storage.googleapis.com/project-spark-348216/static/8c79219e-e374-4b53-a5f1-38f3a3a71b3e.png",
       "imageHint": "AI engine"
+    },
+    {
+      "id": "data-flow-diagram",
+      "description": "A flowchart diagram showing the data flow from multiple APIs to a database.",
+      "imageUrl": "https://storage.googleapis.com/project-spark-348216/static/b270a278-f327-4638-8e39-383796d3957f.png",
+      "imageHint": "data flow diagram"
     }
   ]
 }
