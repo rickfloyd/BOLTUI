@@ -1,20 +1,21 @@
+
 import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const from_symbol = searchParams.get('from_symbol');
-  const to_symbol = searchParams.get('to_symbol');
+  const from_currency = searchParams.get('from_currency');
+  const to_currency = searchParams.get('to_currency');
   const apiKey = process.env.ALPHAVANTAGE_API_KEY;
 
   if (!apiKey) {
     return NextResponse.json({ error: 'API key for Alpha Vantage is not configured.' }, { status: 500 });
   }
 
-  if (!from_symbol || !to_symbol) {
-    return NextResponse.json({ error: 'from_symbol and to_symbol parameters are required.' }, { status: 400 });
+  if (!from_currency || !to_currency) {
+    return NextResponse.json({ error: 'from_currency and to_currency parameters are required.' }, { status: 400 });
   }
 
-  const url = `https://www.alphavantage.co/query?function=FX_INTRADAY&from_symbol=${from_symbol}&to_symbol=${to_symbol}&interval=1min&apikey=${apiKey}`;
+  const url = `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=${from_currency}&to_currency=${to_currency}&apikey=${apiKey}`;
 
   try {
     const apiResponse = await fetch(url, {
@@ -36,6 +37,10 @@ export async function GET(request: Request) {
     // Check for rate limit note
     if (data['Note']) {
          return NextResponse.json({ error: `Alpha Vantage: ${data['Note']}` }, { status: 429 });
+    }
+
+    if (!data['Realtime Currency Exchange Rate']) {
+        return NextResponse.json({ error: 'Invalid response structure from Alpha Vantage.'}, { status: 500 });
     }
 
     return NextResponse.json(data);

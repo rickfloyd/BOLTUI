@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -6,32 +7,40 @@ import { Header } from '@/components/layout/header';
 import { ArrowLeft, ArrowUp, ArrowDown } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-interface ForexData {
-  'Meta Data': {
-    '2. From_Symbol': string;
-    '3. To_Symbol': string;
-  };
-  'Time Series FX (1min)': {
-    [key: string]: {
-      '1. open': string;
-      '2. high': string;
-      '3. low': string;
-      '4. close': string;
-    };
+interface ExchangeRateData {
+  'Realtime Currency Exchange Rate': {
+    '1. From_Currency Code': string;
+    '2. From_Currency Name': string;
+    '3. To_Currency Code': string;
+    '4. To_Currency Name': string;
+    '5. Exchange Rate': string;
+    '6. Last Refreshed': string;
+    '7. Time Zone': string;
+    '8. Bid Price': string;
+    '9. Ask Price': string;
   };
 }
 
 interface DisplayData {
   pair: string;
-  price: string;
+  rate: string;
+  bid: string;
+  ask: string;
   change: 'up' | 'down' | 'same';
-  lastPrice: string | null;
+  lastRate: string | null;
 }
 
-const majorPairs = [
-  'EURUSD', 'GBPUSD', 'USDJPY', 'USDCHF', 'AUDUSD', 'USDCAD', 'NZDUSD',
-  'EURJPY', 'GBPJPY', 'EURGBP', 'AUDJPY', 'EURAUD', 'EURCHF', 'AUDNZD',
-  'NZDJPY', 'GBPAUD', 'GBPCAD', 'EURNZD', 'AUDCAD', 'GBPCHF', 'AUDCHF'
+const top10Pairs = [
+  { from: 'EUR', to: 'USD' }, // #1
+  { from: 'GBP', to: 'USD' }, // #2
+  { from: 'USD', to: 'JPY' }, // #3
+  { from: 'AUD', to: 'USD' }, // #4
+  { from: 'USD', to: 'CAD' }, // #5
+  { from: 'USD', to: 'CHF' }, // #6
+  { from: 'NZD', to: 'USD' }, // #7
+  { from: 'EUR', to: 'GBP' }, // #8
+  { from: 'EUR', to: 'JPY' }, // #9
+  { from: 'GBP', to: 'JPY' }, // #10
 ];
 
 export default function ForexPage() {
@@ -44,49 +53,53 @@ export default function ForexPage() {
       setLoading(true);
       setError(null);
       try {
-        const promises = majorPairs.map(async (pair) => {
-          const from = pair.substring(0, 3);
-          const to = pair.substring(3, 6);
-          const response = await fetch(`/api/alphavantage-forex?from_symbol=${from}&to_symbol=${to}`);
+        const promises = top10Pairs.map(async (pair) => {
+          // Add a small delay between requests to avoid hitting rate limits
+          await new Promise(resolve => setTimeout(resolve, Math.random() * 1000));
+          const response = await fetch(`/api/alphavantage-forex?from_currency=${pair.from}&to_currency=${pair.to}`);
           if (!response.ok) {
-            // AlphaVantage free tier has a low rate limit, so errors are expected.
-            console.warn(`Could not fetch data for ${pair}`);
+            console.warn(`Could not fetch data for ${pair.from}/${pair.to}`);
             return null;
           }
-          const jsonData: ForexData = await response.json();
+          const jsonData: ExchangeRateData = await response.json();
           
-          if (!jsonData['Time Series FX (1min)']) {
-            console.warn(`No time series data for ${pair}. Response:`, jsonData);
+          const rateInfo = jsonData['Realtime Currency Exchange Rate'];
+          if (!rateInfo) {
+            console.warn(`No exchange rate data for ${pair.from}/${pair.to}. Response:`, jsonData);
             return null;
           }
 
-          const timeSeries = jsonData['Time Series FX (1min)'];
-          const latestTime = Object.keys(timeSeries)[0];
-          const previousTime = Object.keys(timeSeries)[1];
-          const latestPrice = parseFloat(timeSeries[latestTime]['4. close']);
-          const previousPrice = previousTime ? parseFloat(timeSeries[previousTime]['4. close']) : latestPrice;
+          const currentRate = parseFloat(rateInfo['5. Exchange Rate']);
 
           return {
-            pair: pair,
-            price: latestPrice.toFixed(5),
-            change: latestPrice > previousPrice ? 'up' : latestPrice < previousPrice ? 'down' : 'same',
-            lastPrice: previousPrice.toFixed(5),
+            pair: `${pair.from}/${pair.to}`,
+            rate: currentRate.toFixed(5),
+            bid: parseFloat(rateInfo['8. Bid Price']).toFixed(5),
+            ask: parseFloat(rateInfo['9. Ask Price']).toFixed(5),
+            change: 'same' as 'same', // Will be updated on subsequent fetches
+            lastRate: currentRate.toFixed(5),
           };
         });
 
         const results = (await Promise.all(promises)).filter(result => result !== null) as DisplayData[];
+        
         setData(prevData => {
             const dataMap = new Map(prevData.map(d => [d.pair, d]));
             results.forEach(res => {
                 const oldData = dataMap.get(res.pair);
-                if (oldData) {
-                    const oldPrice = parseFloat(oldData.price);
-                    const newPrice = parseFloat(res.price);
-                    res.change = newPrice > oldPrice ? 'up' : newPrice < oldPrice ? 'down' : oldData.change;
+                if (oldData && oldData.lastRate) {
+                    const oldRate = parseFloat(oldData.lastRate);
+                    const newRate = parseFloat(res.rate);
+                    res.change = newRate > oldRate ? 'up' : newRate < oldRate ? 'down' : oldData.change;
                 }
                 dataMap.set(res.pair, res);
             });
-            return Array.from(dataMap.values()).sort((a,b) => majorPairs.indexOf(a.pair) - majorPairs.indexOf(b.pair));
+            const sortedData = Array.from(dataMap.values()).sort((a, b) => {
+                const aIndex = top10Pairs.findIndex(p => `${p.from}/${p.to}` === a.pair);
+                const bIndex = top10Pairs.findIndex(p => `${p.from}/${p.to}` === b.pair);
+                return aIndex - bIndex;
+            });
+            return sortedData;
         });
 
       } catch (e: any) {
@@ -108,43 +121,51 @@ export default function ForexPage() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <h1 className="text-3xl font-bold neon-text text-center mt-8">Forex Dashboard</h1>
+          <h1 className="text-3xl font-bold neon-text text-center mt-8">🌌 QUANTUM CYBERVISION INSTANT FOREX 🌌</h1>
           <p className="text-lg text-gray-300 text-center">
-            Live intraday data for major currency pairs from Alpha Vantage.
+            TOP 10 MOST IMPORTANT FOREX PAIRS - LIGHTNING FAST
           </p>
 
-          {loading && data.length === 0 && <p className="text-center text-cyan-400">Loading Forex data...</p>}
-          {error && <p className="text-center text-red-500">{error}</p>}
+          {loading && data.length === 0 && <p className="text-center text-cyan-400 mt-4">Loading Forex data...</p>}
+          {error && <p className="text-center text-red-500 mt-4">{error}</p>}
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {data.map(item => (
               <Card key={item.pair} className={`data-card glow-blue`}>
                 <CardHeader>
-                  <CardTitle className="text-xl text-center neon-text">{item.pair}</CardTitle>
+                  <CardTitle className="text-2xl text-center neon-text">{item.pair}</CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-2xl font-bold font-numeric text-white flex items-center justify-center gap-2">
-                    {item.price}
-                    {item.change === 'up' && <ArrowUp className="w-5 h-5 text-green-400" />}
-                    {item.change === 'down' && <ArrowDown className="w-5 h-5 text-red-400" />}
+                <CardContent className="text-center space-y-2">
+                  <p className="text-3xl font-bold font-numeric text-white flex items-center justify-center gap-2">
+                    {item.rate}
+                    {item.change === 'up' && <ArrowUp className="w-6 h-6 text-green-400" />}
+                    {item.change === 'down' && <ArrowDown className="w-6 h-6 text-red-400" />}
                   </p>
+                  <div className="flex justify-around text-sm text-gray-400 font-numeric">
+                    <span>Bid: {item.bid}</span>
+                    <span>Ask: {item.ask}</span>
+                  </div>
                 </CardContent>
               </Card>
             ))}
-             {(!loading && data.length < majorPairs.length) && (
-                [...Array(majorPairs.length - data.length)].map((_, i) => (
+             {loading && (
+                [...Array(top10Pairs.length - data.length)].map((_, i) => (
                     <Card key={`loading-${i}`} className="data-card glow-blue animate-pulse">
                         <CardHeader>
-                            <CardTitle className="text-xl text-center neon-text opacity-50">Loading...</CardTitle>
+                            <CardTitle className="text-2xl text-center neon-text opacity-50">Loading...</CardTitle>
                         </CardHeader>
                         <CardContent className="text-center">
-                            <p className="text-2xl font-bold font-numeric text-white">...</p>
+                            <p className="text-3xl font-bold font-numeric text-white">...</p>
+                             <div className="flex justify-around text-sm text-gray-400">
+                                <span>Bid: ...</span>
+                                <span>Ask: ...</span>
+                            </div>
                         </CardContent>
                     </Card>
                 ))
             )}
           </div>
-          <p className="text-xs text-gray-500 text-center mt-4">Data refreshes automatically. Due to API limitations, some pairs may load slower than others.</p>
+          <p className="text-xs text-gray-500 text-center mt-4">Data from Alpha Vantage. Refreshes automatically. Due to API limitations, some pairs may load slower than others.</p>
         </section>
       </main>
       <Link href="/" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
