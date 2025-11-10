@@ -1,4 +1,5 @@
 // 🌟 AIQuantumCharts Firebase Functions
+// Mission: Feed children through trading platform profits
 
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
@@ -10,7 +11,7 @@ admin.initializeApp();
 // 🏦 FOREX Data Function (Separate from Crypto)
 exports.getForexData = functions.https.onRequest(async (req, res) => {    
     try {
-        console.log("🏦 Firebase Function: Getting FOREX data...");
+        console.log("🏦 Firebase Function: Getting FOREX data for children...");
 
         const apiKey = "PW441E76T7VVUVFR"; // Your AlphaVantage API key   
         const baseCurrency = req.query.base || 'USD';
@@ -48,12 +49,14 @@ exports.getForexData = functions.https.onRequest(async (req, res) => {
             res.json({
                 success: true,
                 data: result,
+                mission: "Feed children through FOREX trading"
             });
 
         } else {
             res.status(400).json({
                 success: false,
                 error: "FOREX pair not available",
+                mission: "Feed children through trading"
             });
         }
 
@@ -62,6 +65,7 @@ exports.getForexData = functions.https.onRequest(async (req, res) => {
         res.status(500).json({
             success: false,
             error: error.message,
+            mission: "Feed children through trading"
         });
     }
 });
@@ -69,7 +73,7 @@ exports.getForexData = functions.https.onRequest(async (req, res) => {
 // 🚀 CRYPTO Data Function (Separate from Forex)
 exports.getCryptoData = functions.https.onRequest(async (req, res) => {   
     try {
-        console.log("🚀 Firebase Function: Getting CRYPTO data...");
+        console.log("🚀 Firebase Function: Getting CRYPTO data for children...");
 
         const apiKey = "PW441E76T7VVUVFR"; // Your AlphaVantage API key   
         const cryptoCurrency = req.query.crypto || 'BTC';
@@ -107,12 +111,14 @@ exports.getCryptoData = functions.https.onRequest(async (req, res) => {
             res.json({
                 success: true,
                 data: result,
+                mission: "Feed children through CRYPTO trading"
             });
 
         } else {
             res.status(400).json({
                 success: false,
                 error: "CRYPTO pair not available",
+                mission: "Feed children through trading"
             });
         }
 
@@ -121,13 +127,45 @@ exports.getCryptoData = functions.https.onRequest(async (req, res) => {
         res.status(500).json({
             success: false,
             error: error.message,
+            mission: "Feed children through trading"
+        });
+    }
+});
+
+// 💖 Humanitarian Impact Tracker
+exports.trackHumanitarianImpact = functions.https.onRequest(async (req, res) => {
+    try {
+        console.log("💖 Tracking humanitarian impact...");
+
+        const impact = {
+            childrenFed: req.body.childrenFed || 0,
+            totalTrades: req.body.totalTrades || 0,
+            totalProfit: req.body.totalProfit || 0,
+            lastUpdate: new Date().toISOString(),
+            mission: "Feed hungry children globally through trading profits"
+        };
+
+        // Save impact data
+        await admin.database().ref('humanitarian-impact').set(impact);    
+
+        res.json({
+            success: true,
+            impact: impact,
+            message: "Humanitarian impact tracked successfully!"
+        });
+
+    } catch (error) {
+        console.error("❌ Impact tracking error:", error);
+        res.status(500).json({
+            success: false,
+            error: error.message
         });
     }
 });
 
 // 🔄 Scheduled Function - Update Data Every Hour
 exports.updateTradingData = functions.pubsub.schedule('every 60 minutes').onRun(async (context) => {
-    console.log("🔄 Scheduled update: Refreshing trading data...");
+    console.log("🔄 Scheduled update: Refreshing trading data for children...");
 
     try {
         // Update FOREX data
@@ -144,13 +182,10 @@ exports.updateTradingData = functions.pubsub.schedule('every 60 minutes').onRun(
             console.log(`🚀 Updating ${crypto} pairs...`);
         }
 
-        console.log(
-            "✅ Scheduled update complete - data refreshed!",
-        );
+        console.log("✅ Scheduled update complete - data refreshed for humanitarian mission!");
 
     } catch (error) {
         console.error("❌ Scheduled update error:", error);
     }
 });
-
     

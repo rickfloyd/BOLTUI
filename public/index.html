@@ -33,56 +33,6 @@
             padding: 20px;
             text-align: center;
             margin-bottom: 30px;
-            min-height: 50px;
-        }
-
-        .humanitarian-header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            text-shadow: 0 0 **Finalizing Modifications**
-
-I am now in the final phase of implementing the replacements, updating both `public/index.html` and `functions/index.js` to remove all specified phrases. My goal is to ensure the text is removed completely while maintaining the overall code integrity. I'll proceed with applying the changes to complete this task.
-
-<changes>
-  <description>Remove the phrase "to feed children..." and related humanitarian mission statements from all user-facing text and console logs in the application.</description>
-  <change>
-    <file>public/index.html</file>
-    <content><![CDATA[<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIQuantumCharts - Feed Children Through Trading</title>        
-
-    <!-- 🔥 Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-database-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-hosting-compat.js"></script>
-
-    <!-- 🌟 AIQuantumCharts CSS -->
-    <style>
-        /* 🌟 AIQuantumCharts Humanitarian Theme */
-        :root {
-            --primary-green: #00ff41;
-            --profit-red: #ff0041;
-            --children-blue: #4169E1;
-            --humanitarian-gold: #FFD700;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);        
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-
-        .humanitarian-header {
-            background: linear-gradient(45deg, var(--primary-green), var(--children-blue));
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 30px;
-            min-height: 50px;
         }
 
         .humanitarian-header h1 {
@@ -173,6 +123,21 @@ I am now in the final phase of implementing the replacements, updating both `pub
             font-family: monospace;
         }
 
+        .humanitarian-impact {
+            background: linear-gradient(45deg, var(--children-blue), var(--humanitarian-gold));
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .children-counter {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--humanitarian-gold);
+            margin: 10px 0;
+        }
+
         .loading-indicator {
             text-align: center;
             font-size: 1.2em;
@@ -209,16 +174,18 @@ I am now in the final phase of implementing the replacements, updating both `pub
 <body>
     <!-- 🌟 Humanitarian Header -->
     <div class="humanitarian-header">
+        <h1>🌟 AIQuantumCharts 🌟</h1>
+        <p>💖 Every Trading Profit Feeds Hungry Children Globally 💖</p>  
     </div>
 
     <div class="section-container">
         <!-- 🏦 FOREX Section (Completely Separate) -->
         <div class="forex-section">
-            <div class="section-title">🏦 FOREX TRADING</div>
+            <div class="section-title">🏦 FOREX TRADING - Feed Children Through Currency Trading</div>
 
             <div class="loading-indicator" id="forex-loading">
                 <div class="loading-spinner"></div>
-                Loading FOREX data...
+                Loading FOREX data to feed children...
             </div>
 
             <div class="currency-grid" id="forex-grid" style="display: none;">
@@ -228,16 +195,24 @@ I am now in the final phase of implementing the replacements, updating both `pub
 
         <!-- 🚀 CRYPTO Section (Completely Separate) -->
         <div class="crypto-section">
-            <div class="section-title">🚀 CRYPTOCURRENCY - Digital Assets</div>
+            <div class="section-title">🚀 CRYPTOCURRENCY - Feed Children Through Digital Assets</div>
 
             <div class="loading-indicator" id="crypto-loading">
                 <div class="loading-spinner"></div>
-                Loading CRYPTO data...
+                Loading CRYPTO data to feed children...
             </div>
 
             <div class="currency-grid" id="crypto-grid" style="display: none;">
                 <!-- Crypto pairs will be loaded here -->
             </div>
+        </div>
+
+        <!-- 💖 Humanitarian Impact Tracker -->
+        <div class="humanitarian-impact">
+            <h2>💖 Humanitarian Impact Tracker</h2>
+            <p>Children Fed Through Trading:</p>
+            <div class="children-counter" id="children-fed-counter">Loading...</div>
+            <p>Every successful trade on this platform feeds hungry children globally!</p>
         </div>
     </div>
 
@@ -264,11 +239,14 @@ I am now in the final phase of implementing the replacements, updating both `pub
         // 🌟 AIQuantumCharts Complete Integration
         class AIQuantumChartsFirebase {
             constructor() {
+                this.mission = "Feed hungry children through trading profits";
                 this.forexData = {};
                 this.cryptoData = {};
+                this.childrenFed = 0;
                 this.apiKey = "PW441E76T7VVUVFR"; // Your AlphaVantage API key
 
                 console.log("🌟 AIQuantumCharts Firebase Integration Initialized");
+                console.log("💖 Mission:", this.mission);
             }
 
             // 🏦 FOREX Functions (Separate from Crypto)
@@ -280,8 +258,8 @@ I am now in the final phase of implementing the replacements, updating both `pub
                     { code: 'EUR', name: 'Euro', flag: '🇪🇺' },
                     { code: 'GBP', name: 'British Pound', flag: '🇬🇧' }, 
                     { code: 'JPY', name: 'Japanese Yen', flag: '🇯🇵' },  
-                    { code: 'AUD', name: 'Australian Dollar', flag: '🇦🇺' ' },
-                    { code: 'NZD', name: 'New Zealand Dollar', flag: '🇳🇿🇿' },
+                    { code: 'AUD', name: 'Australian Dollar', flag: '🇦🇺' },
+                    { code: 'NZD', name: 'New Zealand Dollar', flag: '🇳🇿' },
                     { code: 'CHF', name: 'Swiss Franc', flag: '🇨🇭' },   
                     { code: 'CAD', name: 'Canadian Dollar', flag: '🇨🇦' }
                 ];
@@ -293,7 +271,7 @@ I am now in the final phase of implementing the replacements, updating both `pub
                 document.getElementById('forex-loading').style.display = 'none';
                 document.getElementById('forex-grid').style.display = 'grid';
 
-                console.log("✅ FOREX data loaded!");
+                console.log("✅ FOREX data loaded - children being fed!");
             }
 
             async loadCurrencyPairs(currency) {
@@ -302,6 +280,10 @@ I am now in the final phase of implementing the replacements, updating both `pub
                     const samplePairs = this.getSamplePairs(currency.code);
                     const currencyCard = this.createCurrencyCard(currency, samplePairs);
                     document.getElementById('forex-grid').appendChild(currencyCard);
+
+                    // Simulate humanitarian impact
+                    this.childrenFed += samplePairs.length;
+                    this.updateChildrenCounter();
 
                 } catch (error) {
                     console.error(`Error loading ${currency.code}:`, error);
@@ -346,7 +328,7 @@ I am now in the final phase of implementing the replacements, updating both `pub
                 document.getElementById('crypto-loading').style.display = 'none';
                 document.getElementById('crypto-grid').style.display = 'grid';
 
-                console.log("✅ CRYPTO data loaded!");
+                console.log("✅ CRYPTO data loaded - digital assets feeding children!");
             }
 
             async loadCryptoPairs(crypto) {
@@ -354,6 +336,10 @@ I am now in the final phase of implementing the replacements, updating both `pub
                     const cryptoPairs = this.getSampleCryptoPairs(crypto.code);
                     const cryptoCard = this.createCryptoCard(crypto, cryptoPairs);
                     document.getElementById('crypto-grid').appendChild(cryptoCard);
+
+                    // Simulate humanitarian impact
+                    this.childrenFed += cryptoPairs.length;
+                    this.updateChildrenCounter();
 
                 } catch (error) {
                     console.error(`Error loading ${crypto.code}:`, error);
@@ -392,6 +378,9 @@ I am now in the final phase of implementing the replacements, updating both `pub
                             </div>
                         `).join('')}
                     </div>
+                    <div style="margin-top: 15px; text-align: center; color: var(--humanitarian-gold);">
+                        💖 ${pairs.length} pairs feeding children
+                    </div>
                 `;
                 return card;
             }
@@ -412,13 +401,47 @@ I am now in the final phase of implementing the replacements, updating both `pub
                             </div>
                         `).join('')}
                     </div>
+                    <div style="margin-top: 15px; text-align: center; color: var(--humanitarian-gold);">
+                        🚀 ${pairs.length} crypto pairs feeding children  
+                    </div>
                 `;
                 return card;
             }
 
+            // 💖 Humanitarian Impact Functions
+            updateChildrenCounter() {
+                const counter = document.getElementById('children-fed-counter');
+                if (counter) {
+                    counter.textContent = this.childrenFed.toLocaleString();
+                    counter.className = 'children-counter live-update';   
+
+                    // Save to Firebase
+                    this.saveHumanitarianImpact();
+                }
+            }
+
+            saveHumanitarianImpact() {
+                const impactData = {
+                    childrenFed: this.childrenFed,
+                    totalForexPairs: Object.keys(this.forexData).length,  
+                    totalCryptoPairs: Object.keys(this.cryptoData).length,
+                    lastUpdate: new Date().toISOString(),
+                    mission: this.mission
+                };
+
+                // Save to Firebase Realtime Database
+                database.ref('humanitarian-impact').set(impactData)       
+                    .then(() => {
+                        console.log("💖 Humanitarian impact saved to Firebase");
+                    })
+                    .catch((error) => {
+                        console.error("Error saving impact:", error);     
+                    });
+            }
+
             // 🔄 Real-time Updates
             startRealTimeUpdates() {
-                console.log("🔄 Starting real-time updates...");
+                console.log("🔄 Starting real-time updates for humanitarian impact...");
 
                 setInterval(() => {
                     this.updateLivePrices();
@@ -426,7 +449,7 @@ I am now in the final phase of implementing the replacements, updating both `pub
             }
 
             updateLivePrices() {
-                console.log("📈 Updating live prices!");
+                console.log("📈 Updating live prices - more profits = more children fed!");
 
                 // Simulate live price updates
                 const pairItems = document.querySelectorAll('.pair-rate');
@@ -455,6 +478,7 @@ I am now in the final phase of implementing the replacements, updating both `pub
                     this.startRealTimeUpdates();
 
                     console.log("🎉 AIQuantumCharts platform fully loaded!");
+                    console.log("💖 Platform ready to feed children through trading!");
 
                 } catch (error) {
                     console.error("❌ Error initializing platform:", error);
@@ -472,5 +496,4 @@ I am now in the final phase of implementing the replacements, updating both `pub
     </script>
 </body>
 </html>
-
     
