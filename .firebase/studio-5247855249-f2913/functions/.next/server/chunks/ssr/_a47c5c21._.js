@@ -1,3 +1,400 @@
-module.exports=[9270,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored.contexts.AppRouterContext},38783,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient},210,a=>{"use strict";let b=(0,a.i(70106).default)("ArrowLeft",[["path",{d:"m12 19-7-7 7-7",key:"1l729n"}],["path",{d:"M19 12H5",key:"x3x0zl"}]]);a.s(["ArrowLeft",()=>b],210)},66718,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(68114);let e=c.forwardRef(({className:a,type:c,...e},f)=>(0,b.jsx)("input",{type:c,className:(0,d.cn)("flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",a),ref:f,...e}));e.displayName="Input",a.s(["Input",()=>e])},52495,a=>{"use strict";let b=(0,a.i(70106).default)("ExternalLink",[["path",{d:"M15 3h6v6",key:"1q9fwt"}],["path",{d:"M10 14 21 3",key:"gplh6r"}],["path",{d:"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",key:"a6xqqp"}]]);a.s(["ExternalLink",()=>b],52495)},58399,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(18894),e=a.i(66718),f=a.i(38246),g=a.i(210),h=a.i(52495);let i=[{name:"Dogecoin",symbol:"DOGE",website:"https://dogecoin.com"},{name:"Shiba Inu",symbol:"SHIB",website:"https://shibatoken.com"},{name:"Pepe",symbol:"PEPE",website:"https://pepecoin.com"},{name:"Floki Inu",symbol:"FLOKI",website:"https://www.floki.com"},{name:"Bonk",symbol:"BONK",website:"https://bonk.fi"},{name:"Dogelon Mars",symbol:"ELON",website:"https://dogelonmars.com"},{name:"Baby Doge Coin",symbol:"BABYDOGE",website:"https://babydoge.com"},{name:"Kishu Inu",symbol:"KISHU",website:"https://kishu.com"},{name:"Akita Inu",symbol:"AKITA",website:"https://akitainu.com"},{name:"Samoyedcoin",symbol:"SAMO",website:"https://samoyedcoin.com"},{name:"Hoge Finance",symbol:"HOGE",website:"https://hoge.finance"},{name:"MonaCoin",symbol:"MONA",website:"https://mona.site"},{name:"SafeMoon",symbol:"SAFEMOON",website:"https://safemoon.net"},{name:"ShibaPup",symbol:"PUP",website:"https://shibapup.io"},{name:"WIF Doge",symbol:"WIF",website:"https://wifdoge.com"},{name:"CateCoin",symbol:"CATE",website:"https://catecoin.org"},{name:"Stoned Ape Coin",symbol:"SAPE",website:"https://stonedape.com"},{name:"CumRocket",symbol:"CUMMIES",website:"https://cummies.io"},{name:"Doge Token",symbol:"DOGET",website:"https://dogetoken.com"},{name:"FlokiFi",symbol:"FLOKIFI",website:"https://flokifi.io"},{name:"PepeCash",symbol:"PEPECASH",website:"https://pepecash.org"},{name:"FEG Token",symbol:"FEG",website:"https://fegtoken.com"},{name:"Bonfire",symbol:"BONFIRE",website:"https://bonfire.com"},{name:"Hoge Inu",symbol:"HOGE2",website:"https://hoge.finance"},{name:"Elongate",symbol:"ELONGATE",website:"https://elongate.cc"},{name:"ShibaSwap Token",symbol:"BONE",website:"https://shibaswap.com"},{name:"Shiba Inu: LEASH",symbol:"LEASH",website:"https://shibatoken.com"},{name:"Doge Killer (example)",symbol:"DKILL",website:"https://example.com/dogekiller"},{name:"Pitbull",symbol:"PIT",website:"https://pitbull.com"},{name:"SafeMoonV2",symbol:"SFM",website:"https://safemoon.net"},{name:"ElonDoge",symbol:"EDOGE",website:"https://elondoge.io"},{name:"Inu Inu",symbol:"IINU",website:"https://inuinu.org"},{name:"MetaDoge",symbol:"METADOGE",website:"https://metadoge.io"},{name:"Shiba Predator",symbol:"SHIBP",website:"https://shibapredator.io"},{name:"DogeCash",symbol:"DOGEC",website:"https://dogec.io"},{name:"Kangal",symbol:"KANG",website:"https://kangal.finance"},{name:"Wojak Finance",symbol:"WOJAK",website:"https://wojak.finance"},{name:"Doge Yield",symbol:"DOGEY",website:"https://dogyield.io"},{name:"Floki Inu Classic",symbol:"FLOKIC",website:"https://flokiclassic.com"},{name:"BonkToken",symbol:"BONKT",website:"https://bonktoken.org"},{name:"ShibaNova",symbol:"SHN",website:"https://shibanova.io"},{name:"PepeCoinClassic",symbol:"PEPEC",website:"https://pepeclassic.io"},{name:"MoonToken",symbol:"MOON",website:"https://moontoken.io"},{name:"TacoCat",symbol:"TACOCAT",website:"https://tacocat.money"},{name:"Doggy DAO",symbol:"DDA0",website:"https://doggydao.org"},{name:"Snoop Doge",symbol:"SNOOPDOGE",website:"https://snoopdoge.io"},{name:"DogeFi",symbol:"DOGEFI",website:"https://dogefi.io"},{name:"MeowSwap Token",symbol:"MEOW",website:"https://meowswap.finance"},{name:"Floki Ino",symbol:"FLI",website:"https://flokiino.io"},{name:"ShibaCash",symbol:"SHC",website:"https://shibacash.io"},{name:"PepeWorld",symbol:"PEPW",website:"https://pepeworld.io"},{name:"DogeMoon",symbol:"DMN",website:"https://dogemoon.io"},{name:"InuX",symbol:"INUX",website:"https://inux.finance"},{name:"DogePad",symbol:"DOPE",website:"https://dogepad.io"},{name:"BabyPepe",symbol:"BABYPEPE",website:"https://babypepe.io"},{name:"ShibaRocket",symbol:"SRKT",website:"https://shibarocket.com"},{name:"DogeSwap",symbol:"DOGES",website:"https://dogeswap.finance"},{name:"PuppyToken",symbol:"PUPPY",website:"https://puppytoken.com"},{name:"ShibaFly",symbol:"SHFLY",website:"https://shibafly.io"},{name:"PepeDAO",symbol:"PDAO",website:"https://pepedao.org"},{name:"DogePrime",symbol:"DPRIME",website:"https://dogeprime.io"},{name:"Meme Kombat",symbol:"MKC",website:"https://memekombat.io"},{name:"DogeX",symbol:"DOGEX",website:"https://dogex.finance"},{name:"ShibaMoon",symbol:"SHBM",website:"https://shibamoon.io"},{name:"PepeX",symbol:"PEPX",website:"https://pepex.io"},{name:"DogeWar",symbol:"DWAR",website:"https://dogewar.io"},{name:"MemeCoin",symbol:"MEME",website:"https://memecoin.org"},{name:"DogeGold",symbol:"DGOLD",website:"https://dogegold.io"},{name:"BabyDogeSwap",symbol:"BDS",website:"https://babydogeswap.finance"},{name:"Shibalana",symbol:"SHBL",website:"https://shibalana.io"},{name:"PepeFi",symbol:"PEFI",website:"https://pepefi.finance"},{name:"DogeArmy",symbol:"DARMY",website:"https://dogearmy.io"},{name:"Shiba Inu Classic",symbol:"SHIBC",website:"https://shibaclassic.io"},{name:"Pepe Token Classic",symbol:"PTC",website:"https://pepetokenclassic.io"},{name:"DogeChef",symbol:"DCH",website:"https://dogechef.io"},{name:"MemeLord",symbol:"MLORD",website:"https://memelord.io"},{name:"DogeLend",symbol:"DLEND",website:"https://dogelend.finance"},{name:"GiggleCoin",symbol:"GIG",website:"https://gigglecoin.io"},{name:"PepeMoon",symbol:"PPM",website:"https://pepemoon.io"},{name:"DogeFlare",symbol:"DFL",website:"https://dogeflare.io"},{name:"Shibe Token",symbol:"SHIBE",website:"https://shibetoken.com"},{name:"PepeCash2",symbol:"PEPEC2",website:"https://pepecash2.io"},{name:"DogeShield",symbol:"DSH",website:"https://dogeshield.io"},{name:"MemeStar",symbol:"MSTAR",website:"https://memestar.io"},{name:"DogeFarm",symbol:"DFARM",website:"https://dogefarm.finance"},{name:"ShibaFarm",symbol:"SFARM",website:"https://shibafarm.finance"},{name:"PepeFarm",symbol:"PEFARM",website:"https://pepefarm.finance"},{name:"DogeBridge",symbol:"DBRIDGE",website:"https://dogebridge.io"},{name:"ShibaBridge",symbol:"SBRG",website:"https://shibabridge.io"},{name:"PepeBridge",symbol:"PBRG",website:"https://pepebridge.io"},{name:"DogeNFT",symbol:"DNFT",website:"https://dogenft.io"},{name:"ShibaNFT",symbol:"SNFT",website:"https://shibanft.io"},{name:"PepeNFT",symbol:"PNFT",website:"https://pepenft.io"},{name:"DogeMeta",symbol:"DMETA",website:"https://dogemeta.io"},{name:"ShibaMeta",symbol:"SMETA",website:"https://shibameta.io"}];function j(){let[a,j]=(0,c.useState)(""),k=i.filter(b=>b.name.toLowerCase().includes(a.toLowerCase())||b.symbol.toLowerCase().includes(a.toLowerCase()));return(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(d.Header,{}),(0,b.jsx)("main",{className:"dashboard-grid",children:(0,b.jsxs)("section",{className:"center-content",children:[(0,b.jsx)("h1",{className:"text-3xl font-bold neon-text text-center mt-8",children:"🔥 Top 100 Meme Coins"}),(0,b.jsx)("p",{className:"text-lg text-gray-300 text-center max-w-3xl mx-auto",children:"A curated list of 100 meme-themed tokens. This ecosystem is extremely large and fast-moving. Always verify contract addresses and official project links before transacting."}),(0,b.jsx)("div",{className:"w-full mt-4",children:(0,b.jsx)(e.Input,{type:"text",placeholder:"Search meme coins...",value:a,onChange:a=>j(a.target.value),className:"w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white"})}),(0,b.jsx)("div",{className:"w-full overflow-x-auto mt-8",children:(0,b.jsxs)("div",{className:"info-table-card",children:[(0,b.jsxs)("table",{className:"info-table w-full",children:[(0,b.jsx)("thead",{children:(0,b.jsxs)("tr",{children:[(0,b.jsx)("th",{children:"#"}),(0,b.jsx)("th",{children:"Name"}),(0,b.jsx)("th",{children:"Symbol"}),(0,b.jsx)("th",{children:"Website"})]})}),(0,b.jsx)("tbody",{children:k.map((a,c)=>(0,b.jsxs)("tr",{className:"hover:bg-white/5",children:[(0,b.jsx)("td",{className:"neon-orange",children:c+1}),(0,b.jsx)("td",{className:"neon-cyan",children:a.name}),(0,b.jsx)("td",{className:"neon-pink",children:a.symbol.toUpperCase()}),(0,b.jsx)("td",{children:(0,b.jsxs)(f.default,{href:a.website,target:"_blank",rel:"noopener noreferrer",className:"text-cyan-400 hover:underline flex items-center gap-1",children:["Visit ",(0,b.jsx)(h.ExternalLink,{size:14})]})})]},`${a.symbol}-${c}`))})]}),0===k.length&&(0,b.jsx)("p",{className:"text-center text-gray-400 py-8",children:"No meme coins found matching your search."})]})}),(0,b.jsxs)("div",{className:"mt-8 text-gray-400 text-sm max-w-4xl mx-auto",children:[(0,b.jsx)("h3",{className:"font-bold text-lg text-white mb-2",children:"Note on Meme Coins:"}),(0,b.jsx)("p",{children:"The meme coin ecosystem is extremely large and fast-moving. For some smaller or very new tokens there may be multiple community pages, and some projects intentionally use social channels (Telegram/Discord/Twitter) rather than a central website. Several entries are community-driven projects with variable permanence; always verify contract addresses and official project links before interacting or transacting."})]})]})}),(0,b.jsxs)(f.default,{href:"/main",className:"fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2",children:[(0,b.jsx)(g.ArrowLeft,{size:16}),"Back"]})]})}a.s(["default",()=>j],58399)}];
+module.exports = [
+  9270,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored.contexts.AppRouterContext;
+  },
+  38783,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient;
+  },
+  210,
+  (a) => {
+    "use strict";
+    let b = (0, a.i(70106).default)("ArrowLeft", [
+      ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+      ["path", { d: "M19 12H5", key: "x3x0zl" }],
+    ]);
+    a.s(["ArrowLeft", () => b], 210);
+  },
+  66718,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(72131),
+      d = a.i(68114);
+    let e = c.forwardRef(({ className: a, type: c, ...e }, f) =>
+      (0, b.jsx)("input", {
+        type: c,
+        className: (0, d.cn)(
+          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          a,
+        ),
+        ref: f,
+        ...e,
+      }),
+    );
+    ((e.displayName = "Input"), a.s(["Input", () => e]));
+  },
+  52495,
+  (a) => {
+    "use strict";
+    let b = (0, a.i(70106).default)("ExternalLink", [
+      ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+      ["path", { d: "M10 14 21 3", key: "gplh6r" }],
+      [
+        "path",
+        {
+          d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",
+          key: "a6xqqp",
+        },
+      ],
+    ]);
+    a.s(["ExternalLink", () => b], 52495);
+  },
+  58399,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(72131),
+      d = a.i(18894),
+      e = a.i(66718),
+      f = a.i(38246),
+      g = a.i(210),
+      h = a.i(52495);
+    let i = [
+      { name: "Dogecoin", symbol: "DOGE", website: "https://dogecoin.com" },
+      { name: "Shiba Inu", symbol: "SHIB", website: "https://shibatoken.com" },
+      { name: "Pepe", symbol: "PEPE", website: "https://pepecoin.com" },
+      { name: "Floki Inu", symbol: "FLOKI", website: "https://www.floki.com" },
+      { name: "Bonk", symbol: "BONK", website: "https://bonk.fi" },
+      {
+        name: "Dogelon Mars",
+        symbol: "ELON",
+        website: "https://dogelonmars.com",
+      },
+      {
+        name: "Baby Doge Coin",
+        symbol: "BABYDOGE",
+        website: "https://babydoge.com",
+      },
+      { name: "Kishu Inu", symbol: "KISHU", website: "https://kishu.com" },
+      { name: "Akita Inu", symbol: "AKITA", website: "https://akitainu.com" },
+      {
+        name: "Samoyedcoin",
+        symbol: "SAMO",
+        website: "https://samoyedcoin.com",
+      },
+      { name: "Hoge Finance", symbol: "HOGE", website: "https://hoge.finance" },
+      { name: "MonaCoin", symbol: "MONA", website: "https://mona.site" },
+      { name: "SafeMoon", symbol: "SAFEMOON", website: "https://safemoon.net" },
+      { name: "ShibaPup", symbol: "PUP", website: "https://shibapup.io" },
+      { name: "WIF Doge", symbol: "WIF", website: "https://wifdoge.com" },
+      { name: "CateCoin", symbol: "CATE", website: "https://catecoin.org" },
+      {
+        name: "Stoned Ape Coin",
+        symbol: "SAPE",
+        website: "https://stonedape.com",
+      },
+      { name: "CumRocket", symbol: "CUMMIES", website: "https://cummies.io" },
+      { name: "Doge Token", symbol: "DOGET", website: "https://dogetoken.com" },
+      { name: "FlokiFi", symbol: "FLOKIFI", website: "https://flokifi.io" },
+      { name: "PepeCash", symbol: "PEPECASH", website: "https://pepecash.org" },
+      { name: "FEG Token", symbol: "FEG", website: "https://fegtoken.com" },
+      { name: "Bonfire", symbol: "BONFIRE", website: "https://bonfire.com" },
+      { name: "Hoge Inu", symbol: "HOGE2", website: "https://hoge.finance" },
+      { name: "Elongate", symbol: "ELONGATE", website: "https://elongate.cc" },
+      {
+        name: "ShibaSwap Token",
+        symbol: "BONE",
+        website: "https://shibaswap.com",
+      },
+      {
+        name: "Shiba Inu: LEASH",
+        symbol: "LEASH",
+        website: "https://shibatoken.com",
+      },
+      {
+        name: "Doge Killer (example)",
+        symbol: "DKILL",
+        website: "https://example.com/dogekiller",
+      },
+      { name: "Pitbull", symbol: "PIT", website: "https://pitbull.com" },
+      { name: "SafeMoonV2", symbol: "SFM", website: "https://safemoon.net" },
+      { name: "ElonDoge", symbol: "EDOGE", website: "https://elondoge.io" },
+      { name: "Inu Inu", symbol: "IINU", website: "https://inuinu.org" },
+      { name: "MetaDoge", symbol: "METADOGE", website: "https://metadoge.io" },
+      {
+        name: "Shiba Predator",
+        symbol: "SHIBP",
+        website: "https://shibapredator.io",
+      },
+      { name: "DogeCash", symbol: "DOGEC", website: "https://dogec.io" },
+      { name: "Kangal", symbol: "KANG", website: "https://kangal.finance" },
+      {
+        name: "Wojak Finance",
+        symbol: "WOJAK",
+        website: "https://wojak.finance",
+      },
+      { name: "Doge Yield", symbol: "DOGEY", website: "https://dogyield.io" },
+      {
+        name: "Floki Inu Classic",
+        symbol: "FLOKIC",
+        website: "https://flokiclassic.com",
+      },
+      { name: "BonkToken", symbol: "BONKT", website: "https://bonktoken.org" },
+      { name: "ShibaNova", symbol: "SHN", website: "https://shibanova.io" },
+      {
+        name: "PepeCoinClassic",
+        symbol: "PEPEC",
+        website: "https://pepeclassic.io",
+      },
+      { name: "MoonToken", symbol: "MOON", website: "https://moontoken.io" },
+      { name: "TacoCat", symbol: "TACOCAT", website: "https://tacocat.money" },
+      { name: "Doggy DAO", symbol: "DDA0", website: "https://doggydao.org" },
+      {
+        name: "Snoop Doge",
+        symbol: "SNOOPDOGE",
+        website: "https://snoopdoge.io",
+      },
+      { name: "DogeFi", symbol: "DOGEFI", website: "https://dogefi.io" },
+      {
+        name: "MeowSwap Token",
+        symbol: "MEOW",
+        website: "https://meowswap.finance",
+      },
+      { name: "Floki Ino", symbol: "FLI", website: "https://flokiino.io" },
+      { name: "ShibaCash", symbol: "SHC", website: "https://shibacash.io" },
+      { name: "PepeWorld", symbol: "PEPW", website: "https://pepeworld.io" },
+      { name: "DogeMoon", symbol: "DMN", website: "https://dogemoon.io" },
+      { name: "InuX", symbol: "INUX", website: "https://inux.finance" },
+      { name: "DogePad", symbol: "DOPE", website: "https://dogepad.io" },
+      { name: "BabyPepe", symbol: "BABYPEPE", website: "https://babypepe.io" },
+      {
+        name: "ShibaRocket",
+        symbol: "SRKT",
+        website: "https://shibarocket.com",
+      },
+      {
+        name: "DogeSwap",
+        symbol: "DOGES",
+        website: "https://dogeswap.finance",
+      },
+      {
+        name: "PuppyToken",
+        symbol: "PUPPY",
+        website: "https://puppytoken.com",
+      },
+      { name: "ShibaFly", symbol: "SHFLY", website: "https://shibafly.io" },
+      { name: "PepeDAO", symbol: "PDAO", website: "https://pepedao.org" },
+      { name: "DogePrime", symbol: "DPRIME", website: "https://dogeprime.io" },
+      { name: "Meme Kombat", symbol: "MKC", website: "https://memekombat.io" },
+      { name: "DogeX", symbol: "DOGEX", website: "https://dogex.finance" },
+      { name: "ShibaMoon", symbol: "SHBM", website: "https://shibamoon.io" },
+      { name: "PepeX", symbol: "PEPX", website: "https://pepex.io" },
+      { name: "DogeWar", symbol: "DWAR", website: "https://dogewar.io" },
+      { name: "MemeCoin", symbol: "MEME", website: "https://memecoin.org" },
+      { name: "DogeGold", symbol: "DGOLD", website: "https://dogegold.io" },
+      {
+        name: "BabyDogeSwap",
+        symbol: "BDS",
+        website: "https://babydogeswap.finance",
+      },
+      { name: "Shibalana", symbol: "SHBL", website: "https://shibalana.io" },
+      { name: "PepeFi", symbol: "PEFI", website: "https://pepefi.finance" },
+      { name: "DogeArmy", symbol: "DARMY", website: "https://dogearmy.io" },
+      {
+        name: "Shiba Inu Classic",
+        symbol: "SHIBC",
+        website: "https://shibaclassic.io",
+      },
+      {
+        name: "Pepe Token Classic",
+        symbol: "PTC",
+        website: "https://pepetokenclassic.io",
+      },
+      { name: "DogeChef", symbol: "DCH", website: "https://dogechef.io" },
+      { name: "MemeLord", symbol: "MLORD", website: "https://memelord.io" },
+      {
+        name: "DogeLend",
+        symbol: "DLEND",
+        website: "https://dogelend.finance",
+      },
+      { name: "GiggleCoin", symbol: "GIG", website: "https://gigglecoin.io" },
+      { name: "PepeMoon", symbol: "PPM", website: "https://pepemoon.io" },
+      { name: "DogeFlare", symbol: "DFL", website: "https://dogeflare.io" },
+      {
+        name: "Shibe Token",
+        symbol: "SHIBE",
+        website: "https://shibetoken.com",
+      },
+      { name: "PepeCash2", symbol: "PEPEC2", website: "https://pepecash2.io" },
+      { name: "DogeShield", symbol: "DSH", website: "https://dogeshield.io" },
+      { name: "MemeStar", symbol: "MSTAR", website: "https://memestar.io" },
+      {
+        name: "DogeFarm",
+        symbol: "DFARM",
+        website: "https://dogefarm.finance",
+      },
+      {
+        name: "ShibaFarm",
+        symbol: "SFARM",
+        website: "https://shibafarm.finance",
+      },
+      {
+        name: "PepeFarm",
+        symbol: "PEFARM",
+        website: "https://pepefarm.finance",
+      },
+      {
+        name: "DogeBridge",
+        symbol: "DBRIDGE",
+        website: "https://dogebridge.io",
+      },
+      {
+        name: "ShibaBridge",
+        symbol: "SBRG",
+        website: "https://shibabridge.io",
+      },
+      { name: "PepeBridge", symbol: "PBRG", website: "https://pepebridge.io" },
+      { name: "DogeNFT", symbol: "DNFT", website: "https://dogenft.io" },
+      { name: "ShibaNFT", symbol: "SNFT", website: "https://shibanft.io" },
+      { name: "PepeNFT", symbol: "PNFT", website: "https://pepenft.io" },
+      { name: "DogeMeta", symbol: "DMETA", website: "https://dogemeta.io" },
+      { name: "ShibaMeta", symbol: "SMETA", website: "https://shibameta.io" },
+    ];
+    function j() {
+      let [a, j] = (0, c.useState)(""),
+        k = i.filter(
+          (b) =>
+            b.name.toLowerCase().includes(a.toLowerCase()) ||
+            b.symbol.toLowerCase().includes(a.toLowerCase()),
+        );
+      return (0, b.jsxs)(b.Fragment, {
+        children: [
+          (0, b.jsx)(d.Header, {}),
+          (0, b.jsx)("main", {
+            className: "dashboard-grid",
+            children: (0, b.jsxs)("section", {
+              className: "center-content",
+              children: [
+                (0, b.jsx)("h1", {
+                  className: "text-3xl font-bold neon-text text-center mt-8",
+                  children: "🔥 Top 100 Meme Coins",
+                }),
+                (0, b.jsx)("p", {
+                  className:
+                    "text-lg text-gray-300 text-center max-w-3xl mx-auto",
+                  children:
+                    "A curated list of 100 meme-themed tokens. This ecosystem is extremely large and fast-moving. Always verify contract addresses and official project links before transacting.",
+                }),
+                (0, b.jsx)("div", {
+                  className: "w-full mt-4",
+                  children: (0, b.jsx)(e.Input, {
+                    type: "text",
+                    placeholder: "Search meme coins...",
+                    value: a,
+                    onChange: (a) => j(a.target.value),
+                    className:
+                      "w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white",
+                  }),
+                }),
+                (0, b.jsx)("div", {
+                  className: "w-full overflow-x-auto mt-8",
+                  children: (0, b.jsxs)("div", {
+                    className: "info-table-card",
+                    children: [
+                      (0, b.jsxs)("table", {
+                        className: "info-table w-full",
+                        children: [
+                          (0, b.jsx)("thead", {
+                            children: (0, b.jsxs)("tr", {
+                              children: [
+                                (0, b.jsx)("th", { children: "#" }),
+                                (0, b.jsx)("th", { children: "Name" }),
+                                (0, b.jsx)("th", { children: "Symbol" }),
+                                (0, b.jsx)("th", { children: "Website" }),
+                              ],
+                            }),
+                          }),
+                          (0, b.jsx)("tbody", {
+                            children: k.map((a, c) =>
+                              (0, b.jsxs)(
+                                "tr",
+                                {
+                                  className: "hover:bg-white/5",
+                                  children: [
+                                    (0, b.jsx)("td", {
+                                      className: "neon-orange",
+                                      children: c + 1,
+                                    }),
+                                    (0, b.jsx)("td", {
+                                      className: "neon-cyan",
+                                      children: a.name,
+                                    }),
+                                    (0, b.jsx)("td", {
+                                      className: "neon-pink",
+                                      children: a.symbol.toUpperCase(),
+                                    }),
+                                    (0, b.jsx)("td", {
+                                      children: (0, b.jsxs)(f.default, {
+                                        href: a.website,
+                                        target: "_blank",
+                                        rel: "noopener noreferrer",
+                                        className:
+                                          "text-cyan-400 hover:underline flex items-center gap-1",
+                                        children: [
+                                          "Visit ",
+                                          (0, b.jsx)(h.ExternalLink, {
+                                            size: 14,
+                                          }),
+                                        ],
+                                      }),
+                                    }),
+                                  ],
+                                },
+                                `${a.symbol}-${c}`,
+                              ),
+                            ),
+                          }),
+                        ],
+                      }),
+                      0 === k.length &&
+                        (0, b.jsx)("p", {
+                          className: "text-center text-gray-400 py-8",
+                          children: "No meme coins found matching your search.",
+                        }),
+                    ],
+                  }),
+                }),
+                (0, b.jsxs)("div", {
+                  className: "mt-8 text-gray-400 text-sm max-w-4xl mx-auto",
+                  children: [
+                    (0, b.jsx)("h3", {
+                      className: "font-bold text-lg text-white mb-2",
+                      children: "Note on Meme Coins:",
+                    }),
+                    (0, b.jsx)("p", {
+                      children:
+                        "The meme coin ecosystem is extremely large and fast-moving. For some smaller or very new tokens there may be multiple community pages, and some projects intentionally use social channels (Telegram/Discord/Twitter) rather than a central website. Several entries are community-driven projects with variable permanence; always verify contract addresses and official project links before interacting or transacting.",
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          }),
+          (0, b.jsxs)(f.default, {
+            href: "/main",
+            className:
+              "fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2",
+            children: [(0, b.jsx)(g.ArrowLeft, { size: 16 }), "Back"],
+          }),
+        ],
+      });
+    }
+    a.s(["default", () => j], 58399);
+  },
+];
 
 //# sourceMappingURL=_a47c5c21._.js.map

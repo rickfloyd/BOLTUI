@@ -1,12 +1,592 @@
-module.exports=[16426,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"warnOnce",{enumerable:!0,get:function(){return d}});let d=a=>{}},1359,(a,b,c)=>{"use strict";function d({widthInt:a,heightInt:b,blurWidth:c,blurHeight:d,blurDataURL:e,objectFit:f}){let g=c?40*c:a,h=d?40*d:b,i=g&&h?`viewBox='0 0 ${g} ${h}'`:"";return`%3Csvg xmlns='http://www.w3.org/2000/svg' ${i}%3E%3Cfilter id='b' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='20'/%3E%3CfeColorMatrix values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 100 -1' result='s'/%3E%3CfeFlood x='0' y='0' width='100%25' height='100%25'/%3E%3CfeComposite operator='out' in='s'/%3E%3CfeComposite in2='SourceGraphic'/%3E%3CfeGaussianBlur stdDeviation='20'/%3E%3C/filter%3E%3Cimage width='100%25' height='100%25' x='0' y='0' preserveAspectRatio='${i?"none":"contain"===f?"xMidYMid":"cover"===f?"xMidYMid slice":"none"}' style='filter: url(%23b);' href='${e}'/%3E%3C/svg%3E`}Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"getImageBlurSvg",{enumerable:!0,get:function(){return d}})},53549,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0});var d={VALID_LOADERS:function(){return f},imageConfigDefault:function(){return g}};for(var e in d)Object.defineProperty(c,e,{enumerable:!0,get:d[e]});let f=["default","imgix","cloudinary","akamai","custom"],g={deviceSizes:[640,750,828,1080,1200,1920,2048,3840],imageSizes:[32,48,64,96,128,256,384],path:"/_next/image",loader:"default",loaderFile:"",domains:[],disableStaticImages:!1,minimumCacheTTL:14400,formats:["image/webp"],maximumRedirects:3,dangerouslyAllowLocalIP:!1,dangerouslyAllowSVG:!1,contentSecurityPolicy:"script-src 'none'; frame-src 'none'; sandbox;",contentDispositionType:"attachment",localPatterns:void 0,remotePatterns:[],qualities:[75],unoptimized:!1}},87713,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"getImgProps",{enumerable:!0,get:function(){return i}}),a.r(16426);let d=a.r(1359),e=a.r(53549),f=["-moz-initial","fill","none","scale-down",void 0];function g(a){return void 0!==a.default}function h(a){return void 0===a?a:"number"==typeof a?Number.isFinite(a)?a:NaN:"string"==typeof a&&/^[0-9]+$/.test(a)?parseInt(a,10):NaN}function i({src:a,sizes:b,unoptimized:c=!1,priority:i=!1,preload:j=!1,loading:k,className:l,quality:m,width:n,height:o,fill:p=!1,style:q,overrideSrc:r,onLoad:s,onLoadingComplete:t,placeholder:u="empty",blurDataURL:v,fetchPriority:w,decoding:x="async",layout:y,objectFit:z,objectPosition:A,lazyBoundary:B,lazyRoot:C,...D},E){var F;let G,H,I,{imgConf:J,showAltText:K,blurComplete:L,defaultLoader:M}=E,N=J||e.imageConfigDefault;if("allSizes"in N)G=N;else{let a=[...N.deviceSizes,...N.imageSizes].sort((a,b)=>a-b),b=N.deviceSizes.sort((a,b)=>a-b),c=N.qualities?.sort((a,b)=>a-b);G={...N,allSizes:a,deviceSizes:b,qualities:c}}if(void 0===M)throw Object.defineProperty(Error("images.loaderFile detected but the file is missing default export.\nRead more: https://nextjs.org/docs/messages/invalid-images-config"),"__NEXT_ERROR_CODE",{value:"E163",enumerable:!1,configurable:!0});let O=D.loader||M;delete D.loader,delete D.srcSet;let P="__next_img_default"in O;if(P){if("custom"===G.loader)throw Object.defineProperty(Error(`Image with src "${a}" is missing "loader" prop.
-Read more: https://nextjs.org/docs/messages/next-image-missing-loader`),"__NEXT_ERROR_CODE",{value:"E252",enumerable:!1,configurable:!0})}else{let a=O;O=b=>{let{config:c,...d}=b;return a(d)}}if(y){"fill"===y&&(p=!0);let a={intrinsic:{maxWidth:"100%",height:"auto"},responsive:{width:"100%",height:"auto"}}[y];a&&(q={...q,...a});let c={responsive:"100vw",fill:"100vw"}[y];c&&!b&&(b=c)}let Q="",R=h(n),S=h(o);if((F=a)&&"object"==typeof F&&(g(F)||void 0!==F.src)){let b=g(a)?a.default:a;if(!b.src)throw Object.defineProperty(Error(`An object should only be passed to the image component src parameter if it comes from a static image import. It must include src. Received ${JSON.stringify(b)}`),"__NEXT_ERROR_CODE",{value:"E460",enumerable:!1,configurable:!0});if(!b.height||!b.width)throw Object.defineProperty(Error(`An object should only be passed to the image component src parameter if it comes from a static image import. It must include height and width. Received ${JSON.stringify(b)}`),"__NEXT_ERROR_CODE",{value:"E48",enumerable:!1,configurable:!0});if(H=b.blurWidth,I=b.blurHeight,v=v||b.blurDataURL,Q=b.src,!p)if(R||S){if(R&&!S){let a=R/b.width;S=Math.round(b.height*a)}else if(!R&&S){let a=S/b.height;R=Math.round(b.width*a)}}else R=b.width,S=b.height}let T=!i&&!j&&("lazy"===k||void 0===k);(!(a="string"==typeof a?a:Q)||a.startsWith("data:")||a.startsWith("blob:"))&&(c=!0,T=!1),G.unoptimized&&(c=!0),P&&!G.dangerouslyAllowSVG&&a.split("?",1)[0].endsWith(".svg")&&(c=!0);let U=h(m),V=Object.assign(p?{position:"absolute",height:"100%",width:"100%",left:0,top:0,right:0,bottom:0,objectFit:z,objectPosition:A}:{},K?{}:{color:"transparent"},q),W=L||"empty"===u?null:"blur"===u?`url("data:image/svg+xml;charset=utf-8,${(0,d.getImageBlurSvg)({widthInt:R,heightInt:S,blurWidth:H,blurHeight:I,blurDataURL:v||"",objectFit:V.objectFit})}")`:`url("${u}")`,X=f.includes(V.objectFit)?"fill"===V.objectFit?"100% 100%":"cover":V.objectFit,Y=W?{backgroundSize:X,backgroundPosition:V.objectPosition||"50% 50%",backgroundRepeat:"no-repeat",backgroundImage:W}:{},Z=function({config:a,src:b,unoptimized:c,width:d,quality:e,sizes:f,loader:g}){if(c)return{src:b,srcSet:void 0,sizes:void 0};let{widths:h,kind:i}=function({deviceSizes:a,allSizes:b},c,d){if(d){let c=/(^|\s)(1?\d?\d)vw/g,e=[];for(let a;a=c.exec(d);)e.push(parseInt(a[2]));if(e.length){let c=.01*Math.min(...e);return{widths:b.filter(b=>b>=a[0]*c),kind:"w"}}return{widths:b,kind:"w"}}return"number"!=typeof c?{widths:a,kind:"w"}:{widths:[...new Set([c,2*c].map(a=>b.find(b=>b>=a)||b[b.length-1]))],kind:"x"}}(a,d,f),j=h.length-1;return{sizes:f||"w"!==i?f:"100vw",srcSet:h.map((c,d)=>`${g({config:a,src:b,quality:e,width:c})} ${"w"===i?c:d+1}${i}`).join(", "),src:g({config:a,src:b,quality:e,width:h[j]})}}({config:G,src:a,unoptimized:c,width:R,quality:U,sizes:b,loader:O}),$=T?"lazy":k;return{props:{...D,loading:$,fetchPriority:w,width:R,height:S,decoding:x,className:l,style:{...V,...Y},sizes:Z.sizes,srcSet:Z.srcSet,src:r||Z.src},meta:{unoptimized:c,preload:j||i,placeholder:u,fill:p}}}},42377,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(11857);a.n(d("[project]/node_modules/next/dist/client/image-component.js <module evaluation>"))},43489,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(11857);a.n(d("[project]/node_modules/next/dist/client/image-component.js"))},18409,a=>{"use strict";a.i(42377);var b=a.i(43489);a.n(b)},53200,(a,b,c)=>{"use strict";function d(a,b){let c=a||75;return b?.qualities?.length?b.qualities.reduce((a,b)=>Math.abs(b-c)<Math.abs(a-c)?b:a,0):c}Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"findClosestQuality",{enumerable:!0,get:function(){return d}})},37763,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"default",{enumerable:!0,get:function(){return f}});let d=a.r(53200);function e({config:a,src:b,width:c,quality:e}){if(b.startsWith("/")&&b.includes("?")&&a.localPatterns?.length===1&&"**"===a.localPatterns[0].pathname&&""===a.localPatterns[0].search)throw Object.defineProperty(Error(`Image with src "${b}" is using a query string which is not configured in images.localPatterns.
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-localpatterns`),"__NEXT_ERROR_CODE",{value:"E871",enumerable:!1,configurable:!0});let f=(0,d.findClosestQuality)(e,a);return`${a.path}?url=${encodeURIComponent(b)}&w=${c}&q=${f}${b.startsWith("/_next/static/media/"),""}`}e.__next_img_default=!0;let f=e},50858,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0});var d={default:function(){return k},getImageProps:function(){return j}};for(var e in d)Object.defineProperty(c,e,{enumerable:!0,get:d[e]});let f=a.r(71029),g=a.r(87713),h=a.r(18409),i=f._(a.r(37763));function j(a){let{props:b}=(0,g.getImgProps)(a,{defaultLoader:i.default,imgConf:{deviceSizes:[640,750,828,1080,1200,1920,2048,3840],imageSizes:[32,48,64,96,128,256,384],qualities:[75],path:"/_next/image",loader:"default",dangerouslyAllowSVG:!1,unoptimized:!1}});for(let[a,c]of Object.entries(b))void 0===c&&delete b[a];return{props:b}}let k=h.Image},3236,(a,b,c)=>{b.exports=a.r(50858)},90750,a=>{a.v({placeholderImages:[{id:"user-avatar",description:"A futuristic cyberpunk user avatar",imageUrl:"https://images.unsplash.com/photo-1648526607833-aa72324d06a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjeWJlcnB1bmslMjBhdmF0YXJ8ZW58MHx8fHwxNzYyMjIyODY3fDA&ixlib=rb-4.1.0&q=80&w=1080",imageHint:"cyberpunk avatar"},{id:"ai-engine",description:"A neon graphic of an AI engine.",imageUrl:"https://storage.googleapis.com/project-spark-348216/static/8c79219e-e374-4b53-a5f1-38f3a3a71b3e.png",imageHint:"AI engine"}]})},20411,a=>{"use strict";var b=a.i(7997),c=a.i(33952),d=a.i(96159),e=a.i(3236);let f=a.i(90750).default.placeholderImages;function g(){let a=f.find(a=>"ai-engine"===a.id);return(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(c.Header,{}),(0,b.jsx)("main",{className:"min-h-screen bg-black text-white",children:(0,b.jsx)("div",{className:"container mx-auto px-4 py-12 md:py-20",children:(0,b.jsxs)("div",{className:"relative z-10 p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(0,255,255,0.4)] backdrop-blur-md border border-cyan-400/40",children:[(0,b.jsxs)("div",{className:"text-center mb-12",children:[(0,b.jsx)(d.ShieldCheck,{className:"mx-auto h-16 w-16 text-cyan-300 drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]"}),(0,b.jsx)("h1",{className:"text-4xl md:text-5xl font-extrabold mt-6 text-white drop-shadow-[0_0_12px_rgba(0,255,255,0.6)]",children:"U.S. Compliance Architecture"}),(0,b.jsx)("p",{className:"mt-4 text-lg text-gray-300 max-w-3xl mx-auto",children:"This document outlines the technical architecture for our plug-in engine system, designed to be fully compliant and user-controlled."})]}),(0,b.jsxs)("div",{className:"space-y-10 text-gray-300",children:[(0,b.jsxs)("section",{children:[(0,b.jsx)("h2",{className:"text-3xl font-bold mb-4 text-cyan-300",children:"1. Core Concept"}),(0,b.jsx)("p",{children:"Each engine becomes a plug-in with a Boolean flag in the user’s profile document."}),a&&(0,b.jsx)("div",{className:"relative my-6 flex justify-center items-center",children:(0,b.jsx)(e.default,{src:a.imageUrl,alt:a.description,width:150,height:150,"data-ai-hint":a.imageHint,className:"opacity-70"})}),(0,b.jsx)("pre",{className:"bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto",children:(0,b.jsx)("code",{children:`"userEngines": {
+module.exports = [
+  16426,
+  (a, b, c) => {
+    "use strict";
+    (Object.defineProperty(c, "__esModule", { value: !0 }),
+      Object.defineProperty(c, "warnOnce", {
+        enumerable: !0,
+        get: function () {
+          return d;
+        },
+      }));
+    let d = (a) => {};
+  },
+  1359,
+  (a, b, c) => {
+    "use strict";
+    function d({
+      widthInt: a,
+      heightInt: b,
+      blurWidth: c,
+      blurHeight: d,
+      blurDataURL: e,
+      objectFit: f,
+    }) {
+      let g = c ? 40 * c : a,
+        h = d ? 40 * d : b,
+        i = g && h ? `viewBox='0 0 ${g} ${h}'` : "";
+      return `%3Csvg xmlns='http://www.w3.org/2000/svg' ${i}%3E%3Cfilter id='b' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='20'/%3E%3CfeColorMatrix values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 100 -1' result='s'/%3E%3CfeFlood x='0' y='0' width='100%25' height='100%25'/%3E%3CfeComposite operator='out' in='s'/%3E%3CfeComposite in2='SourceGraphic'/%3E%3CfeGaussianBlur stdDeviation='20'/%3E%3C/filter%3E%3Cimage width='100%25' height='100%25' x='0' y='0' preserveAspectRatio='${i ? "none" : "contain" === f ? "xMidYMid" : "cover" === f ? "xMidYMid slice" : "none"}' style='filter: url(%23b);' href='${e}'/%3E%3C/svg%3E`;
+    }
+    (Object.defineProperty(c, "__esModule", { value: !0 }),
+      Object.defineProperty(c, "getImageBlurSvg", {
+        enumerable: !0,
+        get: function () {
+          return d;
+        },
+      }));
+  },
+  53549,
+  (a, b, c) => {
+    "use strict";
+    Object.defineProperty(c, "__esModule", { value: !0 });
+    var d = {
+      VALID_LOADERS: function () {
+        return f;
+      },
+      imageConfigDefault: function () {
+        return g;
+      },
+    };
+    for (var e in d) Object.defineProperty(c, e, { enumerable: !0, get: d[e] });
+    let f = ["default", "imgix", "cloudinary", "akamai", "custom"],
+      g = {
+        deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+        imageSizes: [32, 48, 64, 96, 128, 256, 384],
+        path: "/_next/image",
+        loader: "default",
+        loaderFile: "",
+        domains: [],
+        disableStaticImages: !1,
+        minimumCacheTTL: 14400,
+        formats: ["image/webp"],
+        maximumRedirects: 3,
+        dangerouslyAllowLocalIP: !1,
+        dangerouslyAllowSVG: !1,
+        contentSecurityPolicy: "script-src 'none'; frame-src 'none'; sandbox;",
+        contentDispositionType: "attachment",
+        localPatterns: void 0,
+        remotePatterns: [],
+        qualities: [75],
+        unoptimized: !1,
+      };
+  },
+  87713,
+  (a, b, c) => {
+    "use strict";
+    (Object.defineProperty(c, "__esModule", { value: !0 }),
+      Object.defineProperty(c, "getImgProps", {
+        enumerable: !0,
+        get: function () {
+          return i;
+        },
+      }),
+      a.r(16426));
+    let d = a.r(1359),
+      e = a.r(53549),
+      f = ["-moz-initial", "fill", "none", "scale-down", void 0];
+    function g(a) {
+      return void 0 !== a.default;
+    }
+    function h(a) {
+      return void 0 === a
+        ? a
+        : "number" == typeof a
+          ? Number.isFinite(a)
+            ? a
+            : NaN
+          : "string" == typeof a && /^[0-9]+$/.test(a)
+            ? parseInt(a, 10)
+            : NaN;
+    }
+    function i(
+      {
+        src: a,
+        sizes: b,
+        unoptimized: c = !1,
+        priority: i = !1,
+        preload: j = !1,
+        loading: k,
+        className: l,
+        quality: m,
+        width: n,
+        height: o,
+        fill: p = !1,
+        style: q,
+        overrideSrc: r,
+        onLoad: s,
+        onLoadingComplete: t,
+        placeholder: u = "empty",
+        blurDataURL: v,
+        fetchPriority: w,
+        decoding: x = "async",
+        layout: y,
+        objectFit: z,
+        objectPosition: A,
+        lazyBoundary: B,
+        lazyRoot: C,
+        ...D
+      },
+      E,
+    ) {
+      var F;
+      let G,
+        H,
+        I,
+        { imgConf: J, showAltText: K, blurComplete: L, defaultLoader: M } = E,
+        N = J || e.imageConfigDefault;
+      if ("allSizes" in N) G = N;
+      else {
+        let a = [...N.deviceSizes, ...N.imageSizes].sort((a, b) => a - b),
+          b = N.deviceSizes.sort((a, b) => a - b),
+          c = N.qualities?.sort((a, b) => a - b);
+        G = { ...N, allSizes: a, deviceSizes: b, qualities: c };
+      }
+      if (void 0 === M)
+        throw Object.defineProperty(
+          Error(
+            "images.loaderFile detected but the file is missing default export.\nRead more: https://nextjs.org/docs/messages/invalid-images-config",
+          ),
+          "__NEXT_ERROR_CODE",
+          { value: "E163", enumerable: !1, configurable: !0 },
+        );
+      let O = D.loader || M;
+      (delete D.loader, delete D.srcSet);
+      let P = "__next_img_default" in O;
+      if (P) {
+        if ("custom" === G.loader)
+          throw Object.defineProperty(
+            Error(`Image with src "${a}" is missing "loader" prop.
+Read more: https://nextjs.org/docs/messages/next-image-missing-loader`),
+            "__NEXT_ERROR_CODE",
+            { value: "E252", enumerable: !1, configurable: !0 },
+          );
+      } else {
+        let a = O;
+        O = (b) => {
+          let { config: c, ...d } = b;
+          return a(d);
+        };
+      }
+      if (y) {
+        "fill" === y && (p = !0);
+        let a = {
+          intrinsic: { maxWidth: "100%", height: "auto" },
+          responsive: { width: "100%", height: "auto" },
+        }[y];
+        a && (q = { ...q, ...a });
+        let c = { responsive: "100vw", fill: "100vw" }[y];
+        c && !b && (b = c);
+      }
+      let Q = "",
+        R = h(n),
+        S = h(o);
+      if ((F = a) && "object" == typeof F && (g(F) || void 0 !== F.src)) {
+        let b = g(a) ? a.default : a;
+        if (!b.src)
+          throw Object.defineProperty(
+            Error(
+              `An object should only be passed to the image component src parameter if it comes from a static image import. It must include src. Received ${JSON.stringify(b)}`,
+            ),
+            "__NEXT_ERROR_CODE",
+            { value: "E460", enumerable: !1, configurable: !0 },
+          );
+        if (!b.height || !b.width)
+          throw Object.defineProperty(
+            Error(
+              `An object should only be passed to the image component src parameter if it comes from a static image import. It must include height and width. Received ${JSON.stringify(b)}`,
+            ),
+            "__NEXT_ERROR_CODE",
+            { value: "E48", enumerable: !1, configurable: !0 },
+          );
+        if (
+          ((H = b.blurWidth),
+          (I = b.blurHeight),
+          (v = v || b.blurDataURL),
+          (Q = b.src),
+          !p)
+        )
+          if (R || S) {
+            if (R && !S) {
+              let a = R / b.width;
+              S = Math.round(b.height * a);
+            } else if (!R && S) {
+              let a = S / b.height;
+              R = Math.round(b.width * a);
+            }
+          } else ((R = b.width), (S = b.height));
+      }
+      let T = !i && !j && ("lazy" === k || void 0 === k);
+      ((!(a = "string" == typeof a ? a : Q) ||
+        a.startsWith("data:") ||
+        a.startsWith("blob:")) &&
+        ((c = !0), (T = !1)),
+        G.unoptimized && (c = !0),
+        P &&
+          !G.dangerouslyAllowSVG &&
+          a.split("?", 1)[0].endsWith(".svg") &&
+          (c = !0));
+      let U = h(m),
+        V = Object.assign(
+          p
+            ? {
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                left: 0,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                objectFit: z,
+                objectPosition: A,
+              }
+            : {},
+          K ? {} : { color: "transparent" },
+          q,
+        ),
+        W =
+          L || "empty" === u
+            ? null
+            : "blur" === u
+              ? `url("data:image/svg+xml;charset=utf-8,${(0, d.getImageBlurSvg)({ widthInt: R, heightInt: S, blurWidth: H, blurHeight: I, blurDataURL: v || "", objectFit: V.objectFit })}")`
+              : `url("${u}")`,
+        X = f.includes(V.objectFit)
+          ? "fill" === V.objectFit
+            ? "100% 100%"
+            : "cover"
+          : V.objectFit,
+        Y = W
+          ? {
+              backgroundSize: X,
+              backgroundPosition: V.objectPosition || "50% 50%",
+              backgroundRepeat: "no-repeat",
+              backgroundImage: W,
+            }
+          : {},
+        Z = (function ({
+          config: a,
+          src: b,
+          unoptimized: c,
+          width: d,
+          quality: e,
+          sizes: f,
+          loader: g,
+        }) {
+          if (c) return { src: b, srcSet: void 0, sizes: void 0 };
+          let { widths: h, kind: i } = (function (
+              { deviceSizes: a, allSizes: b },
+              c,
+              d,
+            ) {
+              if (d) {
+                let c = /(^|\s)(1?\d?\d)vw/g,
+                  e = [];
+                for (let a; (a = c.exec(d)); ) e.push(parseInt(a[2]));
+                if (e.length) {
+                  let c = 0.01 * Math.min(...e);
+                  return { widths: b.filter((b) => b >= a[0] * c), kind: "w" };
+                }
+                return { widths: b, kind: "w" };
+              }
+              return "number" != typeof c
+                ? { widths: a, kind: "w" }
+                : {
+                    widths: [
+                      ...new Set(
+                        [c, 2 * c].map(
+                          (a) => b.find((b) => b >= a) || b[b.length - 1],
+                        ),
+                      ),
+                    ],
+                    kind: "x",
+                  };
+            })(a, d, f),
+            j = h.length - 1;
+          return {
+            sizes: f || "w" !== i ? f : "100vw",
+            srcSet: h
+              .map(
+                (c, d) =>
+                  `${g({ config: a, src: b, quality: e, width: c })} ${"w" === i ? c : d + 1}${i}`,
+              )
+              .join(", "),
+            src: g({ config: a, src: b, quality: e, width: h[j] }),
+          };
+        })({
+          config: G,
+          src: a,
+          unoptimized: c,
+          width: R,
+          quality: U,
+          sizes: b,
+          loader: O,
+        }),
+        $ = T ? "lazy" : k;
+      return {
+        props: {
+          ...D,
+          loading: $,
+          fetchPriority: w,
+          width: R,
+          height: S,
+          decoding: x,
+          className: l,
+          style: { ...V, ...Y },
+          sizes: Z.sizes,
+          srcSet: Z.srcSet,
+          src: r || Z.src,
+        },
+        meta: { unoptimized: c, preload: j || i, placeholder: u, fill: p },
+      };
+    }
+  },
+  42377,
+  (a, b, c) => {
+    let { createClientModuleProxy: d } = a.r(11857);
+    a.n(
+      d(
+        "[project]/node_modules/next/dist/client/image-component.js <module evaluation>",
+      ),
+    );
+  },
+  43489,
+  (a, b, c) => {
+    let { createClientModuleProxy: d } = a.r(11857);
+    a.n(d("[project]/node_modules/next/dist/client/image-component.js"));
+  },
+  18409,
+  (a) => {
+    "use strict";
+    a.i(42377);
+    var b = a.i(43489);
+    a.n(b);
+  },
+  53200,
+  (a, b, c) => {
+    "use strict";
+    function d(a, b) {
+      let c = a || 75;
+      return b?.qualities?.length
+        ? b.qualities.reduce(
+            (a, b) => (Math.abs(b - c) < Math.abs(a - c) ? b : a),
+            0,
+          )
+        : c;
+    }
+    (Object.defineProperty(c, "__esModule", { value: !0 }),
+      Object.defineProperty(c, "findClosestQuality", {
+        enumerable: !0,
+        get: function () {
+          return d;
+        },
+      }));
+  },
+  37763,
+  (a, b, c) => {
+    "use strict";
+    (Object.defineProperty(c, "__esModule", { value: !0 }),
+      Object.defineProperty(c, "default", {
+        enumerable: !0,
+        get: function () {
+          return f;
+        },
+      }));
+    let d = a.r(53200);
+    function e({ config: a, src: b, width: c, quality: e }) {
+      if (
+        b.startsWith("/") &&
+        b.includes("?") &&
+        a.localPatterns?.length === 1 &&
+        "**" === a.localPatterns[0].pathname &&
+        "" === a.localPatterns[0].search
+      )
+        throw Object.defineProperty(
+          Error(`Image with src "${b}" is using a query string which is not configured in images.localPatterns.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-localpatterns`),
+          "__NEXT_ERROR_CODE",
+          { value: "E871", enumerable: !1, configurable: !0 },
+        );
+      let f = (0, d.findClosestQuality)(e, a);
+      return `${a.path}?url=${encodeURIComponent(b)}&w=${c}&q=${f}${(b.startsWith("/_next/static/media/"), "")}`;
+    }
+    e.__next_img_default = !0;
+    let f = e;
+  },
+  50858,
+  (a, b, c) => {
+    "use strict";
+    Object.defineProperty(c, "__esModule", { value: !0 });
+    var d = {
+      default: function () {
+        return k;
+      },
+      getImageProps: function () {
+        return j;
+      },
+    };
+    for (var e in d) Object.defineProperty(c, e, { enumerable: !0, get: d[e] });
+    let f = a.r(71029),
+      g = a.r(87713),
+      h = a.r(18409),
+      i = f._(a.r(37763));
+    function j(a) {
+      let { props: b } = (0, g.getImgProps)(a, {
+        defaultLoader: i.default,
+        imgConf: {
+          deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+          imageSizes: [32, 48, 64, 96, 128, 256, 384],
+          qualities: [75],
+          path: "/_next/image",
+          loader: "default",
+          dangerouslyAllowSVG: !1,
+          unoptimized: !1,
+        },
+      });
+      for (let [a, c] of Object.entries(b)) void 0 === c && delete b[a];
+      return { props: b };
+    }
+    let k = h.Image;
+  },
+  3236,
+  (a, b, c) => {
+    b.exports = a.r(50858);
+  },
+  90750,
+  (a) => {
+    a.v({
+      placeholderImages: [
+        {
+          id: "user-avatar",
+          description: "A futuristic cyberpunk user avatar",
+          imageUrl:
+            "https://images.unsplash.com/photo-1648526607833-aa72324d06a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjeWJlcnB1bmslMjBhdmF0YXJ8ZW58MHx8fHwxNzYyMjIyODY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+          imageHint: "cyberpunk avatar",
+        },
+        {
+          id: "ai-engine",
+          description: "A neon graphic of an AI engine.",
+          imageUrl:
+            "https://storage.googleapis.com/project-spark-348216/static/8c79219e-e374-4b53-a5f1-38f3a3a71b3e.png",
+          imageHint: "AI engine",
+        },
+      ],
+    });
+  },
+  20411,
+  (a) => {
+    "use strict";
+    var b = a.i(7997),
+      c = a.i(33952),
+      d = a.i(96159),
+      e = a.i(3236);
+    let f = a.i(90750).default.placeholderImages;
+    function g() {
+      let a = f.find((a) => "ai-engine" === a.id);
+      return (0, b.jsxs)(b.Fragment, {
+        children: [
+          (0, b.jsx)(c.Header, {}),
+          (0, b.jsx)("main", {
+            className: "min-h-screen bg-black text-white",
+            children: (0, b.jsx)("div", {
+              className: "container mx-auto px-4 py-12 md:py-20",
+              children: (0, b.jsxs)("div", {
+                className:
+                  "relative z-10 p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(0,255,255,0.4)] backdrop-blur-md border border-cyan-400/40",
+                children: [
+                  (0, b.jsxs)("div", {
+                    className: "text-center mb-12",
+                    children: [
+                      (0, b.jsx)(d.ShieldCheck, {
+                        className:
+                          "mx-auto h-16 w-16 text-cyan-300 drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]",
+                      }),
+                      (0, b.jsx)("h1", {
+                        className:
+                          "text-4xl md:text-5xl font-extrabold mt-6 text-white drop-shadow-[0_0_12px_rgba(0,255,255,0.6)]",
+                        children: "U.S. Compliance Architecture",
+                      }),
+                      (0, b.jsx)("p", {
+                        className:
+                          "mt-4 text-lg text-gray-300 max-w-3xl mx-auto",
+                        children:
+                          "This document outlines the technical architecture for our plug-in engine system, designed to be fully compliant and user-controlled.",
+                      }),
+                    ],
+                  }),
+                  (0, b.jsxs)("div", {
+                    className: "space-y-10 text-gray-300",
+                    children: [
+                      (0, b.jsxs)("section", {
+                        children: [
+                          (0, b.jsx)("h2", {
+                            className: "text-3xl font-bold mb-4 text-cyan-300",
+                            children: "1. Core Concept",
+                          }),
+                          (0, b.jsx)("p", {
+                            children:
+                              "Each engine becomes a plug-in with a Boolean flag in the user’s profile document.",
+                          }),
+                          a &&
+                            (0, b.jsx)("div", {
+                              className:
+                                "relative my-6 flex justify-center items-center",
+                              children: (0, b.jsx)(e.default, {
+                                src: a.imageUrl,
+                                alt: a.description,
+                                width: 150,
+                                height: 150,
+                                "data-ai-hint": a.imageHint,
+                                className: "opacity-70",
+                              }),
+                            }),
+                          (0, b.jsx)("pre", {
+                            className:
+                              "bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto",
+                            children: (0, b.jsx)("code", {
+                              children: `"userEngines": {
   "marketBridge": true,
   "automationConnector": false,
   "patternLab": true,
   "aiAnalyzer": false,
   "riskVisualizer": true
-}`})}),(0,b.jsx)("p",{className:"mt-4",children:"So when a user loads any chart—Area, Renko, Volume, etc.—the backend checks their preferences and activates only the approved engines."})]}),(0,b.jsxs)("section",{children:[(0,b.jsx)("h2",{className:"text-3xl font-bold mb-4 text-cyan-300",children:"2. Firebase / Firestore Structure"}),(0,b.jsx)("p",{children:"User preferences are stored in a dedicated \\`activeEngines\\` object within their user document."}),(0,b.jsxs)("p",{className:"mt-2",children:[(0,b.jsx)("strong",{children:"Collection:"})," users"]}),(0,b.jsxs)("p",{children:[(0,b.jsx)("strong",{children:"Document:"})," ","{uid}"]}),(0,b.jsx)("pre",{className:"bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto",children:(0,b.jsx)("code",{children:`{
+}`,
+                            }),
+                          }),
+                          (0, b.jsx)("p", {
+                            className: "mt-4",
+                            children:
+                              "So when a user loads any chart—Area, Renko, Volume, etc.—the backend checks their preferences and activates only the approved engines.",
+                          }),
+                        ],
+                      }),
+                      (0, b.jsxs)("section", {
+                        children: [
+                          (0, b.jsx)("h2", {
+                            className: "text-3xl font-bold mb-4 text-cyan-300",
+                            children: "2. Firebase / Firestore Structure",
+                          }),
+                          (0, b.jsx)("p", {
+                            children:
+                              "User preferences are stored in a dedicated \\`activeEngines\\` object within their user document.",
+                          }),
+                          (0, b.jsxs)("p", {
+                            className: "mt-2",
+                            children: [
+                              (0, b.jsx)("strong", { children: "Collection:" }),
+                              " users",
+                            ],
+                          }),
+                          (0, b.jsxs)("p", {
+                            children: [
+                              (0, b.jsx)("strong", { children: "Document:" }),
+                              " ",
+                              "{uid}",
+                            ],
+                          }),
+                          (0, b.jsx)("pre", {
+                            className:
+                              "bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto",
+                            children: (0, b.jsx)("code", {
+                              children: `{
   "email": "user@example.com",
   "preferredTheme": "neon-dark",
   "activeEngines": {
@@ -14,14 +594,44 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-localpattern
     "patternLab": true,
     "aiAnalyzer": false
   }
-}`})}),(0,b.jsx)("p",{className:"mt-4",children:"This makes it easy to query and toggle:"}),(0,b.jsx)("pre",{className:"bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto",children:(0,b.jsx)("code",{children:`// Read preferences
+}`,
+                            }),
+                          }),
+                          (0, b.jsx)("p", {
+                            className: "mt-4",
+                            children: "This makes it easy to query and toggle:",
+                          }),
+                          (0, b.jsx)("pre", {
+                            className:
+                              "bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto",
+                            children: (0, b.jsx)("code", {
+                              children: `// Read preferences
 const userDoc = await getDoc(doc(db, "users", uid));
 const activeEngines = userDoc.data().activeEngines;
 
 // Update a preference
 await updateDoc(doc(db, "users", uid), {
   [\`activeEngines.\${engineId}\`]: newValue,
-});`})})]}),(0,b.jsxs)("section",{children:[(0,b.jsx)("h2",{className:"text-3xl font-bold mb-4 text-cyan-300",children:"3. User-Side Controls"}),(0,b.jsx)("p",{children:"On every chart panel, a floating “Engines” toggle menu will be available, allowing users to enable or disable engines on the fly."}),(0,b.jsx)("pre",{className:"bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto",children:(0,b.jsx)("code",{children:`<EngineToggle
+});`,
+                            }),
+                          }),
+                        ],
+                      }),
+                      (0, b.jsxs)("section", {
+                        children: [
+                          (0, b.jsx)("h2", {
+                            className: "text-3xl font-bold mb-4 text-cyan-300",
+                            children: "3. User-Side Controls",
+                          }),
+                          (0, b.jsx)("p", {
+                            children:
+                              "On every chart panel, a floating “Engines” toggle menu will be available, allowing users to enable or disable engines on the fly.",
+                          }),
+                          (0, b.jsx)("pre", {
+                            className:
+                              "bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto",
+                            children: (0, b.jsx)("code", {
+                              children: `<EngineToggle
   options={[
     { id: "marketBridge", name: "Market Data Bridge" },
     { id: "patternLab", name: "Pattern Recognition Lab" },
@@ -29,7 +639,31 @@ await updateDoc(doc(db, "users", uid), {
   ]}
   userEngines={activeEngines}
   onToggle={(id, value) => updateEnginePref(id, value)}
-/>`})}),(0,b.jsx)("p",{className:"mt-4",children:"Each toggle simply updates the user’s \\`activeEngines\\` object in Firestore—no advice, no automation."})]}),(0,b.jsxs)("section",{children:[(0,b.jsx)("h2",{className:"text-3xl font-bold mb-4 text-cyan-300",children:"4. Backend Activation"}),(0,b.jsx)("p",{children:"When a chart loads, your API route reads the user's engine flags and applies the corresponding data transformations sequentially."}),(0,b.jsx)("pre",{className:"bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto",children:(0,b.jsx)("code",{children:`// Example: pages/api/chartData.ts
+/>`,
+                            }),
+                          }),
+                          (0, b.jsx)("p", {
+                            className: "mt-4",
+                            children:
+                              "Each toggle simply updates the user’s \\`activeEngines\\` object in Firestore—no advice, no automation.",
+                          }),
+                        ],
+                      }),
+                      (0, b.jsxs)("section", {
+                        children: [
+                          (0, b.jsx)("h2", {
+                            className: "text-3xl font-bold mb-4 text-cyan-300",
+                            children: "4. Backend Activation",
+                          }),
+                          (0, b.jsx)("p", {
+                            children:
+                              "When a chart loads, your API route reads the user's engine flags and applies the corresponding data transformations sequentially.",
+                          }),
+                          (0, b.jsx)("pre", {
+                            className:
+                              "bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto",
+                            children: (0, b.jsx)("code", {
+                              children: `// Example: pages/api/chartData.ts
 import { getUserEngines } from "../../lib/userUtils";
 import { runMarketBridge, runPatternLab } from "../../engines";
 
@@ -43,6 +677,72 @@ export default async function handler(req, res) {
   if (engines.aiAnalyzer) data = await runAIAnalyzer(data);
 
   res.status(200).json(data);
-}`})})]}),(0,b.jsxs)("section",{children:[(0,b.jsx)("h2",{className:"text-3xl font-bold mb-4 text-cyan-300",children:"5. Compliance & UX"}),(0,b.jsxs)("ul",{className:"list-disc list-inside space-y-2",children:[(0,b.jsx)("li",{children:"Every toggle is labeled: “For informational use only — no trade execution.”"}),(0,b.jsx)("li",{children:"Engines are kept within the Data / Research namespace."}),(0,b.jsx)("li",{children:"A visual cue (🟢 Active / ⚪ Off) provides clarity."})]})]}),(0,b.jsxs)("section",{children:[(0,b.jsx)("h2",{className:"text-3xl font-bold mb-4 text-cyan-300",children:"6. Benefits"}),(0,b.jsxs)("ul",{className:"list-disc list-inside space-y-2",children:[(0,b.jsx)("li",{children:"Users can personalize their workspace."}),(0,b.jsx)("li",{children:"You can expand to hundreds of optional engines without clutter."}),(0,b.jsx)("li",{children:"Legal safety: nothing executes automatically; everything is user-controlled."})]})]})]})]})})})]})}a.s(["default",()=>g],20411)}];
+}`,
+                            }),
+                          }),
+                        ],
+                      }),
+                      (0, b.jsxs)("section", {
+                        children: [
+                          (0, b.jsx)("h2", {
+                            className: "text-3xl font-bold mb-4 text-cyan-300",
+                            children: "5. Compliance & UX",
+                          }),
+                          (0, b.jsxs)("ul", {
+                            className: "list-disc list-inside space-y-2",
+                            children: [
+                              (0, b.jsx)("li", {
+                                children:
+                                  "Every toggle is labeled: “For informational use only — no trade execution.”",
+                              }),
+                              (0, b.jsx)("li", {
+                                children:
+                                  "Engines are kept within the Data / Research namespace.",
+                              }),
+                              (0, b.jsx)("li", {
+                                children:
+                                  "A visual cue (🟢 Active / ⚪ Off) provides clarity.",
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, b.jsxs)("section", {
+                        children: [
+                          (0, b.jsx)("h2", {
+                            className: "text-3xl font-bold mb-4 text-cyan-300",
+                            children: "6. Benefits",
+                          }),
+                          (0, b.jsxs)("ul", {
+                            className: "list-disc list-inside space-y-2",
+                            children: [
+                              (0, b.jsx)("li", {
+                                children:
+                                  "Users can personalize their workspace.",
+                              }),
+                              (0, b.jsx)("li", {
+                                children:
+                                  "You can expand to hundreds of optional engines without clutter.",
+                              }),
+                              (0, b.jsx)("li", {
+                                children:
+                                  "Legal safety: nothing executes automatically; everything is user-controlled.",
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+            }),
+          }),
+        ],
+      });
+    }
+    a.s(["default", () => g], 20411);
+  },
+];
 
 //# sourceMappingURL=_bbebec46._.js.map

@@ -1,18 +1,23 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import { useRef, useEffect } from "react";
+import * as THREE from "three";
 
 const GlobeAnimation = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !containerRef.current) {
+    if (typeof window === "undefined" || !containerRef.current) {
       return;
     }
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000,
+    );
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     const clock = new THREE.Clock();
 
@@ -20,9 +25,9 @@ const GlobeAnimation = () => {
     containerRef.current.appendChild(renderer.domElement);
 
     const uniforms = {
-      u_time: { type: 'f', value: 1.0 },
-      u_resolution: { type: 'v2', value: new THREE.Vector2() },
-      u_mouse: { type: 'v2', value: new THREE.Vector2() },
+      u_time: { type: "f", value: 1.0 },
+      u_resolution: { type: "v2", value: new THREE.Vector2() },
+      u_mouse: { type: "v2", value: new THREE.Vector2() },
     };
 
     const geometry = new THREE.SphereGeometry(15, 64, 64);
@@ -110,10 +115,10 @@ const GlobeAnimation = () => {
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
       if (containerRef.current) {
         containerRef.current.removeChild(renderer.domElement);
       }

@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Header } from '@/components/layout/header';
-import { Input } from '@/components/ui/input';
-import Link from 'next/link';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
-import { socialTokens, SocialToken } from '@/data/social-tokens';
+import { useState } from "react";
+import { Header } from "@/components/layout/header";
+import { Input } from "@/components/ui/input";
+import Link from "next/link";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import { socialTokens, SocialToken } from "@/data/social-tokens";
 
 export default function SocialTokensPage() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filteredTokens = socialTokens.filter(
     (token) =>
       token.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      token.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+      token.symbol.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
@@ -21,9 +21,12 @@ export default function SocialTokensPage() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <h1 className="text-3xl font-bold neon-text text-center mt-8">Community & Social Tokens</h1>
+          <h1 className="text-3xl font-bold neon-text text-center mt-8">
+            Community & Social Tokens
+          </h1>
           <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
-            A curated table of common community and social tokens, including their project URLs and CoinGecko API details for developers.
+            A curated table of common community and social tokens, including
+            their project URLs and CoinGecko API details for developers.
           </p>
           <div className="w-full mt-4">
             <Input
@@ -48,17 +51,32 @@ export default function SocialTokensPage() {
                 </thead>
                 <tbody>
                   {filteredTokens.map((token, index) => (
-                    <tr key={`${token.symbol}-${index}`} className="hover:bg-white/5">
+                    <tr
+                      key={`${token.symbol}-${index}`}
+                      className="hover:bg-white/5"
+                    >
                       <td className="neon-cyan">{token.name}</td>
                       <td className="neon-pink">{token.symbol}</td>
                       <td>
-                        <Link href={token.website} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline flex items-center gap-1">
+                        <Link
+                          href={token.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-cyan-400 hover:underline flex items-center gap-1"
+                        >
                           Visit <ExternalLink size={14} />
                         </Link>
                       </td>
-                      <td className="text-gray-400 font-mono text-xs">{token.coinGeckoId}</td>
+                      <td className="text-gray-400 font-mono text-xs">
+                        {token.coinGeckoId}
+                      </td>
                       <td>
-                         <Link href={token.apiEndpointExample} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:underline font-mono text-xs">
+                        <Link
+                          href={token.apiEndpointExample}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:underline font-mono text-xs"
+                        >
                           {token.apiEndpointExample}
                         </Link>
                       </td>
@@ -67,19 +85,31 @@ export default function SocialTokensPage() {
                 </tbody>
               </table>
               {filteredTokens.length === 0 && (
-                <p className="text-center text-gray-400 py-8">No social tokens found matching your search.</p>
+                <p className="text-center text-gray-400 py-8">
+                  No social tokens found matching your search.
+                </p>
               )}
             </div>
           </div>
-           <div className="mt-8 text-gray-400 text-sm max-w-4xl mx-auto">
-                <h3 className="font-bold text-lg text-white mb-2">Notes on Community/Social Tokens:</h3>
-                <p>
-                    The community/social token landscape is highly fragmented: many tokens are issued per creator (creator coins on Rally, Roll, DeSo), per platform (Mask, Audius, MintGate), or per fan/club (Chiliz fan tokens). The reliable canonical metadata and social links are best fetched from CoinGecko’s token/coin endpoints or CoinGecko’s token-by-contract endpoints for on‑chain tokens.
-                </p>
-            </div>
+          <div className="mt-8 text-gray-400 text-sm max-w-4xl mx-auto">
+            <h3 className="font-bold text-lg text-white mb-2">
+              Notes on Community/Social Tokens:
+            </h3>
+            <p>
+              The community/social token landscape is highly fragmented: many
+              tokens are issued per creator (creator coins on Rally, Roll,
+              DeSo), per platform (Mask, Audius, MintGate), or per fan/club
+              (Chiliz fan tokens). The reliable canonical metadata and social
+              links are best fetched from CoinGecko’s token/coin endpoints or
+              CoinGecko’s token-by-contract endpoints for on‑chain tokens.
+            </p>
+          </div>
         </section>
       </main>
-      <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+      <Link
+        href="/main"
+        className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2"
+      >
         <ArrowLeft size={16} />
         Back
       </Link>

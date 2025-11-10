@@ -1,11 +1,10 @@
-
-import { Header } from '@/components/layout/header';
-import { ShieldCheck } from 'lucide-react';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Header } from "@/components/layout/header";
+import { ShieldCheck } from "lucide-react";
+import Image from "next/legacy/image";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function UsCompliancePage() {
-  const aiEngineImage = PlaceHolderImages.find(p => p.id === 'ai-engine');
+  const aiEngineImage = PlaceHolderImages.find((p) => p.id === "ai-engine");
 
   return (
     <>
@@ -19,14 +18,21 @@ export default function UsCompliancePage() {
                 U.S. Compliance Architecture
               </h1>
               <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
-                This document outlines the technical architecture for our plug-in engine system, designed to be fully compliant and user-controlled.
+                This document outlines the technical architecture for our
+                plug-in engine system, designed to be fully compliant and
+                user-controlled.
               </p>
             </div>
 
             <div className="space-y-10 text-gray-300">
               <section>
-                <h2 className="text-3xl font-bold mb-4 text-cyan-300">1. Core Concept</h2>
-                <p>Each engine becomes a plug-in with a Boolean flag in the user’s profile document.</p>
+                <h2 className="text-3xl font-bold mb-4 text-cyan-300">
+                  1. Core Concept
+                </h2>
+                <p>
+                  Each engine becomes a plug-in with a Boolean flag in the
+                  user’s profile document.
+                </p>
                 {aiEngineImage && (
                   <div className="relative my-6 flex justify-center items-center">
                     <Image
@@ -39,9 +45,9 @@ export default function UsCompliancePage() {
                     />
                   </div>
                 )}
-                 <pre className="bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto">
+                <pre className="bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto">
                   <code>
-{`"userEngines": {
+                    {`"userEngines": {
   "marketBridge": true,
   "automationConnector": false,
   "patternLab": true,
@@ -50,17 +56,30 @@ export default function UsCompliancePage() {
 }`}
                   </code>
                 </pre>
-                <p className="mt-4">So when a user loads any chart—Area, Renko, Volume, etc.—the backend checks their preferences and activates only the approved engines.</p>
+                <p className="mt-4">
+                  So when a user loads any chart—Area, Renko, Volume, etc.—the
+                  backend checks their preferences and activates only the
+                  approved engines.
+                </p>
               </section>
 
               <section>
-                <h2 className="text-3xl font-bold mb-4 text-cyan-300">2. Firebase / Firestore Structure</h2>
-                <p>User preferences are stored in a dedicated \`activeEngines\` object within their user document.</p>
-                <p className="mt-2"><strong>Collection:</strong> users</p>
-                <p><strong>Document:</strong> {'{uid}'}</p>
+                <h2 className="text-3xl font-bold mb-4 text-cyan-300">
+                  2. Firebase / Firestore Structure
+                </h2>
+                <p>
+                  User preferences are stored in a dedicated \`activeEngines\`
+                  object within their user document.
+                </p>
+                <p className="mt-2">
+                  <strong>Collection:</strong> users
+                </p>
+                <p>
+                  <strong>Document:</strong> {"{uid}"}
+                </p>
                 <pre className="bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto">
                   <code>
-{`{
+                    {`{
   "email": "user@example.com",
   "preferredTheme": "neon-dark",
   "activeEngines": {
@@ -74,7 +93,7 @@ export default function UsCompliancePage() {
                 <p className="mt-4">This makes it easy to query and toggle:</p>
                 <pre className="bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto">
                   <code>
-{`// Read preferences
+                    {`// Read preferences
 const userDoc = await getDoc(doc(db, "users", uid));
 const activeEngines = userDoc.data().activeEngines;
 
@@ -87,11 +106,17 @@ await updateDoc(doc(db, "users", uid), {
               </section>
 
               <section>
-                <h2 className="text-3xl font-bold mb-4 text-cyan-300">3. User-Side Controls</h2>
-                <p>On every chart panel, a floating “Engines” toggle menu will be available, allowing users to enable or disable engines on the fly.</p>
-                 <pre className="bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto">
+                <h2 className="text-3xl font-bold mb-4 text-cyan-300">
+                  3. User-Side Controls
+                </h2>
+                <p>
+                  On every chart panel, a floating “Engines” toggle menu will be
+                  available, allowing users to enable or disable engines on the
+                  fly.
+                </p>
+                <pre className="bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto">
                   <code>
-{`<EngineToggle
+                    {`<EngineToggle
   options={[
     { id: "marketBridge", name: "Market Data Bridge" },
     { id: "patternLab", name: "Pattern Recognition Lab" },
@@ -102,15 +127,24 @@ await updateDoc(doc(db, "users", uid), {
 />`}
                   </code>
                 </pre>
-                <p className="mt-4">Each toggle simply updates the user’s \`activeEngines\` object in Firestore—no advice, no automation.</p>
+                <p className="mt-4">
+                  Each toggle simply updates the user’s \`activeEngines\` object
+                  in Firestore—no advice, no automation.
+                </p>
               </section>
-              
+
               <section>
-                <h2 className="text-3xl font-bold mb-4 text-cyan-300">4. Backend Activation</h2>
-                <p>When a chart loads, your API route reads the user's engine flags and applies the corresponding data transformations sequentially.</p>
+                <h2 className="text-3xl font-bold mb-4 text-cyan-300">
+                  4. Backend Activation
+                </h2>
+                <p>
+                  When a chart loads, your API route reads the user's engine
+                  flags and applies the corresponding data transformations
+                  sequentially.
+                </p>
                 <pre className="bg-gray-900/70 p-4 rounded-lg mt-4 border border-cyan-400/30 overflow-x-auto">
                   <code>
-{`// Example: pages/api/chartData.ts
+                    {`// Example: pages/api/chartData.ts
 import { getUserEngines } from "../../lib/userUtils";
 import { runMarketBridge, runPatternLab } from "../../engines";
 
@@ -130,20 +164,35 @@ export default async function handler(req, res) {
               </section>
 
               <section>
-                <h2 className="text-3xl font-bold mb-4 text-cyan-300">5. Compliance & UX</h2>
+                <h2 className="text-3xl font-bold mb-4 text-cyan-300">
+                  5. Compliance & UX
+                </h2>
                 <ul className="list-disc list-inside space-y-2">
-                    <li>Every toggle is labeled: “For informational use only — no trade execution.”</li>
-                    <li>Engines are kept within the Data / Research namespace.</li>
-                    <li>A visual cue (🟢 Active / ⚪ Off) provides clarity.</li>
+                  <li>
+                    Every toggle is labeled: “For informational use only — no
+                    trade execution.”
+                  </li>
+                  <li>
+                    Engines are kept within the Data / Research namespace.
+                  </li>
+                  <li>A visual cue (🟢 Active / ⚪ Off) provides clarity.</li>
                 </ul>
               </section>
 
               <section>
-                <h2 className="text-3xl font-bold mb-4 text-cyan-300">6. Benefits</h2>
-                 <ul className="list-disc list-inside space-y-2">
-                    <li>Users can personalize their workspace.</li>
-                    <li>You can expand to hundreds of optional engines without clutter.</li>
-                    <li>Legal safety: nothing executes automatically; everything is user-controlled.</li>
+                <h2 className="text-3xl font-bold mb-4 text-cyan-300">
+                  6. Benefits
+                </h2>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>Users can personalize their workspace.</li>
+                  <li>
+                    You can expand to hundreds of optional engines without
+                    clutter.
+                  </li>
+                  <li>
+                    Legal safety: nothing executes automatically; everything is
+                    user-controlled.
+                  </li>
                 </ul>
               </section>
             </div>

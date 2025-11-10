@@ -1,1 +1,3372 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,33525,(e,t,r)=>{"use strict";Object.defineProperty(r,"__esModule",{value:!0}),Object.defineProperty(r,"warnOnce",{enumerable:!0,get:function(){return n}});let n=e=>{}},98183,(e,t,r)=>{"use strict";Object.defineProperty(r,"__esModule",{value:!0});var n={assign:function(){return o},searchParamsToUrlQuery:function(){return i},urlQueryToSearchParams:function(){return l}};for(var a in n)Object.defineProperty(r,a,{enumerable:!0,get:n[a]});function i(e){let t={};for(let[r,n]of e.entries()){let e=t[r];void 0===e?t[r]=n:Array.isArray(e)?e.push(n):t[r]=[e,n]}return t}function s(e){return"string"==typeof e?e:("number"!=typeof e||isNaN(e))&&"boolean"!=typeof e?"":String(e)}function l(e){let t=new URLSearchParams;for(let[r,n]of Object.entries(e))if(Array.isArray(n))for(let e of n)t.append(r,s(e));else t.set(r,s(n));return t}function o(e,...t){for(let r of t){for(let t of r.keys())e.delete(t);for(let[t,n]of r.entries())e.append(t,n)}return e}},95057,(e,t,r)=>{"use strict";Object.defineProperty(r,"__esModule",{value:!0});var n={formatUrl:function(){return l},formatWithValidation:function(){return c},urlObjectKeys:function(){return o}};for(var a in n)Object.defineProperty(r,a,{enumerable:!0,get:n[a]});let i=e.r(90809)._(e.r(98183)),s=/https?|ftp|gopher|file/;function l(e){let{auth:t,hostname:r}=e,n=e.protocol||"",a=e.pathname||"",l=e.hash||"",o=e.query||"",c=!1;t=t?encodeURIComponent(t).replace(/%3A/i,":")+"@":"",e.host?c=t+e.host:r&&(c=t+(~r.indexOf(":")?`[${r}]`:r),e.port&&(c+=":"+e.port)),o&&"object"==typeof o&&(o=String(i.urlQueryToSearchParams(o)));let d=e.search||o&&`?${o}`||"";return n&&!n.endsWith(":")&&(n+=":"),e.slashes||(!n||s.test(n))&&!1!==c?(c="//"+(c||""),a&&"/"!==a[0]&&(a="/"+a)):c||(c=""),l&&"#"!==l[0]&&(l="#"+l),d&&"?"!==d[0]&&(d="?"+d),a=a.replace(/[?#]/g,encodeURIComponent),d=d.replace("#","%23"),`${n}${c}${a}${d}${l}`}let o=["auth","hash","host","hostname","href","path","pathname","port","protocol","query","search","slashes"];function c(e){return l(e)}},18581,(e,t,r)=>{"use strict";Object.defineProperty(r,"__esModule",{value:!0}),Object.defineProperty(r,"useMergedRef",{enumerable:!0,get:function(){return a}});let n=e.r(71645);function a(e,t){let r=(0,n.useRef)(null),a=(0,n.useRef)(null);return(0,n.useCallback)(n=>{if(null===n){let e=r.current;e&&(r.current=null,e());let t=a.current;t&&(a.current=null,t())}else e&&(r.current=i(e,n)),t&&(a.current=i(t,n))},[e,t])}function i(e,t){if("function"!=typeof e)return e.current=t,()=>{e.current=null};{let r=e(t);return"function"==typeof r?r:()=>e(null)}}("function"==typeof r.default||"object"==typeof r.default&&null!==r.default)&&void 0===r.default.__esModule&&(Object.defineProperty(r.default,"__esModule",{value:!0}),Object.assign(r.default,r),t.exports=r.default)},18967,(e,t,r)=>{"use strict";Object.defineProperty(r,"__esModule",{value:!0});var n={DecodeError:function(){return g},MiddlewareNotFoundError:function(){return j},MissingStaticPage:function(){return b},NormalizeError:function(){return y},PageNotFoundError:function(){return v},SP:function(){return f},ST:function(){return x},WEB_VITALS:function(){return i},execOnce:function(){return s},getDisplayName:function(){return u},getLocationOrigin:function(){return c},getURL:function(){return d},isAbsoluteUrl:function(){return o},isResSent:function(){return m},loadGetInitialProps:function(){return h},normalizeRepeatedSlashes:function(){return p},stringifyError:function(){return w}};for(var a in n)Object.defineProperty(r,a,{enumerable:!0,get:n[a]});let i=["CLS","FCP","FID","INP","LCP","TTFB"];function s(e){let t,r=!1;return(...n)=>(r||(r=!0,t=e(...n)),t)}let l=/^[a-zA-Z][a-zA-Z\d+\-.]*?:/,o=e=>l.test(e);function c(){let{protocol:e,hostname:t,port:r}=window.location;return`${e}//${t}${r?":"+r:""}`}function d(){let{href:e}=window.location,t=c();return e.substring(t.length)}function u(e){return"string"==typeof e?e:e.displayName||e.name||"Unknown"}function m(e){return e.finished||e.headersSent}function p(e){let t=e.split("?");return t[0].replace(/\\/g,"/").replace(/\/\/+/g,"/")+(t[1]?`?${t.slice(1).join("?")}`:"")}async function h(e,t){let r=t.res||t.ctx&&t.ctx.res;if(!e.getInitialProps)return t.ctx&&t.Component?{pageProps:await h(t.Component,t.ctx)}:{};let n=await e.getInitialProps(t);if(r&&m(r))return n;if(!n)throw Object.defineProperty(Error(`"${u(e)}.getInitialProps()" should resolve to an object. But found "${n}" instead.`),"__NEXT_ERROR_CODE",{value:"E394",enumerable:!1,configurable:!0});return n}let f="undefined"!=typeof performance,x=f&&["mark","measure","getEntriesByName"].every(e=>"function"==typeof performance[e]);class g extends Error{}class y extends Error{}class v extends Error{constructor(e){super(),this.code="ENOENT",this.name="PageNotFoundError",this.message=`Cannot find module for page: ${e}`}}class b extends Error{constructor(e,t){super(),this.message=`Failed to load static file for page: ${e} ${t}`}}class j extends Error{constructor(){super(),this.code="ENOENT",this.message="Cannot find the middleware module"}}function w(e){return JSON.stringify({message:e.message,stack:e.stack})}},73668,(e,t,r)=>{"use strict";Object.defineProperty(r,"__esModule",{value:!0}),Object.defineProperty(r,"isLocalURL",{enumerable:!0,get:function(){return i}});let n=e.r(18967),a=e.r(52817);function i(e){if(!(0,n.isAbsoluteUrl)(e))return!0;try{let t=(0,n.getLocationOrigin)(),r=new URL(e,t);return r.origin===t&&(0,a.hasBasePath)(r.pathname)}catch(e){return!1}}},84508,(e,t,r)=>{"use strict";Object.defineProperty(r,"__esModule",{value:!0}),Object.defineProperty(r,"errorOnce",{enumerable:!0,get:function(){return n}});let n=e=>{}},22016,(e,t,r)=>{"use strict";Object.defineProperty(r,"__esModule",{value:!0});var n={default:function(){return g},useLinkStatus:function(){return v}};for(var a in n)Object.defineProperty(r,a,{enumerable:!0,get:n[a]});let i=e.r(90809),s=e.r(43476),l=i._(e.r(71645)),o=e.r(95057),c=e.r(8372),d=e.r(18581),u=e.r(18967),m=e.r(5550);e.r(33525);let p=e.r(91949),h=e.r(73668),f=e.r(65165);function x(e){return"string"==typeof e?e:(0,o.formatUrl)(e)}function g(t){var r;let n,a,i,[o,g]=(0,l.useOptimistic)(p.IDLE_LINK_STATUS),v=(0,l.useRef)(null),{href:b,as:j,children:w,prefetch:N=null,passHref:S,replace:C,shallow:k,scroll:E,onClick:A,onMouseEnter:P,onTouchStart:R,legacyBehavior:M=!1,onNavigate:T,ref:I,unstable_dynamicOnHover:O,...L}=t;n=w,M&&("string"==typeof n||"number"==typeof n)&&(n=(0,s.jsx)("a",{children:n}));let D=l.default.useContext(c.AppRouterContext),_=!1!==N,F=!1!==N?null===(r=N)||"auto"===r?f.FetchStrategy.PPR:f.FetchStrategy.Full:f.FetchStrategy.PPR,{href:U,as:B}=l.default.useMemo(()=>{let e=x(b);return{href:e,as:j?x(j):e}},[b,j]);if(M){if(n?.$$typeof===Symbol.for("react.lazy"))throw Object.defineProperty(Error("`<Link legacyBehavior>` received a direct child that is either a Server Component, or JSX that was loaded with React.lazy(). This is not supported. Either remove legacyBehavior, or make the direct child a Client Component that renders the Link's `<a>` tag."),"__NEXT_ERROR_CODE",{value:"E863",enumerable:!1,configurable:!0});a=l.default.Children.only(n)}let H=M?a&&"object"==typeof a&&a.ref:I,V=l.default.useCallback(e=>(null!==D&&(v.current=(0,p.mountLinkInstance)(e,U,D,F,_,g)),()=>{v.current&&((0,p.unmountLinkForCurrentNavigation)(v.current),v.current=null),(0,p.unmountPrefetchableInstance)(e)}),[_,U,D,F,g]),W={ref:(0,d.useMergedRef)(V,H),onClick(t){M||"function"!=typeof A||A(t),M&&a.props&&"function"==typeof a.props.onClick&&a.props.onClick(t),!D||t.defaultPrevented||function(t,r,n,a,i,s,o){if("undefined"!=typeof window){let c,{nodeName:d}=t.currentTarget;if("A"===d.toUpperCase()&&((c=t.currentTarget.getAttribute("target"))&&"_self"!==c||t.metaKey||t.ctrlKey||t.shiftKey||t.altKey||t.nativeEvent&&2===t.nativeEvent.which)||t.currentTarget.hasAttribute("download"))return;if(!(0,h.isLocalURL)(r)){i&&(t.preventDefault(),location.replace(r));return}if(t.preventDefault(),o){let e=!1;if(o({preventDefault:()=>{e=!0}}),e)return}let{dispatchNavigateAction:u}=e.r(99781);l.default.startTransition(()=>{u(n||r,i?"replace":"push",s??!0,a.current)})}}(t,U,B,v,C,E,T)},onMouseEnter(e){M||"function"!=typeof P||P(e),M&&a.props&&"function"==typeof a.props.onMouseEnter&&a.props.onMouseEnter(e),D&&_&&(0,p.onNavigationIntent)(e.currentTarget,!0===O)},onTouchStart:function(e){M||"function"!=typeof R||R(e),M&&a.props&&"function"==typeof a.props.onTouchStart&&a.props.onTouchStart(e),D&&_&&(0,p.onNavigationIntent)(e.currentTarget,!0===O)}};return(0,u.isAbsoluteUrl)(B)?W.href=B:M&&!S&&("a"!==a.type||"href"in a.props)||(W.href=(0,m.addBasePath)(B)),i=M?l.default.cloneElement(a,W):(0,s.jsx)("a",{...L,...W,children:n}),(0,s.jsx)(y.Provider,{value:o,children:i})}e.r(84508);let y=(0,l.createContext)(p.IDLE_LINK_STATUS),v=()=>(0,l.useContext)(y);("function"==typeof r.default||"object"==typeof r.default&&null!==r.default)&&void 0===r.default.__esModule&&(Object.defineProperty(r.default,"__esModule",{value:!0}),Object.assign(r.default,r),t.exports=r.default)},45872,e=>{"use strict";var t=e.i(43476),r=e.i(22016),n=e.i(71645);function a({title:e,items:a,titleClassName:i}){let[s,l]=(0,n.useState)(!1);return(0,t.jsxs)("div",{className:"header-dropdown-container",onMouseEnter:()=>l(!0),onMouseLeave:()=>l(!1),children:[(0,t.jsx)("a",{href:"#",className:`nav-item leading-tight text-center ${i||"neon-cyan"}`,children:e}),s&&(0,t.jsx)("div",{className:"header-dropdown-menu",children:a.map((e,n)=>e.isSeparator?(0,t.jsx)("div",{className:"dropdown-separator"},n):"header"===e.type?(0,t.jsx)("div",{className:"dropdown-header",children:e.name},n):"link"===e.type?(0,t.jsxs)(r.default,{href:e.href||"#",className:"menu-item",target:e.href?.startsWith("http")?"_blank":"_self",rel:"noopener noreferrer",children:[e.name,e.subtext&&(0,t.jsx)("span",{className:"sub-text",children:e.subtext})]},n):(0,t.jsxs)("div",{className:`menu-item ${e.active?"active-pink":""}`,children:[e.name,e.subtext&&(0,t.jsx)("span",{className:"sub-text",children:e.subtext})]},n))})]})}let i=(0,e.i(75254).default)("Menu",[["line",{x1:"4",x2:"20",y1:"12",y2:"12",key:"1e0a9i"}],["line",{x1:"4",x2:"20",y1:"6",y2:"6",key:"1owob3"}],["line",{x1:"4",x2:"20",y1:"18",y2:"18",key:"yk5zj1"}]]);var s=e.i(37727);let l=[{name:"AI Price Prediction Engine",subtext:"Forecasting with machine learning"},{name:"ML Pattern Recognition",subtext:"Identify historical patterns"},{name:"Sentiment Analysis AI",subtext:"Gauge market mood from news & social"},{name:"Smart Risk Management",subtext:"AI-driven risk assessment"},{name:"Automated Trading Signals",subtext:"Real-time buy/sell alerts"},{name:"Neural Networks & LSTM",subtext:"Deep learning for market prediction"},{isSeparator:!0},{name:"Binance Schema",subtext:"View the Binance API Schema",type:"link",href:"/binance-schema"},{name:"Data Providers",subtext:"View API data providers",type:"link",href:"/data-providers"}],o=[{name:"Markets",subtext:"Global financial markets",active:!0},{name:"World Sports",subtext:"International sports coverage"}],c=[{name:"Personal Account",subtext:"Manage your personal trading profile",type:"link",href:"/profile"},{name:"Business Account",subtext:"Manage your business trading profile"},{name:"VIP",subtext:"Access exclusive VIP features"},{isSeparator:!0},{name:"GPS Food Finder",subtext:"Find restaurants near you",type:"link",href:"/gps-finder"}],d=[{name:"Bluetooth Connect",subtext:"Connect your audio device",type:"link",href:"/bluetooth-connect"},{isSeparator:!0},{name:"Apple Music",subtext:"Listen on Apple Music",type:"item"},{name:"Spotify",subtext:"Listen on Spotify",type:"item"},{name:"YouTube Music",subtext:"Listen on YouTube Music",type:"item"},{isSeparator:!0},{name:"Top 35 Food Apps",subtext:"Find food apps in your GPS region",type:"item"},{name:"Top Restaurants",subtext:"Find restaurants in your area",type:"link",href:"/gps-finder"},{name:"Uber Eats",subtext:"Order food delivery",type:"item"},{name:"DoorDash",subtext:"Order food delivery",type:"item"},{isSeparator:!0},{name:"International Social Networks",type:"header"},{name:"Facebook",type:"link",href:"https://facebook.com"},{name:"Twitter / X",type:"link",href:"https://x.com"},{name:"Instagram",type:"link",href:"https://instagram.com"},{name:"TikTok",type:"link",href:"https://tiktok.com"},{name:"LinkedIn",type:"link",href:"https://linkedin.com"},{name:"Reddit",type:"link",href:"https://reddit.com"},{name:"Pinterest",type:"link",href:"https://pinterest.com"},{name:"Snapchat",type:"link",href:"https://snapchat.com"},{name:"Telegram",type:"link",href:"https://telegram.org"},{name:"WhatsApp",type:"link",href:"https://whatsapp.com"},{name:"WeChat",type:"link",href:"https://wechat.com"},{name:"Discord",type:"link",href:"https://discord.com"}],u=[{name:"North American Major Sports",subtext:"NFL, NCAAF, NBA, WNBA, NCAAB, MLB, NHL, Soccer",type:"link",href:"#"},{name:"Combat Sports",subtext:"Boxing, MMA, UFC",type:"link",href:"#"},{name:"Racing",subtext:"NASCAR, Formula 1, Horse Racing",type:"link",href:"#"},{name:"Golf & Tennis",subtext:"PGA, LPGA, Grand Slam tournaments",type:"link",href:"#"},{name:"Other Sports",subtext:"Badminton, Cricket, Cycling, Darts, Handball, Lacrosse, Rugby, & more",type:"link",href:"#"}],m=[{name:"Republican",subtext:"News and opinion from a conservative perspective",type:"link",href:"#"},{name:"Democrat",subtext:"News and opinion from a Democratic perspective",type:"link",href:"#"},{name:"Liberal",subtext:"News and opinion from a liberal perspective",type:"link",href:"#"},{name:"Independent",subtext:"News and opinion from an independent perspective",type:"link",href:"#"}],p=[{name:"AI Volatility Forecast",subtext:"Predict market volatility with AI"}];function h(){return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)("div",{className:"header-top-layer",children:[(0,t.jsx)("div",{className:"flex items-center gap-4",children:(0,t.jsxs)("div",{className:"header-title leading-tight",children:[(0,t.jsx)("span",{className:"neon-text",children:"Quantum"}),(0,t.jsx)("br",{}),(0,t.jsx)("span",{className:"text-white",children:"CyberVision"})]})}),(0,t.jsxs)("div",{className:"nav-right",children:[(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:["Trader",(0,t.jsx)("br",{}),"Profile"]}),items:c,titleClassName:"neon-orange"}),(0,t.jsx)(a,{title:"Community",items:l,titleClassName:"neon-blue"}),(0,t.jsxs)(r.default,{href:"/compare-prices",className:"nav-item neon-pink text-center leading-tight",children:["Compare",(0,t.jsx)("br",{}),"Prices"]}),(0,t.jsx)(r.default,{href:"/join",className:"nav-item neon-pink",children:"Join"})]})]}),(0,t.jsx)("div",{className:"header-middle-layer",children:(0,t.jsxs)("nav",{className:"main-nav",children:[(0,t.jsx)(r.default,{href:"/",className:"nav-item neon-green",children:"Home"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-orange",children:"Stocks"}),(0,t.jsx)(r.default,{href:"/main",className:"nav-item neon-cyan",children:"Crypto"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-blue",children:"FUTURES AND COMMODITIES"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-purple",children:"Options"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-green",children:"BOND AND FIXED INCOME"})]})}),(0,t.jsx)("div",{className:"header-bottom-layer",children:(0,t.jsxs)("nav",{className:"main-nav",children:[(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:["Guilty",(0,t.jsx)("br",{}),"Pleasures"]}),items:d,titleClassName:"neon-pink"}),(0,t.jsx)(a,{title:"FX Matrix Analyzer",items:p,titleClassName:"neon-green"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("div",{children:"Las Vegas"}),(0,t.jsx)("div",{children:"Stats"})]}),items:u,titleClassName:"neon-gold glow-text"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("div",{children:"World"}),(0,t.jsx)("div",{children:"Sports"})]}),items:o,titleClassName:"neon-blue"}),(0,t.jsx)(a,{title:"Opinions",items:m,titleClassName:"neon-pink"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-green",children:"GLOBAL ECONOMIC AND MACRO DATA SOURCES"})]})}),(0,t.jsx)("div",{className:"header-fourth-layer",children:(0,t.jsxs)("nav",{className:"main-nav",children:[(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-purple",children:"Over-the-Counter (OTC)"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-gold",children:"INDEX PROVIDERS"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-red",children:"Mutual Funds and ETFs Data"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-blue",children:"ALTERNATIVE DATA MARKETS"})]})}),(0,t.jsx)("div",{className:"header-fifth-layer",children:(0,t.jsx)("nav",{className:"main-nav"})})]})}function f(){let[e,h]=(0,n.useState)(!1);return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)("div",{className:"header-top-layer",children:[(0,t.jsx)("div",{className:"flex items-center gap-4",children:(0,t.jsxs)("div",{className:"header-title leading-tight",children:[(0,t.jsx)("span",{className:"neon-text",children:"Quantum"}),(0,t.jsx)("br",{}),(0,t.jsx)("span",{className:"text-white",children:"CyberVision"})]})}),(0,t.jsx)("button",{onClick:()=>h(!e),className:"mobile-menu-button",children:e?(0,t.jsx)(s.X,{size:24}):(0,t.jsx)(i,{size:24})})]}),e&&(0,t.jsx)("div",{className:"mobile-menu",children:(0,t.jsxs)("nav",{className:"mobile-nav-links",children:[(0,t.jsx)(r.default,{href:"/",className:"nav-item neon-green",children:"Home"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:["Trader",(0,t.jsx)("br",{}),"Profile"]}),items:c,titleClassName:"neon-orange"}),(0,t.jsx)(a,{title:"Community",items:l,titleClassName:"neon-blue"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-orange",children:"Stocks"}),(0,t.jsx)(r.default,{href:"/main",className:"nav-item neon-cyan",children:"Crypto"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-blue",children:"FUTURES AND COMMODITIES"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-purple",children:"Options"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-green",children:"BOND AND FIXED INCOME"}),(0,t.jsx)("div",{className:"mobile-menu-separator"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:["Guilty",(0,t.jsx)("br",{}),"Pleasures"]}),items:d,titleClassName:"neon-pink"}),(0,t.jsx)(a,{title:"FX Matrix Analyzer",items:p,titleClassName:"neon-green"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("div",{children:"Las Vegas"}),(0,t.jsx)("div",{children:"Stats"})]}),items:u,titleClassName:"neon-gold glow-text"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("div",{children:"World"}),(0,t.jsx)("div",{children:"Sports"})]}),items:o,titleClassName:"neon-blue"}),(0,t.jsx)(a,{title:"Opinions",items:m,titleClassName:"neon-pink"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-green",children:"GLOBAL ECONOMIC AND MACRO DATA SOURCES"}),(0,t.jsx)("div",{className:"mobile-menu-separator"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-purple",children:"Over-the-Counter (OTC)"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-gold",children:"INDEX PROVIDERS"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-red",children:"Mutual Funds and ETFs Data"}),(0,t.jsx)(r.default,{href:"#",className:"nav-item neon-blue",children:"ALTERNATIVE DATA MARKETS"}),(0,t.jsx)("div",{className:"mobile-menu-separator"}),(0,t.jsx)("div",{className:"mobile-menu-separator"}),(0,t.jsxs)(r.default,{href:"/compare-prices",className:"nav-item neon-pink text-center leading-tight",children:["Compare",(0,t.jsx)("br",{}),"Prices"]}),(0,t.jsx)(r.default,{href:"/join",className:"nav-item neon-pink",children:"Join"})]})})]})}function x(){let e=function(){let[e,t]=n.useState(void 0);return n.useEffect(()=>{let e=window.matchMedia("(max-width: 767px)"),r=()=>{t(window.innerWidth<768)};return e.addEventListener("change",r),t(window.innerWidth<768),()=>e.removeEventListener("change",r)},[]),e}();return(0,t.jsx)("header",{className:"header-nav",children:void 0===e?(0,t.jsx)("div",{className:"header-top-layer",children:(0,t.jsx)("div",{className:"flex items-center gap-4",children:(0,t.jsxs)("div",{className:"header-title leading-tight",children:[(0,t.jsx)("span",{className:"neon-text",children:"Quantum"}),(0,t.jsx)("br",{}),(0,t.jsx)("span",{className:"text-white",children:"CyberVision"})]})})}):e?(0,t.jsx)(f,{}):(0,t.jsx)(h,{})})}e.s(["Header",()=>x],45872)},19455,e=>{"use strict";let t,r,n;var a=e.i(43476),i=e.i(71645);function s(e,t){if("function"==typeof e)return e(t);null!=e&&(e.current=t)}var l=((n=i.forwardRef((e,t)=>{let{children:r,...n}=e;if(i.isValidElement(r)){var a;let e,l,o=(a=r,(l=(e=Object.getOwnPropertyDescriptor(a.props,"ref")?.get)&&"isReactWarning"in e&&e.isReactWarning)?a.ref:(l=(e=Object.getOwnPropertyDescriptor(a,"ref")?.get)&&"isReactWarning"in e&&e.isReactWarning)?a.props.ref:a.props.ref||a.ref),c=function(e,t){let r={...t};for(let n in t){let a=e[n],i=t[n];/^on[A-Z]/.test(n)?a&&i?r[n]=(...e)=>{let t=i(...e);return a(...e),t}:a&&(r[n]=a):"style"===n?r[n]={...a,...i}:"className"===n&&(r[n]=[a,i].filter(Boolean).join(" "))}return{...e,...r}}(n,r.props);return r.type!==i.Fragment&&(c.ref=t?function(...e){return t=>{let r=!1,n=e.map(e=>{let n=s(e,t);return r||"function"!=typeof n||(r=!0),n});if(r)return()=>{for(let t=0;t<n.length;t++){let r=n[t];"function"==typeof r?r():s(e[t],null)}}}}(t,o):o),i.cloneElement(r,c)}return i.Children.count(r)>1?i.Children.only(null):null})).displayName="Slot.SlotClone",t=n,(r=i.forwardRef((e,r)=>{let{children:n,...s}=e,l=i.Children.toArray(n),o=l.find(c);if(o){let e=o.props.children,n=l.map(t=>t!==o?t:i.Children.count(e)>1?i.Children.only(null):i.isValidElement(e)?e.props.children:null);return(0,a.jsx)(t,{...s,ref:r,children:i.isValidElement(e)?i.cloneElement(e,void 0,n):null})}return(0,a.jsx)(t,{...s,ref:r,children:n})})).displayName="Slot.Slot",r),o=Symbol("radix.slottable");function c(e){return i.isValidElement(e)&&"function"==typeof e.type&&"__radixId"in e.type&&e.type.__radixId===o}var d=e.i(25913),u=e.i(75157);let m=(0,d.cva)("inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",{variants:{variant:{default:"bg-primary text-primary-foreground hover:bg-primary/90",destructive:"bg-destructive text-destructive-foreground hover:bg-destructive/90",outline:"border border-input bg-background hover:bg-accent hover:text-accent-foreground",secondary:"bg-secondary text-secondary-foreground hover:bg-secondary/80",ghost:"hover:bg-accent hover:text-accent-foreground",link:"text-primary underline-offset-4 hover:underline"},size:{default:"h-10 px-4 py-2",sm:"h-9 rounded-md px-3",lg:"h-11 rounded-md px-8",icon:"h-10 w-10"}},defaultVariants:{variant:"default",size:"default"}}),p=i.forwardRef(({className:e,variant:t,size:r,asChild:n=!1,...i},s)=>(0,a.jsx)(n?l:"button",{className:(0,u.cn)(m({variant:t,size:r,className:e})),ref:s,...i}));p.displayName="Button",e.s(["Button",()=>p],19455)},35804,e=>{"use strict";var t=e.i(71645),r=e.i(34620);function n(e){let[n,a]=t.useState(void 0);return(0,r.useLayoutEffect)(()=>{if(e){a({width:e.offsetWidth,height:e.offsetHeight});let t=new ResizeObserver(t=>{let r,n;if(!Array.isArray(t)||!t.length)return;let i=t[0];if("borderBoxSize"in i){let e=i.borderBoxSize,t=Array.isArray(e)?e[0]:e;r=t.inlineSize,n=t.blockSize}else r=e.offsetWidth,n=e.offsetHeight;a({width:r,height:n})});return t.observe(e,{box:"border-box"}),()=>t.unobserve(e)}a(void 0)},[e]),n}e.s(["useSize",()=>n])},99682,e=>{"use strict";var t=e.i(71645);function r(e){let r=t.useRef({value:e,previous:e});return t.useMemo(()=>(r.current.value!==e&&(r.current.previous=r.current.value,r.current.value=e),r.current.previous),[e])}e.s(["usePrevious",()=>r])},10204,e=>{"use strict";var t=e.i(43476),r=e.i(71645),n=e.i(48425),a=r.forwardRef((e,r)=>(0,t.jsx)(n.Primitive.label,{...e,ref:r,onMouseDown:t=>{t.target.closest("button, input, select, textarea")||(e.onMouseDown?.(t),!t.defaultPrevented&&t.detail>1&&t.preventDefault())}}));a.displayName="Label";var i=e.i(25913),s=e.i(75157);let l=(0,i.cva)("text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"),o=r.forwardRef(({className:e,...r},n)=>(0,t.jsx)(a,{ref:n,className:(0,s.cn)(l(),e),...r}));o.displayName=a.displayName,e.s(["Label",()=>o],10204)},67489,e=>{"use strict";var t=e.i(43476),r=e.i(71645),n=e.i(74080);function a(e,[t,r]){return Math.min(r,Math.max(t,e))}var i=e.i(81140),s=e.i(75830),l=e.i(20783),o=e.i(30030),c=e.i(86318),d=e.i(26330),u=e.i(3536),m=e.i(65491),p=e.i(10772),h=e.i(53660),f=e.i(74606),x=e.i(48425),g=r.forwardRef((e,n)=>{let{children:a,...i}=e,s=r.Children.toArray(a),l=s.find(b);if(l){let e=l.props.children,a=s.map(t=>t!==l?t:r.Children.count(e)>1?r.Children.only(null):r.isValidElement(e)?e.props.children:null);return(0,t.jsx)(y,{...i,ref:n,children:r.isValidElement(e)?r.cloneElement(e,void 0,a):null})}return(0,t.jsx)(y,{...i,ref:n,children:a})});g.displayName="Slot";var y=r.forwardRef((e,t)=>{let{children:n,...a}=e;if(r.isValidElement(n)){var i;let e,s,o=(i=n,(s=(e=Object.getOwnPropertyDescriptor(i.props,"ref")?.get)&&"isReactWarning"in e&&e.isReactWarning)?i.ref:(s=(e=Object.getOwnPropertyDescriptor(i,"ref")?.get)&&"isReactWarning"in e&&e.isReactWarning)?i.props.ref:i.props.ref||i.ref),c=function(e,t){let r={...t};for(let n in t){let a=e[n],i=t[n];/^on[A-Z]/.test(n)?a&&i?r[n]=(...e)=>{i(...e),a(...e)}:a&&(r[n]=a):"style"===n?r[n]={...a,...i}:"className"===n&&(r[n]=[a,i].filter(Boolean).join(" "))}return{...e,...r}}(a,n.props);return n.type!==r.Fragment&&(c.ref=t?(0,l.composeRefs)(t,o):o),r.cloneElement(n,c)}return r.Children.count(n)>1?r.Children.only(null):null});y.displayName="SlotClone";var v=({children:e})=>(0,t.jsx)(t.Fragment,{children:e});function b(e){return r.isValidElement(e)&&e.type===v}var j=e.i(30207),w=e.i(69340),N=e.i(34620),S=e.i(99682),C=e.i(59411),k=e.i(86312),E=e.i(85369),A=[" ","Enter","ArrowUp","ArrowDown"],P=[" ","Enter"],R="Select",[M,T,I]=(0,s.createCollection)(R),[O,L]=(0,o.createContextScope)(R,[I,h.createPopperScope]),D=(0,h.createPopperScope)(),[_,F]=O(R),[U,B]=O(R),H=e=>{let{__scopeSelect:n,children:a,open:i,defaultOpen:s,onOpenChange:l,value:o,defaultValue:d,onValueChange:u,dir:m,name:f,autoComplete:x,disabled:g,required:y,form:v}=e,b=D(n),[j,N]=r.useState(null),[S,C]=r.useState(null),[k,E]=r.useState(!1),A=(0,c.useDirection)(m),[P=!1,R]=(0,w.useControllableState)({prop:i,defaultProp:s,onChange:l}),[T,I]=(0,w.useControllableState)({prop:o,defaultProp:d,onChange:u}),O=r.useRef(null),L=!j||v||!!j.closest("form"),[F,B]=r.useState(new Set),H=Array.from(F).map(e=>e.props.value).join(";");return(0,t.jsx)(h.Root,{...b,children:(0,t.jsxs)(_,{required:y,scope:n,trigger:j,onTriggerChange:N,valueNode:S,onValueNodeChange:C,valueNodeHasChildren:k,onValueNodeHasChildrenChange:E,contentId:(0,p.useId)(),value:T,onValueChange:I,open:P,onOpenChange:R,dir:A,triggerPointerDownPosRef:O,disabled:g,children:[(0,t.jsx)(M.Provider,{scope:n,children:(0,t.jsx)(U,{scope:e.__scopeSelect,onNativeOptionAdd:r.useCallback(e=>{B(t=>new Set(t).add(e))},[]),onNativeOptionRemove:r.useCallback(e=>{B(t=>{let r=new Set(t);return r.delete(e),r})},[]),children:a})}),L?(0,t.jsxs)(eS,{"aria-hidden":!0,required:y,tabIndex:-1,name:f,autoComplete:x,value:T,onChange:e=>I(e.target.value),disabled:g,form:v,children:[void 0===T?(0,t.jsx)("option",{value:""}):null,Array.from(F)]},H):null]})})};H.displayName=R;var V="SelectTrigger",W=r.forwardRef((e,n)=>{let{__scopeSelect:a,disabled:s=!1,...o}=e,c=D(a),d=F(V,a),u=d.disabled||s,m=(0,l.useComposedRefs)(n,d.onTriggerChange),p=T(a),f=r.useRef("touch"),[g,y,v]=eC(e=>{let t=p().filter(e=>!e.disabled),r=t.find(e=>e.value===d.value),n=ek(t,e,r);void 0!==n&&d.onValueChange(n.value)}),b=e=>{u||(d.onOpenChange(!0),v()),e&&(d.triggerPointerDownPosRef.current={x:Math.round(e.pageX),y:Math.round(e.pageY)})};return(0,t.jsx)(h.Anchor,{asChild:!0,...c,children:(0,t.jsx)(x.Primitive.button,{type:"button",role:"combobox","aria-controls":d.contentId,"aria-expanded":d.open,"aria-required":d.required,"aria-autocomplete":"none",dir:d.dir,"data-state":d.open?"open":"closed",disabled:u,"data-disabled":u?"":void 0,"data-placeholder":eN(d.value)?"":void 0,...o,ref:m,onClick:(0,i.composeEventHandlers)(o.onClick,e=>{e.currentTarget.focus(),"mouse"!==f.current&&b(e)}),onPointerDown:(0,i.composeEventHandlers)(o.onPointerDown,e=>{f.current=e.pointerType;let t=e.target;t.hasPointerCapture(e.pointerId)&&t.releasePointerCapture(e.pointerId),0===e.button&&!1===e.ctrlKey&&"mouse"===e.pointerType&&(b(e),e.preventDefault())}),onKeyDown:(0,i.composeEventHandlers)(o.onKeyDown,e=>{let t=""!==g.current;e.ctrlKey||e.altKey||e.metaKey||1!==e.key.length||y(e.key),(!t||" "!==e.key)&&A.includes(e.key)&&(b(),e.preventDefault())})})})});W.displayName=V;var G="SelectValue",z=r.forwardRef((e,r)=>{let{__scopeSelect:n,className:a,style:i,children:s,placeholder:o="",...c}=e,d=F(G,n),{onValueNodeHasChildrenChange:u}=d,m=void 0!==s,p=(0,l.useComposedRefs)(r,d.onValueNodeChange);return(0,N.useLayoutEffect)(()=>{u(m)},[u,m]),(0,t.jsx)(x.Primitive.span,{...c,ref:p,style:{pointerEvents:"none"},children:eN(d.value)?(0,t.jsx)(t.Fragment,{children:o}):s})});z.displayName=G;var K=r.forwardRef((e,r)=>{let{__scopeSelect:n,children:a,...i}=e;return(0,t.jsx)(x.Primitive.span,{"aria-hidden":!0,...i,ref:r,children:a||"▼"})});K.displayName="SelectIcon";var $=e=>(0,t.jsx)(f.Portal,{asChild:!0,...e});$.displayName="SelectPortal";var X="SelectContent",Q=r.forwardRef((e,a)=>{let i=F(X,e.__scopeSelect),[s,l]=r.useState();return((0,N.useLayoutEffect)(()=>{l(new DocumentFragment)},[]),i.open)?(0,t.jsx)(Z,{...e,ref:a}):s?n.createPortal((0,t.jsx)(Y,{scope:e.__scopeSelect,children:(0,t.jsx)(M.Slot,{scope:e.__scopeSelect,children:(0,t.jsx)("div",{children:e.children})})}),s):null});Q.displayName=X;var[Y,q]=O(X),Z=r.forwardRef((e,n)=>{let{__scopeSelect:a,position:s="item-aligned",onCloseAutoFocus:o,onEscapeKeyDown:c,onPointerDownOutside:p,side:h,sideOffset:f,align:x,alignOffset:y,arrowPadding:v,collisionBoundary:b,collisionPadding:j,sticky:w,hideWhenDetached:N,avoidCollisions:S,...C}=e,A=F(X,a),[P,R]=r.useState(null),[M,I]=r.useState(null),O=(0,l.useComposedRefs)(n,e=>R(e)),[L,D]=r.useState(null),[_,U]=r.useState(null),B=T(a),[H,V]=r.useState(!1),W=r.useRef(!1);r.useEffect(()=>{if(P)return(0,k.hideOthers)(P)},[P]),(0,u.useFocusGuards)();let G=r.useCallback(e=>{let[t,...r]=B().map(e=>e.ref.current),[n]=r.slice(-1),a=document.activeElement;for(let r of e)if(r===a||(r?.scrollIntoView({block:"nearest"}),r===t&&M&&(M.scrollTop=0),r===n&&M&&(M.scrollTop=M.scrollHeight),r?.focus(),document.activeElement!==a))return},[B,M]),z=r.useCallback(()=>G([L,P]),[G,L,P]);r.useEffect(()=>{H&&z()},[H,z]);let{onOpenChange:K,triggerPointerDownPosRef:$}=A;r.useEffect(()=>{if(P){let e={x:0,y:0},t=t=>{e={x:Math.abs(Math.round(t.pageX)-($.current?.x??0)),y:Math.abs(Math.round(t.pageY)-($.current?.y??0))}},r=r=>{e.x<=10&&e.y<=10?r.preventDefault():P.contains(r.target)||K(!1),document.removeEventListener("pointermove",t),$.current=null};return null!==$.current&&(document.addEventListener("pointermove",t),document.addEventListener("pointerup",r,{capture:!0,once:!0})),()=>{document.removeEventListener("pointermove",t),document.removeEventListener("pointerup",r,{capture:!0})}}},[P,K,$]),r.useEffect(()=>{let e=()=>K(!1);return window.addEventListener("blur",e),window.addEventListener("resize",e),()=>{window.removeEventListener("blur",e),window.removeEventListener("resize",e)}},[K]);let[Q,q]=eC(e=>{let t=B().filter(e=>!e.disabled),r=t.find(e=>e.ref.current===document.activeElement),n=ek(t,e,r);n&&setTimeout(()=>n.ref.current.focus())}),Z=r.useCallback((e,t,r)=>{let n=!W.current&&!r;(void 0!==A.value&&A.value===t||n)&&(D(e),n&&(W.current=!0))},[A.value]),et=r.useCallback(()=>P?.focus(),[P]),er=r.useCallback((e,t,r)=>{let n=!W.current&&!r;(void 0!==A.value&&A.value===t||n)&&U(e)},[A.value]),en="popper"===s?ee:J,ea=en===ee?{side:h,sideOffset:f,align:x,alignOffset:y,arrowPadding:v,collisionBoundary:b,collisionPadding:j,sticky:w,hideWhenDetached:N,avoidCollisions:S}:{};return(0,t.jsx)(Y,{scope:a,content:P,viewport:M,onViewportChange:I,itemRefCallback:Z,selectedItem:L,onItemLeave:et,itemTextRefCallback:er,focusSelectedItem:z,selectedItemText:_,position:s,isPositioned:H,searchRef:Q,children:(0,t.jsx)(E.RemoveScroll,{as:g,allowPinchZoom:!0,children:(0,t.jsx)(m.FocusScope,{asChild:!0,trapped:A.open,onMountAutoFocus:e=>{e.preventDefault()},onUnmountAutoFocus:(0,i.composeEventHandlers)(o,e=>{A.trigger?.focus({preventScroll:!0}),e.preventDefault()}),children:(0,t.jsx)(d.DismissableLayer,{asChild:!0,disableOutsidePointerEvents:!0,onEscapeKeyDown:c,onPointerDownOutside:p,onFocusOutside:e=>e.preventDefault(),onDismiss:()=>A.onOpenChange(!1),children:(0,t.jsx)(en,{role:"listbox",id:A.contentId,"data-state":A.open?"open":"closed",dir:A.dir,onContextMenu:e=>e.preventDefault(),...C,...ea,onPlaced:()=>V(!0),ref:O,style:{display:"flex",flexDirection:"column",outline:"none",...C.style},onKeyDown:(0,i.composeEventHandlers)(C.onKeyDown,e=>{let t=e.ctrlKey||e.altKey||e.metaKey;if("Tab"===e.key&&e.preventDefault(),t||1!==e.key.length||q(e.key),["ArrowUp","ArrowDown","Home","End"].includes(e.key)){let t=B().filter(e=>!e.disabled).map(e=>e.ref.current);if(["ArrowUp","End"].includes(e.key)&&(t=t.slice().reverse()),["ArrowUp","ArrowDown"].includes(e.key)){let r=e.target,n=t.indexOf(r);t=t.slice(n+1)}setTimeout(()=>G(t)),e.preventDefault()}})})})})})})});Z.displayName="SelectContentImpl";var J=r.forwardRef((e,n)=>{let{__scopeSelect:i,onPlaced:s,...o}=e,c=F(X,i),d=q(X,i),[u,m]=r.useState(null),[p,h]=r.useState(null),f=(0,l.useComposedRefs)(n,e=>h(e)),g=T(i),y=r.useRef(!1),v=r.useRef(!0),{viewport:b,selectedItem:j,selectedItemText:w,focusSelectedItem:S}=d,C=r.useCallback(()=>{if(c.trigger&&c.valueNode&&u&&p&&b&&j&&w){let e=c.trigger.getBoundingClientRect(),t=p.getBoundingClientRect(),r=c.valueNode.getBoundingClientRect(),n=w.getBoundingClientRect();if("rtl"!==c.dir){let i=n.left-t.left,s=r.left-i,l=e.left-s,o=e.width+l,c=Math.max(o,t.width),d=a(s,[10,Math.max(10,window.innerWidth-10-c)]);u.style.minWidth=o+"px",u.style.left=d+"px"}else{let i=t.right-n.right,s=window.innerWidth-r.right-i,l=window.innerWidth-e.right-s,o=e.width+l,c=Math.max(o,t.width),d=a(s,[10,Math.max(10,window.innerWidth-10-c)]);u.style.minWidth=o+"px",u.style.right=d+"px"}let i=g(),l=window.innerHeight-20,o=b.scrollHeight,d=window.getComputedStyle(p),m=parseInt(d.borderTopWidth,10),h=parseInt(d.paddingTop,10),f=parseInt(d.borderBottomWidth,10),x=m+h+o+parseInt(d.paddingBottom,10)+f,v=Math.min(5*j.offsetHeight,x),N=window.getComputedStyle(b),S=parseInt(N.paddingTop,10),C=parseInt(N.paddingBottom,10),k=e.top+e.height/2-10,E=j.offsetHeight/2,A=m+h+(j.offsetTop+E);if(A<=k){let e=i.length>0&&j===i[i.length-1].ref.current;u.style.bottom="0px";let t=Math.max(l-k,E+(e?C:0)+(p.clientHeight-b.offsetTop-b.offsetHeight)+f);u.style.height=A+t+"px"}else{let e=i.length>0&&j===i[0].ref.current;u.style.top="0px";let t=Math.max(k,m+b.offsetTop+(e?S:0)+E);u.style.height=t+(x-A)+"px",b.scrollTop=A-k+b.offsetTop}u.style.margin="10px 0",u.style.minHeight=v+"px",u.style.maxHeight=l+"px",s?.(),requestAnimationFrame(()=>y.current=!0)}},[g,c.trigger,c.valueNode,u,p,b,j,w,c.dir,s]);(0,N.useLayoutEffect)(()=>C(),[C]);let[k,E]=r.useState();(0,N.useLayoutEffect)(()=>{p&&E(window.getComputedStyle(p).zIndex)},[p]);let A=r.useCallback(e=>{e&&!0===v.current&&(C(),S?.(),v.current=!1)},[C,S]);return(0,t.jsx)(et,{scope:i,contentWrapper:u,shouldExpandOnScrollRef:y,onScrollButtonChange:A,children:(0,t.jsx)("div",{ref:m,style:{display:"flex",flexDirection:"column",position:"fixed",zIndex:k},children:(0,t.jsx)(x.Primitive.div,{...o,ref:f,style:{boxSizing:"border-box",maxHeight:"100%",...o.style}})})})});J.displayName="SelectItemAlignedPosition";var ee=r.forwardRef((e,r)=>{let{__scopeSelect:n,align:a="start",collisionPadding:i=10,...s}=e,l=D(n);return(0,t.jsx)(h.Content,{...l,...s,ref:r,align:a,collisionPadding:i,style:{boxSizing:"border-box",...s.style,"--radix-select-content-transform-origin":"var(--radix-popper-transform-origin)","--radix-select-content-available-width":"var(--radix-popper-available-width)","--radix-select-content-available-height":"var(--radix-popper-available-height)","--radix-select-trigger-width":"var(--radix-popper-anchor-width)","--radix-select-trigger-height":"var(--radix-popper-anchor-height)"}})});ee.displayName="SelectPopperPosition";var[et,er]=O(X,{}),en="SelectViewport",ea=r.forwardRef((e,n)=>{let{__scopeSelect:a,nonce:s,...o}=e,c=q(en,a),d=er(en,a),u=(0,l.useComposedRefs)(n,c.onViewportChange),m=r.useRef(0);return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("style",{dangerouslySetInnerHTML:{__html:"[data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}"},nonce:s}),(0,t.jsx)(M.Slot,{scope:a,children:(0,t.jsx)(x.Primitive.div,{"data-radix-select-viewport":"",role:"presentation",...o,ref:u,style:{position:"relative",flex:1,overflow:"hidden auto",...o.style},onScroll:(0,i.composeEventHandlers)(o.onScroll,e=>{let t=e.currentTarget,{contentWrapper:r,shouldExpandOnScrollRef:n}=d;if(n?.current&&r){let e=Math.abs(m.current-t.scrollTop);if(e>0){let n=window.innerHeight-20,a=Math.max(parseFloat(r.style.minHeight),parseFloat(r.style.height));if(a<n){let i=a+e,s=Math.min(n,i),l=i-s;r.style.height=s+"px","0px"===r.style.bottom&&(t.scrollTop=l>0?l:0,r.style.justifyContent="flex-end")}}}m.current=t.scrollTop})})})]})});ea.displayName=en;var ei="SelectGroup",[es,el]=O(ei);r.forwardRef((e,r)=>{let{__scopeSelect:n,...a}=e,i=(0,p.useId)();return(0,t.jsx)(es,{scope:n,id:i,children:(0,t.jsx)(x.Primitive.div,{role:"group","aria-labelledby":i,...a,ref:r})})}).displayName=ei;var eo="SelectLabel",ec=r.forwardRef((e,r)=>{let{__scopeSelect:n,...a}=e,i=el(eo,n);return(0,t.jsx)(x.Primitive.div,{id:i.id,...a,ref:r})});ec.displayName=eo;var ed="SelectItem",[eu,em]=O(ed),ep=r.forwardRef((e,n)=>{let{__scopeSelect:a,value:s,disabled:o=!1,textValue:c,...d}=e,u=F(ed,a),m=q(ed,a),h=u.value===s,[f,g]=r.useState(c??""),[y,v]=r.useState(!1),b=(0,l.useComposedRefs)(n,e=>m.itemRefCallback?.(e,s,o)),j=(0,p.useId)(),w=r.useRef("touch"),N=()=>{o||(u.onValueChange(s),u.onOpenChange(!1))};if(""===s)throw Error("A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.");return(0,t.jsx)(eu,{scope:a,value:s,disabled:o,textId:j,isSelected:h,onItemTextChange:r.useCallback(e=>{g(t=>t||(e?.textContent??"").trim())},[]),children:(0,t.jsx)(M.ItemSlot,{scope:a,value:s,disabled:o,textValue:f,children:(0,t.jsx)(x.Primitive.div,{role:"option","aria-labelledby":j,"data-highlighted":y?"":void 0,"aria-selected":h&&y,"data-state":h?"checked":"unchecked","aria-disabled":o||void 0,"data-disabled":o?"":void 0,tabIndex:o?void 0:-1,...d,ref:b,onFocus:(0,i.composeEventHandlers)(d.onFocus,()=>v(!0)),onBlur:(0,i.composeEventHandlers)(d.onBlur,()=>v(!1)),onClick:(0,i.composeEventHandlers)(d.onClick,()=>{"mouse"!==w.current&&N()}),onPointerUp:(0,i.composeEventHandlers)(d.onPointerUp,()=>{"mouse"===w.current&&N()}),onPointerDown:(0,i.composeEventHandlers)(d.onPointerDown,e=>{w.current=e.pointerType}),onPointerMove:(0,i.composeEventHandlers)(d.onPointerMove,e=>{w.current=e.pointerType,o?m.onItemLeave?.():"mouse"===w.current&&e.currentTarget.focus({preventScroll:!0})}),onPointerLeave:(0,i.composeEventHandlers)(d.onPointerLeave,e=>{e.currentTarget===document.activeElement&&m.onItemLeave?.()}),onKeyDown:(0,i.composeEventHandlers)(d.onKeyDown,e=>{(m.searchRef?.current===""||" "!==e.key)&&(P.includes(e.key)&&N()," "===e.key&&e.preventDefault())})})})})});ep.displayName=ed;var eh="SelectItemText",ef=r.forwardRef((e,a)=>{let{__scopeSelect:i,className:s,style:o,...c}=e,d=F(eh,i),u=q(eh,i),m=em(eh,i),p=B(eh,i),[h,f]=r.useState(null),g=(0,l.useComposedRefs)(a,e=>f(e),m.onItemTextChange,e=>u.itemTextRefCallback?.(e,m.value,m.disabled)),y=h?.textContent,v=r.useMemo(()=>(0,t.jsx)("option",{value:m.value,disabled:m.disabled,children:y},m.value),[m.disabled,m.value,y]),{onNativeOptionAdd:b,onNativeOptionRemove:j}=p;return(0,N.useLayoutEffect)(()=>(b(v),()=>j(v)),[b,j,v]),(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(x.Primitive.span,{id:m.textId,...c,ref:g}),m.isSelected&&d.valueNode&&!d.valueNodeHasChildren?n.createPortal(c.children,d.valueNode):null]})});ef.displayName=eh;var ex="SelectItemIndicator",eg=r.forwardRef((e,r)=>{let{__scopeSelect:n,...a}=e;return em(ex,n).isSelected?(0,t.jsx)(x.Primitive.span,{"aria-hidden":!0,...a,ref:r}):null});eg.displayName=ex;var ey="SelectScrollUpButton";r.forwardRef((e,n)=>{let a=q(ey,e.__scopeSelect),i=er(ey,e.__scopeSelect),[s,o]=r.useState(!1),c=(0,l.useComposedRefs)(n,i.onScrollButtonChange);return(0,N.useLayoutEffect)(()=>{if(a.viewport&&a.isPositioned){let e=function(){o(t.scrollTop>0)},t=a.viewport;return e(),t.addEventListener("scroll",e),()=>t.removeEventListener("scroll",e)}},[a.viewport,a.isPositioned]),s?(0,t.jsx)(eb,{...e,ref:c,onAutoScroll:()=>{let{viewport:e,selectedItem:t}=a;e&&t&&(e.scrollTop=e.scrollTop-t.offsetHeight)}}):null}).displayName=ey;var ev="SelectScrollDownButton";r.forwardRef((e,n)=>{let a=q(ev,e.__scopeSelect),i=er(ev,e.__scopeSelect),[s,o]=r.useState(!1),c=(0,l.useComposedRefs)(n,i.onScrollButtonChange);return(0,N.useLayoutEffect)(()=>{if(a.viewport&&a.isPositioned){let e=function(){let e=t.scrollHeight-t.clientHeight;o(Math.ceil(t.scrollTop)<e)},t=a.viewport;return e(),t.addEventListener("scroll",e),()=>t.removeEventListener("scroll",e)}},[a.viewport,a.isPositioned]),s?(0,t.jsx)(eb,{...e,ref:c,onAutoScroll:()=>{let{viewport:e,selectedItem:t}=a;e&&t&&(e.scrollTop=e.scrollTop+t.offsetHeight)}}):null}).displayName=ev;var eb=r.forwardRef((e,n)=>{let{__scopeSelect:a,onAutoScroll:s,...l}=e,o=q("SelectScrollButton",a),c=r.useRef(null),d=T(a),u=r.useCallback(()=>{null!==c.current&&(window.clearInterval(c.current),c.current=null)},[]);return r.useEffect(()=>()=>u(),[u]),(0,N.useLayoutEffect)(()=>{let e=d().find(e=>e.ref.current===document.activeElement);e?.ref.current?.scrollIntoView({block:"nearest"})},[d]),(0,t.jsx)(x.Primitive.div,{"aria-hidden":!0,...l,ref:n,style:{flexShrink:0,...l.style},onPointerDown:(0,i.composeEventHandlers)(l.onPointerDown,()=>{null===c.current&&(c.current=window.setInterval(s,50))}),onPointerMove:(0,i.composeEventHandlers)(l.onPointerMove,()=>{o.onItemLeave?.(),null===c.current&&(c.current=window.setInterval(s,50))}),onPointerLeave:(0,i.composeEventHandlers)(l.onPointerLeave,()=>{u()})})}),ej=r.forwardRef((e,r)=>{let{__scopeSelect:n,...a}=e;return(0,t.jsx)(x.Primitive.div,{"aria-hidden":!0,...a,ref:r})});ej.displayName="SelectSeparator";var ew="SelectArrow";function eN(e){return""===e||void 0===e}r.forwardRef((e,r)=>{let{__scopeSelect:n,...a}=e,i=D(n),s=F(ew,n),l=q(ew,n);return s.open&&"popper"===l.position?(0,t.jsx)(h.Arrow,{...i,...a,ref:r}):null}).displayName=ew;var eS=r.forwardRef((e,n)=>{let{value:a,...i}=e,s=r.useRef(null),o=(0,l.useComposedRefs)(n,s),c=(0,S.usePrevious)(a);return r.useEffect(()=>{let e=s.current,t=Object.getOwnPropertyDescriptor(window.HTMLSelectElement.prototype,"value").set;if(c!==a&&t){let r=new Event("change",{bubbles:!0});t.call(e,a),e.dispatchEvent(r)}},[c,a]),(0,t.jsx)(C.VisuallyHidden,{asChild:!0,children:(0,t.jsx)("select",{...i,ref:o,defaultValue:a})})});function eC(e){let t=(0,j.useCallbackRef)(e),n=r.useRef(""),a=r.useRef(0),i=r.useCallback(e=>{let r=n.current+e;t(r),function e(t){n.current=t,window.clearTimeout(a.current),""!==t&&(a.current=window.setTimeout(()=>e(""),1e3))}(r)},[t]),s=r.useCallback(()=>{n.current="",window.clearTimeout(a.current)},[]);return r.useEffect(()=>()=>window.clearTimeout(a.current),[]),[n,i,s]}function ek(e,t,r){var n,a;let i=t.length>1&&Array.from(t).every(e=>e===t[0])?t[0]:t,s=r?e.indexOf(r):-1,l=(n=e,a=Math.max(s,0),n.map((e,t)=>n[(a+t)%n.length]));1===i.length&&(l=l.filter(e=>e!==r));let o=l.find(e=>e.textValue.toLowerCase().startsWith(i.toLowerCase()));return o!==r?o:void 0}eS.displayName="BubbleSelect";var eE=e.i(43531);let eA=(0,e.i(75254).default)("ChevronDown",[["path",{d:"m6 9 6 6 6-6",key:"qrunsl"}]]);var eP=e.i(75157);let eR=r.forwardRef(({className:e,children:r,...n},a)=>(0,t.jsxs)(W,{ref:a,className:(0,eP.cn)("flex h-10 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",e),...n,children:[r,(0,t.jsx)(K,{asChild:!0,children:(0,t.jsx)(eA,{className:"h-4 w-4 opacity-50"})})]}));eR.displayName=W.displayName;let eM=r.forwardRef(({className:e,children:r,position:n="popper",...a},i)=>(0,t.jsx)($,{children:(0,t.jsx)(Q,{ref:i,className:(0,eP.cn)("relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2","popper"===n&&"data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",e),position:n,...a,children:(0,t.jsx)(ea,{className:(0,eP.cn)("p-1","popper"===n&&"h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"),children:r})})}));eM.displayName=Q.displayName,r.forwardRef(({className:e,...r},n)=>(0,t.jsx)(ec,{ref:n,className:(0,eP.cn)("py-1.5 pl-8 pr-2 text-sm font-semibold",e),...r})).displayName=ec.displayName;let eT=r.forwardRef(({className:e,children:r,...n},a)=>(0,t.jsxs)(ep,{ref:a,className:(0,eP.cn)("relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",e),...n,children:[(0,t.jsx)("span",{className:"absolute left-2 flex h-3.5 w-3.5 items-center justify-center",children:(0,t.jsx)(eg,{children:(0,t.jsx)(eE.Check,{className:"h-4 w-4"})})}),(0,t.jsx)(ef,{children:r})]}));eT.displayName=ep.displayName,r.forwardRef(({className:e,...r},n)=>(0,t.jsx)(ej,{ref:n,className:(0,eP.cn)("-mx-1 my-1 h-px bg-muted",e),...r})).displayName=ej.displayName,e.s(["Select",()=>H,"SelectContent",()=>eM,"SelectItem",()=>eT,"SelectTrigger",()=>eR,"SelectValue",()=>z],67489)},21130,e=>{"use strict";var t=e.i(43476),r=e.i(71645),n=e.i(45872),a=e.i(75254);let i=(0,a.default)("TriangleAlert",[["path",{d:"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",key:"wmoenq"}],["path",{d:"M12 9v4",key:"juzpu7"}],["path",{d:"M12 17h.01",key:"p32p05"}]]),s=(0,a.default)("Globe",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["path",{d:"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",key:"13o1zl"}],["path",{d:"M2 12h20",key:"9i4pu4"}]]);var l=e.i(22016),o=e.i(19455),c=e.i(67489),d=e.i(10204);let u={en:"AiQuantumCharts holds zero responsibility if you choose to break any laws. We do not agree with your personal choices and would never go against any country’s legal code.",es:"AiQuantumCharts no se hace responsable si decides infringir alguna ley...",fr:"AiQuantumCharts décline toute responsabilité si vous choisissez de violer la loi...",de:"AiQuantumCharts übernimmt keine Verantwortung, wenn Sie gegen Gesetze verstoßen...",ru:"AiQuantumCharts не несет ответственности за нарушение вами закона...",zh:"如果您选择违法，AiQuantumCharts概不负责...",ja:"AiQuantumChartsは、法律違反を選択した場合の責任を一切負いません...",hi:"यदि आप कानून तोड़ने का निर्णय लेते हैं तो AiQuantumCharts कोई ज़िम्मेदारी नहीं लेता...",pt:"A AiQuantumCharts não se responsabiliza se você optar por violar leis...",ar:"لا تتحمل AiQuantumCharts أي مسؤولية إذا اخترت انتهاك القوانين..."},m={US:"https://www.analyticsinsight.net/cryptocurrency-analytics-insight/crypto-regulations-in-2025-whats-changing",CN:"https://www.coinrank.io/crypto/global-crypto-policy-outlook/",RU:"https://crystalintelligence.com/crypto-regulations/pwc-global-crypto-regulation-trends-for-2025/",EG:"https://www.coinrank.io/crypto/global-crypto-policy-outlook/",BD:"https://www.coinrank.io/crypto/global-crypto-policy-outlook/",NP:"https://www.coinrank.io/crypto/global-crypto-policy-outlook/",DZ:"https://www.coinrank.io/crypto/global-crypto-policy-outlook/",AF:"https://www.coinrank.io/crypto/global-crypto-policy-outlook/",NO:"https://www.coinrank.io/crypto/global-crypto-policy-outlook/",SG:"https://crystalintelligence.com/crypto-regulations/pwc-global-crypto-regulation-trends-for-2025/",AE:"https://www.coinrank.io/crypto/global-crypto-policy-outlook/"};function p(){let[e,a]=(0,r.useState)("US"),[p,h]=(0,r.useState)(!1),[f,x]=(0,r.useState)(u.en),[g,y]=(0,r.useState)(m.US);(0,r.useEffect)(()=>{v(e)},[e]);let v=e=>{a(e),x(u[navigator.language.slice(0,2)]||u.en),y(m[e]||"#")};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(n.Header,{}),p&&(0,t.jsxs)("div",{style:{position:"fixed",top:"50%",left:"50%",transform:"translate(-50%, -50%)",width:"80%",maxWidth:"600px",background:"#1a1a2e",color:"#e0e0e0",border:"2px solid hsl(var(--neon-pink))",padding:"2rem",zIndex:1e3,borderRadius:"1rem",boxShadow:"0 0 30px hsl(var(--neon-pink))"},children:[(0,t.jsx)("h3",{className:"text-2xl font-bold neon-pink mb-4",children:"⚠️ Legal Disclaimer"}),(0,t.jsx)("p",{children:f}),(0,t.jsx)("a",{href:g,target:"_blank",rel:"noopener noreferrer",className:"block mt-4 text-cyan-400 hover:underline",children:"🌍 Learn More About Mining Laws"}),(0,t.jsx)(o.Button,{onClick:()=>h(!1),className:"mt-6 w-full",children:"I Understand"})]}),(0,t.jsx)("main",{className:"container mx-auto px-4 py-12",children:(0,t.jsxs)("div",{className:"center-content max-w-4xl mx-auto",children:[(0,t.jsx)("h1",{className:"text-3xl md:text-4xl font-bold neon-text text-center mb-6",children:"🧱 Step-by-Step Miner Selection Guide"}),(0,t.jsxs)("section",{className:"p-6 rounded-lg bg-black/50 border-2 border-cyan-500/50 shadow-[0_0_20px_rgba(0,255,255,0.3)] w-full",children:[(0,t.jsx)("h2",{className:"text-2xl font-bold text-cyan-300 mb-4 text-center",children:"Check Mining Legality"}),(0,t.jsxs)("div",{className:"flex flex-col sm:flex-row items-center justify-center gap-4",children:[(0,t.jsxs)("div",{className:"flex flex-col gap-2",children:[(0,t.jsx)(d.Label,{htmlFor:"country-select",className:"text-gray-300",children:"🌐 Select Your Country:"}),(0,t.jsxs)(c.Select,{onValueChange:v,defaultValue:e,children:[(0,t.jsx)(c.SelectTrigger,{id:"country-select",className:"w-[280px] bg-gray-800 border-cyan-400 text-white",children:(0,t.jsx)(c.SelectValue,{placeholder:"Select a country"})}),(0,t.jsxs)(c.SelectContent,{className:"bg-black text-white border-cyan-400",children:[(0,t.jsx)(c.SelectItem,{value:"US",children:"United States"}),(0,t.jsx)(c.SelectItem,{value:"CN",children:"China"}),(0,t.jsx)(c.SelectItem,{value:"RU",children:"Russia"}),(0,t.jsx)(c.SelectItem,{value:"EG",children:"Egypt"}),(0,t.jsx)(c.SelectItem,{value:"BD",children:"Bangladesh"}),(0,t.jsx)(c.SelectItem,{value:"NP",children:"Nepal"}),(0,t.jsx)(c.SelectItem,{value:"DZ",children:"Algeria"}),(0,t.jsx)(c.SelectItem,{value:"AF",children:"Afghanistan"}),(0,t.jsx)(c.SelectItem,{value:"NO",children:"Norway"}),(0,t.jsx)(c.SelectItem,{value:"SG",children:"Singapore"}),(0,t.jsx)(c.SelectItem,{value:"AE",children:"United Arab Emirates"})]})]})]}),(0,t.jsx)(o.Button,{onClick:()=>h(!0),className:"self-end h-10",children:"Show Disclaimer"})]})]}),(0,t.jsxs)("div",{className:"space-y-12 mt-12",children:[(0,t.jsxs)("section",{className:"p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg",children:[(0,t.jsx)("h2",{className:"text-2xl font-bold text-cyan-300 mb-4",children:"1. Identify Your Hardware Type"}),(0,t.jsx)("p",{className:"text-gray-300 mb-4",children:"**Goal:** Determine whether your computer uses CPU, GPU, or ASIC mining."}),(0,t.jsxs)("ul",{className:"list-disc list-inside space-y-2 text-gray-300",children:[(0,t.jsxs)("li",{children:["**CPU Mining**: Most basic; works on nearly all computers but low profitability.",(0,t.jsx)("span",{className:"text-gray-400 block text-sm ml-6",children:"Example coins: Monero (XMR), VerusCoin (VRSC)"})]}),(0,t.jsxs)("li",{children:["**GPU Mining**: Requires a dedicated graphics card (NVIDIA or AMD).",(0,t.jsx)("span",{className:"text-gray-400 block text-sm ml-6",children:"Example coins: Ravencoin (RVN), Ergo (ERG), Ethereum Classic (ETC)"})]}),(0,t.jsxs)("li",{children:["**ASIC Mining**: Specialized hardware (not typical for home users).",(0,t.jsx)("span",{className:"text-gray-400 block text-sm ml-6",children:"Example coins: Bitcoin (BTC), Litecoin (LTC), Dash (DASH)"})]})]}),(0,t.jsxs)("div",{className:"mt-4 text-gray-300",children:[(0,t.jsx)("p",{className:"font-bold",children:"How to check:"}),(0,t.jsxs)("ul",{className:"list-disc list-inside ml-4",children:[(0,t.jsx)("li",{children:"On **Windows**: Open Task Manager → Performance tab → Check CPU and GPU specs."}),(0,t.jsx)("li",{children:"On **macOS**: Click Apple logo → About This Mac → Overview tab."})]})]})]}),(0,t.jsxs)("section",{className:"p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg",children:[(0,t.jsx)("h2",{className:"text-2xl font-bold text-pink-300 mb-4",children:"2. Choose Your Coin Type"}),(0,t.jsx)("p",{className:"text-gray-300 mb-4",children:"**Goal:** Select a coin that matches your hardware and mining goals."}),(0,t.jsxs)("ul",{className:"list-disc list-inside space-y-2 text-gray-300",children:[(0,t.jsx)("li",{children:"**Privacy Coins**: Monero (XMR), Firo — best for CPU or GPU"}),(0,t.jsx)("li",{children:"**Payment Coins**: Bitcoin (BTC), Litecoin (LTC) — best for ASIC"}),(0,t.jsx)("li",{children:"**Smart Contract Coins**: Ethereum Classic (ETC), Ergo — best for GPU"}),(0,t.jsx)("li",{children:"**Experimental Coins**: Kaspa (KAS), Radiant (RXD) — GPU or CPU"})]}),(0,t.jsxs)("p",{className:"mt-4 text-gray-300",children:["**Tip:** Use sites like ",(0,t.jsx)(l.default,{href:"https://whattomine.com",target:"_blank",rel:"noopener noreferrer",className:"text-cyan-400 hover:underline",children:"WhatToMine.com"})," to compare profitability and hardware compatibility."]})]}),(0,t.jsxs)("section",{className:"p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg",children:[(0,t.jsx)("h2",{className:"text-2xl font-bold text-cyan-300 mb-4",children:"3. Match Miner Software to Your Setup"}),(0,t.jsx)("p",{className:"text-gray-300 mb-6",children:"**Goal:** Pick mining software that supports your coin, hardware, and OS."}),(0,t.jsxs)("div",{className:"space-y-6",children:[(0,t.jsxs)("div",{children:[(0,t.jsx)("h3",{className:"text-xl font-bold text-cyan-200 mb-2",children:"✅ CPU Miners"}),(0,t.jsx)("p",{children:"**XMRig** – Monero, RandomX coins (OS: Windows, macOS, Linux)"}),(0,t.jsx)(l.default,{href:"https://github.com/xmrig/xmrig",target:"_blank",rel:"noopener noreferrer",className:"text-pink-400 hover:underline break-all",children:"https://github.com/xmrig/xmrig"}),(0,t.jsx)("p",{className:"mt-2",children:"**cpuminer (minerd)** – SHA-256, Scrypt coins (OS: Windows, macOS)"}),(0,t.jsx)(l.default,{href:"https://github.com/pooler/cpuminer",target:"_blank",rel:"noopener noreferrer",className:"text-pink-400 hover:underline break-all",children:"https://github.com/pooler/cpuminer"})]}),(0,t.jsxs)("div",{children:[(0,t.jsx)("h3",{className:"text-xl font-bold text-cyan-200 mb-2",children:"✅ GPU Miners"}),(0,t.jsx)("p",{children:"**NBMiner** – NVIDIA/AMD, Ravencoin, Ergo (OS: Windows, Linux)"}),(0,t.jsx)(l.default,{href:"https://github.com/NebuTech/NBMiner",target:"_blank",rel:"noopener noreferrer",className:"text-pink-400 hover:underline break-all",children:"https://github.com/NebuTech/NBMiner"}),(0,t.jsx)("p",{className:"mt-2",children:"**TeamRedMiner** – AMD-focused (OS: Windows, Linux)"}),(0,t.jsx)(l.default,{href:"https://github.com/todxx/teamredminer",target:"_blank",rel:"noopener noreferrer",className:"text-pink-400 hover:underline break-all",children:"https://github.com/todxx/teamredminer"}),(0,t.jsx)("p",{className:"mt-2",children:"**GMiner** – NVIDIA/AMD, Kaspa, ETC (OS: Windows, Linux)"}),(0,t.jsx)(l.default,{href:"https://github.com/develsoftware/GMinerRelease",target:"_blank",rel:"noopener noreferrer",className:"text-pink-400 hover:underline break-all",children:"https://github.com/develsoftware/GMinerRelease"})]}),(0,t.jsxs)("div",{children:[(0,t.jsx)("h3",{className:"text-xl font-bold text-cyan-200 mb-2",children:"✅ ASIC Miners"}),(0,t.jsx)("p",{children:"**CGMiner** – Bitcoin, Litecoin (OS: Windows, Linux)"}),(0,t.jsx)(l.default,{href:"https://github.com/ckolivas/cgminer",target:"_blank",rel:"noopener noreferrer",className:"text-pink-400 hover:underline break-all",children:"https://github.com/ckolivas/cgminer"}),(0,t.jsx)("p",{className:"mt-2",children:"**BFGMiner** – Modular ASIC/FPGA (OS: Windows, macOS, Linux)"}),(0,t.jsx)(l.default,{href:"https://github.com/luke-jr/bfgminer",target:"_blank",rel:"noopener noreferrer",className:"text-pink-400 hover:underline break-all",children:"https://github.com/luke-jr/bfgminer"})]})]})]}),(0,t.jsxs)("section",{className:"p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg",children:[(0,t.jsx)("h2",{className:"text-2xl font-bold text-pink-300 mb-4",children:"4. Check Operating System Compatibility"}),(0,t.jsx)("p",{className:"text-gray-300 mb-4",children:"**Goal:** Ensure the miner runs smoothly on your OS."}),(0,t.jsxs)("ul",{className:"list-disc list-inside space-y-2 text-gray-300",children:[(0,t.jsx)("li",{children:"**Windows 10/11**: Most miners support Windows. Use `.exe` installers or command-line tools."}),(0,t.jsxs)("li",{children:["**macOS**: Fewer miners available. Use Terminal and compile from source if needed.",(0,t.jsx)("pre",{className:"bg-gray-800 p-2 rounded-md mt-1 text-sm text-cyan-300",children:(0,t.jsx)("code",{children:"brew install cmake && git clone https://github.com/xmrig/xmrig.git"})})]})]}),(0,t.jsx)("p",{className:"mt-4 text-gray-300",children:"**Tip:** Always run miners as administrator and whitelist them in antivirus software (they’re often flagged falsely)."})]}),(0,t.jsxs)("section",{className:"p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg",children:[(0,t.jsx)("h2",{className:"text-2xl font-bold text-cyan-300 mb-4",children:"5. Configure and Launch Your Miner"}),(0,t.jsx)("p",{className:"text-gray-300 mb-4",children:"**Goal:** Set up your miner with the correct pool and wallet."}),(0,t.jsxs)("ul",{className:"list-disc list-inside space-y-2 text-gray-300",children:[(0,t.jsxs)("li",{children:["**Choose a mining pool**: e.g., ",(0,t.jsx)(l.default,{href:"https://minexmr.com",target:"_blank",rel:"noopener noreferrer",className:"text-cyan-400 hover:underline",children:"minexmr.com"})," for Monero, ",(0,t.jsx)(l.default,{href:"https://2miners.com",target:"_blank",rel:"noopener noreferrer",className:"text-cyan-400 hover:underline",children:"2miners.com"})," for Ravencoin"]}),(0,t.jsx)("li",{children:"**Enter your wallet address**: This is where mined coins are sent."}),(0,t.jsx)("li",{children:"**Set launch parameters**: Usually via `.bat` (Windows) or `.sh` (macOS) files."})]}),(0,t.jsx)("p",{className:"mt-4 text-gray-300",children:"**Example (XMRig config):**"}),(0,t.jsx)("pre",{className:"bg-gray-800 p-3 rounded-md mt-1 text-sm text-cyan-300",children:(0,t.jsx)("code",{children:"xmrig -o pool.minexmr.com:443 -u YOUR_WALLET_ADDRESS -k --tls"})})]}),(0,t.jsxs)("section",{className:"p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg",children:[(0,t.jsx)("h2",{className:"text-2xl font-bold text-pink-300 mb-4",children:"6. Monitor Performance and Safety"}),(0,t.jsx)("p",{className:"text-gray-300 mb-4",children:"**Goal:** Track your mining stats and keep your system safe."}),(0,t.jsxs)("ul",{className:"list-disc list-inside space-y-2 text-gray-300",children:[(0,t.jsx)("li",{children:"Use built-in miner dashboards or pool websites."}),(0,t.jsx)("li",{children:"Watch CPU/GPU temperatures (HWMonitor, MSI Afterburner)."}),(0,t.jsx)("li",{children:"Avoid mining on battery power or overheating your system."})]})]}),(0,t.jsxs)("section",{className:"p-6 rounded-lg bg-black/50 border-2 border-red-500/50 shadow-[0_0_20px_rgba(255,80,80,0.3)]",children:[(0,t.jsxs)("div",{className:"flex items-start gap-4",children:[(0,t.jsx)(s,{className:"h-8 w-8 text-red-400 flex-shrink-0 mt-1"}),(0,t.jsxs)("div",{children:[(0,t.jsx)("h2",{className:"text-2xl font-bold text-red-400 mb-3",children:"Countries Where Crypto Mining Is Illegal (2025)"}),(0,t.jsx)("p",{className:"text-gray-300 mb-4",children:"As of November 2025, cryptocurrency mining is fully illegal in at least six countries, with partial or regional bans in several others. These restrictions are driven by energy concerns, financial risks, and regulatory control."})]})]}),(0,t.jsx)("h3",{className:"text-xl font-bold text-red-300 mt-4 mb-2",children:"🌍 Countries Where Crypto Mining Is Fully Illegal"}),(0,t.jsxs)("ul",{className:"list-disc list-inside space-y-3 text-gray-300 pl-4",children:[(0,t.jsxs)("li",{children:[(0,t.jsx)("strong",{children:"China"})," – Banned all crypto mining in 2021 due to energy waste and financial instability. Underground mining still persists."]}),(0,t.jsxs)("li",{children:[(0,t.jsx)("strong",{children:"Algeria"})," – Outlawed all crypto activity including mining since 2017 to protect the national currency."]}),(0,t.jsxs)("li",{children:[(0,t.jsx)("strong",{children:"Bangladesh"})," – Criminalized mining and trading under anti-money laundering laws. Violators face imprisonment."]}),(0,t.jsxs)("li",{children:[(0,t.jsx)("strong",{children:"Nepal"})," – Mining is illegal under the Foreign Exchange Act. Authorities conduct raids on mining farms."]}),(0,t.jsxs)("li",{children:[(0,t.jsx)("strong",{children:"Egypt"})," – Banned since 2018. Religious edicts and economic concerns drive enforcement."]}),(0,t.jsxs)("li",{children:[(0,t.jsx)("strong",{children:"Afghanistan"})," – The Taliban reinstated a mining ban in 2022, shutting down exchanges and arresting operators."]})]}),(0,t.jsx)("h3",{className:"text-xl font-bold text-red-300 mt-6 mb-2",children:"⚡ Countries With Regional or Temporary Mining Bans"}),(0,t.jsxs)("ul",{className:"list-disc list-inside space-y-3 text-gray-300 pl-4",children:[(0,t.jsxs)("li",{children:[(0,t.jsx)("strong",{children:"Russia"})," – Banned mining in 10 regions in 2025 due to energy shortages and grid instability."]}),(0,t.jsxs)("li",{children:[(0,t.jsx)("strong",{children:"Norway"})," – Plans to ban new proof-of-work mining data centers in 2025 for environmental reasons."]})]}),(0,t.jsxs)("div",{className:"mt-6 p-4 rounded-md bg-red-900/30 border border-red-500/50",children:[(0,t.jsx)("h4",{className:"font-bold text-red-300",children:"🛑 Important Notes"}),(0,t.jsxs)("ul",{className:"list-disc list-inside space-y-2 text-red-200/90 mt-2",children:[(0,t.jsx)("li",{children:"Mining legality can change rapidly, and enforcement varies by region."}),(0,t.jsx)("li",{children:"Underground mining often continues despite bans, especially in countries like China and Bangladesh."}),(0,t.jsx)("li",{children:"Always check local laws before engaging in mining activities."})]})]})]}),(0,t.jsx)("div",{className:"relative p-6 rounded-lg border-2 border-yellow-500/80 bg-yellow-900/30 shadow-[0_0_20px_rgba(255,223,0,0.3)] mt-12",children:(0,t.jsxs)("div",{className:"flex items-start gap-4",children:[(0,t.jsx)(i,{className:"h-8 w-8 text-yellow-400 flex-shrink-0 mt-1"}),(0,t.jsxs)("div",{children:[(0,t.jsx)("h2",{className:"text-2xl font-bold text-yellow-300",children:"Legal and Ethical Reminder"}),(0,t.jsx)("p",{className:"mt-2 text-yellow-200/90",children:"Mining software may be restricted or regulated in your country. Always check local laws. You are solely responsible for downloading, installing, and running any mining software. AiQuantum Chart, and affiliated parties assume no liability for your actions or outcomes."})]})]})})]})]})})]})}e.s(["default",()=>p],21130)}]);
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([
+  "object" == typeof document ? document.currentScript : void 0,
+  33525,
+  (e, t, r) => {
+    "use strict";
+    (Object.defineProperty(r, "__esModule", { value: !0 }),
+      Object.defineProperty(r, "warnOnce", {
+        enumerable: !0,
+        get: function () {
+          return n;
+        },
+      }));
+    let n = (e) => {};
+  },
+  98183,
+  (e, t, r) => {
+    "use strict";
+    Object.defineProperty(r, "__esModule", { value: !0 });
+    var n = {
+      assign: function () {
+        return o;
+      },
+      searchParamsToUrlQuery: function () {
+        return i;
+      },
+      urlQueryToSearchParams: function () {
+        return l;
+      },
+    };
+    for (var a in n) Object.defineProperty(r, a, { enumerable: !0, get: n[a] });
+    function i(e) {
+      let t = {};
+      for (let [r, n] of e.entries()) {
+        let e = t[r];
+        void 0 === e
+          ? (t[r] = n)
+          : Array.isArray(e)
+            ? e.push(n)
+            : (t[r] = [e, n]);
+      }
+      return t;
+    }
+    function s(e) {
+      return "string" == typeof e
+        ? e
+        : ("number" != typeof e || isNaN(e)) && "boolean" != typeof e
+          ? ""
+          : String(e);
+    }
+    function l(e) {
+      let t = new URLSearchParams();
+      for (let [r, n] of Object.entries(e))
+        if (Array.isArray(n)) for (let e of n) t.append(r, s(e));
+        else t.set(r, s(n));
+      return t;
+    }
+    function o(e, ...t) {
+      for (let r of t) {
+        for (let t of r.keys()) e.delete(t);
+        for (let [t, n] of r.entries()) e.append(t, n);
+      }
+      return e;
+    }
+  },
+  95057,
+  (e, t, r) => {
+    "use strict";
+    Object.defineProperty(r, "__esModule", { value: !0 });
+    var n = {
+      formatUrl: function () {
+        return l;
+      },
+      formatWithValidation: function () {
+        return c;
+      },
+      urlObjectKeys: function () {
+        return o;
+      },
+    };
+    for (var a in n) Object.defineProperty(r, a, { enumerable: !0, get: n[a] });
+    let i = e.r(90809)._(e.r(98183)),
+      s = /https?|ftp|gopher|file/;
+    function l(e) {
+      let { auth: t, hostname: r } = e,
+        n = e.protocol || "",
+        a = e.pathname || "",
+        l = e.hash || "",
+        o = e.query || "",
+        c = !1;
+      ((t = t ? encodeURIComponent(t).replace(/%3A/i, ":") + "@" : ""),
+        e.host
+          ? (c = t + e.host)
+          : r &&
+            ((c = t + (~r.indexOf(":") ? `[${r}]` : r)),
+            e.port && (c += ":" + e.port)),
+        o && "object" == typeof o && (o = String(i.urlQueryToSearchParams(o))));
+      let d = e.search || (o && `?${o}`) || "";
+      return (
+        n && !n.endsWith(":") && (n += ":"),
+        e.slashes || ((!n || s.test(n)) && !1 !== c)
+          ? ((c = "//" + (c || "")), a && "/" !== a[0] && (a = "/" + a))
+          : c || (c = ""),
+        l && "#" !== l[0] && (l = "#" + l),
+        d && "?" !== d[0] && (d = "?" + d),
+        (a = a.replace(/[?#]/g, encodeURIComponent)),
+        (d = d.replace("#", "%23")),
+        `${n}${c}${a}${d}${l}`
+      );
+    }
+    let o = [
+      "auth",
+      "hash",
+      "host",
+      "hostname",
+      "href",
+      "path",
+      "pathname",
+      "port",
+      "protocol",
+      "query",
+      "search",
+      "slashes",
+    ];
+    function c(e) {
+      return l(e);
+    }
+  },
+  18581,
+  (e, t, r) => {
+    "use strict";
+    (Object.defineProperty(r, "__esModule", { value: !0 }),
+      Object.defineProperty(r, "useMergedRef", {
+        enumerable: !0,
+        get: function () {
+          return a;
+        },
+      }));
+    let n = e.r(71645);
+    function a(e, t) {
+      let r = (0, n.useRef)(null),
+        a = (0, n.useRef)(null);
+      return (0, n.useCallback)(
+        (n) => {
+          if (null === n) {
+            let e = r.current;
+            e && ((r.current = null), e());
+            let t = a.current;
+            t && ((a.current = null), t());
+          } else (e && (r.current = i(e, n)), t && (a.current = i(t, n)));
+        },
+        [e, t],
+      );
+    }
+    function i(e, t) {
+      if ("function" != typeof e)
+        return (
+          (e.current = t),
+          () => {
+            e.current = null;
+          }
+        );
+      {
+        let r = e(t);
+        return "function" == typeof r ? r : () => e(null);
+      }
+    }
+    ("function" == typeof r.default ||
+      ("object" == typeof r.default && null !== r.default)) &&
+      void 0 === r.default.__esModule &&
+      (Object.defineProperty(r.default, "__esModule", { value: !0 }),
+      Object.assign(r.default, r),
+      (t.exports = r.default));
+  },
+  18967,
+  (e, t, r) => {
+    "use strict";
+    Object.defineProperty(r, "__esModule", { value: !0 });
+    var n = {
+      DecodeError: function () {
+        return g;
+      },
+      MiddlewareNotFoundError: function () {
+        return j;
+      },
+      MissingStaticPage: function () {
+        return b;
+      },
+      NormalizeError: function () {
+        return y;
+      },
+      PageNotFoundError: function () {
+        return v;
+      },
+      SP: function () {
+        return f;
+      },
+      ST: function () {
+        return x;
+      },
+      WEB_VITALS: function () {
+        return i;
+      },
+      execOnce: function () {
+        return s;
+      },
+      getDisplayName: function () {
+        return u;
+      },
+      getLocationOrigin: function () {
+        return c;
+      },
+      getURL: function () {
+        return d;
+      },
+      isAbsoluteUrl: function () {
+        return o;
+      },
+      isResSent: function () {
+        return m;
+      },
+      loadGetInitialProps: function () {
+        return h;
+      },
+      normalizeRepeatedSlashes: function () {
+        return p;
+      },
+      stringifyError: function () {
+        return w;
+      },
+    };
+    for (var a in n) Object.defineProperty(r, a, { enumerable: !0, get: n[a] });
+    let i = ["CLS", "FCP", "FID", "INP", "LCP", "TTFB"];
+    function s(e) {
+      let t,
+        r = !1;
+      return (...n) => (r || ((r = !0), (t = e(...n))), t);
+    }
+    let l = /^[a-zA-Z][a-zA-Z\d+\-.]*?:/,
+      o = (e) => l.test(e);
+    function c() {
+      let { protocol: e, hostname: t, port: r } = window.location;
+      return `${e}//${t}${r ? ":" + r : ""}`;
+    }
+    function d() {
+      let { href: e } = window.location,
+        t = c();
+      return e.substring(t.length);
+    }
+    function u(e) {
+      return "string" == typeof e ? e : e.displayName || e.name || "Unknown";
+    }
+    function m(e) {
+      return e.finished || e.headersSent;
+    }
+    function p(e) {
+      let t = e.split("?");
+      return (
+        t[0].replace(/\\/g, "/").replace(/\/\/+/g, "/") +
+        (t[1] ? `?${t.slice(1).join("?")}` : "")
+      );
+    }
+    async function h(e, t) {
+      let r = t.res || (t.ctx && t.ctx.res);
+      if (!e.getInitialProps)
+        return t.ctx && t.Component
+          ? { pageProps: await h(t.Component, t.ctx) }
+          : {};
+      let n = await e.getInitialProps(t);
+      if (r && m(r)) return n;
+      if (!n)
+        throw Object.defineProperty(
+          Error(
+            `"${u(e)}.getInitialProps()" should resolve to an object. But found "${n}" instead.`,
+          ),
+          "__NEXT_ERROR_CODE",
+          { value: "E394", enumerable: !1, configurable: !0 },
+        );
+      return n;
+    }
+    let f = "undefined" != typeof performance,
+      x =
+        f &&
+        ["mark", "measure", "getEntriesByName"].every(
+          (e) => "function" == typeof performance[e],
+        );
+    class g extends Error {}
+    class y extends Error {}
+    class v extends Error {
+      constructor(e) {
+        (super(),
+          (this.code = "ENOENT"),
+          (this.name = "PageNotFoundError"),
+          (this.message = `Cannot find module for page: ${e}`));
+      }
+    }
+    class b extends Error {
+      constructor(e, t) {
+        (super(),
+          (this.message = `Failed to load static file for page: ${e} ${t}`));
+      }
+    }
+    class j extends Error {
+      constructor() {
+        (super(),
+          (this.code = "ENOENT"),
+          (this.message = "Cannot find the middleware module"));
+      }
+    }
+    function w(e) {
+      return JSON.stringify({ message: e.message, stack: e.stack });
+    }
+  },
+  73668,
+  (e, t, r) => {
+    "use strict";
+    (Object.defineProperty(r, "__esModule", { value: !0 }),
+      Object.defineProperty(r, "isLocalURL", {
+        enumerable: !0,
+        get: function () {
+          return i;
+        },
+      }));
+    let n = e.r(18967),
+      a = e.r(52817);
+    function i(e) {
+      if (!(0, n.isAbsoluteUrl)(e)) return !0;
+      try {
+        let t = (0, n.getLocationOrigin)(),
+          r = new URL(e, t);
+        return r.origin === t && (0, a.hasBasePath)(r.pathname);
+      } catch (e) {
+        return !1;
+      }
+    }
+  },
+  84508,
+  (e, t, r) => {
+    "use strict";
+    (Object.defineProperty(r, "__esModule", { value: !0 }),
+      Object.defineProperty(r, "errorOnce", {
+        enumerable: !0,
+        get: function () {
+          return n;
+        },
+      }));
+    let n = (e) => {};
+  },
+  22016,
+  (e, t, r) => {
+    "use strict";
+    Object.defineProperty(r, "__esModule", { value: !0 });
+    var n = {
+      default: function () {
+        return g;
+      },
+      useLinkStatus: function () {
+        return v;
+      },
+    };
+    for (var a in n) Object.defineProperty(r, a, { enumerable: !0, get: n[a] });
+    let i = e.r(90809),
+      s = e.r(43476),
+      l = i._(e.r(71645)),
+      o = e.r(95057),
+      c = e.r(8372),
+      d = e.r(18581),
+      u = e.r(18967),
+      m = e.r(5550);
+    e.r(33525);
+    let p = e.r(91949),
+      h = e.r(73668),
+      f = e.r(65165);
+    function x(e) {
+      return "string" == typeof e ? e : (0, o.formatUrl)(e);
+    }
+    function g(t) {
+      var r;
+      let n,
+        a,
+        i,
+        [o, g] = (0, l.useOptimistic)(p.IDLE_LINK_STATUS),
+        v = (0, l.useRef)(null),
+        {
+          href: b,
+          as: j,
+          children: w,
+          prefetch: N = null,
+          passHref: S,
+          replace: C,
+          shallow: k,
+          scroll: E,
+          onClick: A,
+          onMouseEnter: P,
+          onTouchStart: R,
+          legacyBehavior: M = !1,
+          onNavigate: T,
+          ref: I,
+          unstable_dynamicOnHover: O,
+          ...L
+        } = t;
+      ((n = w),
+        M &&
+          ("string" == typeof n || "number" == typeof n) &&
+          (n = (0, s.jsx)("a", { children: n })));
+      let D = l.default.useContext(c.AppRouterContext),
+        _ = !1 !== N,
+        F =
+          !1 !== N
+            ? null === (r = N) || "auto" === r
+              ? f.FetchStrategy.PPR
+              : f.FetchStrategy.Full
+            : f.FetchStrategy.PPR,
+        { href: U, as: B } = l.default.useMemo(() => {
+          let e = x(b);
+          return { href: e, as: j ? x(j) : e };
+        }, [b, j]);
+      if (M) {
+        if (n?.$$typeof === Symbol.for("react.lazy"))
+          throw Object.defineProperty(
+            Error(
+              "`<Link legacyBehavior>` received a direct child that is either a Server Component, or JSX that was loaded with React.lazy(). This is not supported. Either remove legacyBehavior, or make the direct child a Client Component that renders the Link's `<a>` tag.",
+            ),
+            "__NEXT_ERROR_CODE",
+            { value: "E863", enumerable: !1, configurable: !0 },
+          );
+        a = l.default.Children.only(n);
+      }
+      let H = M ? a && "object" == typeof a && a.ref : I,
+        V = l.default.useCallback(
+          (e) => (
+            null !== D &&
+              (v.current = (0, p.mountLinkInstance)(e, U, D, F, _, g)),
+            () => {
+              (v.current &&
+                ((0, p.unmountLinkForCurrentNavigation)(v.current),
+                (v.current = null)),
+                (0, p.unmountPrefetchableInstance)(e));
+            }
+          ),
+          [_, U, D, F, g],
+        ),
+        W = {
+          ref: (0, d.useMergedRef)(V, H),
+          onClick(t) {
+            (M || "function" != typeof A || A(t),
+              M &&
+                a.props &&
+                "function" == typeof a.props.onClick &&
+                a.props.onClick(t),
+              !D ||
+                t.defaultPrevented ||
+                (function (t, r, n, a, i, s, o) {
+                  if ("undefined" != typeof window) {
+                    let c,
+                      { nodeName: d } = t.currentTarget;
+                    if (
+                      ("A" === d.toUpperCase() &&
+                        (((c = t.currentTarget.getAttribute("target")) &&
+                          "_self" !== c) ||
+                          t.metaKey ||
+                          t.ctrlKey ||
+                          t.shiftKey ||
+                          t.altKey ||
+                          (t.nativeEvent && 2 === t.nativeEvent.which))) ||
+                      t.currentTarget.hasAttribute("download")
+                    )
+                      return;
+                    if (!(0, h.isLocalURL)(r)) {
+                      i && (t.preventDefault(), location.replace(r));
+                      return;
+                    }
+                    if ((t.preventDefault(), o)) {
+                      let e = !1;
+                      if (
+                        (o({
+                          preventDefault: () => {
+                            e = !0;
+                          },
+                        }),
+                        e)
+                      )
+                        return;
+                    }
+                    let { dispatchNavigateAction: u } = e.r(99781);
+                    l.default.startTransition(() => {
+                      u(n || r, i ? "replace" : "push", s ?? !0, a.current);
+                    });
+                  }
+                })(t, U, B, v, C, E, T));
+          },
+          onMouseEnter(e) {
+            (M || "function" != typeof P || P(e),
+              M &&
+                a.props &&
+                "function" == typeof a.props.onMouseEnter &&
+                a.props.onMouseEnter(e),
+              D && _ && (0, p.onNavigationIntent)(e.currentTarget, !0 === O));
+          },
+          onTouchStart: function (e) {
+            (M || "function" != typeof R || R(e),
+              M &&
+                a.props &&
+                "function" == typeof a.props.onTouchStart &&
+                a.props.onTouchStart(e),
+              D && _ && (0, p.onNavigationIntent)(e.currentTarget, !0 === O));
+          },
+        };
+      return (
+        (0, u.isAbsoluteUrl)(B)
+          ? (W.href = B)
+          : (M && !S && ("a" !== a.type || "href" in a.props)) ||
+            (W.href = (0, m.addBasePath)(B)),
+        (i = M
+          ? l.default.cloneElement(a, W)
+          : (0, s.jsx)("a", { ...L, ...W, children: n })),
+        (0, s.jsx)(y.Provider, { value: o, children: i })
+      );
+    }
+    e.r(84508);
+    let y = (0, l.createContext)(p.IDLE_LINK_STATUS),
+      v = () => (0, l.useContext)(y);
+    ("function" == typeof r.default ||
+      ("object" == typeof r.default && null !== r.default)) &&
+      void 0 === r.default.__esModule &&
+      (Object.defineProperty(r.default, "__esModule", { value: !0 }),
+      Object.assign(r.default, r),
+      (t.exports = r.default));
+  },
+  45872,
+  (e) => {
+    "use strict";
+    var t = e.i(43476),
+      r = e.i(22016),
+      n = e.i(71645);
+    function a({ title: e, items: a, titleClassName: i }) {
+      let [s, l] = (0, n.useState)(!1);
+      return (0, t.jsxs)("div", {
+        className: "header-dropdown-container",
+        onMouseEnter: () => l(!0),
+        onMouseLeave: () => l(!1),
+        children: [
+          (0, t.jsx)("a", {
+            href: "#",
+            className: `nav-item leading-tight text-center ${i || "neon-cyan"}`,
+            children: e,
+          }),
+          s &&
+            (0, t.jsx)("div", {
+              className: "header-dropdown-menu",
+              children: a.map((e, n) =>
+                e.isSeparator
+                  ? (0, t.jsx)("div", { className: "dropdown-separator" }, n)
+                  : "header" === e.type
+                    ? (0, t.jsx)(
+                        "div",
+                        { className: "dropdown-header", children: e.name },
+                        n,
+                      )
+                    : "link" === e.type
+                      ? (0, t.jsxs)(
+                          r.default,
+                          {
+                            href: e.href || "#",
+                            className: "menu-item",
+                            target: e.href?.startsWith("http")
+                              ? "_blank"
+                              : "_self",
+                            rel: "noopener noreferrer",
+                            children: [
+                              e.name,
+                              e.subtext &&
+                                (0, t.jsx)("span", {
+                                  className: "sub-text",
+                                  children: e.subtext,
+                                }),
+                            ],
+                          },
+                          n,
+                        )
+                      : (0, t.jsxs)(
+                          "div",
+                          {
+                            className: `menu-item ${e.active ? "active-pink" : ""}`,
+                            children: [
+                              e.name,
+                              e.subtext &&
+                                (0, t.jsx)("span", {
+                                  className: "sub-text",
+                                  children: e.subtext,
+                                }),
+                            ],
+                          },
+                          n,
+                        ),
+              ),
+            }),
+        ],
+      });
+    }
+    let i = (0, e.i(75254).default)("Menu", [
+      ["line", { x1: "4", x2: "20", y1: "12", y2: "12", key: "1e0a9i" }],
+      ["line", { x1: "4", x2: "20", y1: "6", y2: "6", key: "1owob3" }],
+      ["line", { x1: "4", x2: "20", y1: "18", y2: "18", key: "yk5zj1" }],
+    ]);
+    var s = e.i(37727);
+    let l = [
+        {
+          name: "AI Price Prediction Engine",
+          subtext: "Forecasting with machine learning",
+        },
+        {
+          name: "ML Pattern Recognition",
+          subtext: "Identify historical patterns",
+        },
+        {
+          name: "Sentiment Analysis AI",
+          subtext: "Gauge market mood from news & social",
+        },
+        { name: "Smart Risk Management", subtext: "AI-driven risk assessment" },
+        {
+          name: "Automated Trading Signals",
+          subtext: "Real-time buy/sell alerts",
+        },
+        {
+          name: "Neural Networks & LSTM",
+          subtext: "Deep learning for market prediction",
+        },
+        { isSeparator: !0 },
+        {
+          name: "Binance Schema",
+          subtext: "View the Binance API Schema",
+          type: "link",
+          href: "/binance-schema",
+        },
+        {
+          name: "Data Providers",
+          subtext: "View API data providers",
+          type: "link",
+          href: "/data-providers",
+        },
+      ],
+      o = [
+        { name: "Markets", subtext: "Global financial markets", active: !0 },
+        { name: "World Sports", subtext: "International sports coverage" },
+      ],
+      c = [
+        {
+          name: "Personal Account",
+          subtext: "Manage your personal trading profile",
+          type: "link",
+          href: "/profile",
+        },
+        {
+          name: "Business Account",
+          subtext: "Manage your business trading profile",
+        },
+        { name: "VIP", subtext: "Access exclusive VIP features" },
+        { isSeparator: !0 },
+        {
+          name: "GPS Food Finder",
+          subtext: "Find restaurants near you",
+          type: "link",
+          href: "/gps-finder",
+        },
+      ],
+      d = [
+        {
+          name: "Bluetooth Connect",
+          subtext: "Connect your audio device",
+          type: "link",
+          href: "/bluetooth-connect",
+        },
+        { isSeparator: !0 },
+        { name: "Apple Music", subtext: "Listen on Apple Music", type: "item" },
+        { name: "Spotify", subtext: "Listen on Spotify", type: "item" },
+        {
+          name: "YouTube Music",
+          subtext: "Listen on YouTube Music",
+          type: "item",
+        },
+        { isSeparator: !0 },
+        {
+          name: "Top 35 Food Apps",
+          subtext: "Find food apps in your GPS region",
+          type: "item",
+        },
+        {
+          name: "Top Restaurants",
+          subtext: "Find restaurants in your area",
+          type: "link",
+          href: "/gps-finder",
+        },
+        { name: "Uber Eats", subtext: "Order food delivery", type: "item" },
+        { name: "DoorDash", subtext: "Order food delivery", type: "item" },
+        { isSeparator: !0 },
+        { name: "International Social Networks", type: "header" },
+        { name: "Facebook", type: "link", href: "https://facebook.com" },
+        { name: "Twitter / X", type: "link", href: "https://x.com" },
+        { name: "Instagram", type: "link", href: "https://instagram.com" },
+        { name: "TikTok", type: "link", href: "https://tiktok.com" },
+        { name: "LinkedIn", type: "link", href: "https://linkedin.com" },
+        { name: "Reddit", type: "link", href: "https://reddit.com" },
+        { name: "Pinterest", type: "link", href: "https://pinterest.com" },
+        { name: "Snapchat", type: "link", href: "https://snapchat.com" },
+        { name: "Telegram", type: "link", href: "https://telegram.org" },
+        { name: "WhatsApp", type: "link", href: "https://whatsapp.com" },
+        { name: "WeChat", type: "link", href: "https://wechat.com" },
+        { name: "Discord", type: "link", href: "https://discord.com" },
+      ],
+      u = [
+        {
+          name: "North American Major Sports",
+          subtext: "NFL, NCAAF, NBA, WNBA, NCAAB, MLB, NHL, Soccer",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Combat Sports",
+          subtext: "Boxing, MMA, UFC",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Racing",
+          subtext: "NASCAR, Formula 1, Horse Racing",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Golf & Tennis",
+          subtext: "PGA, LPGA, Grand Slam tournaments",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Other Sports",
+          subtext:
+            "Badminton, Cricket, Cycling, Darts, Handball, Lacrosse, Rugby, & more",
+          type: "link",
+          href: "#",
+        },
+      ],
+      m = [
+        {
+          name: "Republican",
+          subtext: "News and opinion from a conservative perspective",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Democrat",
+          subtext: "News and opinion from a Democratic perspective",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Liberal",
+          subtext: "News and opinion from a liberal perspective",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Independent",
+          subtext: "News and opinion from an independent perspective",
+          type: "link",
+          href: "#",
+        },
+      ],
+      p = [
+        {
+          name: "AI Volatility Forecast",
+          subtext: "Predict market volatility with AI",
+        },
+      ];
+    function h() {
+      return (0, t.jsxs)(t.Fragment, {
+        children: [
+          (0, t.jsxs)("div", {
+            className: "header-top-layer",
+            children: [
+              (0, t.jsx)("div", {
+                className: "flex items-center gap-4",
+                children: (0, t.jsxs)("div", {
+                  className: "header-title leading-tight",
+                  children: [
+                    (0, t.jsx)("span", {
+                      className: "neon-text",
+                      children: "Quantum",
+                    }),
+                    (0, t.jsx)("br", {}),
+                    (0, t.jsx)("span", {
+                      className: "text-white",
+                      children: "CyberVision",
+                    }),
+                  ],
+                }),
+              }),
+              (0, t.jsxs)("div", {
+                className: "nav-right",
+                children: [
+                  (0, t.jsx)(a, {
+                    title: (0, t.jsxs)(t.Fragment, {
+                      children: ["Trader", (0, t.jsx)("br", {}), "Profile"],
+                    }),
+                    items: c,
+                    titleClassName: "neon-orange",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: "Community",
+                    items: l,
+                    titleClassName: "neon-blue",
+                  }),
+                  (0, t.jsxs)(r.default, {
+                    href: "/compare-prices",
+                    className: "nav-item neon-pink text-center leading-tight",
+                    children: ["Compare", (0, t.jsx)("br", {}), "Prices"],
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "/join",
+                    className: "nav-item neon-pink",
+                    children: "Join",
+                  }),
+                ],
+              }),
+            ],
+          }),
+          (0, t.jsx)("div", {
+            className: "header-middle-layer",
+            children: (0, t.jsxs)("nav", {
+              className: "main-nav",
+              children: [
+                (0, t.jsx)(r.default, {
+                  href: "/",
+                  className: "nav-item neon-green",
+                  children: "Home",
+                }),
+                (0, t.jsx)(r.default, {
+                  href: "#",
+                  className: "nav-item neon-orange",
+                  children: "Stocks",
+                }),
+                (0, t.jsx)(r.default, {
+                  href: "/main",
+                  className: "nav-item neon-cyan",
+                  children: "Crypto",
+                }),
+                (0, t.jsx)(r.default, {
+                  href: "#",
+                  className: "nav-item neon-blue",
+                  children: "FUTURES AND COMMODITIES",
+                }),
+                (0, t.jsx)(r.default, {
+                  href: "#",
+                  className: "nav-item neon-purple",
+                  children: "Options",
+                }),
+                (0, t.jsx)(r.default, {
+                  href: "#",
+                  className: "nav-item neon-green",
+                  children: "BOND AND FIXED INCOME",
+                }),
+              ],
+            }),
+          }),
+          (0, t.jsx)("div", {
+            className: "header-bottom-layer",
+            children: (0, t.jsxs)("nav", {
+              className: "main-nav",
+              children: [
+                (0, t.jsx)(a, {
+                  title: (0, t.jsxs)(t.Fragment, {
+                    children: ["Guilty", (0, t.jsx)("br", {}), "Pleasures"],
+                  }),
+                  items: d,
+                  titleClassName: "neon-pink",
+                }),
+                (0, t.jsx)(a, {
+                  title: "FX Matrix Analyzer",
+                  items: p,
+                  titleClassName: "neon-green",
+                }),
+                (0, t.jsx)(a, {
+                  title: (0, t.jsxs)(t.Fragment, {
+                    children: [
+                      (0, t.jsx)("div", { children: "Las Vegas" }),
+                      (0, t.jsx)("div", { children: "Stats" }),
+                    ],
+                  }),
+                  items: u,
+                  titleClassName: "neon-gold glow-text",
+                }),
+                (0, t.jsx)(a, {
+                  title: (0, t.jsxs)(t.Fragment, {
+                    children: [
+                      (0, t.jsx)("div", { children: "World" }),
+                      (0, t.jsx)("div", { children: "Sports" }),
+                    ],
+                  }),
+                  items: o,
+                  titleClassName: "neon-blue",
+                }),
+                (0, t.jsx)(a, {
+                  title: "Opinions",
+                  items: m,
+                  titleClassName: "neon-pink",
+                }),
+                (0, t.jsx)(r.default, {
+                  href: "#",
+                  className: "nav-item neon-green",
+                  children: "GLOBAL ECONOMIC AND MACRO DATA SOURCES",
+                }),
+              ],
+            }),
+          }),
+          (0, t.jsx)("div", {
+            className: "header-fourth-layer",
+            children: (0, t.jsxs)("nav", {
+              className: "main-nav",
+              children: [
+                (0, t.jsx)(r.default, {
+                  href: "#",
+                  className: "nav-item neon-purple",
+                  children: "Over-the-Counter (OTC)",
+                }),
+                (0, t.jsx)(r.default, {
+                  href: "#",
+                  className: "nav-item neon-gold",
+                  children: "INDEX PROVIDERS",
+                }),
+                (0, t.jsx)(r.default, {
+                  href: "#",
+                  className: "nav-item neon-red",
+                  children: "Mutual Funds and ETFs Data",
+                }),
+                (0, t.jsx)(r.default, {
+                  href: "#",
+                  className: "nav-item neon-blue",
+                  children: "ALTERNATIVE DATA MARKETS",
+                }),
+              ],
+            }),
+          }),
+          (0, t.jsx)("div", {
+            className: "header-fifth-layer",
+            children: (0, t.jsx)("nav", { className: "main-nav" }),
+          }),
+        ],
+      });
+    }
+    function f() {
+      let [e, h] = (0, n.useState)(!1);
+      return (0, t.jsxs)(t.Fragment, {
+        children: [
+          (0, t.jsxs)("div", {
+            className: "header-top-layer",
+            children: [
+              (0, t.jsx)("div", {
+                className: "flex items-center gap-4",
+                children: (0, t.jsxs)("div", {
+                  className: "header-title leading-tight",
+                  children: [
+                    (0, t.jsx)("span", {
+                      className: "neon-text",
+                      children: "Quantum",
+                    }),
+                    (0, t.jsx)("br", {}),
+                    (0, t.jsx)("span", {
+                      className: "text-white",
+                      children: "CyberVision",
+                    }),
+                  ],
+                }),
+              }),
+              (0, t.jsx)("button", {
+                onClick: () => h(!e),
+                className: "mobile-menu-button",
+                children: e
+                  ? (0, t.jsx)(s.X, { size: 24 })
+                  : (0, t.jsx)(i, { size: 24 }),
+              }),
+            ],
+          }),
+          e &&
+            (0, t.jsx)("div", {
+              className: "mobile-menu",
+              children: (0, t.jsxs)("nav", {
+                className: "mobile-nav-links",
+                children: [
+                  (0, t.jsx)(r.default, {
+                    href: "/",
+                    className: "nav-item neon-green",
+                    children: "Home",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: (0, t.jsxs)(t.Fragment, {
+                      children: ["Trader", (0, t.jsx)("br", {}), "Profile"],
+                    }),
+                    items: c,
+                    titleClassName: "neon-orange",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: "Community",
+                    items: l,
+                    titleClassName: "neon-blue",
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "#",
+                    className: "nav-item neon-orange",
+                    children: "Stocks",
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "/main",
+                    className: "nav-item neon-cyan",
+                    children: "Crypto",
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "#",
+                    className: "nav-item neon-blue",
+                    children: "FUTURES AND COMMODITIES",
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "#",
+                    className: "nav-item neon-purple",
+                    children: "Options",
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "#",
+                    className: "nav-item neon-green",
+                    children: "BOND AND FIXED INCOME",
+                  }),
+                  (0, t.jsx)("div", { className: "mobile-menu-separator" }),
+                  (0, t.jsx)(a, {
+                    title: (0, t.jsxs)(t.Fragment, {
+                      children: ["Guilty", (0, t.jsx)("br", {}), "Pleasures"],
+                    }),
+                    items: d,
+                    titleClassName: "neon-pink",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: "FX Matrix Analyzer",
+                    items: p,
+                    titleClassName: "neon-green",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: (0, t.jsxs)(t.Fragment, {
+                      children: [
+                        (0, t.jsx)("div", { children: "Las Vegas" }),
+                        (0, t.jsx)("div", { children: "Stats" }),
+                      ],
+                    }),
+                    items: u,
+                    titleClassName: "neon-gold glow-text",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: (0, t.jsxs)(t.Fragment, {
+                      children: [
+                        (0, t.jsx)("div", { children: "World" }),
+                        (0, t.jsx)("div", { children: "Sports" }),
+                      ],
+                    }),
+                    items: o,
+                    titleClassName: "neon-blue",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: "Opinions",
+                    items: m,
+                    titleClassName: "neon-pink",
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "#",
+                    className: "nav-item neon-green",
+                    children: "GLOBAL ECONOMIC AND MACRO DATA SOURCES",
+                  }),
+                  (0, t.jsx)("div", { className: "mobile-menu-separator" }),
+                  (0, t.jsx)(r.default, {
+                    href: "#",
+                    className: "nav-item neon-purple",
+                    children: "Over-the-Counter (OTC)",
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "#",
+                    className: "nav-item neon-gold",
+                    children: "INDEX PROVIDERS",
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "#",
+                    className: "nav-item neon-red",
+                    children: "Mutual Funds and ETFs Data",
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "#",
+                    className: "nav-item neon-blue",
+                    children: "ALTERNATIVE DATA MARKETS",
+                  }),
+                  (0, t.jsx)("div", { className: "mobile-menu-separator" }),
+                  (0, t.jsx)("div", { className: "mobile-menu-separator" }),
+                  (0, t.jsxs)(r.default, {
+                    href: "/compare-prices",
+                    className: "nav-item neon-pink text-center leading-tight",
+                    children: ["Compare", (0, t.jsx)("br", {}), "Prices"],
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "/join",
+                    className: "nav-item neon-pink",
+                    children: "Join",
+                  }),
+                ],
+              }),
+            }),
+        ],
+      });
+    }
+    function x() {
+      let e = (function () {
+        let [e, t] = n.useState(void 0);
+        return (
+          n.useEffect(() => {
+            let e = window.matchMedia("(max-width: 767px)"),
+              r = () => {
+                t(window.innerWidth < 768);
+              };
+            return (
+              e.addEventListener("change", r),
+              t(window.innerWidth < 768),
+              () => e.removeEventListener("change", r)
+            );
+          }, []),
+          e
+        );
+      })();
+      return (0, t.jsx)("header", {
+        className: "header-nav",
+        children:
+          void 0 === e
+            ? (0, t.jsx)("div", {
+                className: "header-top-layer",
+                children: (0, t.jsx)("div", {
+                  className: "flex items-center gap-4",
+                  children: (0, t.jsxs)("div", {
+                    className: "header-title leading-tight",
+                    children: [
+                      (0, t.jsx)("span", {
+                        className: "neon-text",
+                        children: "Quantum",
+                      }),
+                      (0, t.jsx)("br", {}),
+                      (0, t.jsx)("span", {
+                        className: "text-white",
+                        children: "CyberVision",
+                      }),
+                    ],
+                  }),
+                }),
+              })
+            : e
+              ? (0, t.jsx)(f, {})
+              : (0, t.jsx)(h, {}),
+      });
+    }
+    e.s(["Header", () => x], 45872);
+  },
+  19455,
+  (e) => {
+    "use strict";
+    let t, r, n;
+    var a = e.i(43476),
+      i = e.i(71645);
+    function s(e, t) {
+      if ("function" == typeof e) return e(t);
+      null != e && (e.current = t);
+    }
+    var l =
+        (((n = i.forwardRef((e, t) => {
+          let { children: r, ...n } = e;
+          if (i.isValidElement(r)) {
+            var a;
+            let e,
+              l,
+              o =
+                ((a = r),
+                (l =
+                  (e = Object.getOwnPropertyDescriptor(a.props, "ref")?.get) &&
+                  "isReactWarning" in e &&
+                  e.isReactWarning)
+                  ? a.ref
+                  : (l =
+                        (e = Object.getOwnPropertyDescriptor(a, "ref")?.get) &&
+                        "isReactWarning" in e &&
+                        e.isReactWarning)
+                    ? a.props.ref
+                    : a.props.ref || a.ref),
+              c = (function (e, t) {
+                let r = { ...t };
+                for (let n in t) {
+                  let a = e[n],
+                    i = t[n];
+                  /^on[A-Z]/.test(n)
+                    ? a && i
+                      ? (r[n] = (...e) => {
+                          let t = i(...e);
+                          return (a(...e), t);
+                        })
+                      : a && (r[n] = a)
+                    : "style" === n
+                      ? (r[n] = { ...a, ...i })
+                      : "className" === n &&
+                        (r[n] = [a, i].filter(Boolean).join(" "));
+                }
+                return { ...e, ...r };
+              })(n, r.props);
+            return (
+              r.type !== i.Fragment &&
+                (c.ref = t
+                  ? (function (...e) {
+                      return (t) => {
+                        let r = !1,
+                          n = e.map((e) => {
+                            let n = s(e, t);
+                            return (r || "function" != typeof n || (r = !0), n);
+                          });
+                        if (r)
+                          return () => {
+                            for (let t = 0; t < n.length; t++) {
+                              let r = n[t];
+                              "function" == typeof r ? r() : s(e[t], null);
+                            }
+                          };
+                      };
+                    })(t, o)
+                  : o),
+              i.cloneElement(r, c)
+            );
+          }
+          return i.Children.count(r) > 1 ? i.Children.only(null) : null;
+        })).displayName = "Slot.SlotClone"),
+        (t = n),
+        ((r = i.forwardRef((e, r) => {
+          let { children: n, ...s } = e,
+            l = i.Children.toArray(n),
+            o = l.find(c);
+          if (o) {
+            let e = o.props.children,
+              n = l.map((t) =>
+                t !== o
+                  ? t
+                  : i.Children.count(e) > 1
+                    ? i.Children.only(null)
+                    : i.isValidElement(e)
+                      ? e.props.children
+                      : null,
+              );
+            return (0, a.jsx)(t, {
+              ...s,
+              ref: r,
+              children: i.isValidElement(e)
+                ? i.cloneElement(e, void 0, n)
+                : null,
+            });
+          }
+          return (0, a.jsx)(t, { ...s, ref: r, children: n });
+        })).displayName = "Slot.Slot"),
+        r),
+      o = Symbol("radix.slottable");
+    function c(e) {
+      return (
+        i.isValidElement(e) &&
+        "function" == typeof e.type &&
+        "__radixId" in e.type &&
+        e.type.__radixId === o
+      );
+    }
+    var d = e.i(25913),
+      u = e.i(75157);
+    let m = (0, d.cva)(
+        "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+        {
+          variants: {
+            variant: {
+              default: "bg-primary text-primary-foreground hover:bg-primary/90",
+              destructive:
+                "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+              outline:
+                "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+              secondary:
+                "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+              ghost: "hover:bg-accent hover:text-accent-foreground",
+              link: "text-primary underline-offset-4 hover:underline",
+            },
+            size: {
+              default: "h-10 px-4 py-2",
+              sm: "h-9 rounded-md px-3",
+              lg: "h-11 rounded-md px-8",
+              icon: "h-10 w-10",
+            },
+          },
+          defaultVariants: { variant: "default", size: "default" },
+        },
+      ),
+      p = i.forwardRef(
+        ({ className: e, variant: t, size: r, asChild: n = !1, ...i }, s) =>
+          (0, a.jsx)(n ? l : "button", {
+            className: (0, u.cn)(m({ variant: t, size: r, className: e })),
+            ref: s,
+            ...i,
+          }),
+      );
+    ((p.displayName = "Button"), e.s(["Button", () => p], 19455));
+  },
+  35804,
+  (e) => {
+    "use strict";
+    var t = e.i(71645),
+      r = e.i(34620);
+    function n(e) {
+      let [n, a] = t.useState(void 0);
+      return (
+        (0, r.useLayoutEffect)(() => {
+          if (e) {
+            a({ width: e.offsetWidth, height: e.offsetHeight });
+            let t = new ResizeObserver((t) => {
+              let r, n;
+              if (!Array.isArray(t) || !t.length) return;
+              let i = t[0];
+              if ("borderBoxSize" in i) {
+                let e = i.borderBoxSize,
+                  t = Array.isArray(e) ? e[0] : e;
+                ((r = t.inlineSize), (n = t.blockSize));
+              } else ((r = e.offsetWidth), (n = e.offsetHeight));
+              a({ width: r, height: n });
+            });
+            return (t.observe(e, { box: "border-box" }), () => t.unobserve(e));
+          }
+          a(void 0);
+        }, [e]),
+        n
+      );
+    }
+    e.s(["useSize", () => n]);
+  },
+  99682,
+  (e) => {
+    "use strict";
+    var t = e.i(71645);
+    function r(e) {
+      let r = t.useRef({ value: e, previous: e });
+      return t.useMemo(
+        () => (
+          r.current.value !== e &&
+            ((r.current.previous = r.current.value), (r.current.value = e)),
+          r.current.previous
+        ),
+        [e],
+      );
+    }
+    e.s(["usePrevious", () => r]);
+  },
+  10204,
+  (e) => {
+    "use strict";
+    var t = e.i(43476),
+      r = e.i(71645),
+      n = e.i(48425),
+      a = r.forwardRef((e, r) =>
+        (0, t.jsx)(n.Primitive.label, {
+          ...e,
+          ref: r,
+          onMouseDown: (t) => {
+            t.target.closest("button, input, select, textarea") ||
+              (e.onMouseDown?.(t),
+              !t.defaultPrevented && t.detail > 1 && t.preventDefault());
+          },
+        }),
+      );
+    a.displayName = "Label";
+    var i = e.i(25913),
+      s = e.i(75157);
+    let l = (0, i.cva)(
+        "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+      ),
+      o = r.forwardRef(({ className: e, ...r }, n) =>
+        (0, t.jsx)(a, { ref: n, className: (0, s.cn)(l(), e), ...r }),
+      );
+    ((o.displayName = a.displayName), e.s(["Label", () => o], 10204));
+  },
+  67489,
+  (e) => {
+    "use strict";
+    var t = e.i(43476),
+      r = e.i(71645),
+      n = e.i(74080);
+    function a(e, [t, r]) {
+      return Math.min(r, Math.max(t, e));
+    }
+    var i = e.i(81140),
+      s = e.i(75830),
+      l = e.i(20783),
+      o = e.i(30030),
+      c = e.i(86318),
+      d = e.i(26330),
+      u = e.i(3536),
+      m = e.i(65491),
+      p = e.i(10772),
+      h = e.i(53660),
+      f = e.i(74606),
+      x = e.i(48425),
+      g = r.forwardRef((e, n) => {
+        let { children: a, ...i } = e,
+          s = r.Children.toArray(a),
+          l = s.find(b);
+        if (l) {
+          let e = l.props.children,
+            a = s.map((t) =>
+              t !== l
+                ? t
+                : r.Children.count(e) > 1
+                  ? r.Children.only(null)
+                  : r.isValidElement(e)
+                    ? e.props.children
+                    : null,
+            );
+          return (0, t.jsx)(y, {
+            ...i,
+            ref: n,
+            children: r.isValidElement(e) ? r.cloneElement(e, void 0, a) : null,
+          });
+        }
+        return (0, t.jsx)(y, { ...i, ref: n, children: a });
+      });
+    g.displayName = "Slot";
+    var y = r.forwardRef((e, t) => {
+      let { children: n, ...a } = e;
+      if (r.isValidElement(n)) {
+        var i;
+        let e,
+          s,
+          o =
+            ((i = n),
+            (s =
+              (e = Object.getOwnPropertyDescriptor(i.props, "ref")?.get) &&
+              "isReactWarning" in e &&
+              e.isReactWarning)
+              ? i.ref
+              : (s =
+                    (e = Object.getOwnPropertyDescriptor(i, "ref")?.get) &&
+                    "isReactWarning" in e &&
+                    e.isReactWarning)
+                ? i.props.ref
+                : i.props.ref || i.ref),
+          c = (function (e, t) {
+            let r = { ...t };
+            for (let n in t) {
+              let a = e[n],
+                i = t[n];
+              /^on[A-Z]/.test(n)
+                ? a && i
+                  ? (r[n] = (...e) => {
+                      (i(...e), a(...e));
+                    })
+                  : a && (r[n] = a)
+                : "style" === n
+                  ? (r[n] = { ...a, ...i })
+                  : "className" === n &&
+                    (r[n] = [a, i].filter(Boolean).join(" "));
+            }
+            return { ...e, ...r };
+          })(a, n.props);
+        return (
+          n.type !== r.Fragment && (c.ref = t ? (0, l.composeRefs)(t, o) : o),
+          r.cloneElement(n, c)
+        );
+      }
+      return r.Children.count(n) > 1 ? r.Children.only(null) : null;
+    });
+    y.displayName = "SlotClone";
+    var v = ({ children: e }) => (0, t.jsx)(t.Fragment, { children: e });
+    function b(e) {
+      return r.isValidElement(e) && e.type === v;
+    }
+    var j = e.i(30207),
+      w = e.i(69340),
+      N = e.i(34620),
+      S = e.i(99682),
+      C = e.i(59411),
+      k = e.i(86312),
+      E = e.i(85369),
+      A = [" ", "Enter", "ArrowUp", "ArrowDown"],
+      P = [" ", "Enter"],
+      R = "Select",
+      [M, T, I] = (0, s.createCollection)(R),
+      [O, L] = (0, o.createContextScope)(R, [I, h.createPopperScope]),
+      D = (0, h.createPopperScope)(),
+      [_, F] = O(R),
+      [U, B] = O(R),
+      H = (e) => {
+        let {
+            __scopeSelect: n,
+            children: a,
+            open: i,
+            defaultOpen: s,
+            onOpenChange: l,
+            value: o,
+            defaultValue: d,
+            onValueChange: u,
+            dir: m,
+            name: f,
+            autoComplete: x,
+            disabled: g,
+            required: y,
+            form: v,
+          } = e,
+          b = D(n),
+          [j, N] = r.useState(null),
+          [S, C] = r.useState(null),
+          [k, E] = r.useState(!1),
+          A = (0, c.useDirection)(m),
+          [P = !1, R] = (0, w.useControllableState)({
+            prop: i,
+            defaultProp: s,
+            onChange: l,
+          }),
+          [T, I] = (0, w.useControllableState)({
+            prop: o,
+            defaultProp: d,
+            onChange: u,
+          }),
+          O = r.useRef(null),
+          L = !j || v || !!j.closest("form"),
+          [F, B] = r.useState(new Set()),
+          H = Array.from(F)
+            .map((e) => e.props.value)
+            .join(";");
+        return (0, t.jsx)(h.Root, {
+          ...b,
+          children: (0, t.jsxs)(_, {
+            required: y,
+            scope: n,
+            trigger: j,
+            onTriggerChange: N,
+            valueNode: S,
+            onValueNodeChange: C,
+            valueNodeHasChildren: k,
+            onValueNodeHasChildrenChange: E,
+            contentId: (0, p.useId)(),
+            value: T,
+            onValueChange: I,
+            open: P,
+            onOpenChange: R,
+            dir: A,
+            triggerPointerDownPosRef: O,
+            disabled: g,
+            children: [
+              (0, t.jsx)(M.Provider, {
+                scope: n,
+                children: (0, t.jsx)(U, {
+                  scope: e.__scopeSelect,
+                  onNativeOptionAdd: r.useCallback((e) => {
+                    B((t) => new Set(t).add(e));
+                  }, []),
+                  onNativeOptionRemove: r.useCallback((e) => {
+                    B((t) => {
+                      let r = new Set(t);
+                      return (r.delete(e), r);
+                    });
+                  }, []),
+                  children: a,
+                }),
+              }),
+              L
+                ? (0, t.jsxs)(
+                    eS,
+                    {
+                      "aria-hidden": !0,
+                      required: y,
+                      tabIndex: -1,
+                      name: f,
+                      autoComplete: x,
+                      value: T,
+                      onChange: (e) => I(e.target.value),
+                      disabled: g,
+                      form: v,
+                      children: [
+                        void 0 === T
+                          ? (0, t.jsx)("option", { value: "" })
+                          : null,
+                        Array.from(F),
+                      ],
+                    },
+                    H,
+                  )
+                : null,
+            ],
+          }),
+        });
+      };
+    H.displayName = R;
+    var V = "SelectTrigger",
+      W = r.forwardRef((e, n) => {
+        let { __scopeSelect: a, disabled: s = !1, ...o } = e,
+          c = D(a),
+          d = F(V, a),
+          u = d.disabled || s,
+          m = (0, l.useComposedRefs)(n, d.onTriggerChange),
+          p = T(a),
+          f = r.useRef("touch"),
+          [g, y, v] = eC((e) => {
+            let t = p().filter((e) => !e.disabled),
+              r = t.find((e) => e.value === d.value),
+              n = ek(t, e, r);
+            void 0 !== n && d.onValueChange(n.value);
+          }),
+          b = (e) => {
+            (u || (d.onOpenChange(!0), v()),
+              e &&
+                (d.triggerPointerDownPosRef.current = {
+                  x: Math.round(e.pageX),
+                  y: Math.round(e.pageY),
+                }));
+          };
+        return (0, t.jsx)(h.Anchor, {
+          asChild: !0,
+          ...c,
+          children: (0, t.jsx)(x.Primitive.button, {
+            type: "button",
+            role: "combobox",
+            "aria-controls": d.contentId,
+            "aria-expanded": d.open,
+            "aria-required": d.required,
+            "aria-autocomplete": "none",
+            dir: d.dir,
+            "data-state": d.open ? "open" : "closed",
+            disabled: u,
+            "data-disabled": u ? "" : void 0,
+            "data-placeholder": eN(d.value) ? "" : void 0,
+            ...o,
+            ref: m,
+            onClick: (0, i.composeEventHandlers)(o.onClick, (e) => {
+              (e.currentTarget.focus(), "mouse" !== f.current && b(e));
+            }),
+            onPointerDown: (0, i.composeEventHandlers)(o.onPointerDown, (e) => {
+              f.current = e.pointerType;
+              let t = e.target;
+              (t.hasPointerCapture(e.pointerId) &&
+                t.releasePointerCapture(e.pointerId),
+                0 === e.button &&
+                  !1 === e.ctrlKey &&
+                  "mouse" === e.pointerType &&
+                  (b(e), e.preventDefault()));
+            }),
+            onKeyDown: (0, i.composeEventHandlers)(o.onKeyDown, (e) => {
+              let t = "" !== g.current;
+              (e.ctrlKey ||
+                e.altKey ||
+                e.metaKey ||
+                1 !== e.key.length ||
+                y(e.key),
+                (!t || " " !== e.key) &&
+                  A.includes(e.key) &&
+                  (b(), e.preventDefault()));
+            }),
+          }),
+        });
+      });
+    W.displayName = V;
+    var G = "SelectValue",
+      z = r.forwardRef((e, r) => {
+        let {
+            __scopeSelect: n,
+            className: a,
+            style: i,
+            children: s,
+            placeholder: o = "",
+            ...c
+          } = e,
+          d = F(G, n),
+          { onValueNodeHasChildrenChange: u } = d,
+          m = void 0 !== s,
+          p = (0, l.useComposedRefs)(r, d.onValueNodeChange);
+        return (
+          (0, N.useLayoutEffect)(() => {
+            u(m);
+          }, [u, m]),
+          (0, t.jsx)(x.Primitive.span, {
+            ...c,
+            ref: p,
+            style: { pointerEvents: "none" },
+            children: eN(d.value) ? (0, t.jsx)(t.Fragment, { children: o }) : s,
+          })
+        );
+      });
+    z.displayName = G;
+    var K = r.forwardRef((e, r) => {
+      let { __scopeSelect: n, children: a, ...i } = e;
+      return (0, t.jsx)(x.Primitive.span, {
+        "aria-hidden": !0,
+        ...i,
+        ref: r,
+        children: a || "▼",
+      });
+    });
+    K.displayName = "SelectIcon";
+    var $ = (e) => (0, t.jsx)(f.Portal, { asChild: !0, ...e });
+    $.displayName = "SelectPortal";
+    var X = "SelectContent",
+      Q = r.forwardRef((e, a) => {
+        let i = F(X, e.__scopeSelect),
+          [s, l] = r.useState();
+        return ((0, N.useLayoutEffect)(() => {
+          l(new DocumentFragment());
+        }, []),
+        i.open)
+          ? (0, t.jsx)(Z, { ...e, ref: a })
+          : s
+            ? n.createPortal(
+                (0, t.jsx)(Y, {
+                  scope: e.__scopeSelect,
+                  children: (0, t.jsx)(M.Slot, {
+                    scope: e.__scopeSelect,
+                    children: (0, t.jsx)("div", { children: e.children }),
+                  }),
+                }),
+                s,
+              )
+            : null;
+      });
+    Q.displayName = X;
+    var [Y, q] = O(X),
+      Z = r.forwardRef((e, n) => {
+        let {
+            __scopeSelect: a,
+            position: s = "item-aligned",
+            onCloseAutoFocus: o,
+            onEscapeKeyDown: c,
+            onPointerDownOutside: p,
+            side: h,
+            sideOffset: f,
+            align: x,
+            alignOffset: y,
+            arrowPadding: v,
+            collisionBoundary: b,
+            collisionPadding: j,
+            sticky: w,
+            hideWhenDetached: N,
+            avoidCollisions: S,
+            ...C
+          } = e,
+          A = F(X, a),
+          [P, R] = r.useState(null),
+          [M, I] = r.useState(null),
+          O = (0, l.useComposedRefs)(n, (e) => R(e)),
+          [L, D] = r.useState(null),
+          [_, U] = r.useState(null),
+          B = T(a),
+          [H, V] = r.useState(!1),
+          W = r.useRef(!1);
+        (r.useEffect(() => {
+          if (P) return (0, k.hideOthers)(P);
+        }, [P]),
+          (0, u.useFocusGuards)());
+        let G = r.useCallback(
+            (e) => {
+              let [t, ...r] = B().map((e) => e.ref.current),
+                [n] = r.slice(-1),
+                a = document.activeElement;
+              for (let r of e)
+                if (
+                  r === a ||
+                  (r?.scrollIntoView({ block: "nearest" }),
+                  r === t && M && (M.scrollTop = 0),
+                  r === n && M && (M.scrollTop = M.scrollHeight),
+                  r?.focus(),
+                  document.activeElement !== a)
+                )
+                  return;
+            },
+            [B, M],
+          ),
+          z = r.useCallback(() => G([L, P]), [G, L, P]);
+        r.useEffect(() => {
+          H && z();
+        }, [H, z]);
+        let { onOpenChange: K, triggerPointerDownPosRef: $ } = A;
+        (r.useEffect(() => {
+          if (P) {
+            let e = { x: 0, y: 0 },
+              t = (t) => {
+                e = {
+                  x: Math.abs(Math.round(t.pageX) - ($.current?.x ?? 0)),
+                  y: Math.abs(Math.round(t.pageY) - ($.current?.y ?? 0)),
+                };
+              },
+              r = (r) => {
+                (e.x <= 10 && e.y <= 10
+                  ? r.preventDefault()
+                  : P.contains(r.target) || K(!1),
+                  document.removeEventListener("pointermove", t),
+                  ($.current = null));
+              };
+            return (
+              null !== $.current &&
+                (document.addEventListener("pointermove", t),
+                document.addEventListener("pointerup", r, {
+                  capture: !0,
+                  once: !0,
+                })),
+              () => {
+                (document.removeEventListener("pointermove", t),
+                  document.removeEventListener("pointerup", r, {
+                    capture: !0,
+                  }));
+              }
+            );
+          }
+        }, [P, K, $]),
+          r.useEffect(() => {
+            let e = () => K(!1);
+            return (
+              window.addEventListener("blur", e),
+              window.addEventListener("resize", e),
+              () => {
+                (window.removeEventListener("blur", e),
+                  window.removeEventListener("resize", e));
+              }
+            );
+          }, [K]));
+        let [Q, q] = eC((e) => {
+            let t = B().filter((e) => !e.disabled),
+              r = t.find((e) => e.ref.current === document.activeElement),
+              n = ek(t, e, r);
+            n && setTimeout(() => n.ref.current.focus());
+          }),
+          Z = r.useCallback(
+            (e, t, r) => {
+              let n = !W.current && !r;
+              ((void 0 !== A.value && A.value === t) || n) &&
+                (D(e), n && (W.current = !0));
+            },
+            [A.value],
+          ),
+          et = r.useCallback(() => P?.focus(), [P]),
+          er = r.useCallback(
+            (e, t, r) => {
+              let n = !W.current && !r;
+              ((void 0 !== A.value && A.value === t) || n) && U(e);
+            },
+            [A.value],
+          ),
+          en = "popper" === s ? ee : J,
+          ea =
+            en === ee
+              ? {
+                  side: h,
+                  sideOffset: f,
+                  align: x,
+                  alignOffset: y,
+                  arrowPadding: v,
+                  collisionBoundary: b,
+                  collisionPadding: j,
+                  sticky: w,
+                  hideWhenDetached: N,
+                  avoidCollisions: S,
+                }
+              : {};
+        return (0, t.jsx)(Y, {
+          scope: a,
+          content: P,
+          viewport: M,
+          onViewportChange: I,
+          itemRefCallback: Z,
+          selectedItem: L,
+          onItemLeave: et,
+          itemTextRefCallback: er,
+          focusSelectedItem: z,
+          selectedItemText: _,
+          position: s,
+          isPositioned: H,
+          searchRef: Q,
+          children: (0, t.jsx)(E.RemoveScroll, {
+            as: g,
+            allowPinchZoom: !0,
+            children: (0, t.jsx)(m.FocusScope, {
+              asChild: !0,
+              trapped: A.open,
+              onMountAutoFocus: (e) => {
+                e.preventDefault();
+              },
+              onUnmountAutoFocus: (0, i.composeEventHandlers)(o, (e) => {
+                (A.trigger?.focus({ preventScroll: !0 }), e.preventDefault());
+              }),
+              children: (0, t.jsx)(d.DismissableLayer, {
+                asChild: !0,
+                disableOutsidePointerEvents: !0,
+                onEscapeKeyDown: c,
+                onPointerDownOutside: p,
+                onFocusOutside: (e) => e.preventDefault(),
+                onDismiss: () => A.onOpenChange(!1),
+                children: (0, t.jsx)(en, {
+                  role: "listbox",
+                  id: A.contentId,
+                  "data-state": A.open ? "open" : "closed",
+                  dir: A.dir,
+                  onContextMenu: (e) => e.preventDefault(),
+                  ...C,
+                  ...ea,
+                  onPlaced: () => V(!0),
+                  ref: O,
+                  style: {
+                    display: "flex",
+                    flexDirection: "column",
+                    outline: "none",
+                    ...C.style,
+                  },
+                  onKeyDown: (0, i.composeEventHandlers)(C.onKeyDown, (e) => {
+                    let t = e.ctrlKey || e.altKey || e.metaKey;
+                    if (
+                      ("Tab" === e.key && e.preventDefault(),
+                      t || 1 !== e.key.length || q(e.key),
+                      ["ArrowUp", "ArrowDown", "Home", "End"].includes(e.key))
+                    ) {
+                      let t = B()
+                        .filter((e) => !e.disabled)
+                        .map((e) => e.ref.current);
+                      if (
+                        (["ArrowUp", "End"].includes(e.key) &&
+                          (t = t.slice().reverse()),
+                        ["ArrowUp", "ArrowDown"].includes(e.key))
+                      ) {
+                        let r = e.target,
+                          n = t.indexOf(r);
+                        t = t.slice(n + 1);
+                      }
+                      (setTimeout(() => G(t)), e.preventDefault());
+                    }
+                  }),
+                }),
+              }),
+            }),
+          }),
+        });
+      });
+    Z.displayName = "SelectContentImpl";
+    var J = r.forwardRef((e, n) => {
+      let { __scopeSelect: i, onPlaced: s, ...o } = e,
+        c = F(X, i),
+        d = q(X, i),
+        [u, m] = r.useState(null),
+        [p, h] = r.useState(null),
+        f = (0, l.useComposedRefs)(n, (e) => h(e)),
+        g = T(i),
+        y = r.useRef(!1),
+        v = r.useRef(!0),
+        {
+          viewport: b,
+          selectedItem: j,
+          selectedItemText: w,
+          focusSelectedItem: S,
+        } = d,
+        C = r.useCallback(() => {
+          if (c.trigger && c.valueNode && u && p && b && j && w) {
+            let e = c.trigger.getBoundingClientRect(),
+              t = p.getBoundingClientRect(),
+              r = c.valueNode.getBoundingClientRect(),
+              n = w.getBoundingClientRect();
+            if ("rtl" !== c.dir) {
+              let i = n.left - t.left,
+                s = r.left - i,
+                l = e.left - s,
+                o = e.width + l,
+                c = Math.max(o, t.width),
+                d = a(s, [10, Math.max(10, window.innerWidth - 10 - c)]);
+              ((u.style.minWidth = o + "px"), (u.style.left = d + "px"));
+            } else {
+              let i = t.right - n.right,
+                s = window.innerWidth - r.right - i,
+                l = window.innerWidth - e.right - s,
+                o = e.width + l,
+                c = Math.max(o, t.width),
+                d = a(s, [10, Math.max(10, window.innerWidth - 10 - c)]);
+              ((u.style.minWidth = o + "px"), (u.style.right = d + "px"));
+            }
+            let i = g(),
+              l = window.innerHeight - 20,
+              o = b.scrollHeight,
+              d = window.getComputedStyle(p),
+              m = parseInt(d.borderTopWidth, 10),
+              h = parseInt(d.paddingTop, 10),
+              f = parseInt(d.borderBottomWidth, 10),
+              x = m + h + o + parseInt(d.paddingBottom, 10) + f,
+              v = Math.min(5 * j.offsetHeight, x),
+              N = window.getComputedStyle(b),
+              S = parseInt(N.paddingTop, 10),
+              C = parseInt(N.paddingBottom, 10),
+              k = e.top + e.height / 2 - 10,
+              E = j.offsetHeight / 2,
+              A = m + h + (j.offsetTop + E);
+            if (A <= k) {
+              let e = i.length > 0 && j === i[i.length - 1].ref.current;
+              u.style.bottom = "0px";
+              let t = Math.max(
+                l - k,
+                E +
+                  (e ? C : 0) +
+                  (p.clientHeight - b.offsetTop - b.offsetHeight) +
+                  f,
+              );
+              u.style.height = A + t + "px";
+            } else {
+              let e = i.length > 0 && j === i[0].ref.current;
+              u.style.top = "0px";
+              let t = Math.max(k, m + b.offsetTop + (e ? S : 0) + E);
+              ((u.style.height = t + (x - A) + "px"),
+                (b.scrollTop = A - k + b.offsetTop));
+            }
+            ((u.style.margin = "10px 0"),
+              (u.style.minHeight = v + "px"),
+              (u.style.maxHeight = l + "px"),
+              s?.(),
+              requestAnimationFrame(() => (y.current = !0)));
+          }
+        }, [g, c.trigger, c.valueNode, u, p, b, j, w, c.dir, s]);
+      (0, N.useLayoutEffect)(() => C(), [C]);
+      let [k, E] = r.useState();
+      (0, N.useLayoutEffect)(() => {
+        p && E(window.getComputedStyle(p).zIndex);
+      }, [p]);
+      let A = r.useCallback(
+        (e) => {
+          e && !0 === v.current && (C(), S?.(), (v.current = !1));
+        },
+        [C, S],
+      );
+      return (0, t.jsx)(et, {
+        scope: i,
+        contentWrapper: u,
+        shouldExpandOnScrollRef: y,
+        onScrollButtonChange: A,
+        children: (0, t.jsx)("div", {
+          ref: m,
+          style: {
+            display: "flex",
+            flexDirection: "column",
+            position: "fixed",
+            zIndex: k,
+          },
+          children: (0, t.jsx)(x.Primitive.div, {
+            ...o,
+            ref: f,
+            style: { boxSizing: "border-box", maxHeight: "100%", ...o.style },
+          }),
+        }),
+      });
+    });
+    J.displayName = "SelectItemAlignedPosition";
+    var ee = r.forwardRef((e, r) => {
+      let {
+          __scopeSelect: n,
+          align: a = "start",
+          collisionPadding: i = 10,
+          ...s
+        } = e,
+        l = D(n);
+      return (0, t.jsx)(h.Content, {
+        ...l,
+        ...s,
+        ref: r,
+        align: a,
+        collisionPadding: i,
+        style: {
+          boxSizing: "border-box",
+          ...s.style,
+          "--radix-select-content-transform-origin":
+            "var(--radix-popper-transform-origin)",
+          "--radix-select-content-available-width":
+            "var(--radix-popper-available-width)",
+          "--radix-select-content-available-height":
+            "var(--radix-popper-available-height)",
+          "--radix-select-trigger-width": "var(--radix-popper-anchor-width)",
+          "--radix-select-trigger-height": "var(--radix-popper-anchor-height)",
+        },
+      });
+    });
+    ee.displayName = "SelectPopperPosition";
+    var [et, er] = O(X, {}),
+      en = "SelectViewport",
+      ea = r.forwardRef((e, n) => {
+        let { __scopeSelect: a, nonce: s, ...o } = e,
+          c = q(en, a),
+          d = er(en, a),
+          u = (0, l.useComposedRefs)(n, c.onViewportChange),
+          m = r.useRef(0);
+        return (0, t.jsxs)(t.Fragment, {
+          children: [
+            (0, t.jsx)("style", {
+              dangerouslySetInnerHTML: {
+                __html:
+                  "[data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}",
+              },
+              nonce: s,
+            }),
+            (0, t.jsx)(M.Slot, {
+              scope: a,
+              children: (0, t.jsx)(x.Primitive.div, {
+                "data-radix-select-viewport": "",
+                role: "presentation",
+                ...o,
+                ref: u,
+                style: {
+                  position: "relative",
+                  flex: 1,
+                  overflow: "hidden auto",
+                  ...o.style,
+                },
+                onScroll: (0, i.composeEventHandlers)(o.onScroll, (e) => {
+                  let t = e.currentTarget,
+                    { contentWrapper: r, shouldExpandOnScrollRef: n } = d;
+                  if (n?.current && r) {
+                    let e = Math.abs(m.current - t.scrollTop);
+                    if (e > 0) {
+                      let n = window.innerHeight - 20,
+                        a = Math.max(
+                          parseFloat(r.style.minHeight),
+                          parseFloat(r.style.height),
+                        );
+                      if (a < n) {
+                        let i = a + e,
+                          s = Math.min(n, i),
+                          l = i - s;
+                        ((r.style.height = s + "px"),
+                          "0px" === r.style.bottom &&
+                            ((t.scrollTop = l > 0 ? l : 0),
+                            (r.style.justifyContent = "flex-end")));
+                      }
+                    }
+                  }
+                  m.current = t.scrollTop;
+                }),
+              }),
+            }),
+          ],
+        });
+      });
+    ea.displayName = en;
+    var ei = "SelectGroup",
+      [es, el] = O(ei);
+    r.forwardRef((e, r) => {
+      let { __scopeSelect: n, ...a } = e,
+        i = (0, p.useId)();
+      return (0, t.jsx)(es, {
+        scope: n,
+        id: i,
+        children: (0, t.jsx)(x.Primitive.div, {
+          role: "group",
+          "aria-labelledby": i,
+          ...a,
+          ref: r,
+        }),
+      });
+    }).displayName = ei;
+    var eo = "SelectLabel",
+      ec = r.forwardRef((e, r) => {
+        let { __scopeSelect: n, ...a } = e,
+          i = el(eo, n);
+        return (0, t.jsx)(x.Primitive.div, { id: i.id, ...a, ref: r });
+      });
+    ec.displayName = eo;
+    var ed = "SelectItem",
+      [eu, em] = O(ed),
+      ep = r.forwardRef((e, n) => {
+        let {
+            __scopeSelect: a,
+            value: s,
+            disabled: o = !1,
+            textValue: c,
+            ...d
+          } = e,
+          u = F(ed, a),
+          m = q(ed, a),
+          h = u.value === s,
+          [f, g] = r.useState(c ?? ""),
+          [y, v] = r.useState(!1),
+          b = (0, l.useComposedRefs)(n, (e) => m.itemRefCallback?.(e, s, o)),
+          j = (0, p.useId)(),
+          w = r.useRef("touch"),
+          N = () => {
+            o || (u.onValueChange(s), u.onOpenChange(!1));
+          };
+        if ("" === s)
+          throw Error(
+            "A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.",
+          );
+        return (0, t.jsx)(eu, {
+          scope: a,
+          value: s,
+          disabled: o,
+          textId: j,
+          isSelected: h,
+          onItemTextChange: r.useCallback((e) => {
+            g((t) => t || (e?.textContent ?? "").trim());
+          }, []),
+          children: (0, t.jsx)(M.ItemSlot, {
+            scope: a,
+            value: s,
+            disabled: o,
+            textValue: f,
+            children: (0, t.jsx)(x.Primitive.div, {
+              role: "option",
+              "aria-labelledby": j,
+              "data-highlighted": y ? "" : void 0,
+              "aria-selected": h && y,
+              "data-state": h ? "checked" : "unchecked",
+              "aria-disabled": o || void 0,
+              "data-disabled": o ? "" : void 0,
+              tabIndex: o ? void 0 : -1,
+              ...d,
+              ref: b,
+              onFocus: (0, i.composeEventHandlers)(d.onFocus, () => v(!0)),
+              onBlur: (0, i.composeEventHandlers)(d.onBlur, () => v(!1)),
+              onClick: (0, i.composeEventHandlers)(d.onClick, () => {
+                "mouse" !== w.current && N();
+              }),
+              onPointerUp: (0, i.composeEventHandlers)(d.onPointerUp, () => {
+                "mouse" === w.current && N();
+              }),
+              onPointerDown: (0, i.composeEventHandlers)(
+                d.onPointerDown,
+                (e) => {
+                  w.current = e.pointerType;
+                },
+              ),
+              onPointerMove: (0, i.composeEventHandlers)(
+                d.onPointerMove,
+                (e) => {
+                  ((w.current = e.pointerType),
+                    o
+                      ? m.onItemLeave?.()
+                      : "mouse" === w.current &&
+                        e.currentTarget.focus({ preventScroll: !0 }));
+                },
+              ),
+              onPointerLeave: (0, i.composeEventHandlers)(
+                d.onPointerLeave,
+                (e) => {
+                  e.currentTarget === document.activeElement &&
+                    m.onItemLeave?.();
+                },
+              ),
+              onKeyDown: (0, i.composeEventHandlers)(d.onKeyDown, (e) => {
+                (m.searchRef?.current === "" || " " !== e.key) &&
+                  (P.includes(e.key) && N(),
+                  " " === e.key && e.preventDefault());
+              }),
+            }),
+          }),
+        });
+      });
+    ep.displayName = ed;
+    var eh = "SelectItemText",
+      ef = r.forwardRef((e, a) => {
+        let { __scopeSelect: i, className: s, style: o, ...c } = e,
+          d = F(eh, i),
+          u = q(eh, i),
+          m = em(eh, i),
+          p = B(eh, i),
+          [h, f] = r.useState(null),
+          g = (0, l.useComposedRefs)(
+            a,
+            (e) => f(e),
+            m.onItemTextChange,
+            (e) => u.itemTextRefCallback?.(e, m.value, m.disabled),
+          ),
+          y = h?.textContent,
+          v = r.useMemo(
+            () =>
+              (0, t.jsx)(
+                "option",
+                { value: m.value, disabled: m.disabled, children: y },
+                m.value,
+              ),
+            [m.disabled, m.value, y],
+          ),
+          { onNativeOptionAdd: b, onNativeOptionRemove: j } = p;
+        return (
+          (0, N.useLayoutEffect)(() => (b(v), () => j(v)), [b, j, v]),
+          (0, t.jsxs)(t.Fragment, {
+            children: [
+              (0, t.jsx)(x.Primitive.span, { id: m.textId, ...c, ref: g }),
+              m.isSelected && d.valueNode && !d.valueNodeHasChildren
+                ? n.createPortal(c.children, d.valueNode)
+                : null,
+            ],
+          })
+        );
+      });
+    ef.displayName = eh;
+    var ex = "SelectItemIndicator",
+      eg = r.forwardRef((e, r) => {
+        let { __scopeSelect: n, ...a } = e;
+        return em(ex, n).isSelected
+          ? (0, t.jsx)(x.Primitive.span, { "aria-hidden": !0, ...a, ref: r })
+          : null;
+      });
+    eg.displayName = ex;
+    var ey = "SelectScrollUpButton";
+    r.forwardRef((e, n) => {
+      let a = q(ey, e.__scopeSelect),
+        i = er(ey, e.__scopeSelect),
+        [s, o] = r.useState(!1),
+        c = (0, l.useComposedRefs)(n, i.onScrollButtonChange);
+      return (
+        (0, N.useLayoutEffect)(() => {
+          if (a.viewport && a.isPositioned) {
+            let e = function () {
+                o(t.scrollTop > 0);
+              },
+              t = a.viewport;
+            return (
+              e(),
+              t.addEventListener("scroll", e),
+              () => t.removeEventListener("scroll", e)
+            );
+          }
+        }, [a.viewport, a.isPositioned]),
+        s
+          ? (0, t.jsx)(eb, {
+              ...e,
+              ref: c,
+              onAutoScroll: () => {
+                let { viewport: e, selectedItem: t } = a;
+                e && t && (e.scrollTop = e.scrollTop - t.offsetHeight);
+              },
+            })
+          : null
+      );
+    }).displayName = ey;
+    var ev = "SelectScrollDownButton";
+    r.forwardRef((e, n) => {
+      let a = q(ev, e.__scopeSelect),
+        i = er(ev, e.__scopeSelect),
+        [s, o] = r.useState(!1),
+        c = (0, l.useComposedRefs)(n, i.onScrollButtonChange);
+      return (
+        (0, N.useLayoutEffect)(() => {
+          if (a.viewport && a.isPositioned) {
+            let e = function () {
+                let e = t.scrollHeight - t.clientHeight;
+                o(Math.ceil(t.scrollTop) < e);
+              },
+              t = a.viewport;
+            return (
+              e(),
+              t.addEventListener("scroll", e),
+              () => t.removeEventListener("scroll", e)
+            );
+          }
+        }, [a.viewport, a.isPositioned]),
+        s
+          ? (0, t.jsx)(eb, {
+              ...e,
+              ref: c,
+              onAutoScroll: () => {
+                let { viewport: e, selectedItem: t } = a;
+                e && t && (e.scrollTop = e.scrollTop + t.offsetHeight);
+              },
+            })
+          : null
+      );
+    }).displayName = ev;
+    var eb = r.forwardRef((e, n) => {
+        let { __scopeSelect: a, onAutoScroll: s, ...l } = e,
+          o = q("SelectScrollButton", a),
+          c = r.useRef(null),
+          d = T(a),
+          u = r.useCallback(() => {
+            null !== c.current &&
+              (window.clearInterval(c.current), (c.current = null));
+          }, []);
+        return (
+          r.useEffect(() => () => u(), [u]),
+          (0, N.useLayoutEffect)(() => {
+            let e = d().find((e) => e.ref.current === document.activeElement);
+            e?.ref.current?.scrollIntoView({ block: "nearest" });
+          }, [d]),
+          (0, t.jsx)(x.Primitive.div, {
+            "aria-hidden": !0,
+            ...l,
+            ref: n,
+            style: { flexShrink: 0, ...l.style },
+            onPointerDown: (0, i.composeEventHandlers)(l.onPointerDown, () => {
+              null === c.current && (c.current = window.setInterval(s, 50));
+            }),
+            onPointerMove: (0, i.composeEventHandlers)(l.onPointerMove, () => {
+              (o.onItemLeave?.(),
+                null === c.current && (c.current = window.setInterval(s, 50)));
+            }),
+            onPointerLeave: (0, i.composeEventHandlers)(
+              l.onPointerLeave,
+              () => {
+                u();
+              },
+            ),
+          })
+        );
+      }),
+      ej = r.forwardRef((e, r) => {
+        let { __scopeSelect: n, ...a } = e;
+        return (0, t.jsx)(x.Primitive.div, { "aria-hidden": !0, ...a, ref: r });
+      });
+    ej.displayName = "SelectSeparator";
+    var ew = "SelectArrow";
+    function eN(e) {
+      return "" === e || void 0 === e;
+    }
+    r.forwardRef((e, r) => {
+      let { __scopeSelect: n, ...a } = e,
+        i = D(n),
+        s = F(ew, n),
+        l = q(ew, n);
+      return s.open && "popper" === l.position
+        ? (0, t.jsx)(h.Arrow, { ...i, ...a, ref: r })
+        : null;
+    }).displayName = ew;
+    var eS = r.forwardRef((e, n) => {
+      let { value: a, ...i } = e,
+        s = r.useRef(null),
+        o = (0, l.useComposedRefs)(n, s),
+        c = (0, S.usePrevious)(a);
+      return (
+        r.useEffect(() => {
+          let e = s.current,
+            t = Object.getOwnPropertyDescriptor(
+              window.HTMLSelectElement.prototype,
+              "value",
+            ).set;
+          if (c !== a && t) {
+            let r = new Event("change", { bubbles: !0 });
+            (t.call(e, a), e.dispatchEvent(r));
+          }
+        }, [c, a]),
+        (0, t.jsx)(C.VisuallyHidden, {
+          asChild: !0,
+          children: (0, t.jsx)("select", { ...i, ref: o, defaultValue: a }),
+        })
+      );
+    });
+    function eC(e) {
+      let t = (0, j.useCallbackRef)(e),
+        n = r.useRef(""),
+        a = r.useRef(0),
+        i = r.useCallback(
+          (e) => {
+            let r = n.current + e;
+            (t(r),
+              (function e(t) {
+                ((n.current = t),
+                  window.clearTimeout(a.current),
+                  "" !== t &&
+                    (a.current = window.setTimeout(() => e(""), 1e3)));
+              })(r));
+          },
+          [t],
+        ),
+        s = r.useCallback(() => {
+          ((n.current = ""), window.clearTimeout(a.current));
+        }, []);
+      return (
+        r.useEffect(() => () => window.clearTimeout(a.current), []),
+        [n, i, s]
+      );
+    }
+    function ek(e, t, r) {
+      var n, a;
+      let i = t.length > 1 && Array.from(t).every((e) => e === t[0]) ? t[0] : t,
+        s = r ? e.indexOf(r) : -1,
+        l =
+          ((n = e),
+          (a = Math.max(s, 0)),
+          n.map((e, t) => n[(a + t) % n.length]));
+      1 === i.length && (l = l.filter((e) => e !== r));
+      let o = l.find((e) =>
+        e.textValue.toLowerCase().startsWith(i.toLowerCase()),
+      );
+      return o !== r ? o : void 0;
+    }
+    eS.displayName = "BubbleSelect";
+    var eE = e.i(43531);
+    let eA = (0, e.i(75254).default)("ChevronDown", [
+      ["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }],
+    ]);
+    var eP = e.i(75157);
+    let eR = r.forwardRef(({ className: e, children: r, ...n }, a) =>
+      (0, t.jsxs)(W, {
+        ref: a,
+        className: (0, eP.cn)(
+          "flex h-10 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          e,
+        ),
+        ...n,
+        children: [
+          r,
+          (0, t.jsx)(K, {
+            asChild: !0,
+            children: (0, t.jsx)(eA, { className: "h-4 w-4 opacity-50" }),
+          }),
+        ],
+      }),
+    );
+    eR.displayName = W.displayName;
+    let eM = r.forwardRef(
+      ({ className: e, children: r, position: n = "popper", ...a }, i) =>
+        (0, t.jsx)($, {
+          children: (0, t.jsx)(Q, {
+            ref: i,
+            className: (0, eP.cn)(
+              "relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+              "popper" === n &&
+                "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
+              e,
+            ),
+            position: n,
+            ...a,
+            children: (0, t.jsx)(ea, {
+              className: (0, eP.cn)(
+                "p-1",
+                "popper" === n &&
+                  "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]",
+              ),
+              children: r,
+            }),
+          }),
+        }),
+    );
+    ((eM.displayName = Q.displayName),
+      (r.forwardRef(({ className: e, ...r }, n) =>
+        (0, t.jsx)(ec, {
+          ref: n,
+          className: (0, eP.cn)("py-1.5 pl-8 pr-2 text-sm font-semibold", e),
+          ...r,
+        }),
+      ).displayName = ec.displayName));
+    let eT = r.forwardRef(({ className: e, children: r, ...n }, a) =>
+      (0, t.jsxs)(ep, {
+        ref: a,
+        className: (0, eP.cn)(
+          "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+          e,
+        ),
+        ...n,
+        children: [
+          (0, t.jsx)("span", {
+            className:
+              "absolute left-2 flex h-3.5 w-3.5 items-center justify-center",
+            children: (0, t.jsx)(eg, {
+              children: (0, t.jsx)(eE.Check, { className: "h-4 w-4" }),
+            }),
+          }),
+          (0, t.jsx)(ef, { children: r }),
+        ],
+      }),
+    );
+    ((eT.displayName = ep.displayName),
+      (r.forwardRef(({ className: e, ...r }, n) =>
+        (0, t.jsx)(ej, {
+          ref: n,
+          className: (0, eP.cn)("-mx-1 my-1 h-px bg-muted", e),
+          ...r,
+        }),
+      ).displayName = ej.displayName),
+      e.s(
+        [
+          "Select",
+          () => H,
+          "SelectContent",
+          () => eM,
+          "SelectItem",
+          () => eT,
+          "SelectTrigger",
+          () => eR,
+          "SelectValue",
+          () => z,
+        ],
+        67489,
+      ));
+  },
+  21130,
+  (e) => {
+    "use strict";
+    var t = e.i(43476),
+      r = e.i(71645),
+      n = e.i(45872),
+      a = e.i(75254);
+    let i = (0, a.default)("TriangleAlert", [
+        [
+          "path",
+          {
+            d: "m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",
+            key: "wmoenq",
+          },
+        ],
+        ["path", { d: "M12 9v4", key: "juzpu7" }],
+        ["path", { d: "M12 17h.01", key: "p32p05" }],
+      ]),
+      s = (0, a.default)("Globe", [
+        ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+        [
+          "path",
+          {
+            d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",
+            key: "13o1zl",
+          },
+        ],
+        ["path", { d: "M2 12h20", key: "9i4pu4" }],
+      ]);
+    var l = e.i(22016),
+      o = e.i(19455),
+      c = e.i(67489),
+      d = e.i(10204);
+    let u = {
+        en: "AiQuantumCharts holds zero responsibility if you choose to break any laws. We do not agree with your personal choices and would never go against any country’s legal code.",
+        es: "AiQuantumCharts no se hace responsable si decides infringir alguna ley...",
+        fr: "AiQuantumCharts décline toute responsabilité si vous choisissez de violer la loi...",
+        de: "AiQuantumCharts übernimmt keine Verantwortung, wenn Sie gegen Gesetze verstoßen...",
+        ru: "AiQuantumCharts не несет ответственности за нарушение вами закона...",
+        zh: "如果您选择违法，AiQuantumCharts概不负责...",
+        ja: "AiQuantumChartsは、法律違反を選択した場合の責任を一切負いません...",
+        hi: "यदि आप कानून तोड़ने का निर्णय लेते हैं तो AiQuantumCharts कोई ज़िम्मेदारी नहीं लेता...",
+        pt: "A AiQuantumCharts não se responsabiliza se você optar por violar leis...",
+        ar: "لا تتحمل AiQuantumCharts أي مسؤولية إذا اخترت انتهاك القوانين...",
+      },
+      m = {
+        US: "https://www.analyticsinsight.net/cryptocurrency-analytics-insight/crypto-regulations-in-2025-whats-changing",
+        CN: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+        RU: "https://crystalintelligence.com/crypto-regulations/pwc-global-crypto-regulation-trends-for-2025/",
+        EG: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+        BD: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+        NP: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+        DZ: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+        AF: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+        NO: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+        SG: "https://crystalintelligence.com/crypto-regulations/pwc-global-crypto-regulation-trends-for-2025/",
+        AE: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
+      };
+    function p() {
+      let [e, a] = (0, r.useState)("US"),
+        [p, h] = (0, r.useState)(!1),
+        [f, x] = (0, r.useState)(u.en),
+        [g, y] = (0, r.useState)(m.US);
+      (0, r.useEffect)(() => {
+        v(e);
+      }, [e]);
+      let v = (e) => {
+        (a(e), x(u[navigator.language.slice(0, 2)] || u.en), y(m[e] || "#"));
+      };
+      return (0, t.jsxs)(t.Fragment, {
+        children: [
+          (0, t.jsx)(n.Header, {}),
+          p &&
+            (0, t.jsxs)("div", {
+              style: {
+                position: "fixed",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "80%",
+                maxWidth: "600px",
+                background: "#1a1a2e",
+                color: "#e0e0e0",
+                border: "2px solid hsl(var(--neon-pink))",
+                padding: "2rem",
+                zIndex: 1e3,
+                borderRadius: "1rem",
+                boxShadow: "0 0 30px hsl(var(--neon-pink))",
+              },
+              children: [
+                (0, t.jsx)("h3", {
+                  className: "text-2xl font-bold neon-pink mb-4",
+                  children: "⚠️ Legal Disclaimer",
+                }),
+                (0, t.jsx)("p", { children: f }),
+                (0, t.jsx)("a", {
+                  href: g,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  className: "block mt-4 text-cyan-400 hover:underline",
+                  children: "🌍 Learn More About Mining Laws",
+                }),
+                (0, t.jsx)(o.Button, {
+                  onClick: () => h(!1),
+                  className: "mt-6 w-full",
+                  children: "I Understand",
+                }),
+              ],
+            }),
+          (0, t.jsx)("main", {
+            className: "container mx-auto px-4 py-12",
+            children: (0, t.jsxs)("div", {
+              className: "center-content max-w-4xl mx-auto",
+              children: [
+                (0, t.jsx)("h1", {
+                  className:
+                    "text-3xl md:text-4xl font-bold neon-text text-center mb-6",
+                  children: "🧱 Step-by-Step Miner Selection Guide",
+                }),
+                (0, t.jsxs)("section", {
+                  className:
+                    "p-6 rounded-lg bg-black/50 border-2 border-cyan-500/50 shadow-[0_0_20px_rgba(0,255,255,0.3)] w-full",
+                  children: [
+                    (0, t.jsx)("h2", {
+                      className:
+                        "text-2xl font-bold text-cyan-300 mb-4 text-center",
+                      children: "Check Mining Legality",
+                    }),
+                    (0, t.jsxs)("div", {
+                      className:
+                        "flex flex-col sm:flex-row items-center justify-center gap-4",
+                      children: [
+                        (0, t.jsxs)("div", {
+                          className: "flex flex-col gap-2",
+                          children: [
+                            (0, t.jsx)(d.Label, {
+                              htmlFor: "country-select",
+                              className: "text-gray-300",
+                              children: "🌐 Select Your Country:",
+                            }),
+                            (0, t.jsxs)(c.Select, {
+                              onValueChange: v,
+                              defaultValue: e,
+                              children: [
+                                (0, t.jsx)(c.SelectTrigger, {
+                                  id: "country-select",
+                                  className:
+                                    "w-[280px] bg-gray-800 border-cyan-400 text-white",
+                                  children: (0, t.jsx)(c.SelectValue, {
+                                    placeholder: "Select a country",
+                                  }),
+                                }),
+                                (0, t.jsxs)(c.SelectContent, {
+                                  className:
+                                    "bg-black text-white border-cyan-400",
+                                  children: [
+                                    (0, t.jsx)(c.SelectItem, {
+                                      value: "US",
+                                      children: "United States",
+                                    }),
+                                    (0, t.jsx)(c.SelectItem, {
+                                      value: "CN",
+                                      children: "China",
+                                    }),
+                                    (0, t.jsx)(c.SelectItem, {
+                                      value: "RU",
+                                      children: "Russia",
+                                    }),
+                                    (0, t.jsx)(c.SelectItem, {
+                                      value: "EG",
+                                      children: "Egypt",
+                                    }),
+                                    (0, t.jsx)(c.SelectItem, {
+                                      value: "BD",
+                                      children: "Bangladesh",
+                                    }),
+                                    (0, t.jsx)(c.SelectItem, {
+                                      value: "NP",
+                                      children: "Nepal",
+                                    }),
+                                    (0, t.jsx)(c.SelectItem, {
+                                      value: "DZ",
+                                      children: "Algeria",
+                                    }),
+                                    (0, t.jsx)(c.SelectItem, {
+                                      value: "AF",
+                                      children: "Afghanistan",
+                                    }),
+                                    (0, t.jsx)(c.SelectItem, {
+                                      value: "NO",
+                                      children: "Norway",
+                                    }),
+                                    (0, t.jsx)(c.SelectItem, {
+                                      value: "SG",
+                                      children: "Singapore",
+                                    }),
+                                    (0, t.jsx)(c.SelectItem, {
+                                      value: "AE",
+                                      children: "United Arab Emirates",
+                                    }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                        (0, t.jsx)(o.Button, {
+                          onClick: () => h(!0),
+                          className: "self-end h-10",
+                          children: "Show Disclaimer",
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+                (0, t.jsxs)("div", {
+                  className: "space-y-12 mt-12",
+                  children: [
+                    (0, t.jsxs)("section", {
+                      className:
+                        "p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg",
+                      children: [
+                        (0, t.jsx)("h2", {
+                          className: "text-2xl font-bold text-cyan-300 mb-4",
+                          children: "1. Identify Your Hardware Type",
+                        }),
+                        (0, t.jsx)("p", {
+                          className: "text-gray-300 mb-4",
+                          children:
+                            "**Goal:** Determine whether your computer uses CPU, GPU, or ASIC mining.",
+                        }),
+                        (0, t.jsxs)("ul", {
+                          className:
+                            "list-disc list-inside space-y-2 text-gray-300",
+                          children: [
+                            (0, t.jsxs)("li", {
+                              children: [
+                                "**CPU Mining**: Most basic; works on nearly all computers but low profitability.",
+                                (0, t.jsx)("span", {
+                                  className: "text-gray-400 block text-sm ml-6",
+                                  children:
+                                    "Example coins: Monero (XMR), VerusCoin (VRSC)",
+                                }),
+                              ],
+                            }),
+                            (0, t.jsxs)("li", {
+                              children: [
+                                "**GPU Mining**: Requires a dedicated graphics card (NVIDIA or AMD).",
+                                (0, t.jsx)("span", {
+                                  className: "text-gray-400 block text-sm ml-6",
+                                  children:
+                                    "Example coins: Ravencoin (RVN), Ergo (ERG), Ethereum Classic (ETC)",
+                                }),
+                              ],
+                            }),
+                            (0, t.jsxs)("li", {
+                              children: [
+                                "**ASIC Mining**: Specialized hardware (not typical for home users).",
+                                (0, t.jsx)("span", {
+                                  className: "text-gray-400 block text-sm ml-6",
+                                  children:
+                                    "Example coins: Bitcoin (BTC), Litecoin (LTC), Dash (DASH)",
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                        (0, t.jsxs)("div", {
+                          className: "mt-4 text-gray-300",
+                          children: [
+                            (0, t.jsx)("p", {
+                              className: "font-bold",
+                              children: "How to check:",
+                            }),
+                            (0, t.jsxs)("ul", {
+                              className: "list-disc list-inside ml-4",
+                              children: [
+                                (0, t.jsx)("li", {
+                                  children:
+                                    "On **Windows**: Open Task Manager → Performance tab → Check CPU and GPU specs.",
+                                }),
+                                (0, t.jsx)("li", {
+                                  children:
+                                    "On **macOS**: Click Apple logo → About This Mac → Overview tab.",
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                    (0, t.jsxs)("section", {
+                      className:
+                        "p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg",
+                      children: [
+                        (0, t.jsx)("h2", {
+                          className: "text-2xl font-bold text-pink-300 mb-4",
+                          children: "2. Choose Your Coin Type",
+                        }),
+                        (0, t.jsx)("p", {
+                          className: "text-gray-300 mb-4",
+                          children:
+                            "**Goal:** Select a coin that matches your hardware and mining goals.",
+                        }),
+                        (0, t.jsxs)("ul", {
+                          className:
+                            "list-disc list-inside space-y-2 text-gray-300",
+                          children: [
+                            (0, t.jsx)("li", {
+                              children:
+                                "**Privacy Coins**: Monero (XMR), Firo — best for CPU or GPU",
+                            }),
+                            (0, t.jsx)("li", {
+                              children:
+                                "**Payment Coins**: Bitcoin (BTC), Litecoin (LTC) — best for ASIC",
+                            }),
+                            (0, t.jsx)("li", {
+                              children:
+                                "**Smart Contract Coins**: Ethereum Classic (ETC), Ergo — best for GPU",
+                            }),
+                            (0, t.jsx)("li", {
+                              children:
+                                "**Experimental Coins**: Kaspa (KAS), Radiant (RXD) — GPU or CPU",
+                            }),
+                          ],
+                        }),
+                        (0, t.jsxs)("p", {
+                          className: "mt-4 text-gray-300",
+                          children: [
+                            "**Tip:** Use sites like ",
+                            (0, t.jsx)(l.default, {
+                              href: "https://whattomine.com",
+                              target: "_blank",
+                              rel: "noopener noreferrer",
+                              className: "text-cyan-400 hover:underline",
+                              children: "WhatToMine.com",
+                            }),
+                            " to compare profitability and hardware compatibility.",
+                          ],
+                        }),
+                      ],
+                    }),
+                    (0, t.jsxs)("section", {
+                      className:
+                        "p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg",
+                      children: [
+                        (0, t.jsx)("h2", {
+                          className: "text-2xl font-bold text-cyan-300 mb-4",
+                          children: "3. Match Miner Software to Your Setup",
+                        }),
+                        (0, t.jsx)("p", {
+                          className: "text-gray-300 mb-6",
+                          children:
+                            "**Goal:** Pick mining software that supports your coin, hardware, and OS.",
+                        }),
+                        (0, t.jsxs)("div", {
+                          className: "space-y-6",
+                          children: [
+                            (0, t.jsxs)("div", {
+                              children: [
+                                (0, t.jsx)("h3", {
+                                  className:
+                                    "text-xl font-bold text-cyan-200 mb-2",
+                                  children: "✅ CPU Miners",
+                                }),
+                                (0, t.jsx)("p", {
+                                  children:
+                                    "**XMRig** – Monero, RandomX coins (OS: Windows, macOS, Linux)",
+                                }),
+                                (0, t.jsx)(l.default, {
+                                  href: "https://github.com/xmrig/xmrig",
+                                  target: "_blank",
+                                  rel: "noopener noreferrer",
+                                  className:
+                                    "text-pink-400 hover:underline break-all",
+                                  children: "https://github.com/xmrig/xmrig",
+                                }),
+                                (0, t.jsx)("p", {
+                                  className: "mt-2",
+                                  children:
+                                    "**cpuminer (minerd)** – SHA-256, Scrypt coins (OS: Windows, macOS)",
+                                }),
+                                (0, t.jsx)(l.default, {
+                                  href: "https://github.com/pooler/cpuminer",
+                                  target: "_blank",
+                                  rel: "noopener noreferrer",
+                                  className:
+                                    "text-pink-400 hover:underline break-all",
+                                  children:
+                                    "https://github.com/pooler/cpuminer",
+                                }),
+                              ],
+                            }),
+                            (0, t.jsxs)("div", {
+                              children: [
+                                (0, t.jsx)("h3", {
+                                  className:
+                                    "text-xl font-bold text-cyan-200 mb-2",
+                                  children: "✅ GPU Miners",
+                                }),
+                                (0, t.jsx)("p", {
+                                  children:
+                                    "**NBMiner** – NVIDIA/AMD, Ravencoin, Ergo (OS: Windows, Linux)",
+                                }),
+                                (0, t.jsx)(l.default, {
+                                  href: "https://github.com/NebuTech/NBMiner",
+                                  target: "_blank",
+                                  rel: "noopener noreferrer",
+                                  className:
+                                    "text-pink-400 hover:underline break-all",
+                                  children:
+                                    "https://github.com/NebuTech/NBMiner",
+                                }),
+                                (0, t.jsx)("p", {
+                                  className: "mt-2",
+                                  children:
+                                    "**TeamRedMiner** – AMD-focused (OS: Windows, Linux)",
+                                }),
+                                (0, t.jsx)(l.default, {
+                                  href: "https://github.com/todxx/teamredminer",
+                                  target: "_blank",
+                                  rel: "noopener noreferrer",
+                                  className:
+                                    "text-pink-400 hover:underline break-all",
+                                  children:
+                                    "https://github.com/todxx/teamredminer",
+                                }),
+                                (0, t.jsx)("p", {
+                                  className: "mt-2",
+                                  children:
+                                    "**GMiner** – NVIDIA/AMD, Kaspa, ETC (OS: Windows, Linux)",
+                                }),
+                                (0, t.jsx)(l.default, {
+                                  href: "https://github.com/develsoftware/GMinerRelease",
+                                  target: "_blank",
+                                  rel: "noopener noreferrer",
+                                  className:
+                                    "text-pink-400 hover:underline break-all",
+                                  children:
+                                    "https://github.com/develsoftware/GMinerRelease",
+                                }),
+                              ],
+                            }),
+                            (0, t.jsxs)("div", {
+                              children: [
+                                (0, t.jsx)("h3", {
+                                  className:
+                                    "text-xl font-bold text-cyan-200 mb-2",
+                                  children: "✅ ASIC Miners",
+                                }),
+                                (0, t.jsx)("p", {
+                                  children:
+                                    "**CGMiner** – Bitcoin, Litecoin (OS: Windows, Linux)",
+                                }),
+                                (0, t.jsx)(l.default, {
+                                  href: "https://github.com/ckolivas/cgminer",
+                                  target: "_blank",
+                                  rel: "noopener noreferrer",
+                                  className:
+                                    "text-pink-400 hover:underline break-all",
+                                  children:
+                                    "https://github.com/ckolivas/cgminer",
+                                }),
+                                (0, t.jsx)("p", {
+                                  className: "mt-2",
+                                  children:
+                                    "**BFGMiner** – Modular ASIC/FPGA (OS: Windows, macOS, Linux)",
+                                }),
+                                (0, t.jsx)(l.default, {
+                                  href: "https://github.com/luke-jr/bfgminer",
+                                  target: "_blank",
+                                  rel: "noopener noreferrer",
+                                  className:
+                                    "text-pink-400 hover:underline break-all",
+                                  children:
+                                    "https://github.com/luke-jr/bfgminer",
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                    (0, t.jsxs)("section", {
+                      className:
+                        "p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg",
+                      children: [
+                        (0, t.jsx)("h2", {
+                          className: "text-2xl font-bold text-pink-300 mb-4",
+                          children: "4. Check Operating System Compatibility",
+                        }),
+                        (0, t.jsx)("p", {
+                          className: "text-gray-300 mb-4",
+                          children:
+                            "**Goal:** Ensure the miner runs smoothly on your OS.",
+                        }),
+                        (0, t.jsxs)("ul", {
+                          className:
+                            "list-disc list-inside space-y-2 text-gray-300",
+                          children: [
+                            (0, t.jsx)("li", {
+                              children:
+                                "**Windows 10/11**: Most miners support Windows. Use `.exe` installers or command-line tools.",
+                            }),
+                            (0, t.jsxs)("li", {
+                              children: [
+                                "**macOS**: Fewer miners available. Use Terminal and compile from source if needed.",
+                                (0, t.jsx)("pre", {
+                                  className:
+                                    "bg-gray-800 p-2 rounded-md mt-1 text-sm text-cyan-300",
+                                  children: (0, t.jsx)("code", {
+                                    children:
+                                      "brew install cmake && git clone https://github.com/xmrig/xmrig.git",
+                                  }),
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                        (0, t.jsx)("p", {
+                          className: "mt-4 text-gray-300",
+                          children:
+                            "**Tip:** Always run miners as administrator and whitelist them in antivirus software (they’re often flagged falsely).",
+                        }),
+                      ],
+                    }),
+                    (0, t.jsxs)("section", {
+                      className:
+                        "p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg",
+                      children: [
+                        (0, t.jsx)("h2", {
+                          className: "text-2xl font-bold text-cyan-300 mb-4",
+                          children: "5. Configure and Launch Your Miner",
+                        }),
+                        (0, t.jsx)("p", {
+                          className: "text-gray-300 mb-4",
+                          children:
+                            "**Goal:** Set up your miner with the correct pool and wallet.",
+                        }),
+                        (0, t.jsxs)("ul", {
+                          className:
+                            "list-disc list-inside space-y-2 text-gray-300",
+                          children: [
+                            (0, t.jsxs)("li", {
+                              children: [
+                                "**Choose a mining pool**: e.g., ",
+                                (0, t.jsx)(l.default, {
+                                  href: "https://minexmr.com",
+                                  target: "_blank",
+                                  rel: "noopener noreferrer",
+                                  className: "text-cyan-400 hover:underline",
+                                  children: "minexmr.com",
+                                }),
+                                " for Monero, ",
+                                (0, t.jsx)(l.default, {
+                                  href: "https://2miners.com",
+                                  target: "_blank",
+                                  rel: "noopener noreferrer",
+                                  className: "text-cyan-400 hover:underline",
+                                  children: "2miners.com",
+                                }),
+                                " for Ravencoin",
+                              ],
+                            }),
+                            (0, t.jsx)("li", {
+                              children:
+                                "**Enter your wallet address**: This is where mined coins are sent.",
+                            }),
+                            (0, t.jsx)("li", {
+                              children:
+                                "**Set launch parameters**: Usually via `.bat` (Windows) or `.sh` (macOS) files.",
+                            }),
+                          ],
+                        }),
+                        (0, t.jsx)("p", {
+                          className: "mt-4 text-gray-300",
+                          children: "**Example (XMRig config):**",
+                        }),
+                        (0, t.jsx)("pre", {
+                          className:
+                            "bg-gray-800 p-3 rounded-md mt-1 text-sm text-cyan-300",
+                          children: (0, t.jsx)("code", {
+                            children:
+                              "xmrig -o pool.minexmr.com:443 -u YOUR_WALLET_ADDRESS -k --tls",
+                          }),
+                        }),
+                      ],
+                    }),
+                    (0, t.jsxs)("section", {
+                      className:
+                        "p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg",
+                      children: [
+                        (0, t.jsx)("h2", {
+                          className: "text-2xl font-bold text-pink-300 mb-4",
+                          children: "6. Monitor Performance and Safety",
+                        }),
+                        (0, t.jsx)("p", {
+                          className: "text-gray-300 mb-4",
+                          children:
+                            "**Goal:** Track your mining stats and keep your system safe.",
+                        }),
+                        (0, t.jsxs)("ul", {
+                          className:
+                            "list-disc list-inside space-y-2 text-gray-300",
+                          children: [
+                            (0, t.jsx)("li", {
+                              children:
+                                "Use built-in miner dashboards or pool websites.",
+                            }),
+                            (0, t.jsx)("li", {
+                              children:
+                                "Watch CPU/GPU temperatures (HWMonitor, MSI Afterburner).",
+                            }),
+                            (0, t.jsx)("li", {
+                              children:
+                                "Avoid mining on battery power or overheating your system.",
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                    (0, t.jsxs)("section", {
+                      className:
+                        "p-6 rounded-lg bg-black/50 border-2 border-red-500/50 shadow-[0_0_20px_rgba(255,80,80,0.3)]",
+                      children: [
+                        (0, t.jsxs)("div", {
+                          className: "flex items-start gap-4",
+                          children: [
+                            (0, t.jsx)(s, {
+                              className:
+                                "h-8 w-8 text-red-400 flex-shrink-0 mt-1",
+                            }),
+                            (0, t.jsxs)("div", {
+                              children: [
+                                (0, t.jsx)("h2", {
+                                  className:
+                                    "text-2xl font-bold text-red-400 mb-3",
+                                  children:
+                                    "Countries Where Crypto Mining Is Illegal (2025)",
+                                }),
+                                (0, t.jsx)("p", {
+                                  className: "text-gray-300 mb-4",
+                                  children:
+                                    "As of November 2025, cryptocurrency mining is fully illegal in at least six countries, with partial or regional bans in several others. These restrictions are driven by energy concerns, financial risks, and regulatory control.",
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                        (0, t.jsx)("h3", {
+                          className: "text-xl font-bold text-red-300 mt-4 mb-2",
+                          children:
+                            "🌍 Countries Where Crypto Mining Is Fully Illegal",
+                        }),
+                        (0, t.jsxs)("ul", {
+                          className:
+                            "list-disc list-inside space-y-3 text-gray-300 pl-4",
+                          children: [
+                            (0, t.jsxs)("li", {
+                              children: [
+                                (0, t.jsx)("strong", { children: "China" }),
+                                " – Banned all crypto mining in 2021 due to energy waste and financial instability. Underground mining still persists.",
+                              ],
+                            }),
+                            (0, t.jsxs)("li", {
+                              children: [
+                                (0, t.jsx)("strong", { children: "Algeria" }),
+                                " – Outlawed all crypto activity including mining since 2017 to protect the national currency.",
+                              ],
+                            }),
+                            (0, t.jsxs)("li", {
+                              children: [
+                                (0, t.jsx)("strong", {
+                                  children: "Bangladesh",
+                                }),
+                                " – Criminalized mining and trading under anti-money laundering laws. Violators face imprisonment.",
+                              ],
+                            }),
+                            (0, t.jsxs)("li", {
+                              children: [
+                                (0, t.jsx)("strong", { children: "Nepal" }),
+                                " – Mining is illegal under the Foreign Exchange Act. Authorities conduct raids on mining farms.",
+                              ],
+                            }),
+                            (0, t.jsxs)("li", {
+                              children: [
+                                (0, t.jsx)("strong", { children: "Egypt" }),
+                                " – Banned since 2018. Religious edicts and economic concerns drive enforcement.",
+                              ],
+                            }),
+                            (0, t.jsxs)("li", {
+                              children: [
+                                (0, t.jsx)("strong", {
+                                  children: "Afghanistan",
+                                }),
+                                " – The Taliban reinstated a mining ban in 2022, shutting down exchanges and arresting operators.",
+                              ],
+                            }),
+                          ],
+                        }),
+                        (0, t.jsx)("h3", {
+                          className: "text-xl font-bold text-red-300 mt-6 mb-2",
+                          children:
+                            "⚡ Countries With Regional or Temporary Mining Bans",
+                        }),
+                        (0, t.jsxs)("ul", {
+                          className:
+                            "list-disc list-inside space-y-3 text-gray-300 pl-4",
+                          children: [
+                            (0, t.jsxs)("li", {
+                              children: [
+                                (0, t.jsx)("strong", { children: "Russia" }),
+                                " – Banned mining in 10 regions in 2025 due to energy shortages and grid instability.",
+                              ],
+                            }),
+                            (0, t.jsxs)("li", {
+                              children: [
+                                (0, t.jsx)("strong", { children: "Norway" }),
+                                " – Plans to ban new proof-of-work mining data centers in 2025 for environmental reasons.",
+                              ],
+                            }),
+                          ],
+                        }),
+                        (0, t.jsxs)("div", {
+                          className:
+                            "mt-6 p-4 rounded-md bg-red-900/30 border border-red-500/50",
+                          children: [
+                            (0, t.jsx)("h4", {
+                              className: "font-bold text-red-300",
+                              children: "🛑 Important Notes",
+                            }),
+                            (0, t.jsxs)("ul", {
+                              className:
+                                "list-disc list-inside space-y-2 text-red-200/90 mt-2",
+                              children: [
+                                (0, t.jsx)("li", {
+                                  children:
+                                    "Mining legality can change rapidly, and enforcement varies by region.",
+                                }),
+                                (0, t.jsx)("li", {
+                                  children:
+                                    "Underground mining often continues despite bans, especially in countries like China and Bangladesh.",
+                                }),
+                                (0, t.jsx)("li", {
+                                  children:
+                                    "Always check local laws before engaging in mining activities.",
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                    (0, t.jsx)("div", {
+                      className:
+                        "relative p-6 rounded-lg border-2 border-yellow-500/80 bg-yellow-900/30 shadow-[0_0_20px_rgba(255,223,0,0.3)] mt-12",
+                      children: (0, t.jsxs)("div", {
+                        className: "flex items-start gap-4",
+                        children: [
+                          (0, t.jsx)(i, {
+                            className:
+                              "h-8 w-8 text-yellow-400 flex-shrink-0 mt-1",
+                          }),
+                          (0, t.jsxs)("div", {
+                            children: [
+                              (0, t.jsx)("h2", {
+                                className: "text-2xl font-bold text-yellow-300",
+                                children: "Legal and Ethical Reminder",
+                              }),
+                              (0, t.jsx)("p", {
+                                className: "mt-2 text-yellow-200/90",
+                                children:
+                                  "Mining software may be restricted or regulated in your country. Always check local laws. You are solely responsible for downloading, installing, and running any mining software. AiQuantum Chart, and affiliated parties assume no liability for your actions or outcomes.",
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          }),
+        ],
+      });
+    }
+    e.s(["default", () => p], 21130);
+  },
+]);

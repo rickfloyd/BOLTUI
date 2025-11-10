@@ -76,7 +76,9 @@ if (fs.existsSync(path.join(projectRoot, "tsconfig.json"))) {
 try {
   log("🔥 Validating Firebase setup...");
   execSync("npx firebase-tools --version", { stdio: "ignore" });
-  execSync("npx firebase emulators:exec \"echo Firebase OK\"", { stdio: "inherit" });
+  execSync('npx firebase emulators:exec "echo Firebase OK"', {
+    stdio: "inherit",
+  });
   log("✅ Firebase config healthy.");
 } catch {
   log("⚠️ Firebase CLI issues detected — re-authenticate if needed.");

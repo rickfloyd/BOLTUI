@@ -1,63 +1,386 @@
-<!DOCTYPE html><!--I4FEFc1gKLv38C4sOSWoo--><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/cc014fcb166cf364-s.p.e32417d2.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/chunks/d78c325526336bd7.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/0b23f7dfa691eb1a.js"/><script src="/_next/static/chunks/a61ecaa4f2a2421f.js" async=""></script><script src="/_next/static/chunks/73a330e38f4c895c.js" async=""></script><script src="/_next/static/chunks/d2186dbc69a4adeb.js" async=""></script><script src="/_next/static/chunks/turbopack-8ca5b72e83cf5ed4.js" async=""></script><script src="/_next/static/chunks/ff1a16fafef87110.js" async=""></script><script src="/_next/static/chunks/1a476e30dee46234.js" async=""></script><script src="/_next/static/chunks/2af5d5865e0554ce.js" async=""></script><script src="/_next/static/chunks/51a6179494871fa9.js" async=""></script><script src="/_next/static/chunks/83bfa553819560ab.js" async=""></script><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style"/><meta name="next-size-adjust" content=""/><title>Quantum CyberVision Dashboard</title><meta name="description" content="A next-generation market analysis dashboard."/><link rel="icon" href="/favicon.ico?favicon.7ed73651.ico" sizes="48x48" type="image/x-icon"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/><script src="/_next/static/chunks/a6dad97d9634a72d.js" noModule=""></script></head><body class="ibm_plex_sans_95c0f32e-module__y9P6Ea__variable cinzel_1d341ded-module__wqg8Oa__variable font-sans font-bold"><div hidden=""><!--$--><!--/$--></div><style>
-        .data-providers-body {
-          background-color: #000;
-          color: #e5e5e5;
-          font-family: 'Courier New', monospace;
-          padding: 30px;
-        }
-        .data-providers-body h1, .data-providers-body h2, .data-providers-body h3 {
-          color: hsl(var(--neon-cyan));
-          text-shadow: 0 0 15px hsl(var(--neon-cyan));
-        }
-        .data-providers-body h1 {
-          font-size: 2.4rem;
-          text-align: center;
-          margin-bottom: 40px;
-        }
-        .data-providers-body section {
-          border: 1px solid rgba(255,255,255,0.1);
-          border-left: 5px solid hsl(var(--neon-pink));
-          background: rgba(0, 0, 0, 0.7);
-          box-shadow: 0 0 25px hsla(var(--neon-pink), 0.2);
-          margin-bottom: 40px;
-          padding: 25px;
-          border-radius: 12px;
-        }
-        .data-providers-body .api-key {
-          color: hsl(var(--neon-orange));
-          font-weight: bold;
-        }
-        .data-providers-body pre {
-          background: rgba(20, 20, 20, 0.9);
-          color: #00ffcc;
-          border-radius: 8px;
-          padding: 15px;
-          display: block;
-          overflow-x: auto;
-          border: 1px solid #222;
-          box-shadow: 0 0 12px rgba(0,255,204,0.15);
-          white-space: pre-wrap;
-          word-wrap: break-word;
-        }
-        .data-providers-body table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .data-providers-body th, .data-providers-body td {
-            border: 1px solid hsla(var(--neon-cyan), 0.3);
-            padding: 12px;
-            text-align: left;
-        }
-        .data-providers-body th {
-            background-color: hsla(var(--neon-cyan), 0.1);
-            color: hsl(var(--neon-cyan));
-        }
-        .data-providers-body td {
-            color: #ccc;
-        }
-        .data-providers-body .check {
-            color: hsl(var(--neon-green));
-            font-weight: bold;
-        }
-      </style><header class="header-nav"><div class="header-top-layer"><div class="flex items-center gap-4"><div class="header-title leading-tight"><span class="neon-text">Quantum</span><br/><span class="text-white">CyberVision</span></div></div></div></header><div class="data-providers-body"><h1>⚙️ Chart Data Provider APIs</h1><section><h2>1. TwelveData</h2><p>Your key: <span class="api-key">6892d751d0104a789847f040c031053f</span></p><h3>Best for:</h3><ul><li>Candlestick / Heikin Ashi / Renko / Line / Range Bars / Volume Chart / Tick Chart</li><li>Pie, Scatter, Histogram, Box Plot (when you aggregate volume + price data)</li></ul><h3>Endpoints:</h3><pre>https://api.twelvedata.com/time_series?symbol=BTC/USD&amp;interval=1h&amp;apikey=YOUR_KEY</pre><pre>https://api.twelvedata.com/volume?symbol=BTC/USD&amp;apikey=YOUR_KEY</pre><h3>Notes:</h3><ul><li>✅ Provides OHLCV (open, high, low, close, volume)</li><li>✅ Works for crypto, forex, and stocks</li><li>✅ Direct JSON ready for chart libraries</li></ul></section><section><h2>2. Finnhub</h2><p>Your key: <span class="api-key">d3blnapr01qqg7bv52q0d3blnapr01qqg7bv52qg</span></p><h3>Best for:</h3><ul><li>Candlestick / Heikin Ashi / Tick / Range Bars / Volume</li><li>Real-time intraday feeds for streaming dashboards</li></ul><h3>Endpoint:</h3><pre>https://finnhub.io/api/v1/crypto/candle?symbol=BINANCE:BTCUSDT&amp;resolution=1&amp;token=YOUR_KEY</pre><h3>Notes:</h3><ul><li>✅ Returns UNIX timestamp + OHLC + volume</li><li>✅ Low latency, good for live updates</li><li>✅ Pairs directly with lightweight-charts or Recharts</li></ul></section><section><h2>3. Polygon.io</h2><p>Your key: <span class="api-key">csJh0LMTPUu_Ab2a0cH1C9hvJ62WpjmV</span></p><h3>Best for:</h3><ul><li>Line / Area / Volume / Scatter / Bubble / Heatmap / Box Plot / Radar Chart</li><li>Multi-asset tick-level data or aggregates</li></ul><h3>Endpoint:</h3><pre>https://api.polygon.io/v2/aggs/ticker/X:BTCUSD/range/1/hour/2025-11-01/2025-11-07?adjusted=true&amp;sort=asc&amp;limit=50000&amp;apiKey=YOUR_KEY</pre><h3>Notes:</h3><ul><li>✅ Provides high-resolution aggregates (Open, High, Low, Close, Volume)</li><li>✅ Compatible with any chart that needs fine-grained ticks</li><li>✅ Has multiple asset classes (Crypto, Forex, Stocks)</li></ul></section><section><h2>🧠 Chart-Type Coverage Map</h2><table><thead><tr><th>Chart Type</th><th>TwelveData</th><th>Finnhub</th><th>Polygon.io</th></tr></thead><tbody><tr><td>Area / Line</td><td class="check">✅</td><td class="check">✅</td><td class="check">✅</td></tr><tr><td>Heikin Ashi</td><td class="check">✅</td><td class="check">✅</td><td class="check">✅</td></tr><tr><td>Renko</td><td class="check">✅</td><td class="check">✅</td><td class="check">✅</td></tr><tr><td>Range Bars</td><td class="check">✅</td><td class="check">✅</td><td class="check">✅</td></tr><tr><td>Tick Chart</td><td class="check">✅</td><td class="check">✅</td><td class="check">✅</td></tr><tr><td>Volume Chart</td><td class="check">✅</td><td class="check">✅</td><td class="check">✅</td></tr><tr><td>Hollow Candles</td><td class="check">✅</td><td class="check">✅</td><td class="check">✅</td></tr><tr><td>Scatter Plot</td><td class="check">✅</td><td class="check">✅</td><td class="check">✅</td></tr><tr><td>Pie / Histogram / Heatmap</td><td>✅ (aggregate)</td><td>✅ (aggregate)</td><td>✅ (aggregate)</td></tr><tr><td>Bubble / Radar / Box Plot</td><td class="check">✅</td><td class="check">✅</td><td class="check">✅</td></tr></tbody></table></section><section><h2>✅ Summary</h2><p>You’re already fully covered to power all 20 chart types.</p></section></div><!--$--><!--/$--><div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events:none"><ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol></div><script src="/_next/static/chunks/0b23f7dfa691eb1a.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[39756,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/1a476e30dee46234.js\"],\"default\"]\n3:I[37457,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/1a476e30dee46234.js\"],\"default\"]\n4:I[77855,[\"/_next/static/chunks/2af5d5865e0554ce.js\",\"/_next/static/chunks/51a6179494871fa9.js\"],\"Toaster\"]\nb:I[68027,[],\"default\"]\n:HL[\"/_next/static/chunks/d78c325526336bd7.css\",\"style\"]\n:HL[\"/_next/static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/_next/static/media/cc014fcb166cf364-s.p.e32417d2.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\",\"style\"]\n5:T7db,"])</script><script>self.__next_f.push([1,"\n        .data-providers-body {\n          background-color: #000;\n          color: #e5e5e5;\n          font-family: 'Courier New', monospace;\n          padding: 30px;\n        }\n        .data-providers-body h1, .data-providers-body h2, .data-providers-body h3 {\n          color: hsl(var(--neon-cyan));\n          text-shadow: 0 0 15px hsl(var(--neon-cyan));\n        }\n        .data-providers-body h1 {\n          font-size: 2.4rem;\n          text-align: center;\n          margin-bottom: 40px;\n        }\n        .data-providers-body section {\n          border: 1px solid rgba(255,255,255,0.1);\n          border-left: 5px solid hsl(var(--neon-pink));\n          background: rgba(0, 0, 0, 0.7);\n          box-shadow: 0 0 25px hsla(var(--neon-pink), 0.2);\n          margin-bottom: 40px;\n          padding: 25px;\n          border-radius: 12px;\n        }\n        .data-providers-body .api-key {\n          color: hsl(var(--neon-orange));\n          font-weight: bold;\n        }\n        .data-providers-body pre {\n          background: rgba(20, 20, 20, 0.9);\n          color: #00ffcc;\n          border-radius: 8px;\n          padding: 15px;\n          display: block;\n          overflow-x: auto;\n          border: 1px solid #222;\n          box-shadow: 0 0 12px rgba(0,255,204,0.15);\n          white-space: pre-wrap;\n          word-wrap: break-word;\n        }\n        .data-providers-body table {\n            width: 100%;\n            border-collapse: collapse;\n            margin-top: 20px;\n        }\n        .data-providers-body th, .data-providers-body td {\n            border: 1px solid hsla(var(--neon-cyan), 0.3);\n            padding: 12px;\n            text-align: left;\n        }\n        .data-providers-body th {\n            background-color: hsla(var(--neon-cyan), 0.1);\n            color: hsl(var(--neon-cyan));\n        }\n        .data-providers-body td {\n            color: #ccc;\n        }\n        .data-providers-body .check {\n            color: hsl(var(--neon-green));\n            font-weight: bold;\n        }\n      "])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"I4FEFc1gKLv38C4sOSWoo\",\"c\":[\"\",\"data-providers\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"data-providers\",{\"children\":[\"__PAGE__\",{}]}]},\"$undefined\",\"$undefined\",true],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/d78c325526336bd7.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/2af5d5865e0554ce.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/_next/static/chunks/51a6179494871fa9.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"stylesheet\",\"href\":\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\"}]}],[\"$\",\"body\",null,{\"className\":\"ibm_plex_sans_95c0f32e-module__y9P6Ea__variable cinzel_1d341ded-module__wqg8Oa__variable font-sans font-bold\",\"children\":[[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}],[\"$\",\"$L4\",null,{}]]}]]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"style\",null,{\"children\":\"$5\"}],\"$L6\",\"$L7\"],[\"$L8\"],\"$L9\"]}],{},null,false,false]},null,false,false]},null,false,false],\"$La\",false]],\"m\":\"$undefined\",\"G\":[\"$b\",[]],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"c:I[45872,[\"/_next/static/chunks/2af5d5865e0554ce.js\",\"/_next/static/chunks/51a6179494871fa9.js\",\"/_next/static/chunks/83bfa553819560ab.js\"],\"Header\"]\n14:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/1a476e30dee46234.js\"],\"OutletBoundary\"]\n15:\"$Sreact.suspense\"\n17:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/1a476e30dee46234.js\"],\"ViewportBoundary\"]\n19:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/1a476e30dee46234.js\"],\"MetadataBoundary\"]\n6:[\"$\",\"$Lc\",null,{}]\n"])</script><script>self.__next_f.push([1,"7:[\"$\",\"div\",null,{\"className\":\"data-providers-body\",\"children\":[[\"$\",\"h1\",null,{\"children\":\"⚙️ Chart Data Provider APIs\"}],[\"$\",\"section\",null,{\"children\":[[\"$\",\"h2\",null,{\"children\":\"1. TwelveData\"}],[\"$\",\"p\",null,{\"children\":[\"Your key: \",[\"$\",\"span\",null,{\"className\":\"api-key\",\"children\":\"6892d751d0104a789847f040c031053f\"}]]}],[\"$\",\"h3\",null,{\"children\":\"Best for:\"}],[\"$\",\"ul\",null,{\"children\":[[\"$\",\"li\",null,{\"children\":\"Candlestick / Heikin Ashi / Renko / Line / Range Bars / Volume Chart / Tick Chart\"}],[\"$\",\"li\",null,{\"children\":\"Pie, Scatter, Histogram, Box Plot (when you aggregate volume + price data)\"}]]}],[\"$\",\"h3\",null,{\"children\":\"Endpoints:\"}],[\"$\",\"pre\",null,{\"children\":\"https://api.twelvedata.com/time_series?symbol=BTC/USD\u0026interval=1h\u0026apikey=YOUR_KEY\"}],[\"$\",\"pre\",null,{\"children\":\"https://api.twelvedata.com/volume?symbol=BTC/USD\u0026apikey=YOUR_KEY\"}],[\"$\",\"h3\",null,{\"children\":\"Notes:\"}],[\"$\",\"ul\",null,{\"children\":[[\"$\",\"li\",null,{\"children\":\"✅ Provides OHLCV (open, high, low, close, volume)\"}],[\"$\",\"li\",null,{\"children\":\"✅ Works for crypto, forex, and stocks\"}],[\"$\",\"li\",null,{\"children\":\"✅ Direct JSON ready for chart libraries\"}]]}]]}],[\"$\",\"section\",null,{\"children\":[[\"$\",\"h2\",null,{\"children\":\"2. Finnhub\"}],[\"$\",\"p\",null,{\"children\":[\"Your key: \",[\"$\",\"span\",null,{\"className\":\"api-key\",\"children\":\"d3blnapr01qqg7bv52q0d3blnapr01qqg7bv52qg\"}]]}],[\"$\",\"h3\",null,{\"children\":\"Best for:\"}],[\"$\",\"ul\",null,{\"children\":[[\"$\",\"li\",null,{\"children\":\"Candlestick / Heikin Ashi / Tick / Range Bars / Volume\"}],[\"$\",\"li\",null,{\"children\":\"Real-time intraday feeds for streaming dashboards\"}]]}],[\"$\",\"h3\",null,{\"children\":\"Endpoint:\"}],[\"$\",\"pre\",null,{\"children\":\"https://finnhub.io/api/v1/crypto/candle?symbol=BINANCE:BTCUSDT\u0026resolution=1\u0026token=YOUR_KEY\"}],[\"$\",\"h3\",null,{\"children\":\"Notes:\"}],[\"$\",\"ul\",null,{\"children\":[[\"$\",\"li\",null,{\"children\":\"✅ Returns UNIX timestamp + OHLC + volume\"}],[\"$\",\"li\",null,{\"children\":\"✅ Low latency, good for live updates\"}],[\"$\",\"li\",null,{\"children\":\"✅ Pairs directly with lightweight-charts or Recharts\"}]]}]]}],[\"$\",\"section\",null,{\"children\":[[\"$\",\"h2\",null,{\"children\":\"3. Polygon.io\"}],[\"$\",\"p\",null,{\"children\":[\"Your key: \",[\"$\",\"span\",null,{\"className\":\"api-key\",\"children\":\"csJh0LMTPUu_Ab2a0cH1C9hvJ62WpjmV\"}]]}],[\"$\",\"h3\",null,{\"children\":\"Best for:\"}],[\"$\",\"ul\",null,{\"children\":[[\"$\",\"li\",null,{\"children\":\"Line / Area / Volume / Scatter / Bubble / Heatmap / Box Plot / Radar Chart\"}],[\"$\",\"li\",null,{\"children\":\"Multi-asset tick-level data or aggregates\"}]]}],[\"$\",\"h3\",null,{\"children\":\"Endpoint:\"}],[\"$\",\"pre\",null,{\"children\":\"https://api.polygon.io/v2/aggs/ticker/X:BTCUSD/range/1/hour/2025-11-01/2025-11-07?adjusted=true\u0026sort=asc\u0026limit=50000\u0026apiKey=YOUR_KEY\"}],[\"$\",\"h3\",null,{\"children\":\"Notes:\"}],[\"$\",\"ul\",null,{\"children\":[[\"$\",\"li\",null,{\"children\":\"✅ Provides high-resolution aggregates (Open, High, Low, Close, Volume)\"}],[\"$\",\"li\",null,{\"children\":\"✅ Compatible with any chart that needs fine-grained ticks\"}],[\"$\",\"li\",null,{\"children\":\"✅ Has multiple asset classes (Crypto, Forex, Stocks)\"}]]}]]}],[\"$\",\"section\",null,{\"children\":[[\"$\",\"h2\",null,{\"children\":\"🧠 Chart-Type Coverage Map\"}],[\"$\",\"table\",null,{\"children\":[[\"$\",\"thead\",null,{\"children\":[\"$\",\"tr\",null,{\"children\":[[\"$\",\"th\",null,{\"children\":\"Chart Type\"}],[\"$\",\"th\",null,{\"children\":\"TwelveData\"}],[\"$\",\"th\",null,{\"children\":\"Finnhub\"}],[\"$\",\"th\",null,{\"children\":\"Polygon.io\"}]]}]}],[\"$\",\"tbody\",null,{\"children\":[[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":\"Area / Line\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}]]}],[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":\"Heikin Ashi\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}]]}],[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":\"Renko\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}]]}],[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":\"Range Bars\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}]]}],[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":\"Tick Chart\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}]]}],[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":\"Volume Chart\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],\"$Ld\",\"$Le\"]}],\"$Lf\",\"$L10\",\"$L11\",\"$L12\"]}]]}]]}],\"$L13\"]}]\n"])</script><script>self.__next_f.push([1,"8:[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/83bfa553819560ab.js\",\"async\":true,\"nonce\":\"$undefined\"}]\n9:[\"$\",\"$L14\",null,{\"children\":[\"$\",\"$15\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@16\"}]}]\na:[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L17\",null,{\"children\":\"$@18\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$L19\",null,{\"children\":[\"$\",\"$15\",null,{\"name\":\"Next.Metadata\",\"children\":\"$@1a\"}]}]}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}]\n"])</script><script>self.__next_f.push([1,"d:[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}]\ne:[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}]\nf:[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":\"Hollow Candles\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}]]}]\n10:[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":\"Scatter Plot\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}]]}]\n11:[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":\"Pie / Histogram / Heatmap\"}],[\"$\",\"td\",null,{\"children\":\"✅ (aggregate)\"}],[\"$\",\"td\",null,{\"children\":\"✅ (aggregate)\"}],[\"$\",\"td\",null,{\"children\":\"✅ (aggregate)\"}]]}]\n12:[\"$\",\"tr\",null,{\"children\":[[\"$\",\"td\",null,{\"children\":\"Bubble / Radar / Box Plot\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}],[\"$\",\"td\",null,{\"className\":\"check\",\"children\":\"✅\"}]]}]\n13:[\"$\",\"section\",null,{\"children\":[[\"$\",\"h2\",null,{\"children\":\"✅ Summary\"}],[\"$\",\"p\",null,{\"children\":\"You’re already fully covered to power all 20 chart types.\"}]]}]\n"])</script><script>self.__next_f.push([1,"18:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"1b:I[27201,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/1a476e30dee46234.js\"],\"IconMark\"]\n1a:[[\"$\",\"title\",\"0\",{\"children\":\"Quantum CyberVision Dashboard\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"A next-generation market analysis dashboard.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"icon\",\"href\":\"/favicon.ico?favicon.7ed73651.ico\",\"sizes\":\"48x48\",\"type\":\"image/x-icon\"}],[\"$\",\"$L1b\",\"3\",{}]]\n16:null\n"])</script></body></html>
+<!doctype html>
+<!--I4FEFc1gKLv38C4sOSWoo-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="preload"
+      href="/_next/static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <link
+      rel="preload"
+      href="/_next/static/media/cc014fcb166cf364-s.p.e32417d2.woff2"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <link
+      rel="stylesheet"
+      href="/_next/static/chunks/d78c325526336bd7.css"
+      data-precedence="next"
+    />
+    <link
+      rel="preload"
+      as="script"
+      fetchpriority="low"
+      href="/_next/static/chunks/0b23f7dfa691eb1a.js"
+    />
+    <script src="/_next/static/chunks/a61ecaa4f2a2421f.js" async=""></script>
+    <script src="/_next/static/chunks/73a330e38f4c895c.js" async=""></script>
+    <script src="/_next/static/chunks/d2186dbc69a4adeb.js" async=""></script>
+    <script
+      src="/_next/static/chunks/turbopack-8ca5b72e83cf5ed4.js"
+      async=""
+    ></script>
+    <script src="/_next/static/chunks/ff1a16fafef87110.js" async=""></script>
+    <script src="/_next/static/chunks/1a476e30dee46234.js" async=""></script>
+    <script src="/_next/static/chunks/2af5d5865e0554ce.js" async=""></script>
+    <script src="/_next/static/chunks/51a6179494871fa9.js" async=""></script>
+    <script src="/_next/static/chunks/83bfa553819560ab.js" async=""></script>
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      as="style"
+    />
+    <meta name="next-size-adjust" content="" />
+    <title>Quantum CyberVision Dashboard</title>
+    <meta
+      name="description"
+      content="A next-generation market analysis dashboard."
+    />
+    <link
+      rel="icon"
+      href="/favicon.ico?favicon.7ed73651.ico"
+      sizes="48x48"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="/_next/static/chunks/a6dad97d9634a72d.js" nomodule=""></script>
+  </head>
+  <body
+    class="ibm_plex_sans_95c0f32e-module__y9P6Ea__variable cinzel_1d341ded-module__wqg8Oa__variable font-sans font-bold"
+  >
+    <div hidden=""><!--$--><!--/$--></div>
+    <style>
+      .data-providers-body {
+        background-color: #000;
+        color: #e5e5e5;
+        font-family: "Courier New", monospace;
+        padding: 30px;
+      }
+      .data-providers-body h1,
+      .data-providers-body h2,
+      .data-providers-body h3 {
+        color: hsl(var(--neon-cyan));
+        text-shadow: 0 0 15px hsl(var(--neon-cyan));
+      }
+      .data-providers-body h1 {
+        font-size: 2.4rem;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .data-providers-body section {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: 5px solid hsl(var(--neon-pink));
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 25px hsla(var(--neon-pink), 0.2);
+        margin-bottom: 40px;
+        padding: 25px;
+        border-radius: 12px;
+      }
+      .data-providers-body .api-key {
+        color: hsl(var(--neon-orange));
+        font-weight: bold;
+      }
+      .data-providers-body pre {
+        background: rgba(20, 20, 20, 0.9);
+        color: #00ffcc;
+        border-radius: 8px;
+        padding: 15px;
+        display: block;
+        overflow-x: auto;
+        border: 1px solid #222;
+        box-shadow: 0 0 12px rgba(0, 255, 204, 0.15);
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+      .data-providers-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      .data-providers-body th,
+      .data-providers-body td {
+        border: 1px solid hsla(var(--neon-cyan), 0.3);
+        padding: 12px;
+        text-align: left;
+      }
+      .data-providers-body th {
+        background-color: hsla(var(--neon-cyan), 0.1);
+        color: hsl(var(--neon-cyan));
+      }
+      .data-providers-body td {
+        color: #ccc;
+      }
+      .data-providers-body .check {
+        color: hsl(var(--neon-green));
+        font-weight: bold;
+      }
+    </style>
+    <header class="header-nav">
+      <div class="header-top-layer">
+        <div class="flex items-center gap-4">
+          <div class="header-title leading-tight">
+            <span class="neon-text">Quantum</span><br /><span class="text-white"
+              >CyberVision</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="data-providers-body">
+      <h1>⚙️ Chart Data Provider APIs</h1>
+      <section>
+        <h2>1. TwelveData</h2>
+        <p>
+          Your key:
+          <span class="api-key">6892d751d0104a789847f040c031053f</span>
+        </p>
+        <h3>Best for:</h3>
+        <ul>
+          <li>
+            Candlestick / Heikin Ashi / Renko / Line / Range Bars / Volume Chart
+            / Tick Chart
+          </li>
+          <li>
+            Pie, Scatter, Histogram, Box Plot (when you aggregate volume + price
+            data)
+          </li>
+        </ul>
+        <h3>Endpoints:</h3>
+        <pre>
+https://api.twelvedata.com/time_series?symbol=BTC/USD&amp;interval=1h&amp;apikey=YOUR_KEY</pre
+        >
+        <pre>
+https://api.twelvedata.com/volume?symbol=BTC/USD&amp;apikey=YOUR_KEY</pre
+        >
+        <h3>Notes:</h3>
+        <ul>
+          <li>✅ Provides OHLCV (open, high, low, close, volume)</li>
+          <li>✅ Works for crypto, forex, and stocks</li>
+          <li>✅ Direct JSON ready for chart libraries</li>
+        </ul>
+      </section>
+      <section>
+        <h2>2. Finnhub</h2>
+        <p>
+          Your key:
+          <span class="api-key">d3blnapr01qqg7bv52q0d3blnapr01qqg7bv52qg</span>
+        </p>
+        <h3>Best for:</h3>
+        <ul>
+          <li>Candlestick / Heikin Ashi / Tick / Range Bars / Volume</li>
+          <li>Real-time intraday feeds for streaming dashboards</li>
+        </ul>
+        <h3>Endpoint:</h3>
+        <pre>
+https://finnhub.io/api/v1/crypto/candle?symbol=BINANCE:BTCUSDT&amp;resolution=1&amp;token=YOUR_KEY</pre
+        >
+        <h3>Notes:</h3>
+        <ul>
+          <li>✅ Returns UNIX timestamp + OHLC + volume</li>
+          <li>✅ Low latency, good for live updates</li>
+          <li>✅ Pairs directly with lightweight-charts or Recharts</li>
+        </ul>
+      </section>
+      <section>
+        <h2>3. Polygon.io</h2>
+        <p>
+          Your key:
+          <span class="api-key">csJh0LMTPUu_Ab2a0cH1C9hvJ62WpjmV</span>
+        </p>
+        <h3>Best for:</h3>
+        <ul>
+          <li>
+            Line / Area / Volume / Scatter / Bubble / Heatmap / Box Plot / Radar
+            Chart
+          </li>
+          <li>Multi-asset tick-level data or aggregates</li>
+        </ul>
+        <h3>Endpoint:</h3>
+        <pre>
+https://api.polygon.io/v2/aggs/ticker/X:BTCUSD/range/1/hour/2025-11-01/2025-11-07?adjusted=true&amp;sort=asc&amp;limit=50000&amp;apiKey=YOUR_KEY</pre
+        >
+        <h3>Notes:</h3>
+        <ul>
+          <li>
+            ✅ Provides high-resolution aggregates (Open, High, Low, Close,
+            Volume)
+          </li>
+          <li>✅ Compatible with any chart that needs fine-grained ticks</li>
+          <li>✅ Has multiple asset classes (Crypto, Forex, Stocks)</li>
+        </ul>
+      </section>
+      <section>
+        <h2>🧠 Chart-Type Coverage Map</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Chart Type</th>
+              <th>TwelveData</th>
+              <th>Finnhub</th>
+              <th>Polygon.io</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Area / Line</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+            </tr>
+            <tr>
+              <td>Heikin Ashi</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+            </tr>
+            <tr>
+              <td>Renko</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+            </tr>
+            <tr>
+              <td>Range Bars</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+            </tr>
+            <tr>
+              <td>Tick Chart</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+            </tr>
+            <tr>
+              <td>Volume Chart</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+            </tr>
+            <tr>
+              <td>Hollow Candles</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+            </tr>
+            <tr>
+              <td>Scatter Plot</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+            </tr>
+            <tr>
+              <td>Pie / Histogram / Heatmap</td>
+              <td>✅ (aggregate)</td>
+              <td>✅ (aggregate)</td>
+              <td>✅ (aggregate)</td>
+            </tr>
+            <tr>
+              <td>Bubble / Radar / Box Plot</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+              <td class="check">✅</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h2>✅ Summary</h2>
+        <p>You’re already fully covered to power all 20 chart types.</p>
+      </section>
+    </div>
+    <!--$--><!--/$-->
+    <div
+      role="region"
+      aria-label="Notifications (F8)"
+      tabindex="-1"
+      style="pointer-events: none"
+    >
+      <ol
+        tabindex="-1"
+        class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"
+      ></ol>
+    </div>
+    <script
+      src="/_next/static/chunks/0b23f7dfa691eb1a.js"
+      id="_R_"
+      async=""
+    ></script>
+    <script>
+      (self.__next_f = self.__next_f || []).push([0]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '1:"$Sreact.fragment"\n2:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"default"]\n3:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"default"]\n4:I[77855,["/_next/static/chunks/2af5d5865e0554ce.js","/_next/static/chunks/51a6179494871fa9.js"],"Toaster"]\nb:I[68027,[],"default"]\n:HL["/_next/static/chunks/d78c325526336bd7.css","style"]\n:HL["/_next/static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2","font",{"crossOrigin":"","type":"font/woff2"}]\n:HL["/_next/static/media/cc014fcb166cf364-s.p.e32417d2.woff2","font",{"crossOrigin":"","type":"font/woff2"}]\n:HL["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css","style"]\n5:T7db,',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        "\n        .data-providers-body {\n          background-color: #000;\n          color: #e5e5e5;\n          font-family: 'Courier New', monospace;\n          padding: 30px;\n        }\n        .data-providers-body h1, .data-providers-body h2, .data-providers-body h3 {\n          color: hsl(var(--neon-cyan));\n          text-shadow: 0 0 15px hsl(var(--neon-cyan));\n        }\n        .data-providers-body h1 {\n          font-size: 2.4rem;\n          text-align: center;\n          margin-bottom: 40px;\n        }\n        .data-providers-body section {\n          border: 1px solid rgba(255,255,255,0.1);\n          border-left: 5px solid hsl(var(--neon-pink));\n          background: rgba(0, 0, 0, 0.7);\n          box-shadow: 0 0 25px hsla(var(--neon-pink), 0.2);\n          margin-bottom: 40px;\n          padding: 25px;\n          border-radius: 12px;\n        }\n        .data-providers-body .api-key {\n          color: hsl(var(--neon-orange));\n          font-weight: bold;\n        }\n        .data-providers-body pre {\n          background: rgba(20, 20, 20, 0.9);\n          color: #00ffcc;\n          border-radius: 8px;\n          padding: 15px;\n          display: block;\n          overflow-x: auto;\n          border: 1px solid #222;\n          box-shadow: 0 0 12px rgba(0,255,204,0.15);\n          white-space: pre-wrap;\n          word-wrap: break-word;\n        }\n        .data-providers-body table {\n            width: 100%;\n            border-collapse: collapse;\n            margin-top: 20px;\n        }\n        .data-providers-body th, .data-providers-body td {\n            border: 1px solid hsla(var(--neon-cyan), 0.3);\n            padding: 12px;\n            text-align: left;\n        }\n        .data-providers-body th {\n            background-color: hsla(var(--neon-cyan), 0.1);\n            color: hsl(var(--neon-cyan));\n        }\n        .data-providers-body td {\n            color: #ccc;\n        }\n        .data-providers-body .check {\n            color: hsl(var(--neon-green));\n            font-weight: bold;\n        }\n      ",
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '0:{"P":null,"b":"I4FEFc1gKLv38C4sOSWoo","c":["","data-providers"],"q":"","i":false,"f":[[["",{"children":["data-providers",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/d78c325526336bd7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/2af5d5865e0554ce.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/51a6179494871fa9.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"stylesheet","href":"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"}]}],["$","body",null,{"className":"ibm_plex_sans_95c0f32e-module__y9P6Ea__variable cinzel_1d341ded-module__wqg8Oa__variable font-sans font-bold","children":[["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L4",null,{}]]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[[["$","style",null,{"children":"$5"}],"$L6","$L7"],["$L8"],"$L9"]}],{},null,false,false]},null,false,false]},null,false,false],"$La",false]],"m":"$undefined","G":["$b",[]],"s":false,"S":true}\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        'c:I[45872,["/_next/static/chunks/2af5d5865e0554ce.js","/_next/static/chunks/51a6179494871fa9.js","/_next/static/chunks/83bfa553819560ab.js"],"Header"]\n14:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"OutletBoundary"]\n15:"$Sreact.suspense"\n17:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"ViewportBoundary"]\n19:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"MetadataBoundary"]\n6:["$","$Lc",null,{}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '7:["$","div",null,{"className":"data-providers-body","children":[["$","h1",null,{"children":"⚙️ Chart Data Provider APIs"}],["$","section",null,{"children":[["$","h2",null,{"children":"1. TwelveData"}],["$","p",null,{"children":["Your key: ",["$","span",null,{"className":"api-key","children":"6892d751d0104a789847f040c031053f"}]]}],["$","h3",null,{"children":"Best for:"}],["$","ul",null,{"children":[["$","li",null,{"children":"Candlestick / Heikin Ashi / Renko / Line / Range Bars / Volume Chart / Tick Chart"}],["$","li",null,{"children":"Pie, Scatter, Histogram, Box Plot (when you aggregate volume + price data)"}]]}],["$","h3",null,{"children":"Endpoints:"}],["$","pre",null,{"children":"https://api.twelvedata.com/time_series?symbol=BTC/USD\u0026interval=1h\u0026apikey=YOUR_KEY"}],["$","pre",null,{"children":"https://api.twelvedata.com/volume?symbol=BTC/USD\u0026apikey=YOUR_KEY"}],["$","h3",null,{"children":"Notes:"}],["$","ul",null,{"children":[["$","li",null,{"children":"✅ Provides OHLCV (open, high, low, close, volume)"}],["$","li",null,{"children":"✅ Works for crypto, forex, and stocks"}],["$","li",null,{"children":"✅ Direct JSON ready for chart libraries"}]]}]]}],["$","section",null,{"children":[["$","h2",null,{"children":"2. Finnhub"}],["$","p",null,{"children":["Your key: ",["$","span",null,{"className":"api-key","children":"d3blnapr01qqg7bv52q0d3blnapr01qqg7bv52qg"}]]}],["$","h3",null,{"children":"Best for:"}],["$","ul",null,{"children":[["$","li",null,{"children":"Candlestick / Heikin Ashi / Tick / Range Bars / Volume"}],["$","li",null,{"children":"Real-time intraday feeds for streaming dashboards"}]]}],["$","h3",null,{"children":"Endpoint:"}],["$","pre",null,{"children":"https://finnhub.io/api/v1/crypto/candle?symbol=BINANCE:BTCUSDT\u0026resolution=1\u0026token=YOUR_KEY"}],["$","h3",null,{"children":"Notes:"}],["$","ul",null,{"children":[["$","li",null,{"children":"✅ Returns UNIX timestamp + OHLC + volume"}],["$","li",null,{"children":"✅ Low latency, good for live updates"}],["$","li",null,{"children":"✅ Pairs directly with lightweight-charts or Recharts"}]]}]]}],["$","section",null,{"children":[["$","h2",null,{"children":"3. Polygon.io"}],["$","p",null,{"children":["Your key: ",["$","span",null,{"className":"api-key","children":"csJh0LMTPUu_Ab2a0cH1C9hvJ62WpjmV"}]]}],["$","h3",null,{"children":"Best for:"}],["$","ul",null,{"children":[["$","li",null,{"children":"Line / Area / Volume / Scatter / Bubble / Heatmap / Box Plot / Radar Chart"}],["$","li",null,{"children":"Multi-asset tick-level data or aggregates"}]]}],["$","h3",null,{"children":"Endpoint:"}],["$","pre",null,{"children":"https://api.polygon.io/v2/aggs/ticker/X:BTCUSD/range/1/hour/2025-11-01/2025-11-07?adjusted=true\u0026sort=asc\u0026limit=50000\u0026apiKey=YOUR_KEY"}],["$","h3",null,{"children":"Notes:"}],["$","ul",null,{"children":[["$","li",null,{"children":"✅ Provides high-resolution aggregates (Open, High, Low, Close, Volume)"}],["$","li",null,{"children":"✅ Compatible with any chart that needs fine-grained ticks"}],["$","li",null,{"children":"✅ Has multiple asset classes (Crypto, Forex, Stocks)"}]]}]]}],["$","section",null,{"children":[["$","h2",null,{"children":"🧠 Chart-Type Coverage Map"}],["$","table",null,{"children":[["$","thead",null,{"children":["$","tr",null,{"children":[["$","th",null,{"children":"Chart Type"}],["$","th",null,{"children":"TwelveData"}],["$","th",null,{"children":"Finnhub"}],["$","th",null,{"children":"Polygon.io"}]]}]}],["$","tbody",null,{"children":[["$","tr",null,{"children":[["$","td",null,{"children":"Area / Line"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"Heikin Ashi"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"Renko"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"Range Bars"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"Tick Chart"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}]]}],["$","tr",null,{"children":[["$","td",null,{"children":"Volume Chart"}],["$","td",null,{"className":"check","children":"✅"}],"$Ld","$Le"]}],"$Lf","$L10","$L11","$L12"]}]]}]]}],"$L13"]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '8:["$","script","script-0",{"src":"/_next/static/chunks/83bfa553819560ab.js","async":true,"nonce":"$undefined"}]\n9:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]\na:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$@18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$@1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        'd:["$","td",null,{"className":"check","children":"✅"}]\ne:["$","td",null,{"className":"check","children":"✅"}]\nf:["$","tr",null,{"children":[["$","td",null,{"children":"Hollow Candles"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}]]}]\n10:["$","tr",null,{"children":[["$","td",null,{"children":"Scatter Plot"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}]]}]\n11:["$","tr",null,{"children":[["$","td",null,{"children":"Pie / Histogram / Heatmap"}],["$","td",null,{"children":"✅ (aggregate)"}],["$","td",null,{"children":"✅ (aggregate)"}],["$","td",null,{"children":"✅ (aggregate)"}]]}]\n12:["$","tr",null,{"children":[["$","td",null,{"children":"Bubble / Radar / Box Plot"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}],["$","td",null,{"className":"check","children":"✅"}]]}]\n13:["$","section",null,{"children":[["$","h2",null,{"children":"✅ Summary"}],["$","p",null,{"children":"You’re already fully covered to power all 20 chart types."}]]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '1b:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/1a476e30dee46234.js"],"IconMark"]\n1a:[["$","title","0",{"children":"Quantum CyberVision Dashboard"}],["$","meta","1",{"name":"description","content":"A next-generation market analysis dashboard."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.7ed73651.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L1b","3",{}]]\n16:null\n',
+      ]);
+    </script>
+  </body>
+</html>

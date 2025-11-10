@@ -22,13 +22,13 @@ let pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
 pkg.dependencies = pkg.dependencies || {};
 
 const stable = {
-  "next": "15.5.6",
-  "react": "18.3.1",
+  next: "15.5.6",
+  react: "18.3.1",
   "react-dom": "18.3.1",
   "@types/react": "18.3.1",
   "@types/react-dom": "18.3.1",
   "@genkit-ai/next": "^1.22.0",
-  "eslint-config-next": "15.5.6"
+  "eslint-config-next": "15.5.6",
 };
 
 // align versions
@@ -50,7 +50,10 @@ try {
 // 3. Patch deprecated Next imports
 const srcDir = path.join(root, "src");
 if (fs.existsSync(srcDir)) {
-  const files = fs.readdirSync(srcDir, { withFileTypes: true, recursive: true });
+  const files = fs.readdirSync(srcDir, {
+    withFileTypes: true,
+    recursive: true,
+  });
   for (const f of files) {
     if (f.isFile() && /\.(js|jsx|ts|tsx)$/.test(f.name)) {
       let filePath = path.join(f.path, f.name);
@@ -70,7 +73,9 @@ if (fs.existsSync(srcDir)) {
 // 4. Auto-format and rebuild
 try {
   log("Running Prettier and ESLint auto-fix...");
-  execSync("npx prettier --write . && npx eslint . --fix", { stdio: "inherit" });
+  execSync("npx prettier --write . && npx eslint . --fix", {
+    stdio: "inherit",
+  });
 
   log("Rebuilding for Firebase...");
   execSync("npm run build", { stdio: "inherit" });

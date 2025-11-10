@@ -1,9 +1,8 @@
+"use client";
 
-'use client';
-
-import React, { useState } from 'react';
-import { Header } from '@/components/layout/header';
-import { Button } from '@/components/ui/button';
+import React, { useState } from "react";
+import { Header } from "@/components/layout/header";
+import { Button } from "@/components/ui/button";
 
 type Restaurant = {
   name: string;
@@ -15,13 +14,17 @@ export default function GpsFinderPage() {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [location, setLocation] = useState<{ lat: number, lon: number } | null>(null);
+  const [location, setLocation] = useState<{ lat: number; lon: number } | null>(
+    null,
+  );
 
   const handleLocationError = (error: GeolocationPositionError) => {
     setLoading(false);
     switch (error.code) {
       case 1: // GeolocationPositionError.PERMISSION_DENIED
-        setError("Location access denied. Please enable location permissions in your browser.");
+        setError(
+          "Location access denied. Please enable location permissions in your browser.",
+        );
         break;
       case 2: // GeolocationPositionError.POSITION_UNAVAILABLE
         setError("Location information is unavailable.");
@@ -40,7 +43,7 @@ export default function GpsFinderPage() {
       const response = await fetch(`/api/places?lat=${lat}&lon=${lon}`);
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to fetch restaurant data.');
+        throw new Error(errorData.error || "Failed to fetch restaurant data.");
       }
       const data = await response.json();
       setRestaurants(data.results);
@@ -56,14 +59,11 @@ export default function GpsFinderPage() {
       setLoading(true);
       setError(null);
       setRestaurants([]);
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setLocation({ lat: latitude, lon: longitude });
-          fetchRestaurants(latitude, longitude);
-        },
-        handleLocationError
-      );
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        setLocation({ lat: latitude, lon: longitude });
+        fetchRestaurants(latitude, longitude);
+      }, handleLocationError);
     } else {
       setError("Geolocation is not supported by your browser.");
     }
@@ -78,7 +78,8 @@ export default function GpsFinderPage() {
             🍔 Local Food Finder
           </h1>
           <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
-            Click the button below to find restaurants near your current location.
+            Click the button below to find restaurants near your current
+            location.
           </p>
           <div className="mt-8">
             <Button
@@ -86,13 +87,16 @@ export default function GpsFinderPage() {
               disabled={loading}
               className="px-8 py-6 text-lg rounded-full bg-gradient-to-r from-pink-500 to-cyan-500 font-bold hover:scale-105 transform transition-all duration-300 shadow-[0_0_25px_rgba(255,0,255,0.5)]"
             >
-              {loading ? 'Searching...' : 'Find Food Near Me'}
+              {loading ? "Searching..." : "Find Food Near Me"}
             </Button>
           </div>
 
           <div className="mt-10 text-left">
             {loading && location && (
-              <p className="text-cyan-400 text-center">📍 Your location: {location.lat.toFixed(4)}, {location.lon.toFixed(4)}. Searching for restaurants...</p>
+              <p className="text-cyan-400 text-center">
+                📍 Your location: {location.lat.toFixed(4)},{" "}
+                {location.lon.toFixed(4)}. Searching for restaurants...
+              </p>
             )}
 
             {error && (
@@ -101,23 +105,35 @@ export default function GpsFinderPage() {
 
             {restaurants.length > 0 && (
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-cyan-300 border-b-2 border-cyan-500/30 pb-3">Nearby Restaurants</h2>
+                <h2 className="text-3xl font-bold mb-6 text-cyan-300 border-b-2 border-cyan-500/30 pb-3">
+                  Nearby Restaurants
+                </h2>
                 <ul className="space-y-6">
                   {restaurants.map((place, index) => (
-                    <li key={index} className="p-4 rounded-lg bg-black/30 border border-pink-400/50">
-                      <strong className="text-xl text-white block">{place.name}</strong>
-                      <p className="text-gray-400">{place.vicinity || "Location not available"}</p>
-                      <p className="text-yellow-400">Rating: {place.rating || "N/A"} ⭐</p>
+                    <li
+                      key={index}
+                      className="p-4 rounded-lg bg-black/30 border border-pink-400/50"
+                    >
+                      <strong className="text-xl text-white block">
+                        {place.name}
+                      </strong>
+                      <p className="text-gray-400">
+                        {place.vicinity || "Location not available"}
+                      </p>
+                      <p className="text-yellow-400">
+                        Rating: {place.rating || "N/A"} ⭐
+                      </p>
                     </li>
                   ))}
                 </ul>
               </div>
             )}
-            
-            {!loading && !error && restaurants.length === 0 && location && (
-                <p className="text-gray-400 text-center text-xl">No restaurants found nearby.</p>
-            )}
 
+            {!loading && !error && restaurants.length === 0 && location && (
+              <p className="text-gray-400 text-center text-xl">
+                No restaurants found nearby.
+              </p>
+            )}
           </div>
         </div>
       </main>

@@ -1,12 +1,18 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Header } from '@/components/layout/header';
-import { AlertTriangle, Globe } from 'lucide-react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Label } from '@/components/ui/label';
+import { useState, useEffect } from "react";
+import { Header } from "@/components/layout/header";
+import { AlertTriangle, Globe } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
 
 const disclaimers: { [key: string]: string } = {
   en: "AiQuantumCharts holds zero responsibility if you choose to break any laws. We do not agree with your personal choices and would never go against any country’s legal code.",
@@ -18,7 +24,7 @@ const disclaimers: { [key: string]: string } = {
   ja: "AiQuantumChartsは、法律違反を選択した場合の責任を一切負いません...",
   hi: "यदि आप कानून तोड़ने का निर्णय लेते हैं तो AiQuantumCharts कोई ज़िम्मेदारी नहीं लेता...",
   pt: "A AiQuantumCharts não se responsabiliza se você optar por violar leis...",
-  ar: "لا تتحمل AiQuantumCharts أي مسؤولية إذا اخترت انتهاك القوانين..."
+  ar: "لا تتحمل AiQuantumCharts أي مسؤولية إذا اخترت انتهاك القوانين...",
 };
 
 const legalLinks: { [key: string]: string } = {
@@ -32,241 +38,511 @@ const legalLinks: { [key: string]: string } = {
   AF: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
   NO: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
   SG: "https://crystalintelligence.com/crypto-regulations/pwc-global-crypto-regulation-trends-for-2025/",
-  AE: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/"
+  AE: "https://www.coinrank.io/crypto/global-crypto-policy-outlook/",
 };
 
 export default function FreeMinersPage() {
-    const [selectedCountry, setSelectedCountry] = useState('US');
-    const [isPopupVisible, setIsPopupVisible] = useState(false);
-    const [disclaimerText, setDisclaimerText] = useState(disclaimers['en']);
-    const [learnMoreLink, setLearnMoreLink] = useState(legalLinks['US']);
-    
-    useEffect(() => {
-        updateDisclaimer(selectedCountry);
-    }, [selectedCountry]);
+  const [selectedCountry, setSelectedCountry] = useState("US");
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [disclaimerText, setDisclaimerText] = useState(disclaimers["en"]);
+  const [learnMoreLink, setLearnMoreLink] = useState(legalLinks["US"]);
 
-    const updateDisclaimer = (country: string) => {
-        setSelectedCountry(country);
-        const lang = navigator.language.slice(0, 2);
-        setDisclaimerText(disclaimers[lang] || disclaimers['en']);
-        setLearnMoreLink(legalLinks[country] || '#');
-    };
+  useEffect(() => {
+    updateDisclaimer(selectedCountry);
+  }, [selectedCountry]);
 
-    return (
-        <>
-            <Header />
+  const updateDisclaimer = (country: string) => {
+    setSelectedCountry(country);
+    const lang = navigator.language.slice(0, 2);
+    setDisclaimerText(disclaimers[lang] || disclaimers["en"]);
+    setLearnMoreLink(legalLinks[country] || "#");
+  };
 
-            {isPopupVisible && (
-                <div style={{
-                    position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', 
-                    width: '80%', maxWidth: '600px', background: '#1a1a2e', color: '#e0e0e0', border: '2px solid hsl(var(--neon-pink))', 
-                    padding: '2rem', zIndex: 1000, borderRadius: '1rem', boxShadow: '0 0 30px hsl(var(--neon-pink))'
-                }}>
-                    <h3 className="text-2xl font-bold neon-pink mb-4">⚠️ Legal Disclaimer</h3>
-                    <p>{disclaimerText}</p>
-                    <a href={learnMoreLink} target="_blank" rel="noopener noreferrer" 
-                        className="block mt-4 text-cyan-400 hover:underline">
-                        🌍 Learn More About Mining Laws
-                    </a>
-                    <Button onClick={() => setIsPopupVisible(false)} className="mt-6 w-full">
-                        I Understand
-                    </Button>
+  return (
+    <>
+      <Header />
+
+      {isPopupVisible && (
+        <div
+          style={{
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "80%",
+            maxWidth: "600px",
+            background: "#1a1a2e",
+            color: "#e0e0e0",
+            border: "2px solid hsl(var(--neon-pink))",
+            padding: "2rem",
+            zIndex: 1000,
+            borderRadius: "1rem",
+            boxShadow: "0 0 30px hsl(var(--neon-pink))",
+          }}
+        >
+          <h3 className="text-2xl font-bold neon-pink mb-4">
+            ⚠️ Legal Disclaimer
+          </h3>
+          <p>{disclaimerText}</p>
+          <a
+            href={learnMoreLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block mt-4 text-cyan-400 hover:underline"
+          >
+            🌍 Learn More About Mining Laws
+          </a>
+          <Button
+            onClick={() => setIsPopupVisible(false)}
+            className="mt-6 w-full"
+          >
+            I Understand
+          </Button>
+        </div>
+      )}
+
+      <main className="container mx-auto px-4 py-12">
+        <div className="center-content max-w-4xl mx-auto">
+          <h1 className="text-3xl md:text-4xl font-bold neon-text text-center mb-6">
+            🧱 Step-by-Step Miner Selection Guide
+          </h1>
+
+          <section className="p-6 rounded-lg bg-black/50 border-2 border-cyan-500/50 shadow-[0_0_20px_rgba(0,255,255,0.3)] w-full">
+            <h2 className="text-2xl font-bold text-cyan-300 mb-4 text-center">
+              Check Mining Legality
+            </h2>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="country-select" className="text-gray-300">
+                  🌐 Select Your Country:
+                </Label>
+                <Select
+                  onValueChange={updateDisclaimer}
+                  defaultValue={selectedCountry}
+                >
+                  <SelectTrigger
+                    id="country-select"
+                    className="w-[280px] bg-gray-800 border-cyan-400 text-white"
+                  >
+                    <SelectValue placeholder="Select a country" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-black text-white border-cyan-400">
+                    <SelectItem value="US">United States</SelectItem>
+                    <SelectItem value="CN">China</SelectItem>
+                    <SelectItem value="RU">Russia</SelectItem>
+                    <SelectItem value="EG">Egypt</SelectItem>
+                    <SelectItem value="BD">Bangladesh</SelectItem>
+                    <SelectItem value="NP">Nepal</SelectItem>
+                    <SelectItem value="DZ">Algeria</SelectItem>
+                    <SelectItem value="AF">Afghanistan</SelectItem>
+                    <SelectItem value="NO">Norway</SelectItem>
+                    <SelectItem value="SG">Singapore</SelectItem>
+                    <SelectItem value="AE">United Arab Emirates</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <Button
+                onClick={() => setIsPopupVisible(true)}
+                className="self-end h-10"
+              >
+                Show Disclaimer
+              </Button>
+            </div>
+          </section>
+
+          <div className="space-y-12 mt-12">
+            {/* Step 1 */}
+            <section className="p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg">
+              <h2 className="text-2xl font-bold text-cyan-300 mb-4">
+                1. Identify Your Hardware Type
+              </h2>
+              <p className="text-gray-300 mb-4">
+                **Goal:** Determine whether your computer uses CPU, GPU, or ASIC
+                mining.
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-300">
+                <li>
+                  **CPU Mining**: Most basic; works on nearly all computers but
+                  low profitability.
+                  <span className="text-gray-400 block text-sm ml-6">
+                    Example coins: Monero (XMR), VerusCoin (VRSC)
+                  </span>
+                </li>
+                <li>
+                  **GPU Mining**: Requires a dedicated graphics card (NVIDIA or
+                  AMD).
+                  <span className="text-gray-400 block text-sm ml-6">
+                    Example coins: Ravencoin (RVN), Ergo (ERG), Ethereum Classic
+                    (ETC)
+                  </span>
+                </li>
+                <li>
+                  **ASIC Mining**: Specialized hardware (not typical for home
+                  users).
+                  <span className="text-gray-400 block text-sm ml-6">
+                    Example coins: Bitcoin (BTC), Litecoin (LTC), Dash (DASH)
+                  </span>
+                </li>
+              </ul>
+              <div className="mt-4 text-gray-300">
+                <p className="font-bold">How to check:</p>
+                <ul className="list-disc list-inside ml-4">
+                  <li>
+                    On **Windows**: Open Task Manager → Performance tab → Check
+                    CPU and GPU specs.
+                  </li>
+                  <li>
+                    On **macOS**: Click Apple logo → About This Mac → Overview
+                    tab.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            {/* Step 2 */}
+            <section className="p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg">
+              <h2 className="text-2xl font-bold text-pink-300 mb-4">
+                2. Choose Your Coin Type
+              </h2>
+              <p className="text-gray-300 mb-4">
+                **Goal:** Select a coin that matches your hardware and mining
+                goals.
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-300">
+                <li>
+                  **Privacy Coins**: Monero (XMR), Firo — best for CPU or GPU
+                </li>
+                <li>
+                  **Payment Coins**: Bitcoin (BTC), Litecoin (LTC) — best for
+                  ASIC
+                </li>
+                <li>
+                  **Smart Contract Coins**: Ethereum Classic (ETC), Ergo — best
+                  for GPU
+                </li>
+                <li>
+                  **Experimental Coins**: Kaspa (KAS), Radiant (RXD) — GPU or
+                  CPU
+                </li>
+              </ul>
+              <p className="mt-4 text-gray-300">
+                **Tip:** Use sites like{" "}
+                <Link
+                  href="https://whattomine.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:underline"
+                >
+                  WhatToMine.com
+                </Link>{" "}
+                to compare profitability and hardware compatibility.
+              </p>
+            </section>
+
+            {/* Step 3 */}
+            <section className="p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg">
+              <h2 className="text-2xl font-bold text-cyan-300 mb-4">
+                3. Match Miner Software to Your Setup
+              </h2>
+              <p className="text-gray-300 mb-6">
+                **Goal:** Pick mining software that supports your coin,
+                hardware, and OS.
+              </p>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold text-cyan-200 mb-2">
+                    ✅ CPU Miners
+                  </h3>
+                  <p>
+                    **XMRig** – Monero, RandomX coins (OS: Windows, macOS,
+                    Linux)
+                  </p>
+                  <Link
+                    href="https://github.com/xmrig/xmrig"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-400 hover:underline break-all"
+                  >
+                    https://github.com/xmrig/xmrig
+                  </Link>
+                  <p className="mt-2">
+                    **cpuminer (minerd)** – SHA-256, Scrypt coins (OS: Windows,
+                    macOS)
+                  </p>
+                  <Link
+                    href="https://github.com/pooler/cpuminer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-400 hover:underline break-all"
+                  >
+                    https://github.com/pooler/cpuminer
+                  </Link>
                 </div>
-            )}
-
-            <main className="container mx-auto px-4 py-12">
-                <div className="center-content max-w-4xl mx-auto">
-                    
-                    <h1 className="text-3xl md:text-4xl font-bold neon-text text-center mb-6">
-                        🧱 Step-by-Step Miner Selection Guide
-                    </h1>
-
-                    <section className="p-6 rounded-lg bg-black/50 border-2 border-cyan-500/50 shadow-[0_0_20px_rgba(0,255,255,0.3)] w-full">
-                        <h2 className="text-2xl font-bold text-cyan-300 mb-4 text-center">Check Mining Legality</h2>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <div className='flex flex-col gap-2'>
-                                <Label htmlFor="country-select" className="text-gray-300">🌐 Select Your Country:</Label>
-                                <Select onValueChange={updateDisclaimer} defaultValue={selectedCountry}>
-                                    <SelectTrigger id="country-select" className="w-[280px] bg-gray-800 border-cyan-400 text-white">
-                                        <SelectValue placeholder="Select a country" />
-                                    </SelectTrigger>
-                                    <SelectContent className="bg-black text-white border-cyan-400">
-                                        <SelectItem value="US">United States</SelectItem>
-                                        <SelectItem value="CN">China</SelectItem>
-                                        <SelectItem value="RU">Russia</SelectItem>
-                                        <SelectItem value="EG">Egypt</SelectItem>
-                                        <SelectItem value="BD">Bangladesh</SelectItem>
-                                        <SelectItem value="NP">Nepal</SelectItem>
-                                        <SelectItem value="DZ">Algeria</SelectItem>
-                                        <SelectItem value="AF">Afghanistan</SelectItem>
-                                        <SelectItem value="NO">Norway</SelectItem>
-                                        <SelectItem value="SG">Singapore</SelectItem>
-                                        <SelectItem value="AE">United Arab Emirates</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                            </div>
-                            <Button onClick={() => setIsPopupVisible(true)} className="self-end h-10">Show Disclaimer</Button>
-                        </div>
-                    </section>
-                    
-                    <div className="space-y-12 mt-12">
-
-                        {/* Step 1 */}
-                        <section className="p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg">
-                            <h2 className="text-2xl font-bold text-cyan-300 mb-4">1. Identify Your Hardware Type</h2>
-                            <p className="text-gray-300 mb-4">**Goal:** Determine whether your computer uses CPU, GPU, or ASIC mining.</p>
-                            <ul className="list-disc list-inside space-y-2 text-gray-300">
-                                <li>**CPU Mining**: Most basic; works on nearly all computers but low profitability.
-                                  <span className="text-gray-400 block text-sm ml-6">Example coins: Monero (XMR), VerusCoin (VRSC)</span></li>
-                                <li>**GPU Mining**: Requires a dedicated graphics card (NVIDIA or AMD).
-                                  <span className="text-gray-400 block text-sm ml-6">Example coins: Ravencoin (RVN), Ergo (ERG), Ethereum Classic (ETC)</span></li>
-                                <li>**ASIC Mining**: Specialized hardware (not typical for home users).
-                                    <span className="text-gray-400 block text-sm ml-6">Example coins: Bitcoin (BTC), Litecoin (LTC), Dash (DASH)</span></li>
-                            </ul>
-                            <div className="mt-4 text-gray-300">
-                                <p className="font-bold">How to check:</p>
-                                <ul className="list-disc list-inside ml-4">
-                                    <li>On **Windows**: Open Task Manager → Performance tab → Check CPU and GPU specs.</li>
-                                    <li>On **macOS**: Click Apple logo → About This Mac → Overview tab.</li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        {/* Step 2 */}
-                        <section className="p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg">
-                            <h2 className="text-2xl font-bold text-pink-300 mb-4">2. Choose Your Coin Type</h2>
-                            <p className="text-gray-300 mb-4">**Goal:** Select a coin that matches your hardware and mining goals.</p>
-                            <ul className="list-disc list-inside space-y-2 text-gray-300">
-                                <li>**Privacy Coins**: Monero (XMR), Firo — best for CPU or GPU</li>
-                                <li>**Payment Coins**: Bitcoin (BTC), Litecoin (LTC) — best for ASIC</li>
-                                <li>**Smart Contract Coins**: Ethereum Classic (ETC), Ergo — best for GPU</li>
-                                <li>**Experimental Coins**: Kaspa (KAS), Radiant (RXD) — GPU or CPU</li>
-                            </ul>
-                             <p className="mt-4 text-gray-300">
-                                **Tip:** Use sites like <Link href="https://whattomine.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">WhatToMine.com</Link> to compare profitability and hardware compatibility.
-                            </p>
-                        </section>
-
-                        {/* Step 3 */}
-                        <section className="p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg">
-                            <h2 className="text-2xl font-bold text-cyan-300 mb-4">3. Match Miner Software to Your Setup</h2>
-                            <p className="text-gray-300 mb-6">**Goal:** Pick mining software that supports your coin, hardware, and OS.</p>
-                            <div className="space-y-6">
-                                <div>
-                                    <h3 className="text-xl font-bold text-cyan-200 mb-2">✅ CPU Miners</h3>
-                                    <p>**XMRig** – Monero, RandomX coins (OS: Windows, macOS, Linux)</p>
-                                    <Link href="https://github.com/xmrig/xmrig" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:underline break-all">https://github.com/xmrig/xmrig</Link>
-                                    <p className="mt-2">**cpuminer (minerd)** – SHA-256, Scrypt coins (OS: Windows, macOS)</p>
-                                    <Link href="https://github.com/pooler/cpuminer" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:underline break-all">https://github.com/pooler/cpuminer</Link>
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-cyan-200 mb-2">✅ GPU Miners</h3>
-                                    <p>**NBMiner** – NVIDIA/AMD, Ravencoin, Ergo (OS: Windows, Linux)</p>
-                                    <Link href="https://github.com/NebuTech/NBMiner" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:underline break-all">https://github.com/NebuTech/NBMiner</Link>
-                                    <p className="mt-2">**TeamRedMiner** – AMD-focused (OS: Windows, Linux)</p>
-                                    <Link href="https://github.com/todxx/teamredminer" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:underline break-all">https://github.com/todxx/teamredminer</Link>
-                                    <p className="mt-2">**GMiner** – NVIDIA/AMD, Kaspa, ETC (OS: Windows, Linux)</p>
-                                    <Link href="https://github.com/develsoftware/GMinerRelease" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:underline break-all">https://github.com/develsoftware/GMinerRelease</Link>
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-cyan-200 mb-2">✅ ASIC Miners</h3>
-                                    <p>**CGMiner** – Bitcoin, Litecoin (OS: Windows, Linux)</p>
-                                    <Link href="https://github.com/ckolivas/cgminer" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:underline break-all">https://github.com/ckolivas/cgminer</Link>
-                                    <p className="mt-2">**BFGMiner** – Modular ASIC/FPGA (OS: Windows, macOS, Linux)</p>
-                                    <Link href="https://github.com/luke-jr/bfgminer" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:underline break-all">https://github.com/luke-jr/bfgminer</Link>
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* Step 4 */}
-                        <section className="p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg">
-                            <h2 className="text-2xl font-bold text-pink-300 mb-4">4. Check Operating System Compatibility</h2>
-                            <p className="text-gray-300 mb-4">**Goal:** Ensure the miner runs smoothly on your OS.</p>
-                             <ul className="list-disc list-inside space-y-2 text-gray-300">
-                                <li>**Windows 10/11**: Most miners support Windows. Use `.exe` installers or command-line tools.</li>
-                                <li>**macOS**: Fewer miners available. Use Terminal and compile from source if needed. 
-                                <pre className="bg-gray-800 p-2 rounded-md mt-1 text-sm text-cyan-300"><code>brew install cmake && git clone https://github.com/xmrig/xmrig.git</code></pre>
-                                </li>
-                            </ul>
-                            <p className="mt-4 text-gray-300">**Tip:** Always run miners as administrator and whitelist them in antivirus software (they’re often flagged falsely).</p>
-                        </section>
-
-                         {/* Step 5 */}
-                        <section className="p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg">
-                            <h2 className="text-2xl font-bold text-cyan-300 mb-4">5. Configure and Launch Your Miner</h2>
-                            <p className="text-gray-300 mb-4">**Goal:** Set up your miner with the correct pool and wallet.</p>
-                             <ul className="list-disc list-inside space-y-2 text-gray-300">
-                                <li>**Choose a mining pool**: e.g., <Link href="https://minexmr.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">minexmr.com</Link> for Monero, <Link href="https://2miners.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">2miners.com</Link> for Ravencoin</li>
-                                <li>**Enter your wallet address**: This is where mined coins are sent.</li>
-                                <li>**Set launch parameters**: Usually via `.bat` (Windows) or `.sh` (macOS) files.</li>
-                            </ul>
-                            <p className="mt-4 text-gray-300">**Example (XMRig config):**</p>
-                            <pre className="bg-gray-800 p-3 rounded-md mt-1 text-sm text-cyan-300"><code>xmrig -o pool.minexmr.com:443 -u YOUR_WALLET_ADDRESS -k --tls</code></pre>
-                        </section>
-
-                        {/* Step 6 */}
-                        <section className="p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg">
-                            <h2 className="text-2xl font-bold text-pink-300 mb-4">6. Monitor Performance and Safety</h2>
-                            <p className="text-gray-300 mb-4">**Goal:** Track your mining stats and keep your system safe.</p>
-                            <ul className="list-disc list-inside space-y-2 text-gray-300">
-                                <li>Use built-in miner dashboards or pool websites.</li>
-                                <li>Watch CPU/GPU temperatures (HWMonitor, MSI Afterburner).</li>
-                                <li>Avoid mining on battery power or overheating your system.</li>
-                            </ul>
-                        </section>
-
-                         {/* Illegal Mining Section */}
-                        <section className="p-6 rounded-lg bg-black/50 border-2 border-red-500/50 shadow-[0_0_20px_rgba(255,80,80,0.3)]">
-                            <div className="flex items-start gap-4">
-                                <Globe className="h-8 w-8 text-red-400 flex-shrink-0 mt-1" />
-                                <div>
-                                    <h2 className="text-2xl font-bold text-red-400 mb-3">Countries Where Crypto Mining Is Illegal (2025)</h2>
-                                    <p className="text-gray-300 mb-4">As of November 2025, cryptocurrency mining is fully illegal in at least six countries, with partial or regional bans in several others. These restrictions are driven by energy concerns, financial risks, and regulatory control.</p>
-                                </div>
-                            </div>
-                            
-                            <h3 className="text-xl font-bold text-red-300 mt-4 mb-2">🌍 Countries Where Crypto Mining Is Fully Illegal</h3>
-                            <ul className="list-disc list-inside space-y-3 text-gray-300 pl-4">
-                                <li><strong>China</strong> – Banned all crypto mining in 2021 due to energy waste and financial instability. Underground mining still persists.</li>
-                                <li><strong>Algeria</strong> – Outlawed all crypto activity including mining since 2017 to protect the national currency.</li>
-                                <li><strong>Bangladesh</strong> – Criminalized mining and trading under anti-money laundering laws. Violators face imprisonment.</li>
-                                <li><strong>Nepal</strong> – Mining is illegal under the Foreign Exchange Act. Authorities conduct raids on mining farms.</li>
-                                <li><strong>Egypt</strong> – Banned since 2018. Religious edicts and economic concerns drive enforcement.</li>
-                                <li><strong>Afghanistan</strong> – The Taliban reinstated a mining ban in 2022, shutting down exchanges and arresting operators.</li>
-                            </ul>
-
-                            <h3 className="text-xl font-bold text-red-300 mt-6 mb-2">⚡ Countries With Regional or Temporary Mining Bans</h3>
-                            <ul className="list-disc list-inside space-y-3 text-gray-300 pl-4">
-                                <li><strong>Russia</strong> – Banned mining in 10 regions in 2025 due to energy shortages and grid instability.</li>
-                                <li><strong>Norway</strong> – Plans to ban new proof-of-work mining data centers in 2025 for environmental reasons.</li>
-                            </ul>
-
-                            <div className="mt-6 p-4 rounded-md bg-red-900/30 border border-red-500/50">
-                                <h4 className="font-bold text-red-300">🛑 Important Notes</h4>
-                                <ul className="list-disc list-inside space-y-2 text-red-200/90 mt-2">
-                                    <li>Mining legality can change rapidly, and enforcement varies by region.</li>
-                                    <li>Underground mining often continues despite bans, especially in countries like China and Bangladesh.</li>
-                                    <li>Always check local laws before engaging in mining activities.</li>
-                                </ul>
-                            </div>
-                        </section>
-
-
-                        {/* Disclaimer */}
-                        <div className="relative p-6 rounded-lg border-2 border-yellow-500/80 bg-yellow-900/30 shadow-[0_0_20px_rgba(255,223,0,0.3)] mt-12">
-                            <div className="flex items-start gap-4">
-                                <AlertTriangle className="h-8 w-8 text-yellow-400 flex-shrink-0 mt-1" />
-                                <div>
-                                    <h2 className="text-2xl font-bold text-yellow-300">Legal and Ethical Reminder</h2>
-                                    <p className="mt-2 text-yellow-200/90">
-                                        Mining software may be restricted or regulated in your country. Always check local laws. You are solely responsible for downloading, installing, and running any mining software. AiQuantum Chart, and affiliated parties assume no liability for your actions or outcomes.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                  <h3 className="text-xl font-bold text-cyan-200 mb-2">
+                    ✅ GPU Miners
+                  </h3>
+                  <p>
+                    **NBMiner** – NVIDIA/AMD, Ravencoin, Ergo (OS: Windows,
+                    Linux)
+                  </p>
+                  <Link
+                    href="https://github.com/NebuTech/NBMiner"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-400 hover:underline break-all"
+                  >
+                    https://github.com/NebuTech/NBMiner
+                  </Link>
+                  <p className="mt-2">
+                    **TeamRedMiner** – AMD-focused (OS: Windows, Linux)
+                  </p>
+                  <Link
+                    href="https://github.com/todxx/teamredminer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-400 hover:underline break-all"
+                  >
+                    https://github.com/todxx/teamredminer
+                  </Link>
+                  <p className="mt-2">
+                    **GMiner** – NVIDIA/AMD, Kaspa, ETC (OS: Windows, Linux)
+                  </p>
+                  <Link
+                    href="https://github.com/develsoftware/GMinerRelease"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-400 hover:underline break-all"
+                  >
+                    https://github.com/develsoftware/GMinerRelease
+                  </Link>
                 </div>
-            </main>
-        </>
-    );
+                <div>
+                  <h3 className="text-xl font-bold text-cyan-200 mb-2">
+                    ✅ ASIC Miners
+                  </h3>
+                  <p>**CGMiner** – Bitcoin, Litecoin (OS: Windows, Linux)</p>
+                  <Link
+                    href="https://github.com/ckolivas/cgminer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-400 hover:underline break-all"
+                  >
+                    https://github.com/ckolivas/cgminer
+                  </Link>
+                  <p className="mt-2">
+                    **BFGMiner** – Modular ASIC/FPGA (OS: Windows, macOS, Linux)
+                  </p>
+                  <Link
+                    href="https://github.com/luke-jr/bfgminer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-400 hover:underline break-all"
+                  >
+                    https://github.com/luke-jr/bfgminer
+                  </Link>
+                </div>
+              </div>
+            </section>
+
+            {/* Step 4 */}
+            <section className="p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg">
+              <h2 className="text-2xl font-bold text-pink-300 mb-4">
+                4. Check Operating System Compatibility
+              </h2>
+              <p className="text-gray-300 mb-4">
+                **Goal:** Ensure the miner runs smoothly on your OS.
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-300">
+                <li>
+                  **Windows 10/11**: Most miners support Windows. Use `.exe`
+                  installers or command-line tools.
+                </li>
+                <li>
+                  **macOS**: Fewer miners available. Use Terminal and compile
+                  from source if needed.
+                  <pre className="bg-gray-800 p-2 rounded-md mt-1 text-sm text-cyan-300">
+                    <code>
+                      brew install cmake && git clone
+                      https://github.com/xmrig/xmrig.git
+                    </code>
+                  </pre>
+                </li>
+              </ul>
+              <p className="mt-4 text-gray-300">
+                **Tip:** Always run miners as administrator and whitelist them
+                in antivirus software (they’re often flagged falsely).
+              </p>
+            </section>
+
+            {/* Step 5 */}
+            <section className="p-6 rounded-lg bg-black/50 border border-cyan-400/30 shadow-lg">
+              <h2 className="text-2xl font-bold text-cyan-300 mb-4">
+                5. Configure and Launch Your Miner
+              </h2>
+              <p className="text-gray-300 mb-4">
+                **Goal:** Set up your miner with the correct pool and wallet.
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-300">
+                <li>
+                  **Choose a mining pool**: e.g.,{" "}
+                  <Link
+                    href="https://minexmr.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:underline"
+                  >
+                    minexmr.com
+                  </Link>{" "}
+                  for Monero,{" "}
+                  <Link
+                    href="https://2miners.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:underline"
+                  >
+                    2miners.com
+                  </Link>{" "}
+                  for Ravencoin
+                </li>
+                <li>
+                  **Enter your wallet address**: This is where mined coins are
+                  sent.
+                </li>
+                <li>
+                  **Set launch parameters**: Usually via `.bat` (Windows) or
+                  `.sh` (macOS) files.
+                </li>
+              </ul>
+              <p className="mt-4 text-gray-300">**Example (XMRig config):**</p>
+              <pre className="bg-gray-800 p-3 rounded-md mt-1 text-sm text-cyan-300">
+                <code>
+                  xmrig -o pool.minexmr.com:443 -u YOUR_WALLET_ADDRESS -k --tls
+                </code>
+              </pre>
+            </section>
+
+            {/* Step 6 */}
+            <section className="p-6 rounded-lg bg-black/50 border border-pink-400/30 shadow-lg">
+              <h2 className="text-2xl font-bold text-pink-300 mb-4">
+                6. Monitor Performance and Safety
+              </h2>
+              <p className="text-gray-300 mb-4">
+                **Goal:** Track your mining stats and keep your system safe.
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-300">
+                <li>Use built-in miner dashboards or pool websites.</li>
+                <li>
+                  Watch CPU/GPU temperatures (HWMonitor, MSI Afterburner).
+                </li>
+                <li>
+                  Avoid mining on battery power or overheating your system.
+                </li>
+              </ul>
+            </section>
+
+            {/* Illegal Mining Section */}
+            <section className="p-6 rounded-lg bg-black/50 border-2 border-red-500/50 shadow-[0_0_20px_rgba(255,80,80,0.3)]">
+              <div className="flex items-start gap-4">
+                <Globe className="h-8 w-8 text-red-400 flex-shrink-0 mt-1" />
+                <div>
+                  <h2 className="text-2xl font-bold text-red-400 mb-3">
+                    Countries Where Crypto Mining Is Illegal (2025)
+                  </h2>
+                  <p className="text-gray-300 mb-4">
+                    As of November 2025, cryptocurrency mining is fully illegal
+                    in at least six countries, with partial or regional bans in
+                    several others. These restrictions are driven by energy
+                    concerns, financial risks, and regulatory control.
+                  </p>
+                </div>
+              </div>
+
+              <h3 className="text-xl font-bold text-red-300 mt-4 mb-2">
+                🌍 Countries Where Crypto Mining Is Fully Illegal
+              </h3>
+              <ul className="list-disc list-inside space-y-3 text-gray-300 pl-4">
+                <li>
+                  <strong>China</strong> – Banned all crypto mining in 2021 due
+                  to energy waste and financial instability. Underground mining
+                  still persists.
+                </li>
+                <li>
+                  <strong>Algeria</strong> – Outlawed all crypto activity
+                  including mining since 2017 to protect the national currency.
+                </li>
+                <li>
+                  <strong>Bangladesh</strong> – Criminalized mining and trading
+                  under anti-money laundering laws. Violators face imprisonment.
+                </li>
+                <li>
+                  <strong>Nepal</strong> – Mining is illegal under the Foreign
+                  Exchange Act. Authorities conduct raids on mining farms.
+                </li>
+                <li>
+                  <strong>Egypt</strong> – Banned since 2018. Religious edicts
+                  and economic concerns drive enforcement.
+                </li>
+                <li>
+                  <strong>Afghanistan</strong> – The Taliban reinstated a mining
+                  ban in 2022, shutting down exchanges and arresting operators.
+                </li>
+              </ul>
+
+              <h3 className="text-xl font-bold text-red-300 mt-6 mb-2">
+                ⚡ Countries With Regional or Temporary Mining Bans
+              </h3>
+              <ul className="list-disc list-inside space-y-3 text-gray-300 pl-4">
+                <li>
+                  <strong>Russia</strong> – Banned mining in 10 regions in 2025
+                  due to energy shortages and grid instability.
+                </li>
+                <li>
+                  <strong>Norway</strong> – Plans to ban new proof-of-work
+                  mining data centers in 2025 for environmental reasons.
+                </li>
+              </ul>
+
+              <div className="mt-6 p-4 rounded-md bg-red-900/30 border border-red-500/50">
+                <h4 className="font-bold text-red-300">🛑 Important Notes</h4>
+                <ul className="list-disc list-inside space-y-2 text-red-200/90 mt-2">
+                  <li>
+                    Mining legality can change rapidly, and enforcement varies
+                    by region.
+                  </li>
+                  <li>
+                    Underground mining often continues despite bans, especially
+                    in countries like China and Bangladesh.
+                  </li>
+                  <li>
+                    Always check local laws before engaging in mining
+                    activities.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            {/* Disclaimer */}
+            <div className="relative p-6 rounded-lg border-2 border-yellow-500/80 bg-yellow-900/30 shadow-[0_0_20px_rgba(255,223,0,0.3)] mt-12">
+              <div className="flex items-start gap-4">
+                <AlertTriangle className="h-8 w-8 text-yellow-400 flex-shrink-0 mt-1" />
+                <div>
+                  <h2 className="text-2xl font-bold text-yellow-300">
+                    Legal and Ethical Reminder
+                  </h2>
+                  <p className="mt-2 text-yellow-200/90">
+                    Mining software may be restricted or regulated in your
+                    country. Always check local laws. You are solely responsible
+                    for downloading, installing, and running any mining
+                    software. AiQuantum Chart, and affiliated parties assume no
+                    liability for your actions or outcomes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  );
 }

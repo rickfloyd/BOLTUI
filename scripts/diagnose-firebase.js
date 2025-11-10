@@ -19,7 +19,9 @@ async function checkFirebaseProject() {
   try {
     // 1️⃣ Check for firebase.json
     if (!fs.existsSync("firebase.json")) {
-      console.error("❌ Missing firebase.json — Firebase CLI can't detect your project.");
+      console.error(
+        "❌ Missing firebase.json — Firebase CLI can't detect your project.",
+      );
       console.log("Fix: Run 'firebase init hosting' to rebuild config.\n");
       return;
     }
@@ -28,14 +30,18 @@ async function checkFirebaseProject() {
     const config = JSON.parse(fs.readFileSync("firebase.json", "utf8"));
     if (!config.hosting) {
       console.error("❌ firebase.json missing 'hosting' property.");
-      console.log("Fix: Add a 'hosting' section with your public directory (e.g., 'dist' or 'build').\n");
+      console.log(
+        "Fix: Add a 'hosting' section with your public directory (e.g., 'dist' or 'build').\n",
+      );
     }
 
     // 3️⃣ Detect build folder
     const folder = config.hosting?.source;
     if (!folder || !fs.existsSync(folder)) {
       console.error(`❌ Build folder '${folder || "undefined"}' not found.`);
-      console.log("Fix: Check your framework build output. Try 'npm run build' before deploying.\n");
+      console.log(
+        "Fix: Check your framework build output. Try 'npm run build' before deploying.\n",
+      );
     } else {
       console.log(`✅ Found build directory: ${folder}`);
     }
@@ -43,7 +49,9 @@ async function checkFirebaseProject() {
     // 4️⃣ Check for index.html (or Next.js build output)
     if (!fs.existsSync(`.next`)) {
       console.error("❌ Missing .next build directory.");
-      console.log("Fix: Verify your build process creates a .next folder. Run 'npm run build'.\n");
+      console.log(
+        "Fix: Verify your build process creates a .next folder. Run 'npm run build'.\n",
+      );
     } else {
       console.log("✅ .next directory present.");
     }
@@ -67,22 +75,31 @@ async function checkFirebaseProject() {
     }
 
     // 7️⃣ Check deployed service logs
-    console.log("\n📡 Checking Google Cloud Run logs (if using Firebase Hosting with SSR)...");
+    console.log(
+      "\n📡 Checking Google Cloud Run logs (if using Firebase Hosting with SSR)...",
+    );
     try {
       const projectsList = await run("firebase projects:list --json");
       const projects = JSON.parse(projectsList);
-      if(projects.result.length > 0) {
+      if (projects.result.length > 0) {
         const projectId = projects.result[0].id;
-        const logs = await run(`gcloud logs read "resource.type=cloud_run_revision" --limit=10 --project=${projectId}`);
+        const logs = await run(
+          `gcloud logs read "resource.type=cloud_run_revision" --limit=10 --project=${projectId}`,
+        );
         console.log("✅ Cloud Run logs found:\n", logs.slice(0, 500));
       } else {
         console.warn("⚠️ No Firebase projects found.");
       }
-    } catch (e){
-        console.warn("⚠️ Unable to fetch Cloud Run logs automatically — may require gcloud CLI setup or permissions.\n", e.message);
+    } catch (e) {
+      console.warn(
+        "⚠️ Unable to fetch Cloud Run logs automatically — may require gcloud CLI setup or permissions.\n",
+        e.message,
+      );
     }
 
-    console.log("\n🩵 Diagnostics completed. See above for any ❌ issues or ⚠️ warnings.");
+    console.log(
+      "\n🩵 Diagnostics completed. See above for any ❌ issues or ⚠️ warnings.",
+    );
   } catch (err) {
     console.error("🔥 Fatal error during diagnostics:", err);
   }

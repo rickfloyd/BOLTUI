@@ -1,3 +1,713 @@
-module.exports=[56704,(a,b,c)=>{b.exports=a.x("next/dist/server/app-render/work-async-storage.external.js",()=>require("next/dist/server/app-render/work-async-storage.external.js"))},9270,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored.contexts.AppRouterContext},38783,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient},91119,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(68114);let e=c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("div",{ref:e,className:(0,d.cn)("rounded-lg border bg-card text-card-foreground shadow-sm",a),...c}));e.displayName="Card";let f=c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("div",{ref:e,className:(0,d.cn)("flex flex-col space-y-1.5 p-6",a),...c}));f.displayName="CardHeader";let g=c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("h3",{ref:e,className:(0,d.cn)("text-2xl font-semibold leading-none tracking-tight",a),...c}));g.displayName="CardTitle",c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("p",{ref:e,className:(0,d.cn)("text-sm text-muted-foreground",a),...c})).displayName="CardDescription";let h=c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("div",{ref:e,className:(0,d.cn)("p-6 pt-0",a),...c}));h.displayName="CardContent",c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("div",{ref:e,className:(0,d.cn)("flex items-center p-6 pt-0",a),...c})).displayName="CardFooter",a.s(["Card",()=>e,"CardContent",()=>h,"CardHeader",()=>f,"CardTitle",()=>g])},99570,a=>{"use strict";let b,c,d;var e=a.i(87924),f=a.i(72131);function g(a,b){if("function"==typeof a)return a(b);null!=a&&(a.current=b)}var h=((d=f.forwardRef((a,b)=>{let{children:c,...d}=a;if(f.isValidElement(c)){var e;let a,h,i=(e=c,(h=(a=Object.getOwnPropertyDescriptor(e.props,"ref")?.get)&&"isReactWarning"in a&&a.isReactWarning)?e.ref:(h=(a=Object.getOwnPropertyDescriptor(e,"ref")?.get)&&"isReactWarning"in a&&a.isReactWarning)?e.props.ref:e.props.ref||e.ref),j=function(a,b){let c={...b};for(let d in b){let e=a[d],f=b[d];/^on[A-Z]/.test(d)?e&&f?c[d]=(...a)=>{let b=f(...a);return e(...a),b}:e&&(c[d]=e):"style"===d?c[d]={...e,...f}:"className"===d&&(c[d]=[e,f].filter(Boolean).join(" "))}return{...a,...c}}(d,c.props);return c.type!==f.Fragment&&(j.ref=b?function(...a){return b=>{let c=!1,d=a.map(a=>{let d=g(a,b);return c||"function"!=typeof d||(c=!0),d});if(c)return()=>{for(let b=0;b<d.length;b++){let c=d[b];"function"==typeof c?c():g(a[b],null)}}}}(b,i):i),f.cloneElement(c,j)}return f.Children.count(c)>1?f.Children.only(null):null})).displayName="Slot.SlotClone",b=d,(c=f.forwardRef((a,c)=>{let{children:d,...g}=a,h=f.Children.toArray(d),i=h.find(j);if(i){let a=i.props.children,d=h.map(b=>b!==i?b:f.Children.count(a)>1?f.Children.only(null):f.isValidElement(a)?a.props.children:null);return(0,e.jsx)(b,{...g,ref:c,children:f.isValidElement(a)?f.cloneElement(a,void 0,d):null})}return(0,e.jsx)(b,{...g,ref:c,children:d})})).displayName="Slot.Slot",c),i=Symbol("radix.slottable");function j(a){return f.isValidElement(a)&&"function"==typeof a.type&&"__radixId"in a.type&&a.type.__radixId===i}var k=a.i(187),l=a.i(68114);let m=(0,k.cva)("inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",{variants:{variant:{default:"bg-primary text-primary-foreground hover:bg-primary/90",destructive:"bg-destructive text-destructive-foreground hover:bg-destructive/90",outline:"border border-input bg-background hover:bg-accent hover:text-accent-foreground",secondary:"bg-secondary text-secondary-foreground hover:bg-secondary/80",ghost:"hover:bg-accent hover:text-accent-foreground",link:"text-primary underline-offset-4 hover:underline"},size:{default:"h-10 px-4 py-2",sm:"h-9 rounded-md px-3",lg:"h-11 rounded-md px-8",icon:"h-10 w-10"}},defaultVariants:{variant:"default",size:"default"}}),n=f.forwardRef(({className:a,variant:b,size:c,asChild:d=!1,...f},g)=>(0,e.jsx)(d?h:"button",{className:(0,l.cn)(m({variant:b,size:c,className:a})),ref:g,...f}));n.displayName="Button",a.s(["Button",()=>n],99570)},3688,a=>{"use strict";var b=a.i(72131),c=a.i(72752);function d(a){let[d,e]=b.useState(void 0);return(0,c.useLayoutEffect)(()=>{if(a){e({width:a.offsetWidth,height:a.offsetHeight});let b=new ResizeObserver(b=>{let c,d;if(!Array.isArray(b)||!b.length)return;let f=b[0];if("borderBoxSize"in f){let a=f.borderBoxSize,b=Array.isArray(a)?a[0]:a;c=b.inlineSize,d=b.blockSize}else c=a.offsetWidth,d=a.offsetHeight;e({width:c,height:d})});return b.observe(a,{box:"border-box"}),()=>b.unobserve(a)}e(void 0)},[a]),d}a.s(["useSize",()=>d])},77994,a=>{"use strict";var b=a.i(72131);function c(a){let c=b.useRef({value:a,previous:a});return b.useMemo(()=>(c.current.value!==a&&(c.current.previous=c.current.value,c.current.value=a),c.current.previous),[a])}a.s(["usePrevious",()=>c])},41997,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0});var d={BailoutToCSRError:function(){return g},isBailoutToCSRError:function(){return h}};for(var e in d)Object.defineProperty(c,e,{enumerable:!0,get:d[e]});let f="BAILOUT_TO_CLIENT_SIDE_RENDERING";class g extends Error{constructor(a){super(`Bail out to client-side rendering: ${a}`),this.reason=a,this.digest=f}}function h(a){return"object"==typeof a&&null!==a&&"digest"in a&&a.digest===f}},33354,(a,b,c)=>{"use strict";c._=function(a){return a&&a.__esModule?a:{default:a}}},32245,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"BailoutToCSR",{enumerable:!0,get:function(){return e}});let d=a.r(41997);function e({reason:a,children:b}){throw Object.defineProperty(new d.BailoutToCSRError(a),"__NEXT_ERROR_CODE",{value:"E394",enumerable:!1,configurable:!0})}},7773,(a,b,c)=>{"use strict";function d(a){return a.split("/").map(a=>encodeURIComponent(a)).join("/")}Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"encodeURIPath",{enumerable:!0,get:function(){return d}})},97458,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"PreloadChunks",{enumerable:!0,get:function(){return h}});let d=a.r(87924),e=a.r(35112),f=a.r(56704),g=a.r(7773);function h({moduleIds:a}){let b=f.workAsyncStorage.getStore();if(void 0===b)return null;let c=[];if(b.reactLoadableManifest&&a){let d=b.reactLoadableManifest;for(let b of a){if(!d[b])continue;let a=d[b].files;c.push(...a)}}return 0===c.length?null:(0,d.jsx)(d.Fragment,{children:c.map(a=>{let c=`${b.assetPrefix}/_next/${(0,g.encodeURIPath)(a)}`;return a.endsWith(".css")?(0,d.jsx)("link",{precedence:"dynamic",href:c,rel:"stylesheet",as:"style",nonce:b.nonce},a):((0,e.preload)(c,{as:"script",fetchPriority:"low",nonce:b.nonce}),null)})})}},69853,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"default",{enumerable:!0,get:function(){return j}});let d=a.r(87924),e=a.r(72131),f=a.r(32245),g=a.r(97458);function h(a){return{default:a&&"default"in a?a.default:a}}let i={loader:()=>Promise.resolve(h(()=>null)),loading:null,ssr:!0},j=function(a){let b={...i,...a},c=(0,e.lazy)(()=>b.loader().then(h)),j=b.loading;function k(a){let h=j?(0,d.jsx)(j,{isLoading:!0,pastDelay:!0,error:null}):null,i=!b.ssr||!!b.loading,k=i?e.Suspense:e.Fragment,l=b.ssr?(0,d.jsxs)(d.Fragment,{children:[(0,d.jsx)(g.PreloadChunks,{moduleIds:b.modules}),(0,d.jsx)(c,{...a})]}):(0,d.jsx)(f.BailoutToCSR,{reason:"next/dynamic",children:(0,d.jsx)(c,{...a})});return(0,d.jsx)(k,{...i?{fallback:h}:{},children:l})}return k.displayName="LoadableComponent",k}},19721,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"default",{enumerable:!0,get:function(){return e}});let d=a.r(33354)._(a.r(69853));function e(a,b){let c={};"function"==typeof a&&(c.loader=a);let e={...c,...b};return(0,d.default)({...e,modules:e.loadableGenerated?.modules})}("function"==typeof c.default||"object"==typeof c.default&&null!==c.default)&&void 0===c.default.__esModule&&(Object.defineProperty(c.default,"__esModule",{value:!0}),Object.assign(c.default,c),b.exports=c.default)},39616,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(19721),e=a.i(18894),f=a.i(99570),g=a.i(80701),h=a.i(91119),i=a.i(187),j=a.i(68114);let k=(0,i.cva)("relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground",{variants:{variant:{default:"bg-background text-foreground",destructive:"border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive"}},defaultVariants:{variant:"default"}}),l=c.forwardRef(({className:a,variant:c,...d},e)=>(0,b.jsx)("div",{ref:e,role:"alert",className:(0,j.cn)(k({variant:c}),a),...d}));l.displayName="Alert";let m=c.forwardRef(({className:a,...c},d)=>(0,b.jsx)("h5",{ref:d,className:(0,j.cn)("mb-1 font-medium leading-none tracking-tight",a),...c}));m.displayName="AlertTitle";let n=c.forwardRef(({className:a,...c},d)=>(0,b.jsx)("div",{ref:d,className:(0,j.cn)("text-sm [&_p]:leading-relaxed",a),...c}));n.displayName="AlertDescription";let o=(0,a.i(70106).default)("Terminal",[["polyline",{points:"4 17 10 11 4 5",key:"akl6gq"}],["line",{x1:"12",x2:"20",y1:"19",y2:"19",key:"q2wloq"}]]),p=(0,d.default)(async()=>{},{loadableGenerated:{modules:[26084]},ssr:!1}),q=[{value:"BTC/USD",label:"Bitcoin (BTC/USD)"},{value:"ETH/USD",label:"Ethereum (ETH/USD)"}],r=[{value:"1min",label:"1 Minute"},{value:"1h",label:"1 Hour"},{value:"1day",label:"1 Day"}];function s(){let[a,d]=(0,c.useState)([]),[i,j]=(0,c.useState)(!1),[k,s]=(0,c.useState)(null),[t,u]=(0,c.useState)(null),[v,w]=(0,c.useState)("BTC/USD"),[x,y]=(0,c.useState)("1h"),z=async()=>{j(!0),s(null),d([]),u(null);try{let a=`/api/bridge?symbol=${encodeURIComponent(v)}&interval=${encodeURIComponent(x)}`,b=await fetch(a);if(!b.ok){let a=await b.json();throw Error(a.error||"Failed to fetch data from the bridge API.")}let c=await b.json();if(!c.data||0===c.data.length)throw Error("No data returned from any provider.");d(c.data),u(c.source)}catch(a){s(`Data fetch failed: ${a.message}`)}finally{j(!1)}};return(0,c.useEffect)(()=>{z()},[v,x]),(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(e.Header,{}),(0,b.jsx)("main",{className:"dashboard-grid",children:(0,b.jsxs)("div",{className:"center-content",children:[(0,b.jsx)("h1",{className:"text-3xl font-bold neon-text text-center",children:"Hyper Dashboard"}),(0,b.jsx)("p",{className:"text-lg text-gray-300 text-center",children:"Real-time charts powered by the fastest available data provider."}),(0,b.jsxs)(h.Card,{className:"data-card glow-multi-color",children:[(0,b.jsxs)(h.CardHeader,{className:"flex flex-row items-center justify-between",children:[(0,b.jsx)(h.CardTitle,{className:"neon-text",children:"Market View"}),(0,b.jsxs)("div",{className:"flex gap-4",children:[(0,b.jsxs)(g.Select,{value:v,onValueChange:w,children:[(0,b.jsx)(g.SelectTrigger,{className:"w-[180px] bg-gray-800 border-cyan-400 text-white",children:(0,b.jsx)(g.SelectValue,{})}),(0,b.jsx)(g.SelectContent,{className:"bg-black text-white border-cyan-400",children:q.map(a=>(0,b.jsx)(g.SelectItem,{value:a.value,children:a.label},a.value))})]}),(0,b.jsxs)(g.Select,{value:x,onValueChange:y,children:[(0,b.jsx)(g.SelectTrigger,{className:"w-[180px] bg-gray-800 border-cyan-400 text-white",children:(0,b.jsx)(g.SelectValue,{})}),(0,b.jsx)(g.SelectContent,{className:"bg-black text-white border-cyan-400",children:r.map(a=>(0,b.jsx)(g.SelectItem,{value:a.value,children:a.label},a.value))})]}),(0,b.jsx)(f.Button,{onClick:z,disabled:i,children:i?"Loading...":"Force Refresh"})]})]}),(0,b.jsx)(h.CardContent,{children:(0,b.jsxs)("div",{className:"w-full h-[500px] mt-4",children:[k&&(0,b.jsxs)(l,{variant:"destructive",className:"h-full flex flex-col justify-center items-center",children:[(0,b.jsx)(o,{className:"h-4 w-4"}),(0,b.jsx)(m,{children:"Data Fetching Error"}),(0,b.jsx)(n,{children:k})]}),!k&&!i&&(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(p,{index:v,chartType:"Line Chart",initialData:a}),t&&(0,b.jsxs)("p",{className:"text-xs text-center text-gray-500 mt-2",children:["Data served from: ",t]})]}),i&&(0,b.jsx)("div",{className:"flex items-center justify-center h-full text-cyan-400 text-lg",children:"Racing data providers..."})]})})]})]})})]})}a.s(["default",()=>s],39616)}];
+module.exports = [
+  56704,
+  (a, b, c) => {
+    b.exports = a.x(
+      "next/dist/server/app-render/work-async-storage.external.js",
+      () =>
+        require("next/dist/server/app-render/work-async-storage.external.js"),
+    );
+  },
+  9270,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored.contexts.AppRouterContext;
+  },
+  38783,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient;
+  },
+  91119,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(72131),
+      d = a.i(68114);
+    let e = c.forwardRef(({ className: a, ...c }, e) =>
+      (0, b.jsx)("div", {
+        ref: e,
+        className: (0, d.cn)(
+          "rounded-lg border bg-card text-card-foreground shadow-sm",
+          a,
+        ),
+        ...c,
+      }),
+    );
+    e.displayName = "Card";
+    let f = c.forwardRef(({ className: a, ...c }, e) =>
+      (0, b.jsx)("div", {
+        ref: e,
+        className: (0, d.cn)("flex flex-col space-y-1.5 p-6", a),
+        ...c,
+      }),
+    );
+    f.displayName = "CardHeader";
+    let g = c.forwardRef(({ className: a, ...c }, e) =>
+      (0, b.jsx)("h3", {
+        ref: e,
+        className: (0, d.cn)(
+          "text-2xl font-semibold leading-none tracking-tight",
+          a,
+        ),
+        ...c,
+      }),
+    );
+    ((g.displayName = "CardTitle"),
+      (c.forwardRef(({ className: a, ...c }, e) =>
+        (0, b.jsx)("p", {
+          ref: e,
+          className: (0, d.cn)("text-sm text-muted-foreground", a),
+          ...c,
+        }),
+      ).displayName = "CardDescription"));
+    let h = c.forwardRef(({ className: a, ...c }, e) =>
+      (0, b.jsx)("div", { ref: e, className: (0, d.cn)("p-6 pt-0", a), ...c }),
+    );
+    ((h.displayName = "CardContent"),
+      (c.forwardRef(({ className: a, ...c }, e) =>
+        (0, b.jsx)("div", {
+          ref: e,
+          className: (0, d.cn)("flex items-center p-6 pt-0", a),
+          ...c,
+        }),
+      ).displayName = "CardFooter"),
+      a.s([
+        "Card",
+        () => e,
+        "CardContent",
+        () => h,
+        "CardHeader",
+        () => f,
+        "CardTitle",
+        () => g,
+      ]));
+  },
+  99570,
+  (a) => {
+    "use strict";
+    let b, c, d;
+    var e = a.i(87924),
+      f = a.i(72131);
+    function g(a, b) {
+      if ("function" == typeof a) return a(b);
+      null != a && (a.current = b);
+    }
+    var h =
+        (((d = f.forwardRef((a, b) => {
+          let { children: c, ...d } = a;
+          if (f.isValidElement(c)) {
+            var e;
+            let a,
+              h,
+              i =
+                ((e = c),
+                (h =
+                  (a = Object.getOwnPropertyDescriptor(e.props, "ref")?.get) &&
+                  "isReactWarning" in a &&
+                  a.isReactWarning)
+                  ? e.ref
+                  : (h =
+                        (a = Object.getOwnPropertyDescriptor(e, "ref")?.get) &&
+                        "isReactWarning" in a &&
+                        a.isReactWarning)
+                    ? e.props.ref
+                    : e.props.ref || e.ref),
+              j = (function (a, b) {
+                let c = { ...b };
+                for (let d in b) {
+                  let e = a[d],
+                    f = b[d];
+                  /^on[A-Z]/.test(d)
+                    ? e && f
+                      ? (c[d] = (...a) => {
+                          let b = f(...a);
+                          return (e(...a), b);
+                        })
+                      : e && (c[d] = e)
+                    : "style" === d
+                      ? (c[d] = { ...e, ...f })
+                      : "className" === d &&
+                        (c[d] = [e, f].filter(Boolean).join(" "));
+                }
+                return { ...a, ...c };
+              })(d, c.props);
+            return (
+              c.type !== f.Fragment &&
+                (j.ref = b
+                  ? (function (...a) {
+                      return (b) => {
+                        let c = !1,
+                          d = a.map((a) => {
+                            let d = g(a, b);
+                            return (c || "function" != typeof d || (c = !0), d);
+                          });
+                        if (c)
+                          return () => {
+                            for (let b = 0; b < d.length; b++) {
+                              let c = d[b];
+                              "function" == typeof c ? c() : g(a[b], null);
+                            }
+                          };
+                      };
+                    })(b, i)
+                  : i),
+              f.cloneElement(c, j)
+            );
+          }
+          return f.Children.count(c) > 1 ? f.Children.only(null) : null;
+        })).displayName = "Slot.SlotClone"),
+        (b = d),
+        ((c = f.forwardRef((a, c) => {
+          let { children: d, ...g } = a,
+            h = f.Children.toArray(d),
+            i = h.find(j);
+          if (i) {
+            let a = i.props.children,
+              d = h.map((b) =>
+                b !== i
+                  ? b
+                  : f.Children.count(a) > 1
+                    ? f.Children.only(null)
+                    : f.isValidElement(a)
+                      ? a.props.children
+                      : null,
+              );
+            return (0, e.jsx)(b, {
+              ...g,
+              ref: c,
+              children: f.isValidElement(a)
+                ? f.cloneElement(a, void 0, d)
+                : null,
+            });
+          }
+          return (0, e.jsx)(b, { ...g, ref: c, children: d });
+        })).displayName = "Slot.Slot"),
+        c),
+      i = Symbol("radix.slottable");
+    function j(a) {
+      return (
+        f.isValidElement(a) &&
+        "function" == typeof a.type &&
+        "__radixId" in a.type &&
+        a.type.__radixId === i
+      );
+    }
+    var k = a.i(187),
+      l = a.i(68114);
+    let m = (0, k.cva)(
+        "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+        {
+          variants: {
+            variant: {
+              default: "bg-primary text-primary-foreground hover:bg-primary/90",
+              destructive:
+                "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+              outline:
+                "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+              secondary:
+                "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+              ghost: "hover:bg-accent hover:text-accent-foreground",
+              link: "text-primary underline-offset-4 hover:underline",
+            },
+            size: {
+              default: "h-10 px-4 py-2",
+              sm: "h-9 rounded-md px-3",
+              lg: "h-11 rounded-md px-8",
+              icon: "h-10 w-10",
+            },
+          },
+          defaultVariants: { variant: "default", size: "default" },
+        },
+      ),
+      n = f.forwardRef(
+        ({ className: a, variant: b, size: c, asChild: d = !1, ...f }, g) =>
+          (0, e.jsx)(d ? h : "button", {
+            className: (0, l.cn)(m({ variant: b, size: c, className: a })),
+            ref: g,
+            ...f,
+          }),
+      );
+    ((n.displayName = "Button"), a.s(["Button", () => n], 99570));
+  },
+  3688,
+  (a) => {
+    "use strict";
+    var b = a.i(72131),
+      c = a.i(72752);
+    function d(a) {
+      let [d, e] = b.useState(void 0);
+      return (
+        (0, c.useLayoutEffect)(() => {
+          if (a) {
+            e({ width: a.offsetWidth, height: a.offsetHeight });
+            let b = new ResizeObserver((b) => {
+              let c, d;
+              if (!Array.isArray(b) || !b.length) return;
+              let f = b[0];
+              if ("borderBoxSize" in f) {
+                let a = f.borderBoxSize,
+                  b = Array.isArray(a) ? a[0] : a;
+                ((c = b.inlineSize), (d = b.blockSize));
+              } else ((c = a.offsetWidth), (d = a.offsetHeight));
+              e({ width: c, height: d });
+            });
+            return (b.observe(a, { box: "border-box" }), () => b.unobserve(a));
+          }
+          e(void 0);
+        }, [a]),
+        d
+      );
+    }
+    a.s(["useSize", () => d]);
+  },
+  77994,
+  (a) => {
+    "use strict";
+    var b = a.i(72131);
+    function c(a) {
+      let c = b.useRef({ value: a, previous: a });
+      return b.useMemo(
+        () => (
+          c.current.value !== a &&
+            ((c.current.previous = c.current.value), (c.current.value = a)),
+          c.current.previous
+        ),
+        [a],
+      );
+    }
+    a.s(["usePrevious", () => c]);
+  },
+  41997,
+  (a, b, c) => {
+    "use strict";
+    Object.defineProperty(c, "__esModule", { value: !0 });
+    var d = {
+      BailoutToCSRError: function () {
+        return g;
+      },
+      isBailoutToCSRError: function () {
+        return h;
+      },
+    };
+    for (var e in d) Object.defineProperty(c, e, { enumerable: !0, get: d[e] });
+    let f = "BAILOUT_TO_CLIENT_SIDE_RENDERING";
+    class g extends Error {
+      constructor(a) {
+        (super(`Bail out to client-side rendering: ${a}`),
+          (this.reason = a),
+          (this.digest = f));
+      }
+    }
+    function h(a) {
+      return (
+        "object" == typeof a && null !== a && "digest" in a && a.digest === f
+      );
+    }
+  },
+  33354,
+  (a, b, c) => {
+    "use strict";
+    c._ = function (a) {
+      return a && a.__esModule ? a : { default: a };
+    };
+  },
+  32245,
+  (a, b, c) => {
+    "use strict";
+    (Object.defineProperty(c, "__esModule", { value: !0 }),
+      Object.defineProperty(c, "BailoutToCSR", {
+        enumerable: !0,
+        get: function () {
+          return e;
+        },
+      }));
+    let d = a.r(41997);
+    function e({ reason: a, children: b }) {
+      throw Object.defineProperty(
+        new d.BailoutToCSRError(a),
+        "__NEXT_ERROR_CODE",
+        { value: "E394", enumerable: !1, configurable: !0 },
+      );
+    }
+  },
+  7773,
+  (a, b, c) => {
+    "use strict";
+    function d(a) {
+      return a
+        .split("/")
+        .map((a) => encodeURIComponent(a))
+        .join("/");
+    }
+    (Object.defineProperty(c, "__esModule", { value: !0 }),
+      Object.defineProperty(c, "encodeURIPath", {
+        enumerable: !0,
+        get: function () {
+          return d;
+        },
+      }));
+  },
+  97458,
+  (a, b, c) => {
+    "use strict";
+    (Object.defineProperty(c, "__esModule", { value: !0 }),
+      Object.defineProperty(c, "PreloadChunks", {
+        enumerable: !0,
+        get: function () {
+          return h;
+        },
+      }));
+    let d = a.r(87924),
+      e = a.r(35112),
+      f = a.r(56704),
+      g = a.r(7773);
+    function h({ moduleIds: a }) {
+      let b = f.workAsyncStorage.getStore();
+      if (void 0 === b) return null;
+      let c = [];
+      if (b.reactLoadableManifest && a) {
+        let d = b.reactLoadableManifest;
+        for (let b of a) {
+          if (!d[b]) continue;
+          let a = d[b].files;
+          c.push(...a);
+        }
+      }
+      return 0 === c.length
+        ? null
+        : (0, d.jsx)(d.Fragment, {
+            children: c.map((a) => {
+              let c = `${b.assetPrefix}/_next/${(0, g.encodeURIPath)(a)}`;
+              return a.endsWith(".css")
+                ? (0, d.jsx)(
+                    "link",
+                    {
+                      precedence: "dynamic",
+                      href: c,
+                      rel: "stylesheet",
+                      as: "style",
+                      nonce: b.nonce,
+                    },
+                    a,
+                  )
+                : ((0, e.preload)(c, {
+                    as: "script",
+                    fetchPriority: "low",
+                    nonce: b.nonce,
+                  }),
+                  null);
+            }),
+          });
+    }
+  },
+  69853,
+  (a, b, c) => {
+    "use strict";
+    (Object.defineProperty(c, "__esModule", { value: !0 }),
+      Object.defineProperty(c, "default", {
+        enumerable: !0,
+        get: function () {
+          return j;
+        },
+      }));
+    let d = a.r(87924),
+      e = a.r(72131),
+      f = a.r(32245),
+      g = a.r(97458);
+    function h(a) {
+      return { default: a && "default" in a ? a.default : a };
+    }
+    let i = {
+        loader: () => Promise.resolve(h(() => null)),
+        loading: null,
+        ssr: !0,
+      },
+      j = function (a) {
+        let b = { ...i, ...a },
+          c = (0, e.lazy)(() => b.loader().then(h)),
+          j = b.loading;
+        function k(a) {
+          let h = j
+              ? (0, d.jsx)(j, { isLoading: !0, pastDelay: !0, error: null })
+              : null,
+            i = !b.ssr || !!b.loading,
+            k = i ? e.Suspense : e.Fragment,
+            l = b.ssr
+              ? (0, d.jsxs)(d.Fragment, {
+                  children: [
+                    (0, d.jsx)(g.PreloadChunks, { moduleIds: b.modules }),
+                    (0, d.jsx)(c, { ...a }),
+                  ],
+                })
+              : (0, d.jsx)(f.BailoutToCSR, {
+                  reason: "next/dynamic",
+                  children: (0, d.jsx)(c, { ...a }),
+                });
+          return (0, d.jsx)(k, { ...(i ? { fallback: h } : {}), children: l });
+        }
+        return ((k.displayName = "LoadableComponent"), k);
+      };
+  },
+  19721,
+  (a, b, c) => {
+    "use strict";
+    (Object.defineProperty(c, "__esModule", { value: !0 }),
+      Object.defineProperty(c, "default", {
+        enumerable: !0,
+        get: function () {
+          return e;
+        },
+      }));
+    let d = a.r(33354)._(a.r(69853));
+    function e(a, b) {
+      let c = {};
+      "function" == typeof a && (c.loader = a);
+      let e = { ...c, ...b };
+      return (0, d.default)({ ...e, modules: e.loadableGenerated?.modules });
+    }
+    ("function" == typeof c.default ||
+      ("object" == typeof c.default && null !== c.default)) &&
+      void 0 === c.default.__esModule &&
+      (Object.defineProperty(c.default, "__esModule", { value: !0 }),
+      Object.assign(c.default, c),
+      (b.exports = c.default));
+  },
+  39616,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(72131),
+      d = a.i(19721),
+      e = a.i(18894),
+      f = a.i(99570),
+      g = a.i(80701),
+      h = a.i(91119),
+      i = a.i(187),
+      j = a.i(68114);
+    let k = (0, i.cva)(
+        "relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground",
+        {
+          variants: {
+            variant: {
+              default: "bg-background text-foreground",
+              destructive:
+                "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
+            },
+          },
+          defaultVariants: { variant: "default" },
+        },
+      ),
+      l = c.forwardRef(({ className: a, variant: c, ...d }, e) =>
+        (0, b.jsx)("div", {
+          ref: e,
+          role: "alert",
+          className: (0, j.cn)(k({ variant: c }), a),
+          ...d,
+        }),
+      );
+    l.displayName = "Alert";
+    let m = c.forwardRef(({ className: a, ...c }, d) =>
+      (0, b.jsx)("h5", {
+        ref: d,
+        className: (0, j.cn)("mb-1 font-medium leading-none tracking-tight", a),
+        ...c,
+      }),
+    );
+    m.displayName = "AlertTitle";
+    let n = c.forwardRef(({ className: a, ...c }, d) =>
+      (0, b.jsx)("div", {
+        ref: d,
+        className: (0, j.cn)("text-sm [&_p]:leading-relaxed", a),
+        ...c,
+      }),
+    );
+    n.displayName = "AlertDescription";
+    let o = (0, a.i(70106).default)("Terminal", [
+        ["polyline", { points: "4 17 10 11 4 5", key: "akl6gq" }],
+        ["line", { x1: "12", x2: "20", y1: "19", y2: "19", key: "q2wloq" }],
+      ]),
+      p = (0, d.default)(async () => {}, {
+        loadableGenerated: { modules: [26084] },
+        ssr: !1,
+      }),
+      q = [
+        { value: "BTC/USD", label: "Bitcoin (BTC/USD)" },
+        { value: "ETH/USD", label: "Ethereum (ETH/USD)" },
+      ],
+      r = [
+        { value: "1min", label: "1 Minute" },
+        { value: "1h", label: "1 Hour" },
+        { value: "1day", label: "1 Day" },
+      ];
+    function s() {
+      let [a, d] = (0, c.useState)([]),
+        [i, j] = (0, c.useState)(!1),
+        [k, s] = (0, c.useState)(null),
+        [t, u] = (0, c.useState)(null),
+        [v, w] = (0, c.useState)("BTC/USD"),
+        [x, y] = (0, c.useState)("1h"),
+        z = async () => {
+          (j(!0), s(null), d([]), u(null));
+          try {
+            let a = `/api/bridge?symbol=${encodeURIComponent(v)}&interval=${encodeURIComponent(x)}`,
+              b = await fetch(a);
+            if (!b.ok) {
+              let a = await b.json();
+              throw Error(
+                a.error || "Failed to fetch data from the bridge API.",
+              );
+            }
+            let c = await b.json();
+            if (!c.data || 0 === c.data.length)
+              throw Error("No data returned from any provider.");
+            (d(c.data), u(c.source));
+          } catch (a) {
+            s(`Data fetch failed: ${a.message}`);
+          } finally {
+            j(!1);
+          }
+        };
+      return (
+        (0, c.useEffect)(() => {
+          z();
+        }, [v, x]),
+        (0, b.jsxs)(b.Fragment, {
+          children: [
+            (0, b.jsx)(e.Header, {}),
+            (0, b.jsx)("main", {
+              className: "dashboard-grid",
+              children: (0, b.jsxs)("div", {
+                className: "center-content",
+                children: [
+                  (0, b.jsx)("h1", {
+                    className: "text-3xl font-bold neon-text text-center",
+                    children: "Hyper Dashboard",
+                  }),
+                  (0, b.jsx)("p", {
+                    className: "text-lg text-gray-300 text-center",
+                    children:
+                      "Real-time charts powered by the fastest available data provider.",
+                  }),
+                  (0, b.jsxs)(h.Card, {
+                    className: "data-card glow-multi-color",
+                    children: [
+                      (0, b.jsxs)(h.CardHeader, {
+                        className: "flex flex-row items-center justify-between",
+                        children: [
+                          (0, b.jsx)(h.CardTitle, {
+                            className: "neon-text",
+                            children: "Market View",
+                          }),
+                          (0, b.jsxs)("div", {
+                            className: "flex gap-4",
+                            children: [
+                              (0, b.jsxs)(g.Select, {
+                                value: v,
+                                onValueChange: w,
+                                children: [
+                                  (0, b.jsx)(g.SelectTrigger, {
+                                    className:
+                                      "w-[180px] bg-gray-800 border-cyan-400 text-white",
+                                    children: (0, b.jsx)(g.SelectValue, {}),
+                                  }),
+                                  (0, b.jsx)(g.SelectContent, {
+                                    className:
+                                      "bg-black text-white border-cyan-400",
+                                    children: q.map((a) =>
+                                      (0, b.jsx)(
+                                        g.SelectItem,
+                                        { value: a.value, children: a.label },
+                                        a.value,
+                                      ),
+                                    ),
+                                  }),
+                                ],
+                              }),
+                              (0, b.jsxs)(g.Select, {
+                                value: x,
+                                onValueChange: y,
+                                children: [
+                                  (0, b.jsx)(g.SelectTrigger, {
+                                    className:
+                                      "w-[180px] bg-gray-800 border-cyan-400 text-white",
+                                    children: (0, b.jsx)(g.SelectValue, {}),
+                                  }),
+                                  (0, b.jsx)(g.SelectContent, {
+                                    className:
+                                      "bg-black text-white border-cyan-400",
+                                    children: r.map((a) =>
+                                      (0, b.jsx)(
+                                        g.SelectItem,
+                                        { value: a.value, children: a.label },
+                                        a.value,
+                                      ),
+                                    ),
+                                  }),
+                                ],
+                              }),
+                              (0, b.jsx)(f.Button, {
+                                onClick: z,
+                                disabled: i,
+                                children: i ? "Loading..." : "Force Refresh",
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, b.jsx)(h.CardContent, {
+                        children: (0, b.jsxs)("div", {
+                          className: "w-full h-[500px] mt-4",
+                          children: [
+                            k &&
+                              (0, b.jsxs)(l, {
+                                variant: "destructive",
+                                className:
+                                  "h-full flex flex-col justify-center items-center",
+                                children: [
+                                  (0, b.jsx)(o, { className: "h-4 w-4" }),
+                                  (0, b.jsx)(m, {
+                                    children: "Data Fetching Error",
+                                  }),
+                                  (0, b.jsx)(n, { children: k }),
+                                ],
+                              }),
+                            !k &&
+                              !i &&
+                              (0, b.jsxs)(b.Fragment, {
+                                children: [
+                                  (0, b.jsx)(p, {
+                                    index: v,
+                                    chartType: "Line Chart",
+                                    initialData: a,
+                                  }),
+                                  t &&
+                                    (0, b.jsxs)("p", {
+                                      className:
+                                        "text-xs text-center text-gray-500 mt-2",
+                                      children: ["Data served from: ", t],
+                                    }),
+                                ],
+                              }),
+                            i &&
+                              (0, b.jsx)("div", {
+                                className:
+                                  "flex items-center justify-center h-full text-cyan-400 text-lg",
+                                children: "Racing data providers...",
+                              }),
+                          ],
+                        }),
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+            }),
+          ],
+        })
+      );
+    }
+    a.s(["default", () => s], 39616);
+  },
+];
 
 //# sourceMappingURL=%5Broot-of-the-server%5D__7e229cc3._.js.map

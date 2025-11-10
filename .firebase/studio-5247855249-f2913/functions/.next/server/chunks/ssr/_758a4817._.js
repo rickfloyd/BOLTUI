@@ -1,3 +1,277 @@
-module.exports=[9270,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored.contexts.AppRouterContext},38783,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient},210,a=>{"use strict";let b=(0,a.i(70106).default)("ArrowLeft",[["path",{d:"m12 19-7-7 7-7",key:"1l729n"}],["path",{d:"M19 12H5",key:"x3x0zl"}]]);a.s(["ArrowLeft",()=>b],210)},66718,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(68114);let e=c.forwardRef(({className:a,type:c,...e},f)=>(0,b.jsx)("input",{type:c,className:(0,d.cn)("flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",a),ref:f,...e}));e.displayName="Input",a.s(["Input",()=>e])},52495,a=>{"use strict";let b=(0,a.i(70106).default)("ExternalLink",[["path",{d:"M15 3h6v6",key:"1q9fwt"}],["path",{d:"M10 14 21 3",key:"gplh6r"}],["path",{d:"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",key:"a6xqqp"}]]);a.s(["ExternalLink",()=>b],52495)},31459,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(18894),e=a.i(66718),f=a.i(38246),g=a.i(210),h=a.i(52495);let i=[{name:"Synapse",symbol:"SYN",contractAddress:"0x0f2d719407fdbeff09d87557abb7232601fd9f29",chain:"Ethereum",coinGeckoId:"synapse",apiEndpoint:"https://api.coingecko.com/api/v3/coins/synapse"},{name:"Multichain",symbol:"MULTI",contractAddress:"0x9c891326fd8b1a713974f73bb604677e199dcfef",chain:"Ethereum",coinGeckoId:"multichain",apiEndpoint:"https://api.coingecko.com/api/v3/coins/multichain"},{name:"Stargate Finance",symbol:"STG",contractAddress:"0x2f6f07cdcf3588944bf4c42ac74ff1a7a5f58ec3",chain:"Ethereum",coinGeckoId:"stargate-finance",apiEndpoint:"https://api.coingecko.com/api/v3/coins/stargate-finance"},{name:"Celer Network",symbol:"CELR",contractAddress:"0x4f9254c83eb525f9fcf346490bbb3ed28a81c667",chain:"Ethereum",coinGeckoId:"celer-network",apiEndpoint:"https://api.coingecko.com/api/v3/coins/celer-network"},{name:"Hop Protocol",symbol:"HOP",contractAddress:"0xc5102fE9359FD9a28fA4A0E4b6C4bA4eC1f3fE3c",chain:"Ethereum",coinGeckoId:"hop-protocol",apiEndpoint:"https://api.coingecko.com/api/v3/coins/hop-protocol"},{name:"LayerZero (via STG)",symbol:"STG",contractAddress:"0x2f6f07cdcf3588944bf4c42ac74ff1a7a5f58ec3",chain:"Ethereum",coinGeckoId:"stargate-finance",apiEndpoint:"https://api.coingecko.com/api/v3/coins/stargate-finance"},{name:"deBridge",symbol:"DBR",contractAddress:"0xE261D618a959aFfFd53168Cd07D12e37B26761db",chain:"Ethereum",coinGeckoId:"debridge",apiEndpoint:"https://api.coingecko.com/api/v3/coins/debridge"},{name:"Wormhole (Wrapped)",symbol:"WH",contractAddress:"Varies by chain (wrapped assets)",chain:"Multichain",coinGeckoId:"wormhole",apiEndpoint:"https://api.coingecko.com/api/v3/coins/wormhole"},{name:"ChainPort",symbol:"PORTX",contractAddress:"0x6eA0b3e6aB9A2eD2aFfF3e3f3e3f3e3f3e3f3e3f",chain:"Ethereum",coinGeckoId:"chainport",apiEndpoint:"https://api.coingecko.com/api/v3/coins/chainport"},{name:"Connext",symbol:"NEXT",contractAddress:"0xFE67A4450907459c7aD4aD6f8fF3fF3fF3fF3fF3f",chain:"Ethereum",coinGeckoId:"connext",apiEndpoint:"https://api.coingecko.com/api/v3/coins/connext"}];function j(){let[a,j]=(0,c.useState)(""),k=i.filter(b=>b.name.toLowerCase().includes(a.toLowerCase())||b.symbol.toLowerCase().includes(a.toLowerCase()));return(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(d.Header,{}),(0,b.jsx)("main",{className:"dashboard-grid",children:(0,b.jsxs)("section",{className:"center-content",children:[(0,b.jsx)("h1",{className:"text-3xl font-bold neon-text text-center mt-8",children:"Cross-Chain Bridge Tokens"}),(0,b.jsx)("p",{className:"text-lg text-gray-300 text-center max-w-3xl mx-auto",children:"A curated list of projects, protocols, and infrastructure tokens focused on connecting different blockchain ecosystems, enabling assets and data to move between them."}),(0,b.jsx)("div",{className:"w-full mt-4",children:(0,b.jsx)(e.Input,{type:"text",placeholder:"Search bridge tokens...",value:a,onChange:a=>j(a.target.value),className:"w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white"})}),(0,b.jsx)("div",{className:"w-full overflow-x-auto mt-8",children:(0,b.jsxs)("div",{className:"info-table-card",children:[(0,b.jsxs)("table",{className:"info-table w-full",children:[(0,b.jsx)("thead",{children:(0,b.jsxs)("tr",{children:[(0,b.jsx)("th",{children:"Name"}),(0,b.jsx)("th",{children:"Symbol"}),(0,b.jsx)("th",{children:"Contract Address"}),(0,b.jsx)("th",{children:"Chain"}),(0,b.jsx)("th",{children:"API"})]})}),(0,b.jsx)("tbody",{children:k.map((a,c)=>(0,b.jsxs)("tr",{className:"hover:bg-white/5",children:[(0,b.jsx)("td",{className:"neon-cyan",children:a.name}),(0,b.jsx)("td",{className:"neon-pink",children:a.symbol}),(0,b.jsx)("td",{className:"text-gray-400 font-mono text-xs",children:a.contractAddress}),(0,b.jsx)("td",{className:"text-gray-300",children:a.chain}),(0,b.jsx)("td",{children:(0,b.jsxs)(f.default,{href:a.apiEndpoint,target:"_blank",rel:"noopener noreferrer",className:"text-cyan-400 hover:underline flex items-center gap-1",children:["API ",(0,b.jsx)(h.ExternalLink,{size:14})]})})]},`${a.symbol}-${c}`))})]}),0===k.length&&(0,b.jsx)("p",{className:"text-center text-gray-400 py-8",children:"No bridge tokens found matching your search."})]})})]})}),(0,b.jsxs)(f.default,{href:"/main",className:"fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2",children:[(0,b.jsx)(g.ArrowLeft,{size:16}),"Back"]})]})}a.s(["default",()=>j],31459)}];
+module.exports = [
+  9270,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored.contexts.AppRouterContext;
+  },
+  38783,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient;
+  },
+  210,
+  (a) => {
+    "use strict";
+    let b = (0, a.i(70106).default)("ArrowLeft", [
+      ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+      ["path", { d: "M19 12H5", key: "x3x0zl" }],
+    ]);
+    a.s(["ArrowLeft", () => b], 210);
+  },
+  66718,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(72131),
+      d = a.i(68114);
+    let e = c.forwardRef(({ className: a, type: c, ...e }, f) =>
+      (0, b.jsx)("input", {
+        type: c,
+        className: (0, d.cn)(
+          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          a,
+        ),
+        ref: f,
+        ...e,
+      }),
+    );
+    ((e.displayName = "Input"), a.s(["Input", () => e]));
+  },
+  52495,
+  (a) => {
+    "use strict";
+    let b = (0, a.i(70106).default)("ExternalLink", [
+      ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+      ["path", { d: "M10 14 21 3", key: "gplh6r" }],
+      [
+        "path",
+        {
+          d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",
+          key: "a6xqqp",
+        },
+      ],
+    ]);
+    a.s(["ExternalLink", () => b], 52495);
+  },
+  31459,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(72131),
+      d = a.i(18894),
+      e = a.i(66718),
+      f = a.i(38246),
+      g = a.i(210),
+      h = a.i(52495);
+    let i = [
+      {
+        name: "Synapse",
+        symbol: "SYN",
+        contractAddress: "0x0f2d719407fdbeff09d87557abb7232601fd9f29",
+        chain: "Ethereum",
+        coinGeckoId: "synapse",
+        apiEndpoint: "https://api.coingecko.com/api/v3/coins/synapse",
+      },
+      {
+        name: "Multichain",
+        symbol: "MULTI",
+        contractAddress: "0x9c891326fd8b1a713974f73bb604677e199dcfef",
+        chain: "Ethereum",
+        coinGeckoId: "multichain",
+        apiEndpoint: "https://api.coingecko.com/api/v3/coins/multichain",
+      },
+      {
+        name: "Stargate Finance",
+        symbol: "STG",
+        contractAddress: "0x2f6f07cdcf3588944bf4c42ac74ff1a7a5f58ec3",
+        chain: "Ethereum",
+        coinGeckoId: "stargate-finance",
+        apiEndpoint: "https://api.coingecko.com/api/v3/coins/stargate-finance",
+      },
+      {
+        name: "Celer Network",
+        symbol: "CELR",
+        contractAddress: "0x4f9254c83eb525f9fcf346490bbb3ed28a81c667",
+        chain: "Ethereum",
+        coinGeckoId: "celer-network",
+        apiEndpoint: "https://api.coingecko.com/api/v3/coins/celer-network",
+      },
+      {
+        name: "Hop Protocol",
+        symbol: "HOP",
+        contractAddress: "0xc5102fE9359FD9a28fA4A0E4b6C4bA4eC1f3fE3c",
+        chain: "Ethereum",
+        coinGeckoId: "hop-protocol",
+        apiEndpoint: "https://api.coingecko.com/api/v3/coins/hop-protocol",
+      },
+      {
+        name: "LayerZero (via STG)",
+        symbol: "STG",
+        contractAddress: "0x2f6f07cdcf3588944bf4c42ac74ff1a7a5f58ec3",
+        chain: "Ethereum",
+        coinGeckoId: "stargate-finance",
+        apiEndpoint: "https://api.coingecko.com/api/v3/coins/stargate-finance",
+      },
+      {
+        name: "deBridge",
+        symbol: "DBR",
+        contractAddress: "0xE261D618a959aFfFd53168Cd07D12e37B26761db",
+        chain: "Ethereum",
+        coinGeckoId: "debridge",
+        apiEndpoint: "https://api.coingecko.com/api/v3/coins/debridge",
+      },
+      {
+        name: "Wormhole (Wrapped)",
+        symbol: "WH",
+        contractAddress: "Varies by chain (wrapped assets)",
+        chain: "Multichain",
+        coinGeckoId: "wormhole",
+        apiEndpoint: "https://api.coingecko.com/api/v3/coins/wormhole",
+      },
+      {
+        name: "ChainPort",
+        symbol: "PORTX",
+        contractAddress: "0x6eA0b3e6aB9A2eD2aFfF3e3f3e3f3e3f3e3f3e3f",
+        chain: "Ethereum",
+        coinGeckoId: "chainport",
+        apiEndpoint: "https://api.coingecko.com/api/v3/coins/chainport",
+      },
+      {
+        name: "Connext",
+        symbol: "NEXT",
+        contractAddress: "0xFE67A4450907459c7aD4aD6f8fF3fF3fF3fF3fF3f",
+        chain: "Ethereum",
+        coinGeckoId: "connext",
+        apiEndpoint: "https://api.coingecko.com/api/v3/coins/connext",
+      },
+    ];
+    function j() {
+      let [a, j] = (0, c.useState)(""),
+        k = i.filter(
+          (b) =>
+            b.name.toLowerCase().includes(a.toLowerCase()) ||
+            b.symbol.toLowerCase().includes(a.toLowerCase()),
+        );
+      return (0, b.jsxs)(b.Fragment, {
+        children: [
+          (0, b.jsx)(d.Header, {}),
+          (0, b.jsx)("main", {
+            className: "dashboard-grid",
+            children: (0, b.jsxs)("section", {
+              className: "center-content",
+              children: [
+                (0, b.jsx)("h1", {
+                  className: "text-3xl font-bold neon-text text-center mt-8",
+                  children: "Cross-Chain Bridge Tokens",
+                }),
+                (0, b.jsx)("p", {
+                  className:
+                    "text-lg text-gray-300 text-center max-w-3xl mx-auto",
+                  children:
+                    "A curated list of projects, protocols, and infrastructure tokens focused on connecting different blockchain ecosystems, enabling assets and data to move between them.",
+                }),
+                (0, b.jsx)("div", {
+                  className: "w-full mt-4",
+                  children: (0, b.jsx)(e.Input, {
+                    type: "text",
+                    placeholder: "Search bridge tokens...",
+                    value: a,
+                    onChange: (a) => j(a.target.value),
+                    className:
+                      "w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white",
+                  }),
+                }),
+                (0, b.jsx)("div", {
+                  className: "w-full overflow-x-auto mt-8",
+                  children: (0, b.jsxs)("div", {
+                    className: "info-table-card",
+                    children: [
+                      (0, b.jsxs)("table", {
+                        className: "info-table w-full",
+                        children: [
+                          (0, b.jsx)("thead", {
+                            children: (0, b.jsxs)("tr", {
+                              children: [
+                                (0, b.jsx)("th", { children: "Name" }),
+                                (0, b.jsx)("th", { children: "Symbol" }),
+                                (0, b.jsx)("th", {
+                                  children: "Contract Address",
+                                }),
+                                (0, b.jsx)("th", { children: "Chain" }),
+                                (0, b.jsx)("th", { children: "API" }),
+                              ],
+                            }),
+                          }),
+                          (0, b.jsx)("tbody", {
+                            children: k.map((a, c) =>
+                              (0, b.jsxs)(
+                                "tr",
+                                {
+                                  className: "hover:bg-white/5",
+                                  children: [
+                                    (0, b.jsx)("td", {
+                                      className: "neon-cyan",
+                                      children: a.name,
+                                    }),
+                                    (0, b.jsx)("td", {
+                                      className: "neon-pink",
+                                      children: a.symbol,
+                                    }),
+                                    (0, b.jsx)("td", {
+                                      className:
+                                        "text-gray-400 font-mono text-xs",
+                                      children: a.contractAddress,
+                                    }),
+                                    (0, b.jsx)("td", {
+                                      className: "text-gray-300",
+                                      children: a.chain,
+                                    }),
+                                    (0, b.jsx)("td", {
+                                      children: (0, b.jsxs)(f.default, {
+                                        href: a.apiEndpoint,
+                                        target: "_blank",
+                                        rel: "noopener noreferrer",
+                                        className:
+                                          "text-cyan-400 hover:underline flex items-center gap-1",
+                                        children: [
+                                          "API ",
+                                          (0, b.jsx)(h.ExternalLink, {
+                                            size: 14,
+                                          }),
+                                        ],
+                                      }),
+                                    }),
+                                  ],
+                                },
+                                `${a.symbol}-${c}`,
+                              ),
+                            ),
+                          }),
+                        ],
+                      }),
+                      0 === k.length &&
+                        (0, b.jsx)("p", {
+                          className: "text-center text-gray-400 py-8",
+                          children:
+                            "No bridge tokens found matching your search.",
+                        }),
+                    ],
+                  }),
+                }),
+              ],
+            }),
+          }),
+          (0, b.jsxs)(f.default, {
+            href: "/main",
+            className:
+              "fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2",
+            children: [(0, b.jsx)(g.ArrowLeft, { size: 16 }), "Back"],
+          }),
+        ],
+      });
+    }
+    a.s(["default", () => j], 31459);
+  },
+];
 
 //# sourceMappingURL=_758a4817._.js.map

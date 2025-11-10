@@ -15,22 +15,27 @@
  * - This script is read-only and requires no API key.
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const COINGECKO_BASE = 'https://api.coingecko.com/api/v3';
-const CATEGORY = 'yield-farming';
+const COINGECKO_BASE = "https://api.coingecko.com/api/v3";
+const CATEGORY = "yield-farming";
 const PER_PAGE = 250; // max per page
 const BATCH_SIZE = 10; // number of detail fetches in parallel
 const BATCH_DELAY_MS = 1500; // delay between batches to avoid rate limits
 const DETAIL_DELAY_MS = 500; // small stagger inside batch
 
-function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
 
 async function fetchJson(url, opts = {}) {
-  const res = await fetch(url, { headers: { 'Accept': 'application/json' }, ...opts });
+  const res = await fetch(url, {
+    headers: { Accept: "application/json" },
+    ...opts,
+  });
   if (!res.ok) {
-    const txt = await res.text().catch(() => '');
+    const txt = await res.text().catch(() => "");
     throw new Error(`Fetch ${url} failed: ${res.status} ${txt}`);
   }
   return res.json();
@@ -60,16 +65,20 @@ async function fetchCoinDetails(id) {
     name: data.name,
     symbol: data.symbol,
     market_cap_rank: data.market_cap_rank,
-    homepage: (data.links && data.links.homepage && data.links.homepage[0]) || null,
-    short_description: (data.description && data.description.en) ? data.description.en.replace(/\s+/g,' ').slice(0,300) : null,
+    homepage:
+      (data.links && data.links.homepage && data.links.homepage[0]) || null,
+    short_description:
+      data.description && data.description.en
+        ? data.description.en.replace(/\s+/g, " ").slice(0, 300)
+        : null,
     platforms: data.platforms || {}, // map chain->contract
     market_data: {
       current_price_usd: data.market_data?.current_price?.usd ?? null,
       market_cap_usd: data.market_data?.market_cap?.usd ?? null,
       total_volume_usd: data.market_data?.total_volume?.usd ?? null,
       circulating_supply: data.market_data?.circulating_supply ?? null,
-      total_supply: data.market_data?.total_supply ?? null
-    }
+      total_supply: data.market_data?.total_supply ?? null,
+    },
   };
 }
 
@@ -77,12 +86,14 @@ async function fetchCoinDetails(id) {
   try {
     const categoryList = await fetchCategoryList();
     console.log(`Found ${categoryList.length} items in category ${CATEGORY}.`);
-    const ids = categoryList.map(item => item.id);
+    const ids = categoryList.map((item) => item.id);
 
     const results = [];
     for (let i = 0; i < ids.length; i += BATCH_SIZE) {
       const batch = ids.slice(i, i + BATCH_SIZE);
-      console.log(`Processing batch ${Math.floor(i/BATCH_SIZE)+1} (${batch.length} items)...`);
+      console.log(
+        `Processing batch ${Math.floor(i / BATCH_SIZE) + 1} (${batch.length} items)...`,
+      );
       // fetch details in parallel with small staggering to avoid bursts
       const promises = batch.map(async (id, idx) => {
         try {
@@ -109,12 +120,25 @@ async function fetchCoinDetails(id) {
 
     // save snapshot
     const now = new Date();
-    const filename = `yield-farming-coins-${now.toISOString().slice(0,10)}.json`;
+    const filename = `yield-farming-coins-${now.toISOString().slice(0, 10)}.json`;
     const outPath = path.join(process.cwd(), filename);
-    fs.writeFileSync(outPath, JSON.stringify({ fetched_at: now.toISOString(), category: CATEGORY, count: results.length, results }, null, 2), { encoding: 'utf8' });
+    fs.writeFileSync(
+      outPath,
+      JSON.stringify(
+        {
+          fetched_at: now.toISOString(),
+          category: CATEGORY,
+          count: results.length,
+          results,
+        },
+        null,
+        2,
+      ),
+      { encoding: "utf8" },
+    );
     console.log(`Saved ${results.length} records to ${filename}`);
   } catch (err) {
-    console.error('Fatal error:', err);
+    console.error("Fatal error:", err);
     process.exit(1);
   }
 })();

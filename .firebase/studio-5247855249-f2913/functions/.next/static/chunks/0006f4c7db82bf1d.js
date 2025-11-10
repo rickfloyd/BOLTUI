@@ -1,1 +1,1637 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,33525,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0}),Object.defineProperty(n,"warnOnce",{enumerable:!0,get:function(){return r}});let r=e=>{}},98183,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r={assign:function(){return o},searchParamsToUrlQuery:function(){return s},urlQueryToSearchParams:function(){return l}};for(var a in r)Object.defineProperty(n,a,{enumerable:!0,get:r[a]});function s(e){let t={};for(let[n,r]of e.entries()){let e=t[n];void 0===e?t[n]=r:Array.isArray(e)?e.push(r):t[n]=[e,r]}return t}function i(e){return"string"==typeof e?e:("number"!=typeof e||isNaN(e))&&"boolean"!=typeof e?"":String(e)}function l(e){let t=new URLSearchParams;for(let[n,r]of Object.entries(e))if(Array.isArray(r))for(let e of r)t.append(n,i(e));else t.set(n,i(r));return t}function o(e,...t){for(let n of t){for(let t of n.keys())e.delete(t);for(let[t,r]of n.entries())e.append(t,r)}return e}},95057,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r={formatUrl:function(){return l},formatWithValidation:function(){return c},urlObjectKeys:function(){return o}};for(var a in r)Object.defineProperty(n,a,{enumerable:!0,get:r[a]});let s=e.r(90809)._(e.r(98183)),i=/https?|ftp|gopher|file/;function l(e){let{auth:t,hostname:n}=e,r=e.protocol||"",a=e.pathname||"",l=e.hash||"",o=e.query||"",c=!1;t=t?encodeURIComponent(t).replace(/%3A/i,":")+"@":"",e.host?c=t+e.host:n&&(c=t+(~n.indexOf(":")?`[${n}]`:n),e.port&&(c+=":"+e.port)),o&&"object"==typeof o&&(o=String(s.urlQueryToSearchParams(o)));let u=e.search||o&&`?${o}`||"";return r&&!r.endsWith(":")&&(r+=":"),e.slashes||(!r||i.test(r))&&!1!==c?(c="//"+(c||""),a&&"/"!==a[0]&&(a="/"+a)):c||(c=""),l&&"#"!==l[0]&&(l="#"+l),u&&"?"!==u[0]&&(u="?"+u),a=a.replace(/[?#]/g,encodeURIComponent),u=u.replace("#","%23"),`${r}${c}${a}${u}${l}`}let o=["auth","hash","host","hostname","href","path","pathname","port","protocol","query","search","slashes"];function c(e){return l(e)}},18581,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0}),Object.defineProperty(n,"useMergedRef",{enumerable:!0,get:function(){return a}});let r=e.r(71645);function a(e,t){let n=(0,r.useRef)(null),a=(0,r.useRef)(null);return(0,r.useCallback)(r=>{if(null===r){let e=n.current;e&&(n.current=null,e());let t=a.current;t&&(a.current=null,t())}else e&&(n.current=s(e,r)),t&&(a.current=s(t,r))},[e,t])}function s(e,t){if("function"!=typeof e)return e.current=t,()=>{e.current=null};{let n=e(t);return"function"==typeof n?n:()=>e(null)}}("function"==typeof n.default||"object"==typeof n.default&&null!==n.default)&&void 0===n.default.__esModule&&(Object.defineProperty(n.default,"__esModule",{value:!0}),Object.assign(n.default,n),t.exports=n.default)},18967,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r={DecodeError:function(){return y},MiddlewareNotFoundError:function(){return v},MissingStaticPage:function(){return b},NormalizeError:function(){return j},PageNotFoundError:function(){return g},SP:function(){return p},ST:function(){return x},WEB_VITALS:function(){return s},execOnce:function(){return i},getDisplayName:function(){return d},getLocationOrigin:function(){return c},getURL:function(){return u},isAbsoluteUrl:function(){return o},isResSent:function(){return f},loadGetInitialProps:function(){return h},normalizeRepeatedSlashes:function(){return m},stringifyError:function(){return N}};for(var a in r)Object.defineProperty(n,a,{enumerable:!0,get:r[a]});let s=["CLS","FCP","FID","INP","LCP","TTFB"];function i(e){let t,n=!1;return(...r)=>(n||(n=!0,t=e(...r)),t)}let l=/^[a-zA-Z][a-zA-Z\d+\-.]*?:/,o=e=>l.test(e);function c(){let{protocol:e,hostname:t,port:n}=window.location;return`${e}//${t}${n?":"+n:""}`}function u(){let{href:e}=window.location,t=c();return e.substring(t.length)}function d(e){return"string"==typeof e?e:e.displayName||e.name||"Unknown"}function f(e){return e.finished||e.headersSent}function m(e){let t=e.split("?");return t[0].replace(/\\/g,"/").replace(/\/\/+/g,"/")+(t[1]?`?${t.slice(1).join("?")}`:"")}async function h(e,t){let n=t.res||t.ctx&&t.ctx.res;if(!e.getInitialProps)return t.ctx&&t.Component?{pageProps:await h(t.Component,t.ctx)}:{};let r=await e.getInitialProps(t);if(n&&f(n))return r;if(!r)throw Object.defineProperty(Error(`"${d(e)}.getInitialProps()" should resolve to an object. But found "${r}" instead.`),"__NEXT_ERROR_CODE",{value:"E394",enumerable:!1,configurable:!0});return r}let p="undefined"!=typeof performance,x=p&&["mark","measure","getEntriesByName"].every(e=>"function"==typeof performance[e]);class y extends Error{}class j extends Error{}class g extends Error{constructor(e){super(),this.code="ENOENT",this.name="PageNotFoundError",this.message=`Cannot find module for page: ${e}`}}class b extends Error{constructor(e,t){super(),this.message=`Failed to load static file for page: ${e} ${t}`}}class v extends Error{constructor(){super(),this.code="ENOENT",this.message="Cannot find the middleware module"}}function N(e){return JSON.stringify({message:e.message,stack:e.stack})}},73668,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0}),Object.defineProperty(n,"isLocalURL",{enumerable:!0,get:function(){return s}});let r=e.r(18967),a=e.r(52817);function s(e){if(!(0,r.isAbsoluteUrl)(e))return!0;try{let t=(0,r.getLocationOrigin)(),n=new URL(e,t);return n.origin===t&&(0,a.hasBasePath)(n.pathname)}catch(e){return!1}}},84508,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0}),Object.defineProperty(n,"errorOnce",{enumerable:!0,get:function(){return r}});let r=e=>{}},22016,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r={default:function(){return y},useLinkStatus:function(){return g}};for(var a in r)Object.defineProperty(n,a,{enumerable:!0,get:r[a]});let s=e.r(90809),i=e.r(43476),l=s._(e.r(71645)),o=e.r(95057),c=e.r(8372),u=e.r(18581),d=e.r(18967),f=e.r(5550);e.r(33525);let m=e.r(91949),h=e.r(73668),p=e.r(65165);function x(e){return"string"==typeof e?e:(0,o.formatUrl)(e)}function y(t){var n;let r,a,s,[o,y]=(0,l.useOptimistic)(m.IDLE_LINK_STATUS),g=(0,l.useRef)(null),{href:b,as:v,children:N,prefetch:C=null,passHref:S,replace:k,shallow:w,scroll:P,onClick:O,onMouseEnter:A,onTouchStart:E,legacyBehavior:T=!1,onNavigate:R,ref:M,unstable_dynamicOnHover:_,...I}=t;r=N,T&&("string"==typeof r||"number"==typeof r)&&(r=(0,i.jsx)("a",{children:r}));let D=l.default.useContext(c.AppRouterContext),F=!1!==C,L=!1!==C?null===(n=C)||"auto"===n?p.FetchStrategy.PPR:p.FetchStrategy.Full:p.FetchStrategy.PPR,{href:U,as:B}=l.default.useMemo(()=>{let e=x(b);return{href:e,as:v?x(v):e}},[b,v]);if(T){if(r?.$$typeof===Symbol.for("react.lazy"))throw Object.defineProperty(Error("`<Link legacyBehavior>` received a direct child that is either a Server Component, or JSX that was loaded with React.lazy(). This is not supported. Either remove legacyBehavior, or make the direct child a Client Component that renders the Link's `<a>` tag."),"__NEXT_ERROR_CODE",{value:"E863",enumerable:!1,configurable:!0});a=l.default.Children.only(r)}let $=T?a&&"object"==typeof a&&a.ref:M,V=l.default.useCallback(e=>(null!==D&&(g.current=(0,m.mountLinkInstance)(e,U,D,L,F,y)),()=>{g.current&&((0,m.unmountLinkForCurrentNavigation)(g.current),g.current=null),(0,m.unmountPrefetchableInstance)(e)}),[F,U,D,L,y]),G={ref:(0,u.useMergedRef)(V,$),onClick(t){T||"function"!=typeof O||O(t),T&&a.props&&"function"==typeof a.props.onClick&&a.props.onClick(t),!D||t.defaultPrevented||function(t,n,r,a,s,i,o){if("undefined"!=typeof window){let c,{nodeName:u}=t.currentTarget;if("A"===u.toUpperCase()&&((c=t.currentTarget.getAttribute("target"))&&"_self"!==c||t.metaKey||t.ctrlKey||t.shiftKey||t.altKey||t.nativeEvent&&2===t.nativeEvent.which)||t.currentTarget.hasAttribute("download"))return;if(!(0,h.isLocalURL)(n)){s&&(t.preventDefault(),location.replace(n));return}if(t.preventDefault(),o){let e=!1;if(o({preventDefault:()=>{e=!0}}),e)return}let{dispatchNavigateAction:d}=e.r(99781);l.default.startTransition(()=>{d(r||n,s?"replace":"push",i??!0,a.current)})}}(t,U,B,g,k,P,R)},onMouseEnter(e){T||"function"!=typeof A||A(e),T&&a.props&&"function"==typeof a.props.onMouseEnter&&a.props.onMouseEnter(e),D&&F&&(0,m.onNavigationIntent)(e.currentTarget,!0===_)},onTouchStart:function(e){T||"function"!=typeof E||E(e),T&&a.props&&"function"==typeof a.props.onTouchStart&&a.props.onTouchStart(e),D&&F&&(0,m.onNavigationIntent)(e.currentTarget,!0===_)}};return(0,d.isAbsoluteUrl)(B)?G.href=B:T&&!S&&("a"!==a.type||"href"in a.props)||(G.href=(0,f.addBasePath)(B)),s=T?l.default.cloneElement(a,G):(0,i.jsx)("a",{...I,...G,children:r}),(0,i.jsx)(j.Provider,{value:o,children:s})}e.r(84508);let j=(0,l.createContext)(m.IDLE_LINK_STATUS),g=()=>(0,l.useContext)(j);("function"==typeof n.default||"object"==typeof n.default&&null!==n.default)&&void 0===n.default.__esModule&&(Object.defineProperty(n.default,"__esModule",{value:!0}),Object.assign(n.default,n),t.exports=n.default)},45872,e=>{"use strict";var t=e.i(43476),n=e.i(22016),r=e.i(71645);function a({title:e,items:a,titleClassName:s}){let[i,l]=(0,r.useState)(!1);return(0,t.jsxs)("div",{className:"header-dropdown-container",onMouseEnter:()=>l(!0),onMouseLeave:()=>l(!1),children:[(0,t.jsx)("a",{href:"#",className:`nav-item leading-tight text-center ${s||"neon-cyan"}`,children:e}),i&&(0,t.jsx)("div",{className:"header-dropdown-menu",children:a.map((e,r)=>e.isSeparator?(0,t.jsx)("div",{className:"dropdown-separator"},r):"header"===e.type?(0,t.jsx)("div",{className:"dropdown-header",children:e.name},r):"link"===e.type?(0,t.jsxs)(n.default,{href:e.href||"#",className:"menu-item",target:e.href?.startsWith("http")?"_blank":"_self",rel:"noopener noreferrer",children:[e.name,e.subtext&&(0,t.jsx)("span",{className:"sub-text",children:e.subtext})]},r):(0,t.jsxs)("div",{className:`menu-item ${e.active?"active-pink":""}`,children:[e.name,e.subtext&&(0,t.jsx)("span",{className:"sub-text",children:e.subtext})]},r))})]})}let s=(0,e.i(75254).default)("Menu",[["line",{x1:"4",x2:"20",y1:"12",y2:"12",key:"1e0a9i"}],["line",{x1:"4",x2:"20",y1:"6",y2:"6",key:"1owob3"}],["line",{x1:"4",x2:"20",y1:"18",y2:"18",key:"yk5zj1"}]]);var i=e.i(37727);let l=[{name:"AI Price Prediction Engine",subtext:"Forecasting with machine learning"},{name:"ML Pattern Recognition",subtext:"Identify historical patterns"},{name:"Sentiment Analysis AI",subtext:"Gauge market mood from news & social"},{name:"Smart Risk Management",subtext:"AI-driven risk assessment"},{name:"Automated Trading Signals",subtext:"Real-time buy/sell alerts"},{name:"Neural Networks & LSTM",subtext:"Deep learning for market prediction"},{isSeparator:!0},{name:"Binance Schema",subtext:"View the Binance API Schema",type:"link",href:"/binance-schema"},{name:"Data Providers",subtext:"View API data providers",type:"link",href:"/data-providers"}],o=[{name:"Markets",subtext:"Global financial markets",active:!0},{name:"World Sports",subtext:"International sports coverage"}],c=[{name:"Personal Account",subtext:"Manage your personal trading profile",type:"link",href:"/profile"},{name:"Business Account",subtext:"Manage your business trading profile"},{name:"VIP",subtext:"Access exclusive VIP features"},{isSeparator:!0},{name:"GPS Food Finder",subtext:"Find restaurants near you",type:"link",href:"/gps-finder"}],u=[{name:"Bluetooth Connect",subtext:"Connect your audio device",type:"link",href:"/bluetooth-connect"},{isSeparator:!0},{name:"Apple Music",subtext:"Listen on Apple Music",type:"item"},{name:"Spotify",subtext:"Listen on Spotify",type:"item"},{name:"YouTube Music",subtext:"Listen on YouTube Music",type:"item"},{isSeparator:!0},{name:"Top 35 Food Apps",subtext:"Find food apps in your GPS region",type:"item"},{name:"Top Restaurants",subtext:"Find restaurants in your area",type:"link",href:"/gps-finder"},{name:"Uber Eats",subtext:"Order food delivery",type:"item"},{name:"DoorDash",subtext:"Order food delivery",type:"item"},{isSeparator:!0},{name:"International Social Networks",type:"header"},{name:"Facebook",type:"link",href:"https://facebook.com"},{name:"Twitter / X",type:"link",href:"https://x.com"},{name:"Instagram",type:"link",href:"https://instagram.com"},{name:"TikTok",type:"link",href:"https://tiktok.com"},{name:"LinkedIn",type:"link",href:"https://linkedin.com"},{name:"Reddit",type:"link",href:"https://reddit.com"},{name:"Pinterest",type:"link",href:"https://pinterest.com"},{name:"Snapchat",type:"link",href:"https://snapchat.com"},{name:"Telegram",type:"link",href:"https://telegram.org"},{name:"WhatsApp",type:"link",href:"https://whatsapp.com"},{name:"WeChat",type:"link",href:"https://wechat.com"},{name:"Discord",type:"link",href:"https://discord.com"}],d=[{name:"North American Major Sports",subtext:"NFL, NCAAF, NBA, WNBA, NCAAB, MLB, NHL, Soccer",type:"link",href:"#"},{name:"Combat Sports",subtext:"Boxing, MMA, UFC",type:"link",href:"#"},{name:"Racing",subtext:"NASCAR, Formula 1, Horse Racing",type:"link",href:"#"},{name:"Golf & Tennis",subtext:"PGA, LPGA, Grand Slam tournaments",type:"link",href:"#"},{name:"Other Sports",subtext:"Badminton, Cricket, Cycling, Darts, Handball, Lacrosse, Rugby, & more",type:"link",href:"#"}],f=[{name:"Republican",subtext:"News and opinion from a conservative perspective",type:"link",href:"#"},{name:"Democrat",subtext:"News and opinion from a Democratic perspective",type:"link",href:"#"},{name:"Liberal",subtext:"News and opinion from a liberal perspective",type:"link",href:"#"},{name:"Independent",subtext:"News and opinion from an independent perspective",type:"link",href:"#"}],m=[{name:"AI Volatility Forecast",subtext:"Predict market volatility with AI"}];function h(){return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)("div",{className:"header-top-layer",children:[(0,t.jsx)("div",{className:"flex items-center gap-4",children:(0,t.jsxs)("div",{className:"header-title leading-tight",children:[(0,t.jsx)("span",{className:"neon-text",children:"Quantum"}),(0,t.jsx)("br",{}),(0,t.jsx)("span",{className:"text-white",children:"CyberVision"})]})}),(0,t.jsxs)("div",{className:"nav-right",children:[(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:["Trader",(0,t.jsx)("br",{}),"Profile"]}),items:c,titleClassName:"neon-orange"}),(0,t.jsx)(a,{title:"Community",items:l,titleClassName:"neon-blue"}),(0,t.jsxs)(n.default,{href:"/compare-prices",className:"nav-item neon-pink text-center leading-tight",children:["Compare",(0,t.jsx)("br",{}),"Prices"]}),(0,t.jsx)(n.default,{href:"/join",className:"nav-item neon-pink",children:"Join"})]})]}),(0,t.jsx)("div",{className:"header-middle-layer",children:(0,t.jsxs)("nav",{className:"main-nav",children:[(0,t.jsx)(n.default,{href:"/",className:"nav-item neon-green",children:"Home"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-orange",children:"Stocks"}),(0,t.jsx)(n.default,{href:"/main",className:"nav-item neon-cyan",children:"Crypto"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-blue",children:"FUTURES AND COMMODITIES"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-purple",children:"Options"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-green",children:"BOND AND FIXED INCOME"})]})}),(0,t.jsx)("div",{className:"header-bottom-layer",children:(0,t.jsxs)("nav",{className:"main-nav",children:[(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:["Guilty",(0,t.jsx)("br",{}),"Pleasures"]}),items:u,titleClassName:"neon-pink"}),(0,t.jsx)(a,{title:"FX Matrix Analyzer",items:m,titleClassName:"neon-green"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("div",{children:"Las Vegas"}),(0,t.jsx)("div",{children:"Stats"})]}),items:d,titleClassName:"neon-gold glow-text"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("div",{children:"World"}),(0,t.jsx)("div",{children:"Sports"})]}),items:o,titleClassName:"neon-blue"}),(0,t.jsx)(a,{title:"Opinions",items:f,titleClassName:"neon-pink"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-green",children:"GLOBAL ECONOMIC AND MACRO DATA SOURCES"})]})}),(0,t.jsx)("div",{className:"header-fourth-layer",children:(0,t.jsxs)("nav",{className:"main-nav",children:[(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-purple",children:"Over-the-Counter (OTC)"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-gold",children:"INDEX PROVIDERS"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-red",children:"Mutual Funds and ETFs Data"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-blue",children:"ALTERNATIVE DATA MARKETS"})]})}),(0,t.jsx)("div",{className:"header-fifth-layer",children:(0,t.jsx)("nav",{className:"main-nav"})})]})}function p(){let[e,h]=(0,r.useState)(!1);return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)("div",{className:"header-top-layer",children:[(0,t.jsx)("div",{className:"flex items-center gap-4",children:(0,t.jsxs)("div",{className:"header-title leading-tight",children:[(0,t.jsx)("span",{className:"neon-text",children:"Quantum"}),(0,t.jsx)("br",{}),(0,t.jsx)("span",{className:"text-white",children:"CyberVision"})]})}),(0,t.jsx)("button",{onClick:()=>h(!e),className:"mobile-menu-button",children:e?(0,t.jsx)(i.X,{size:24}):(0,t.jsx)(s,{size:24})})]}),e&&(0,t.jsx)("div",{className:"mobile-menu",children:(0,t.jsxs)("nav",{className:"mobile-nav-links",children:[(0,t.jsx)(n.default,{href:"/",className:"nav-item neon-green",children:"Home"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:["Trader",(0,t.jsx)("br",{}),"Profile"]}),items:c,titleClassName:"neon-orange"}),(0,t.jsx)(a,{title:"Community",items:l,titleClassName:"neon-blue"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-orange",children:"Stocks"}),(0,t.jsx)(n.default,{href:"/main",className:"nav-item neon-cyan",children:"Crypto"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-blue",children:"FUTURES AND COMMODITIES"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-purple",children:"Options"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-green",children:"BOND AND FIXED INCOME"}),(0,t.jsx)("div",{className:"mobile-menu-separator"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:["Guilty",(0,t.jsx)("br",{}),"Pleasures"]}),items:u,titleClassName:"neon-pink"}),(0,t.jsx)(a,{title:"FX Matrix Analyzer",items:m,titleClassName:"neon-green"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("div",{children:"Las Vegas"}),(0,t.jsx)("div",{children:"Stats"})]}),items:d,titleClassName:"neon-gold glow-text"}),(0,t.jsx)(a,{title:(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("div",{children:"World"}),(0,t.jsx)("div",{children:"Sports"})]}),items:o,titleClassName:"neon-blue"}),(0,t.jsx)(a,{title:"Opinions",items:f,titleClassName:"neon-pink"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-green",children:"GLOBAL ECONOMIC AND MACRO DATA SOURCES"}),(0,t.jsx)("div",{className:"mobile-menu-separator"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-purple",children:"Over-the-Counter (OTC)"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-gold",children:"INDEX PROVIDERS"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-red",children:"Mutual Funds and ETFs Data"}),(0,t.jsx)(n.default,{href:"#",className:"nav-item neon-blue",children:"ALTERNATIVE DATA MARKETS"}),(0,t.jsx)("div",{className:"mobile-menu-separator"}),(0,t.jsx)("div",{className:"mobile-menu-separator"}),(0,t.jsxs)(n.default,{href:"/compare-prices",className:"nav-item neon-pink text-center leading-tight",children:["Compare",(0,t.jsx)("br",{}),"Prices"]}),(0,t.jsx)(n.default,{href:"/join",className:"nav-item neon-pink",children:"Join"})]})})]})}function x(){let e=function(){let[e,t]=r.useState(void 0);return r.useEffect(()=>{let e=window.matchMedia("(max-width: 767px)"),n=()=>{t(window.innerWidth<768)};return e.addEventListener("change",n),t(window.innerWidth<768),()=>e.removeEventListener("change",n)},[]),e}();return(0,t.jsx)("header",{className:"header-nav",children:void 0===e?(0,t.jsx)("div",{className:"header-top-layer",children:(0,t.jsx)("div",{className:"flex items-center gap-4",children:(0,t.jsxs)("div",{className:"header-title leading-tight",children:[(0,t.jsx)("span",{className:"neon-text",children:"Quantum"}),(0,t.jsx)("br",{}),(0,t.jsx)("span",{className:"text-white",children:"CyberVision"})]})})}):e?(0,t.jsx)(p,{}):(0,t.jsx)(h,{})})}e.s(["Header",()=>x],45872)},15288,e=>{"use strict";var t=e.i(43476),n=e.i(71645),r=e.i(75157);let a=n.forwardRef(({className:e,...n},a)=>(0,t.jsx)("div",{ref:a,className:(0,r.cn)("rounded-lg border bg-card text-card-foreground shadow-sm",e),...n}));a.displayName="Card";let s=n.forwardRef(({className:e,...n},a)=>(0,t.jsx)("div",{ref:a,className:(0,r.cn)("flex flex-col space-y-1.5 p-6",e),...n}));s.displayName="CardHeader";let i=n.forwardRef(({className:e,...n},a)=>(0,t.jsx)("h3",{ref:a,className:(0,r.cn)("text-2xl font-semibold leading-none tracking-tight",e),...n}));i.displayName="CardTitle",n.forwardRef(({className:e,...n},a)=>(0,t.jsx)("p",{ref:a,className:(0,r.cn)("text-sm text-muted-foreground",e),...n})).displayName="CardDescription";let l=n.forwardRef(({className:e,...n},a)=>(0,t.jsx)("div",{ref:a,className:(0,r.cn)("p-6 pt-0",e),...n}));l.displayName="CardContent",n.forwardRef(({className:e,...n},a)=>(0,t.jsx)("div",{ref:a,className:(0,r.cn)("flex items-center p-6 pt-0",e),...n})).displayName="CardFooter",e.s(["Card",()=>a,"CardContent",()=>l,"CardHeader",()=>s,"CardTitle",()=>i])},67585,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0}),Object.defineProperty(n,"BailoutToCSR",{enumerable:!0,get:function(){return a}});let r=e.r(32061);function a({reason:e,children:t}){if("undefined"==typeof window)throw Object.defineProperty(new r.BailoutToCSRError(e),"__NEXT_ERROR_CODE",{value:"E394",enumerable:!1,configurable:!0});return t}},9885,(e,t,n)=>{"use strict";function r(e){return e.split("/").map(e=>encodeURIComponent(e)).join("/")}Object.defineProperty(n,"__esModule",{value:!0}),Object.defineProperty(n,"encodeURIPath",{enumerable:!0,get:function(){return r}})},52157,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0}),Object.defineProperty(n,"PreloadChunks",{enumerable:!0,get:function(){return l}});let r=e.r(43476),a=e.r(74080),s=e.r(63599),i=e.r(9885);function l({moduleIds:e}){if("undefined"!=typeof window)return null;let t=s.workAsyncStorage.getStore();if(void 0===t)return null;let n=[];if(t.reactLoadableManifest&&e){let r=t.reactLoadableManifest;for(let t of e){if(!r[t])continue;let e=r[t].files;n.push(...e)}}return 0===n.length?null:(0,r.jsx)(r.Fragment,{children:n.map(e=>{let n=`${t.assetPrefix}/_next/${(0,i.encodeURIPath)(e)}`;return e.endsWith(".css")?(0,r.jsx)("link",{precedence:"dynamic",href:n,rel:"stylesheet",as:"style",nonce:t.nonce},e):((0,a.preload)(n,{as:"script",fetchPriority:"low",nonce:t.nonce}),null)})})}},69093,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0}),Object.defineProperty(n,"default",{enumerable:!0,get:function(){return c}});let r=e.r(43476),a=e.r(71645),s=e.r(67585),i=e.r(52157);function l(e){return{default:e&&"default"in e?e.default:e}}let o={loader:()=>Promise.resolve(l(()=>null)),loading:null,ssr:!0},c=function(e){let t={...o,...e},n=(0,a.lazy)(()=>t.loader().then(l)),c=t.loading;function u(e){let l=c?(0,r.jsx)(c,{isLoading:!0,pastDelay:!0,error:null}):null,o=!t.ssr||!!t.loading,u=o?a.Suspense:a.Fragment,d=t.ssr?(0,r.jsxs)(r.Fragment,{children:["undefined"==typeof window?(0,r.jsx)(i.PreloadChunks,{moduleIds:t.modules}):null,(0,r.jsx)(n,{...e})]}):(0,r.jsx)(s.BailoutToCSR,{reason:"next/dynamic",children:(0,r.jsx)(n,{...e})});return(0,r.jsx)(u,{...o?{fallback:l}:{},children:d})}return u.displayName="LoadableComponent",u}},70703,(e,t,n)=>{"use strict";Object.defineProperty(n,"__esModule",{value:!0}),Object.defineProperty(n,"default",{enumerable:!0,get:function(){return a}});let r=e.r(55682)._(e.r(69093));function a(e,t){let n={};"function"==typeof e&&(n.loader=e);let a={...n,...t};return(0,r.default)({...a,modules:a.loadableGenerated?.modules})}("function"==typeof n.default||"object"==typeof n.default&&null!==n.default)&&void 0===n.default.__esModule&&(Object.defineProperty(n.default,"__esModule",{value:!0}),Object.assign(n.default,n),t.exports=n.default)},59151,e=>{"use strict";var t=e.i(43476),n=e.i(71645),r=e.i(70703),a=e.i(45872),s=e.i(19455),i=e.i(67489),l=e.i(15288),o=e.i(25913),c=e.i(75157);let u=(0,o.cva)("relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground",{variants:{variant:{default:"bg-background text-foreground",destructive:"border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive"}},defaultVariants:{variant:"default"}}),d=n.forwardRef(({className:e,variant:n,...r},a)=>(0,t.jsx)("div",{ref:a,role:"alert",className:(0,c.cn)(u({variant:n}),e),...r}));d.displayName="Alert";let f=n.forwardRef(({className:e,...n},r)=>(0,t.jsx)("h5",{ref:r,className:(0,c.cn)("mb-1 font-medium leading-none tracking-tight",e),...n}));f.displayName="AlertTitle";let m=n.forwardRef(({className:e,...n},r)=>(0,t.jsx)("div",{ref:r,className:(0,c.cn)("text-sm [&_p]:leading-relaxed",e),...n}));m.displayName="AlertDescription";let h=(0,e.i(75254).default)("Terminal",[["polyline",{points:"4 17 10 11 4 5",key:"akl6gq"}],["line",{x1:"12",x2:"20",y1:"19",y2:"19",key:"q2wloq"}]]),p=(0,r.default)(()=>e.A(11698),{loadableGenerated:{modules:[26084]},ssr:!1}),x=[{value:"BTC/USD",label:"Bitcoin (BTC/USD)"},{value:"ETH/USD",label:"Ethereum (ETH/USD)"}],y=[{value:"1min",label:"1 Minute"},{value:"1h",label:"1 Hour"},{value:"1day",label:"1 Day"}];function j(){let[e,r]=(0,n.useState)([]),[o,c]=(0,n.useState)(!1),[u,j]=(0,n.useState)(null),[g,b]=(0,n.useState)(null),[v,N]=(0,n.useState)("BTC/USD"),[C,S]=(0,n.useState)("1h"),k=async()=>{c(!0),j(null),r([]),b(null);try{let e=`/api/bridge?symbol=${encodeURIComponent(v)}&interval=${encodeURIComponent(C)}`,t=await fetch(e);if(!t.ok){let e=await t.json();throw Error(e.error||"Failed to fetch data from the bridge API.")}let n=await t.json();if(!n.data||0===n.data.length)throw Error("No data returned from any provider.");r(n.data),b(n.source)}catch(e){j(`Data fetch failed: ${e.message}`)}finally{c(!1)}};return(0,n.useEffect)(()=>{k()},[v,C]),(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(a.Header,{}),(0,t.jsx)("main",{className:"dashboard-grid",children:(0,t.jsxs)("div",{className:"center-content",children:[(0,t.jsx)("h1",{className:"text-3xl font-bold neon-text text-center",children:"Hyper Dashboard"}),(0,t.jsx)("p",{className:"text-lg text-gray-300 text-center",children:"Real-time charts powered by the fastest available data provider."}),(0,t.jsxs)(l.Card,{className:"data-card glow-multi-color",children:[(0,t.jsxs)(l.CardHeader,{className:"flex flex-row items-center justify-between",children:[(0,t.jsx)(l.CardTitle,{className:"neon-text",children:"Market View"}),(0,t.jsxs)("div",{className:"flex gap-4",children:[(0,t.jsxs)(i.Select,{value:v,onValueChange:N,children:[(0,t.jsx)(i.SelectTrigger,{className:"w-[180px] bg-gray-800 border-cyan-400 text-white",children:(0,t.jsx)(i.SelectValue,{})}),(0,t.jsx)(i.SelectContent,{className:"bg-black text-white border-cyan-400",children:x.map(e=>(0,t.jsx)(i.SelectItem,{value:e.value,children:e.label},e.value))})]}),(0,t.jsxs)(i.Select,{value:C,onValueChange:S,children:[(0,t.jsx)(i.SelectTrigger,{className:"w-[180px] bg-gray-800 border-cyan-400 text-white",children:(0,t.jsx)(i.SelectValue,{})}),(0,t.jsx)(i.SelectContent,{className:"bg-black text-white border-cyan-400",children:y.map(e=>(0,t.jsx)(i.SelectItem,{value:e.value,children:e.label},e.value))})]}),(0,t.jsx)(s.Button,{onClick:k,disabled:o,children:o?"Loading...":"Force Refresh"})]})]}),(0,t.jsx)(l.CardContent,{children:(0,t.jsxs)("div",{className:"w-full h-[500px] mt-4",children:[u&&(0,t.jsxs)(d,{variant:"destructive",className:"h-full flex flex-col justify-center items-center",children:[(0,t.jsx)(h,{className:"h-4 w-4"}),(0,t.jsx)(f,{children:"Data Fetching Error"}),(0,t.jsx)(m,{children:u})]}),!u&&!o&&(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(p,{index:v,chartType:"Line Chart",initialData:e}),g&&(0,t.jsxs)("p",{className:"text-xs text-center text-gray-500 mt-2",children:["Data served from: ",g]})]}),o&&(0,t.jsx)("div",{className:"flex items-center justify-center h-full text-cyan-400 text-lg",children:"Racing data providers..."})]})})]})]})})]})}e.s(["default",()=>j],59151)},11698,e=>{e.v(t=>Promise.all(["static/chunks/3d51450f0bc35c27.js"].map(t=>e.l(t))).then(()=>t(26084)))}]);
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([
+  "object" == typeof document ? document.currentScript : void 0,
+  33525,
+  (e, t, n) => {
+    "use strict";
+    (Object.defineProperty(n, "__esModule", { value: !0 }),
+      Object.defineProperty(n, "warnOnce", {
+        enumerable: !0,
+        get: function () {
+          return r;
+        },
+      }));
+    let r = (e) => {};
+  },
+  98183,
+  (e, t, n) => {
+    "use strict";
+    Object.defineProperty(n, "__esModule", { value: !0 });
+    var r = {
+      assign: function () {
+        return o;
+      },
+      searchParamsToUrlQuery: function () {
+        return s;
+      },
+      urlQueryToSearchParams: function () {
+        return l;
+      },
+    };
+    for (var a in r) Object.defineProperty(n, a, { enumerable: !0, get: r[a] });
+    function s(e) {
+      let t = {};
+      for (let [n, r] of e.entries()) {
+        let e = t[n];
+        void 0 === e
+          ? (t[n] = r)
+          : Array.isArray(e)
+            ? e.push(r)
+            : (t[n] = [e, r]);
+      }
+      return t;
+    }
+    function i(e) {
+      return "string" == typeof e
+        ? e
+        : ("number" != typeof e || isNaN(e)) && "boolean" != typeof e
+          ? ""
+          : String(e);
+    }
+    function l(e) {
+      let t = new URLSearchParams();
+      for (let [n, r] of Object.entries(e))
+        if (Array.isArray(r)) for (let e of r) t.append(n, i(e));
+        else t.set(n, i(r));
+      return t;
+    }
+    function o(e, ...t) {
+      for (let n of t) {
+        for (let t of n.keys()) e.delete(t);
+        for (let [t, r] of n.entries()) e.append(t, r);
+      }
+      return e;
+    }
+  },
+  95057,
+  (e, t, n) => {
+    "use strict";
+    Object.defineProperty(n, "__esModule", { value: !0 });
+    var r = {
+      formatUrl: function () {
+        return l;
+      },
+      formatWithValidation: function () {
+        return c;
+      },
+      urlObjectKeys: function () {
+        return o;
+      },
+    };
+    for (var a in r) Object.defineProperty(n, a, { enumerable: !0, get: r[a] });
+    let s = e.r(90809)._(e.r(98183)),
+      i = /https?|ftp|gopher|file/;
+    function l(e) {
+      let { auth: t, hostname: n } = e,
+        r = e.protocol || "",
+        a = e.pathname || "",
+        l = e.hash || "",
+        o = e.query || "",
+        c = !1;
+      ((t = t ? encodeURIComponent(t).replace(/%3A/i, ":") + "@" : ""),
+        e.host
+          ? (c = t + e.host)
+          : n &&
+            ((c = t + (~n.indexOf(":") ? `[${n}]` : n)),
+            e.port && (c += ":" + e.port)),
+        o && "object" == typeof o && (o = String(s.urlQueryToSearchParams(o))));
+      let u = e.search || (o && `?${o}`) || "";
+      return (
+        r && !r.endsWith(":") && (r += ":"),
+        e.slashes || ((!r || i.test(r)) && !1 !== c)
+          ? ((c = "//" + (c || "")), a && "/" !== a[0] && (a = "/" + a))
+          : c || (c = ""),
+        l && "#" !== l[0] && (l = "#" + l),
+        u && "?" !== u[0] && (u = "?" + u),
+        (a = a.replace(/[?#]/g, encodeURIComponent)),
+        (u = u.replace("#", "%23")),
+        `${r}${c}${a}${u}${l}`
+      );
+    }
+    let o = [
+      "auth",
+      "hash",
+      "host",
+      "hostname",
+      "href",
+      "path",
+      "pathname",
+      "port",
+      "protocol",
+      "query",
+      "search",
+      "slashes",
+    ];
+    function c(e) {
+      return l(e);
+    }
+  },
+  18581,
+  (e, t, n) => {
+    "use strict";
+    (Object.defineProperty(n, "__esModule", { value: !0 }),
+      Object.defineProperty(n, "useMergedRef", {
+        enumerable: !0,
+        get: function () {
+          return a;
+        },
+      }));
+    let r = e.r(71645);
+    function a(e, t) {
+      let n = (0, r.useRef)(null),
+        a = (0, r.useRef)(null);
+      return (0, r.useCallback)(
+        (r) => {
+          if (null === r) {
+            let e = n.current;
+            e && ((n.current = null), e());
+            let t = a.current;
+            t && ((a.current = null), t());
+          } else (e && (n.current = s(e, r)), t && (a.current = s(t, r)));
+        },
+        [e, t],
+      );
+    }
+    function s(e, t) {
+      if ("function" != typeof e)
+        return (
+          (e.current = t),
+          () => {
+            e.current = null;
+          }
+        );
+      {
+        let n = e(t);
+        return "function" == typeof n ? n : () => e(null);
+      }
+    }
+    ("function" == typeof n.default ||
+      ("object" == typeof n.default && null !== n.default)) &&
+      void 0 === n.default.__esModule &&
+      (Object.defineProperty(n.default, "__esModule", { value: !0 }),
+      Object.assign(n.default, n),
+      (t.exports = n.default));
+  },
+  18967,
+  (e, t, n) => {
+    "use strict";
+    Object.defineProperty(n, "__esModule", { value: !0 });
+    var r = {
+      DecodeError: function () {
+        return y;
+      },
+      MiddlewareNotFoundError: function () {
+        return v;
+      },
+      MissingStaticPage: function () {
+        return b;
+      },
+      NormalizeError: function () {
+        return j;
+      },
+      PageNotFoundError: function () {
+        return g;
+      },
+      SP: function () {
+        return p;
+      },
+      ST: function () {
+        return x;
+      },
+      WEB_VITALS: function () {
+        return s;
+      },
+      execOnce: function () {
+        return i;
+      },
+      getDisplayName: function () {
+        return d;
+      },
+      getLocationOrigin: function () {
+        return c;
+      },
+      getURL: function () {
+        return u;
+      },
+      isAbsoluteUrl: function () {
+        return o;
+      },
+      isResSent: function () {
+        return f;
+      },
+      loadGetInitialProps: function () {
+        return h;
+      },
+      normalizeRepeatedSlashes: function () {
+        return m;
+      },
+      stringifyError: function () {
+        return N;
+      },
+    };
+    for (var a in r) Object.defineProperty(n, a, { enumerable: !0, get: r[a] });
+    let s = ["CLS", "FCP", "FID", "INP", "LCP", "TTFB"];
+    function i(e) {
+      let t,
+        n = !1;
+      return (...r) => (n || ((n = !0), (t = e(...r))), t);
+    }
+    let l = /^[a-zA-Z][a-zA-Z\d+\-.]*?:/,
+      o = (e) => l.test(e);
+    function c() {
+      let { protocol: e, hostname: t, port: n } = window.location;
+      return `${e}//${t}${n ? ":" + n : ""}`;
+    }
+    function u() {
+      let { href: e } = window.location,
+        t = c();
+      return e.substring(t.length);
+    }
+    function d(e) {
+      return "string" == typeof e ? e : e.displayName || e.name || "Unknown";
+    }
+    function f(e) {
+      return e.finished || e.headersSent;
+    }
+    function m(e) {
+      let t = e.split("?");
+      return (
+        t[0].replace(/\\/g, "/").replace(/\/\/+/g, "/") +
+        (t[1] ? `?${t.slice(1).join("?")}` : "")
+      );
+    }
+    async function h(e, t) {
+      let n = t.res || (t.ctx && t.ctx.res);
+      if (!e.getInitialProps)
+        return t.ctx && t.Component
+          ? { pageProps: await h(t.Component, t.ctx) }
+          : {};
+      let r = await e.getInitialProps(t);
+      if (n && f(n)) return r;
+      if (!r)
+        throw Object.defineProperty(
+          Error(
+            `"${d(e)}.getInitialProps()" should resolve to an object. But found "${r}" instead.`,
+          ),
+          "__NEXT_ERROR_CODE",
+          { value: "E394", enumerable: !1, configurable: !0 },
+        );
+      return r;
+    }
+    let p = "undefined" != typeof performance,
+      x =
+        p &&
+        ["mark", "measure", "getEntriesByName"].every(
+          (e) => "function" == typeof performance[e],
+        );
+    class y extends Error {}
+    class j extends Error {}
+    class g extends Error {
+      constructor(e) {
+        (super(),
+          (this.code = "ENOENT"),
+          (this.name = "PageNotFoundError"),
+          (this.message = `Cannot find module for page: ${e}`));
+      }
+    }
+    class b extends Error {
+      constructor(e, t) {
+        (super(),
+          (this.message = `Failed to load static file for page: ${e} ${t}`));
+      }
+    }
+    class v extends Error {
+      constructor() {
+        (super(),
+          (this.code = "ENOENT"),
+          (this.message = "Cannot find the middleware module"));
+      }
+    }
+    function N(e) {
+      return JSON.stringify({ message: e.message, stack: e.stack });
+    }
+  },
+  73668,
+  (e, t, n) => {
+    "use strict";
+    (Object.defineProperty(n, "__esModule", { value: !0 }),
+      Object.defineProperty(n, "isLocalURL", {
+        enumerable: !0,
+        get: function () {
+          return s;
+        },
+      }));
+    let r = e.r(18967),
+      a = e.r(52817);
+    function s(e) {
+      if (!(0, r.isAbsoluteUrl)(e)) return !0;
+      try {
+        let t = (0, r.getLocationOrigin)(),
+          n = new URL(e, t);
+        return n.origin === t && (0, a.hasBasePath)(n.pathname);
+      } catch (e) {
+        return !1;
+      }
+    }
+  },
+  84508,
+  (e, t, n) => {
+    "use strict";
+    (Object.defineProperty(n, "__esModule", { value: !0 }),
+      Object.defineProperty(n, "errorOnce", {
+        enumerable: !0,
+        get: function () {
+          return r;
+        },
+      }));
+    let r = (e) => {};
+  },
+  22016,
+  (e, t, n) => {
+    "use strict";
+    Object.defineProperty(n, "__esModule", { value: !0 });
+    var r = {
+      default: function () {
+        return y;
+      },
+      useLinkStatus: function () {
+        return g;
+      },
+    };
+    for (var a in r) Object.defineProperty(n, a, { enumerable: !0, get: r[a] });
+    let s = e.r(90809),
+      i = e.r(43476),
+      l = s._(e.r(71645)),
+      o = e.r(95057),
+      c = e.r(8372),
+      u = e.r(18581),
+      d = e.r(18967),
+      f = e.r(5550);
+    e.r(33525);
+    let m = e.r(91949),
+      h = e.r(73668),
+      p = e.r(65165);
+    function x(e) {
+      return "string" == typeof e ? e : (0, o.formatUrl)(e);
+    }
+    function y(t) {
+      var n;
+      let r,
+        a,
+        s,
+        [o, y] = (0, l.useOptimistic)(m.IDLE_LINK_STATUS),
+        g = (0, l.useRef)(null),
+        {
+          href: b,
+          as: v,
+          children: N,
+          prefetch: C = null,
+          passHref: S,
+          replace: k,
+          shallow: w,
+          scroll: P,
+          onClick: O,
+          onMouseEnter: A,
+          onTouchStart: E,
+          legacyBehavior: T = !1,
+          onNavigate: R,
+          ref: M,
+          unstable_dynamicOnHover: _,
+          ...I
+        } = t;
+      ((r = N),
+        T &&
+          ("string" == typeof r || "number" == typeof r) &&
+          (r = (0, i.jsx)("a", { children: r })));
+      let D = l.default.useContext(c.AppRouterContext),
+        F = !1 !== C,
+        L =
+          !1 !== C
+            ? null === (n = C) || "auto" === n
+              ? p.FetchStrategy.PPR
+              : p.FetchStrategy.Full
+            : p.FetchStrategy.PPR,
+        { href: U, as: B } = l.default.useMemo(() => {
+          let e = x(b);
+          return { href: e, as: v ? x(v) : e };
+        }, [b, v]);
+      if (T) {
+        if (r?.$$typeof === Symbol.for("react.lazy"))
+          throw Object.defineProperty(
+            Error(
+              "`<Link legacyBehavior>` received a direct child that is either a Server Component, or JSX that was loaded with React.lazy(). This is not supported. Either remove legacyBehavior, or make the direct child a Client Component that renders the Link's `<a>` tag.",
+            ),
+            "__NEXT_ERROR_CODE",
+            { value: "E863", enumerable: !1, configurable: !0 },
+          );
+        a = l.default.Children.only(r);
+      }
+      let $ = T ? a && "object" == typeof a && a.ref : M,
+        V = l.default.useCallback(
+          (e) => (
+            null !== D &&
+              (g.current = (0, m.mountLinkInstance)(e, U, D, L, F, y)),
+            () => {
+              (g.current &&
+                ((0, m.unmountLinkForCurrentNavigation)(g.current),
+                (g.current = null)),
+                (0, m.unmountPrefetchableInstance)(e));
+            }
+          ),
+          [F, U, D, L, y],
+        ),
+        G = {
+          ref: (0, u.useMergedRef)(V, $),
+          onClick(t) {
+            (T || "function" != typeof O || O(t),
+              T &&
+                a.props &&
+                "function" == typeof a.props.onClick &&
+                a.props.onClick(t),
+              !D ||
+                t.defaultPrevented ||
+                (function (t, n, r, a, s, i, o) {
+                  if ("undefined" != typeof window) {
+                    let c,
+                      { nodeName: u } = t.currentTarget;
+                    if (
+                      ("A" === u.toUpperCase() &&
+                        (((c = t.currentTarget.getAttribute("target")) &&
+                          "_self" !== c) ||
+                          t.metaKey ||
+                          t.ctrlKey ||
+                          t.shiftKey ||
+                          t.altKey ||
+                          (t.nativeEvent && 2 === t.nativeEvent.which))) ||
+                      t.currentTarget.hasAttribute("download")
+                    )
+                      return;
+                    if (!(0, h.isLocalURL)(n)) {
+                      s && (t.preventDefault(), location.replace(n));
+                      return;
+                    }
+                    if ((t.preventDefault(), o)) {
+                      let e = !1;
+                      if (
+                        (o({
+                          preventDefault: () => {
+                            e = !0;
+                          },
+                        }),
+                        e)
+                      )
+                        return;
+                    }
+                    let { dispatchNavigateAction: d } = e.r(99781);
+                    l.default.startTransition(() => {
+                      d(r || n, s ? "replace" : "push", i ?? !0, a.current);
+                    });
+                  }
+                })(t, U, B, g, k, P, R));
+          },
+          onMouseEnter(e) {
+            (T || "function" != typeof A || A(e),
+              T &&
+                a.props &&
+                "function" == typeof a.props.onMouseEnter &&
+                a.props.onMouseEnter(e),
+              D && F && (0, m.onNavigationIntent)(e.currentTarget, !0 === _));
+          },
+          onTouchStart: function (e) {
+            (T || "function" != typeof E || E(e),
+              T &&
+                a.props &&
+                "function" == typeof a.props.onTouchStart &&
+                a.props.onTouchStart(e),
+              D && F && (0, m.onNavigationIntent)(e.currentTarget, !0 === _));
+          },
+        };
+      return (
+        (0, d.isAbsoluteUrl)(B)
+          ? (G.href = B)
+          : (T && !S && ("a" !== a.type || "href" in a.props)) ||
+            (G.href = (0, f.addBasePath)(B)),
+        (s = T
+          ? l.default.cloneElement(a, G)
+          : (0, i.jsx)("a", { ...I, ...G, children: r })),
+        (0, i.jsx)(j.Provider, { value: o, children: s })
+      );
+    }
+    e.r(84508);
+    let j = (0, l.createContext)(m.IDLE_LINK_STATUS),
+      g = () => (0, l.useContext)(j);
+    ("function" == typeof n.default ||
+      ("object" == typeof n.default && null !== n.default)) &&
+      void 0 === n.default.__esModule &&
+      (Object.defineProperty(n.default, "__esModule", { value: !0 }),
+      Object.assign(n.default, n),
+      (t.exports = n.default));
+  },
+  45872,
+  (e) => {
+    "use strict";
+    var t = e.i(43476),
+      n = e.i(22016),
+      r = e.i(71645);
+    function a({ title: e, items: a, titleClassName: s }) {
+      let [i, l] = (0, r.useState)(!1);
+      return (0, t.jsxs)("div", {
+        className: "header-dropdown-container",
+        onMouseEnter: () => l(!0),
+        onMouseLeave: () => l(!1),
+        children: [
+          (0, t.jsx)("a", {
+            href: "#",
+            className: `nav-item leading-tight text-center ${s || "neon-cyan"}`,
+            children: e,
+          }),
+          i &&
+            (0, t.jsx)("div", {
+              className: "header-dropdown-menu",
+              children: a.map((e, r) =>
+                e.isSeparator
+                  ? (0, t.jsx)("div", { className: "dropdown-separator" }, r)
+                  : "header" === e.type
+                    ? (0, t.jsx)(
+                        "div",
+                        { className: "dropdown-header", children: e.name },
+                        r,
+                      )
+                    : "link" === e.type
+                      ? (0, t.jsxs)(
+                          n.default,
+                          {
+                            href: e.href || "#",
+                            className: "menu-item",
+                            target: e.href?.startsWith("http")
+                              ? "_blank"
+                              : "_self",
+                            rel: "noopener noreferrer",
+                            children: [
+                              e.name,
+                              e.subtext &&
+                                (0, t.jsx)("span", {
+                                  className: "sub-text",
+                                  children: e.subtext,
+                                }),
+                            ],
+                          },
+                          r,
+                        )
+                      : (0, t.jsxs)(
+                          "div",
+                          {
+                            className: `menu-item ${e.active ? "active-pink" : ""}`,
+                            children: [
+                              e.name,
+                              e.subtext &&
+                                (0, t.jsx)("span", {
+                                  className: "sub-text",
+                                  children: e.subtext,
+                                }),
+                            ],
+                          },
+                          r,
+                        ),
+              ),
+            }),
+        ],
+      });
+    }
+    let s = (0, e.i(75254).default)("Menu", [
+      ["line", { x1: "4", x2: "20", y1: "12", y2: "12", key: "1e0a9i" }],
+      ["line", { x1: "4", x2: "20", y1: "6", y2: "6", key: "1owob3" }],
+      ["line", { x1: "4", x2: "20", y1: "18", y2: "18", key: "yk5zj1" }],
+    ]);
+    var i = e.i(37727);
+    let l = [
+        {
+          name: "AI Price Prediction Engine",
+          subtext: "Forecasting with machine learning",
+        },
+        {
+          name: "ML Pattern Recognition",
+          subtext: "Identify historical patterns",
+        },
+        {
+          name: "Sentiment Analysis AI",
+          subtext: "Gauge market mood from news & social",
+        },
+        { name: "Smart Risk Management", subtext: "AI-driven risk assessment" },
+        {
+          name: "Automated Trading Signals",
+          subtext: "Real-time buy/sell alerts",
+        },
+        {
+          name: "Neural Networks & LSTM",
+          subtext: "Deep learning for market prediction",
+        },
+        { isSeparator: !0 },
+        {
+          name: "Binance Schema",
+          subtext: "View the Binance API Schema",
+          type: "link",
+          href: "/binance-schema",
+        },
+        {
+          name: "Data Providers",
+          subtext: "View API data providers",
+          type: "link",
+          href: "/data-providers",
+        },
+      ],
+      o = [
+        { name: "Markets", subtext: "Global financial markets", active: !0 },
+        { name: "World Sports", subtext: "International sports coverage" },
+      ],
+      c = [
+        {
+          name: "Personal Account",
+          subtext: "Manage your personal trading profile",
+          type: "link",
+          href: "/profile",
+        },
+        {
+          name: "Business Account",
+          subtext: "Manage your business trading profile",
+        },
+        { name: "VIP", subtext: "Access exclusive VIP features" },
+        { isSeparator: !0 },
+        {
+          name: "GPS Food Finder",
+          subtext: "Find restaurants near you",
+          type: "link",
+          href: "/gps-finder",
+        },
+      ],
+      u = [
+        {
+          name: "Bluetooth Connect",
+          subtext: "Connect your audio device",
+          type: "link",
+          href: "/bluetooth-connect",
+        },
+        { isSeparator: !0 },
+        { name: "Apple Music", subtext: "Listen on Apple Music", type: "item" },
+        { name: "Spotify", subtext: "Listen on Spotify", type: "item" },
+        {
+          name: "YouTube Music",
+          subtext: "Listen on YouTube Music",
+          type: "item",
+        },
+        { isSeparator: !0 },
+        {
+          name: "Top 35 Food Apps",
+          subtext: "Find food apps in your GPS region",
+          type: "item",
+        },
+        {
+          name: "Top Restaurants",
+          subtext: "Find restaurants in your area",
+          type: "link",
+          href: "/gps-finder",
+        },
+        { name: "Uber Eats", subtext: "Order food delivery", type: "item" },
+        { name: "DoorDash", subtext: "Order food delivery", type: "item" },
+        { isSeparator: !0 },
+        { name: "International Social Networks", type: "header" },
+        { name: "Facebook", type: "link", href: "https://facebook.com" },
+        { name: "Twitter / X", type: "link", href: "https://x.com" },
+        { name: "Instagram", type: "link", href: "https://instagram.com" },
+        { name: "TikTok", type: "link", href: "https://tiktok.com" },
+        { name: "LinkedIn", type: "link", href: "https://linkedin.com" },
+        { name: "Reddit", type: "link", href: "https://reddit.com" },
+        { name: "Pinterest", type: "link", href: "https://pinterest.com" },
+        { name: "Snapchat", type: "link", href: "https://snapchat.com" },
+        { name: "Telegram", type: "link", href: "https://telegram.org" },
+        { name: "WhatsApp", type: "link", href: "https://whatsapp.com" },
+        { name: "WeChat", type: "link", href: "https://wechat.com" },
+        { name: "Discord", type: "link", href: "https://discord.com" },
+      ],
+      d = [
+        {
+          name: "North American Major Sports",
+          subtext: "NFL, NCAAF, NBA, WNBA, NCAAB, MLB, NHL, Soccer",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Combat Sports",
+          subtext: "Boxing, MMA, UFC",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Racing",
+          subtext: "NASCAR, Formula 1, Horse Racing",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Golf & Tennis",
+          subtext: "PGA, LPGA, Grand Slam tournaments",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Other Sports",
+          subtext:
+            "Badminton, Cricket, Cycling, Darts, Handball, Lacrosse, Rugby, & more",
+          type: "link",
+          href: "#",
+        },
+      ],
+      f = [
+        {
+          name: "Republican",
+          subtext: "News and opinion from a conservative perspective",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Democrat",
+          subtext: "News and opinion from a Democratic perspective",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Liberal",
+          subtext: "News and opinion from a liberal perspective",
+          type: "link",
+          href: "#",
+        },
+        {
+          name: "Independent",
+          subtext: "News and opinion from an independent perspective",
+          type: "link",
+          href: "#",
+        },
+      ],
+      m = [
+        {
+          name: "AI Volatility Forecast",
+          subtext: "Predict market volatility with AI",
+        },
+      ];
+    function h() {
+      return (0, t.jsxs)(t.Fragment, {
+        children: [
+          (0, t.jsxs)("div", {
+            className: "header-top-layer",
+            children: [
+              (0, t.jsx)("div", {
+                className: "flex items-center gap-4",
+                children: (0, t.jsxs)("div", {
+                  className: "header-title leading-tight",
+                  children: [
+                    (0, t.jsx)("span", {
+                      className: "neon-text",
+                      children: "Quantum",
+                    }),
+                    (0, t.jsx)("br", {}),
+                    (0, t.jsx)("span", {
+                      className: "text-white",
+                      children: "CyberVision",
+                    }),
+                  ],
+                }),
+              }),
+              (0, t.jsxs)("div", {
+                className: "nav-right",
+                children: [
+                  (0, t.jsx)(a, {
+                    title: (0, t.jsxs)(t.Fragment, {
+                      children: ["Trader", (0, t.jsx)("br", {}), "Profile"],
+                    }),
+                    items: c,
+                    titleClassName: "neon-orange",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: "Community",
+                    items: l,
+                    titleClassName: "neon-blue",
+                  }),
+                  (0, t.jsxs)(n.default, {
+                    href: "/compare-prices",
+                    className: "nav-item neon-pink text-center leading-tight",
+                    children: ["Compare", (0, t.jsx)("br", {}), "Prices"],
+                  }),
+                  (0, t.jsx)(n.default, {
+                    href: "/join",
+                    className: "nav-item neon-pink",
+                    children: "Join",
+                  }),
+                ],
+              }),
+            ],
+          }),
+          (0, t.jsx)("div", {
+            className: "header-middle-layer",
+            children: (0, t.jsxs)("nav", {
+              className: "main-nav",
+              children: [
+                (0, t.jsx)(n.default, {
+                  href: "/",
+                  className: "nav-item neon-green",
+                  children: "Home",
+                }),
+                (0, t.jsx)(n.default, {
+                  href: "#",
+                  className: "nav-item neon-orange",
+                  children: "Stocks",
+                }),
+                (0, t.jsx)(n.default, {
+                  href: "/main",
+                  className: "nav-item neon-cyan",
+                  children: "Crypto",
+                }),
+                (0, t.jsx)(n.default, {
+                  href: "#",
+                  className: "nav-item neon-blue",
+                  children: "FUTURES AND COMMODITIES",
+                }),
+                (0, t.jsx)(n.default, {
+                  href: "#",
+                  className: "nav-item neon-purple",
+                  children: "Options",
+                }),
+                (0, t.jsx)(n.default, {
+                  href: "#",
+                  className: "nav-item neon-green",
+                  children: "BOND AND FIXED INCOME",
+                }),
+              ],
+            }),
+          }),
+          (0, t.jsx)("div", {
+            className: "header-bottom-layer",
+            children: (0, t.jsxs)("nav", {
+              className: "main-nav",
+              children: [
+                (0, t.jsx)(a, {
+                  title: (0, t.jsxs)(t.Fragment, {
+                    children: ["Guilty", (0, t.jsx)("br", {}), "Pleasures"],
+                  }),
+                  items: u,
+                  titleClassName: "neon-pink",
+                }),
+                (0, t.jsx)(a, {
+                  title: "FX Matrix Analyzer",
+                  items: m,
+                  titleClassName: "neon-green",
+                }),
+                (0, t.jsx)(a, {
+                  title: (0, t.jsxs)(t.Fragment, {
+                    children: [
+                      (0, t.jsx)("div", { children: "Las Vegas" }),
+                      (0, t.jsx)("div", { children: "Stats" }),
+                    ],
+                  }),
+                  items: d,
+                  titleClassName: "neon-gold glow-text",
+                }),
+                (0, t.jsx)(a, {
+                  title: (0, t.jsxs)(t.Fragment, {
+                    children: [
+                      (0, t.jsx)("div", { children: "World" }),
+                      (0, t.jsx)("div", { children: "Sports" }),
+                    ],
+                  }),
+                  items: o,
+                  titleClassName: "neon-blue",
+                }),
+                (0, t.jsx)(a, {
+                  title: "Opinions",
+                  items: f,
+                  titleClassName: "neon-pink",
+                }),
+                (0, t.jsx)(n.default, {
+                  href: "#",
+                  className: "nav-item neon-green",
+                  children: "GLOBAL ECONOMIC AND MACRO DATA SOURCES",
+                }),
+              ],
+            }),
+          }),
+          (0, t.jsx)("div", {
+            className: "header-fourth-layer",
+            children: (0, t.jsxs)("nav", {
+              className: "main-nav",
+              children: [
+                (0, t.jsx)(n.default, {
+                  href: "#",
+                  className: "nav-item neon-purple",
+                  children: "Over-the-Counter (OTC)",
+                }),
+                (0, t.jsx)(n.default, {
+                  href: "#",
+                  className: "nav-item neon-gold",
+                  children: "INDEX PROVIDERS",
+                }),
+                (0, t.jsx)(n.default, {
+                  href: "#",
+                  className: "nav-item neon-red",
+                  children: "Mutual Funds and ETFs Data",
+                }),
+                (0, t.jsx)(n.default, {
+                  href: "#",
+                  className: "nav-item neon-blue",
+                  children: "ALTERNATIVE DATA MARKETS",
+                }),
+              ],
+            }),
+          }),
+          (0, t.jsx)("div", {
+            className: "header-fifth-layer",
+            children: (0, t.jsx)("nav", { className: "main-nav" }),
+          }),
+        ],
+      });
+    }
+    function p() {
+      let [e, h] = (0, r.useState)(!1);
+      return (0, t.jsxs)(t.Fragment, {
+        children: [
+          (0, t.jsxs)("div", {
+            className: "header-top-layer",
+            children: [
+              (0, t.jsx)("div", {
+                className: "flex items-center gap-4",
+                children: (0, t.jsxs)("div", {
+                  className: "header-title leading-tight",
+                  children: [
+                    (0, t.jsx)("span", {
+                      className: "neon-text",
+                      children: "Quantum",
+                    }),
+                    (0, t.jsx)("br", {}),
+                    (0, t.jsx)("span", {
+                      className: "text-white",
+                      children: "CyberVision",
+                    }),
+                  ],
+                }),
+              }),
+              (0, t.jsx)("button", {
+                onClick: () => h(!e),
+                className: "mobile-menu-button",
+                children: e
+                  ? (0, t.jsx)(i.X, { size: 24 })
+                  : (0, t.jsx)(s, { size: 24 }),
+              }),
+            ],
+          }),
+          e &&
+            (0, t.jsx)("div", {
+              className: "mobile-menu",
+              children: (0, t.jsxs)("nav", {
+                className: "mobile-nav-links",
+                children: [
+                  (0, t.jsx)(n.default, {
+                    href: "/",
+                    className: "nav-item neon-green",
+                    children: "Home",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: (0, t.jsxs)(t.Fragment, {
+                      children: ["Trader", (0, t.jsx)("br", {}), "Profile"],
+                    }),
+                    items: c,
+                    titleClassName: "neon-orange",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: "Community",
+                    items: l,
+                    titleClassName: "neon-blue",
+                  }),
+                  (0, t.jsx)(n.default, {
+                    href: "#",
+                    className: "nav-item neon-orange",
+                    children: "Stocks",
+                  }),
+                  (0, t.jsx)(n.default, {
+                    href: "/main",
+                    className: "nav-item neon-cyan",
+                    children: "Crypto",
+                  }),
+                  (0, t.jsx)(n.default, {
+                    href: "#",
+                    className: "nav-item neon-blue",
+                    children: "FUTURES AND COMMODITIES",
+                  }),
+                  (0, t.jsx)(n.default, {
+                    href: "#",
+                    className: "nav-item neon-purple",
+                    children: "Options",
+                  }),
+                  (0, t.jsx)(n.default, {
+                    href: "#",
+                    className: "nav-item neon-green",
+                    children: "BOND AND FIXED INCOME",
+                  }),
+                  (0, t.jsx)("div", { className: "mobile-menu-separator" }),
+                  (0, t.jsx)(a, {
+                    title: (0, t.jsxs)(t.Fragment, {
+                      children: ["Guilty", (0, t.jsx)("br", {}), "Pleasures"],
+                    }),
+                    items: u,
+                    titleClassName: "neon-pink",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: "FX Matrix Analyzer",
+                    items: m,
+                    titleClassName: "neon-green",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: (0, t.jsxs)(t.Fragment, {
+                      children: [
+                        (0, t.jsx)("div", { children: "Las Vegas" }),
+                        (0, t.jsx)("div", { children: "Stats" }),
+                      ],
+                    }),
+                    items: d,
+                    titleClassName: "neon-gold glow-text",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: (0, t.jsxs)(t.Fragment, {
+                      children: [
+                        (0, t.jsx)("div", { children: "World" }),
+                        (0, t.jsx)("div", { children: "Sports" }),
+                      ],
+                    }),
+                    items: o,
+                    titleClassName: "neon-blue",
+                  }),
+                  (0, t.jsx)(a, {
+                    title: "Opinions",
+                    items: f,
+                    titleClassName: "neon-pink",
+                  }),
+                  (0, t.jsx)(n.default, {
+                    href: "#",
+                    className: "nav-item neon-green",
+                    children: "GLOBAL ECONOMIC AND MACRO DATA SOURCES",
+                  }),
+                  (0, t.jsx)("div", { className: "mobile-menu-separator" }),
+                  (0, t.jsx)(n.default, {
+                    href: "#",
+                    className: "nav-item neon-purple",
+                    children: "Over-the-Counter (OTC)",
+                  }),
+                  (0, t.jsx)(n.default, {
+                    href: "#",
+                    className: "nav-item neon-gold",
+                    children: "INDEX PROVIDERS",
+                  }),
+                  (0, t.jsx)(n.default, {
+                    href: "#",
+                    className: "nav-item neon-red",
+                    children: "Mutual Funds and ETFs Data",
+                  }),
+                  (0, t.jsx)(n.default, {
+                    href: "#",
+                    className: "nav-item neon-blue",
+                    children: "ALTERNATIVE DATA MARKETS",
+                  }),
+                  (0, t.jsx)("div", { className: "mobile-menu-separator" }),
+                  (0, t.jsx)("div", { className: "mobile-menu-separator" }),
+                  (0, t.jsxs)(n.default, {
+                    href: "/compare-prices",
+                    className: "nav-item neon-pink text-center leading-tight",
+                    children: ["Compare", (0, t.jsx)("br", {}), "Prices"],
+                  }),
+                  (0, t.jsx)(n.default, {
+                    href: "/join",
+                    className: "nav-item neon-pink",
+                    children: "Join",
+                  }),
+                ],
+              }),
+            }),
+        ],
+      });
+    }
+    function x() {
+      let e = (function () {
+        let [e, t] = r.useState(void 0);
+        return (
+          r.useEffect(() => {
+            let e = window.matchMedia("(max-width: 767px)"),
+              n = () => {
+                t(window.innerWidth < 768);
+              };
+            return (
+              e.addEventListener("change", n),
+              t(window.innerWidth < 768),
+              () => e.removeEventListener("change", n)
+            );
+          }, []),
+          e
+        );
+      })();
+      return (0, t.jsx)("header", {
+        className: "header-nav",
+        children:
+          void 0 === e
+            ? (0, t.jsx)("div", {
+                className: "header-top-layer",
+                children: (0, t.jsx)("div", {
+                  className: "flex items-center gap-4",
+                  children: (0, t.jsxs)("div", {
+                    className: "header-title leading-tight",
+                    children: [
+                      (0, t.jsx)("span", {
+                        className: "neon-text",
+                        children: "Quantum",
+                      }),
+                      (0, t.jsx)("br", {}),
+                      (0, t.jsx)("span", {
+                        className: "text-white",
+                        children: "CyberVision",
+                      }),
+                    ],
+                  }),
+                }),
+              })
+            : e
+              ? (0, t.jsx)(p, {})
+              : (0, t.jsx)(h, {}),
+      });
+    }
+    e.s(["Header", () => x], 45872);
+  },
+  15288,
+  (e) => {
+    "use strict";
+    var t = e.i(43476),
+      n = e.i(71645),
+      r = e.i(75157);
+    let a = n.forwardRef(({ className: e, ...n }, a) =>
+      (0, t.jsx)("div", {
+        ref: a,
+        className: (0, r.cn)(
+          "rounded-lg border bg-card text-card-foreground shadow-sm",
+          e,
+        ),
+        ...n,
+      }),
+    );
+    a.displayName = "Card";
+    let s = n.forwardRef(({ className: e, ...n }, a) =>
+      (0, t.jsx)("div", {
+        ref: a,
+        className: (0, r.cn)("flex flex-col space-y-1.5 p-6", e),
+        ...n,
+      }),
+    );
+    s.displayName = "CardHeader";
+    let i = n.forwardRef(({ className: e, ...n }, a) =>
+      (0, t.jsx)("h3", {
+        ref: a,
+        className: (0, r.cn)(
+          "text-2xl font-semibold leading-none tracking-tight",
+          e,
+        ),
+        ...n,
+      }),
+    );
+    ((i.displayName = "CardTitle"),
+      (n.forwardRef(({ className: e, ...n }, a) =>
+        (0, t.jsx)("p", {
+          ref: a,
+          className: (0, r.cn)("text-sm text-muted-foreground", e),
+          ...n,
+        }),
+      ).displayName = "CardDescription"));
+    let l = n.forwardRef(({ className: e, ...n }, a) =>
+      (0, t.jsx)("div", { ref: a, className: (0, r.cn)("p-6 pt-0", e), ...n }),
+    );
+    ((l.displayName = "CardContent"),
+      (n.forwardRef(({ className: e, ...n }, a) =>
+        (0, t.jsx)("div", {
+          ref: a,
+          className: (0, r.cn)("flex items-center p-6 pt-0", e),
+          ...n,
+        }),
+      ).displayName = "CardFooter"),
+      e.s([
+        "Card",
+        () => a,
+        "CardContent",
+        () => l,
+        "CardHeader",
+        () => s,
+        "CardTitle",
+        () => i,
+      ]));
+  },
+  67585,
+  (e, t, n) => {
+    "use strict";
+    (Object.defineProperty(n, "__esModule", { value: !0 }),
+      Object.defineProperty(n, "BailoutToCSR", {
+        enumerable: !0,
+        get: function () {
+          return a;
+        },
+      }));
+    let r = e.r(32061);
+    function a({ reason: e, children: t }) {
+      if ("undefined" == typeof window)
+        throw Object.defineProperty(
+          new r.BailoutToCSRError(e),
+          "__NEXT_ERROR_CODE",
+          { value: "E394", enumerable: !1, configurable: !0 },
+        );
+      return t;
+    }
+  },
+  9885,
+  (e, t, n) => {
+    "use strict";
+    function r(e) {
+      return e
+        .split("/")
+        .map((e) => encodeURIComponent(e))
+        .join("/");
+    }
+    (Object.defineProperty(n, "__esModule", { value: !0 }),
+      Object.defineProperty(n, "encodeURIPath", {
+        enumerable: !0,
+        get: function () {
+          return r;
+        },
+      }));
+  },
+  52157,
+  (e, t, n) => {
+    "use strict";
+    (Object.defineProperty(n, "__esModule", { value: !0 }),
+      Object.defineProperty(n, "PreloadChunks", {
+        enumerable: !0,
+        get: function () {
+          return l;
+        },
+      }));
+    let r = e.r(43476),
+      a = e.r(74080),
+      s = e.r(63599),
+      i = e.r(9885);
+    function l({ moduleIds: e }) {
+      if ("undefined" != typeof window) return null;
+      let t = s.workAsyncStorage.getStore();
+      if (void 0 === t) return null;
+      let n = [];
+      if (t.reactLoadableManifest && e) {
+        let r = t.reactLoadableManifest;
+        for (let t of e) {
+          if (!r[t]) continue;
+          let e = r[t].files;
+          n.push(...e);
+        }
+      }
+      return 0 === n.length
+        ? null
+        : (0, r.jsx)(r.Fragment, {
+            children: n.map((e) => {
+              let n = `${t.assetPrefix}/_next/${(0, i.encodeURIPath)(e)}`;
+              return e.endsWith(".css")
+                ? (0, r.jsx)(
+                    "link",
+                    {
+                      precedence: "dynamic",
+                      href: n,
+                      rel: "stylesheet",
+                      as: "style",
+                      nonce: t.nonce,
+                    },
+                    e,
+                  )
+                : ((0, a.preload)(n, {
+                    as: "script",
+                    fetchPriority: "low",
+                    nonce: t.nonce,
+                  }),
+                  null);
+            }),
+          });
+    }
+  },
+  69093,
+  (e, t, n) => {
+    "use strict";
+    (Object.defineProperty(n, "__esModule", { value: !0 }),
+      Object.defineProperty(n, "default", {
+        enumerable: !0,
+        get: function () {
+          return c;
+        },
+      }));
+    let r = e.r(43476),
+      a = e.r(71645),
+      s = e.r(67585),
+      i = e.r(52157);
+    function l(e) {
+      return { default: e && "default" in e ? e.default : e };
+    }
+    let o = {
+        loader: () => Promise.resolve(l(() => null)),
+        loading: null,
+        ssr: !0,
+      },
+      c = function (e) {
+        let t = { ...o, ...e },
+          n = (0, a.lazy)(() => t.loader().then(l)),
+          c = t.loading;
+        function u(e) {
+          let l = c
+              ? (0, r.jsx)(c, { isLoading: !0, pastDelay: !0, error: null })
+              : null,
+            o = !t.ssr || !!t.loading,
+            u = o ? a.Suspense : a.Fragment,
+            d = t.ssr
+              ? (0, r.jsxs)(r.Fragment, {
+                  children: [
+                    "undefined" == typeof window
+                      ? (0, r.jsx)(i.PreloadChunks, { moduleIds: t.modules })
+                      : null,
+                    (0, r.jsx)(n, { ...e }),
+                  ],
+                })
+              : (0, r.jsx)(s.BailoutToCSR, {
+                  reason: "next/dynamic",
+                  children: (0, r.jsx)(n, { ...e }),
+                });
+          return (0, r.jsx)(u, { ...(o ? { fallback: l } : {}), children: d });
+        }
+        return ((u.displayName = "LoadableComponent"), u);
+      };
+  },
+  70703,
+  (e, t, n) => {
+    "use strict";
+    (Object.defineProperty(n, "__esModule", { value: !0 }),
+      Object.defineProperty(n, "default", {
+        enumerable: !0,
+        get: function () {
+          return a;
+        },
+      }));
+    let r = e.r(55682)._(e.r(69093));
+    function a(e, t) {
+      let n = {};
+      "function" == typeof e && (n.loader = e);
+      let a = { ...n, ...t };
+      return (0, r.default)({ ...a, modules: a.loadableGenerated?.modules });
+    }
+    ("function" == typeof n.default ||
+      ("object" == typeof n.default && null !== n.default)) &&
+      void 0 === n.default.__esModule &&
+      (Object.defineProperty(n.default, "__esModule", { value: !0 }),
+      Object.assign(n.default, n),
+      (t.exports = n.default));
+  },
+  59151,
+  (e) => {
+    "use strict";
+    var t = e.i(43476),
+      n = e.i(71645),
+      r = e.i(70703),
+      a = e.i(45872),
+      s = e.i(19455),
+      i = e.i(67489),
+      l = e.i(15288),
+      o = e.i(25913),
+      c = e.i(75157);
+    let u = (0, o.cva)(
+        "relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground",
+        {
+          variants: {
+            variant: {
+              default: "bg-background text-foreground",
+              destructive:
+                "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
+            },
+          },
+          defaultVariants: { variant: "default" },
+        },
+      ),
+      d = n.forwardRef(({ className: e, variant: n, ...r }, a) =>
+        (0, t.jsx)("div", {
+          ref: a,
+          role: "alert",
+          className: (0, c.cn)(u({ variant: n }), e),
+          ...r,
+        }),
+      );
+    d.displayName = "Alert";
+    let f = n.forwardRef(({ className: e, ...n }, r) =>
+      (0, t.jsx)("h5", {
+        ref: r,
+        className: (0, c.cn)("mb-1 font-medium leading-none tracking-tight", e),
+        ...n,
+      }),
+    );
+    f.displayName = "AlertTitle";
+    let m = n.forwardRef(({ className: e, ...n }, r) =>
+      (0, t.jsx)("div", {
+        ref: r,
+        className: (0, c.cn)("text-sm [&_p]:leading-relaxed", e),
+        ...n,
+      }),
+    );
+    m.displayName = "AlertDescription";
+    let h = (0, e.i(75254).default)("Terminal", [
+        ["polyline", { points: "4 17 10 11 4 5", key: "akl6gq" }],
+        ["line", { x1: "12", x2: "20", y1: "19", y2: "19", key: "q2wloq" }],
+      ]),
+      p = (0, r.default)(() => e.A(11698), {
+        loadableGenerated: { modules: [26084] },
+        ssr: !1,
+      }),
+      x = [
+        { value: "BTC/USD", label: "Bitcoin (BTC/USD)" },
+        { value: "ETH/USD", label: "Ethereum (ETH/USD)" },
+      ],
+      y = [
+        { value: "1min", label: "1 Minute" },
+        { value: "1h", label: "1 Hour" },
+        { value: "1day", label: "1 Day" },
+      ];
+    function j() {
+      let [e, r] = (0, n.useState)([]),
+        [o, c] = (0, n.useState)(!1),
+        [u, j] = (0, n.useState)(null),
+        [g, b] = (0, n.useState)(null),
+        [v, N] = (0, n.useState)("BTC/USD"),
+        [C, S] = (0, n.useState)("1h"),
+        k = async () => {
+          (c(!0), j(null), r([]), b(null));
+          try {
+            let e = `/api/bridge?symbol=${encodeURIComponent(v)}&interval=${encodeURIComponent(C)}`,
+              t = await fetch(e);
+            if (!t.ok) {
+              let e = await t.json();
+              throw Error(
+                e.error || "Failed to fetch data from the bridge API.",
+              );
+            }
+            let n = await t.json();
+            if (!n.data || 0 === n.data.length)
+              throw Error("No data returned from any provider.");
+            (r(n.data), b(n.source));
+          } catch (e) {
+            j(`Data fetch failed: ${e.message}`);
+          } finally {
+            c(!1);
+          }
+        };
+      return (
+        (0, n.useEffect)(() => {
+          k();
+        }, [v, C]),
+        (0, t.jsxs)(t.Fragment, {
+          children: [
+            (0, t.jsx)(a.Header, {}),
+            (0, t.jsx)("main", {
+              className: "dashboard-grid",
+              children: (0, t.jsxs)("div", {
+                className: "center-content",
+                children: [
+                  (0, t.jsx)("h1", {
+                    className: "text-3xl font-bold neon-text text-center",
+                    children: "Hyper Dashboard",
+                  }),
+                  (0, t.jsx)("p", {
+                    className: "text-lg text-gray-300 text-center",
+                    children:
+                      "Real-time charts powered by the fastest available data provider.",
+                  }),
+                  (0, t.jsxs)(l.Card, {
+                    className: "data-card glow-multi-color",
+                    children: [
+                      (0, t.jsxs)(l.CardHeader, {
+                        className: "flex flex-row items-center justify-between",
+                        children: [
+                          (0, t.jsx)(l.CardTitle, {
+                            className: "neon-text",
+                            children: "Market View",
+                          }),
+                          (0, t.jsxs)("div", {
+                            className: "flex gap-4",
+                            children: [
+                              (0, t.jsxs)(i.Select, {
+                                value: v,
+                                onValueChange: N,
+                                children: [
+                                  (0, t.jsx)(i.SelectTrigger, {
+                                    className:
+                                      "w-[180px] bg-gray-800 border-cyan-400 text-white",
+                                    children: (0, t.jsx)(i.SelectValue, {}),
+                                  }),
+                                  (0, t.jsx)(i.SelectContent, {
+                                    className:
+                                      "bg-black text-white border-cyan-400",
+                                    children: x.map((e) =>
+                                      (0, t.jsx)(
+                                        i.SelectItem,
+                                        { value: e.value, children: e.label },
+                                        e.value,
+                                      ),
+                                    ),
+                                  }),
+                                ],
+                              }),
+                              (0, t.jsxs)(i.Select, {
+                                value: C,
+                                onValueChange: S,
+                                children: [
+                                  (0, t.jsx)(i.SelectTrigger, {
+                                    className:
+                                      "w-[180px] bg-gray-800 border-cyan-400 text-white",
+                                    children: (0, t.jsx)(i.SelectValue, {}),
+                                  }),
+                                  (0, t.jsx)(i.SelectContent, {
+                                    className:
+                                      "bg-black text-white border-cyan-400",
+                                    children: y.map((e) =>
+                                      (0, t.jsx)(
+                                        i.SelectItem,
+                                        { value: e.value, children: e.label },
+                                        e.value,
+                                      ),
+                                    ),
+                                  }),
+                                ],
+                              }),
+                              (0, t.jsx)(s.Button, {
+                                onClick: k,
+                                disabled: o,
+                                children: o ? "Loading..." : "Force Refresh",
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      (0, t.jsx)(l.CardContent, {
+                        children: (0, t.jsxs)("div", {
+                          className: "w-full h-[500px] mt-4",
+                          children: [
+                            u &&
+                              (0, t.jsxs)(d, {
+                                variant: "destructive",
+                                className:
+                                  "h-full flex flex-col justify-center items-center",
+                                children: [
+                                  (0, t.jsx)(h, { className: "h-4 w-4" }),
+                                  (0, t.jsx)(f, {
+                                    children: "Data Fetching Error",
+                                  }),
+                                  (0, t.jsx)(m, { children: u }),
+                                ],
+                              }),
+                            !u &&
+                              !o &&
+                              (0, t.jsxs)(t.Fragment, {
+                                children: [
+                                  (0, t.jsx)(p, {
+                                    index: v,
+                                    chartType: "Line Chart",
+                                    initialData: e,
+                                  }),
+                                  g &&
+                                    (0, t.jsxs)("p", {
+                                      className:
+                                        "text-xs text-center text-gray-500 mt-2",
+                                      children: ["Data served from: ", g],
+                                    }),
+                                ],
+                              }),
+                            o &&
+                              (0, t.jsx)("div", {
+                                className:
+                                  "flex items-center justify-center h-full text-cyan-400 text-lg",
+                                children: "Racing data providers...",
+                              }),
+                          ],
+                        }),
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+            }),
+          ],
+        })
+      );
+    }
+    e.s(["default", () => j], 59151);
+  },
+  11698,
+  (e) => {
+    e.v((t) =>
+      Promise.all(
+        ["static/chunks/3d51450f0bc35c27.js"].map((t) => e.l(t)),
+      ).then(() => t(26084)),
+    );
+  },
+]);

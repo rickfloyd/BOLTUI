@@ -1,3 +1,9 @@
-module.exports=[34150,s=>{"use strict";s.s([])}];
+module.exports = [
+  34150,
+  (s) => {
+    "use strict";
+    s.s([]);
+  },
+];
 
 //# sourceMappingURL=_next-internal_server_app_api_places_route_actions_6076bea2.js.map

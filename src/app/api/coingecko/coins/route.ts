@@ -1,34 +1,46 @@
-
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 export async function GET() {
   const apiKey = process.env.COINGECKO_API_KEY;
 
   if (!apiKey) {
-    return NextResponse.json({ error: 'API key is not configured. Please set COINGECKO_API_KEY in your environment variables.' }, { status: 500 });
+    return NextResponse.json(
+      {
+        error:
+          "API key is not configured. Please set COINGECKO_API_KEY in your environment variables.",
+      },
+      { status: 500 },
+    );
   }
 
-  const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false';
+  const url =
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false";
 
   try {
     const apiResponse = await fetch(url, {
       headers: {
-        'Accept': 'application/json',
-        'x-cg-demo-api-key': apiKey
-      }
+        Accept: "application/json",
+        "x-cg-demo-api-key": apiKey,
+      },
     });
 
     if (!apiResponse.ok) {
-        const errorText = await apiResponse.text();
-        console.error('CoinGecko API Error:', errorText);
-        return NextResponse.json({ error: `CoinGecko API error: ${apiResponse.statusText}` }, { status: apiResponse.status });
+      const errorText = await apiResponse.text();
+      console.error("CoinGecko API Error:", errorText);
+      return NextResponse.json(
+        { error: `CoinGecko API error: ${apiResponse.statusText}` },
+        { status: apiResponse.status },
+      );
     }
 
     const data = await apiResponse.json();
 
     return NextResponse.json(data);
   } catch (error) {
-    console.error('Failed to fetch from CoinGecko API:', error);
-    return NextResponse.json({ error: 'Failed to fetch coins data.' }, { status: 500 });
+    console.error("Failed to fetch from CoinGecko API:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch coins data." },
+      { status: 500 },
+    );
   }
 }

@@ -1,5 +1,4 @@
-
-import { Header } from '@/components/layout/header';
+import { Header } from "@/components/layout/header";
 
 export default function BinanceSchemaPage() {
   return (
@@ -84,8 +83,24 @@ export default function BinanceSchemaPage() {
           <h2>🛡️ Compliance</h2>
           <p>Binance Product Terms of Use:</p>
           <ul>
-            <li><a href="https://www.binance.com/en/terms" target="_blank" rel="noopener noreferrer">English Version</a></li>
-            <li><a href="https://www.binance.com/zh-CN/terms" target="_blank" rel="noopener noreferrer">Chinese Version</a></li>
+            <li>
+              <a
+                href="https://www.binance.com/en/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                English Version
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.binance.com/zh-CN/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Chinese Version
+              </a>
+            </li>
           </ul>
         </section>
 
@@ -93,11 +108,22 @@ export default function BinanceSchemaPage() {
           <h2>🔗 FIX API (Institutional Access)</h2>
           <p className="category">Endpoints</p>
           <ul>
-            <li><span className="endpoint">Order Entry:</span> tcp+tls://fix-oe.binance.com:9000</li>
-            <li><span className="endpoint">Drop Copy:</span> tcp+tls://fix-dc.binance.com:9000</li>
-            <li><span className="endpoint">Market Data:</span> tcp+tls://fix-md.binance.com:9000</li>
+            <li>
+              <span className="endpoint">Order Entry:</span>{" "}
+              tcp+tls://fix-oe.binance.com:9000
+            </li>
+            <li>
+              <span className="endpoint">Drop Copy:</span>{" "}
+              tcp+tls://fix-dc.binance.com:9000
+            </li>
+            <li>
+              <span className="endpoint">Market Data:</span>{" "}
+              tcp+tls://fix-md.binance.com:9000
+            </li>
           </ul>
-          <p>Encryption: <b>TLS + Ed25519 keys</b></p>
+          <p>
+            Encryption: <b>TLS + Ed25519 keys</b>
+          </p>
           <p>Permitted Keys: FIX_API, FIX_API_READ_ONLY</p>
           <pre>{`{
   "RateLimit": "10,000 per 10s (Order Entry)",
@@ -110,14 +136,28 @@ export default function BinanceSchemaPage() {
           <h2>🌐 WebSocket Streams</h2>
           <p className="category">Public Streams</p>
           <ul>
-            <li><span className="endpoint">Ticker:</span> wss://stream.binance.com/ws/&lt;symbol&gt;@ticker</li>
-            <li><span className="endpoint">Candlesticks:</span> wss://stream.binance.com/ws/&lt;symbol&gt;@kline_1m</li>
-            <li><span className="endpoint">Trades:</span> wss://stream.binance.com/ws/&lt;symbol&gt;@aggTrade</li>
+            <li>
+              <span className="endpoint">Ticker:</span>{" "}
+              wss://stream.binance.com/ws/&lt;symbol&gt;@ticker
+            </li>
+            <li>
+              <span className="endpoint">Candlesticks:</span>{" "}
+              wss://stream.binance.com/ws/&lt;symbol&gt;@kline_1m
+            </li>
+            <li>
+              <span className="endpoint">Trades:</span>{" "}
+              wss://stream.binance.com/ws/&lt;symbol&gt;@aggTrade
+            </li>
           </ul>
           <p className="category">Private Streams</p>
           <ul>
-            <li><span className="endpoint">User Data:</span> wss://stream.binance.com/ws/&lt;listenKey&gt;</li>
-            <li>Events: executionReport, balanceUpdate, outboundAccountPosition</li>
+            <li>
+              <span className="endpoint">User Data:</span>{" "}
+              wss://stream.binance.com/ws/&lt;listenKey&gt;
+            </li>
+            <li>
+              Events: executionReport, balanceUpdate, outboundAccountPosition
+            </li>
           </ul>
         </section>
 
@@ -171,7 +211,9 @@ export default function BinanceSchemaPage() {
 console.log(schema.fix_api.order_entry_endpoint);`}</pre>
         </section>
 
-        <footer style={{textAlign:'center',color:'#00e5ff',marginTop:'40px'}}>
+        <footer
+          style={{ textAlign: "center", color: "#00e5ff", marginTop: "40px" }}
+        >
           Quantum Charts © 2025 — All rights reserved.
         </footer>
       </div>

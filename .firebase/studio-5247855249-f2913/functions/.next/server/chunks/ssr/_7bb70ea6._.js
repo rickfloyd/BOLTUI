@@ -1,3 +1,668 @@
-module.exports=[9270,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored.contexts.AppRouterContext},38783,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient},210,a=>{"use strict";let b=(0,a.i(70106).default)("ArrowLeft",[["path",{d:"m12 19-7-7 7-7",key:"1l729n"}],["path",{d:"M19 12H5",key:"x3x0zl"}]]);a.s(["ArrowLeft",()=>b],210)},66718,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(68114);let e=c.forwardRef(({className:a,type:c,...e},f)=>(0,b.jsx)("input",{type:c,className:(0,d.cn)("flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",a),ref:f,...e}));e.displayName="Input",a.s(["Input",()=>e])},62287,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(18894),e=a.i(66718),f=a.i(38246),g=a.i(210);let h=[{name:"Binance Coin",symbol:"BNB",apiKeyEnv:"EX_API_BINANCE",providerHint:"Binance REST / account endpoints"},{name:"LEO Token",symbol:"LEO",apiKeyEnv:"EX_API_BITFINEX",providerHint:"Bitfinex REST"},{name:"Bitget Token",symbol:"BGB",apiKeyEnv:"EX_API_BITGET",providerHint:"Bitget REST"},{name:"OKB",symbol:"OKB",apiKeyEnv:"EX_API_OKX",providerHint:"OKX REST"},{name:"Cronos",symbol:"CRO",apiKeyEnv:"EX_API_CRONOS",providerHint:"Crypto.com REST"},{name:"KuCoin Token",symbol:"KCS",apiKeyEnv:"EX_API_KUCOIN",providerHint:"KuCoin REST"},{name:"GateToken",symbol:"GT",apiKeyEnv:"EX_API_GATEIO",providerHint:"Gate.io REST"},{name:"FTX Token (FTT)",symbol:"FTT",apiKeyEnv:"EX_API_FTX",providerHint:"FTX legacy REST (if available)"},{name:"CoinEx Token",symbol:"CET",apiKeyEnv:"EX_API_COINEX",providerHint:"CoinEx REST"},{name:"Huobi Token",symbol:"HT",apiKeyEnv:"EX_API_HUOBI",providerHint:"Huobi REST"},{name:"OKT (OKChain)",symbol:"OKT",apiKeyEnv:"EX_API_OKT",providerHint:"OKX/OKChain endpoints"},{name:"Bitrue Coin",symbol:"BTR",apiKeyEnv:"EX_API_BITRUE",providerHint:"Bitrue REST"},{name:"Bitkub Coin",symbol:"KUB",apiKeyEnv:"EX_API_BITKUB",providerHint:"Bitkub REST"},{name:"MEXC Token",symbol:"MX",apiKeyEnv:"EX_API_MEXC",providerHint:"MEXC REST"},{name:"WhiteBIT Coin",symbol:"WBT",apiKeyEnv:"EX_API_WHITEBIT",providerHint:"WhiteBIT REST"},{name:"WazirX WRX",symbol:"WRX",apiKeyEnv:"EX_API_WAZIRX",providerHint:"WazirX REST"},{name:"Tokenize Xchange TKX",symbol:"TKX",apiKeyEnv:"EX_API_TOKENIZE",providerHint:"Tokenize REST"},{name:"BitMart Token",symbol:"BMX",apiKeyEnv:"EX_API_BITMART",providerHint:"BitMart REST"},{name:"Bibox Token",symbol:"BIX",apiKeyEnv:"EX_API_BIBOX",providerHint:"Bibox REST"},{name:"OKChain OKB variant",symbol:"OKB2",apiKeyEnv:"EX_API_OKB2",providerHint:"OKX ecosystem"},{name:"AscendEX Token",symbol:"ASD",apiKeyEnv:"EX_API_ASCENDEX",providerHint:"AscendEX REST"},{name:"Hotbit Token",symbol:"HTB",apiKeyEnv:"EX_API_HOTBIT",providerHint:"Hotbit REST"},{name:"ProBit Token",symbol:"PROB",apiKeyEnv:"EX_API_PROBIT",providerHint:"ProBit REST"},{name:"Bitso Token",symbol:"BITSO",apiKeyEnv:"EX_API_BITSO",providerHint:"Bitso REST"},{name:"Bibox Chain Token",symbol:"BCHT",apiKeyEnv:"EX_API_BIBOX_CHAIN",providerHint:"Bibox chain APIs"},{name:"CoinEx Chain CET",symbol:"CETC",apiKeyEnv:"EX_API_COINEX_CHAIN",providerHint:"CoinEx Chain endpoints"},{name:"Gopax Token",symbol:"GPX",apiKeyEnv:"EX_API_GOPAX",providerHint:"Gopax REST"},{name:"Bittrex Token (example)",symbol:"BTRX",apiKeyEnv:"EX_API_BITTREX",providerHint:"Bittrex REST"},{name:"Poloniex Token (example)",symbol:"POLX",apiKeyEnv:"EX_API_POLONIEX",providerHint:"Poloniex REST"},{name:"GateChain Token",symbol:"GTN",apiKeyEnv:"EX_API_GATECHAIN",providerHint:"GateChain endpoints"},{name:"MEXC Ecosystem Token",symbol:"MEXCET",apiKeyEnv:"EX_API_MEXCET",providerHint:"MEXC REST"},{name:"Bitstamp Token (example)",symbol:"BST",apiKeyEnv:"EX_API_BITSTAMP",providerHint:"Bitstamp REST"},{name:"CoinTiger Token",symbol:"CTT",apiKeyEnv:"EX_API_COIN TIGER",providerHint:"CoinTiger REST"},{name:"BitFlyer Token (example)",symbol:"BFY",apiKeyEnv:"EX_API_BITFLYER",providerHint:"bitFlyer REST"},{name:"Crypto.com Token (CRO)",symbol:"CRO",apiKeyEnv:"EX_API_CRYPTOCOM",providerHint:"Crypto.com REST"},{name:"CoinEx Token (alternate)",symbol:"CET2",apiKeyEnv:"EX_API_CET2",providerHint:"CoinEx REST"},{name:"Bitbank Token (example)",symbol:"BBK",apiKeyEnv:"EX_API_BITBANK",providerHint:"Bitbank REST"},{name:"Bithumb Token (example)",symbol:"BTH",apiKeyEnv:"EX_API_BITHUMB",providerHint:"Bithumb REST"},{name:"Upbit Token (example)",symbol:"UPT",apiKeyEnv:"EX_API_UPBIT",providerHint:"Upbit REST"},{name:"Coinbase Exchange Token (example)",symbol:"COBX",apiKeyEnv:"EX_API_COINBASE",providerHint:"Coinbase Pro REST"},{name:"Gemini Token (example)",symbol:"GMI",apiKeyEnv:"EX_API_GEMINI",providerHint:"Gemini REST"},{name:"Kraken Token (example)",symbol:"KRK",apiKeyEnv:"EX_API_KRAKEN",providerHint:"Kraken REST"},{name:"OKX Ecosystem Token",symbol:"OKXET",apiKeyEnv:"EX_API_OKX_ET",providerHint:"OKX REST"},{name:"KuCoin Ecosystem Token (alt)",symbol:"KCS2",apiKeyEnv:"EX_API_KCS2",providerHint:"KuCoin REST"},{name:"Bitfinex LEO variant",symbol:"LEO2",apiKeyEnv:"EX_API_BITFINEX_LEO",providerHint:"Bitfinex REST"},{name:"Huobi Eco Chain HPT (example)",symbol:"HPT",apiKeyEnv:"EX_API_HECO_HPT",providerHint:"Huobi ecosystem"},{name:"Bibox Token (alt)",symbol:"BIX2",apiKeyEnv:"EX_API_BIX2",providerHint:"Bibox REST"},{name:"CoinEx Global Token",symbol:"CETG",apiKeyEnv:"EX_API_CETG",providerHint:"CoinEx REST"},{name:"Tokocrypto TKO (example)",symbol:"TKO",apiKeyEnv:"EX_API_TOKOCRYPTO",providerHint:"Tokocrypto REST"},{name:"Bitget Ecosystem Token",symbol:"BGB2",apiKeyEnv:"EX_API_BITGET2",providerHint:"Bitget REST"},{name:"WhiteBit Ecosystem Token",symbol:"WBT2",apiKeyEnv:"EX_API_WHITEBIT2",providerHint:"WhiteBIT REST"},{name:"ZBG Token (example)",symbol:"ZBG",apiKeyEnv:"EX_API_ZBG",providerHint:"ZBG REST"},{name:"Bibox Chain BIXC",symbol:"BIXC",apiKeyEnv:"EX_API_BIXC",providerHint:"Bibox chain endpoints"},{name:"Mercatox Token (example)",symbol:"MCT",apiKeyEnv:"EX_API_MERCATOX",providerHint:"Mercatox REST"},{name:"BitMax Token (example)",symbol:"BTMX",apiKeyEnv:"EX_API_BITMAX",providerHint:"BitMax REST"},{name:"Coinone Token (example)",symbol:"CONE",apiKeyEnv:"EX_API_COINONE",providerHint:"Coinone REST"},{name:"Paxful Token (example)",symbol:"PAXF",apiKeyEnv:"EX_API_PAXFUL",providerHint:"Paxful REST"},{name:"WOO Network (exchange integration)",symbol:"WOO",apiKeyEnv:"EX_API_WOO",providerHint:"WOO X / REST"},{name:"Bilaxy Token (example)",symbol:"BIA",apiKeyEnv:"EX_API_BILAXY",providerHint:"Bilaxy REST"},{name:"Hotbit Token (alt)",symbol:"HTB2",apiKeyEnv:"EX_API_HTB2",providerHint:"Hotbit REST"},{name:"Bitrue Token (alt)",symbol:"BTR2",apiKeyEnv:"EX_API_BTR2",providerHint:"Bitrue REST"},{name:"Korbit Token (example)",symbol:"KOR",apiKeyEnv:"EX_API_KORBIT",providerHint:"Korbit REST"},{name:"CoinEx Token (regional)",symbol:"CETR",apiKeyEnv:"EX_API_CETR",providerHint:"CoinEx REST"},{name:"BKEX Token (example)",symbol:"BKX",apiKeyEnv:"EX_API_BKEX",providerHint:"BKEX REST"},{name:"LBank Token (example)",symbol:"LBT",apiKeyEnv:"EX_API_LBANK",providerHint:"LBank REST"},{name:"CoinDCX Token (example)",symbol:"CDX",apiKeyEnv:"EX_API_COINDCX",providerHint:"CoinDCX REST"},{name:"Bitbank Token (alt)",symbol:"BBT",apiKeyEnv:"EX_API_BBT",providerHint:"Bitbank REST"},{name:"AscendEX Token (alt)",symbol:"ASD2",apiKeyEnv:"EX_API_ASD2",providerHint:"AscendEX REST"},{name:"Indodax Token (example)",symbol:"IDX",apiKeyEnv:"EX_API_INDODAX",providerHint:"Indodax REST"},{name:"Tokocrypto Token (alt)",symbol:"TKO2",apiKeyEnv:"EX_API_TKO2",providerHint:"Tokocrypto REST"},{name:"HBTC Token (example)",symbol:"HBTC",apiKeyEnv:"EX_API_HBTC",providerHint:"HBTC REST"},{name:"OKX Token Variant",symbol:"OKXV",apiKeyEnv:"EX_API_OKXV",providerHint:"OKX REST"},{name:"Bitstamp Token (alt)",symbol:"BST2",apiKeyEnv:"EX_API_BST2",providerHint:"Bitstamp REST"},{name:"GateToken (alt)",symbol:"GT2",apiKeyEnv:"EX_API_GT2",providerHint:"Gate.io REST"},{name:"Kanga Exchange Token (example)",symbol:"KNGA",apiKeyEnv:"EX_API_KANGA",providerHint:"Kanga REST"},{name:"BTCEX Token (example)",symbol:"BTX",apiKeyEnv:"EX_API_BTCEX",providerHint:"BTCEX REST"},{name:"ZBG Token (alt)",symbol:"ZBG2",apiKeyEnv:"EX_API_ZBG2",providerHint:"ZBG REST"},{name:"BHEX Token (example)",symbol:"BHT",apiKeyEnv:"EX_API_BHEX",providerHint:"BHEX REST"},{name:"Coinsbit Token (example)",symbol:"CNB",apiKeyEnv:"EX_API_COINSBIT",providerHint:"Coinsbit REST"},{name:"OKCoin Token (example)",symbol:"OKC",apiKeyEnv:"EX_API_OKCOIN",providerHint:"OKCoin REST"},{name:"Simulated Exchange Token 1",symbol:"EXSIM1",apiKeyEnv:"EX_API_EXSIM1",providerHint:"Custom exchange REST"},{name:"Simulated Exchange Token 2",symbol:"EXSIM2",apiKeyEnv:"EX_API_EXSIM2",providerHint:"Custom exchange REST"},{name:"Simulated Exchange Token 3",symbol:"EXSIM3",apiKeyEnv:"EX_API_EXSIM3",providerHint:"Custom exchange REST"},{name:"Simulated Exchange Token 4",symbol:"EXSIM4",apiKeyEnv:"EX_API_EXSIM4",providerHint:"Custom exchange REST"}];function i(){let[a,i]=(0,c.useState)(""),j=h.filter(b=>b.name.toLowerCase().includes(a.toLowerCase())||b.symbol.toLowerCase().includes(a.toLowerCase()));return(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(d.Header,{}),(0,b.jsx)("main",{className:"dashboard-grid",children:(0,b.jsxs)("section",{className:"center-content",children:[(0,b.jsx)("h1",{className:"text-3xl font-bold neon-text text-center mt-8",children:"Exchange Tokens"}),(0,b.jsx)("p",{className:"text-lg text-gray-300 text-center max-w-3xl mx-auto",children:"A list of tokens issued by cryptocurrency exchanges. These tokens often provide utility within their native platform, such as reduced trading fees, governance rights, or access to exclusive features."}),(0,b.jsx)("div",{className:"w-full mt-4",children:(0,b.jsx)(e.Input,{type:"text",placeholder:"Search exchange tokens...",value:a,onChange:a=>i(a.target.value),className:"w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white"})}),(0,b.jsx)("div",{className:"w-full overflow-x-auto mt-8",children:(0,b.jsxs)("div",{className:"info-table-card",children:[(0,b.jsxs)("table",{className:"info-table w-full",children:[(0,b.jsx)("thead",{children:(0,b.jsxs)("tr",{children:[(0,b.jsx)("th",{children:"Name"}),(0,b.jsx)("th",{children:"Symbol"}),(0,b.jsx)("th",{children:"API Key Env Var"}),(0,b.jsx)("th",{children:"Provider Hint"})]})}),(0,b.jsx)("tbody",{children:j.map((a,c)=>(0,b.jsxs)("tr",{className:"hover:bg-white/5",children:[(0,b.jsx)("td",{className:"neon-cyan",children:a.name}),(0,b.jsx)("td",{className:"neon-pink",children:a.symbol.toUpperCase()}),(0,b.jsx)("td",{className:"text-gray-400 font-mono text-xs",children:a.apiKeyEnv}),(0,b.jsx)("td",{className:"text-gray-400",children:a.providerHint})]},`${a.symbol}-${c}`))})]}),0===j.length&&(0,b.jsx)("p",{className:"text-center text-gray-400 py-8",children:"No exchange tokens found matching your search."})]})})]})}),(0,b.jsxs)(f.default,{href:"/main",className:"fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2",children:[(0,b.jsx)(g.ArrowLeft,{size:16}),"Back"]})]})}a.s(["default",()=>i])}];
+module.exports = [
+  9270,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored.contexts.AppRouterContext;
+  },
+  38783,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient;
+  },
+  210,
+  (a) => {
+    "use strict";
+    let b = (0, a.i(70106).default)("ArrowLeft", [
+      ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+      ["path", { d: "M19 12H5", key: "x3x0zl" }],
+    ]);
+    a.s(["ArrowLeft", () => b], 210);
+  },
+  66718,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(72131),
+      d = a.i(68114);
+    let e = c.forwardRef(({ className: a, type: c, ...e }, f) =>
+      (0, b.jsx)("input", {
+        type: c,
+        className: (0, d.cn)(
+          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          a,
+        ),
+        ref: f,
+        ...e,
+      }),
+    );
+    ((e.displayName = "Input"), a.s(["Input", () => e]));
+  },
+  62287,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(72131),
+      d = a.i(18894),
+      e = a.i(66718),
+      f = a.i(38246),
+      g = a.i(210);
+    let h = [
+      {
+        name: "Binance Coin",
+        symbol: "BNB",
+        apiKeyEnv: "EX_API_BINANCE",
+        providerHint: "Binance REST / account endpoints",
+      },
+      {
+        name: "LEO Token",
+        symbol: "LEO",
+        apiKeyEnv: "EX_API_BITFINEX",
+        providerHint: "Bitfinex REST",
+      },
+      {
+        name: "Bitget Token",
+        symbol: "BGB",
+        apiKeyEnv: "EX_API_BITGET",
+        providerHint: "Bitget REST",
+      },
+      {
+        name: "OKB",
+        symbol: "OKB",
+        apiKeyEnv: "EX_API_OKX",
+        providerHint: "OKX REST",
+      },
+      {
+        name: "Cronos",
+        symbol: "CRO",
+        apiKeyEnv: "EX_API_CRONOS",
+        providerHint: "Crypto.com REST",
+      },
+      {
+        name: "KuCoin Token",
+        symbol: "KCS",
+        apiKeyEnv: "EX_API_KUCOIN",
+        providerHint: "KuCoin REST",
+      },
+      {
+        name: "GateToken",
+        symbol: "GT",
+        apiKeyEnv: "EX_API_GATEIO",
+        providerHint: "Gate.io REST",
+      },
+      {
+        name: "FTX Token (FTT)",
+        symbol: "FTT",
+        apiKeyEnv: "EX_API_FTX",
+        providerHint: "FTX legacy REST (if available)",
+      },
+      {
+        name: "CoinEx Token",
+        symbol: "CET",
+        apiKeyEnv: "EX_API_COINEX",
+        providerHint: "CoinEx REST",
+      },
+      {
+        name: "Huobi Token",
+        symbol: "HT",
+        apiKeyEnv: "EX_API_HUOBI",
+        providerHint: "Huobi REST",
+      },
+      {
+        name: "OKT (OKChain)",
+        symbol: "OKT",
+        apiKeyEnv: "EX_API_OKT",
+        providerHint: "OKX/OKChain endpoints",
+      },
+      {
+        name: "Bitrue Coin",
+        symbol: "BTR",
+        apiKeyEnv: "EX_API_BITRUE",
+        providerHint: "Bitrue REST",
+      },
+      {
+        name: "Bitkub Coin",
+        symbol: "KUB",
+        apiKeyEnv: "EX_API_BITKUB",
+        providerHint: "Bitkub REST",
+      },
+      {
+        name: "MEXC Token",
+        symbol: "MX",
+        apiKeyEnv: "EX_API_MEXC",
+        providerHint: "MEXC REST",
+      },
+      {
+        name: "WhiteBIT Coin",
+        symbol: "WBT",
+        apiKeyEnv: "EX_API_WHITEBIT",
+        providerHint: "WhiteBIT REST",
+      },
+      {
+        name: "WazirX WRX",
+        symbol: "WRX",
+        apiKeyEnv: "EX_API_WAZIRX",
+        providerHint: "WazirX REST",
+      },
+      {
+        name: "Tokenize Xchange TKX",
+        symbol: "TKX",
+        apiKeyEnv: "EX_API_TOKENIZE",
+        providerHint: "Tokenize REST",
+      },
+      {
+        name: "BitMart Token",
+        symbol: "BMX",
+        apiKeyEnv: "EX_API_BITMART",
+        providerHint: "BitMart REST",
+      },
+      {
+        name: "Bibox Token",
+        symbol: "BIX",
+        apiKeyEnv: "EX_API_BIBOX",
+        providerHint: "Bibox REST",
+      },
+      {
+        name: "OKChain OKB variant",
+        symbol: "OKB2",
+        apiKeyEnv: "EX_API_OKB2",
+        providerHint: "OKX ecosystem",
+      },
+      {
+        name: "AscendEX Token",
+        symbol: "ASD",
+        apiKeyEnv: "EX_API_ASCENDEX",
+        providerHint: "AscendEX REST",
+      },
+      {
+        name: "Hotbit Token",
+        symbol: "HTB",
+        apiKeyEnv: "EX_API_HOTBIT",
+        providerHint: "Hotbit REST",
+      },
+      {
+        name: "ProBit Token",
+        symbol: "PROB",
+        apiKeyEnv: "EX_API_PROBIT",
+        providerHint: "ProBit REST",
+      },
+      {
+        name: "Bitso Token",
+        symbol: "BITSO",
+        apiKeyEnv: "EX_API_BITSO",
+        providerHint: "Bitso REST",
+      },
+      {
+        name: "Bibox Chain Token",
+        symbol: "BCHT",
+        apiKeyEnv: "EX_API_BIBOX_CHAIN",
+        providerHint: "Bibox chain APIs",
+      },
+      {
+        name: "CoinEx Chain CET",
+        symbol: "CETC",
+        apiKeyEnv: "EX_API_COINEX_CHAIN",
+        providerHint: "CoinEx Chain endpoints",
+      },
+      {
+        name: "Gopax Token",
+        symbol: "GPX",
+        apiKeyEnv: "EX_API_GOPAX",
+        providerHint: "Gopax REST",
+      },
+      {
+        name: "Bittrex Token (example)",
+        symbol: "BTRX",
+        apiKeyEnv: "EX_API_BITTREX",
+        providerHint: "Bittrex REST",
+      },
+      {
+        name: "Poloniex Token (example)",
+        symbol: "POLX",
+        apiKeyEnv: "EX_API_POLONIEX",
+        providerHint: "Poloniex REST",
+      },
+      {
+        name: "GateChain Token",
+        symbol: "GTN",
+        apiKeyEnv: "EX_API_GATECHAIN",
+        providerHint: "GateChain endpoints",
+      },
+      {
+        name: "MEXC Ecosystem Token",
+        symbol: "MEXCET",
+        apiKeyEnv: "EX_API_MEXCET",
+        providerHint: "MEXC REST",
+      },
+      {
+        name: "Bitstamp Token (example)",
+        symbol: "BST",
+        apiKeyEnv: "EX_API_BITSTAMP",
+        providerHint: "Bitstamp REST",
+      },
+      {
+        name: "CoinTiger Token",
+        symbol: "CTT",
+        apiKeyEnv: "EX_API_COIN TIGER",
+        providerHint: "CoinTiger REST",
+      },
+      {
+        name: "BitFlyer Token (example)",
+        symbol: "BFY",
+        apiKeyEnv: "EX_API_BITFLYER",
+        providerHint: "bitFlyer REST",
+      },
+      {
+        name: "Crypto.com Token (CRO)",
+        symbol: "CRO",
+        apiKeyEnv: "EX_API_CRYPTOCOM",
+        providerHint: "Crypto.com REST",
+      },
+      {
+        name: "CoinEx Token (alternate)",
+        symbol: "CET2",
+        apiKeyEnv: "EX_API_CET2",
+        providerHint: "CoinEx REST",
+      },
+      {
+        name: "Bitbank Token (example)",
+        symbol: "BBK",
+        apiKeyEnv: "EX_API_BITBANK",
+        providerHint: "Bitbank REST",
+      },
+      {
+        name: "Bithumb Token (example)",
+        symbol: "BTH",
+        apiKeyEnv: "EX_API_BITHUMB",
+        providerHint: "Bithumb REST",
+      },
+      {
+        name: "Upbit Token (example)",
+        symbol: "UPT",
+        apiKeyEnv: "EX_API_UPBIT",
+        providerHint: "Upbit REST",
+      },
+      {
+        name: "Coinbase Exchange Token (example)",
+        symbol: "COBX",
+        apiKeyEnv: "EX_API_COINBASE",
+        providerHint: "Coinbase Pro REST",
+      },
+      {
+        name: "Gemini Token (example)",
+        symbol: "GMI",
+        apiKeyEnv: "EX_API_GEMINI",
+        providerHint: "Gemini REST",
+      },
+      {
+        name: "Kraken Token (example)",
+        symbol: "KRK",
+        apiKeyEnv: "EX_API_KRAKEN",
+        providerHint: "Kraken REST",
+      },
+      {
+        name: "OKX Ecosystem Token",
+        symbol: "OKXET",
+        apiKeyEnv: "EX_API_OKX_ET",
+        providerHint: "OKX REST",
+      },
+      {
+        name: "KuCoin Ecosystem Token (alt)",
+        symbol: "KCS2",
+        apiKeyEnv: "EX_API_KCS2",
+        providerHint: "KuCoin REST",
+      },
+      {
+        name: "Bitfinex LEO variant",
+        symbol: "LEO2",
+        apiKeyEnv: "EX_API_BITFINEX_LEO",
+        providerHint: "Bitfinex REST",
+      },
+      {
+        name: "Huobi Eco Chain HPT (example)",
+        symbol: "HPT",
+        apiKeyEnv: "EX_API_HECO_HPT",
+        providerHint: "Huobi ecosystem",
+      },
+      {
+        name: "Bibox Token (alt)",
+        symbol: "BIX2",
+        apiKeyEnv: "EX_API_BIX2",
+        providerHint: "Bibox REST",
+      },
+      {
+        name: "CoinEx Global Token",
+        symbol: "CETG",
+        apiKeyEnv: "EX_API_CETG",
+        providerHint: "CoinEx REST",
+      },
+      {
+        name: "Tokocrypto TKO (example)",
+        symbol: "TKO",
+        apiKeyEnv: "EX_API_TOKOCRYPTO",
+        providerHint: "Tokocrypto REST",
+      },
+      {
+        name: "Bitget Ecosystem Token",
+        symbol: "BGB2",
+        apiKeyEnv: "EX_API_BITGET2",
+        providerHint: "Bitget REST",
+      },
+      {
+        name: "WhiteBit Ecosystem Token",
+        symbol: "WBT2",
+        apiKeyEnv: "EX_API_WHITEBIT2",
+        providerHint: "WhiteBIT REST",
+      },
+      {
+        name: "ZBG Token (example)",
+        symbol: "ZBG",
+        apiKeyEnv: "EX_API_ZBG",
+        providerHint: "ZBG REST",
+      },
+      {
+        name: "Bibox Chain BIXC",
+        symbol: "BIXC",
+        apiKeyEnv: "EX_API_BIXC",
+        providerHint: "Bibox chain endpoints",
+      },
+      {
+        name: "Mercatox Token (example)",
+        symbol: "MCT",
+        apiKeyEnv: "EX_API_MERCATOX",
+        providerHint: "Mercatox REST",
+      },
+      {
+        name: "BitMax Token (example)",
+        symbol: "BTMX",
+        apiKeyEnv: "EX_API_BITMAX",
+        providerHint: "BitMax REST",
+      },
+      {
+        name: "Coinone Token (example)",
+        symbol: "CONE",
+        apiKeyEnv: "EX_API_COINONE",
+        providerHint: "Coinone REST",
+      },
+      {
+        name: "Paxful Token (example)",
+        symbol: "PAXF",
+        apiKeyEnv: "EX_API_PAXFUL",
+        providerHint: "Paxful REST",
+      },
+      {
+        name: "WOO Network (exchange integration)",
+        symbol: "WOO",
+        apiKeyEnv: "EX_API_WOO",
+        providerHint: "WOO X / REST",
+      },
+      {
+        name: "Bilaxy Token (example)",
+        symbol: "BIA",
+        apiKeyEnv: "EX_API_BILAXY",
+        providerHint: "Bilaxy REST",
+      },
+      {
+        name: "Hotbit Token (alt)",
+        symbol: "HTB2",
+        apiKeyEnv: "EX_API_HTB2",
+        providerHint: "Hotbit REST",
+      },
+      {
+        name: "Bitrue Token (alt)",
+        symbol: "BTR2",
+        apiKeyEnv: "EX_API_BTR2",
+        providerHint: "Bitrue REST",
+      },
+      {
+        name: "Korbit Token (example)",
+        symbol: "KOR",
+        apiKeyEnv: "EX_API_KORBIT",
+        providerHint: "Korbit REST",
+      },
+      {
+        name: "CoinEx Token (regional)",
+        symbol: "CETR",
+        apiKeyEnv: "EX_API_CETR",
+        providerHint: "CoinEx REST",
+      },
+      {
+        name: "BKEX Token (example)",
+        symbol: "BKX",
+        apiKeyEnv: "EX_API_BKEX",
+        providerHint: "BKEX REST",
+      },
+      {
+        name: "LBank Token (example)",
+        symbol: "LBT",
+        apiKeyEnv: "EX_API_LBANK",
+        providerHint: "LBank REST",
+      },
+      {
+        name: "CoinDCX Token (example)",
+        symbol: "CDX",
+        apiKeyEnv: "EX_API_COINDCX",
+        providerHint: "CoinDCX REST",
+      },
+      {
+        name: "Bitbank Token (alt)",
+        symbol: "BBT",
+        apiKeyEnv: "EX_API_BBT",
+        providerHint: "Bitbank REST",
+      },
+      {
+        name: "AscendEX Token (alt)",
+        symbol: "ASD2",
+        apiKeyEnv: "EX_API_ASD2",
+        providerHint: "AscendEX REST",
+      },
+      {
+        name: "Indodax Token (example)",
+        symbol: "IDX",
+        apiKeyEnv: "EX_API_INDODAX",
+        providerHint: "Indodax REST",
+      },
+      {
+        name: "Tokocrypto Token (alt)",
+        symbol: "TKO2",
+        apiKeyEnv: "EX_API_TKO2",
+        providerHint: "Tokocrypto REST",
+      },
+      {
+        name: "HBTC Token (example)",
+        symbol: "HBTC",
+        apiKeyEnv: "EX_API_HBTC",
+        providerHint: "HBTC REST",
+      },
+      {
+        name: "OKX Token Variant",
+        symbol: "OKXV",
+        apiKeyEnv: "EX_API_OKXV",
+        providerHint: "OKX REST",
+      },
+      {
+        name: "Bitstamp Token (alt)",
+        symbol: "BST2",
+        apiKeyEnv: "EX_API_BST2",
+        providerHint: "Bitstamp REST",
+      },
+      {
+        name: "GateToken (alt)",
+        symbol: "GT2",
+        apiKeyEnv: "EX_API_GT2",
+        providerHint: "Gate.io REST",
+      },
+      {
+        name: "Kanga Exchange Token (example)",
+        symbol: "KNGA",
+        apiKeyEnv: "EX_API_KANGA",
+        providerHint: "Kanga REST",
+      },
+      {
+        name: "BTCEX Token (example)",
+        symbol: "BTX",
+        apiKeyEnv: "EX_API_BTCEX",
+        providerHint: "BTCEX REST",
+      },
+      {
+        name: "ZBG Token (alt)",
+        symbol: "ZBG2",
+        apiKeyEnv: "EX_API_ZBG2",
+        providerHint: "ZBG REST",
+      },
+      {
+        name: "BHEX Token (example)",
+        symbol: "BHT",
+        apiKeyEnv: "EX_API_BHEX",
+        providerHint: "BHEX REST",
+      },
+      {
+        name: "Coinsbit Token (example)",
+        symbol: "CNB",
+        apiKeyEnv: "EX_API_COINSBIT",
+        providerHint: "Coinsbit REST",
+      },
+      {
+        name: "OKCoin Token (example)",
+        symbol: "OKC",
+        apiKeyEnv: "EX_API_OKCOIN",
+        providerHint: "OKCoin REST",
+      },
+      {
+        name: "Simulated Exchange Token 1",
+        symbol: "EXSIM1",
+        apiKeyEnv: "EX_API_EXSIM1",
+        providerHint: "Custom exchange REST",
+      },
+      {
+        name: "Simulated Exchange Token 2",
+        symbol: "EXSIM2",
+        apiKeyEnv: "EX_API_EXSIM2",
+        providerHint: "Custom exchange REST",
+      },
+      {
+        name: "Simulated Exchange Token 3",
+        symbol: "EXSIM3",
+        apiKeyEnv: "EX_API_EXSIM3",
+        providerHint: "Custom exchange REST",
+      },
+      {
+        name: "Simulated Exchange Token 4",
+        symbol: "EXSIM4",
+        apiKeyEnv: "EX_API_EXSIM4",
+        providerHint: "Custom exchange REST",
+      },
+    ];
+    function i() {
+      let [a, i] = (0, c.useState)(""),
+        j = h.filter(
+          (b) =>
+            b.name.toLowerCase().includes(a.toLowerCase()) ||
+            b.symbol.toLowerCase().includes(a.toLowerCase()),
+        );
+      return (0, b.jsxs)(b.Fragment, {
+        children: [
+          (0, b.jsx)(d.Header, {}),
+          (0, b.jsx)("main", {
+            className: "dashboard-grid",
+            children: (0, b.jsxs)("section", {
+              className: "center-content",
+              children: [
+                (0, b.jsx)("h1", {
+                  className: "text-3xl font-bold neon-text text-center mt-8",
+                  children: "Exchange Tokens",
+                }),
+                (0, b.jsx)("p", {
+                  className:
+                    "text-lg text-gray-300 text-center max-w-3xl mx-auto",
+                  children:
+                    "A list of tokens issued by cryptocurrency exchanges. These tokens often provide utility within their native platform, such as reduced trading fees, governance rights, or access to exclusive features.",
+                }),
+                (0, b.jsx)("div", {
+                  className: "w-full mt-4",
+                  children: (0, b.jsx)(e.Input, {
+                    type: "text",
+                    placeholder: "Search exchange tokens...",
+                    value: a,
+                    onChange: (a) => i(a.target.value),
+                    className:
+                      "w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white",
+                  }),
+                }),
+                (0, b.jsx)("div", {
+                  className: "w-full overflow-x-auto mt-8",
+                  children: (0, b.jsxs)("div", {
+                    className: "info-table-card",
+                    children: [
+                      (0, b.jsxs)("table", {
+                        className: "info-table w-full",
+                        children: [
+                          (0, b.jsx)("thead", {
+                            children: (0, b.jsxs)("tr", {
+                              children: [
+                                (0, b.jsx)("th", { children: "Name" }),
+                                (0, b.jsx)("th", { children: "Symbol" }),
+                                (0, b.jsx)("th", {
+                                  children: "API Key Env Var",
+                                }),
+                                (0, b.jsx)("th", { children: "Provider Hint" }),
+                              ],
+                            }),
+                          }),
+                          (0, b.jsx)("tbody", {
+                            children: j.map((a, c) =>
+                              (0, b.jsxs)(
+                                "tr",
+                                {
+                                  className: "hover:bg-white/5",
+                                  children: [
+                                    (0, b.jsx)("td", {
+                                      className: "neon-cyan",
+                                      children: a.name,
+                                    }),
+                                    (0, b.jsx)("td", {
+                                      className: "neon-pink",
+                                      children: a.symbol.toUpperCase(),
+                                    }),
+                                    (0, b.jsx)("td", {
+                                      className:
+                                        "text-gray-400 font-mono text-xs",
+                                      children: a.apiKeyEnv,
+                                    }),
+                                    (0, b.jsx)("td", {
+                                      className: "text-gray-400",
+                                      children: a.providerHint,
+                                    }),
+                                  ],
+                                },
+                                `${a.symbol}-${c}`,
+                              ),
+                            ),
+                          }),
+                        ],
+                      }),
+                      0 === j.length &&
+                        (0, b.jsx)("p", {
+                          className: "text-center text-gray-400 py-8",
+                          children:
+                            "No exchange tokens found matching your search.",
+                        }),
+                    ],
+                  }),
+                }),
+              ],
+            }),
+          }),
+          (0, b.jsxs)(f.default, {
+            href: "/main",
+            className:
+              "fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2",
+            children: [(0, b.jsx)(g.ArrowLeft, { size: 16 }), "Back"],
+          }),
+        ],
+      });
+    }
+    a.s(["default", () => i]);
+  },
+];
 
 //# sourceMappingURL=_7bb70ea6._.js.map

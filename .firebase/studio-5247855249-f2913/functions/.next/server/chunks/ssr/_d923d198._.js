@@ -1,3 +1,66 @@
-module.exports=[9270,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored.contexts.AppRouterContext},38783,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient},41934,a=>{"use strict";var b=a.i(87924),c=a.i(38246),d=a.i(18894);function e(){return(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(d.Header,{}),(0,b.jsx)("main",{className:"dashboard-grid",children:(0,b.jsxs)("section",{className:"center-content",children:[(0,b.jsxs)("div",{className:"view-switcher",children:[(0,b.jsx)(c.default,{href:"/",className:"view-button neon-cyan",children:"Charts"}),(0,b.jsx)(c.default,{href:"/simple-view",className:"view-button neon-pink",children:"Simple View"}),(0,b.jsx)(c.default,{href:"/custom-view",className:"view-button active neon-orange",children:"Custom View"})]}),(0,b.jsx)("h1",{className:"text-3xl font-bold neon-text text-center mt-8",children:"Custom View"}),(0,b.jsx)("p",{className:"text-lg text-gray-300 text-center",children:"This is the custom dashboard view. Build your personalized layout here."})]})})]})}a.s(["default",()=>e])}];
+module.exports = [
+  9270,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored.contexts.AppRouterContext;
+  },
+  38783,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient;
+  },
+  41934,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(38246),
+      d = a.i(18894);
+    function e() {
+      return (0, b.jsxs)(b.Fragment, {
+        children: [
+          (0, b.jsx)(d.Header, {}),
+          (0, b.jsx)("main", {
+            className: "dashboard-grid",
+            children: (0, b.jsxs)("section", {
+              className: "center-content",
+              children: [
+                (0, b.jsxs)("div", {
+                  className: "view-switcher",
+                  children: [
+                    (0, b.jsx)(c.default, {
+                      href: "/",
+                      className: "view-button neon-cyan",
+                      children: "Charts",
+                    }),
+                    (0, b.jsx)(c.default, {
+                      href: "/simple-view",
+                      className: "view-button neon-pink",
+                      children: "Simple View",
+                    }),
+                    (0, b.jsx)(c.default, {
+                      href: "/custom-view",
+                      className: "view-button active neon-orange",
+                      children: "Custom View",
+                    }),
+                  ],
+                }),
+                (0, b.jsx)("h1", {
+                  className: "text-3xl font-bold neon-text text-center mt-8",
+                  children: "Custom View",
+                }),
+                (0, b.jsx)("p", {
+                  className: "text-lg text-gray-300 text-center",
+                  children:
+                    "This is the custom dashboard view. Build your personalized layout here.",
+                }),
+              ],
+            }),
+          }),
+        ],
+      });
+    }
+    a.s(["default", () => e]);
+  },
+];
 
 //# sourceMappingURL=_d923d198._.js.map

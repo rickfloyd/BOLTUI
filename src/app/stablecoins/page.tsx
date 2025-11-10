@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Header } from '@/components/layout/header';
-import { Input } from '@/components/ui/input';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { useState } from "react";
+import { Header } from "@/components/layout/header";
+import { Input } from "@/components/ui/input";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 interface Stablecoin {
   name: string;
@@ -108,17 +108,16 @@ const stablecoins: Stablecoin[] = [
   { name: "sIDR", symbol: "SIDR" },
   { name: "sVND", symbol: "SVND" },
   { name: "sBDT", symbol: "SBDT" },
-  { name: "sPKR", symbol: "SPKR" }
+  { name: "sPKR", symbol: "SPKR" },
 ];
 
-
 export default function StablecoinsPage() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filteredCoins = stablecoins.filter(
     (coin) =>
       coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+      coin.symbol.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
@@ -126,9 +125,12 @@ export default function StablecoinsPage() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <h1 className="text-3xl font-bold neon-text text-center mt-8">Top 100 Stablecoins</h1>
+          <h1 className="text-3xl font-bold neon-text text-center mt-8">
+            Top 100 Stablecoins
+          </h1>
           <p className="text-lg text-gray-300 text-center">
-            A comprehensive list of stablecoins, which are cryptocurrencies designed to minimize price volatility.
+            A comprehensive list of stablecoins, which are cryptocurrencies
+            designed to minimize price volatility.
           </p>
           <div className="w-full mt-4">
             <Input
@@ -163,7 +165,10 @@ export default function StablecoinsPage() {
           </div>
         </section>
       </main>
-      <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+      <Link
+        href="/main"
+        className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2"
+      >
         <ArrowLeft size={16} />
         Back
       </Link>

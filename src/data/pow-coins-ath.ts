@@ -1,4 +1,3 @@
-
 export interface PoWAthData {
   symbol: string;
   ath_price_2025: string;

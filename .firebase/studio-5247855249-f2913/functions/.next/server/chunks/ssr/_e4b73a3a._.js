@@ -1,3 +1,198 @@
-module.exports=[9270,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored.contexts.AppRouterContext},38783,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient},210,a=>{"use strict";let b=(0,a.i(70106).default)("ArrowLeft",[["path",{d:"m12 19-7-7 7-7",key:"1l729n"}],["path",{d:"M19 12H5",key:"x3x0zl"}]]);a.s(["ArrowLeft",()=>b],210)},66718,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(68114);let e=c.forwardRef(({className:a,type:c,...e},f)=>(0,b.jsx)("input",{type:c,className:(0,d.cn)("flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",a),ref:f,...e}));e.displayName="Input",a.s(["Input",()=>e])},683,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(18894),e=a.i(66718),f=a.i(38246),g=a.i(210);let h=[{name:"Ethereum",symbol:"ETH"},{name:"Solana",symbol:"SOL"},{name:"Cardano",symbol:"ADA"},{name:"Polkadot",symbol:"DOT"},{name:"Avalanche",symbol:"AVAX"},{name:"Binance Smart Chain (BNB Chain)",symbol:"BNB"},{name:"NEAR Protocol",symbol:"NEAR"},{name:"Algorand",symbol:"ALGO"},{name:"Tezos",symbol:"XTZ"},{name:"Cosmos",symbol:"ATOM"},{name:"Fantom",symbol:"FTM"},{name:"Flow",symbol:"FLOW"},{name:"Internet Computer",symbol:"ICP"},{name:"Elrond (MultiversX)",symbol:"EGLD"},{name:"Tron",symbol:"TRX"},{name:"EOS",symbol:"EOS"},{name:"Hedera Hashgraph",symbol:"HBAR"},{name:"Stacks",symbol:"STX"},{name:"Kusama",symbol:"KSM"},{name:"Zilliqa",symbol:"ZIL"},{name:"Harmony",symbol:"ONE"},{name:"Avalanche Subnets (example: C-Chain apps)",symbol:"AVAX"},{name:"Celo",symbol:"CELO"},{name:"Near Aurora (EVM on NEAR)",symbol:"AURORA"},{name:"Moonbeam (Polkadot parachain)",symbol:"GLMR"},{name:"Moonriver (Kusama)",symbol:"MOVR"},{name:"Injective",symbol:"INJ"},{name:"Optimism",symbol:"OP"},{name:"Arbitrum",symbol:"ARB"},{name:"Sui",symbol:"SUI"},{name:"Aptos",symbol:"APT"},{name:"Radix",symbol:"XRD"},{name:"Kadena",symbol:"KDA"},{name:"StarkNet",symbol:"STRK"},{name:"Conflux",symbol:"CFX"},{name:"Flow by Dapper Labs",symbol:"FLOW"},{name:"Ronin",symbol:"RON"},{name:"Tezos sidechains / Layered extensions",symbol:"XTZ"},{name:"Algorand AVM-based platforms",symbol:"ALGO"},{name:"Cardano Hydra-enabled apps",symbol:"ADA"},{name:"Oasis (ParaTimes with smart contracts)",symbol:"ROSE"},{name:"Klaytn",symbol:"KLAY"},{name:"Evmos (EVM on Cosmos)",symbol:"EVMOS"},{name:"Acala (Polkadot DeFi hub)",symbol:"ACA"},{name:"Astar Network",symbol:"ASTR"},{name:"Oasis ParaTimes (contract-capable runtimes)",symbol:"ROSE"},{name:"Celestia-connected rollups",symbol:"TIA"},{name:"Near-based rollup ecosystems",symbol:"NEAR"},{name:"Scroll (zkEVMs on other chains)",symbol:"(varies)"},{name:"Mantle / other modular L2s",symbol:"MNT"}];function i(){let[a,i]=(0,c.useState)(""),j=h.filter(b=>b.name.toLowerCase().includes(a.toLowerCase())||b.symbol.toLowerCase().includes(a.toLowerCase()));return(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(d.Header,{}),(0,b.jsx)("main",{className:"dashboard-grid",children:(0,b.jsxs)("section",{className:"center-content",children:[(0,b.jsx)("h1",{className:"text-3xl font-bold neon-text text-center mt-8",children:"Smart-Contract Platforms"}),(0,b.jsx)("p",{className:"text-lg text-gray-300 text-center max-w-3xl mx-auto",children:"A comprehensive list of platforms that enable the creation and execution of smart contracts, driving decentralized applications (dApps). This includes Layer-1 blockchains, parachains, sidechains, and rollup networks."}),(0,b.jsx)("div",{className:"w-full mt-4",children:(0,b.jsx)(e.Input,{type:"text",placeholder:"Search platforms...",value:a,onChange:a=>i(a.target.value),className:"w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white"})}),(0,b.jsx)("div",{className:"w-full overflow-x-auto mt-8",children:(0,b.jsx)("div",{className:"info-table-card",children:(0,b.jsxs)("table",{className:"info-table w-full",children:[(0,b.jsx)("thead",{children:(0,b.jsxs)("tr",{children:[(0,b.jsx)("th",{children:"#"}),(0,b.jsx)("th",{children:"Platform"}),(0,b.jsx)("th",{children:"Symbol"})]})}),(0,b.jsx)("tbody",{children:j.map((a,c)=>(0,b.jsxs)("tr",{className:"hover:bg-white/5",children:[(0,b.jsx)("td",{className:"neon-orange",children:c+1}),(0,b.jsx)("td",{className:"neon-cyan",children:a.name}),(0,b.jsx)("td",{className:"neon-pink",children:a.symbol.toUpperCase()})]},a.name))})]})})})]})}),(0,b.jsxs)(f.default,{href:"/main",className:"fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2",children:[(0,b.jsx)(g.ArrowLeft,{size:16}),"Back"]})]})}a.s(["default",()=>i])}];
+module.exports = [
+  9270,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored.contexts.AppRouterContext;
+  },
+  38783,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient;
+  },
+  210,
+  (a) => {
+    "use strict";
+    let b = (0, a.i(70106).default)("ArrowLeft", [
+      ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+      ["path", { d: "M19 12H5", key: "x3x0zl" }],
+    ]);
+    a.s(["ArrowLeft", () => b], 210);
+  },
+  66718,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(72131),
+      d = a.i(68114);
+    let e = c.forwardRef(({ className: a, type: c, ...e }, f) =>
+      (0, b.jsx)("input", {
+        type: c,
+        className: (0, d.cn)(
+          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          a,
+        ),
+        ref: f,
+        ...e,
+      }),
+    );
+    ((e.displayName = "Input"), a.s(["Input", () => e]));
+  },
+  683,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(72131),
+      d = a.i(18894),
+      e = a.i(66718),
+      f = a.i(38246),
+      g = a.i(210);
+    let h = [
+      { name: "Ethereum", symbol: "ETH" },
+      { name: "Solana", symbol: "SOL" },
+      { name: "Cardano", symbol: "ADA" },
+      { name: "Polkadot", symbol: "DOT" },
+      { name: "Avalanche", symbol: "AVAX" },
+      { name: "Binance Smart Chain (BNB Chain)", symbol: "BNB" },
+      { name: "NEAR Protocol", symbol: "NEAR" },
+      { name: "Algorand", symbol: "ALGO" },
+      { name: "Tezos", symbol: "XTZ" },
+      { name: "Cosmos", symbol: "ATOM" },
+      { name: "Fantom", symbol: "FTM" },
+      { name: "Flow", symbol: "FLOW" },
+      { name: "Internet Computer", symbol: "ICP" },
+      { name: "Elrond (MultiversX)", symbol: "EGLD" },
+      { name: "Tron", symbol: "TRX" },
+      { name: "EOS", symbol: "EOS" },
+      { name: "Hedera Hashgraph", symbol: "HBAR" },
+      { name: "Stacks", symbol: "STX" },
+      { name: "Kusama", symbol: "KSM" },
+      { name: "Zilliqa", symbol: "ZIL" },
+      { name: "Harmony", symbol: "ONE" },
+      { name: "Avalanche Subnets (example: C-Chain apps)", symbol: "AVAX" },
+      { name: "Celo", symbol: "CELO" },
+      { name: "Near Aurora (EVM on NEAR)", symbol: "AURORA" },
+      { name: "Moonbeam (Polkadot parachain)", symbol: "GLMR" },
+      { name: "Moonriver (Kusama)", symbol: "MOVR" },
+      { name: "Injective", symbol: "INJ" },
+      { name: "Optimism", symbol: "OP" },
+      { name: "Arbitrum", symbol: "ARB" },
+      { name: "Sui", symbol: "SUI" },
+      { name: "Aptos", symbol: "APT" },
+      { name: "Radix", symbol: "XRD" },
+      { name: "Kadena", symbol: "KDA" },
+      { name: "StarkNet", symbol: "STRK" },
+      { name: "Conflux", symbol: "CFX" },
+      { name: "Flow by Dapper Labs", symbol: "FLOW" },
+      { name: "Ronin", symbol: "RON" },
+      { name: "Tezos sidechains / Layered extensions", symbol: "XTZ" },
+      { name: "Algorand AVM-based platforms", symbol: "ALGO" },
+      { name: "Cardano Hydra-enabled apps", symbol: "ADA" },
+      { name: "Oasis (ParaTimes with smart contracts)", symbol: "ROSE" },
+      { name: "Klaytn", symbol: "KLAY" },
+      { name: "Evmos (EVM on Cosmos)", symbol: "EVMOS" },
+      { name: "Acala (Polkadot DeFi hub)", symbol: "ACA" },
+      { name: "Astar Network", symbol: "ASTR" },
+      { name: "Oasis ParaTimes (contract-capable runtimes)", symbol: "ROSE" },
+      { name: "Celestia-connected rollups", symbol: "TIA" },
+      { name: "Near-based rollup ecosystems", symbol: "NEAR" },
+      { name: "Scroll (zkEVMs on other chains)", symbol: "(varies)" },
+      { name: "Mantle / other modular L2s", symbol: "MNT" },
+    ];
+    function i() {
+      let [a, i] = (0, c.useState)(""),
+        j = h.filter(
+          (b) =>
+            b.name.toLowerCase().includes(a.toLowerCase()) ||
+            b.symbol.toLowerCase().includes(a.toLowerCase()),
+        );
+      return (0, b.jsxs)(b.Fragment, {
+        children: [
+          (0, b.jsx)(d.Header, {}),
+          (0, b.jsx)("main", {
+            className: "dashboard-grid",
+            children: (0, b.jsxs)("section", {
+              className: "center-content",
+              children: [
+                (0, b.jsx)("h1", {
+                  className: "text-3xl font-bold neon-text text-center mt-8",
+                  children: "Smart-Contract Platforms",
+                }),
+                (0, b.jsx)("p", {
+                  className:
+                    "text-lg text-gray-300 text-center max-w-3xl mx-auto",
+                  children:
+                    "A comprehensive list of platforms that enable the creation and execution of smart contracts, driving decentralized applications (dApps). This includes Layer-1 blockchains, parachains, sidechains, and rollup networks.",
+                }),
+                (0, b.jsx)("div", {
+                  className: "w-full mt-4",
+                  children: (0, b.jsx)(e.Input, {
+                    type: "text",
+                    placeholder: "Search platforms...",
+                    value: a,
+                    onChange: (a) => i(a.target.value),
+                    className:
+                      "w-full p-2 rounded-md bg-gray-800 border-cyan-400 text-white",
+                  }),
+                }),
+                (0, b.jsx)("div", {
+                  className: "w-full overflow-x-auto mt-8",
+                  children: (0, b.jsx)("div", {
+                    className: "info-table-card",
+                    children: (0, b.jsxs)("table", {
+                      className: "info-table w-full",
+                      children: [
+                        (0, b.jsx)("thead", {
+                          children: (0, b.jsxs)("tr", {
+                            children: [
+                              (0, b.jsx)("th", { children: "#" }),
+                              (0, b.jsx)("th", { children: "Platform" }),
+                              (0, b.jsx)("th", { children: "Symbol" }),
+                            ],
+                          }),
+                        }),
+                        (0, b.jsx)("tbody", {
+                          children: j.map((a, c) =>
+                            (0, b.jsxs)(
+                              "tr",
+                              {
+                                className: "hover:bg-white/5",
+                                children: [
+                                  (0, b.jsx)("td", {
+                                    className: "neon-orange",
+                                    children: c + 1,
+                                  }),
+                                  (0, b.jsx)("td", {
+                                    className: "neon-cyan",
+                                    children: a.name,
+                                  }),
+                                  (0, b.jsx)("td", {
+                                    className: "neon-pink",
+                                    children: a.symbol.toUpperCase(),
+                                  }),
+                                ],
+                              },
+                              a.name,
+                            ),
+                          ),
+                        }),
+                      ],
+                    }),
+                  }),
+                }),
+              ],
+            }),
+          }),
+          (0, b.jsxs)(f.default, {
+            href: "/main",
+            className:
+              "fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2",
+            children: [(0, b.jsx)(g.ArrowLeft, { size: 16 }), "Back"],
+          }),
+        ],
+      });
+    }
+    a.s(["default", () => i]);
+  },
+];
 
 //# sourceMappingURL=_e4b73a3a._.js.map

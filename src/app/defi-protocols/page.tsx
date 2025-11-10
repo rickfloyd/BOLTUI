@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Header } from '@/components/layout/header';
-import { Input } from '@/components/ui/input';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
-import { defiTokens, DeFiToken } from '@/data/defi-tokens';
+import { useState } from "react";
+import { Header } from "@/components/layout/header";
+import { Input } from "@/components/ui/input";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { defiTokens, DeFiToken } from "@/data/defi-tokens";
 
 export default function DefiProtocolsPage() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filteredTokens = defiTokens.filter(
     (token) =>
       token.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      token.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+      token.symbol.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
@@ -21,9 +21,13 @@ export default function DefiProtocolsPage() {
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <h1 className="text-3xl font-bold neon-text text-center mt-8">DeFi Protocol Tokens</h1>
+          <h1 className="text-3xl font-bold neon-text text-center mt-8">
+            DeFi Protocol Tokens
+          </h1>
           <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
-            A curated list of tokens associated with decentralized finance (DeFi) protocols, including decentralized exchanges, lending platforms, and yield farming services.
+            A curated list of tokens associated with decentralized finance
+            (DeFi) protocols, including decentralized exchanges, lending
+            platforms, and yield farming services.
           </p>
           <div className="w-full mt-4">
             <Input
@@ -46,7 +50,10 @@ export default function DefiProtocolsPage() {
                 </thead>
                 <tbody>
                   {filteredTokens.map((token, index) => (
-                    <tr key={`${token.symbol}-${index}`} className="hover:bg-white/5">
+                    <tr
+                      key={`${token.symbol}-${index}`}
+                      className="hover:bg-white/5"
+                    >
                       <td className="neon-orange">{index + 1}</td>
                       <td className="neon-cyan">{token.name}</td>
                       <td className="neon-pink">{token.symbol}</td>
@@ -55,13 +62,18 @@ export default function DefiProtocolsPage() {
                 </tbody>
               </table>
               {filteredTokens.length === 0 && (
-                <p className="text-center text-gray-400 py-8">No DeFi tokens found matching your search.</p>
+                <p className="text-center text-gray-400 py-8">
+                  No DeFi tokens found matching your search.
+                </p>
               )}
             </div>
           </div>
         </section>
       </main>
-      <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+      <Link
+        href="/main"
+        className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2"
+      >
         <ArrowLeft size={16} />
         Back
       </Link>

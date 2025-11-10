@@ -7,30 +7,28 @@ var nextConfig = {
         protocol: "https",
         hostname: "placehold.co",
         port: "",
-        pathname: "/**"
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "images.unsplash.com",
         port: "",
-        pathname: "/**"
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "picsum.photos",
         port: "",
-        pathname: "/**"
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "storage.googleapis.com",
         port: "",
-        pathname: "/**"
-      }
-    ]
-  }
+        pathname: "/**",
+      },
+    ],
+  },
 };
 var next_config_default = nextConfig;
-export {
-  next_config_default as default
-};
+export { next_config_default as default };

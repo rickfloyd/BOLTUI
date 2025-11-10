@@ -1,3 +1,246 @@
-module.exports=[9270,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored.contexts.AppRouterContext},38783,(a,b,c)=>{"use strict";b.exports=a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient},210,a=>{"use strict";let b=(0,a.i(70106).default)("ArrowLeft",[["path",{d:"m12 19-7-7 7-7",key:"1l729n"}],["path",{d:"M19 12H5",key:"x3x0zl"}]]);a.s(["ArrowLeft",()=>b],210)},91119,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(68114);let e=c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("div",{ref:e,className:(0,d.cn)("rounded-lg border bg-card text-card-foreground shadow-sm",a),...c}));e.displayName="Card";let f=c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("div",{ref:e,className:(0,d.cn)("flex flex-col space-y-1.5 p-6",a),...c}));f.displayName="CardHeader";let g=c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("h3",{ref:e,className:(0,d.cn)("text-2xl font-semibold leading-none tracking-tight",a),...c}));g.displayName="CardTitle",c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("p",{ref:e,className:(0,d.cn)("text-sm text-muted-foreground",a),...c})).displayName="CardDescription";let h=c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("div",{ref:e,className:(0,d.cn)("p-6 pt-0",a),...c}));h.displayName="CardContent",c.forwardRef(({className:a,...c},e)=>(0,b.jsx)("div",{ref:e,className:(0,d.cn)("flex items-center p-6 pt-0",a),...c})).displayName="CardFooter",a.s(["Card",()=>e,"CardContent",()=>h,"CardHeader",()=>f,"CardTitle",()=>g])},32179,a=>{"use strict";var b=a.i(87924),c=a.i(18894),d=a.i(91119);let e=[{id:"real_time_dex_data",title:"Real-Time DEX Data",description:"Live prices, slippage, and liquidity from Uniswap, PancakeSwap, and other DEXs.",tags:["DEX","liquidity","slippage","volume"]},{id:"consensus_mining_intel",title:"Consensus & Mining Intelligence",description:"Hash algorithm, mining status, GPU/ASIC flags for PoW coins.",tags:["PoW","mining","hashrate"]},{id:"smart_contract_scanner",title:"Smart Contract Code Scanner",description:"Detects verified contracts, proxy patterns, upgradeability, and key functions.",tags:["EVM","security","contracts"]},{id:"canonical_token_validator",title:"Canonical Token Validator",description:"Validates CoinGecko ID, consensus, contract, and metadata.",tags:["validation","metadata","canonical"]},{id:"onchain_metrics_dashboard",title:"On-Chain Metrics Dashboard",description:"Track active addresses, gas fees, validator count, and treasury balances.",tags:["on-chain","analytics","metrics"]},{id:"token_patch_override",title:"Token Patch & Override System",description:"Patch broken tokens, submit metadata fixes, and vote on canonical status.",tags:["patching","community","governance"]},{id:"ai_token_classifier",title:"AI-Powered Token Classifier",description:"Auto-tags tokens as DAOs, bridges, infra, privacy, meme, wrapped, etc.",tags:["AI","classification","taxonomy"]},{id:"custom_index_builder",title:"Custom Index Builder",description:"Create and chart your own token baskets: DAOs, PoW, L2s, etc.",tags:["index","portfolio","custom"]},{id:"experimental_token_lab",title:"Experimental Token Lab",description:"Track new deployments, simulate forks, and test token behavior.",tags:["sandbox","testing","forks"]},{id:"security_rug_scanner",title:"Security & Rug Risk Scanner",description:"Detect honeypots, unverified contracts, and liquidity locks.",tags:["security","rugpull","audit"]}];var f=a.i(38246),g=a.i(210);function h(){return(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(c.Header,{}),(0,b.jsx)("main",{className:"dashboard-grid",children:(0,b.jsxs)("section",{className:"center-content",children:[(0,b.jsx)("h1",{className:"text-3xl font-bold neon-text text-center mt-8",children:"Crypto Feature Cards"}),(0,b.jsx)("p",{className:"text-lg text-gray-300 text-center max-w-3xl mx-auto",children:"An overview of the powerful, data-driven features for deep crypto analysis available on the platform."}),(0,b.jsx)("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8",children:e.map(a=>(0,b.jsxs)(d.Card,{className:"data-card glow-cyan flex flex-col",children:[(0,b.jsx)(d.CardHeader,{children:(0,b.jsx)(d.CardTitle,{className:"text-xl neon-cyan",children:a.title})}),(0,b.jsxs)(d.CardContent,{className:"flex-grow flex flex-col justify-between",children:[(0,b.jsx)("p",{className:"text-gray-300 mb-4",children:a.description}),(0,b.jsx)("div",{className:"flex flex-wrap gap-2",children:a.tags.map(a=>(0,b.jsx)("span",{className:"text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200/20",children:a},a))})]})]},a.id))})]})}),(0,b.jsxs)(f.default,{href:"/main",className:"fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2",children:[(0,b.jsx)(g.ArrowLeft,{size:16}),"Back"]})]})}a.s(["default",()=>h],32179)}];
+module.exports = [
+  9270,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored.contexts.AppRouterContext;
+  },
+  38783,
+  (a, b, c) => {
+    "use strict";
+    b.exports = a.r(42602).vendored["react-ssr"].ReactServerDOMTurbopackClient;
+  },
+  210,
+  (a) => {
+    "use strict";
+    let b = (0, a.i(70106).default)("ArrowLeft", [
+      ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+      ["path", { d: "M19 12H5", key: "x3x0zl" }],
+    ]);
+    a.s(["ArrowLeft", () => b], 210);
+  },
+  91119,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(72131),
+      d = a.i(68114);
+    let e = c.forwardRef(({ className: a, ...c }, e) =>
+      (0, b.jsx)("div", {
+        ref: e,
+        className: (0, d.cn)(
+          "rounded-lg border bg-card text-card-foreground shadow-sm",
+          a,
+        ),
+        ...c,
+      }),
+    );
+    e.displayName = "Card";
+    let f = c.forwardRef(({ className: a, ...c }, e) =>
+      (0, b.jsx)("div", {
+        ref: e,
+        className: (0, d.cn)("flex flex-col space-y-1.5 p-6", a),
+        ...c,
+      }),
+    );
+    f.displayName = "CardHeader";
+    let g = c.forwardRef(({ className: a, ...c }, e) =>
+      (0, b.jsx)("h3", {
+        ref: e,
+        className: (0, d.cn)(
+          "text-2xl font-semibold leading-none tracking-tight",
+          a,
+        ),
+        ...c,
+      }),
+    );
+    ((g.displayName = "CardTitle"),
+      (c.forwardRef(({ className: a, ...c }, e) =>
+        (0, b.jsx)("p", {
+          ref: e,
+          className: (0, d.cn)("text-sm text-muted-foreground", a),
+          ...c,
+        }),
+      ).displayName = "CardDescription"));
+    let h = c.forwardRef(({ className: a, ...c }, e) =>
+      (0, b.jsx)("div", { ref: e, className: (0, d.cn)("p-6 pt-0", a), ...c }),
+    );
+    ((h.displayName = "CardContent"),
+      (c.forwardRef(({ className: a, ...c }, e) =>
+        (0, b.jsx)("div", {
+          ref: e,
+          className: (0, d.cn)("flex items-center p-6 pt-0", a),
+          ...c,
+        }),
+      ).displayName = "CardFooter"),
+      a.s([
+        "Card",
+        () => e,
+        "CardContent",
+        () => h,
+        "CardHeader",
+        () => f,
+        "CardTitle",
+        () => g,
+      ]));
+  },
+  32179,
+  (a) => {
+    "use strict";
+    var b = a.i(87924),
+      c = a.i(18894),
+      d = a.i(91119);
+    let e = [
+      {
+        id: "real_time_dex_data",
+        title: "Real-Time DEX Data",
+        description:
+          "Live prices, slippage, and liquidity from Uniswap, PancakeSwap, and other DEXs.",
+        tags: ["DEX", "liquidity", "slippage", "volume"],
+      },
+      {
+        id: "consensus_mining_intel",
+        title: "Consensus & Mining Intelligence",
+        description:
+          "Hash algorithm, mining status, GPU/ASIC flags for PoW coins.",
+        tags: ["PoW", "mining", "hashrate"],
+      },
+      {
+        id: "smart_contract_scanner",
+        title: "Smart Contract Code Scanner",
+        description:
+          "Detects verified contracts, proxy patterns, upgradeability, and key functions.",
+        tags: ["EVM", "security", "contracts"],
+      },
+      {
+        id: "canonical_token_validator",
+        title: "Canonical Token Validator",
+        description:
+          "Validates CoinGecko ID, consensus, contract, and metadata.",
+        tags: ["validation", "metadata", "canonical"],
+      },
+      {
+        id: "onchain_metrics_dashboard",
+        title: "On-Chain Metrics Dashboard",
+        description:
+          "Track active addresses, gas fees, validator count, and treasury balances.",
+        tags: ["on-chain", "analytics", "metrics"],
+      },
+      {
+        id: "token_patch_override",
+        title: "Token Patch & Override System",
+        description:
+          "Patch broken tokens, submit metadata fixes, and vote on canonical status.",
+        tags: ["patching", "community", "governance"],
+      },
+      {
+        id: "ai_token_classifier",
+        title: "AI-Powered Token Classifier",
+        description:
+          "Auto-tags tokens as DAOs, bridges, infra, privacy, meme, wrapped, etc.",
+        tags: ["AI", "classification", "taxonomy"],
+      },
+      {
+        id: "custom_index_builder",
+        title: "Custom Index Builder",
+        description:
+          "Create and chart your own token baskets: DAOs, PoW, L2s, etc.",
+        tags: ["index", "portfolio", "custom"],
+      },
+      {
+        id: "experimental_token_lab",
+        title: "Experimental Token Lab",
+        description:
+          "Track new deployments, simulate forks, and test token behavior.",
+        tags: ["sandbox", "testing", "forks"],
+      },
+      {
+        id: "security_rug_scanner",
+        title: "Security & Rug Risk Scanner",
+        description:
+          "Detect honeypots, unverified contracts, and liquidity locks.",
+        tags: ["security", "rugpull", "audit"],
+      },
+    ];
+    var f = a.i(38246),
+      g = a.i(210);
+    function h() {
+      return (0, b.jsxs)(b.Fragment, {
+        children: [
+          (0, b.jsx)(c.Header, {}),
+          (0, b.jsx)("main", {
+            className: "dashboard-grid",
+            children: (0, b.jsxs)("section", {
+              className: "center-content",
+              children: [
+                (0, b.jsx)("h1", {
+                  className: "text-3xl font-bold neon-text text-center mt-8",
+                  children: "Crypto Feature Cards",
+                }),
+                (0, b.jsx)("p", {
+                  className:
+                    "text-lg text-gray-300 text-center max-w-3xl mx-auto",
+                  children:
+                    "An overview of the powerful, data-driven features for deep crypto analysis available on the platform.",
+                }),
+                (0, b.jsx)("div", {
+                  className:
+                    "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8",
+                  children: e.map((a) =>
+                    (0, b.jsxs)(
+                      d.Card,
+                      {
+                        className: "data-card glow-cyan flex flex-col",
+                        children: [
+                          (0, b.jsx)(d.CardHeader, {
+                            children: (0, b.jsx)(d.CardTitle, {
+                              className: "text-xl neon-cyan",
+                              children: a.title,
+                            }),
+                          }),
+                          (0, b.jsxs)(d.CardContent, {
+                            className:
+                              "flex-grow flex flex-col justify-between",
+                            children: [
+                              (0, b.jsx)("p", {
+                                className: "text-gray-300 mb-4",
+                                children: a.description,
+                              }),
+                              (0, b.jsx)("div", {
+                                className: "flex flex-wrap gap-2",
+                                children: a.tags.map((a) =>
+                                  (0, b.jsx)(
+                                    "span",
+                                    {
+                                      className:
+                                        "text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200/20",
+                                      children: a,
+                                    },
+                                    a,
+                                  ),
+                                ),
+                              }),
+                            ],
+                          }),
+                        ],
+                      },
+                      a.id,
+                    ),
+                  ),
+                }),
+              ],
+            }),
+          }),
+          (0, b.jsxs)(f.default, {
+            href: "/main",
+            className:
+              "fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2",
+            children: [(0, b.jsx)(g.ArrowLeft, { size: 16 }), "Back"],
+          }),
+        ],
+      });
+    }
+    a.s(["default", () => h], 32179);
+  },
+];
 
 //# sourceMappingURL=_5f32338f._.js.map

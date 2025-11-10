@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Header } from '@/components/layout/header';
-import { Input } from '@/components/ui/input';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
-import { powCoinsAth, PoWAthData } from '@/data/pow-coins-ath';
+import { useState, useEffect } from "react";
+import { Header } from "@/components/layout/header";
+import { Input } from "@/components/ui/input";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { powCoinsAth, PoWAthData } from "@/data/pow-coins-ath";
 
 interface Coin {
   id: string;
@@ -18,22 +18,49 @@ interface Coin {
 }
 
 interface DisplayCoin extends Coin {
-    ath_price_2025?: string;
-    ath_date_2025?: string;
+  ath_price_2025?: string;
+  ath_date_2025?: string;
 }
 
 const proofOfWorkSymbols: string[] = [
-    "btc", "doge", "ltc", "bch", "xmr", "zec", "etc", "dash", "kas", "dcr", 
-    "bdx", "cfx", "bsv", "dgb", "rvn", "ckb", "xvg", "qrl", "erg", "flux", 
-    "ethw", "zen", "sc", "sys", "firo", "nmc", "grs", "vtc", "beam", "bcn"
+  "btc",
+  "doge",
+  "ltc",
+  "bch",
+  "xmr",
+  "zec",
+  "etc",
+  "dash",
+  "kas",
+  "dcr",
+  "bdx",
+  "cfx",
+  "bsv",
+  "dgb",
+  "rvn",
+  "ckb",
+  "xvg",
+  "qrl",
+  "erg",
+  "flux",
+  "ethw",
+  "zen",
+  "sc",
+  "sys",
+  "firo",
+  "nmc",
+  "grs",
+  "vtc",
+  "beam",
+  "bcn",
 ];
 
 const athDataMap: Map<string, PoWAthData> = new Map(
-  powCoinsAth.map(coin => [coin.symbol.toLowerCase(), coin])
+  powCoinsAth.map((coin) => [coin.symbol.toLowerCase(), coin]),
 );
 
 export default function ProofOfWorkPage() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [coins, setCoins] = useState<DisplayCoin[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -42,22 +69,26 @@ export default function ProofOfWorkPage() {
     const fetchCoins = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/api/coingecko/coins'); 
+        const response = await fetch("/api/coingecko/coins");
         if (!response.ok) {
           const errorData = await response.json();
-          throw new Error(errorData.error || 'Failed to fetch Proof of Work coins.');
+          throw new Error(
+            errorData.error || "Failed to fetch Proof of Work coins.",
+          );
         }
         const data: Coin[] = await response.json();
-        
-        const powCoins = data.filter(coin => proofOfWorkSymbols.includes(coin.symbol.toLowerCase()));
-        
-        const mergedCoins: DisplayCoin[] = powCoins.map(coin => {
-            const ath = athDataMap.get(coin.symbol.toLowerCase());
-            return {
-                ...coin,
-                ath_price_2025: ath?.ath_price_2025,
-                ath_date_2025: ath?.ath_date_2025,
-            };
+
+        const powCoins = data.filter((coin) =>
+          proofOfWorkSymbols.includes(coin.symbol.toLowerCase()),
+        );
+
+        const mergedCoins: DisplayCoin[] = powCoins.map((coin) => {
+          const ath = athDataMap.get(coin.symbol.toLowerCase());
+          return {
+            ...coin,
+            ath_price_2025: ath?.ath_price_2025,
+            ath_date_2025: ath?.ath_date_2025,
+          };
         });
 
         setCoins(mergedCoins);
@@ -79,25 +110,37 @@ export default function ProofOfWorkPage() {
   const filteredCoins = coins.filter(
     (coin) =>
       coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+      coin.symbol.toLowerCase().includes(searchTerm.toLowerCase()),
   );
-  
+
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
-  }
-  
-   const formatMarketCap = (value: number) => {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', compactDisplay: 'long' }).format(value);
-  }
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(value);
+  };
+
+  const formatMarketCap = (value: number) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      notation: "compact",
+      compactDisplay: "long",
+    }).format(value);
+  };
 
   return (
     <>
       <Header />
       <main className="dashboard-grid">
         <section className="center-content">
-          <h1 className="text-3xl font-bold neon-text text-center mt-8">Proof of Work (PoW) Coins</h1>
+          <h1 className="text-3xl font-bold neon-text text-center mt-8">
+            Proof of Work (PoW) Coins
+          </h1>
           <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
-            These blockchains use mining instead of staking to validate transactions. This list represents top PoW coins by market cap, with live market data and reported 2025 All-Time Highs.
+            These blockchains use mining instead of staking to validate
+            transactions. This list represents top PoW coins by market cap, with
+            live market data and reported 2025 All-Time Highs.
           </p>
           <div className="w-full mt-4">
             <Input
@@ -110,8 +153,14 @@ export default function ProofOfWorkPage() {
           </div>
           <div className="w-full overflow-x-auto mt-8">
             <div className="info-table-card">
-              {loading && coins.length === 0 && <p className="text-center text-lg text-gray-300 py-8">Loading PoW coins...</p>}
-              {error && <p className="text-center text-lg text-red-400 py-8">{error}</p>}
+              {loading && coins.length === 0 && (
+                <p className="text-center text-lg text-gray-300 py-8">
+                  Loading PoW coins...
+                </p>
+              )}
+              {error && (
+                <p className="text-center text-lg text-red-400 py-8">{error}</p>
+              )}
               {!loading && !error && (
                 <table className="info-table w-full">
                   <thead>
@@ -131,16 +180,35 @@ export default function ProofOfWorkPage() {
                       <tr key={coin.id} className="hover:bg-white/5">
                         <td className="neon-orange">{coin.market_cap_rank}</td>
                         <td className="neon-cyan flex items-center gap-2">
-                           <img src={coin.image} alt={`${coin.name} logo`} className="w-6 h-6 rounded-full" />
+                          <img
+                            src={coin.image}
+                            alt={`${coin.name} logo`}
+                            className="w-6 h-6 rounded-full"
+                          />
                           {coin.name}
                         </td>
-                        <td className="neon-pink">{coin.symbol.toUpperCase()}</td>
-                        <td className="neon-blue font-numeric">{formatCurrency(coin.current_price)}</td>
-                        <td className="neon-gold font-numeric">{formatMarketCap(coin.market_cap)}</td>
-                        <td className="text-gray-300 font-numeric">{coin.ath_price_2025 || 'N/A'}</td>
-                        <td className="text-gray-400">{coin.ath_date_2025 || 'N/A'}</td>
+                        <td className="neon-pink">
+                          {coin.symbol.toUpperCase()}
+                        </td>
+                        <td className="neon-blue font-numeric">
+                          {formatCurrency(coin.current_price)}
+                        </td>
+                        <td className="neon-gold font-numeric">
+                          {formatMarketCap(coin.market_cap)}
+                        </td>
+                        <td className="text-gray-300 font-numeric">
+                          {coin.ath_price_2025 || "N/A"}
+                        </td>
+                        <td className="text-gray-400">
+                          {coin.ath_date_2025 || "N/A"}
+                        </td>
                         <td>
-                          <Link href={`https://www.coingecko.com/en/coins/${coin.id}`} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
+                          <Link
+                            href={`https://www.coingecko.com/en/coins/${coin.id}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-cyan-400 hover:underline"
+                          >
                             View More
                           </Link>
                         </td>
@@ -153,7 +221,10 @@ export default function ProofOfWorkPage() {
           </div>
         </section>
       </main>
-      <Link href="/main" className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2">
+      <Link
+        href="/main"
+        className="fixed bottom-4 left-4 nav-item neon-pink flex items-center gap-2"
+      >
         <ArrowLeft size={16} />
         Back
       </Link>
