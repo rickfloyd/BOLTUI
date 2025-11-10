@@ -33,4 +33,6 @@ export const watchlistItems: WatchlistItemData[] = [
   {
     name: 'Apple Inc.',
     symbol: 'AAPL',
-    imageUrl: 'https://cdn-icons-png.flaticon.com/512/
+    imageUrl: 'https://cdn-icons-png.flaticon.com/512/882/882731.png'
+  },
+];
