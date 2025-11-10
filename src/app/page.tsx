@@ -33,7 +33,7 @@ export default function Page() {
             <Link href="/impact" className="view-button neon-cyan">
               Impact
             </Link>
-            <Link href="/simple-view" className="view-button neon-pink">
+            <Link href="/simple-view" className="view-button neon-pink active">
               Simple View
             </Link>
             <Link href="/wcag" className="view-button view-button-wcag">
