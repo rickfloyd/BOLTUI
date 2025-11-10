@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "forex-data": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "crypto-data": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "humanitarian-impact": {
+      ".read": true,
+      ".write": true
+    },
+    "platform-stats": {
+      ".read": true,
+      ".write": "auth != null"
+    }
+  }
+}
